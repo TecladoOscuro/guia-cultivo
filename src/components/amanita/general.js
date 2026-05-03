@@ -452,6 +452,12 @@ function FAQ_AMANITA() {
     { q: "¿Es legal en otros países UE?", a: "Mayoría UE: legal. Excepciones: Holanda regula como 'planta tóxica', Reino Unido ilegal desde 2005, Australia ilegal. España: 100% legal." },
     { q: "¿Qué pasa si la cocino bien (parboiled)?", a: "Hervir 15min en agua + descartar agua + hervir otros 15min = elimina iboténico y muscimol. Resultado: seta comestible NO psicoactiva (cocina tradicional rusa/báltica)." },
     { q: "¿Microdosis es segura?", a: "0.5-1g de seta seca 2-3 veces/semana es protocolo común. Reportes anecdóticos: mejora ánimo, reducción ansiedad, mejor sueño. Investigación científica limitada — evidencia mayormente personal." },
+    { q: "¿Diferencia muscimol vs psilocibina?", a: "Muscimol (Amanita): GABA-érgico (deprime SNC). Experiencia: disociativa, onírica, distorsiones tamaño/Alicia, cuerpo pesado. Psilocibina (Psilocybe): serotonérgica (5-HT2A). Experiencia: visiones, introspección, geometría. Distintos receptores, distintas experiencias." },
+    { q: "¿Las setas Amanita silvestres en España son las mismas?", a: "Sí — A. muscaria es la misma especie globalmente. Se encuentra en hayedos, abetales, abedulares de Cordillera Cantábrica, Pirineos, Sistema Central. Subespecie europea (var. muscaria) tiene perfil similar a americana." },
+    { q: "¿Es legal vender Amanita en España?", a: "Sí — venta de Amanita muscaria seca es 100% legal. Smartshops y vendedores etnobotánicos UE. Precios: 15-40€/100g secas. Verificar reputación (origen + secado correcto)." },
+    { q: "¿Cuánto tiempo después de un viaje fuerte para repetir?", a: "Mínimo 2 semanas. Idealmente 1 mes+. Tolerancia muscimol = corto plazo. Pero más importante: integración psicológica. Repeticiones rápidas pierden valor reflexivo." },
+    { q: "¿Puedo combinar con cannabis o alcohol?", a: "❌ NO con alcohol/benzos/opiáceos: ambos depresores SNC = sedación excesiva, riesgo respiratorio. ⚠️ Cannabis: posible pero potencia disociación de Amanita — cuidado primera vez." },
+    { q: "¿Sabor del té es muy fuerte?", a: "Sí — terroso, amargo, ligeramente astringente. Endulzar con miel + jengibre + limón ayuda. Cápsulas de polvo evitan sabor pero efecto puede tardar más. Tradición siberiana: orina recolectada (la muscimol pasa intacto y la orina es menos amarga)." },
   ];
 
   const filtered = faqs.filter(f =>

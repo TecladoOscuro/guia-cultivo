@@ -3249,6 +3249,13 @@ function FAQ() {
     { sec: "Otros", q: "¿Cuántas plantas puedo tener legalmente?", a: "No hay número exacto en la ley. Tribunales aceptan 'cantidad razonable para autoconsumo' = 2-5 plantas máximo. Más = sospecha de tráfico (delito)." },
     { sec: "Otros", q: "¿Diferencia entre indica y sativa?", a: "Indica: efecto corporal sedante, plantas más bajas y compactas (mejor para indoor). Sativa: efecto cerebral energético, plantas más altas y largas (mejor exterior). La mayoría hoy son híbridos — etiqueta dice qué predomina." },
     { sec: "Otros", q: "¿Qué es THC vs CBD?", a: "THC: psicoactivo (efecto recreativo). CBD: NO psicoactivo (medicinal — antiinflamatorio, anti-ansiedad, anticonvulsivo). Variedades modernas tienen ratios distintos: alto THC (recreativo), alto CBD (medicinal), 1:1 balanceado." },
+    { sec: "Crecimiento", q: "¿Cuánto rinde una planta de cannabis?", a: "Interior auto en armario 80x80cm: 50-150g secos por planta. Indoor fotoperiodo bien manejado: 100-300g. Exterior fotoperiodo en bosque/jardín soleado: 200-500g por planta. Variables enormes según luz, espacio raíz, técnica." },
+    { sec: "Crecimiento", q: "¿Mejor estación del año para cultivar interior?", a: "Otoño-invierno-primavera (sept-mayo). Evitar verano por calor extremo del armario (>30°C mata plantas). En verano sin AC = SALTAR esa cosecha. Las 3 cosechas autoflower al año: octubre-diciembre, enero-marzo, marzo-mayo." },
+    { sec: "Crecimiento", q: "¿Es necesaria poda LST/topping?", a: "NO necesario para tener cosecha. Sí RECOMENDADO para maximizar: LST (doblar ramas) puede aumentar rendimiento 30-50%. Topping (cortar punta) duplica colas pero estresa. Para autos: LST sí, topping NO." },
+    { sec: "Nutrientes y pH", q: "¿Puedo usar nutrientes de jardinería normal?", a: "Sí, pero NO óptimo. Cannabis necesita ratios específicos NPK por fase. Bio Grow vs Bio Bloom = adecuados a vegetativa/floración. Nutrientes universales pueden funcionar pero rendimiento menor. Para empezar bien: invertir 30€ en kit Bio Grow + Bio Bloom." },
+    { sec: "Nutrientes y pH", q: "¿Cuándo hago el lavado de raíces (flush)?", a: "Final de floración: últimas 2 semanas antes de cosechar SOLO agua con pH 6.3 (sin nutrientes). Limpia las sales acumuladas, mejora sabor del producto final. Sin flush: cogollos saben a químico/quemado." },
+    { sec: "Setup y clima", q: "¿Cuántos vatios/lúmenes necesito?", a: "Armario 80x80cm: LED 240W reales (NO los 'equivalentes' de marketing). Con eso 2-3 plantas auto. Para fotoperiodo: 320W+. Marcas: Mars Hydro, Spider Farmer, Sunny LED. Evitar LEDs baratos chinos sin specs claras." },
+    { sec: "Setup y clima", q: "¿El olor del cultivo es muy fuerte?", a: "Floración últimas 4 semanas: SÍ, MUY fuerte. Sin filtro de carbón = todo el piso huele. Filtro carbón obligatorio para vivienda compartida. Variedades 'low odor' como Northern Lights ayudan pero no eliminan olor totalmente." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -4752,6 +4759,14 @@ function FAQ_SETAS() {
     { q: "¿Microdosis es seguro?", a: "0.1-0.3g de seta seca cada 3-4 días = protocolo Stamets/Fadiman. Reportes anecdóticos: mejora ánimo, creatividad, foco. Investigación científica aún limitada. Bajo riesgo si se respetan los descansos." },
     { q: "¿Se pueden combinar con otras psicodélicas?", a: "TÉCNICAMENTE sí, pero MUY arriesgado para principiantes. Tolerancia cruzada con LSD/mescalina (1-2 semanas). NUNCA mezclar con SSRI (síndrome serotonérgico). Investigar siempre antes." },
     { q: "¿Qué es Trichoderma?", a: "El hongo contaminante #1 en cultivo casero. Aparece como manchas verde brillante o blanco peludo. Crece más rápido que el micelio Psilocybe y lo mata. Solo se puede prevenir (asepsia), no se cura. Lote contaminado = tirar todo el sustrato." },
+    { q: "¿Cuánto rinde un frasco/monotub típicamente?", a: "Frasco PF Tek (medio litro): 30-100g secos. Monotub bulk tek (40L): 200-500g secos primer flush + 50-70% en flushes 2-4. Total ciclo: 400-1000g secos." },
+    { q: "¿Cuál es la mejor cepa para empezar con setas?", a: "B+, Golden Teacher, o Mazatapec. Las 3 son tolerantes a errores de novato, dan setas grandes, potencia media-alta. EVITAR primera vez: Penis Envy (potente pero exigente), Albino A+ (raro, caro)." },
+    { q: "¿Cómo saber si las setas están bien secas (cracker dry)?", a: "Test del pie: dobla un pie. Si ROMPE limpio con sonido seco = listas. Si SE DOBLA sin romper = aún húmedas, más sílica gel + tiempo. NUNCA almacenar sin cracker dry — moho garantizado en semanas." },
+    { q: "¿Se pueden tomar setas frescas?", a: "Sí pero NO recomendado. Frescas: 90% agua, sabor terroso fuerte, dosis difícil de calcular (peso fresco vs seco varía mucho). Mejor secar y dosificar exactamente. Conversión: 1g seco ≈ 10g fresco." },
+    { q: "¿Compatible con antidepresivos?", a: "NO. SSRI/IMAO/SNRI bloquean los receptores 5-HT2A donde actúa la psilocibina = experiencia muy reducida o ausente. Además riesgo síndrome serotonérgico con IMAO. Off-meds 4-6 semanas antes (consultar médico)." },
+    { q: "¿Diferencia entre PF Tek y Bulk Tek?", a: "PF Tek: frasco con sustrato pequeño (vermiculita+harina arroz). Más simple, rendimiento bajo (30-100g). Bulk Tek: spawn en grano + bulk substrate en monotub. Más complejo pero mucho mayor rendimiento (200-500g+)." },
+    { q: "¿Puedo cultivar al aire libre?", a: "Algunas especies (P. cyanescens, azurescens) sí — en zonas frías sobre madera. P. cubensis (la más común) NO — necesita 24-26°C constante, demasiado frío para outdoor en mayoría España." },
+    { q: "¿Cómo identificar contaminación temprana?", a: "Manchas de color (verde Trichoderma, negro Aspergillus, rojo bacterias) o olor extraño (vinagre, podrido, alcohol). El micelio Psilocybe es BLANCO algodonoso, olor a champiñón fresco. Cualquier desviación = sospechoso." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -5143,6 +5158,13 @@ function FAQ_CACTUS() {
     { q: "¿Riesgos de salud reales?", a: "Náusea/vómito frecuente. Hipertensión leve durante el peak. Posible diarrea. Sin riesgos serios documentados en personas sanas. Contraindicaciones: cardiopatía, problemas psiquiátricos." },
     { q: "¿Cuánto crece un San Pedro al año?", a: "30-50cm en condiciones óptimas (sol pleno, mediterráneo, riego adecuado). Más lento en interior o clima frío. Año 1: lento. Años 2+: explosivo." },
     { q: "¿Puede florecer y dar semillas?", a: "Sí, a partir de 4-6 años. Flores blancas grandes que se abren de noche (aroma fuerte). Polinización manual (pincel entre flores) → frutos con miles de semillas. Permite multiplicar." },
+    { q: "¿Puedo injertar cactus en Trichocereus?", a: "Sí, técnica avanzada para acelerar crecimiento de plántulas. Plántulas injertadas crecen 5-10x más rápido. Pereskiopsis es el porta-injerto más usado. Requiere precisión quirúrgica y experiencia." },
+    { q: "¿Cuánto necesito esperar tras un riego antes de fertilizar?", a: "1-2 días. Fertilizar sobre sustrato seco quema raíces. Riega primero, espera, después aplica fertilizante diluido a media dosis." },
+    { q: "¿Por qué no crece mi San Pedro?", a: "Causas comunes: maceta pequeña (raíces atrapadas — trasplantar), sol insuficiente (mover a más sol gradualmente), invierno (es normal — espera primavera), sustrato compactado/agotado (cambiar)." },
+    { q: "¿Las espinas son indicador de salud?", a: "Sí. Espinas robustas, regulares y firmes = cactus feliz. Espinas débiles o ausentes en zonas nuevas = falta de luz o estrés. Cambio brusco de espinosidad = aclimatación." },
+    { q: "¿Diferencia clave entre San Pedro y Bolivian Torch visual?", a: "San Pedro: 6-9 costillas, espinas pequeñas, color verde más claro. Bolivian Torch: 4-7 costillas, espinas más largas y amarillas, color verde-azulado. Sin experiencia: difícil. Comprar siempre de vendedor que garantice especie." },
+    { q: "¿Puedo cultivar en interior con luz LED?", a: "Sí pero crecen 50-70% más lento. Necesitas LED full-spectrum 100W+ para uno mediano. Mejor: junto a ventana sur con sol directo + LED suplementario invierno. Puro interior LED: posible pero ineficiente." },
+    { q: "¿Cuánto cuesta el agua/luz/fertilizante anual?", a: "Casi nada. Cactus = bajísimo mantenimiento. Fertilizante: ~5€/año. Agua: <5€/año. Luz: 0€ (interior junto ventana). Es la planta MÁS BARATA de mantener de toda esta guía." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -5348,6 +5370,12 @@ function FAQ_FERMENT() {
     { q: "¿Cómo limpiar el equipo correctamente?", a: "2 fases: (1) LIMPIEZA con agua + jabón — quita suciedad visible. (2) SANITIZACIÓN con Star San o metabisulfito — mata microorganismos. Las dos son distintas. Sanitizar sin limpiar antes = inútil." },
     { q: "¿Puedo fermentar fruta directamente sin levadura añadida?", a: "Sí — la piel de las frutas trae levaduras silvestres (de ahí 'fermentación espontánea'). Funciona pero MENOS PREDECIBLE. Resultado variable, riesgo de bacterias salvajes. Recomendado para principiantes: añadir levadura comercial." },
     { q: "¿Cuánto tiempo aguantan las botellas?", a: "Hidromiel/cerveza/sidra naturales (sin pasteurizar): 1-3 años en frasco frío oscuro. Pasteurizadas (calor 60°C 15min antes de embotellar): 5+ años. Con tiempo: el sabor evoluciona — algunas mejoran (hidromiel), otras se oxidan (cerveza IPA pierde lúpulo)." },
+    { q: "¿Qué temperatura ideal para fermentación?", a: "Hidromiel: 18-22°C. Cerveza ALE: 18-22°C. Cerveza LAGER: 8-12°C (necesita nevera dedicada). Sidra: 15-22°C. Variaciones bruscas paran fermentación o producen sabores raros (banana, plástico). En verano: nevera con controlador de temperatura." },
+    { q: "¿Mi fermento sabe a vinagre, qué hago?", a: "Acetobacter (bacterias acéticas) entró por contacto con oxígeno. Lote perdido como bebida — pero útil como vinagre artesanal! Continuar fermentando 2-3 semanas más con airlock entendiendo que será vinagre. Para próximo lote: revisar sello hermético del airlock." },
+    { q: "¿Cuántos lotes puedo hacer al año?", a: "Hidromiel: 6-8 (4-6 sem por lote). Cerveza: 8-10 (4-6 sem). Sidra: 4-6 (3-6 sem + manzanas estacionales). Si tienes equipo doble = duplica. Empieza con 1 lote primero, aprende, después escala." },
+    { q: "¿Mi cerveza queda muy turbia, problema?", a: "No, NORMAL. Cerveza casera tiende turbia por levaduras en suspensión. Para clarificar: (1) tiempo + frío (1-2 sem nevera tras embotellar), (2) gelatina/clarificante (Irish Moss en hervor), (3) cold crash 24h antes de embotellar. Sabor no afectado." },
+    { q: "¿Calculadora ABV simple?", a: "(Densidad inicial - Densidad final) × 131.25 = ABV%. Ejemplo: DI 1.060, DF 1.005 → (60-5)×131.25/1000 = 7.2%. Online: 'ABV calculator brewing' busca cualquiera." },
+    { q: "¿Mi mosto no fermenta tras 48h, qué pasa?", a: "Causas: (1) levadura muerta (mosto demasiado caliente al añadirla, max 25°C), (2) tapón mal sellado (CO₂ se escapa = sin burbujeo visible pero fermenta), (3) levadura no rehidratada bien antes. Solución: añadir levadura nueva rehidratada correctamente." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -7161,6 +7189,12 @@ function FAQ_PLANTAS() {
     { q: "¿Cuál sirve para ansiedad social?", a: "Damiana (ligera euforia + relajación, sabor agradable) o Kava (más fuerte, sin embriagar). Kanna también ayuda pero ojo con interacciones SSRI." },
     { q: "¿Cuál es estimulante natural?", a: "Mucuna pruriens (motivación + energía mental sin agitación cafeínica). Sinicuichi también pero efecto más auditivo, no estimulante." },
     { q: "¿Combinar con cafeína?", a: "Mucuna + cafeína: bien (ambos dopaminérgicos suaves). Kava + cafeína: contradicción, pierde efecto. Kanna + cafeína: posible — pero cuidado si tomas SSRI." },
+    { q: "¿Cuál tiene efecto más rápido?", a: "Salvia fumada: 30 segundos. Kanna sublingual: 5-15 min. Wild lettuce/Damiana/Calea: 30-60 min infusión. Blue Lotus: 30-60 min. Kava: 15-30 min." },
+    { q: "¿Cómo guardo plantas frescas tras cosecha?", a: "Hojas: secar al aire en sombra 5-10 días hasta crujientes, frasco hermético oscuro. Flores Blue Lotus: enteras, frasco oscuro. Raíz Kava: trozos secos al aire 2-4 sem. Tubérculo Wild Lettuce látex: extracto secado oscuro. Plantas vivas: en clima óptimo viven indefinidamente." },
+    { q: "¿Cuál ayuda a meditar?", a: "Sinicuichi (auditivo, sonidos suaves), Blue Lotus (sedante onírico), Damiana (relajación + claridad). NO usar Salvia (demasiado intensa para meditación tradicional)." },
+    { q: "¿Cuál es la más legal sin gris alguno?", a: "Damiana, Blue Lotus, Wild Lettuce, Calea, Lúpulo, Mucuna — TODAS 100% legales sin ambigüedad. Sinicuichi: legal cultivar, gris jurídico mínimo el consumo. Kava/Kanna: 100% legal. Salvia: legal España pero ilegal varios países UE — verificar si viajas." },
+    { q: "¿Tincturas vs infusión: cuál es mejor?", a: "Infusión: más rápida (5-10 min), efectos más suaves, dura horas. Tintura alcohólica: maceración 4-6 sem, dura años, más concentrada, dosis 1-3ml sublingual = absorción rápida. Para uso ocasional: infusión. Para uso regular: tintura más práctica." },
+    { q: "¿Puedo regalar plantas/extractos?", a: "Sí, todas son legales. Compartir café/té de plantas medicinales = OK. Vender = requiere registro como producto herbal (Sanidad Pública). Mejor: regalar a amigos sin transacción comercial." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -7648,6 +7682,12 @@ function FAQ_AMANITA() {
     { q: "¿Es legal en otros países UE?", a: "Mayoría UE: legal. Excepciones: Holanda regula como 'planta tóxica', Reino Unido ilegal desde 2005, Australia ilegal. España: 100% legal." },
     { q: "¿Qué pasa si la cocino bien (parboiled)?", a: "Hervir 15min en agua + descartar agua + hervir otros 15min = elimina iboténico y muscimol. Resultado: seta comestible NO psicoactiva (cocina tradicional rusa/báltica)." },
     { q: "¿Microdosis es segura?", a: "0.5-1g de seta seca 2-3 veces/semana es protocolo común. Reportes anecdóticos: mejora ánimo, reducción ansiedad, mejor sueño. Investigación científica limitada — evidencia mayormente personal." },
+    { q: "¿Diferencia muscimol vs psilocibina?", a: "Muscimol (Amanita): GABA-érgico (deprime SNC). Experiencia: disociativa, onírica, distorsiones tamaño/Alicia, cuerpo pesado. Psilocibina (Psilocybe): serotonérgica (5-HT2A). Experiencia: visiones, introspección, geometría. Distintos receptores, distintas experiencias." },
+    { q: "¿Las setas Amanita silvestres en España son las mismas?", a: "Sí — A. muscaria es la misma especie globalmente. Se encuentra en hayedos, abetales, abedulares de Cordillera Cantábrica, Pirineos, Sistema Central. Subespecie europea (var. muscaria) tiene perfil similar a americana." },
+    { q: "¿Es legal vender Amanita en España?", a: "Sí — venta de Amanita muscaria seca es 100% legal. Smartshops y vendedores etnobotánicos UE. Precios: 15-40€/100g secas. Verificar reputación (origen + secado correcto)." },
+    { q: "¿Cuánto tiempo después de un viaje fuerte para repetir?", a: "Mínimo 2 semanas. Idealmente 1 mes+. Tolerancia muscimol = corto plazo. Pero más importante: integración psicológica. Repeticiones rápidas pierden valor reflexivo." },
+    { q: "¿Puedo combinar con cannabis o alcohol?", a: "❌ NO con alcohol/benzos/opiáceos: ambos depresores SNC = sedación excesiva, riesgo respiratorio. ⚠️ Cannabis: posible pero potencia disociación de Amanita — cuidado primera vez." },
+    { q: "¿Sabor del té es muy fuerte?", a: "Sí — terroso, amargo, ligeramente astringente. Endulzar con miel + jengibre + limón ayuda. Cápsulas de polvo evitan sabor pero efecto puede tardar más. Tradición siberiana: orina recolectada (la muscimol pasa intacto y la orina es menos amarga)." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -8178,6 +8218,14 @@ function FAQ_TRUFAS() {
     { q: "¿Diferencia con cultivo PF Tek?", a: "PF Tek es para SETAS Psilocybe cubensis (frasco con sustrato + abrir para fructificación). Trufas: frasco con grano + cerrado todo el tiempo. PF Tek requiere más etapas (fructificación con humedad), trufas son más sencillas." },
     { q: "¿Sabor?", a: "Frescas: neutro a avellana, ligeramente amargo. Texturas dura por fuera, blanca por dentro. NO repulsivo como setas secas. Más bebible que comestible." },
     { q: "¿Por qué se forman esclerocios?", a: "Mecanismo de supervivencia. El hongo, al sentir condiciones limitadas (sin acceso a aire abierto, sin estímulos para fructificar), compacta nutrientes en bolas duras para sobrevivir hasta condiciones mejores. En cultivo aprovechamos eso." },
+    { q: "¿Puedo combinar trufas con cannabis?", a: "Tradicional en algunos contextos. Cannabis amplifica los visuales y profundiza la introspección. Cuidado: amplifica también ansiedad. Si propenso a paranoia con cannabis, mejor evitar la mezcla. Empezar sin cannabis primera vez." },
+    { q: "¿Cuál es la dosis para microdosis exactamente?", a: "Tampanensis: 0.5-1g fresco (= 0.1-0.2g seco). Atlantis: 0.3-0.7g fresco (más potente). Tomar mañana en estómago vacío. Protocolo Stamets/Fadiman: 4 días sí 3 no, durante 4-8 semanas, descanso 2-4 semanas. Reportes anecdóticos: mejora ánimo, foco, creatividad." },
+    { q: "¿Las trufas son alimentos o drogas en Holanda?", a: "Status legal único: clasificadas como producto natural NO regulado. Legal venta a mayores de 18 años en smartshops. Algunas marcas las certifican lab-tested para consistencia de potencia." },
+    { q: "¿Necesito esterilizar el grano si tengo SAB perfecto?", a: "SÍ. SAB previene contaminación durante INOCULACIÓN, pero el grano cocido normal tiene esporas de bacterias termófilas (Bacillus) que crecen a temperatura de incubación. Olla a presión 90min @ 15PSI las mata. Sin esto = lote contaminado en 1-2 sem." },
+    { q: "¿Puedo reutilizar el grano colonizado tras cosecha?", a: "Para 2do flush: sí (rendimiento 30-50%). Para nuevo lote independiente: NO recomendable — el grano agotado y posibles contaminantes acumulados. Mejor empezar con grano fresco para cada ciclo." },
+    { q: "¿Por qué algunos esclerocios son más oscuros que otros?", a: "Color marrón oscuro = madurez + mayor concentración de psilocibina. Blancos = jóvenes (poco activos). Cosechar cuando 70%+ son marrones = potencia óptima. Si sigues esperando, no hay incremento significativo." },
+    { q: "¿Conservación a largo plazo: trufas frescas vs secas?", a: "FRESCAS son la forma tradicional (4-8 sem nevera), pero pierden potencia. SECAS (cracker dry, 1-2 años) mantienen potencia mejor — pero sabor más amargo. MIEL (6-12 meses) = mejor de ambos: mantiene potencia + sabor agradable." },
+    { q: "¿Puedo cultivar varios spawns en mismo frasco?", a: "NO recomendado. Diferentes especies en mismo frasco = competencia. Diferentes lotes en mismo frasco = mezclar potencia/edad confusa. Un frasco = una variedad/lote." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -8430,6 +8478,47 @@ function CULTIVO_CAAPI() {
         🌡️ <strong>Por debajo de 10°C:</strong> la planta entra en dormancia. Por debajo de 5°C: muere.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>RIEGO DETALLADO — TABLA NOVATO (MACETA 30L)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO CAAPI POR ETAPA</div>
+        {[
+          { etapa: "Mes 1-3 (esqueje recién plantado)", agua: "200-400ml", freq: "cada 4-5 días", nota: "Sustrato húmedo pero NO empapado. Verifica con dedo: si superficie ligeramente seca, riega. Caapi joven es sensible a encharcamiento." },
+          { etapa: "Mes 4-6 (establecimiento)", agua: "400-600ml", freq: "cada 3-4 días", nota: "Crecimiento iniciado. Riego más frecuente porque consume más agua. Mantener sustrato húmedo constante." },
+          { etapa: "Mes 6-12 (crecimiento explosivo)", agua: "600-1L", freq: "cada 2-3 días", nota: "Caapi en pleno desarrollo trepando. Bebe MUCHA agua. Verifica diariamente con dedo." },
+          { etapa: "Año 1-2 (vid madurando)", agua: "1-1.5L", freq: "cada 2-3 días verano · 4-5 días invierno", nota: "Tallo de 5-15m. Riego abundante en temporada activa. Reducir 50% en invierno." },
+          { etapa: "Año 2+ (planta adulta)", agua: "1.5-2L", freq: "cada 2-3 días verano · 7-10 días invierno", nota: "Hibernación parcial en invierno (10-15°C) — riego mínimo." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 4 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>pH DEL AGUA</SectionTitleX>
+      <InfoBoxX c={c}>
+        🧪 <strong>pH objetivo: 5.5-6.5</strong> (ligeramente ácido, igual que cactus). Caapi viene de selva amazónica con suelos ácidos por hojarasca descomponiendo. Agua del grifo (pH 7-8) demasiado alcalina — bajar con pH Down gota a gota o añadir limón (no exacto pero ayuda).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES — QUÉ MIRAR</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 SEÑALES EN CAAPI</div>
+        {[
+          { signo: "✅ Hojas verde brillante grandes y firmes, brotes nuevos", lectura: "PERFECTO. Caapi feliz, sigue así." },
+          { signo: "🟡 Hojas amarillas que caen", lectura: "Posible exceso/falta agua. Verifica humedad sustrato. Si seco → regar. Si empapado → secar 5-7 días." },
+          { signo: "🟡 Crecimiento parado en verano", lectura: "Maceta pequeña — raíces atrapadas. Trasplantar a una mayor (50-100L)." },
+          { signo: "🟡 Hojas pálidas, crecimiento débil", lectura: "Falta nutrientes (Caapi crece mucho — necesita NPK regular). Fertilizar." },
+          { signo: "❌ Tallo blando o pudrido en base", lectura: "ENCHARCAMIENTO. Para riego, mejorar drenaje (más perlita), trasplante si grave." },
+          { signo: "🔴 Manchas blancas peludas en hojas", lectura: "Cochinilla algodonosa. Eliminar manualmente con bastoncillo + alcohol. Tratar planta con jabón potásico." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: c.textBright, marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Espera mínimo 2 años desde plantar antes de la primera cosecha significativa." />
       <StepX c={c} num={2} text="Cortar trozos de 1-2cm de grosor del tallo basal/medio (no de las puntas en crecimiento). La planta sigue creciendo desde otros nodos." />
@@ -8489,6 +8578,35 @@ function CULTIVO_CHACRUNA() {
       <StepX c={c} num={2} text="Año 1-2: crecimiento estable si condiciones son buenas. Altura 30-50cm." />
       <StepX c={c} num={3} text="Año 2-3: arbusto pleno, 50cm-1m. Empieza a producir hojas suficientes para cosechar pequeñas cantidades." />
       <StepX c={c} num={4} text="Año 3-5: producción regular. Hojas grandes y oscuras = calidad alta." />
+
+      <SectionTitleX c={c}>RIEGO DETALLADO — CHACRUNA EXIGENTE</SectionTitleX>
+      <WarningBoxX c={c}>
+        🌧️ Chacruna NUNCA debe secarse del todo. Sustrato CONSTANTEMENTE húmedo (pero NO encharcado). Es la planta más exigente de toda esta guía. Sin humedad alta = pierde hojas en semanas.
+      </WarningBoxX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO CHACRUNA (MACETA 30-40L)</div>
+        {[
+          { etapa: "Mes 1-6 (delicada)", agua: "200-300ml", freq: "cada 2-3 días", nota: "Sustrato siempre ligeramente húmedo. NO dejar secar." },
+          { etapa: "Año 1+", agua: "400-600ml", freq: "cada 2-3 días", nota: "Pulverizar hojas 1-2x/día con agua templada (humedad ambiente)." },
+          { etapa: "Verano caluroso", agua: "600-800ml", freq: "cada 2 días", nota: "Mucho calor + AC seco = crítico. Bandeja con guijarros + agua bajo maceta." },
+          { etapa: "Invierno (10-15°C)", agua: "200-300ml", freq: "cada 5-7 días", nota: "Reducir riego pero NO dejar secar nunca." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ Hojas verde oscuro grandes y brillantes = perfecto<br/>
+        🟡 Hojas amarillas que caen = humedad ambiente baja o sustrato seco. Pulverizar + cubrir con plástico.<br/>
+        🔴 Bordes de hojas marrones secos = aire DEMASIADO seco. Humidificador URGENTE.<br/>
+        🔴 Hojas blandas/colgantes tras riego = encharcamiento o trasplante reciente. Drenaje insuficiente.<br/>
+        🟡 Crecimiento parado meses = espacio raíces o luz insuficiente.
+      </InfoBoxX>
 
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Cosechar hojas grandes y maduras (mínimo 8cm). Dejar las jóvenes." />
@@ -9061,6 +9179,33 @@ function CULTIVO_MIMOSA() {
         🌞 <strong>Mediterráneo (Andalucía, Murcia, Valencia, Baleares):</strong> exterior posible todo el año. Riego moderado, sol pleno. Se puede plantar en jardín directamente.<br/>
         🍃 <strong>Centro/Norte:</strong> exterior solo mayo-octubre. Maceta grande para meter dentro en invierno (no soporta heladas — muere por debajo de -2°C).<br/>
         ❄️ <strong>Galicia/Cantábrico:</strong> mejor invernadero o interior con ventana sur. Climas húmedos demasiado para mimosa que prefiere seco-cálido.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>RIEGO DETALLADO — TABLA NOVATO (MACETA 40-50L)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO MIMOSA POR ETAPA</div>
+        {[
+          { etapa: "Plántula (mes 1-3)", agua: "100-200ml", freq: "cada 3-4 días", nota: "Sustrato húmedo pero no empapado. Mimosa joven sensible — encharcamiento mata raíces." },
+          { etapa: "Joven (mes 4-12)", agua: "300-500ml", freq: "cada 3-4 días verano · 7 días invierno", nota: "Tolera mejor sequía que humedad. Esperar 2cm seco superficie antes de regar." },
+          { etapa: "Año 1-3 (árbol creciendo)", agua: "1-2L", freq: "cada 3-4 días verano · 10-14 días invierno", nota: "Mimosa establecida. Riego abundante en verano + sol pleno = crecimiento explosivo." },
+          { etapa: "Adulto (3+ años)", agua: "2-4L", freq: "cada 3-5 días verano · 14-21 días invierno", nota: "Árbol grande con raíces profundas. Si en jardín: riego deep, menos frecuente." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES MIMOSA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ Hojas plumosas verde brillante, copa densa = perfecto<br/>
+        🟡 Hojas se cierran de noche (movimiento natural) = NORMAL (Mimosa = "mimosa pudica" a veces, hojas sensibles)<br/>
+        🟡 Hojas amarillas y caen = falta agua, exceso o frío. Verifica los 3.<br/>
+        🔴 Tronco blando o pudriéndose = MAL drenaje, encharcamiento. Trasplante con sustrato más drenante (más perlita).<br/>
+        🔴 Hojas con manchas marrones bordes secos = aire muy seco/calor extremo. Pulverizar.<br/>
+        ❄️ Por debajo de 5°C: hojas se ennegrecen rápidamente = entrar dentro YA o cubrir.
       </InfoBoxX>
 
       <SectionTitleX c={c}>COSECHA DE CORTEZA DE RAÍZ (MHRB)</SectionTitleX>

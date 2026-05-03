@@ -273,6 +273,14 @@ function FAQ_SETAS() {
     { q: "¿Microdosis es seguro?", a: "0.1-0.3g de seta seca cada 3-4 días = protocolo Stamets/Fadiman. Reportes anecdóticos: mejora ánimo, creatividad, foco. Investigación científica aún limitada. Bajo riesgo si se respetan los descansos." },
     { q: "¿Se pueden combinar con otras psicodélicas?", a: "TÉCNICAMENTE sí, pero MUY arriesgado para principiantes. Tolerancia cruzada con LSD/mescalina (1-2 semanas). NUNCA mezclar con SSRI (síndrome serotonérgico). Investigar siempre antes." },
     { q: "¿Qué es Trichoderma?", a: "El hongo contaminante #1 en cultivo casero. Aparece como manchas verde brillante o blanco peludo. Crece más rápido que el micelio Psilocybe y lo mata. Solo se puede prevenir (asepsia), no se cura. Lote contaminado = tirar todo el sustrato." },
+    { q: "¿Cuánto rinde un frasco/monotub típicamente?", a: "Frasco PF Tek (medio litro): 30-100g secos. Monotub bulk tek (40L): 200-500g secos primer flush + 50-70% en flushes 2-4. Total ciclo: 400-1000g secos." },
+    { q: "¿Cuál es la mejor cepa para empezar con setas?", a: "B+, Golden Teacher, o Mazatapec. Las 3 son tolerantes a errores de novato, dan setas grandes, potencia media-alta. EVITAR primera vez: Penis Envy (potente pero exigente), Albino A+ (raro, caro)." },
+    { q: "¿Cómo saber si las setas están bien secas (cracker dry)?", a: "Test del pie: dobla un pie. Si ROMPE limpio con sonido seco = listas. Si SE DOBLA sin romper = aún húmedas, más sílica gel + tiempo. NUNCA almacenar sin cracker dry — moho garantizado en semanas." },
+    { q: "¿Se pueden tomar setas frescas?", a: "Sí pero NO recomendado. Frescas: 90% agua, sabor terroso fuerte, dosis difícil de calcular (peso fresco vs seco varía mucho). Mejor secar y dosificar exactamente. Conversión: 1g seco ≈ 10g fresco." },
+    { q: "¿Compatible con antidepresivos?", a: "NO. SSRI/IMAO/SNRI bloquean los receptores 5-HT2A donde actúa la psilocibina = experiencia muy reducida o ausente. Además riesgo síndrome serotonérgico con IMAO. Off-meds 4-6 semanas antes (consultar médico)." },
+    { q: "¿Diferencia entre PF Tek y Bulk Tek?", a: "PF Tek: frasco con sustrato pequeño (vermiculita+harina arroz). Más simple, rendimiento bajo (30-100g). Bulk Tek: spawn en grano + bulk substrate en monotub. Más complejo pero mucho mayor rendimiento (200-500g+)." },
+    { q: "¿Puedo cultivar al aire libre?", a: "Algunas especies (P. cyanescens, azurescens) sí — en zonas frías sobre madera. P. cubensis (la más común) NO — necesita 24-26°C constante, demasiado frío para outdoor en mayoría España." },
+    { q: "¿Cómo identificar contaminación temprana?", a: "Manchas de color (verde Trichoderma, negro Aspergillus, rojo bacterias) o olor extraño (vinagre, podrido, alcohol). El micelio Psilocybe es BLANCO algodonoso, olor a champiñón fresco. Cualquier desviación = sospechoso." },
   ];
 
   const filtered = faqs.filter(f =>

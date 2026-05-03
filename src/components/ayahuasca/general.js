@@ -217,6 +217,47 @@ function CULTIVO_CAAPI() {
         🌡️ <strong>Por debajo de 10°C:</strong> la planta entra en dormancia. Por debajo de 5°C: muere.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>RIEGO DETALLADO — TABLA NOVATO (MACETA 30L)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO CAAPI POR ETAPA</div>
+        {[
+          { etapa: "Mes 1-3 (esqueje recién plantado)", agua: "200-400ml", freq: "cada 4-5 días", nota: "Sustrato húmedo pero NO empapado. Verifica con dedo: si superficie ligeramente seca, riega. Caapi joven es sensible a encharcamiento." },
+          { etapa: "Mes 4-6 (establecimiento)", agua: "400-600ml", freq: "cada 3-4 días", nota: "Crecimiento iniciado. Riego más frecuente porque consume más agua. Mantener sustrato húmedo constante." },
+          { etapa: "Mes 6-12 (crecimiento explosivo)", agua: "600-1L", freq: "cada 2-3 días", nota: "Caapi en pleno desarrollo trepando. Bebe MUCHA agua. Verifica diariamente con dedo." },
+          { etapa: "Año 1-2 (vid madurando)", agua: "1-1.5L", freq: "cada 2-3 días verano · 4-5 días invierno", nota: "Tallo de 5-15m. Riego abundante en temporada activa. Reducir 50% en invierno." },
+          { etapa: "Año 2+ (planta adulta)", agua: "1.5-2L", freq: "cada 2-3 días verano · 7-10 días invierno", nota: "Hibernación parcial en invierno (10-15°C) — riego mínimo." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 4 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>pH DEL AGUA</SectionTitleX>
+      <InfoBoxX c={c}>
+        🧪 <strong>pH objetivo: 5.5-6.5</strong> (ligeramente ácido, igual que cactus). Caapi viene de selva amazónica con suelos ácidos por hojarasca descomponiendo. Agua del grifo (pH 7-8) demasiado alcalina — bajar con pH Down gota a gota o añadir limón (no exacto pero ayuda).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES — QUÉ MIRAR</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 SEÑALES EN CAAPI</div>
+        {[
+          { signo: "✅ Hojas verde brillante grandes y firmes, brotes nuevos", lectura: "PERFECTO. Caapi feliz, sigue así." },
+          { signo: "🟡 Hojas amarillas que caen", lectura: "Posible exceso/falta agua. Verifica humedad sustrato. Si seco → regar. Si empapado → secar 5-7 días." },
+          { signo: "🟡 Crecimiento parado en verano", lectura: "Maceta pequeña — raíces atrapadas. Trasplantar a una mayor (50-100L)." },
+          { signo: "🟡 Hojas pálidas, crecimiento débil", lectura: "Falta nutrientes (Caapi crece mucho — necesita NPK regular). Fertilizar." },
+          { signo: "❌ Tallo blando o pudrido en base", lectura: "ENCHARCAMIENTO. Para riego, mejorar drenaje (más perlita), trasplante si grave." },
+          { signo: "🔴 Manchas blancas peludas en hojas", lectura: "Cochinilla algodonosa. Eliminar manualmente con bastoncillo + alcohol. Tratar planta con jabón potásico." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: c.textBright, marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Espera mínimo 2 años desde plantar antes de la primera cosecha significativa." />
       <StepX c={c} num={2} text="Cortar trozos de 1-2cm de grosor del tallo basal/medio (no de las puntas en crecimiento). La planta sigue creciendo desde otros nodos." />
@@ -276,6 +317,35 @@ function CULTIVO_CHACRUNA() {
       <StepX c={c} num={2} text="Año 1-2: crecimiento estable si condiciones son buenas. Altura 30-50cm." />
       <StepX c={c} num={3} text="Año 2-3: arbusto pleno, 50cm-1m. Empieza a producir hojas suficientes para cosechar pequeñas cantidades." />
       <StepX c={c} num={4} text="Año 3-5: producción regular. Hojas grandes y oscuras = calidad alta." />
+
+      <SectionTitleX c={c}>RIEGO DETALLADO — CHACRUNA EXIGENTE</SectionTitleX>
+      <WarningBoxX c={c}>
+        🌧️ Chacruna NUNCA debe secarse del todo. Sustrato CONSTANTEMENTE húmedo (pero NO encharcado). Es la planta más exigente de toda esta guía. Sin humedad alta = pierde hojas en semanas.
+      </WarningBoxX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO CHACRUNA (MACETA 30-40L)</div>
+        {[
+          { etapa: "Mes 1-6 (delicada)", agua: "200-300ml", freq: "cada 2-3 días", nota: "Sustrato siempre ligeramente húmedo. NO dejar secar." },
+          { etapa: "Año 1+", agua: "400-600ml", freq: "cada 2-3 días", nota: "Pulverizar hojas 1-2x/día con agua templada (humedad ambiente)." },
+          { etapa: "Verano caluroso", agua: "600-800ml", freq: "cada 2 días", nota: "Mucho calor + AC seco = crítico. Bandeja con guijarros + agua bajo maceta." },
+          { etapa: "Invierno (10-15°C)", agua: "200-300ml", freq: "cada 5-7 días", nota: "Reducir riego pero NO dejar secar nunca." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ Hojas verde oscuro grandes y brillantes = perfecto<br/>
+        🟡 Hojas amarillas que caen = humedad ambiente baja o sustrato seco. Pulverizar + cubrir con plástico.<br/>
+        🔴 Bordes de hojas marrones secos = aire DEMASIADO seco. Humidificador URGENTE.<br/>
+        🔴 Hojas blandas/colgantes tras riego = encharcamiento o trasplante reciente. Drenaje insuficiente.<br/>
+        🟡 Crecimiento parado meses = espacio raíces o luz insuficiente.
+      </InfoBoxX>
 
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Cosechar hojas grandes y maduras (mínimo 8cm). Dejar las jóvenes." />

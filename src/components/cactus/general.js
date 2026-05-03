@@ -356,6 +356,13 @@ function FAQ_CACTUS() {
     { q: "¿Riesgos de salud reales?", a: "Náusea/vómito frecuente. Hipertensión leve durante el peak. Posible diarrea. Sin riesgos serios documentados en personas sanas. Contraindicaciones: cardiopatía, problemas psiquiátricos." },
     { q: "¿Cuánto crece un San Pedro al año?", a: "30-50cm en condiciones óptimas (sol pleno, mediterráneo, riego adecuado). Más lento en interior o clima frío. Año 1: lento. Años 2+: explosivo." },
     { q: "¿Puede florecer y dar semillas?", a: "Sí, a partir de 4-6 años. Flores blancas grandes que se abren de noche (aroma fuerte). Polinización manual (pincel entre flores) → frutos con miles de semillas. Permite multiplicar." },
+    { q: "¿Puedo injertar cactus en Trichocereus?", a: "Sí, técnica avanzada para acelerar crecimiento de plántulas. Plántulas injertadas crecen 5-10x más rápido. Pereskiopsis es el porta-injerto más usado. Requiere precisión quirúrgica y experiencia." },
+    { q: "¿Cuánto necesito esperar tras un riego antes de fertilizar?", a: "1-2 días. Fertilizar sobre sustrato seco quema raíces. Riega primero, espera, después aplica fertilizante diluido a media dosis." },
+    { q: "¿Por qué no crece mi San Pedro?", a: "Causas comunes: maceta pequeña (raíces atrapadas — trasplantar), sol insuficiente (mover a más sol gradualmente), invierno (es normal — espera primavera), sustrato compactado/agotado (cambiar)." },
+    { q: "¿Las espinas son indicador de salud?", a: "Sí. Espinas robustas, regulares y firmes = cactus feliz. Espinas débiles o ausentes en zonas nuevas = falta de luz o estrés. Cambio brusco de espinosidad = aclimatación." },
+    { q: "¿Diferencia clave entre San Pedro y Bolivian Torch visual?", a: "San Pedro: 6-9 costillas, espinas pequeñas, color verde más claro. Bolivian Torch: 4-7 costillas, espinas más largas y amarillas, color verde-azulado. Sin experiencia: difícil. Comprar siempre de vendedor que garantice especie." },
+    { q: "¿Puedo cultivar en interior con luz LED?", a: "Sí pero crecen 50-70% más lento. Necesitas LED full-spectrum 100W+ para uno mediano. Mejor: junto a ventana sur con sol directo + LED suplementario invierno. Puro interior LED: posible pero ineficiente." },
+    { q: "¿Cuánto cuesta el agua/luz/fertilizante anual?", a: "Casi nada. Cactus = bajísimo mantenimiento. Fertilizante: ~5€/año. Agua: <5€/año. Luz: 0€ (interior junto ventana). Es la planta MÁS BARATA de mantener de toda esta guía." },
   ];
 
   const filtered = faqs.filter(f =>

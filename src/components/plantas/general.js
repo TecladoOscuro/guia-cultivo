@@ -1000,6 +1000,12 @@ function FAQ_PLANTAS() {
     { q: "¿Cuál sirve para ansiedad social?", a: "Damiana (ligera euforia + relajación, sabor agradable) o Kava (más fuerte, sin embriagar). Kanna también ayuda pero ojo con interacciones SSRI." },
     { q: "¿Cuál es estimulante natural?", a: "Mucuna pruriens (motivación + energía mental sin agitación cafeínica). Sinicuichi también pero efecto más auditivo, no estimulante." },
     { q: "¿Combinar con cafeína?", a: "Mucuna + cafeína: bien (ambos dopaminérgicos suaves). Kava + cafeína: contradicción, pierde efecto. Kanna + cafeína: posible — pero cuidado si tomas SSRI." },
+    { q: "¿Cuál tiene efecto más rápido?", a: "Salvia fumada: 30 segundos. Kanna sublingual: 5-15 min. Wild lettuce/Damiana/Calea: 30-60 min infusión. Blue Lotus: 30-60 min. Kava: 15-30 min." },
+    { q: "¿Cómo guardo plantas frescas tras cosecha?", a: "Hojas: secar al aire en sombra 5-10 días hasta crujientes, frasco hermético oscuro. Flores Blue Lotus: enteras, frasco oscuro. Raíz Kava: trozos secos al aire 2-4 sem. Tubérculo Wild Lettuce látex: extracto secado oscuro. Plantas vivas: en clima óptimo viven indefinidamente." },
+    { q: "¿Cuál ayuda a meditar?", a: "Sinicuichi (auditivo, sonidos suaves), Blue Lotus (sedante onírico), Damiana (relajación + claridad). NO usar Salvia (demasiado intensa para meditación tradicional)." },
+    { q: "¿Cuál es la más legal sin gris alguno?", a: "Damiana, Blue Lotus, Wild Lettuce, Calea, Lúpulo, Mucuna — TODAS 100% legales sin ambigüedad. Sinicuichi: legal cultivar, gris jurídico mínimo el consumo. Kava/Kanna: 100% legal. Salvia: legal España pero ilegal varios países UE — verificar si viajas." },
+    { q: "¿Tincturas vs infusión: cuál es mejor?", a: "Infusión: más rápida (5-10 min), efectos más suaves, dura horas. Tintura alcohólica: maceración 4-6 sem, dura años, más concentrada, dosis 1-3ml sublingual = absorción rápida. Para uso ocasional: infusión. Para uso regular: tintura más práctica." },
+    { q: "¿Puedo regalar plantas/extractos?", a: "Sí, todas son legales. Compartir café/té de plantas medicinales = OK. Vender = requiere registro como producto herbal (Sanidad Pública). Mejor: regalar a amigos sin transacción comercial." },
   ];
 
   const filtered = faqs.filter(f =>

@@ -232,6 +232,33 @@ function CULTIVO_MIMOSA() {
         ❄️ <strong>Galicia/Cantábrico:</strong> mejor invernadero o interior con ventana sur. Climas húmedos demasiado para mimosa que prefiere seco-cálido.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>RIEGO DETALLADO — TABLA NOVATO (MACETA 40-50L)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO MIMOSA POR ETAPA</div>
+        {[
+          { etapa: "Plántula (mes 1-3)", agua: "100-200ml", freq: "cada 3-4 días", nota: "Sustrato húmedo pero no empapado. Mimosa joven sensible — encharcamiento mata raíces." },
+          { etapa: "Joven (mes 4-12)", agua: "300-500ml", freq: "cada 3-4 días verano · 7 días invierno", nota: "Tolera mejor sequía que humedad. Esperar 2cm seco superficie antes de regar." },
+          { etapa: "Año 1-3 (árbol creciendo)", agua: "1-2L", freq: "cada 3-4 días verano · 10-14 días invierno", nota: "Mimosa establecida. Riego abundante en verano + sol pleno = crecimiento explosivo." },
+          { etapa: "Adulto (3+ años)", agua: "2-4L", freq: "cada 3-5 días verano · 14-21 días invierno", nota: "Árbol grande con raíces profundas. Si en jardín: riego deep, menos frecuente." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.etapa}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES MIMOSA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ Hojas plumosas verde brillante, copa densa = perfecto<br/>
+        🟡 Hojas se cierran de noche (movimiento natural) = NORMAL (Mimosa = "mimosa pudica" a veces, hojas sensibles)<br/>
+        🟡 Hojas amarillas y caen = falta agua, exceso o frío. Verifica los 3.<br/>
+        🔴 Tronco blando o pudriéndose = MAL drenaje, encharcamiento. Trasplante con sustrato más drenante (más perlita).<br/>
+        🔴 Hojas con manchas marrones bordes secos = aire muy seco/calor extremo. Pulverizar.<br/>
+        ❄️ Por debajo de 5°C: hojas se ennegrecen rápidamente = entrar dentro YA o cubrir.
+      </InfoBoxX>
+
       <SectionTitleX c={c}>COSECHA DE CORTEZA DE RAÍZ (MHRB)</SectionTitleX>
       <StepX c={c} num={1} text="Esperar mínimo 3 años para tener raíces significativas. Antes = cosecha muy pequeña." />
       <StepX c={c} num={2} text="Hay 2 métodos: (a) sacrificar el árbol (sacar entero, recolectar todas las raíces), (b) cosecha sostenible (excavar parcialmente, cortar algunas raíces, tapar). Sostenible mejor." />
