@@ -70,3 +70,61 @@ const mushroomGeneral = [
   { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
 ];
+
+// Cactus mescalina (San Pedro / Bolivian Torch / Peyote)
+const cactusPhases = [
+  { id: "intro_cactus", emoji: "🌵", title: "Intro", subtitle: "Qué cactus" },
+  { id: "compra_cactus", emoji: "🛒", title: "Compra", subtitle: "Esquejes/semillas" },
+  { id: "germinacion_cactus", emoji: "🥚", title: "Germinación", subtitle: "Si semillas" },
+  { id: "cuidados_cactus", emoji: "💧", title: "Cuidados", subtitle: "Riego/sol/sustrato" },
+  { id: "crecimiento_cactus", emoji: "📈", title: "Crecimiento", subtitle: "Años de espera" },
+  { id: "cosecha_cactus", emoji: "✂️", title: "Cosecha", subtitle: "Cuándo y cuánto" },
+  { id: "preparacion_cactus", emoji: "🪵", title: "Preparación", subtitle: "Limpiar y secar" },
+  { id: "faq_cactus", emoji: "❓", title: "FAQ", subtitle: "Glosario+dudas" },
+];
+
+// Fermentaciones — modos
+const fermentHidromielPhases = [
+  { id: "compra_hidromiel", emoji: "🛒", title: "Compra", subtitle: "Materia prima" },
+  { id: "prep_hidromiel", emoji: "🍯", title: "Mosto", subtitle: "Disolver miel" },
+  { id: "fermentacion_hidromiel", emoji: "🫧", title: "Fermentación", subtitle: "4-6 semanas" },
+  { id: "embotellado_hidromiel", emoji: "🍾", title: "Embotellado", subtitle: "Trasiego" },
+  { id: "cata_hidromiel", emoji: "🥂", title: "Cata", subtitle: "Maduración" },
+];
+
+const fermentCervezaPhases = [
+  { id: "compra_cerveza", emoji: "🛒", title: "Compra", subtitle: "Kit o desde 0" },
+  { id: "macerado_cerveza", emoji: "🌾", title: "Macerado", subtitle: "Activar enzimas" },
+  { id: "hervor_cerveza", emoji: "🔥", title: "Hervor + Lúpulo", subtitle: "Sabor + amargor" },
+  { id: "fermentacion_cerveza", emoji: "🫧", title: "Fermentación", subtitle: "1-2 semanas" },
+  { id: "embotellado_cerveza", emoji: "🍾", title: "Embotellado", subtitle: "Carbonatación" },
+  { id: "cata_cerveza", emoji: "🍺", title: "Cata", subtitle: "Maduración" },
+];
+
+const fermentGeneralPhases = [
+  { id: "intro_ferment", emoji: "🌟", title: "Intro", subtitle: "Qué fermentar" },
+  { id: "higiene_ferment", emoji: "🧼", title: "Higiene", subtitle: "Sanitización" },
+  { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
+];
+
+// Plantas psicoactivas suaves — un solo modo, cada planta = phase
+const plantasPhases = [
+  { id: "intro_plantas", emoji: "🌟", title: "Intro", subtitle: "Plantas suaves" },
+  { id: "salvia", emoji: "🍃", title: "Salvia divinorum", subtitle: "Disociativo intenso" },
+  { id: "damiana", emoji: "🌿", title: "Damiana", subtitle: "Eufórico ligero" },
+  { id: "blue_lotus", emoji: "🪷", title: "Blue Lotus", subtitle: "Sedante onírico" },
+  { id: "wild_lettuce", emoji: "🥬", title: "Lechuga silvestre", subtitle: "Analgésico" },
+  { id: "calea", emoji: "💭", title: "Calea zacatechichi", subtitle: "Sueños lúcidos" },
+  { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
+];
+
+// Amanita muscaria — forrajeo + preparación (no se cultiva)
+const amanitaPhases = [
+  { id: "intro_amanita", emoji: "🌟", title: "Intro", subtitle: "Qué es Amanita" },
+  { id: "identificacion_amanita", emoji: "🔍", title: "Identificación", subtitle: "Vs venenosas" },
+  { id: "recoleccion_amanita", emoji: "🍂", title: "Recolección", subtitle: "Otoño bosque" },
+  { id: "secado_amanita", emoji: "🌬️", title: "Secado", subtitle: "Decarbox crítica" },
+  { id: "preparacion_amanita", emoji: "🍵", title: "Preparación", subtitle: "Té, dosis" },
+  { id: "harm_reduction_amanita", emoji: "⚠️", title: "Seguridad", subtitle: "Dosis y riesgos" },
+  { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+];

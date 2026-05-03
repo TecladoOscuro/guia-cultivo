@@ -167,3 +167,87 @@ const ErrorCardM = ({ error, consecuencia, fix }) => (
     }}>✓ {fix}</div>
   </div>
 );
+
+// Generic helper components — accept colors prop (c). Used by new guides
+// (cactus, ferment, plantas, amanita) so we don't duplicate per-palette helpers.
+
+const StepX = ({ num, text, why, warning, c }) => (
+  <div style={{
+    background: c.bg2,
+    border: `1px solid ${warning ? c.errorBorder : c.border1}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+      <div style={{
+        width: "26px", height: "26px", borderRadius: "50%",
+        background: warning ? c.errorBorder : c.border1,
+        color: warning ? c.error : c.accent1,
+        fontSize: "12px", fontWeight: "bold",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        flexShrink: 0, marginTop: "1px",
+      }}>{warning ? "!" : num}</div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: "14px", color: c.textBright, lineHeight: "1.5", marginBottom: why ? "8px" : "0" }}>
+          {text}
+        </div>
+        {why && (
+          <div style={{
+            background: c.bg3, borderLeft: `3px solid ${c.accent1}`,
+            padding: "8px 10px", borderRadius: "0 6px 6px 0",
+            fontSize: "12px", color: c.accent2, lineHeight: "1.5",
+          }}>
+            <span style={{ color: c.accent1, fontWeight: "bold" }}>¿Por qué? </span>{why}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+const InfoBoxX = ({ children, c }) => (
+  <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+    <p style={{ margin: 0, fontSize: "13px", color: c.accent3, lineHeight: "1.7" }}>{children}</p>
+  </div>
+);
+
+const SectionTitleX = ({ children, c }) => (
+  <div style={{
+    fontSize: "10px", letterSpacing: "3px", color: c.accent1,
+    margin: "24px 0 12px", paddingBottom: "6px",
+    borderBottom: `1px solid ${c.accent1}33`,
+  }}>{children}</div>
+);
+
+const StatBoxX = ({ label, value, c }) => (
+  <div style={{
+    background: c.bg2, border: `1px solid ${c.border1}`,
+    borderRadius: "8px", padding: "12px",
+  }}>
+    <div style={{ fontSize: "10px", color: c.accent1, letterSpacing: "1px", marginBottom: "4px" }}>{label.toUpperCase()}</div>
+    <div style={{ fontSize: "13px", color: c.textBright, fontWeight: "bold" }}>{value}</div>
+  </div>
+);
+
+const ErrorCardX = ({ error, consecuencia, fix, c }) => (
+  <div style={{
+    background: c.errorBg, border: `1px solid ${c.errorBorder}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ fontSize: "13px", fontWeight: "bold", color: c.error, marginBottom: "6px" }}>✗ {error}</div>
+    <div style={{ fontSize: "12px", color: c.accent3, marginBottom: "8px", lineHeight: "1.4", opacity: 0.85 }}>{consecuencia}</div>
+    <div style={{
+      background: c.bg3, border: `1px solid ${c.accent1}`,
+      borderRadius: "6px", padding: "8px 10px",
+      fontSize: "12px", color: c.accent2, lineHeight: "1.4",
+    }}>✓ {fix}</div>
+  </div>
+);
+
+const WarningBoxX = ({ children, c }) => (
+  <div style={{
+    background: c.errorBg, border: `1.5px solid ${c.error}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "16px",
+  }}>
+    <div style={{ fontSize: "13px", color: c.textBright, lineHeight: "1.6" }}>{children}</div>
+  </div>
+);

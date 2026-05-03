@@ -17,6 +17,12 @@ const sourceFiles = [
   'src/components/mushroom/friendly.js',
   'src/components/mushroom/advanced.js',
   'src/components/mushroom/general.js',
+  'src/components/cactus/general.js',
+  'src/components/fermentation/general.js',
+  'src/components/fermentation/hidromiel.js',
+  'src/components/fermentation/cerveza.js',
+  'src/components/plantas/general.js',
+  'src/components/amanita/general.js',
   'src/app/gui-cultivo.js',
 ];
 

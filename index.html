@@ -119,7 +119,8 @@
   <script type="text/babel">
     const { useState } = React;
 
-// Paletas de color para ambas guías
+// Paletas de color para todas las guías
+
 const CANNABIS_COLORS = {
   bg: "#0a1a0f", bg2: "#0d1f14", bg3: "#1a2a10", bg4: "#0d2a14",
   border1: "#1b4332", border2: "#2d6a4f", borderAccent: "#40916c",
@@ -136,6 +137,46 @@ const MUSHROOM_COLORS = {
   text: "#f5e6d0", textBright: "#fdf5ea",
   gradient: "linear-gradient(135deg, #3d2810 0%, #6b4520 50%, #3d2810 100%)",
   error: "#d4755b", errorBg: "#1a0c08", errorBorder: "#5a3a20",
+};
+
+// Cactus mescalina — verde-azulado desértico
+const CACTUS_COLORS = {
+  bg: "#0a1418", bg2: "#0d1c22", bg3: "#13262f", bg4: "#1a3340",
+  border1: "#1f4050", border2: "#2d5a70", borderAccent: "#3d7590",
+  accent1: "#5b95ad", accent2: "#7eb0c3", accent3: "#a3c8d6", accent4: "#c5dde5", accent5: "#e0eef3",
+  text: "#e8f1f5", textBright: "#f5fafc",
+  gradient: "linear-gradient(135deg, #1f4050 0%, #2d5a70 50%, #1f4050 100%)",
+  error: "#e88a6a", errorBg: "#1a0c08", errorBorder: "#5a3020",
+};
+
+// Fermentaciones — dorado/ámbar miel-cerveza
+const FERMENT_COLORS = {
+  bg: "#1a0f05", bg2: "#241608", bg3: "#2e1d0c", bg4: "#3a2611",
+  border1: "#4a2e15", border2: "#6b4520", borderAccent: "#8a5e30",
+  accent1: "#c08040", accent2: "#d49a55", accent3: "#dfb578", accent4: "#ecd1a1", accent5: "#f5e6c4",
+  text: "#f5e6c4", textBright: "#fff5dc",
+  gradient: "linear-gradient(135deg, #4a2e15 0%, #8a5e30 50%, #4a2e15 100%)",
+  error: "#e8755a", errorBg: "#1a0a05", errorBorder: "#5a2a15",
+};
+
+// Plantas psicoactivas suaves — púrpura-malva botánico
+const PLANTAS_COLORS = {
+  bg: "#100818", bg2: "#1a0f24", bg3: "#231533", bg4: "#2e1b42",
+  border1: "#3d2654", border2: "#553a78", borderAccent: "#74549b",
+  accent1: "#9070b8", accent2: "#a888c8", accent3: "#bda3d4", accent4: "#d3bee0", accent5: "#e8d8ee",
+  text: "#ebdef5", textBright: "#f5ebfc",
+  gradient: "linear-gradient(135deg, #3d2654 0%, #553a78 50%, #3d2654 100%)",
+  error: "#e88aa8", errorBg: "#1a0a14", errorBorder: "#5a2a3a",
+};
+
+// Amanita muscaria — rojo intenso con blanco
+const AMANITA_COLORS = {
+  bg: "#180a08", bg2: "#241010", bg3: "#33181a", bg4: "#421f25",
+  border1: "#552830", border2: "#783545", borderAccent: "#9b4555",
+  accent1: "#c25b6e", accent2: "#d27585", accent3: "#dc8e9c", accent4: "#e7adb7", accent5: "#f1ccd2",
+  text: "#f5e0e3", textBright: "#fceaef",
+  gradient: "linear-gradient(135deg, #552830 0%, #9b4555 50%, #552830 100%)",
+  error: "#ff6b6b", errorBg: "#1a0808", errorBorder: "#5a1a1a",
 };
 
 
@@ -210,6 +251,64 @@ const mushroomGeneral = [
   { id: "timeline_setas", emoji: "📅", title: "Timeline", subtitle: "Cronograma" },
   { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
+];
+
+// Cactus mescalina (San Pedro / Bolivian Torch / Peyote)
+const cactusPhases = [
+  { id: "intro_cactus", emoji: "🌵", title: "Intro", subtitle: "Qué cactus" },
+  { id: "compra_cactus", emoji: "🛒", title: "Compra", subtitle: "Esquejes/semillas" },
+  { id: "germinacion_cactus", emoji: "🥚", title: "Germinación", subtitle: "Si semillas" },
+  { id: "cuidados_cactus", emoji: "💧", title: "Cuidados", subtitle: "Riego/sol/sustrato" },
+  { id: "crecimiento_cactus", emoji: "📈", title: "Crecimiento", subtitle: "Años de espera" },
+  { id: "cosecha_cactus", emoji: "✂️", title: "Cosecha", subtitle: "Cuándo y cuánto" },
+  { id: "preparacion_cactus", emoji: "🪵", title: "Preparación", subtitle: "Limpiar y secar" },
+  { id: "faq_cactus", emoji: "❓", title: "FAQ", subtitle: "Glosario+dudas" },
+];
+
+// Fermentaciones — modos
+const fermentHidromielPhases = [
+  { id: "compra_hidromiel", emoji: "🛒", title: "Compra", subtitle: "Materia prima" },
+  { id: "prep_hidromiel", emoji: "🍯", title: "Mosto", subtitle: "Disolver miel" },
+  { id: "fermentacion_hidromiel", emoji: "🫧", title: "Fermentación", subtitle: "4-6 semanas" },
+  { id: "embotellado_hidromiel", emoji: "🍾", title: "Embotellado", subtitle: "Trasiego" },
+  { id: "cata_hidromiel", emoji: "🥂", title: "Cata", subtitle: "Maduración" },
+];
+
+const fermentCervezaPhases = [
+  { id: "compra_cerveza", emoji: "🛒", title: "Compra", subtitle: "Kit o desde 0" },
+  { id: "macerado_cerveza", emoji: "🌾", title: "Macerado", subtitle: "Activar enzimas" },
+  { id: "hervor_cerveza", emoji: "🔥", title: "Hervor + Lúpulo", subtitle: "Sabor + amargor" },
+  { id: "fermentacion_cerveza", emoji: "🫧", title: "Fermentación", subtitle: "1-2 semanas" },
+  { id: "embotellado_cerveza", emoji: "🍾", title: "Embotellado", subtitle: "Carbonatación" },
+  { id: "cata_cerveza", emoji: "🍺", title: "Cata", subtitle: "Maduración" },
+];
+
+const fermentGeneralPhases = [
+  { id: "intro_ferment", emoji: "🌟", title: "Intro", subtitle: "Qué fermentar" },
+  { id: "higiene_ferment", emoji: "🧼", title: "Higiene", subtitle: "Sanitización" },
+  { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
+];
+
+// Plantas psicoactivas suaves — un solo modo, cada planta = phase
+const plantasPhases = [
+  { id: "intro_plantas", emoji: "🌟", title: "Intro", subtitle: "Plantas suaves" },
+  { id: "salvia", emoji: "🍃", title: "Salvia divinorum", subtitle: "Disociativo intenso" },
+  { id: "damiana", emoji: "🌿", title: "Damiana", subtitle: "Eufórico ligero" },
+  { id: "blue_lotus", emoji: "🪷", title: "Blue Lotus", subtitle: "Sedante onírico" },
+  { id: "wild_lettuce", emoji: "🥬", title: "Lechuga silvestre", subtitle: "Analgésico" },
+  { id: "calea", emoji: "💭", title: "Calea zacatechichi", subtitle: "Sueños lúcidos" },
+  { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
+];
+
+// Amanita muscaria — forrajeo + preparación (no se cultiva)
+const amanitaPhases = [
+  { id: "intro_amanita", emoji: "🌟", title: "Intro", subtitle: "Qué es Amanita" },
+  { id: "identificacion_amanita", emoji: "🔍", title: "Identificación", subtitle: "Vs venenosas" },
+  { id: "recoleccion_amanita", emoji: "🍂", title: "Recolección", subtitle: "Otoño bosque" },
+  { id: "secado_amanita", emoji: "🌬️", title: "Secado", subtitle: "Decarbox crítica" },
+  { id: "preparacion_amanita", emoji: "🍵", title: "Preparación", subtitle: "Té, dosis" },
+  { id: "harm_reduction_amanita", emoji: "⚠️", title: "Seguridad", subtitle: "Dosis y riesgos" },
+  { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
 ];
 
 
@@ -380,6 +479,90 @@ const ErrorCardM = ({ error, consecuencia, fix }) => (
       borderRadius: "6px", padding: "8px 10px",
       fontSize: "12px", color: MUSHROOM_COLORS.accent2, lineHeight: "1.4",
     }}>✓ {fix}</div>
+  </div>
+);
+
+// Generic helper components — accept colors prop (c). Used by new guides
+// (cactus, ferment, plantas, amanita) so we don't duplicate per-palette helpers.
+
+const StepX = ({ num, text, why, warning, c }) => (
+  <div style={{
+    background: c.bg2,
+    border: `1px solid ${warning ? c.errorBorder : c.border1}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+      <div style={{
+        width: "26px", height: "26px", borderRadius: "50%",
+        background: warning ? c.errorBorder : c.border1,
+        color: warning ? c.error : c.accent1,
+        fontSize: "12px", fontWeight: "bold",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        flexShrink: 0, marginTop: "1px",
+      }}>{warning ? "!" : num}</div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: "14px", color: c.textBright, lineHeight: "1.5", marginBottom: why ? "8px" : "0" }}>
+          {text}
+        </div>
+        {why && (
+          <div style={{
+            background: c.bg3, borderLeft: `3px solid ${c.accent1}`,
+            padding: "8px 10px", borderRadius: "0 6px 6px 0",
+            fontSize: "12px", color: c.accent2, lineHeight: "1.5",
+          }}>
+            <span style={{ color: c.accent1, fontWeight: "bold" }}>¿Por qué? </span>{why}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+const InfoBoxX = ({ children, c }) => (
+  <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+    <p style={{ margin: 0, fontSize: "13px", color: c.accent3, lineHeight: "1.7" }}>{children}</p>
+  </div>
+);
+
+const SectionTitleX = ({ children, c }) => (
+  <div style={{
+    fontSize: "10px", letterSpacing: "3px", color: c.accent1,
+    margin: "24px 0 12px", paddingBottom: "6px",
+    borderBottom: `1px solid ${c.accent1}33`,
+  }}>{children}</div>
+);
+
+const StatBoxX = ({ label, value, c }) => (
+  <div style={{
+    background: c.bg2, border: `1px solid ${c.border1}`,
+    borderRadius: "8px", padding: "12px",
+  }}>
+    <div style={{ fontSize: "10px", color: c.accent1, letterSpacing: "1px", marginBottom: "4px" }}>{label.toUpperCase()}</div>
+    <div style={{ fontSize: "13px", color: c.textBright, fontWeight: "bold" }}>{value}</div>
+  </div>
+);
+
+const ErrorCardX = ({ error, consecuencia, fix, c }) => (
+  <div style={{
+    background: c.errorBg, border: `1px solid ${c.errorBorder}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ fontSize: "13px", fontWeight: "bold", color: c.error, marginBottom: "6px" }}>✗ {error}</div>
+    <div style={{ fontSize: "12px", color: c.accent3, marginBottom: "8px", lineHeight: "1.4", opacity: 0.85 }}>{consecuencia}</div>
+    <div style={{
+      background: c.bg3, border: `1px solid ${c.accent1}`,
+      borderRadius: "6px", padding: "8px 10px",
+      fontSize: "12px", color: c.accent2, lineHeight: "1.4",
+    }}>✓ {fix}</div>
+  </div>
+);
+
+const WarningBoxX = ({ children, c }) => (
+  <div style={{
+    background: c.errorBg, border: `1.5px solid ${c.error}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "16px",
+  }}>
+    <div style={{ fontSize: "13px", color: c.textBright, lineHeight: "1.6" }}>{children}</div>
   </div>
 );
 
@@ -4307,18 +4490,1576 @@ function FAQ_SETAS() {
 }
 
 
+// CACTUS MESCALINA — San Pedro / Bolivian Torch / Peyote
+// Cultivo casero. Cactus ornamentales legales en España; consumo = zona gris.
+
+function INTRO_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Cactus columnares con mescalina (alcaloide visionario tipo ayahuasca/peyote). Cultivar como ornamental es 100% legal en España; consumo entra en zona gris. Esta guía cubre cultivo + preparación. NO da recetas de extracción química.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>VARIEDADES PRINCIPALES</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px" }}>
+        {[
+          { nombre: "🌵 San Pedro (Echinopsis pachanoi)", crece: "Rapidísimo: 30-50cm/año", potencia: "Media-baja (0.05-0.12% mescalina)", recomendado: "✅ MEJOR PARA EMPEZAR. Crece rápido, fuerte, perdona errores, fácil de comprar como esqueje. En 2-3 años tienes columna útil." },
+          { nombre: "🌵 Bolivian Torch (Echinopsis lageniformis)", crece: "Rápido: 20-40cm/año", potencia: "Alta (hasta 0.25% mescalina)", recomendado: "✅ Buena alternativa. Más potente que San Pedro pero crece algo más lento. Más resistente al frío." },
+          { nombre: "🌵 Peruvian Torch (Echinopsis peruviana)", crece: "Medio: 15-30cm/año", potencia: "Alta (0.15-0.30% mescalina)", recomendado: "Buena potencia pero crece más lento y es más caro. Para cultivadores que ya tienen experiencia." },
+          { nombre: "🌵 Peyote (Lophophora williamsii)", crece: "EXTREMADAMENTE lento: 1-3cm/año", potencia: "Alta (3-6% mescalina seca)", recomendado: "❌ NO PARA EMPEZAR. Tarda 10-30 años desde semilla. En España el cactus es legal cultivar pero dificilísimo encontrar plantas, y eticamente cuestionable (especie protegida CITES, sagrada para huicholes)." },
+        ].map((v, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ fontSize: "14px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>{v.nombre}</div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>📈 {v.crece}</div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "6px" }}>💊 {v.potencia}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{v.recomendado}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>POR QUÉ CULTIVAR (Y POR QUÉ NO)</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ <strong>Pros:</strong> planta ornamental legal, prácticamente inmortal (vive +50 años), produce continuamente sin tener que replantar, no requiere ciclo como cannabis. Una vez establecida = recurso para décadas.<br/><br/>
+        ❌ <strong>Contras:</strong> ESPERA. Para tener cosecha decente necesitas 2-4 años desde esqueje, 5-8 años desde semilla. No es una experiencia "este año cosecho". Es plantar para futuro.
+      </InfoBoxX>
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Harm reduction obligatorio.</strong> La mescalina causa experiencia visionaria de 8-12h. Dosis inadecuadas, contexto erróneo, problemas mentales preexistentes = riesgos serios. Investiga DOSIFICACIÓN RESPONSABLE, SET & SETTING, y considera tener un sitter (acompañante sobrio) la primera vez. Esta guía cubre cultivo, no protocolos de consumo.
+      </WarningBoxX>
+    </div>
+  );
+}
+
+function COMPRA_CACTUS() {
+  const c = CACTUS_COLORS;
+  const items = [
+    { item: "🌵 Esqueje San Pedro (15-30cm)", precio: "15-40€", donde: "Internet", nota: "MEJOR opción para empezar. Esqueje ya enraizado o sin enraizar (más barato). En España: viveros online de cactáceas. Empieza con 1-2 esquejes de variedades distintas.", prioridad: "ESENCIAL" },
+    { item: "🌱 Semillas Trichocereus mix (50-100 sem)", precio: "5-15€", donde: "Internet", nota: "Alternativa barata pero LENTA. Tarda 3-5 años en alcanzar tamaño de un esqueje. Recomendado solo si quieres jugar a largo plazo o aprender desde cero.", prioridad: "ÚTIL" },
+    { item: "🪴 Maceta terracota 25-30cm Ø con agujeros", precio: "8-15€", donde: "Tienda física", nota: "Terracota mejor que plástico — la tierra se seca más rápido (cactus odian humedad encharcada). Imprescindibles agujeros de drenaje generosos.", prioridad: "ESENCIAL" },
+    { item: "🪨 Sustrato cactus (10L)", precio: "8-12€", donde: "Tienda física", nota: "Mezcla específica para cactáceas: arena gruesa + perlita + algo de mantillo. NO usar tierra de jardín — retiene mucha agua y los pudre. Marcas: Compo Sana Cactus, Westland.", prioridad: "ESENCIAL" },
+    { item: "🪨 Perlita extra (5L)", precio: "5-8€", donde: "Tienda física", nota: "Para mezclar 30% más al sustrato comercial — los Trichocereus quieren MUY drenado. Mejor pasarse de drenaje que quedarse corto.", prioridad: "ESENCIAL" },
+    { item: "🧴 Fertilizante cactus líquido (250ml)", precio: "5-10€", donde: "Tienda física", nota: "Bajo en nitrógeno. Usar SOLO en primavera/verano cada 3-4 semanas a media dosis. Sobrealimentación = etiolación (crecimiento débil y desproporcionado).", prioridad: "IMPORTANTE" },
+    { item: "💧 Pulverizador agua", precio: "3-6€", donde: "Tienda física", nota: "Solo para nebulizar exterior en olas de calor. NO usar como riego principal.", prioridad: "ÚTIL" },
+    { item: "✂️ Cuchillo afilado + alcohol 70%", precio: "5-10€", donde: "Tienda física", nota: "Para cortar esquejes en cosecha. Cuchillo MUY afilado (corte limpio = cicatriza mejor). Esterilizar con alcohol antes y después.", prioridad: "ESENCIAL" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const filtered = items.filter(i => filterPrio.length === 0 || filterPrio.includes(i.prioridad));
+  const prioColor = { "ESENCIAL": "#e88a6a", "IMPORTANTE": "#dfb578", "ÚTIL": "#7eb0c3" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Coste inicial: 50-100€ (esqueje + sustrato + maceta). Después casi 0 mantenimiento durante años. La inversión real es TIEMPO (años de espera), no dinero.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      {filterPrio.length > 0 && (
+        <button onClick={() => setFilterPrio([])} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>LISTA DE COMPRA ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+          <div style={{ fontSize: "11px", color: c.accent2, margin: "6px 0 4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function GERMINACION_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Solo aplica si compraste semillas (no esquejes). Germinación de cactáceas es delicada pero predecible. Usa el "método baggie" (bolsa cerrada) para crear microclima estable.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO BAGGIE — INVIERNO/PRIMAVERA</SectionTitleX>
+      <StepX c={c} num={1} text="Esteriliza la mezcla: tierra cactus + arena + perlita (1:1:1). Mete en horno 120°C / 30min en bandeja húmeda." why="Mata hongos y semillas de hierba. Cactus pequeños son frágiles a contaminación." />
+      <StepX c={c} num={2} text="Llena un tupper transparente con tapa hasta 4cm de altura. Riega bien hasta que la mezcla esté empapada (no encharcada). Deja escurrir 30min." />
+      <StepX c={c} num={3} text="Esparce semillas en la superficie. NO enterrarlas — las cactáceas necesitan luz para germinar. Pulveriza ligeramente." />
+      <StepX c={c} num={4} text="Cierra tapa hermética. Coloca en lugar luminoso pero SIN sol directo (junto a ventana orientada norte/este). Temperatura: 22-28°C constante." why="Sol directo dentro del tupper = invernadero, achicharrarías las semillas." />
+      <StepX c={c} num={5} text="No abras durante 2-4 semanas. Verás germinaciones (puntitos verdes con espinas mínimas) entre día 7-14. Algunas tardan 3-6 semanas." />
+      <StepX c={c} num={6} text="Cuando todas las semillas que iban a germinar lo hayan hecho (mes 1-2), abre el tupper UN MILÍMETRO. Aumenta la apertura cada 2 días gradualmente." why="Pasar de 100% HR a aire seco de golpe = mueren todos. Aclimatación gradual obligatoria." />
+      <StepX c={c} num={7} text="Mes 3-6: las plántulas son del tamaño de un grano de pimienta. NO trasplantar todavía. Dejar en el mismo tupper destapado, regar con pulverizador cuando la superficie se seque." />
+      <StepX c={c} num={8} text="Mes 6-12: cuando midan 1-2cm, trasplantar a maceta individual con sustrato cactus normal." />
+
+      <SectionTitleX c={c}>ERRORES COMUNES</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Enterrar las semillas"
+        consecuencia="No germinan. Cactáceas necesitan luz directa sobre la semilla."
+        fix="Solo presionar suavemente para contacto con sustrato. NO cubrir con tierra."
+      />
+      <ErrorCardX c={c}
+        error="Abrir el tupper antes de tiempo"
+        consecuencia="Plántulas micro-deshidratadas mueren en horas. Pierdes todo."
+        fix="Espera al menos 4-6 semanas SIN abrir. La aclimatación es proceso de meses."
+      />
+      <ErrorCardX c={c}
+        error="Usar tierra normal de jardín"
+        consecuencia="Hongos + retención de agua = hongo del cuello → todas las plántulas se pudren a nivel de tierra."
+        fix="Sustrato cactus + perlita ESTERILIZADO (horno 30min). No saltarse este paso."
+      />
+    </div>
+  );
+}
+
+function CUIDADOS_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Cactus columnares son CASI INDESTRUCTIBLES. Las únicas formas de matarlos: regar de más, frío extremo, o sol directo en plántulas pequeñas. Sigue 4 reglas y vive feliz.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>LAS 4 REGLAS DE ORO</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
+        {[
+          { num: "1", regla: "💧 Riego: solo cuando la maceta pesa LIGERA", det: "Mete el dedo 3cm en el sustrato. Si está SECO, riega abundante hasta que salga agua por abajo. Si está húmedo: NO riegas. En verano: cada 10-14 días. En invierno: cada 30-45 días o NUNCA." },
+          { num: "2", regla: "☀️ Sol: máximo posible, gradual", det: "Adultos quieren sol directo 6-8h/día. Plántulas y esquejes recién enraizados necesitan aclimatación gradual (semi-sombra → sol pleno en 2-4 semanas) o se queman (manchas amarillas/marrones)." },
+          { num: "3", regla: "🌡️ Temperatura: 10-35°C", det: "Aguantan calor mediterráneo sin problema. Por debajo de 5°C empiezan a sufrir. Por debajo de 0°C MUEREN. En invierno: meter dentro o cubrir con manta térmica si hiela." },
+          { num: "4", regla: "🍃 Sustrato: drenaje extremo", det: "30% perlita mínimo. Maceta terracota con agujero generoso. Si el agua tarda más de 3 segundos en empezar a salir por abajo, el sustrato está mal." },
+        ].map((r, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+              <div style={{ fontSize: "20px", fontWeight: "bold", color: c.accent1 }}>{r.num}</div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "4px" }}>{r.regla}</div>
+                <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{r.det}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>CICLO ANUAL</SectionTitleX>
+      <StepX c={c} num={1} text="🌸 Marzo-Abril: despertar. Primer riego abundante. Sacar al exterior gradualmente." />
+      <StepX c={c} num={2} text="🌞 Mayo-Septiembre: temporada de crecimiento. Riego cada 10-14 días. Fertilizar cactáceas a media dosis cada 3-4 semanas. Sol pleno." />
+      <StepX c={c} num={3} text="🍂 Octubre: reducir riego. Última fertilización antes del 20 sept." />
+      <StepX c={c} num={4} text="❄️ Noviembre-Febrero: hibernación. NO regar. NO fertilizar. Mantener seco y fresco (10-15°C ideal)." why="La hibernación seca induce floración y crecimiento más vigoroso en primavera. Cactus regado en invierno = blando, podrido o etiolado." />
+    </div>
+  );
+}
+
+function CRECIMIENTO_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Realidad: necesitas paciencia. Esta sección te dice qué esperar realísticamente para no frustrarte. Los cactus crecen lento incluso cuando crecen "rápido".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EXPECTATIVAS REALISTAS — DESDE ESQUEJE</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { tiempo: "Año 0 (esqueje 20cm)", estado: "Esqueje recibido. Dejar callusing 2 semanas (cicatriza el corte)." },
+          { tiempo: "Año 0.5", estado: "Plantar y enraizar. Primer crecimiento visible 2-3 meses después." },
+          { tiempo: "Año 1", estado: "Esqueje crece 15-30cm en San Pedro. Aún flaco." },
+          { tiempo: "Año 2", estado: "30-50cm de crecimiento total. Engrosa. Puedes empezar a cosechar puntas pequeñas." },
+          { tiempo: "Año 3-4", estado: "Cactus de 1-1.5m, grueso. Cosecha decente posible (puntas grandes + ramificación)." },
+          { tiempo: "Año 5+", estado: "Cactus columnar maduro. Cosechas regulares sin matar la planta. Empieza a echar hijos (clones gratis)." },
+        ].map((t, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
+            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.estado}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>EXPECTATIVAS — DESDE SEMILLA</SectionTitleX>
+      <InfoBoxX c={c}>
+        Multiplica todo por 3-5x. Año 1 desde semilla = pelotita de 1cm. Año 5 = 15-20cm. Año 10 = quizás 50-80cm. Solo viable si ya tienes esquejes maduros y haces semillas como hobby a largo plazo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>ACELERAR CRECIMIENTO</SectionTitleX>
+      <StepX c={c} num={1} text="Maceta lo más grande posible — raíces más grandes = planta más grande. Cambia a maceta de tamaño superior cada 2-3 años." />
+      <StepX c={c} num={2} text="Sol DIRECTO máximo. Rotar la planta 90° cada 2 semanas para crecimiento simétrico." />
+      <StepX c={c} num={3} text="Calor: temperaturas 25-32°C en verano son ideales. Si vives en clima frío, considera invernadero o ventana orientada sur." />
+      <StepX c={c} num={4} text="Fertilizar correctamente: alga marina + bajo NPK específico cactus, cada 3 semanas en temporada activa. NO sobrealimentar (etiolación)." />
+      <StepX c={c} num={5} text="Injerto sobre Pereskiopsis (técnica avanzada): dispara crecimiento de plántulas 10x. Buscar tutoriales si te interesa." />
+    </div>
+  );
+}
+
+function COSECHA_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Cosechar = cortar la punta del cactus. La planta NO muere — sigue creciendo desde el corte (ramifica) y eventualmente echa hijos. Cosecha responsable = el cactus dura toda tu vida y la de tus hijos.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CUÁNDO COSECHAR</SectionTitleX>
+      <StepX c={c} num={1} text="Espera mínimo 2-3 años desde plantar el esqueje. Antes = cosecha ridícula y matas la planta." />
+      <StepX c={c} num={2} text="Cosecha en final de verano / principio otoño (sept-oct). El cactus tiene máxima concentración de alcaloides después de la temporada activa." why="Estudios muestran picos de mescalina al final del periodo de crecimiento, antes de la dormancia invernal." />
+      <StepX c={c} num={3} text="NUNCA cosechar más del 30-40% de altura total de la planta en un solo corte. Cortes más grandes pueden estresar a la planta hasta matarla." />
+
+      <SectionTitleX c={c}>TÉCNICA DE CORTE</SectionTitleX>
+      <StepX c={c} num={1} text="Esteriliza el cuchillo con alcohol 70%. Usa cuchillo MUY afilado (sierra dentada NO sirve, machaca el tejido)." />
+      <StepX c={c} num={2} text="Decide dónde cortar. Marca con un rotulador. Recomendado: dejar mínimo 30-40cm desde el suelo en la planta madre." why="La planta necesita masa fotosintetica suficiente para sobrevivir y rebrotar. Cortar demasiado bajo = muere o tarda años en recuperar." />
+      <StepX c={c} num={3} text="Corte horizontal LIMPIO de un solo movimiento. NO cortar en ángulo." why="El corte horizontal expone menos superficie a hongos y cicatriza más rápido." />
+      <StepX c={c} num={4} text="Aplica canela en polvo o ceniza de cigarrillo (esterilizada) sobre la herida de la planta madre. Esto es opcional pero ayuda a cicatrizar y previene hongos." />
+      <StepX c={c} num={5} text="La planta madre ahora se queda con el muñón. En 2-4 semanas la herida se sella formando una capa córnea. En meses, el cactus rebrota desde justo bajo el corte (ramifica) — duplicas las puntas." />
+
+      <SectionTitleX c={c}>EL TROZO COSECHADO</SectionTitleX>
+      <StepX c={c} num={1} text="Si quieres replantar: deja el corte secando al aire 2-3 semanas en sombra (callusing). Después puedes plantarlo y enraizará en 2-6 meses → 2 cactus por el precio de uno." />
+      <StepX c={c} num={2} text="Si vas a procesarlo: continúa a fase 'Preparación'." />
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Conserva una parte como esqueje.</strong> Cosechar = SIEMPRE quedarse al menos 1 punta de 20-30cm aparte para replantar. Garantía de continuidad. Nunca consumas el último que tengas.
+      </WarningBoxX>
+    </div>
+  );
+}
+
+function PREPARACION_CACTUS() {
+  const c = CACTUS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preparación = limpiar y secar el cactus para conservar y consumir como tradicional. Esta guía cubre PROCESADO BÁSICO casero (sin extracción química — eso es controlado y peligroso). Tradicionalmente se consume el cactus seco molido o en infusión.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — PROCESADO BÁSICO</SectionTitleX>
+      <StepX c={c} num={1} text="Lavar la columna cosechada con agua fría. Quitar tierra y restos." />
+      <StepX c={c} num={2} text="Quitar las espinas: pasar el cactus por llama de mechero girándolo (las espinas se queman al instante) O cortarlas con tijeras una a una." />
+      <StepX c={c} num={3} text="Cortar la columna en rodajas de 1-2cm de grosor (como un calabacín)." />
+      <StepX c={c} num={4} text="Pelar la piel verde EXTERIOR (donde está la mayor concentración de mescalina). Quita 1-2mm de la capa más interior verde-clara y descarta el corazón blanco." why="La piel y la capa verde clorofílica concentran los alcaloides. El corazón blanco es agua y fibra sin valor." />
+      <StepX c={c} num={5} text="Desecha el corazón blanco. Conserva las tiras verdes." />
+      <StepX c={c} num={6} text="Secado: extender en bandeja con rejilla, en sitio ventilado y oscuro (sin luz directa, degrada alcaloides). Tarda 1-3 semanas hasta que esté completamente seco y quebradizo." />
+      <StepX c={c} num={7} text="Una vez seco, moler en molinillo de café/especias hasta polvo fino." />
+      <StepX c={c} num={8} text="Conservar en frasco hermético opaco (oscuridad), zona seca. Dura 2-5 años manteniendo potencia si está bien seco." />
+
+      <SectionTitleX c={c}>FORMAS TRADICIONALES DE CONSUMO</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥛 <strong>Polvo seco directo:</strong> mezclado con yogur, miel, zumo (sabor MUY amargo).<br/>
+        🍵 <strong>Cocción/decocción:</strong> hervir el polvo en agua 2-4h, colar, beber el líquido. Reduce volumen y suaviza un poco.<br/>
+        💊 <strong>Cápsulas:</strong> rellenar cápsulas vacías con polvo. Más fácil de tragar, evita el sabor.
+      </InfoBoxX>
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Sobre dosificación:</strong> ESTA GUÍA NO DA DOSIS porque varía mucho según especie, edad, condiciones de cultivo y persona. Investiga DOSIFICACIÓN RESPONSABLE por tu cuenta — sitios de harm reduction como Energy Control, DanceSafe, Erowid. Mescalina es muy variable; "dosis estándar" no existe sin análisis. Empieza siempre con dosis MUY baja (test de tolerancia personal) y espera 6 semanas entre experiencias significativas.
+      </WarningBoxX>
+    </div>
+  );
+}
+
+function FAQ_CACTUS() {
+  const c = CACTUS_COLORS;
+  const faqs = [
+    { q: "¿Es legal en España?", a: "Cultivar el cactus como ornamental: SÍ, 100% legal. Poseer cactus seco/triturado: zona gris (no se persigue). Extracción química de mescalina: ILEGAL (sustancia controlada). Esta guía NO da recetas de extracción." },
+    { q: "¿Cuándo florece?", a: "Trichocereus florecen alrededor de los 4-6 años desde esqueje, normalmente en verano. Flores blancas grandes y fragantes que se abren de noche. Después puedes hacer polinización cruzada para semillas." },
+    { q: "¿Puedo clonar mi cactus?", a: "Sí — esa es la magia. Cada vez que cosechas una punta, puedes plantarla y crear una nueva planta clónica idéntica. Un cactus de 5 años puede convertirse en 5-10 cactus en otra década." },
+    { q: "¿Por qué mi cactus se vuelve amarillo?", a: "Causa probable: exceso de sol sin aclimatación, o exceso de riego. Aclimata gradualmente al sol y reduce riego." },
+    { q: "¿Por qué mi cactus se ablanda en la base?", a: "PROBABLEMENTE PUDRICIÓN. Causa: exceso de agua + mal drenaje. Acción: dejar de regar inmediatamente, sacar de la maceta, examinar raíces. Si están podridas: cortar la parte sana con cuchillo esterilizado, dejar callusing 2-3 semanas, replantar en sustrato seco. Posible que pierdas la base pero salves la parte superior." },
+    { q: "¿Qué hago si hiela?", a: "Bajo riesgo: Trichocereus aguantan algo de frío si están secos. Si hace -5°C húmedo = mueren. Si hace -2°C secos = sobreviven. Cubrir con plástico o meter dentro si pronostica hielo. NUNCA regar antes de hielo." },
+    { q: "¿Diferencia visual entre Trichocereus reales?", a: "MUY difícil sin experiencia — varias especies parecen idénticas. Compra siempre de vendedor reputado que garantice especie. Aspecto general: San Pedro tiene 6-9 costillas con espinas pequeñas, Bolivian Torch suele tener 4-7 costillas con espinas más largas y amarillas." },
+    { q: "¿Puedo cultivar peyote?", a: "Técnicamente legal en España (no está específicamente prohibido el cactus). Pero: planta extremadamente lenta (1cm/año), CITES protegida (compra ética complicada), sagrada para pueblos huicholes. Recomendación: NO. Si quieres mescalina, San Pedro/Bolivian Torch son sostenibles, rápidos y abundantes." },
+  ];
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preguntas comunes sobre cultivo y aspectos legales/prácticos del cactus mescalina.
+      </InfoBoxX>
+
+      {faqs.map((f, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+// FERMENTACIONES — contenido general (intro, higiene, FAQ)
+// Aplica a hidromiel + cerveza + cualquier futura fermentación.
+
+function INTRO_FERMENT() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Fermentar = cultivar microorganismos (levaduras) que comen azúcares y producen alcohol + CO₂. Legal en España hacer cualquier bebida fermentada para consumo propio (sin destilación). Es la mejor forma de hacer alcohol casero.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>QUÉ PUEDES FERMENTAR (orden de dificultad)</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
+        {[
+          { nombre: "🍯 Hidromiel", dif: "MUY FÁCIL", tiempo: "4-8 semanas", coste: "20-40€ inicial", desc: "Miel + agua + levadura. Sin lúpulo, sin malta, sin cocción complicada. La bebida más antigua del mundo. Sabor: como vino pero con notas de miel." },
+          { nombre: "🍺 Cerveza casera", dif: "MEDIA", tiempo: "4-6 semanas", coste: "50-100€ inicial (kit)", desc: "Malta + lúpulo + levadura + agua. Hervor + macerado más complejos. Resultado profesional con kits modernos. Sabor: el que tú elijas (IPA, stout, lager, etc.)." },
+          { nombre: "🍎 Sidra", dif: "MUY FÁCIL", tiempo: "3-6 semanas", coste: "10-20€", desc: "Manzanas naturales + levadura (la natural de la fruta basta). Solo en otoño. Sabor: depende de las manzanas — versión casera es seca y compleja." },
+          { nombre: "🍇 Vino casero", dif: "FÁCIL-MEDIA", tiempo: "3-6 meses", coste: "30-80€", desc: "Uvas (o frutas: ciruela, fresa, etc.) + levadura. Más tiempo de maduración pero proceso simple." },
+          { nombre: "🌾 Kvass", dif: "FÁCIL", tiempo: "3-7 días", coste: "5-10€", desc: "Pan de centeno fermentado. Bebida rusa tradicional, muy bajo alcohol (1-2%). Refrescante y curiosa." },
+          { nombre: "🦠 Kombucha", dif: "FÁCIL", tiempo: "1-2 semanas", coste: "10-20€", desc: "Té + azúcar + SCOBY. Bajo alcohol (<0.5%), no recreativo pero funcional (probióticos). Incluida porque comparte equipo." },
+        ].map((f, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+              <div style={{ fontSize: "14px", fontWeight: "bold", color: c.textBright }}>{f.nombre}</div>
+              <div style={{ fontSize: "10px", color: c.accent1, fontWeight: "bold" }}>{f.dif}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>⏱️ {f.tiempo} · 💰 {f.coste}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{f.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>POR DÓNDE EMPEZAR</SectionTitleX>
+      <InfoBoxX c={c}>
+        Si nunca has fermentado nada: empieza con <strong>hidromiel</strong>. Es el "hello world" de la fermentación. Pocos ingredientes, poco que aprender, error tolerante, resultado bebible y rico. Una vez domines hidromiel (1-2 lotes), salta a cerveza si quieres más complejidad.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function HIGIENE_FERMENT() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Higiene = la única regla que NO PUEDES romper. Bacterias contaminantes pueden agriar tu fermento (vinagre) o producir mal sabor. La buena noticia: no necesitas laboratorio — limpieza doméstica básica + un sanitizante son suficientes.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>NIVEL 1 — LIMPIEZA</SectionTitleX>
+      <StepX c={c} num={1} text="Lavar todo equipo (botellas, garrafas, embudos, cucharas) con agua caliente + jabón normal antes de usar." />
+      <StepX c={c} num={2} text="Aclarar muy bien — restos de jabón pueden matar la levadura." />
+
+      <SectionTitleX c={c}>NIVEL 2 — SANITIZACIÓN (CRÍTICO)</SectionTitleX>
+      <StepX c={c} num={1} text="Después de limpiar, sanitizar TODO lo que va a tocar el mosto post-cocción/post-pasteurización." why="La cocción mata bacterias del mosto. Pero si después tocas con una cuchara contaminada, vuelves a meter bacterias." />
+      <StepX c={c} num={2} text="Opciones de sanitizante (elige una):" />
+      <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+        {[
+          { nombre: "Star San (no aclarar)", uso: "1.5ml / litro de agua. Rocía o sumerge. La espuma se queda — no hace falta aclarar (es food-safe). Botella dura años. Recomendado para principiantes.", coste: "10-15€ / 250ml" },
+          { nombre: "Metabisulfito potásico", uso: "1g por litro de agua. Sumerge equipo 1-2min, escurrir. Tradicional en vinificación. Hay que aclarar.", coste: "5-10€ / 250g" },
+          { nombre: "Lejía alimentaria", uso: "1ml por litro de agua. Sumergir 5-10min, ENJUAGAR muy bien. Barato pero olor persistente si no aclaras bien.", coste: "1-2€ / litro" },
+          { nombre: "Hervir 10min", uso: "Solo para botellas pequeñas y utensilios resistentes. Equipo grande no entra en olla.", coste: "Gratis" },
+        ].map((s, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{s.nombre}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginBottom: "3px" }}>{s.uso}</div>
+            <div style={{ fontSize: "10px", color: c.accent1 }}>💰 {s.coste}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>ERRORES COMUNES</SectionTitleX>
+      <ErrorCardX c={c}
+        error="No sanitizar el airlock o el tapón"
+        consecuencia="Bacterias entran por arriba durante la fermentación. Resultado: vinagre o sabor a calcetín."
+        fix="Sanitizar TODO lo que va a tocar el fermento — incluyendo airlock, tapón, sello de goma."
+      />
+      <ErrorCardX c={c}
+        error="Aclarar Star San con mucha agua"
+        consecuencia="Diluyes el sanitizante y pierdes su efecto. Star San es food-safe, NO necesita aclararse."
+        fix="Tras sanitizar con Star San: escurre el exceso pero deja la espuma. Es seguro fermentar con esa espuma."
+      />
+      <ErrorCardX c={c}
+        error="Tocar el equipo sanitizado con manos sucias"
+        consecuencia="Re-contaminas. Bacterias de la piel = una de las fuentes principales de contaminación."
+        fix="Después de sanitizar, no tocar la zona interior con manos. Si tienes que tocar: lava manos + jabón + agua caliente."
+      />
+    </div>
+  );
+}
+
+function FAQ_FERMENT() {
+  const c = FERMENT_COLORS;
+  const faqs = [
+    { q: "¿Cuánto alcohol tendrá mi bebida?", a: "Depende del azúcar inicial y la levadura. Hidromiel: 10-14% típico. Cerveza: 4-7%. Sidra: 5-8%. Hay calculadoras online (busca 'ABV calculator brewing') que te dan el % exacto si mides densidad inicial y final con un hidrómetro (10-15€ herramienta básica)." },
+    { q: "¿Es legal fermentar bebidas en casa?", a: "Sí en España y casi toda la UE — siempre que sea para CONSUMO PROPIO y no comercializado. La destilación SÍ es ilegal sin licencia (whisky, ron casero = ILEGAL). Fermentar = legal. Destilar = ilegal." },
+    { q: "¿Cómo sé si mi fermento se ha contaminado?", a: "Señales: olor a vinagre fuerte (acetobacter), capa blanca peluda en la superficie (moho), sabor a podrido. Diferencia importante: capa de levadura (krausen, blanco-cremoso, espuma) = NORMAL. Capa de moho (verde, negro, peludo) = CONTAMINACIÓN, tira el lote." },
+    { q: "¿Puedo reutilizar la levadura del lote anterior?", a: "Sí — se llama 'yeast washing'. Después de fermentar, recoges el sedimento del fondo (trub), lavas con agua hervida fría, y guardas en frasco en nevera. Dura 2-4 semanas. Ahorras dinero y cada generación adapta mejor a tu proceso." },
+    { q: "¿Qué hago con la levadura sobrante?", a: "Opciones: (1) hacer otro lote inmediatamente, (2) yeast washing para guardar, (3) tirarla al desagüe (pequeñas cantidades, mucho agua). NO tirar al jardín — puede infestar tus plantas con hongos." },
+    { q: "¿Por qué mi fermento no burbujea?", a: "Causas posibles: (1) levadura muerta (mosto demasiado caliente al añadirla, máx 25°C), (2) tapón mal sellado (CO₂ se escapa), (3) ya terminó (después de 2-4 semanas la actividad para). Verifica densidad con hidrómetro: si bajó del valor inicial = funcionó aunque no veas burbujas." },
+    { q: "¿Necesito hervir todo o puedo usar agua del grifo?", a: "Hidromiel: SÍ, pasteurizar el mosto (calentar 60-65°C 15min) elimina bacterias. Cerveza: SÍ, hervor obligatorio (extrae lúpulo + esteriliza). Sidra/vino con frutas: opcional (la fruta tiene levaduras naturales). Agua del grifo: clorada, mata levadura — déjala reposar 24h en jarra abierta o usa agua mineral." },
+    { q: "¿Conviene comprar kit o ir comprando piezas?", a: "Para empezar: KIT. Cubre lo básico, no te falta nada, viene probado. Después de 2-3 lotes y entiendes qué necesitas, puedes comprar piezas mejores individualmente (mejor garrafa de vidrio, sondas digitales de temperatura, etc.)." },
+  ];
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preguntas comunes sobre fermentación casera. Si tienes dudas más específicas: foros como HomeBrewTalk, r/homebrewing, o el subreddit /r/mead son recursos excelentes.
+      </InfoBoxX>
+
+      {faqs.map((f, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+// FERMENTACIONES — modo HIDROMIEL
+// Receta tradicional simple: miel + agua + levadura + tiempo. La fermentación más antigua del mundo.
+
+function COMPRA_HIDROMIEL() {
+  const c = FERMENT_COLORS;
+  const items = [
+    { item: "🍯 Miel cruda (1.5 kg)", precio: "15-30€", donde: "Tienda física", nota: "Miel pura, sin pasteurizar si es posible (la pasteurizada también vale). Cualquier variedad: brezo, romero, milflores. Evita miel ultra-procesada del supermercado más barata. La calidad de la miel = calidad final del hidromiel.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "💧 Agua mineral o filtrada (4 L)", precio: "1-3€", donde: "Tienda física", nota: "Agua del grifo tiene cloro que mata levadura. Usa mineral o deja agua del grifo en jarra abierta 24h para que se evapore el cloro.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🦠 Levadura vínica seca (5g)", precio: "2-5€", donde: "Internet", nota: "Recomendadas para principiantes: Lalvin EC-1118 (sequita, sube hasta 18%), Lalvin 71B (más afrutada), Red Star Premier Cuvée (rápida y limpia). 1 sobre de 5g basta para 4-5L. Evita la levadura panadera (sabor a pan).", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🫙 Garrafa de vidrio 5L con boca ancha", precio: "8-15€", donde: "Tienda física", nota: "Imprescindible vidrio (el plástico transmite sabores, deja arañazos donde se esconden bacterias). Garrafa de 5L para fermentar 4L (deja espacio para espuma). En internet busca 'garrafa fermentación 5L' o 'demijohn 5L'.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🔓 Airlock (válvula de fermentación) + tapón con agujero", precio: "3-6€", donde: "Internet", nota: "Tapón goma con agujero + airlock 'S' o 'tres piezas'. Deja salir CO₂ pero no entrar oxígeno/bacterias. Imprescindible.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌡️ Termómetro digital (sonda)", precio: "5-12€", donde: "Internet", nota: "Para medir temperatura del mosto (max 25°C al añadir levadura) y verificar fermentación a 18-22°C ideal.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "📏 Hidrómetro + probeta", precio: "10-18€", donde: "Internet", nota: "Mide densidad del líquido. Permite calcular % de alcohol final y saber cuándo terminó de fermentar. NO es estrictamente necesario pero MUY recomendado.", prioridad: "IMPORTANTE", tipo: "Equipo" },
+    { item: "🧴 Sanitizante (Star San o metabisulfito)", precio: "8-15€", donde: "Internet", nota: "Star San 250ml dura años. Sanitizar TODO equipo antes de usar. Sin esto: 50% probabilidad contaminación.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🥄 Embudo + cuchara larga", precio: "3-8€", donde: "Tienda física", nota: "Para verter el mosto en la garrafa y para revolver. Plástico food-grade o metal.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌿 Nutrientes para levadura (DAP)", precio: "5-10€", donde: "Internet", nota: "Fosfato diamónico — alimenta la levadura. La miel sola es pobre en nutrientes. 1g por litro 3 veces durante primera semana = mejora fermentación.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🍾 Botellas de cristal 0.75L (6-8 uds)", precio: "0-15€", donde: "Tienda física", nota: "Botellas de vino vacías reusadas + tapones de corcho/swing-top. O comprar nuevas. Sanitizar antes de embotellar.", prioridad: "ESENCIAL", tipo: "Equipo" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#e8755a", "IMPORTANTE": "#dfb578", "ÚTIL": "#c08040" };
+  const tipoColor = { "Equipo": "#8a5e30", "Consumible": "#c08040" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Lista para tu primer lote de hidromiel (4 litros, ~12% alcohol). Inversión inicial 50-100€ (equipo reutilizable indefinidamente). Cada lote nuevo: solo recomprar miel + levadura (~20€).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleX c={c}>FILTRAR POR TIPO</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? c.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>LISTA DE COMPRA HIDROMIEL ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
+          </div>
+          <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PREP_HIDROMIEL() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preparar el "mosto" — la mezcla inicial de agua, miel y levadura que va a fermentar. ~30 minutos de trabajo activo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>RECETA BASE (4 LITROS, ~12% ABV)</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍯 1.2 kg de miel<br/>
+        💧 3.5 L de agua<br/>
+        🦠 5g de levadura vínica (1 sobre)<br/>
+        🌿 1 g de DAP (nutriente) por litro = 4g total<br/>
+        ⏱️ Resultado: 4L de hidromiel a ~12% alcohol después de 4-6 semanas
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — DÍA 1</SectionTitleX>
+      <StepX c={c} num={1} text="Sanitiza TODO el equipo: garrafa, embudo, cuchara, airlock, tapón. Star San o metabisulfito según instrucciones." why="Cualquier bacteria en el equipo arruina el lote. Es el paso más importante de toda la receta." />
+      <StepX c={c} num={2} text="Calienta 1 L de agua en una olla a 60-65°C (NO hervir — destruye aromas de la miel). Apaga el fuego." />
+      <StepX c={c} num={3} text="Vierte la miel en el agua caliente. Remueve hasta disolver completamente. Añade el DAP (nutriente) y remueve." why="Calor + agitación = miel se disuelve sin grumos. Si no calientas, la miel queda en el fondo y la levadura no la encuentra." />
+      <StepX c={c} num={4} text="Añade los 2.5L de agua restantes (frías) a la mezcla. Esto enfría el mosto rápidamente. Verifica temperatura: debe estar 20-25°C antes de añadir levadura." warning />
+      <StepX c={c} num={5} text="Vierte el mosto en la garrafa sanitizada usando el embudo. Deja unos 15-20cm de espacio arriba (la espuma de fermentación necesita sitio)." />
+      <StepX c={c} num={6} text="Hidratar la levadura: en un vaso de agua templada (35-40°C), espolvorea la levadura. Espera 15 minutos. Removerla muy suavemente." why="Hidratar antes vs echar el polvo seco directamente = mejor activación. La levadura empieza fermentando antes." />
+      <StepX c={c} num={7} text="Vierte la levadura hidratada en la garrafa con el mosto. Tapa con el airlock (con un poco de agua dentro del airlock, hasta la línea marcada)." />
+      <StepX c={c} num={8} text="Coloca la garrafa en un sitio oscuro a 18-22°C. Etiqueta con fecha de inicio." />
+
+      <SectionTitleX c={c}>QUÉ ESPERAR — PRIMERAS 24-48H</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✓ <strong>Día 1:</strong> Empiezan a salir burbujas por el airlock (cada minuto al principio).<br/>
+        ✓ <strong>Día 2-3:</strong> Burbujeo INTENSO (cada 5-10 segundos). Espuma blanca arriba (krausen).<br/>
+        ✓ <strong>Olor:</strong> dulce, a pan/levadura. Si huele a vinagre o podrido = contaminación.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function FERMENTACION_HIDROMIEL() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        4-6 semanas de paciencia. La levadura come miel y produce alcohol + CO₂. Tu único trabajo: NO TOCAR. Vigilar de lejos.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SEMANA 1 — FERMENTACIÓN PRIMARIA</SectionTitleX>
+      <StepX c={c} num={1} text="Días 1-3: actividad MÁXIMA. Burbujeo cada pocos segundos. Espuma arriba. Mosto turbio." />
+      <StepX c={c} num={2} text="Día 4: añade 1g de DAP más (segundo aporte de nutriente)." why="Nutrientes en etapas (staggered nutrient addition) ayuda a la levadura a fermentar más limpio y completo." />
+      <StepX c={c} num={3} text="Día 7: añade el último gramo de DAP. La actividad de burbujeo empieza a bajar a este punto." />
+
+      <SectionTitleX c={c}>SEMANAS 2-4 — FERMENTACIÓN SECUNDARIA</SectionTitleX>
+      <StepX c={c} num={1} text="Burbujeo cada 30-60 segundos. La espuma desaparece, el mosto se aclara desde arriba. El sedimento (lías) se acumula en el fondo." />
+      <StepX c={c} num={2} text="NO ABRAS la garrafa. Cada apertura introduce oxígeno y posibles contaminantes." />
+      <StepX c={c} num={3} text="Mantén temperatura constante 18-22°C. Variaciones bruscas pueden parar la fermentación o crear sabores raros." />
+
+      <SectionTitleX c={c}>SEMANAS 4-6 — FINAL</SectionTitleX>
+      <StepX c={c} num={1} text="El burbujeo se ralentiza a cada 2-5 minutos, luego para casi por completo." />
+      <StepX c={c} num={2} text="El líquido es transparente arriba (las levaduras se han ido al fondo)." />
+      <StepX c={c} num={3} text="Toma medición con hidrómetro: si la densidad lleva 3 días igual = fermentación TERMINADA. Densidad típica final: 0.990-1.005." why="Sin hidrómetro: si llevas 5+ días sin ver burbujas = probablemente listo." />
+
+      <SectionTitleX c={c}>ERRORES COMUNES</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Abrir la garrafa para 'ver cómo va'"
+        consecuencia="Cada apertura introduce oxígeno. La oxidación produce sabor a sidra/jerez (a veces deseable, a veces no). Mayor riesgo de contaminación bacteriana."
+        fix="Confía en el airlock. Solo abrir cuando vayas a embotellar (final)."
+      />
+      <ErrorCardX c={c}
+        error="Temperatura por encima de 25°C"
+        consecuencia="Levadura estresada produce sabores fenólicos (a clavo, plástico). El hidromiel sale con notas raras."
+        fix="Sitio fresco constante 18-22°C. Si vives en sitio caluroso: nevera dedicada (controlador de temperatura) o frío natural en sótano/garaje."
+      />
+      <ErrorCardX c={c}
+        error="Olvidarse de añadir nutrientes"
+        consecuencia="Fermentación lenta o estancada. Sabores 'sulfurosos' (huevo podrido, cebolla)."
+        fix="DAP en 3 etapas (día 1, día 4, día 7) según receta. La miel sola es pobre en nitrógeno y la levadura sufre."
+      />
+    </div>
+  );
+}
+
+function EMBOTELLADO_HIDROMIEL() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Trasiego (sacar el hidromiel limpio dejando el sedimento) y embotellado. Después: la magia del envejecimiento.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>TRASIEGO (SECUNDARIO)</SectionTitleX>
+      <StepX c={c} num={1} text="Sanitiza otra garrafa de 5L y un tubo de silicona/sifón." />
+      <StepX c={c} num={2} text="Coloca la garrafa con hidromiel encima de una mesa (alto), la garrafa vacía en el suelo (bajo). El sifón aprovecha la gravedad." />
+      <StepX c={c} num={3} text="Inserta un extremo del sifón en el hidromiel SIN tocar el sedimento del fondo. Succiona suavemente desde el otro extremo (o usa sifón con bomba)." />
+      <StepX c={c} num={4} text="Deja correr el líquido a la garrafa nueva. Para cuando llegues al sedimento — descártalo." why="El sedimento (lías) tiene levadura muerta + proteínas. Beberlo no es peligroso pero da sabor amargo." />
+      <StepX c={c} num={5} text="Añade airlock nuevo a la garrafa con el hidromiel limpio. Deja 1-2 semanas más en lugar oscuro a 15-18°C." why="Esta segunda fermentación 'pule' sabores y permite que se asienten más sólidos." />
+
+      <SectionTitleX c={c}>EMBOTELLADO</SectionTitleX>
+      <StepX c={c} num={1} text="Sanitiza botellas y tapones." />
+      <StepX c={c} num={2} text="Decide nivel de carbonatación:" />
+      <div style={{ display: "grid", gap: "8px", marginBottom: "12px" }}>
+        {[
+          { tipo: "📿 Sin gas (still)", desc: "Embotella tal cual. Resultado: hidromiel quieto tipo vino. Más fácil, menor riesgo." },
+          { tipo: "🫧 Con gas (sparkling)", desc: "Añade 5g de azúcar por litro antes de embotellar (priming sugar). La levadura residual lo come y produce CO₂ atrapado en la botella. Cuidado: presión = vidrio puede explotar si exceso." },
+        ].map((s, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{s.tipo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{s.desc}</div>
+          </div>
+        ))}
+      </div>
+      <StepX c={c} num={3} text="Llena cada botella dejando 2-3cm de espacio. Tapa con corcho o swing-top." />
+      <StepX c={c} num={4} text="Etiqueta con fecha + tipo de miel + cualquier ingrediente extra." />
+      <StepX c={c} num={5} text="Para gas: deja botellas a temperatura ambiente 2-3 semanas para que se carbonate. Después al frío. Para still: directo al frío." />
+    </div>
+  );
+}
+
+function CATA_HIDROMIEL() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Hidromiel joven (1-2 meses) sabe a "alcohol con miel". Hidromiel envejecido (6-12 meses) sabe RICO — desaparecen sabores duros, aparecen complejidad y suavidad. La paciencia es la clave.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EVOLUCIÓN DEL SABOR</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { tiempo: "1-2 meses", sabor: "Alcohol fuerte, dulzor crudo, posibles notas de levadura. Bebible pero crudo." },
+          { tiempo: "3-4 meses", sabor: "El alcohol se integra. Aparece carácter de la miel. Más balanceado." },
+          { tiempo: "6 meses", sabor: "RICO. Suavidad notable. Notas afrutadas, florales. La mayoría se bebe entre 6-12 meses." },
+          { tiempo: "1-3 años", sabor: "Complejidad creciente. Notas a vino dulce, jerez. Hidromieles fuertes (15%+) mejoran muchísimo a este punto." },
+          { tiempo: "5+ años", sabor: "Si aguanta sin oxidarse: hidromiel de colección. Caro de tiempo pero magnífico." },
+        ].map((t, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{t.sabor}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>CONSEJOS DE CONSERVACIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Botellas en posición HORIZONTAL si tienen corcho — mantiene el corcho hidratado. Si swing-top o tapón rosca: vertical." />
+      <StepX c={c} num={2} text="Lugar oscuro y fresco (10-15°C ideal). Sótano, despensa, garaje protegido del frío extremo." />
+      <StepX c={c} num={3} text="Etiqueta y registra: fecha embotellado, miel, levadura, % ABV estimado, notas de cata." why="Después de un año tendrás varios lotes — sin etiqueta no recuerdas cuál era cuál." />
+      <StepX c={c} num={4} text="Cata cada 2-3 meses. Anota cómo evoluciona. Decides cuándo está perfecto para ti." />
+
+      <SectionTitleX c={c}>VARIACIONES PARA PRÓXIMOS LOTES</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍓 <strong>Melomel:</strong> hidromiel + frutas (fresa, cereza, mora, manzana). Añade 500g-1kg de fruta congelada al trasiego secundario.<br/>
+        🌿 <strong>Metheglin:</strong> hidromiel + especias (canela, jengibre, vainilla, lúpulo). Infusión durante secundario.<br/>
+        🍷 <strong>Pyment:</strong> hidromiel + uva. Mitad mosto de uva, mitad miel.<br/>
+        ☕ <strong>Bochet:</strong> miel caramelizada antes de hacer mosto. Sabor a caramelo y café tostado.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+
+// FERMENTACIONES — modo CERVEZA CASERA
+// Receta básica con malta + lúpulo. Más complejo que hidromiel pero el resultado es cerveza real.
+
+function COMPRA_CERVEZA() {
+  const c = FERMENT_COLORS;
+  const items = [
+    { item: "📦 Kit cerveza completo (extracto)", precio: "60-90€", donde: "Internet", nota: "Para empezar: kit con extracto de malta + lúpulo + levadura + olla + fermentador. Marcas: Brewferm, Mr Beer, Coopers. Más caro pero TODO incluido. Recomendado para primer lote.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🍺 Olla 12-15L con tapa", precio: "20-40€", donde: "Tienda física", nota: "Para hervir el mosto. Acero inoxidable mejor que aluminio. Si vas a hacer 5L de cerveza necesitas mínimo 8L de capacidad para hervor (subida de espuma).", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🫙 Fermentador 10-15L con airlock", precio: "20-35€", donde: "Internet", nota: "Cubo plástico food-grade con tapa hermética + airlock + grifo dispensador. Buscar 'fermentador cerveza 12L' en internet. Vidrio también vale pero es frágil y caro.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌾 Malta de cebada base (3-5 kg)", precio: "10-25€", donde: "Internet", nota: "Para cerveza desde cero (sin extracto). Pale Ale Maris Otter, Pilsner, etc. Si usas kit de extracto, no necesitas esto. Tiendas online especializadas en cerveza casera.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌿 Lúpulo (50-100g, varias variedades)", precio: "5-15€", donde: "Internet", nota: "Variedades para empezar: Cascade (cítrico, IPA), Saaz (suave, lager), Hallertau (clásico alemán). Mantener en nevera hasta usar — pierde aroma rápido.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🦠 Levadura cervecera (1 sobre 11g)", precio: "3-8€", donde: "Internet", nota: "Ale (S-04, US-05): fermenta a 18-22°C, más fácil. Lager (S-23): requiere 8-12°C, más exigente. Para empezar: Safale US-05 (universal).", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro digital (sonda)", precio: "8-15€", donde: "Internet", nota: "Crítico para macerado (66°C exactos) y verificación de fermentación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "📏 Hidrómetro + probeta", precio: "10-15€", donde: "Internet", nota: "Para medir % alcohol final. Calcular ABV: (densidad inicial - densidad final) * 131.25.", prioridad: "IMPORTANTE", tipo: "Equipo" },
+    { item: "🥄 Cuchara larga acero inox", precio: "5-10€", donde: "Tienda física", nota: "Mínimo 50cm para revolver el mosto en la olla.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🧴 Sanitizante (Star San)", precio: "10-15€", donde: "Internet", nota: "Imprescindible. Mismo que para hidromiel.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🍾 Botellas 0.33L o 0.5L (15-20 uds)", precio: "0-20€", donde: "Tienda física", nota: "Botellas de cerveza vacías reutilizadas (mejor con tapón corona, no rosca). Mínimo 10-15 botellas para 5L de cerveza.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🔧 Chapadora + chapas corona", precio: "15-30€", donde: "Internet", nota: "Para sellar las botellas con chapa metálica. Las chapas son baratas (5€/100 uds).", prioridad: "ESENCIAL", tipo: "Equipo" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#e8755a", "IMPORTANTE": "#dfb578", "ÚTIL": "#c08040" };
+  const tipoColor = { "Equipo": "#8a5e30", "Consumible": "#c08040" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Para tu primer lote: KIT con extracto de malta es la mejor opción (60-90€ todo incluido). Más adelante puedes pasar a "all grain" (cerveza desde grano completo) que es más complejo y barato por lote.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleX c={c}>FILTRAR POR TIPO</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? c.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>LISTA DE COMPRA CERVEZA ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
+          </div>
+          <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function MACERADO_CERVEZA() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        El macerado (mash) es el primer paso si haces cerveza desde grano (all grain). Si usas KIT con extracto: SALTA esta fase, ve directo a "Hervor + Lúpulo".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>QUÉ ES EL MACERADO</SectionTitleX>
+      <InfoBoxX c={c}>
+        Mojar la malta machacada en agua caliente (66°C) durante 60 minutos. Las enzimas de la malta convierten el almidón del grano en azúcares fermentables. El líquido azucarado resultante = "mosto".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>RECETA BASE — PALE ALE 5L (~5% ABV)</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌾 1 kg malta Pale Ale<br/>
+        💧 4 L agua de macerado<br/>
+        💧 2 L agua de aclarado<br/>
+        🌿 15g lúpulo Cascade (60 min - amargor)<br/>
+        🌿 10g lúpulo Cascade (15 min - sabor)<br/>
+        🌿 10g lúpulo Cascade (1 min - aroma)<br/>
+        🦠 11g levadura US-05<br/>
+        ⏱️ Resultado: ~5L de Pale Ale a 4-5% ABV
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — MACERADO</SectionTitleX>
+      <StepX c={c} num={1} text="Calienta 4L de agua a 72°C en la olla. Cuidado: la temperatura tiene que ser EXACTA." why="Cuando añades el grano frío, la temperatura del conjunto baja. Empezar a 72°C resulta en ~66°C después de añadir el grano." />
+      <StepX c={c} num={2} text="Añade la malta machacada al agua caliente. Remueve hasta que no haya grumos secos." />
+      <StepX c={c} num={3} text="Verifica temperatura: debe estar entre 64-68°C. Si baja: enciende fuego mínimo. Si sube: añade chorrito de agua fría." why="Por debajo de 60°C las enzymas no trabajan. Por encima de 70°C se desnaturalizan." warning />
+      <StepX c={c} num={4} text="Tapa la olla. Mantén 60-90 minutos a 66°C. Cada 15 min: revolver y verificar temp." />
+      <StepX c={c} num={5} text="Test de yodo (opcional): mete una gota del mosto en yodo. Si vira a azul/negro = aún hay almidón, sigue macerando. Si queda amarillo = listo." />
+
+      <SectionTitleX c={c}>ACLARADO (SPARGE)</SectionTitleX>
+      <StepX c={c} num={1} text="Cala el mosto a través del grano (cuela con una bolsa fina o lautering tun). El líquido cae a otra olla limpia." />
+      <StepX c={c} num={2} text="Hierve los 2L de agua adicionales a 75°C. Vierte lentamente sobre el grano para extraer los últimos azúcares." why="Esto enjuaga azúcares que quedaron pegados al grano. Sin sparge pierdes 20-30% de eficiencia." />
+      <StepX c={c} num={3} text="El líquido total recogido (~5-6L de mosto) pasa a la olla para el hervor." />
+    </div>
+  );
+}
+
+function HERVOR_CERVEZA() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        90 minutos hirviendo el mosto. Aquí se añade el lúpulo (amargor + sabor + aroma) y se esteriliza el mosto antes de fermentación.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SI USAS KIT DE EXTRACTO</SectionTitleX>
+      <StepX c={c} num={1} text="Mezcla 1.5kg de extracto de malta líquido (LME) o 1kg de extracto seco (DME) en 4L de agua caliente. Remueve hasta disolver completamente." />
+      <StepX c={c} num={2} text="Lleva a hervor. Continúa con el protocolo de lúpulo abajo." />
+
+      <SectionTitleX c={c}>HERVOR + LÚPULO (90 MIN)</SectionTitleX>
+      <StepX c={c} num={1} text="Lleva los 5-6L de mosto a hervor enérgico (~100°C). CUIDADO: cuando empieza a hervir, la espuma sube rápidamente y se sale de la olla — vigila los primeros 5min y reduce fuego si es necesario." warning />
+      <StepX c={c} num={2} text="Cuando hierve enérgicamente, empieza el cronómetro de 60min. Añade 15g de lúpulo Cascade (lúpulo de amargor)." why="Lúpulo añadido al inicio del hervor = más amargor (alfa ácidos isomerizados). Tiempo largo = más amargor." />
+      <StepX c={c} num={3} text="A los 30 min restantes (faltan 30 min): añade 10g lúpulo Cascade (lúpulo de sabor)." why="Lúpulo a mitad de hervor = aporta sabor a lúpulo sin demasiado amargor adicional." />
+      <StepX c={c} num={4} text="A los 15 min restantes (faltan 15 min): añade 10g lúpulo Cascade (lúpulo de aroma)." />
+      <StepX c={c} num={5} text="Al minuto 59 (1 min restante): añade último lúpulo de aroma (whirlpool/flameout)." why="Tan poco tiempo = solo aroma volátil, sin amargor extra." />
+      <StepX c={c} num={6} text="Al minuto 60: APAGA el fuego. La cerveza está hervida." />
+
+      <SectionTitleX c={c}>ENFRIAMIENTO RÁPIDO</SectionTitleX>
+      <StepX c={c} num={1} text="Necesitas enfriar el mosto de 100°C a 22°C lo más rápido posible (max 30 min)." why="Mosto caliente + tiempo = oxidación + posibles infecciones. Cuanto más rápido enfríes, más limpia será la cerveza." warning />
+      <StepX c={c} num={2} text="Opciones (de mejor a peor): (a) Chiller de inmersión (serpentín cobre con agua fría dentro de la olla, 50€), (b) Olla en bañera con hielo, (c) Olla en pila con agua fría circulando." />
+      <StepX c={c} num={3} text="Mientras enfría: NO TOQUES, NO ABRAS, no introduzcas nada no sanitizado." />
+      <StepX c={c} num={4} text="Cuando llegue a 22°C: pasa al fermentador (cubo) y airea bien." why="Levadura necesita oxígeno PARA EMPEZAR. Una vez fermentando, oxígeno = malo. Esta es la única vez que quieres oxígeno." />
+
+      <SectionTitleX c={c}>AÑADIR LEVADURA</SectionTitleX>
+      <StepX c={c} num={1} text="Hidrata la levadura US-05: en 100ml de agua templada (25-30°C), espolvorea la levadura. Espera 15 min." />
+      <StepX c={c} num={2} text="Vierte la levadura hidratada en el fermentador con el mosto. Tapa con airlock." />
+      <StepX c={c} num={3} text="Etiqueta con fecha de inicio. Pon en lugar oscuro a 18-22°C." />
+    </div>
+  );
+}
+
+function FERMENTACION_CERVEZA() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        1-2 semanas de fermentación. La cerveza es más rápida que el hidromiel — más azúcar = más rápida actividad inicial.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>QUÉ ESPERAR</SectionTitleX>
+      <StepX c={c} num={1} text="Día 1: empezar burbujeo en 12-24h. Si después de 24h no hay actividad: hace mucho calor o frío, o levadura muerta." />
+      <StepX c={c} num={2} text="Día 2-4: actividad MÁXIMA. Burbujeo cada 1-2 segundos. Mosto hierve interno con espuma (krausen) en la superficie." />
+      <StepX c={c} num={3} text="Día 5-7: la actividad baja gradualmente. La espuma desaparece. El mosto empieza a clarificar." />
+      <StepX c={c} num={4} text="Día 8-10: solo burbujeo ocasional. La cerveza está casi lista (fermentación primaria completa)." />
+      <StepX c={c} num={5} text="Día 10-14: dejar 'reposar' permite que las levaduras decanten al fondo y los sabores se integren. La cerveza sale más limpia." />
+
+      <SectionTitleX c={c}>VERIFICAR CON HIDRÓMETRO</SectionTitleX>
+      <StepX c={c} num={1} text="Día 14: toma muestra con probeta sanitizada. Mide densidad. Anota." />
+      <StepX c={c} num={2} text="Día 16-17: vuelve a medir. Si la densidad es la misma 2 días seguidos = fermentación COMPLETA." why="Si todavía cambia, no embotelles — sigue fermentando o explotarán las botellas." />
+      <StepX c={c} num={3} text="Densidad final típica para Pale Ale 4-5% ABV: 1.010-1.014. Calcula ABV: (DI - DF) × 131.25." />
+
+      <SectionTitleX c={c}>ERRORES COMUNES</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Temperatura > 24°C"
+        consecuencia="Sabores 'plástico' o 'banana' (esters fenolicos). Cerveza con notas raras."
+        fix="Mantén 18-22°C. En verano: nevera dedicada o sitio fresco. Si superas 24°C un par de días = lote sale 'meh' pero bebible."
+      />
+      <ErrorCardX c={c}
+        error="Embotellar antes de tiempo"
+        consecuencia="Si fermentación no terminó, sigue produciendo CO₂ en la botella → BOTELLAS EXPLOTAN."
+        fix="Verificar 2 días seguidos misma densidad antes de embotellar. Sin hidrómetro: mínimo 14 días + sin burbujeo 5 días = listo."
+      />
+      <ErrorCardX c={c}
+        error="No oxigenar al inicio"
+        consecuencia="Levadura sin oxígeno inicial = fermentación lenta y débil. Cerveza dulce o con sabores raros."
+        fix="Al pasar el mosto al fermentador, agita bien o vierte de altura para airear. La levadura necesita ese oxígeno inicial para reproducirse."
+      />
+    </div>
+  );
+}
+
+function EMBOTELLADO_CERVEZA() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Embotellar = el último paso. La cerveza necesita carbonatación natural en botella (priming). 2 semanas más después de embotellar para gas correcto.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PRIMING — AÑADIR AZÚCAR PARA GAS</SectionTitleX>
+      <StepX c={c} num={1} text="Calcula priming sugar: 6-8g de azúcar blanca por litro de cerveza. Para 5L = 30-40g." why="La levadura residual come ese azúcar y produce CO₂ atrapado en la botella = gas natural." />
+      <StepX c={c} num={2} text="Disuelve el azúcar en 100ml de agua hirviendo. Deja enfriar. Añade al cubo de fermentación con cuidado, removiendo gentilmente para no oxigenar." />
+
+      <SectionTitleX c={c}>EMBOTELLAR</SectionTitleX>
+      <StepX c={c} num={1} text="Sanitiza TODAS las botellas + chapas + chapadora + tubos." />
+      <StepX c={c} num={2} text="Trasiega la cerveza del fermentador a las botellas usando el grifo del cubo (o sifón). NO succionar el sedimento del fondo." />
+      <StepX c={c} num={3} text="Llena cada botella dejando 3cm de espacio (cuello vacío)." why="Espacio = donde va el CO₂. Sin espacio: presión excesiva = botella explota." />
+      <StepX c={c} num={4} text="Coloca chapa corona y prensa con la chapadora. Test: la chapa no debe girar." />
+      <StepX c={c} num={5} text="Etiqueta con fecha + estilo + lote." />
+
+      <SectionTitleX c={c}>CARBONATACIÓN EN BOTELLA</SectionTitleX>
+      <StepX c={c} num={1} text="Deja botellas a temperatura AMBIENTE (18-22°C) durante 14 días. La levadura residual se activa y carbonata." why="A 22°C la levadura come el azúcar de priming en 7-14 días. En frío se ralentiza." />
+      <StepX c={c} num={2} text="Cada 3-4 días, abre UNA botella de prueba. Si está plana: espera más. Si hay gas pero suave: casi. Si gas pleno: lista." />
+      <StepX c={c} num={3} text="Cuando esté carbonatada: pasar al frío (nevera). El frío para la actividad de la levadura — la cerveza queda como está." />
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Sobre 'bottle bombs':</strong> si añades demasiado priming sugar (más de 10g/L) o embotellas con fermentación incompleta, las botellas pueden ESTALLAR. En un sitio cerrado + verano = peligro real. Sigue las cantidades recomendadas y verifica que la fermentación terminó.
+      </WarningBoxX>
+    </div>
+  );
+}
+
+function CATA_CERVEZA() {
+  const c = FERMENT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Cerveza recién embotellada y carbonatada (2 semanas) ya es bebible. Mejora con maduración 4-6 semanas más. Aguanta 6-12 meses dependiendo del estilo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EVOLUCIÓN POR ESTILO</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { estilo: "🍺 Pale Ale / IPA", evol: "MEJOR JOVEN. Lúpulo es volátil — pierde aroma en meses. Beber dentro de 2-3 meses." },
+          { estilo: "🍺 Lager / Pilsner", evol: "Mejora con maduración 4-6 semanas en frío (lagering). Aguanta 6 meses." },
+          { estilo: "🍺 Stout / Porter", evol: "Mejora con MESES. Sabores tostados se integran. 3-12 meses ideal." },
+          { estilo: "🍺 Belgian / Tripel", evol: "Igual que vinos. 6-24 meses madura espectacularmente. Requiere alcohol alto (8%+)." },
+        ].map((e, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{e.estilo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{e.evol}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>SIGUIENTE NIVEL</SectionTitleX>
+      <InfoBoxX c={c}>
+        Después de 2-3 lotes con kit de extracto, considera saltar a "all grain" (cerveza desde grano completo): más control, más barato por lote, más complejo. Equipo extra: olla más grande (20L+), bolsa de macerado o sistema lautering. Vale la pena si te enganchas.<br/><br/>
+        Otros estilos para probar después: Witbier (trigo + naranja + cilantro), Dry Stout (Guinness style), Saison (yeast belga, especiada), NEIPA (lúpulo a tope, baja amargor).
+      </InfoBoxX>
+    </div>
+  );
+}
+
+
+// PLANTAS PSICOACTIVAS SUAVES — todas legales en España
+// Cada planta = phase. Cultivo + uso + harm reduction.
+
+function INTRO_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Plantas legales con efectos psicoactivos suaves. Todas se pueden cultivar en casa o conseguir en herboristería sin problemas. Efectos van de relajación profunda a cambios sutiles en percepción/sueños. NO sustituyen drogas controladas — son experiencias diferentes, más sutiles, más botánicas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>QUÉ INCLUYE ESTA SECCIÓN</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
+        {[
+          { nombre: "🍃 Salvia divinorum", tipo: "Visionario INTENSO (5-15 min)", legal: "Legal cultivo + posesión (España)", dif: "Difícil cultivo (humedad alta)" },
+          { nombre: "🌿 Damiana (Turnera diffusa)", tipo: "Eufórico ligero, afrodisíaco", legal: "100% legal", dif: "Fácil cultivo interior cálido" },
+          { nombre: "🪷 Blue Lotus (Nymphaea caerulea)", tipo: "Sedante onírico, leve euforia", legal: "100% legal", dif: "Acuático, requiere estanque/maceta agua" },
+          { nombre: "🥬 Lechuga silvestre (Lactuca virosa)", tipo: "Analgésico suave, sedante", legal: "100% legal", dif: "Muy fácil exterior" },
+          { nombre: "💭 Calea zacatechichi", tipo: "Sueños vívidos, oneirogenic", legal: "100% legal (excepto Polonia)", dif: "Fácil clima cálido" },
+        ].map((p, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ fontSize: "14px", fontWeight: "bold", color: c.textBright, marginBottom: "4px" }}>{p.nombre}</div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>💊 {p.tipo}</div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>⚖️ {p.legal}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>📈 {p.dif}</div>
+          </div>
+        ))}
+      </div>
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Harm reduction general:</strong> Aunque todas son legales y "suaves", siguen siendo psicoactivas. NO mezclar con alcohol u otras sustancias sin investigación previa. Empezar con dosis BAJAS para test de tolerancia personal. Algunas (Salvia especialmente) requieren sitter (acompañante sobrio) la primera vez.
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ ESTAS Y NO OTRAS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Plantas excluidas a propósito:<br/>
+        ❌ <strong>Datura / Brugmansia:</strong> legal pero MUY peligroso (deliriante real, causa intoxicaciones graves frecuentes)<br/>
+        ❌ <strong>Belladona / Mandrágora:</strong> mismo problema que Datura<br/>
+        ❌ <strong>Iboga:</strong> legal cultivar pero ibogaína controlada y riesgo cardíaco<br/>
+        ❌ <strong>Khat:</strong> ilegal en EU<br/>
+        ❌ <strong>Adormidera:</strong> cultivo legal ornamental, extracción de látex ilegal<br/>
+        <br/>
+        Las 5 incluidas son: <strong>seguras (en dosis razonables), legales y no adictivas</strong>.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function SALVIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Salvia divinorum</strong> — planta mexicana con salvinorina A, el psicoactivo natural más potente conocido. Experiencia disociativa intensa de 5-15 min. NO es como cannabis o setas — es completamente distinto, alienante, a veces aterrador. Solo para gente que entiende lo que va a hacer.
+      </InfoBoxX>
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Sobre la experiencia:</strong> Salvia produce experiencia DISOCIATIVA — sensación de salir del cuerpo, geometría imposible, "convertirse en objeto", risa incontrolable o pánico. NO es recreativo en sentido fiestero. NO conducir, no estar de pie, SIEMPRE con sitter sobrio. Algunas personas tienen mal viaje. Investigar Erowid antes.
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Comprar esqueje (semillas casi imposibles): vendedores online europeos, 15-30€ por esqueje enraizado. Variedades: Bunk, Hofmann, Wasson — diferencias mínimas." />
+      <StepX c={c} num={2} text="Sustrato: tierra de jardín + perlita + turba (1:1:1). Maceta drenada. NO usa cactus (necesita más humedad)." />
+      <StepX c={c} num={3} text="Luz: indirecta. Ventana orientada norte/este. Luz directa la quema." why="En su hábitat natural (Oaxaca) crece bajo sombra de árboles altos. Luz directa = hojas amarillas y caídas." />
+      <StepX c={c} num={4} text="Humedad: 60-80%. Esto es lo más difícil. Pulverizar 2-3x/día o usar humidificador. Bandeja con guijarros + agua bajo la maceta ayuda." />
+      <StepX c={c} num={5} text="Temperatura: 18-26°C constante. Sensible al frío (<15°C la frena), al calor (>30°C la marchita)." />
+      <StepX c={c} num={6} text="Riego: cuando la superficie del sustrato esté ligeramente seca. Salvia bebe MUCHO comparada con otras plantas." />
+
+      <SectionTitleX c={c}>COSECHA Y PREPARACIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Cortar hojas grandes y maduras (10cm+) con tijeras esterilizadas. La planta sigue produciendo más hojas." />
+      <StepX c={c} num={2} text="Secar hojas en sitio oscuro y ventilado. 5-10 días hasta que estén crujientes." why="Luz degrada salvinorina. Calor también — NO usar horno." />
+      <StepX c={c} num={3} text="Conservar en frasco hermético opaco. Dura años manteniendo potencia." />
+
+      <SectionTitleX c={c}>USO TRADICIONAL — QUID</SectionTitleX>
+      <InfoBoxX c={c}>
+        Método tradicional Mazateco: masticar hojas FRESCAS (5-15 hojas) y mantenerlas en la boca 30 min sin tragar (la salvinorina se absorbe por la mucosa oral). Experiencia más suave y larga (45-60 min) que fumar.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>USO MODERNO — INFUSIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Hojas secas en infusión NO funciona bien — la salvinorina se destruye con el calor del agua. Mascar hojas secas tampoco — duras y poco efectivas. Para hojas secas, opción tradicional es extracto (consumo concentrado, NO recomendado para principiantes — requiere harm reduction extrema).
+      </InfoBoxX>
+
+      <ErrorCardX c={c}
+        error="Probar primera vez sin sitter"
+        consecuencia="Caídas, golpes, salir corriendo. Personas han hecho cosas peligrosas durante la disociación."
+        fix="SIEMPRE con sitter sobrio la primera vez. Sentado en sofá o cama, no de pie. Dosis baja primera vez."
+      />
+      <ErrorCardX c={c}
+        error="Mezclar con alcohol/otras sustancias"
+        consecuencia="Salvia ya es disociativa. Mezclar empeora la confusión y aumenta riesgo de pánico."
+        fix="Sobrio. Sin nada más en sangre. La salvia sola ya es lo suficientemente intensa."
+      />
+    </div>
+  );
+}
+
+function DAMIANA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Damiana (Turnera diffusa)</strong> — arbusto aromático mexicano. Efecto: relajación + ligera euforia + afrodisíaco suave. La planta más "amigable" de esta lista. Sabor agradable, efectos suaves, buena para principiantes en plantas psicoactivas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas o esquejes. Semillas tardan 2-4 semanas en germinar a 20-25°C. Esquejes enraízan en agua en 2-3 semanas." />
+      <StepX c={c} num={2} text="Sustrato: bien drenado, tipo suculenta. Tolera tierra pobre." />
+      <StepX c={c} num={3} text="Luz: sol directo o semi-sombra. Adapta a ambos." />
+      <StepX c={c} num={4} text="Riego: poco. Es planta semi-desértica. Solo cuando el sustrato esté muy seco." />
+      <StepX c={c} num={5} text="Temperatura: 18-32°C ideal. Sensible al frío extremo (<5°C). En zona fría: cultivo interior junto a ventana sur." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Cortar ramitas con hojas (5-10cm) en cualquier momento del año. La planta sigue produciendo." />
+      <StepX c={c} num={2} text="Secar al aire (sombra ventilada) 5-7 días. Conservar en frasco." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 2-3g de hojas secas por taza. Hervir 5-10 min. 1-3 tazas al día. Sabor herbal agradable.<br/>
+        🚬 <strong>Mezclada con tabaco/cannabis:</strong> 30% damiana en blends. Efecto suaviza y aporta notas dulces.<br/>
+        🍷 <strong>Licor:</strong> macerar 50g en 500ml de vodka 2 semanas. Filtrar. Licor afrodisíaco tradicional mexicano.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 15-30 min. Duración: 2-4h. Sensaciones: relajación corporal, ligero "buzz" mental similar a kava o cannabis muy suave, calidez. Reportada como ayuda en ansiedad social. Sin "viaje" — solo bienestar.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function BLUE_LOTUS() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Blue Lotus (Nymphaea caerulea)</strong> — flor sagrada del antiguo Egipto. Sedante suave, leve euforia, sueños vívidos. Aspecto hermoso (flor azul). Cultivable solo si tienes estanque o maceta acuática.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO ACUÁTICO</SectionTitleX>
+      <StepX c={c} num={1} text="Necesitas: estanque pequeño, barreño grande de plástico (50L+), o pecera GRANDE. Profundidad mínima 30cm." />
+      <StepX c={c} num={2} text="Sustrato: tierra arcillosa pesada en una maceta acuática (8-15cm de profundidad de tierra). Encima poner gravilla para que el agua quede limpia." />
+      <StepX c={c} num={3} text="Plantar tubérculo o semilla en la maceta de tierra. Cubrir todo con agua hasta 20-30cm sobre la maceta." />
+      <StepX c={c} num={4} text="Luz: pleno sol 6h+ al día. Imprescindible para flor." />
+      <StepX c={c} num={5} text="Temperatura agua: 22-28°C. Tropical. En España solo crece bien mayo-octubre exterior. En invierno: interior junto a ventana sur cálida o invernadero." />
+      <StepX c={c} num={6} text="Fertilizar: pellets para plantas acuáticas cada 6 semanas en temporada activa." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Recolectar las flores cuando se abren (a media mañana). Se abren 2-3 días, se cierran de noche." />
+      <StepX c={c} num={2} text="Secar las flores enteras en sitio oscuro y ventilado. 1-2 semanas." />
+      <StepX c={c} num={3} text="Conservar enteras o desmenuzadas en frasco hermético." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 5-10g de flores secas en agua caliente (NO hirviendo, 80°C). Reposo 15 min. 1 taza por sesión.<br/>
+        🍷 <strong>Vino macerado (uso egipcio antiguo):</strong> 30g de flores secas en 750ml de vino tinto seco. Macerar 2 semanas. Filtrar. Beber en copas pequeñas.<br/>
+        🚬 <strong>Fumada:</strong> mezclada con tabaco, efecto sutil.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30 min - 1h. Duración: 2-4h. Sensaciones: relajación profunda corporal y mental, sueños vívidos si se toma antes de dormir, ligera euforia. NO es alucinógeno. Comparable a una copa de vino con efecto sedante extra.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function WILD_LETTUCE() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Lechuga silvestre (Lactuca virosa)</strong> — pariente de la lechuga común, pero con látex blanco que tiene propiedades analgésicas y sedantes. Conocida como "opio del pobre". NO contiene opiáceos reales — solo es sedante suave.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO — CASI INVASIVA</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: cualquier vendedor de semillas medicinales. 1-3€ por sobre con cientos de semillas." />
+      <StepX c={c} num={2} text="Plantar directamente en exterior en marzo-abril o septiembre. Suelo común, no requiere especial." />
+      <StepX c={c} num={3} text="Sol directo 4-6h al día. Riego moderado." />
+      <StepX c={c} num={4} text="Crece como una lechuga normal pero MÁS — hasta 2m de altura cuando florece. Hojas grandes, tallo grueso lleno de látex." />
+      <StepX c={c} num={5} text="Listo para cosechar a los 3-4 meses, justo antes de florecer (concentración máxima de látex)." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN DEL LÁTEX (LACTUCARIO)</SectionTitleX>
+      <StepX c={c} num={1} text="Cortar el tallo principal con cuchillo. Sale un líquido blanco lechoso (látex) — eso es lo activo." />
+      <StepX c={c} num={2} text="Recoger el látex en cuchara o trapo limpio. Cada planta da 1-3g." />
+      <StepX c={c} num={3} text="Hacer cortes superficiales adicionales en el tallo cada 2-3 días — se sigue regenerando látex hasta semanas." />
+      <StepX c={c} num={4} text="Secar el látex al aire (oscuro). Se vuelve marrón oscuro y resinoso. Conservar en frasco." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión de hojas:</strong> 5-10g de hojas secas (sin látex). Efecto suave. Tradicional para insomnio.<br/>
+        🚬 <strong>Lactucario fumado:</strong> 0.5-1g del látex seco. Efecto más fuerte, sedante notable.<br/>
+        💊 <strong>Cápsulas:</strong> rellenar cápsulas con polvo de hojas o lactucario. 200-400mg.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30 min - 1h. Duración: 3-6h. Sensaciones: somnolencia, alivio de dolor leve-moderado, relajación muscular. No euforia. Útil para insomnio o dolor de cabeza. NO es adictivo, NO contiene opiáceos.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function CALEA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Calea zacatechichi</strong> — "hierba de los sueños" Maya. Oneirogenic = produce sueños VÍVIDOS, intensos, muchas veces lúcidos. Sabor MUY amargo. Para gente interesada en exploración onírica.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas o esquejes. Más fácil esqueje (semillas son delicadas)." />
+      <StepX c={c} num={2} text="Sustrato: bien drenado, mezcla universal + perlita." />
+      <StepX c={c} num={3} text="Luz: pleno sol o semi-sombra. Adapta bien." />
+      <StepX c={c} num={4} text="Riego: regular pero sin encharcar." />
+      <StepX c={c} num={5} text="Temperatura: 18-30°C. Sensible al frío (<10°C). Cultivar interior si vives zona fría." />
+      <StepX c={c} num={6} text="Crece como arbusto bajo (50cm-1m). Cosecha hojas individuales según necesidad — la planta sigue produciendo." />
+
+      <SectionTitleX c={c}>USO TRADICIONAL — ANTES DE DORMIR</SectionTitleX>
+      <StepX c={c} num={1} text="2-5g de hojas secas en infusión. Hervir 10 min. Sabor BRUTALMENTE amargo — añade miel/limón si quieres." />
+      <StepX c={c} num={2} text="Beber 30 min antes de irse a la cama." />
+      <StepX c={c} num={3} text="Adicional (potencia el efecto): fumar pipa pequeña con hojas secas justo antes de acostarse." />
+      <StepX c={c} num={4} text="Tener libreta y bolígrafo en la mesilla — al despertar anotar sueños inmediatamente o se olvidan." />
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Mientras te duermes: NO efecto consciente notable, quizás ligera somnolencia.<br/>
+        Durante la noche: sueños MUY vívidos, larga duración, mucha imaginería. Algunas personas reportan sueños lúcidos (consciencia dentro del sueño).<br/>
+        Al despertar: recuerdo VÍVIDO de sueños — más detalles que sin Calea. La sensación dura horas.<br/>
+        <br/>
+        <strong>NO es psicoactivo en estado de vigilia.</strong> Solo afecta al sueño. Lo más cercano a "soñar a propósito".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Usarla todas las noches"
+        consecuencia="Tolerancia se desarrolla rápido. Después de 1-2 semanas, no hace efecto. También puede afectar calidad del sueño profundo."
+        fix="Máximo 2-3 veces por semana. Descansos de 1+ semana cada mes. Usar como herramienta, no como rutina."
+      />
+    </div>
+  );
+}
+
+function FAQ_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  const faqs = [
+    { q: "¿Cuál es la más segura para empezar?", a: "Damiana. Efecto suave, sabor agradable, fácil cultivo, sin riesgos especiales. Después: Wild lettuce o Calea." },
+    { q: "¿Cuál es la más intensa?", a: "Salvia divinorum, sin duda. Es la más potente psicoactivamente de toda la lista — pero también la más exigente en cultivo y la más arriesgada en uso (siempre con sitter)." },
+    { q: "¿Puedo mezclar plantas?", a: "Algunas combinaciones son tradicionales: Damiana + Blue Lotus en infusión = sedante + eufórico. Wild lettuce + manzanilla = súper sedante para insomnio. NO mezclar Salvia con nada — su efecto disociativo es ya extremo." },
+    { q: "¿Son adictivas?", a: "Ninguna de estas 5 produce dependencia física. Salvia incluso tiene 'sigma-mediated' anti-recompensa — la mayoría de gente NO repite a menudo. Damiana, Calea y Wild lettuce son no-adictivas como manzanilla." },
+    { q: "¿Cuándo es mejor evitar?", a: "Embarazo y lactancia: TODAS contraindicadas. Medicación: consultar con médico — algunas pueden interactuar (especialmente Wild lettuce con sedantes y Damiana con antidepresivos). Conducir: nunca tras consumir cualquiera de estas." },
+    { q: "¿Cuánto duran los efectos?", a: "Salvia: 5-15 min (intenso). Damiana: 2-4h. Blue Lotus: 2-4h. Wild lettuce: 3-6h. Calea: solo durante el sueño (8h aprox), efecto hipnagógico." },
+    { q: "¿Dónde compro semillas/plantas en España?", a: "Online: vendedores especializados en etnobotánica (busca 'semillas etnobotánica España'). Damiana también en herboristerías como hojas secas. Salvia esquejes solo online. Blue Lotus rizomas en tiendas de plantas acuáticas." },
+    { q: "¿Estas plantas son legales seguro?", a: "Sí, las 5 son legales en España (y en EU general): cultivo + posesión + uso personal. Calea está prohibida en Polonia (excepción rara). Salvia ha sido prohibida en algunos países (USA, Australia, varios EU) pero NO en España. Verifica si viajas." },
+  ];
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preguntas comunes sobre plantas psicoactivas suaves. Si quieres más info, recursos: Erowid.org (en inglés, biblioteca completa), TripSit, sitio español Ojos de Brujo.
+      </InfoBoxX>
+
+      {faqs.map((f, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+// AMANITA MUSCARIA — forrajeo + preparación
+// NO se cultiva (micorriza con árboles). Solo se recoge en bosque + procesa.
+// IMPORTANTE: muscimol activo, NO psilocibina. Diferente a Psilocybe.
+
+function INTRO_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Amanita muscaria</strong> — el hongo rojo con motas blancas de los cuentos. Activos: muscimol + ácido iboténico. Efectos disociativos/oníricos, MUY DIFERENTES a Psilocybe (no es serotonérgico, es GABAérgico). Conocido por chamanes siberianos durante miles de años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ ESTA SECCIÓN ES DIFERENTE</SectionTitleX>
+      <InfoBoxX c={c}>
+        Amanita muscaria NO se cultiva — vive en simbiosis con raíces de árboles (micorriza con abedules, pinos, abetos). Imposible reproducir esa relación en casa. La única forma de conseguirlo es FORRAJEO — recogerlo en bosque otoño. Esta guía cubre identificación, recolección, secado, decarboxilación y consumo seguro.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS — QUÉ ESPERAR</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 1-2h tras consumo (lento, paciencia).<br/>
+        Duración: 6-10h (largo).<br/>
+        Sensaciones: relajación profunda, euforia ligera, distorsión del tamaño (macropsia/micropsia — "Alicia en el país de las maravillas"), sueños vívidos en duermevela, posibles náuseas las primeras horas.<br/>
+        <br/>
+        NO es como Psilocybe. NO da "viajes" psicodélicos visuales típicos. Más bien estado disociativo/onírico, "estar entre dos mundos".
+      </InfoBoxX>
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>RIESGOS REALES:</strong><br/>
+        • IDENTIFICACIÓN ERRÓNEA = MUERTE. Hay otras Amanitas mortales (Amanita phalloides — Death Cap). Si no estás 100% seguro, NO comas.<br/>
+        • Sin decarboxilación: ácido iboténico causa malestar GI severo (vómitos, diarrea) y experiencia confusa.<br/>
+        • Dosis variable: cada hongo tiene cantidad diferente de activos (factor 10x según condiciones).<br/>
+        • NO conducir, NO mezclar con alcohol/depresores.
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>LEGALIDAD</SectionTitleX>
+      <InfoBoxX c={c}>
+        En España: 100% legal recolectar, poseer, consumir Amanita muscaria. NO está en listas de sustancias controladas. La psilocibina sí, pero el muscimol no. Curiosamente más legal que las otras Amanitas peligrosas.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function IDENTIFICACION_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Identificación correcta es CRÍTICA. Confundirla con otras Amanitas puede ser MORTAL. Esta guía te ayuda a confirmar al 100%, pero la primera vez consigue la confirmación de un experto en setas (sociedad micológica local, foro online con fotos).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CARACTERÍSTICAS DE A. MUSCARIA</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { c: "🔴 Sombrero rojo brillante", det: "10-25cm de diámetro. Color rojo intenso (a veces naranja-rojo en var. formosa). De joven es esférico, abre con la edad." },
+          { c: "⚪ Verrugas blancas", det: "Sobre el sombrero, motas/verrugas blancas (restos del velo universal). Pueden caer con lluvia. SI NO HAY MOTAS pero es rojo, puede ser una Amanita lavada por la lluvia O una especie distinta." },
+          { c: "⚪ Láminas blancas libres", det: "Bajo el sombrero, láminas BLANCAS, no unidas al pie. Crítico verificarlo." },
+          { c: "🦴 Pie blanco con anillo", det: "Pie blanco grueso. Anillo blanco con flecos colgando. Base bulbosa con varios anillos concéntricos (escamas)." },
+          { c: "🌳 Bajo abedul / pino / abeto", det: "Crece SIEMPRE en simbiosis con estos árboles. Si encuentras 'amanita roja' bajo otro árbol = NO es muscaria, es OTRA cosa." },
+          { c: "🍂 Otoño tras lluvia", det: "Septiembre-noviembre típico. Tras lluvias seguidas. En cualquier momento del año puede salir tras lluvia + temperatura suave." },
+        ].map((item, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{item.c}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{item.det}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>⚠️ AMANITAS MORTALES — NO CONFUNDIR</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Amanita phalloides (Death Cap)"
+        consecuencia="MORTAL. Veneno (amatoxinas) destruye el hígado. Sin tratamiento médico inmediato = muerte segura en 5-10 días."
+        fix="Death Cap es VERDE-OLIVA o blanca AMARILLENTA, NUNCA roja. Si es roja con motas, no es phalloides. Pero VERIFICAR todas las características antes de consumir."
+      />
+      <ErrorCardX c={c}
+        error="Amanita pantherina (Panther Cap)"
+        consecuencia="Tiene MÁS muscimol que muscaria pero también más alcaloides tóxicos. Causa intoxicaciones graves. Algunos la consumen pero requiere experiencia avanzada."
+        fix="Pantherina tiene sombrero MARRÓN (no rojo) con motas blancas. Si dudas entre las dos: NO comas. Empieza solo con muscaria roja."
+      />
+      <ErrorCardX c={c}
+        error="Amanita virosa (Destroying Angel)"
+        consecuencia="MORTAL como phalloides. Misma destrucción hepática."
+        fix="Virosa es 100% blanca, pie alto y delgado. Si es blanca = NO comas."
+      />
+
+      <SectionTitleX c={c}>VERIFICACIÓN ANTES DE CONSUMIR</SectionTitleX>
+      <StepX c={c} num={1} text="Saca varias fotos: vista superior, vista inferior (láminas), corte longitudinal, base con bulbo." />
+      <StepX c={c} num={2} text="Sube a foro especializado: r/mycology (inglés), grupos Facebook de micología España, app 'Picture Mushroom' (auxiliar, no fiable como única fuente)." />
+      <StepX c={c} num={3} text="PRIMERA VEZ: contacta sociedad micológica local. Casi todas las provincias en España tienen una. Te confirman gratis." />
+      <StepX c={c} num={4} text="SI HAY DUDA: NO COMAS. Toxicología por Amanita = ingreso UCI mínimo. No vale la pena." warning />
+    </div>
+  );
+}
+
+function RECOLECCION_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Forrajeo en bosque. Otoño tras lluvia. Equipo mínimo. Ética: cosecha sostenible.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CUÁNDO Y DÓNDE</SectionTitleX>
+      <StepX c={c} num={1} text="Temporada: SEPTIEMBRE - NOVIEMBRE. En zonas frías puede aparecer hasta diciembre. En España: ideal sierra de la Cordillera Cantábrica, Pirineos, Sistema Central." />
+      <StepX c={c} num={2} text="Tras 3-5 días de lluvia + temperaturas 10-18°C = condiciones óptimas. Visita 2-4 días después de lluvia significativa." />
+      <StepX c={c} num={3} text="Bosques con: ABEDULES, pinos silvestres, abetos, hayedos. NO en encinares puros (necesita árboles micorrícicos compatibles)." />
+      <StepX c={c} num={4} text="Espacios abiertos del bosque, claros, bordes de caminos forestales. Crece en grupos a veces. Puede aparecer años seguidos en mismo sitio." />
+
+      <SectionTitleX c={c}>EQUIPO DE FORRAJEO</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { item: "🧺 Cesta de mimbre", uso: "Permite que las esporas se dispersen mientras caminas (ayuda al ecosistema). Bolsa plástico = setas se aplastan y deterioran." },
+          { item: "🔪 Cuchillo pequeño afilado", uso: "Para cortar a nivel del suelo sin arrancar el micelio. NUNCA arrancar con la mano." },
+          { item: "🪥 Cepillo pequeño", uso: "Limpiar tierra del pie antes de meter en cesta. Reduce contaminación del cesto." },
+          { item: "📱 GPS o brújula", uso: "Bosques de coníferas se ven todos iguales. Marca tu coche o sendero al entrar." },
+          { item: "📷 Cámara/móvil", uso: "Foto de cada espécimen ANTES de cortar — documenta hábitat, vista superior, etc. Útil para verificación post-recolección." },
+        ].map((item, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{item.uso}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>PROTOCOLO DE RECOLECCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Cuando encuentres uno: PARA. Verifica TODAS las características de identificación antes de cortar. Foto." />
+      <StepX c={c} num={2} text="Corta a nivel del suelo con cuchillo. NO arrancar — daña el micelio subterráneo." why="El micelio puede dar más setas la próxima temporada si no lo destruyes." />
+      <StepX c={c} num={3} text="Limpia tierra del pie con cepillo. Coloca en cesta con láminas hacia abajo (las esporas caen, se siembra el bosque)." />
+      <StepX c={c} num={4} text="Recolecta con MODERACIÓN: deja siempre 50% de las setas que ves intactas. Solo coge las que estás seguro de procesar." />
+      <StepX c={c} num={5} text="No mezcles con otras setas en el mismo cesto si no estás 100% seguro de identificación." />
+      <StepX c={c} num={6} text="VOLVER A IDENTIFICAR en casa con luz adecuada antes de procesar. Foto enviada a experto si hay duda." />
+
+      <SectionTitleX c={c}>ÉTICA Y LEGISLACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Algunas comunidades autónomas requieren permiso de recolección de setas en montes públicos (Castilla y León, Cataluña). Verifica antes de ir. Recolección personal "razonable" (1-2kg) suele tolerarse sin permiso. Recolección comercial = sí o sí permiso.<br/><br/>
+        Ética micológica: NO arrasar, NO recoger ejemplares juveniles (no han esporulado), NO destruir madera con hongos, dejar sitio limpio.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function SECADO_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        El secado en Amanita NO es solo para conservar — es CRÍTICO PSICOACTIVAMENTE. El secado prolongado convierte ácido iboténico (tóxico, causa náuseas) en muscimol (psicoactivo deseado). Esta conversión = "decarboxilación".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ SECAR ES IMPRESCINDIBLE</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍄 <strong>Setas frescas:</strong> 80% ácido iboténico (causa malestar) + 20% muscimol (psicoactivo). Comer fresco = vómitos + experiencia confusa.<br/>
+        🌬️ <strong>Setas secas (decarbox):</strong> 80% muscimol + 20% iboténico. Mucho más limpio y predecible.<br/>
+        <br/>
+        Tradicional siberiano: secado 2-4 semanas + tratamiento con calor suave (chamán fumando junto a las setas).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 1 — SECADO LENTO (TRADICIONAL, MEJOR)</SectionTitleX>
+      <StepX c={c} num={1} text="Limpiar las setas: eliminar tierra restante con pincel SECO. NO LAVAR con agua (las pudre)." />
+      <StepX c={c} num={2} text="Cortar en rebanadas de 5-8mm de grosor. Mantener separadas sombrero y pie si quieres dosificar exacto (sombrero tiene más activos)." />
+      <StepX c={c} num={3} text="Extender en bandeja con rejilla en sitio oscuro y ventilado. NO sol directo (degrada activos)." />
+      <StepX c={c} num={4} text="Temperatura ideal: 20-30°C. Humedad ambiente baja-media." />
+      <StepX c={c} num={5} text="Tiempo: 5-15 días según humedad ambiente. Listo cuando quebradizo (cracker dry — se rompe limpio al doblarse)." why="Mientras se secan, ocurre la decarboxilación natural. Más tiempo seco antes de consumir = mejor conversión iboténico→muscimol." />
+
+      <SectionTitleX c={c}>MÉTODO 2 — DECARBOXILACIÓN ACELERADA (HORNO)</SectionTitleX>
+      <StepX c={c} num={1} text="Secar primero al aire 5-7 días (paso 1)." />
+      <StepX c={c} num={2} text="Una vez SECAS, meter en horno a 70-80°C durante 90-120 minutos." why="Calor suave acelera la decarboxilación. NO superar 90°C — destruye muscimol también." warning />
+      <StepX c={c} num={3} text="Dejar enfriar. Conservar." />
+
+      <SectionTitleX c={c}>MÉTODO 3 — DECARBOXILACIÓN EN AGUA (ANTES DE CONSUMO)</SectionTitleX>
+      <StepX c={c} num={1} text="Si vas a hacer té: añade ácido (limón, vinagre) al agua mientras hierve las setas — el medio ácido + calor = decarboxilación al momento. 1 cucharada de zumo de limón por taza de agua." />
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Una vez completamente secas: frasco hermético opaco." />
+      <StepX c={c} num={2} text="Lugar fresco y oscuro. Sílica gel ayuda a mantener seco." />
+      <StepX c={c} num={3} text="Duran 2-3 años manteniendo potencia. Después: degradación gradual de activos." />
+    </div>
+  );
+}
+
+function PREPARACION_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Cómo preparar las Amanitas secas para consumo. Té es lo más común y suave. Comer directo es posible pero más fuerte y con más náuseas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 1 — TÉ (RECOMENDADO PARA EMPEZAR)</SectionTitleX>
+      <StepX c={c} num={1} text="Pesar dosis (ver fase 'Seguridad'). Empieza BAJA — 1-3g de seta seca para primera vez." />
+      <StepX c={c} num={2} text="Triturar las setas secas con mortero o molinillo. Polvo grueso." />
+      <StepX c={c} num={3} text="En cazo: 300ml de agua + zumo de medio limón (acidifica para decarbox). Llevar a hervor suave." />
+      <StepX c={c} num={4} text="Añadir el polvo de seta. Hervir suave 30-45 minutos." why="Tiempo + calor + ácido = conversión iboténico → muscimol durante la cocción." />
+      <StepX c={c} num={5} text="Colar con tela fina o filtro café. Beber el té (sabor amargo, peludo). Puedes añadir miel + jengibre." />
+      <StepX c={c} num={6} text="No comer el residuo de hongos colados — ahí queda algo de iboténico que no convertiste." />
+
+      <SectionTitleX c={c}>MÉTODO 2 — POLVO DIRECTO EN CÁPSULAS</SectionTitleX>
+      <StepX c={c} num={1} text="Setas BIEN decarboxiladas (horno previamente). Triturar a polvo fino." />
+      <StepX c={c} num={2} text="Rellenar cápsulas vacías (00 size). Cada cápsula contiene ~0.5g." />
+      <StepX c={c} num={3} text="Tragar cápsulas con agua. Más rápido absorción que té." />
+      <StepX c={c} num={4} text="Riesgo: si no decarboxilaste bien previamente = vómitos." />
+
+      <SectionTitleX c={c}>MÉTODO 3 — TINTURA (CONSERVACIÓN A LARGO PLAZO)</SectionTitleX>
+      <StepX c={c} num={1} text="50g de Amanita seca y triturada en 250ml de alcohol 40-50% (vodka). Cerrar frasco oscuro." />
+      <StepX c={c} num={2} text="Macerar 4-6 semanas, agitando cada día. Filtrar." />
+      <StepX c={c} num={3} text="Tintura concentrada. Dosis: 1-3 ml bajo lengua (sublingual, absorción rápida). Sabor MUY fuerte." />
+      <StepX c={c} num={4} text="Conservar en frasco oscuro. Dura años." />
+    </div>
+  );
+}
+
+function HARM_REDUCTION_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Sección crítica. Amanita es legal y "natural" pero NO es inocua. Información de dosis + qué hacer si algo va mal + cuándo NO usarla.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>DOSIFICACIÓN (SETA SECA, BIEN DECARBOXILADA)</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "20px" }}>
+        {[
+          { dosis: "💊 Microdosis (sub-perceptual)", peso: "0.5-1g", efecto: "Cambios sutiles en estado de ánimo. Algunos lo usan para ansiedad/sueño." },
+          { dosis: "🌱 Dosis baja (test inicial)", peso: "1-3g", efecto: "Relajación notable, ligero estado alterado, algo de macropsia. RECOMENDADO PARA PRIMERA VEZ." },
+          { dosis: "🍄 Dosis media", peso: "3-5g", efecto: "Estado disociativo claro, sueños vívidos en duermevela, distorsiones perceptivas. Náuseas posibles primera hora." },
+          { dosis: "⚠️ Dosis alta", peso: "5-10g", efecto: "Estado profundo. NO recomendado sin experiencia previa con dosis menores. Náuseas casi seguras. Solo con sitter." },
+          { dosis: "🛑 Dosis intensa", peso: "10g+", efecto: "Solo experimentados. Posibles experiencias muy alteradas o desagradables. NO HACER sin supervisión." },
+        ].map((d, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{d.dosis}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{d.peso}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{d.efecto}</div>
+          </div>
+        ))}
+      </div>
+
+      <WarningBoxX c={c}>
+        ⚠️ Variabilidad: cada hongo y cada lote tiene CONCENTRACIÓN DIFERENTE de muscimol (puede variar 10x entre setas). Lo que fue dosis baja en un lote puede ser dosis alta en otro. SIEMPRE empezar bajo con cada lote nuevo.
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>CONTRAINDICACIONES — NO TOMAR SI...</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Embarazo o lactancia"
+        consecuencia="Sin estudios de seguridad. Asumir riesgo para el bebé."
+        fix="No tomar."
+      />
+      <ErrorCardX c={c}
+        error="Toma medicación con depresores SNC (benzos, opioides, antiepilépticos)"
+        consecuencia="Muscimol es agonista GABA-A. Sumar con otros depresores GABA = depresión respiratoria, sedación profunda, riesgo cardíaco."
+        fix="No mezclar. Espacio mínimo 24h entre Amanita y medicación SNC."
+      />
+      <ErrorCardX c={c}
+        error="Historial psiquiátrico (esquizofrenia, bipolar)"
+        consecuencia="Posible activación de episodios psicóticos. La experiencia disociativa puede gatillar problemas."
+        fix="Consultar con profesional antes. NO tomar sin evaluación."
+      />
+      <ErrorCardX c={c}
+        error="Bajo efectos de alcohol u otras drogas"
+        consecuencia="Combinaciones impredecibles. Riesgo aumentado de eventos adversos."
+        fix="Sobrio antes y durante. Esperar 24h+ desde otras sustancias."
+      />
+
+      <SectionTitleX c={c}>SET & SETTING</SectionTitleX>
+      <StepX c={c} num={1} text="SET (mental): No tomar si estás triste/ansioso/estresado. Esperar momento neutral o positivo." />
+      <StepX c={c} num={2} text="SETTING (entorno): Casa, tranquilo, oscuro, cómodo. Tener cama, mantas, agua, baño cerca. Posible cubo cerca por si vómitos." />
+      <StepX c={c} num={3} text="SITTER: persona sobria primera vez. Idealmente alguien con experiencia." />
+      <StepX c={c} num={4} text="DURACIÓN: bloquea 12-15h. No tienes que estar disponible para nada (trabajo, conducir, hijos)." />
+      <StepX c={c} num={5} text="HIDRATACIÓN: agua/jugo a mano. Posible boca seca." />
+
+      <SectionTitleX c={c}>SI ALGO VA MAL</SectionTitleX>
+      <InfoBoxX c={c}>
+        🤢 <strong>Náuseas/vómitos primera hora:</strong> NORMAL. Significa decarbox no fue completa. Tumbarte de lado, beber agua a sorbitos, esperar.<br/>
+        😰 <strong>Ansiedad/pánico:</strong> Cambiar de habitación, música suave, recordar "esto va a pasar en horas". Si no mejora: 911 NO necesario salvo síntomas físicos graves.<br/>
+        💔 <strong>Síntomas físicos extremos</strong> (palpitaciones violentas, dificultad respirar, pérdida de consciencia): URGENCIAS YA. Llevar muestra del hongo si posible.<br/>
+        ⏰ Llamada anti-tóxicos España: <strong>915 620 420</strong> (24h).
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function FAQ_AMANITA() {
+  const c = AMANITA_COLORS;
+  const faqs = [
+    { q: "¿Cuándo es la mejor temporada?", a: "Septiembre a noviembre en España. Pico en octubre tras lluvias seguidas + temperaturas suaves. Apunta los lugares donde encuentres — vuelven año tras año." },
+    { q: "¿Por qué no se puede cultivar?", a: "Amanita muscaria es micorrícica — vive en simbiosis OBLIGADA con raíces de árboles (intercambio: el árbol da azúcares, el hongo da minerales del suelo). Reproducir esto en casa = imposible. Forrajeo es la única vía." },
+    { q: "¿Pueden venderlas legalmente?", a: "Sí, en España es legal vender Amanita muscaria seca. Algunas tiendas online especializadas en etnobotánica las venden (15-40€ por 50-100g). Verifica reputación del vendedor — origen y secado correctos importan." },
+    { q: "¿Diferencia muscaria fresca vs seca?", a: "Frescas: dominan ácido iboténico (tóxico, vómitos). Secas y bien decarbiladas: dominan muscimol (psicoactivo). NUNCA consumir frescas. Secado mínimo 5-10 días." },
+    { q: "¿Es adictiva?", a: "No físicamente. No psicológicamente como tal. La experiencia es lo suficientemente intensa/extraña que la mayoría no quiere repetir constantemente." },
+    { q: "¿Cuánto tarda en hacer efecto?", a: "Té: 1-2h hasta sentir efecto inicial, pico a las 3-4h, declive 6-10h total. Es LENTO comparado con otras sustancias. NO tomar más antes de que pase el efecto inicial." },
+    { q: "¿Se puede comer entera (cocinada)?", a: "Tradicionalmente algunas culturas la cocinan como alimento (parboiling 15min, cambiar agua, hervir otros 15min — elimina iboténico y muscimol). Resultado: ya no es psicoactiva, es solo seta comestible. Para mantener psicoactividad NO hervir tan agresivo — usar el método de té descrito." },
+    { q: "¿Qué hacer con setas que recogí pero parecen dudosas?", a: "TIRARLAS. NO consumir. Una experiencia mala = nunca más. Una intoxicación grave = hospital. La duda es razón suficiente para descartar." },
+  ];
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Preguntas comunes sobre Amanita muscaria. Recursos útiles: Erowid (sección Amanita), foros r/Amanitamuscaria, libros de Andy Letcher (Shroom).
+      </InfoBoxX>
+
+      {faqs.map((f, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
 function GuiaCultivo() {
 
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ferment" | "plantas" | "amanita"
+
+  // Cannabis state
   const [mode, setMode] = useState("interior");
-  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom"
-  const [mushroomMode, setMushroomMode] = useState("kit"); // "kit" | "friendly" | "advanced" | "general"
+  const [activePhase, setActivePhase] = useState("compra");
+  const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
+  const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
+
+  // Mushroom state
+  const [mushroomMode, setMushroomMode] = useState("kit");
   const [activeMushroomKit, setActiveMushroomKit] = useState("compra_kit");
   const [activeMushroomFriendly, setActiveMushroomFriendly] = useState("compra_friendly");
   const [activeMushroomAdvanced, setActiveMushroomAdvanced] = useState("compra_advanced");
   const [activeMushroomGen, setActiveMushroomGen] = useState("timeline_setas");
-  const [activePhase, setActivePhase] = useState("compra");
-  const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
-  const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
+
+  // Cactus state (single mode)
+  const [activeCactus, setActiveCactus] = useState("intro_cactus");
+
+  // Ferment state (3 modes: hidromiel, cerveza, general)
+  const [fermentMode, setFermentMode] = useState("general");
+  const [activeFermentHidromiel, setActiveFermentHidromiel] = useState("compra_hidromiel");
+  const [activeFermentCerveza, setActiveFermentCerveza] = useState("compra_cerveza");
+  const [activeFermentGen, setActiveFermentGen] = useState("intro_ferment");
+
+  // Plantas state (single mode)
+  const [activePlantas, setActivePlantas] = useState("intro_plantas");
+
+  // Amanita state (single mode)
+  const [activeAmanita, setActiveAmanita] = useState("intro_amanita");
 
   const navigate = (targetMode, targetPhase) => {
     setMode(targetMode);
@@ -4407,8 +6148,7 @@ function GuiaCultivo() {
           default: return null;
         }
       }
-    } else {
-      // Mushroom guide
+    } else if (guide === "mushroom") {
       if (mushroomMode === "kit") {
         switch (activeMushroomKit) {
           case "compra_kit": return <COMPRA_SETAS_KIT />;
@@ -4449,48 +6189,162 @@ function GuiaCultivo() {
           default: return <TIMELINE_SETAS navigate={navigateMushroom} />;
         }
       }
+    } else if (guide === "cactus") {
+      switch (activeCactus) {
+        case "intro_cactus": return <INTRO_CACTUS />;
+        case "compra_cactus": return <COMPRA_CACTUS />;
+        case "germinacion_cactus": return <GERMINACION_CACTUS />;
+        case "cuidados_cactus": return <CUIDADOS_CACTUS />;
+        case "crecimiento_cactus": return <CRECIMIENTO_CACTUS />;
+        case "cosecha_cactus": return <COSECHA_CACTUS />;
+        case "preparacion_cactus": return <PREPARACION_CACTUS />;
+        case "faq_cactus": return <FAQ_CACTUS />;
+        default: return <INTRO_CACTUS />;
+      }
+    } else if (guide === "ferment") {
+      if (fermentMode === "hidromiel") {
+        switch (activeFermentHidromiel) {
+          case "compra_hidromiel": return <COMPRA_HIDROMIEL />;
+          case "prep_hidromiel": return <PREP_HIDROMIEL />;
+          case "fermentacion_hidromiel": return <FERMENTACION_HIDROMIEL />;
+          case "embotellado_hidromiel": return <EMBOTELLADO_HIDROMIEL />;
+          case "cata_hidromiel": return <CATA_HIDROMIEL />;
+          default: return <COMPRA_HIDROMIEL />;
+        }
+      } else if (fermentMode === "cerveza") {
+        switch (activeFermentCerveza) {
+          case "compra_cerveza": return <COMPRA_CERVEZA />;
+          case "macerado_cerveza": return <MACERADO_CERVEZA />;
+          case "hervor_cerveza": return <HERVOR_CERVEZA />;
+          case "fermentacion_cerveza": return <FERMENTACION_CERVEZA />;
+          case "embotellado_cerveza": return <EMBOTELLADO_CERVEZA />;
+          case "cata_cerveza": return <CATA_CERVEZA />;
+          default: return <COMPRA_CERVEZA />;
+        }
+      } else {
+        switch (activeFermentGen) {
+          case "intro_ferment": return <INTRO_FERMENT />;
+          case "higiene_ferment": return <HIGIENE_FERMENT />;
+          case "faq_ferment": return <FAQ_FERMENT />;
+          default: return <INTRO_FERMENT />;
+        }
+      }
+    } else if (guide === "plantas") {
+      switch (activePlantas) {
+        case "intro_plantas": return <INTRO_PLANTAS />;
+        case "salvia": return <SALVIA />;
+        case "damiana": return <DAMIANA />;
+        case "blue_lotus": return <BLUE_LOTUS />;
+        case "wild_lettuce": return <WILD_LETTUCE />;
+        case "calea": return <CALEA />;
+        case "faq_plantas": return <FAQ_PLANTAS />;
+        default: return <INTRO_PLANTAS />;
+      }
+    } else if (guide === "amanita") {
+      switch (activeAmanita) {
+        case "intro_amanita": return <INTRO_AMANITA />;
+        case "identificacion_amanita": return <IDENTIFICACION_AMANITA />;
+        case "recoleccion_amanita": return <RECOLECCION_AMANITA />;
+        case "secado_amanita": return <SECADO_AMANITA />;
+        case "preparacion_amanita": return <PREPARACION_AMANITA />;
+        case "harm_reduction_amanita": return <HARM_REDUCTION_AMANITA />;
+        case "faq_amanita": return <FAQ_AMANITA />;
+        default: return <INTRO_AMANITA />;
+      }
     }
   };
 
+  // Maps for current phases / active / setter per guide
   const mushroomPhasesMap = { kit: mushroomKitPhases, friendly: mushroomFriendlyPhases, advanced: mushroomAdvancedPhases, general: mushroomGeneral };
   const mushroomActiveMap = { kit: activeMushroomKit, friendly: activeMushroomFriendly, advanced: activeMushroomAdvanced, general: activeMushroomGen };
   const mushroomSetterMap = { kit: setActiveMushroomKit, friendly: setActiveMushroomFriendly, advanced: setActiveMushroomAdvanced, general: setActiveMushroomGen };
 
-  const currentPhases = guide === "cannabis"
-    ? (mode === "interior" ? phases : mode === "exterior" ? extPhases : generalPhases)
-    : mushroomPhasesMap[mushroomMode];
+  const fermentPhasesMap = { hidromiel: fermentHidromielPhases, cerveza: fermentCervezaPhases, general: fermentGeneralPhases };
+  const fermentActiveMap = { hidromiel: activeFermentHidromiel, cerveza: activeFermentCerveza, general: activeFermentGen };
+  const fermentSetterMap = { hidromiel: setActiveFermentHidromiel, cerveza: setActiveFermentCerveza, general: setActiveFermentGen };
 
-  const currentActive = guide === "cannabis"
-    ? (mode === "interior" ? activePhase : mode === "exterior" ? activePhaseExt : activePhaseGen)
-    : mushroomActiveMap[mushroomMode];
+  let currentPhases, currentActive, setCurrentActive, colors, title, modeOptions, currentMode, setCurrentMode;
 
-  const setCurrentActive = guide === "cannabis"
-    ? (mode === "interior" ? setActivePhase : mode === "exterior" ? setActivePhaseExt : setActivePhaseGen)
-    : mushroomSetterMap[mushroomMode];
+  if (guide === "cannabis") {
+    currentPhases = mode === "interior" ? phases : mode === "exterior" ? extPhases : generalPhases;
+    currentActive = mode === "interior" ? activePhase : mode === "exterior" ? activePhaseExt : activePhaseGen;
+    setCurrentActive = mode === "interior" ? setActivePhase : mode === "exterior" ? setActivePhaseExt : setActivePhaseGen;
+    colors = CANNABIS_COLORS;
+    title = "🌿 Guía Cannabis";
+    modeOptions = [
+      { id: "interior", label: "🏠 Interior", sub: "Armario" },
+      { id: "exterior", label: "🌲 Exterior", sub: "Bosque" },
+      { id: "general", label: "📋 General", sub: "Común" },
+    ];
+    currentMode = mode; setCurrentMode = setMode;
+  } else if (guide === "mushroom") {
+    currentPhases = mushroomPhasesMap[mushroomMode];
+    currentActive = mushroomActiveMap[mushroomMode];
+    setCurrentActive = mushroomSetterMap[mushroomMode];
+    colors = MUSHROOM_COLORS;
+    title = "🍄 Guía Setas";
+    modeOptions = [
+      { id: "kit", label: "🛒 Kit", sub: "Listo" },
+      { id: "friendly", label: "🧼 Friendly", sub: "Pre-esteril." },
+      { id: "advanced", label: "🧫 Avanzado", sub: "Desde lab" },
+      { id: "general", label: "📋 General", sub: "Común" },
+    ];
+    currentMode = mushroomMode; setCurrentMode = setMushroomMode;
+  } else if (guide === "cactus") {
+    currentPhases = cactusPhases;
+    currentActive = activeCactus;
+    setCurrentActive = setActiveCactus;
+    colors = CACTUS_COLORS;
+    title = "🌵 Guía Cactus Mescalina";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
+  } else if (guide === "ferment") {
+    currentPhases = fermentPhasesMap[fermentMode];
+    currentActive = fermentActiveMap[fermentMode];
+    setCurrentActive = fermentSetterMap[fermentMode];
+    colors = FERMENT_COLORS;
+    title = "🍯 Guía Fermentaciones";
+    modeOptions = [
+      { id: "general", label: "📋 General", sub: "Intro/FAQ" },
+      { id: "hidromiel", label: "🍯 Hidromiel", sub: "Miel + agua" },
+      { id: "cerveza", label: "🍺 Cerveza", sub: "Malta + lúpulo" },
+    ];
+    currentMode = fermentMode; setCurrentMode = setFermentMode;
+  } else if (guide === "plantas") {
+    currentPhases = plantasPhases;
+    currentActive = activePlantas;
+    setCurrentActive = setActivePlantas;
+    colors = PLANTAS_COLORS;
+    title = "🌿 Plantas Psicoactivas Suaves";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
+  } else { // amanita
+    currentPhases = amanitaPhases;
+    currentActive = activeAmanita;
+    setCurrentActive = setActiveAmanita;
+    colors = AMANITA_COLORS;
+    title = "🍄 Amanita Muscaria";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
+  }
 
-  const colors = guide === "cannabis" ? CANNABIS_COLORS : MUSHROOM_COLORS;
-  const title = guide === "cannabis" ? "🌿 Guía de Cultivo Cannabis" : "🍄 Guía de Cultivo Setas";
-  const modeOptions = guide === "cannabis"
-    ? [
-        { id: "interior", label: "🏠 Interior", sub: "Armario" },
-        { id: "exterior", label: "🌲 Exterior", sub: "Bosque" },
-        { id: "general", label: "📋 General", sub: "Común" },
-      ]
-    : [
-        { id: "kit", label: "🛒 Kit", sub: "Listo" },
-        { id: "friendly", label: "🧼 Friendly", sub: "Pre-esteril." },
-        { id: "advanced", label: "🧫 Avanzado", sub: "Desde lab" },
-        { id: "general", label: "📋 General", sub: "Común" },
-      ];
+  const guides = [
+    { id: "cannabis", emoji: "🌿", label: "Cannabis" },
+    { id: "mushroom", emoji: "🍄", label: "Setas" },
+    { id: "cactus", emoji: "🌵", label: "Cactus" },
+    { id: "ferment", emoji: "🍯", label: "Fermentar" },
+    { id: "plantas", emoji: "🪷", label: "Plantas" },
+    { id: "amanita", emoji: "🟥", label: "Amanita" },
+  ];
 
   return (
-    <div className="app-layout" style={{ fontFamily: "Georgia, serif", background: colors.bg, minHeight: "100vh", color: colors.text }}>
+    <div className="app-layout" style={{ background: colors.bg, minHeight: "100vh", color: colors.text }}>
       <div className="app-header" style={{ background: colors.gradient, padding: "24px 24px 20px", textAlign: "center", borderBottom: `2px solid ${colors.borderAccent}` }}>
         <div style={{ marginBottom: "16px" }}>
-          <div style={{ display: "flex", gap: "4px", justifyContent: "center", marginBottom: "16px" }}>
-            {[{ id: "cannabis", emoji: "🌿", label: "Cannabis" }, { id: "mushroom", emoji: "🍄", label: "Setas" }].map(g => (
-              <button key={g.id} onClick={() => { setGuide(g.id); setMode(g.id === "cannabis" ? "interior" : "kit"); }} style={{
-                padding: "8px 16px", fontSize: "12px", fontWeight: "bold", border: "none",
+          <div style={{ display: "flex", gap: "4px", justifyContent: "center", marginBottom: "16px", flexWrap: "wrap" }}>
+            {guides.map(g => (
+              <button key={g.id} onClick={() => setGuide(g.id)} style={{
+                padding: "8px 14px", fontSize: "12px", fontWeight: "bold", border: "none",
                 borderRadius: "8px", cursor: "pointer", transition: "all 0.2s",
                 background: guide === g.id ? colors.accent1 : colors.border1,
                 color: guide === g.id ? colors.bg : colors.accent1,
@@ -4500,22 +6354,24 @@ function GuiaCultivo() {
             ))}
           </div>
         </div>
-        <h1 style={{ fontSize: "22px", fontWeight: "bold", margin: "0 0 16px", color: colors.textBright }}>
+        <h1 className="heading-serif" style={{ fontSize: "22px", fontWeight: "bold", margin: "0 0 16px", color: colors.textBright }}>
           {title}
         </h1>
-        <div className="mode-switcher" style={{ display: "flex", background: colors.bg2, borderRadius: "12px", padding: "4px", gap: "4px", maxWidth: "360px", margin: "0 auto" }}>
-          {modeOptions.map((m) => (
-            <button key={m.id} onClick={() => guide === "cannabis" ? setMode(m.id) : setMushroomMode(m.id)} style={{
-              flex: 1, padding: "10px 6px", border: "none", borderRadius: "8px",
-              background: (guide === "cannabis" ? mode : mushroomMode) === m.id ? colors.accent1 : "transparent",
-              color: (guide === "cannabis" ? mode : mushroomMode) === m.id ? colors.bg : colors.accent1,
-              cursor: "pointer", transition: "all 0.2s",
-            }}>
-              <div style={{ fontSize: "12px", fontWeight: "bold" }}>{m.label}</div>
-              <div style={{ fontSize: "10px", color: (guide === "cannabis" ? mode : mushroomMode) === m.id ? colors.accent2 : colors.border1, marginTop: "2px" }}>{m.sub}</div>
-            </button>
-          ))}
-        </div>
+        {modeOptions && (
+          <div className="mode-switcher" style={{ display: "flex", background: colors.bg2, borderRadius: "12px", padding: "4px", gap: "4px", maxWidth: "440px", margin: "0 auto" }}>
+            {modeOptions.map((m) => (
+              <button key={m.id} onClick={() => setCurrentMode(m.id)} style={{
+                flex: 1, padding: "10px 6px", border: "none", borderRadius: "8px",
+                background: currentMode === m.id ? colors.accent1 : "transparent",
+                color: currentMode === m.id ? colors.bg : colors.accent1,
+                cursor: "pointer", transition: "all 0.2s",
+              }}>
+                <div style={{ fontSize: "12px", fontWeight: "bold" }}>{m.label}</div>
+                <div style={{ fontSize: "10px", color: currentMode === m.id ? colors.accent2 : colors.border1, marginTop: "2px" }}>{m.sub}</div>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="tabs-nav" style={{ display: "flex", overflowX: "auto", background: colors.bg2, borderBottom: `1px solid ${colors.border1}` }}>
@@ -4542,39 +6398,60 @@ function GuiaCultivo() {
       </div>
 
       <div className="footer-calendar" style={{ background: colors.bg2, borderTop: `1px solid ${colors.border1}`, padding: "20px" }}>
-        {guide === "cannabis" ? (
-          mode === "interior" ? (
-            <>
-              <div style={{ fontSize: "10px", letterSpacing: "3px", color: colors.accent1, marginBottom: "12px", textAlign: "center" }}>PLANNING INTERIOR — 3 COSECHAS/AÑO (SIN VERANO)</div>
-              <div style={{ display: "flex", gap: "6px", overflowX: "auto" }}>
-                {[{mes:"RONDA 1",ev:"Sep-Oct: germina"},{mes:"DIC",ev:"Cosecha 1ª"},{mes:"RONDA 2",ev:"Ene-Feb: germina"},{mes:"ABR",ev:"Cosecha 2ª"},{mes:"RONDA 3",ev:"Mar-Abr: germina"},{mes:"JUN",ev:"Cosecha 3ª"},{mes:"⛔",ev:"Jul-Ago: pausa"}].map((m,i) => (
-                  <div key={i} style={{ flex:"1 0 60px", background:colors.border1, borderRadius:"8px", padding:"10px 6px", textAlign:"center" }}>
-                    <div style={{ fontSize:"11px", fontWeight:"bold", color: colors.accent1, marginBottom:"4px" }}>{m.mes}</div>
-                    <div style={{ fontSize:"10px", color: colors.accent2, lineHeight:"1.3" }}>{m.ev}</div>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : mode === "exterior" ? (
-            <>
-              <div style={{ fontSize: "10px", letterSpacing: "3px", color: colors.accent1, marginBottom: "12px", textAlign: "center" }}>PLANNING EXTERIOR — FOTOPERIODO</div>
-              <div style={{ display: "flex", gap: "6px", overflowX: "auto" }}>
-                {[{mes:"MAR-MAY",ev:"🌱 Germina y planta"},{mes:"JUN",ev:"🌿 Veg. temprana"},{mes:"JUL",ev:"🌿 Veg. máxima"},{mes:"AGO",ev:"🌸 Inicio flor."},{mes:"SEP",ev:"🌸 Flor. avanzada"},{mes:"OCT",ev:"✂️ Cosecha"}].map((m,i) => (
-                  <div key={i} style={{ flex:"1 0 60px", background: colors.border1, borderRadius:"8px", padding:"10px 6px", textAlign:"center" }}>
-                    <div style={{ fontSize:"11px", fontWeight:"bold", color: colors.accent1, marginBottom:"4px" }}>{m.mes}</div>
-                    <div style={{ fontSize:"10px", color: colors.accent2, lineHeight:"1.3" }}>{m.ev}</div>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : (
-            <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
-              📋 Secciones comunes a interior y exterior — siempre a mano
+        {guide === "cannabis" && mode === "interior" && (
+          <>
+            <div style={{ fontSize: "10px", letterSpacing: "3px", color: colors.accent1, marginBottom: "12px", textAlign: "center" }}>PLANNING INTERIOR — 3 COSECHAS/AÑO (SIN VERANO)</div>
+            <div style={{ display: "flex", gap: "6px", overflowX: "auto" }}>
+              {[{mes:"RONDA 1",ev:"Sep-Oct: germina"},{mes:"DIC",ev:"Cosecha 1ª"},{mes:"RONDA 2",ev:"Ene-Feb: germina"},{mes:"ABR",ev:"Cosecha 2ª"},{mes:"RONDA 3",ev:"Mar-Abr: germina"},{mes:"JUN",ev:"Cosecha 3ª"},{mes:"⛔",ev:"Jul-Ago: pausa"}].map((m,i) => (
+                <div key={i} style={{ flex:"1 0 60px", background:colors.border1, borderRadius:"8px", padding:"10px 6px", textAlign:"center" }}>
+                  <div style={{ fontSize:"11px", fontWeight:"bold", color: colors.accent1, marginBottom:"4px" }}>{m.mes}</div>
+                  <div style={{ fontSize:"10px", color: colors.accent2, lineHeight:"1.3" }}>{m.ev}</div>
+                </div>
+              ))}
             </div>
-          )
-        ) : (
+          </>
+        )}
+        {guide === "cannabis" && mode === "exterior" && (
+          <>
+            <div style={{ fontSize: "10px", letterSpacing: "3px", color: colors.accent1, marginBottom: "12px", textAlign: "center" }}>PLANNING EXTERIOR — FOTOPERIODO</div>
+            <div style={{ display: "flex", gap: "6px", overflowX: "auto" }}>
+              {[{mes:"MAR-MAY",ev:"🌱 Germina y planta"},{mes:"JUN",ev:"🌿 Veg. temprana"},{mes:"JUL",ev:"🌿 Veg. máxima"},{mes:"AGO",ev:"🌸 Inicio flor."},{mes:"SEP",ev:"🌸 Flor. avanzada"},{mes:"OCT",ev:"✂️ Cosecha"}].map((m,i) => (
+                <div key={i} style={{ flex:"1 0 60px", background: colors.border1, borderRadius:"8px", padding:"10px 6px", textAlign:"center" }}>
+                  <div style={{ fontSize:"11px", fontWeight:"bold", color: colors.accent1, marginBottom:"4px" }}>{m.mes}</div>
+                  <div style={{ fontSize:"10px", color: colors.accent2, lineHeight:"1.3" }}>{m.ev}</div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
+        {guide === "cannabis" && mode === "general" && (
           <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
-            🍄 Ciclo típico setas: 2-6 semanas (Kit con SGFC) ⎜ 4-8 semanas (Manual desde cero)
+            📋 Secciones comunes a interior y exterior — siempre a mano
+          </div>
+        )}
+        {guide === "mushroom" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🍄 Ciclo típico setas: 2-6 semanas (Kit) ⎜ 4-8 semanas (Friendly) ⎜ 8-16 semanas (Avanzado)
+          </div>
+        )}
+        {guide === "cactus" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🌵 Cactus mescalina: planta para décadas. 2-4 años de espera primer cosecha desde esqueje.
+          </div>
+        )}
+        {guide === "ferment" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🍯 Hidromiel 4-8 semanas ⎜ 🍺 Cerveza 4-6 semanas ⎜ Equipo reutilizable indefinidamente
+          </div>
+        )}
+        {guide === "plantas" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🪷 5 plantas psicoactivas suaves, todas legales en España. Para uso responsable.
+          </div>
+        )}
+        {guide === "amanita" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🟥 Forrajeo otoño + decarboxilación. Identificación correcta es CRÍTICA.
           </div>
         )}
       </div>
