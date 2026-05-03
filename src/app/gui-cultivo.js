@@ -6,7 +6,7 @@ function GuiaCultivo() {
   const [mode, setMode] = useState("interior");
   const [activePhase, setActivePhase] = useState("compra");
   const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
-  const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
+  const [activePhaseGen, setActivePhaseGen] = useState("timeline");
 
   // Mushroom state
   const [mushroomMode, setMushroomMode] = useState("kit");

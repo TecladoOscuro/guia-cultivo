@@ -3425,6 +3425,13 @@ function TIMELINE({ navigate }) {
 
         {nodes.map((node, i) => (
           <div key={i} style={{ position: "relative", marginBottom: "6px" }}>
+            {/* Bolita FUERA del card — fija aunque el card se mueva */}
+            <div style={{
+              position: "absolute", left: "-2px", top: "50%", transform: "translateY(-50%)",
+              width: "14px", height: "14px", borderRadius: "50%",
+              background: node.color, border: "2px solid #0a1a0f",
+              zIndex: 2,
+            }} />
             {/* Nodo clickable */}
             <button
               onClick={() => navigate(node.mode, node.phase)}
@@ -3441,16 +3448,9 @@ function TIMELINE({ navigate }) {
                 marginLeft: "20px",
                 transition: "all 0.2s",
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 0 0 2px ${node.color}, 0 6px 20px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 4px 14px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; e.currentTarget.style.transform = "translateX(6px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; e.currentTarget.style.transform = "translateX(0)"; }}
               >
-                {/* Círculo del nodo */}
-                <div style={{
-                  position: "absolute", left: "-2px", top: "50%", transform: "translateY(-50%)",
-                  width: "14px", height: "14px", borderRadius: "50%",
-                  background: node.color, border: "2px solid #0a1a0f",
-                  flexShrink: 0, zIndex: 1,
-                }} />
 
                 <div style={{ fontSize: "22px", flexShrink: 0, lineHeight: 1 }}>{node.emoji}</div>
                 <div style={{ flex: 1 }}>
@@ -4619,30 +4619,35 @@ function TIMELINE_SETAS({ navigate }) {
           width: "2px", background: `linear-gradient(180deg, ${MUSHROOM_COLORS.accent1} 0%, ${MUSHROOM_COLORS.accent3} 100%)`,
         }} />
         {nodes.map((n, i) => (
-          <div key={i} onClick={() => navigate && navigate(n.mode, n.phase)} style={{
-            position: "relative", marginBottom: "16px", cursor: "pointer",
-            background: MUSHROOM_COLORS.bg2,
-            border: `1px solid ${n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1}`,
-            borderRadius: "10px", padding: "12px 14px",
-            transition: "all 0.2s",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.boxShadow = `0 0 0 2px ${MUSHROOM_COLORS.accent1}, 0 6px 20px ${MUSHROOM_COLORS.accent1}55`; e.currentTarget.style.background = MUSHROOM_COLORS.bg3; }}
-          onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = MUSHROOM_COLORS.bg2; }}
-          >
+          <div key={i} style={{ position: "relative", marginBottom: "16px" }}>
+            {/* Bolita fija — alineada con línea (línea center=6px, bolita 16px → left=-2 desde wrapper interno) */}
             <div style={{
-              position: "absolute", left: "-25px", top: "12px",
+              position: "absolute", left: "-23px", top: "16px",
               width: "16px", height: "16px", borderRadius: "50%",
               background: n.color, border: `2px solid ${MUSHROOM_COLORS.bg}`,
+              zIndex: 2,
             }} />
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-              <span style={{ fontSize: "20px" }}>{n.emoji}</span>
-              <div>
-                <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "2px" }}>{n.dia.toUpperCase()}</div>
-                <div style={{ fontSize: "14px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{n.titulo}</div>
+            {/* Card inner — se mueve en hover */}
+            <div onClick={() => navigate && navigate(n.mode, n.phase)} style={{
+              cursor: "pointer",
+              background: MUSHROOM_COLORS.bg2,
+              border: `1px solid ${n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1}`,
+              borderRadius: "10px", padding: "12px 14px",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.boxShadow = `0 4px 14px ${MUSHROOM_COLORS.accent1}55`; e.currentTarget.style.background = MUSHROOM_COLORS.bg3; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = MUSHROOM_COLORS.bg2; e.currentTarget.style.transform = "translateX(0)"; }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+                <span style={{ fontSize: "20px" }}>{n.emoji}</span>
+                <div>
+                  <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "2px" }}>{n.dia.toUpperCase()}</div>
+                  <div style={{ fontSize: "14px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{n.titulo}</div>
+                </div>
               </div>
+              <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5", marginTop: "6px" }}>{n.desc}</div>
+              <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, marginTop: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>
             </div>
-            <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5", marginTop: "6px" }}>{n.desc}</div>
-            <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, marginTop: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>
           </div>
         ))}
       </div>
@@ -7856,8 +7861,8 @@ function INTRO_TRUFAS() {
           { tiempo: "Día 110+", evento: "🍯 Conservar / consumir" },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}33`; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
           >
             <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
             <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
@@ -8389,8 +8394,8 @@ function INTRO_AYA() {
           { tiempo: "Atajo:", evento: "🛒 Comprar plantas secas online (10-30€) — listo para 1 brebaje" },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}33`; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
           >
             <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
             <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
@@ -9076,8 +9081,8 @@ function INTRO_DMT() {
           { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)" },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}33`; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
           >
             <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
             <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
@@ -9722,7 +9727,7 @@ function GuiaCultivo() {
   const [mode, setMode] = useState("interior");
   const [activePhase, setActivePhase] = useState("compra");
   const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
-  const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
+  const [activePhaseGen, setActivePhaseGen] = useState("timeline");
 
   // Mushroom state
   const [mushroomMode, setMushroomMode] = useState("kit");

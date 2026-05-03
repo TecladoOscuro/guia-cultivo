@@ -52,8 +52,8 @@ function INTRO_DMT() {
           { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)" },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}33`; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
           >
             <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
             <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>

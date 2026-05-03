@@ -963,6 +963,13 @@ function TIMELINE({ navigate }) {
 
         {nodes.map((node, i) => (
           <div key={i} style={{ position: "relative", marginBottom: "6px" }}>
+            {/* Bolita FUERA del card — fija aunque el card se mueva */}
+            <div style={{
+              position: "absolute", left: "-2px", top: "50%", transform: "translateY(-50%)",
+              width: "14px", height: "14px", borderRadius: "50%",
+              background: node.color, border: "2px solid #0a1a0f",
+              zIndex: 2,
+            }} />
             {/* Nodo clickable */}
             <button
               onClick={() => navigate(node.mode, node.phase)}
@@ -979,16 +986,9 @@ function TIMELINE({ navigate }) {
                 marginLeft: "20px",
                 transition: "all 0.2s",
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 0 0 2px ${node.color}, 0 6px 20px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 4px 14px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; e.currentTarget.style.transform = "translateX(6px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; e.currentTarget.style.transform = "translateX(0)"; }}
               >
-                {/* Círculo del nodo */}
-                <div style={{
-                  position: "absolute", left: "-2px", top: "50%", transform: "translateY(-50%)",
-                  width: "14px", height: "14px", borderRadius: "50%",
-                  background: node.color, border: "2px solid #0a1a0f",
-                  flexShrink: 0, zIndex: 1,
-                }} />
 
                 <div style={{ fontSize: "22px", flexShrink: 0, lineHeight: 1 }}>{node.emoji}</div>
                 <div style={{ flex: 1 }}>

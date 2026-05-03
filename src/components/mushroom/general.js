@@ -64,30 +64,35 @@ function TIMELINE_SETAS({ navigate }) {
           width: "2px", background: `linear-gradient(180deg, ${MUSHROOM_COLORS.accent1} 0%, ${MUSHROOM_COLORS.accent3} 100%)`,
         }} />
         {nodes.map((n, i) => (
-          <div key={i} onClick={() => navigate && navigate(n.mode, n.phase)} style={{
-            position: "relative", marginBottom: "16px", cursor: "pointer",
-            background: MUSHROOM_COLORS.bg2,
-            border: `1px solid ${n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1}`,
-            borderRadius: "10px", padding: "12px 14px",
-            transition: "all 0.2s",
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.boxShadow = `0 0 0 2px ${MUSHROOM_COLORS.accent1}, 0 6px 20px ${MUSHROOM_COLORS.accent1}55`; e.currentTarget.style.background = MUSHROOM_COLORS.bg3; }}
-          onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = MUSHROOM_COLORS.bg2; }}
-          >
+          <div key={i} style={{ position: "relative", marginBottom: "16px" }}>
+            {/* Bolita fija — alineada con línea (línea center=6px, bolita 16px → left=-2 desde wrapper interno) */}
             <div style={{
-              position: "absolute", left: "-25px", top: "12px",
+              position: "absolute", left: "-23px", top: "16px",
               width: "16px", height: "16px", borderRadius: "50%",
               background: n.color, border: `2px solid ${MUSHROOM_COLORS.bg}`,
+              zIndex: 2,
             }} />
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
-              <span style={{ fontSize: "20px" }}>{n.emoji}</span>
-              <div>
-                <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "2px" }}>{n.dia.toUpperCase()}</div>
-                <div style={{ fontSize: "14px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{n.titulo}</div>
+            {/* Card inner — se mueve en hover */}
+            <div onClick={() => navigate && navigate(n.mode, n.phase)} style={{
+              cursor: "pointer",
+              background: MUSHROOM_COLORS.bg2,
+              border: `1px solid ${n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1}`,
+              borderRadius: "10px", padding: "12px 14px",
+              transition: "all 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.boxShadow = `0 4px 14px ${MUSHROOM_COLORS.accent1}55`; e.currentTarget.style.background = MUSHROOM_COLORS.bg3; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = MUSHROOM_COLORS.bg2; e.currentTarget.style.transform = "translateX(0)"; }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+                <span style={{ fontSize: "20px" }}>{n.emoji}</span>
+                <div>
+                  <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "2px" }}>{n.dia.toUpperCase()}</div>
+                  <div style={{ fontSize: "14px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{n.titulo}</div>
+                </div>
               </div>
+              <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5", marginTop: "6px" }}>{n.desc}</div>
+              <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, marginTop: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>
             </div>
-            <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5", marginTop: "6px" }}>{n.desc}</div>
-            <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, marginTop: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>
           </div>
         ))}
       </div>
