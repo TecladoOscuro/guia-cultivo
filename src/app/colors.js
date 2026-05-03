@@ -57,3 +57,23 @@ const AMANITA_COLORS = {
   gradient: "linear-gradient(135deg, #552830 0%, #9b4555 50%, #552830 100%)",
   error: "#ff6b6b", errorBg: "#1a0808", errorBorder: "#5a1a1a",
 };
+
+// Ayahuasca — verde-jungla profundo
+const AYAHUASCA_COLORS = {
+  bg: "#070f0a", bg2: "#0d1810", bg3: "#152318", bg4: "#1d3022",
+  border1: "#244030", border2: "#365e44", borderAccent: "#4a7e5c",
+  accent1: "#6aa57e", accent2: "#88be99", accent3: "#a6d3b3", accent4: "#c2e2cb", accent5: "#deeee3",
+  text: "#e3f1e7", textBright: "#f0faf3",
+  gradient: "linear-gradient(135deg, #244030 0%, #4a7e5c 50%, #244030 100%)",
+  error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
+};
+
+// DMT — amarillo-dorado cristal psicodélico
+const DMT_COLORS = {
+  bg: "#0a0a14", bg2: "#10101e", bg3: "#181828", bg4: "#222236",
+  border1: "#2e2e48", border2: "#444466", borderAccent: "#605e8a",
+  accent1: "#8579b0", accent2: "#a094c5", accent3: "#bcb1d8", accent4: "#d4cce6", accent5: "#e8e3f1",
+  text: "#e6e0f5", textBright: "#f3eefb",
+  gradient: "linear-gradient(135deg, #2e2e48 0%, #605e8a 50%, #2e2e48 100%)",
+  error: "#e88aa8", errorBg: "#0a0814", errorBorder: "#3a2a4a",
+};

@@ -23,6 +23,8 @@ const sourceFiles = [
   'src/components/fermentation/cerveza.js',
   'src/components/plantas/general.js',
   'src/components/amanita/general.js',
+  'src/components/ayahuasca/general.js',
+  'src/components/dmt/general.js',
   'src/app/gui-cultivo.js',
 ];
 

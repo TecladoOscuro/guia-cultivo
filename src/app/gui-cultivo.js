@@ -1,6 +1,6 @@
 function GuiaCultivo() {
 
-  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ferment" | "plantas" | "amanita"
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita"
 
   // Cannabis state
   const [mode, setMode] = useState("interior");
@@ -29,6 +29,12 @@ function GuiaCultivo() {
 
   // Amanita state (single mode)
   const [activeAmanita, setActiveAmanita] = useState("intro_amanita");
+
+  // Ayahuasca state (single mode)
+  const [activeAyahuasca, setActiveAyahuasca] = useState("intro_aya");
+
+  // DMT state (single mode)
+  const [activeDmt, setActiveDmt] = useState("intro_dmt");
 
   const navigate = (targetMode, targetPhase) => {
     setMode(targetMode);
@@ -216,9 +222,35 @@ function GuiaCultivo() {
         case "recoleccion_amanita": return <RECOLECCION_AMANITA />;
         case "secado_amanita": return <SECADO_AMANITA />;
         case "preparacion_amanita": return <PREPARACION_AMANITA />;
+        case "conservacion_amanita": return <CONSERVACION_AMANITA />;
         case "harm_reduction_amanita": return <HARM_REDUCTION_AMANITA />;
         case "faq_amanita": return <FAQ_AMANITA />;
         default: return <INTRO_AMANITA />;
+      }
+    } else if (guide === "ayahuasca") {
+      switch (activeAyahuasca) {
+        case "intro_aya": return <INTRO_AYA />;
+        case "compra_aya": return <COMPRA_AYA />;
+        case "cultivo_caapi": return <CULTIVO_CAAPI />;
+        case "cultivo_chacruna": return <CULTIVO_CHACRUNA />;
+        case "cuidados_aya": return <CUIDADOS_AYA />;
+        case "preparacion_brebaje": return <PREPARACION_BREBAJE />;
+        case "ceremonia_aya": return <CEREMONIA_AYA />;
+        case "harm_reduction_aya": return <HARM_REDUCTION_AYA />;
+        case "faq_aya": return <FAQ_AYA />;
+        default: return <INTRO_AYA />;
+      }
+    } else if (guide === "dmt") {
+      switch (activeDmt) {
+        case "intro_dmt": return <INTRO_DMT />;
+        case "fuentes_dmt": return <FUENTES_DMT />;
+        case "cultivo_mimosa": return <CULTIVO_MIMOSA />;
+        case "extraccion_dmt": return <EXTRACCION_DMT />;
+        case "consumo_dmt": return <CONSUMO_DMT />;
+        case "experiencia_dmt": return <EXPERIENCIA_DMT />;
+        case "harm_reduction_dmt": return <HARM_REDUCTION_DMT />;
+        case "faq_dmt": return <FAQ_DMT />;
+        default: return <INTRO_DMT />;
       }
     }
   };
@@ -287,7 +319,7 @@ function GuiaCultivo() {
     title = "🌿 Plantas Psicoactivas Suaves";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
-  } else { // amanita
+  } else if (guide === "amanita") {
     currentPhases = amanitaPhases;
     currentActive = activeAmanita;
     setCurrentActive = setActiveAmanita;
@@ -295,15 +327,34 @@ function GuiaCultivo() {
     title = "🍄 Amanita Muscaria";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
+  } else if (guide === "ayahuasca") {
+    currentPhases = ayahuascaPhases;
+    currentActive = activeAyahuasca;
+    setCurrentActive = setActiveAyahuasca;
+    colors = AYAHUASCA_COLORS;
+    title = "🌿 Ayahuasca";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
+  } else { // dmt
+    currentPhases = dmtPhases;
+    currentActive = activeDmt;
+    setCurrentActive = setActiveDmt;
+    colors = DMT_COLORS;
+    title = "🌌 DMT";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
   }
 
+  // Guías agrupadas: Cultivo / Visionarias / Otras
   const guides = [
-    { id: "cannabis", emoji: "🌿", label: "Cannabis" },
-    { id: "mushroom", emoji: "🍄", label: "Setas" },
-    { id: "cactus", emoji: "🌵", label: "Cactus" },
-    { id: "ferment", emoji: "🍯", label: "Fermentar" },
-    { id: "plantas", emoji: "🪷", label: "Plantas" },
-    { id: "amanita", emoji: "🟥", label: "Amanita" },
+    { id: "cannabis", emoji: "🌿", label: "Cannabis", grupo: "Cultivo" },
+    { id: "ferment", emoji: "🍯", label: "Fermentar", grupo: "Cultivo" },
+    { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "Visionarias" },
+    { id: "cactus", emoji: "🌵", label: "Cactus", grupo: "Visionarias" },
+    { id: "ayahuasca", emoji: "🌿", label: "Ayahuasca", grupo: "Visionarias" },
+    { id: "dmt", emoji: "🌌", label: "DMT", grupo: "Visionarias" },
+    { id: "amanita", emoji: "🟥", label: "Amanita", grupo: "Visionarias" },
+    { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "Visionarias" },
   ];
 
   return (
@@ -421,6 +472,16 @@ function GuiaCultivo() {
         {guide === "amanita" && (
           <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
             🟥 Forrajeo otoño + decarboxilación. Identificación correcta es CRÍTICA.
+          </div>
+        )}
+        {guide === "ayahuasca" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🌿 Caapi (vid IMAO) + Chacruna (DMT). Brebaje 4-6h. DIETA previa OBLIGATORIA.
+          </div>
+        )}
+        {guide === "dmt" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🌌 Mimosa hostilis cultivable. Cristal puro = ILEGAL en España. Ayahuasca = alternativa legal gris.
           </div>
         )}
       </div>

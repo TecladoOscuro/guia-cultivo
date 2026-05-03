@@ -208,6 +208,59 @@ function PREPARACION_AMANITA() {
   );
 }
 
+function CONSERVACION_AMANITA() {
+  const c = AMANITA_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Setas decarboxiladas y bien secas duran AÑOS. Conservación correcta = mantienes potencia + evitas hongos contaminantes en el frasco. Tres métodos según tiempo de almacenaje.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODOS DE CONSERVACIÓN</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
+        {[
+          { tipo: "🫙 Frasco hermético + sílica gel", duracion: "1-2 años", coste: "5€", det: "Frasco vidrio opaco con junta goma + sobrecito de sílica gel dentro. Lugar fresco oscuro. Verificar humedad cada 6 meses (si la sílica cambia color = sustituir)." },
+          { tipo: "❄️ Bolsa al vacío + nevera", duracion: "2-3 años", coste: "30€ (máquina)", det: "Selladora al vacío doméstica. Eliminar oxígeno = mucha más durabilidad. Mantener en nevera para temperatura constante baja." },
+          { tipo: "🧊 Bolsa al vacío + congelador", duracion: "5+ años", coste: "30€", det: "Combina vacío + frío profundo. La opción más larga conservación. Descongelar a temperatura ambiente sin abrir." },
+          { tipo: "🍶 Tintura alcohólica", duracion: "Indefinida (años)", coste: "10€", det: "Setas trituradas en alcohol 40-50% (vodka). Macerar 4-6 semanas. Filtrar. Conservar en frasco oscuro. Dosis: 1-3ml sublingual. NO degrada con el tiempo." },
+        ].map((m, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{m.tipo}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{m.duracion}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>💰 {m.coste}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{m.det}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>QUÉ EVITA LA POTENCIA</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Luz directa (especialmente UV)"
+        consecuencia="Muscimol e iboténico se degradan con luz. Pérdida progresiva de potencia."
+        fix="Frascos opacos o envueltos en papel aluminio. Lugar oscuro siempre."
+      />
+      <ErrorCardX c={c}
+        error="Humedad ambiente alta"
+        consecuencia="Setas absorben humedad → moho dentro del frasco → todo el lote inservible y posiblemente tóxico."
+        fix="Sílica gel SIEMPRE. Verificar cada 6 meses. Lugar seco (no baño, no cocina activa)."
+      />
+      <ErrorCardX c={c}
+        error="Calor (cerca de radiador, cocina)"
+        consecuencia="Acelera degradación de alcaloides. También reactiva enzimas residuales."
+        fix="Lugar fresco (10-18°C ideal). Despensa, sótano, nevera."
+      />
+
+      <SectionTitleX c={c}>VERIFICACIÓN PERIÓDICA</SectionTitleX>
+      <StepX c={c} num={1} text="Cada 3-6 meses: abrir frasco, verificar olor (debe oler a setas secas, NO a moho/podrido)." />
+      <StepX c={c} num={2} text="Verificar consistencia: deben estar quebradizas (cracker dry). Si flexibles = humedad entró, secar de nuevo + sílica nueva." />
+      <StepX c={c} num={3} text="Verificar color: pueden oscurecer ligeramente con tiempo. Si negro/verde/blanco peludo = MOHO, descartar todo." warning />
+      <StepX c={c} num={4} text="Si todo OK: cerrar bien y devolver a su lugar." />
+    </div>
+  );
+}
+
 function HARM_REDUCTION_AMANITA() {
   const c = AMANITA_COLORS;
   return (

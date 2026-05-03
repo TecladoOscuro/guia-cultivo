@@ -125,6 +125,33 @@ const amanitaPhases = [
   { id: "recoleccion_amanita", emoji: "🍂", title: "Recolección", subtitle: "Otoño bosque" },
   { id: "secado_amanita", emoji: "🌬️", title: "Secado", subtitle: "Decarbox crítica" },
   { id: "preparacion_amanita", emoji: "🍵", title: "Preparación", subtitle: "Té, dosis" },
+  { id: "conservacion_amanita", emoji: "🫙", title: "Conservación", subtitle: "Largo plazo" },
   { id: "harm_reduction_amanita", emoji: "⚠️", title: "Seguridad", subtitle: "Dosis y riesgos" },
   { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
 ];
+
+// Ayahuasca — vid + arbusto + brebaje
+const ayahuascaPhases = [
+  { id: "intro_aya", emoji: "🌟", title: "Intro", subtitle: "Qué es ayahuasca" },
+  { id: "compra_aya", emoji: "🛒", title: "Compra", subtitle: "Plantas/preparados" },
+  { id: "cultivo_caapi", emoji: "🌿", title: "Vid Caapi", subtitle: "Banisteriopsis" },
+  { id: "cultivo_chacruna", emoji: "🍃", title: "Chacruna", subtitle: "Psychotria viridis" },
+  { id: "cuidados_aya", emoji: "💧", title: "Cuidados", subtitle: "Clima tropical" },
+  { id: "preparacion_brebaje", emoji: "🍵", title: "Brebaje", subtitle: "Cocción 6-12h" },
+  { id: "ceremonia_aya", emoji: "🕯️", title: "Ceremonia", subtitle: "Set/setting/dieta" },
+  { id: "harm_reduction_aya", emoji: "⚠️", title: "Seguridad", subtitle: "MAOI peligros" },
+  { id: "faq_aya", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+];
+
+// DMT — Mimosa hostilis + química + uso
+const dmtPhases = [
+  { id: "intro_dmt", emoji: "🌟", title: "Intro", subtitle: "Qué es DMT" },
+  { id: "fuentes_dmt", emoji: "🌳", title: "Fuentes", subtitle: "Mimosa, Acacia, etc" },
+  { id: "cultivo_mimosa", emoji: "🌱", title: "Mimosa", subtitle: "Cultivo árbol" },
+  { id: "extraccion_dmt", emoji: "🧪", title: "Extracción", subtitle: "Vista general A/B" },
+  { id: "consumo_dmt", emoji: "💨", title: "Consumo", subtitle: "Vapor / changa" },
+  { id: "experiencia_dmt", emoji: "👁️", title: "Experiencia", subtitle: "Qué esperar" },
+  { id: "harm_reduction_dmt", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
+  { id: "faq_dmt", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+];
+
