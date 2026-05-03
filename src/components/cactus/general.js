@@ -37,7 +37,7 @@ function INTRO_CACTUS({ setPhase }) {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <TimelineList c={c} onClick={setPhase} nodes={[
+      <TimelineList c={c} onClick={(node) => setPhase(node.phase)} nodes={[
         { tiempo: "Día 0", evento: "🛒 Compra esqueje San Pedro o semillas Trichocereus", phase: "compra_cactus", color: c.accent1 },
         { tiempo: "Semana 1-4", evento: "🌱 Germinación (si semillas) o callusing 2 semanas + plantar (si esqueje)", phase: "germinacion_cactus", color: c.accent2 },
         { tiempo: "Mes 2-12", evento: "💧 Cuidados básicos: 4 reglas de oro (riego, sol, temp, sustrato)", phase: "cuidados_cactus", color: c.accent2 },

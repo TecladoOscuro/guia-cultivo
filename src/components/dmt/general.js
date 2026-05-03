@@ -43,7 +43,7 @@ function INTRO_DMT({ setPhase }) {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <TimelineList c={c} onClick={setPhase} nodes={[
+       <TimelineList c={c} onClick={(node) => setPhase(node.phase)} nodes={[
         { tiempo: "Día 0", evento: "🛒 Comprar semillas/esquejes Mimosa hostilis", phase: "compra_dmt", color: c.accent1 },
         { tiempo: "Mes 1-3", evento: "🌱 Germinación + plantación inicial", phase: "cultivo_mimosa", color: c.accent2 },
         { tiempo: "Año 1-2", evento: "🌳 Crecimiento (climas cálidos rápido, fríos lento)", phase: "cultivo_mimosa", color: c.accent3 },

@@ -53,7 +53,7 @@ function INTRO_TRUFAS({ setPhase }) {
       </InfoBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <TimelineList c={c} onClick={setPhase} nodes={[
+      <TimelineList c={c} onClick={(node) => setPhase(node.phase)} nodes={[
         { tiempo: "Día 0", evento: "🛒 Compra esporada + equipo", phase: "compra_trufas", color: c.accent1 },
         { tiempo: "Día 1-2", evento: "🌾 Esterilizar grano (olla a presión 90 min)", phase: "inoculacion_trufas", color: c.accent2 },
         { tiempo: "Día 3", evento: "💉 Inoculación con esporada", phase: "inoculacion_trufas", color: c.accent2 },

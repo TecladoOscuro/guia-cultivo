@@ -45,7 +45,7 @@ function INTRO_AYA({ setPhase }) {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (DESDE 0)</SectionTitleX>
-      <TimelineList c={c} onClick={setPhase} nodes={[
+       <TimelineList c={c} onClick={(node) => setPhase(node.phase)} nodes={[
         { tiempo: "Día 0", evento: "🛒 Compra esquejes/plantas o semillas", phase: "compra_aya", color: c.accent1 },
         { tiempo: "Mes 1-3", evento: "🌱 Establecer plantas en invernadero/interior cálido", phase: "cuidados_aya", color: c.accent2 },
         { tiempo: "Año 1-2", evento: "🌿 Caapi crece rápido (3-5m), Chacruna lenta (50cm)", phase: "cultivo_caapi", color: c.accent2 },

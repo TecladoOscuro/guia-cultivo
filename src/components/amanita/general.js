@@ -38,7 +38,7 @@ function INTRO_AMANITA({ setPhase }) {
       </InfoBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (TEMPORADA)</SectionTitleX>
-      <TimelineList c={c} onClick={setPhase} nodes={[
+       <TimelineList c={c} onClick={(node) => setPhase(node.phase)} nodes={[
         { tiempo: "Pre-temporada", evento: "🛒 Compra equipo forrajeo (cesta, cuchillo, guía, etc.)", phase: "compra_amanita", color: c.accent1 },
         { tiempo: "Septiembre-Octubre", evento: "🔍 Identificación: estudiar diferencias vs Amanitas mortales", phase: "identificacion_amanita", color: c.accent2 },
         { tiempo: "Tras lluvias otoño", evento: "🍂 Recolección: bosque abedul/pino/abeto, técnica ética", phase: "recoleccion_amanita", color: c.accent3 },

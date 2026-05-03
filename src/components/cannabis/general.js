@@ -913,26 +913,26 @@ function TIMELINE({ navigate }) {
   const [tab, setTab] = useState("interior");
 
   const interiorNodes = [
-    { semana: "Semana 0", titulo: "Preparación del armario", emoji: "📦", desc: "Monta el armario, instala el LED, extractor y filtro. Prueba 24h sin plantas. Verifica presión negativa.", mode: "interior", phase: "antes", color: "#2d6a4f" },
-    { semana: "Semana 1", titulo: "Germinación", emoji: "🥚", desc: "Semilla en agua 12-18h, luego papel húmedo en tupper a 22°C. En 3-5 días sale la radícula. Planta cuando mide 1-2cm.", mode: "interior", phase: "germinacion", color: "#40916c" },
-    { semana: "Semanas 1-3", titulo: "Plántula", emoji: "🌱", desc: "Solo agua con pH 6.2-6.5. Sin nutrientes. Riega solo cuando el sustrato esté seco. Luz a 60-70cm.", mode: "interior", phase: "vegetativa", color: "#52b788" },
-    { semana: "Semanas 3-5", titulo: "Vegetativa", emoji: "🌿", desc: "Empieza con Bio Grow a 1ml/L. Baja la luz gradualmente. Riego cuando el sustrato esté seco a 2cm. Observa hojas para leer la planta.", mode: "interior", phase: "vegetativa", color: "#52b788" },
-    { semana: "Semana 3-4", titulo: "LST (opcional)", emoji: "📐", desc: "Dobla las ramas hacia fuera y fíjalas con clips para que la planta crezca en abanico. Más luz = más cogollos.", mode: "interior", phase: "poda", color: "#74c69d", optional: true },
-    { semana: "Semana 5\n(Fotoperiodo)", titulo: "Cambiar a 12/12h", emoji: "⏱️", desc: "SOLO si usas semillas fotoperiodo (White Widow): cuando la planta mida 40-50cm, cambia el temporizador a 12h/12h. Las auto florecen solas.", mode: "interior", phase: "floracion", color: "#95d5b2", highlight: true },
-    { semana: "Semanas 5-12", titulo: "Floración", emoji: "🌸", desc: "Cambia a Bio Bloom. Baja la humedad al 40-50%. Mira los tricomas semanalmente con la lupa. Lavado de raíces las 2 últimas semanas.", mode: "interior", phase: "floracion", color: "#b7e4c7" },
-    { semana: "Semana 12-13", titulo: "Cosecha y secado", emoji: "✂️", desc: "Cuando el 70-80% de tricomas sean lechosos. Cuelga ramas boca abajo 10-14 días. Test de la ramita antes del bote.", mode: "interior", phase: "cosecha", color: "#d8f3dc" },
-    { semana: "Semanas 14-18", titulo: "Curado", emoji: "🫙", desc: "Mason jars al 75%. Burping 15 min al día. Higrómetro dentro: 58-65%. Mínimo 2 semanas, 4 es mucho mejor.", mode: "general", phase: "cosecha_gen", color: "#e8f5e9" },
+    { tiempo: "Semana 0", titulo: "Preparación del armario", emoji: "📦", desc: "Monta el armario, instala el LED, extractor y filtro. Prueba 24h sin plantas. Verifica presión negativa.", mode: "interior", phase: "antes", color: "#2d6a4f" },
+    { tiempo: "Semana 1", titulo: "Germinación", emoji: "🥚", desc: "Semilla en agua 12-18h, luego papel húmedo en tupper a 22°C. En 3-5 días sale la radícula. Planta cuando mide 1-2cm.", mode: "interior", phase: "germinacion", color: "#40916c" },
+    { tiempo: "Semanas 1-3", titulo: "Plántula", emoji: "🌱", desc: "Solo agua con pH 6.2-6.5. Sin nutrientes. Riega solo cuando el sustrato esté seco. Luz a 60-70cm.", mode: "interior", phase: "vegetativa", color: "#52b788" },
+    { tiempo: "Semanas 3-5", titulo: "Vegetativa", emoji: "🌿", desc: "Empieza con Bio Grow a 1ml/L. Baja la luz gradualmente. Riego cuando el sustrato esté seco a 2cm. Observa hojas para leer la planta.", mode: "interior", phase: "vegetativa", color: "#52b788" },
+    { tiempo: "Semana 3-4", titulo: "LST (opcional)", emoji: "📐", desc: "Dobla las ramas hacia fuera y fíjalas con clips para que la planta crezca en abanico. Más luz = más cogollos.", mode: "interior", phase: "poda", color: "#74c69d", optional: true },
+    { tiempo: "Semana 5 (Fotoperiodo)", titulo: "Cambiar a 12/12h", emoji: "⏱️", desc: "SOLO si usas semillas fotoperiodo (White Widow): cuando la planta mida 40-50cm, cambia el temporizador a 12h/12h. Las auto florecen solas.", mode: "interior", phase: "floracion", color: "#95d5b2", highlight: true },
+    { tiempo: "Semanas 5-12", titulo: "Floración", emoji: "🌸", desc: "Cambia a Bio Bloom. Baja la humedad al 40-50%. Mira los tricomas semanalmente con la lupa. Lavado de raíces las 2 últimas semanas.", mode: "interior", phase: "floracion", color: "#b7e4c7" },
+    { tiempo: "Semana 12-13", titulo: "Cosecha y secado", emoji: "✂️", desc: "Cuando el 70-80% de tricomas sean lechosos. Cuelga ramas boca abajo 10-14 días. Test de la ramita antes del bote.", mode: "interior", phase: "cosecha", color: "#d8f3dc" },
+    { tiempo: "Semanas 14-18", titulo: "Curado", emoji: "🫙", desc: "Mason jars al 75%. Burping 15 min al día. Higrómetro dentro: 58-65%. Mínimo 2 semanas, 4 es mucho mejor.", mode: "general", phase: "cosecha_gen", color: "#e8f5e9" },
   ];
 
   const exteriorNodes = [
-    { semana: "Marzo-Mayo", titulo: "Germinación en casa", emoji: "🥚", desc: "Semilla en agua, luego papel húmedo. Plántula en vasito en el alféizar. 2-3 semanas hasta 10-15cm. Asegúrate de que las noches > 12°C antes de salir.", mode: "exterior", phase: "germinacion_ext", color: "#2d6a4f" },
-    { semana: "Finales de mayo", titulo: "Trasplante al bosque", emoji: "🌲", desc: "Hoyo 50×50×50cm mínimo. Mezcla tierra + Light Mix 50/50. Riega abundantemente. Sombra los primeros 2-3 días.", mode: "exterior", phase: "ubicacion", color: "#40916c" },
-    { semana: "Junio", titulo: "Vegetativa temprana", emoji: "🌿", desc: "Bio Grow 2ml/L. Riego cuando el suelo esté seco a 3-4cm. Primera aplicación de Bt. Pon acolchado alrededor de la base.", mode: "exterior", phase: "fases_ext", color: "#52b788" },
-    { semana: "Julio", titulo: "Vegetativa máxima", emoji: "🌿", desc: "Pico de calor y crecimiento. Riego casi diario. Pon tutores. Aplica Bt cada 2 semanas. Vigilancia de plagas en cada visita.", mode: "exterior", phase: "riego_ext", color: "#52b788" },
-    { semana: "Agosto", titulo: "Inicio floración automática", emoji: "🌸", desc: "Los días se acortan. La planta florece sola — verás pelos blancos en los nudos. Cambia a Bio Bloom. Reduce humedad si es alta.", mode: "exterior", phase: "fases_ext", color: "#b7e4c7" },
-    { semana: "Septiembre", titulo: "Floración avanzada — MES CRÍTICO", emoji: "⚠️", desc: "Visita 2x/semana. Busca Botrytis abriendo cogollos. Lavado de raíces semanas 4-5. Añade tutores. Mira tricomas semanalmente.", mode: "exterior", phase: "plagas", color: "#f4a261", highlight: true },
-    { semana: "Octubre", titulo: "Cosecha en el bosque", emoji: "✂️", desc: "70-80% tricomas lechosos = cosechar. Con lluvia prevista y 60% lechosos: cosecha ya. Bolsas herméticas. Limpia el spot.", mode: "exterior", phase: "cosecha_ext", color: "#d8f3dc" },
-    { semana: "Octubre-Dic", titulo: "Secado y curado", emoji: "🫙", desc: "Idéntico al interior. 10-14 días secando. Test de la ramita. Mason jars, burping diario, higrómetro dentro. 4 semanas mínimo.", mode: "general", phase: "cosecha_gen", color: "#e8f5e9" },
+    { tiempo: "Marzo-Mayo", titulo: "Germinación en casa", emoji: "🥚", desc: "Semilla en agua, luego papel húmedo. Plántula en vasito en el alféizar. 2-3 semanas hasta 10-15cm. Asegúrate de que las noches > 12°C antes de salir.", mode: "exterior", phase: "germinacion_ext", color: "#2d6a4f" },
+    { tiempo: "Finales de mayo", titulo: "Trasplante al bosque", emoji: "🌲", desc: "Hoyo 50×50×50cm mínimo. Mezcla tierra + Light Mix 50/50. Riega abundantemente. Sombra los primeros 2-3 días.", mode: "exterior", phase: "ubicacion", color: "#40916c" },
+    { tiempo: "Junio", titulo: "Vegetativa temprana", emoji: "🌿", desc: "Bio Grow 2ml/L. Riego cuando el suelo esté seco a 3-4cm. Primera aplicación de Bt. Pon acolchado alrededor de la base.", mode: "exterior", phase: "fases_ext", color: "#52b788" },
+    { tiempo: "Julio", titulo: "Vegetativa máxima", emoji: "🌿", desc: "Pico de calor y crecimiento. Riego casi diario. Pon tutores. Aplica Bt cada 2 semanas. Vigilancia de plagas en cada visita.", mode: "exterior", phase: "riego_ext", color: "#52b788" },
+    { tiempo: "Agosto", titulo: "Inicio floración automática", emoji: "🌸", desc: "Los días se acortan. La planta florece sola — verás pelos blancos en los nudos. Cambia a Bio Bloom. Reduce humedad si es alta.", mode: "exterior", phase: "fases_ext", color: "#b7e4c7" },
+    { tiempo: "Septiembre", titulo: "Floración avanzada — MES CRÍTICO", emoji: "⚠️", desc: "Visita 2x/semana. Busca Botrytis abriendo cogollos. Lavado de raíces semanas 4-5. Añade tutores. Mira tricomas semanalmente.", mode: "exterior", phase: "plagas", color: "#f4a261", highlight: true },
+    { tiempo: "Octubre", titulo: "Cosecha en el bosque", emoji: "✂️", desc: "70-80% tricomas lechosos = cosechar. Con lluvia prevista y 60% lechosos: cosecha ya. Bolsas herméticas. Limpia el spot.", mode: "exterior", phase: "cosecha_ext", color: "#d8f3dc" },
+    { tiempo: "Octubre-Dic", titulo: "Secado y curado", emoji: "🫙", desc: "Idéntico al interior. 10-14 días secando. Test de la ramita. Mason jars, burping diario, higrómetro dentro. 4 semanas mínimo.", mode: "general", phase: "cosecha_gen", color: "#e8f5e9" },
   ];
 
   const nodes = tab === "interior" ? interiorNodes : exteriorNodes;
@@ -943,68 +943,14 @@ function TIMELINE({ navigate }) {
         El timeline te muestra el proceso completo de principio a fin. Haz clic en cualquier nodo para ir directamente a la sección correspondiente de la guía.
       </InfoBox>
 
-      {/* Tab selector */}
-      <div style={{ display: "flex", background: "#0d1f14", borderRadius: "10px", padding: "4px", gap: "4px", marginBottom: "24px" }}>
-        {[{ id: "interior", label: "🏠 Interior" }, { id: "exterior", label: "🌲 Exterior" }].map(t => (
-          <button key={t.id} onClick={() => setTab(t.id)} style={{
-            flex: 1, padding: "10px", border: "none", borderRadius: "8px",
-            background: tab === t.id ? "#2d6a4f" : "transparent",
-            color: tab === t.id ? "#d8f3dc" : "#52b788",
-            cursor: "pointer", fontSize: "13px", fontWeight: "bold",
-            fontFamily: "Georgia, serif",
-          }}>{t.label}</button>
-        ))}
-      </div>
-
-      {/* Timeline */}
-      <div style={{ position: "relative", paddingLeft: "20px" }}>
-        {/* Línea vertical */}
-        <div style={{ position: "absolute", left: "19px", top: "20px", bottom: "20px", width: "2px", background: "linear-gradient(to bottom, #2d6a4f, #52b788, #d8f3dc)", borderRadius: "1px" }} />
-
-        {nodes.map((node, i) => (
-          <div key={i} style={{ position: "relative", marginBottom: "6px" }}>
-            {/* Bolita FUERA del card — fija aunque el card se mueva */}
-            <div style={{
-              position: "absolute", left: "-2px", top: "50%", transform: "translateY(-50%)",
-              width: "14px", height: "14px", borderRadius: "50%",
-              background: node.color, border: "2px solid #0a1a0f",
-              zIndex: 2,
-            }} />
-            {/* Nodo clickable */}
-            <button
-              onClick={() => navigate(node.mode, node.phase)}
-              style={{
-                width: "100%", textAlign: "left", border: "none", cursor: "pointer",
-                background: "transparent", padding: 0, fontFamily: "Georgia, serif",
-              }}
-            >
-              <div style={{
-                display: "flex", gap: "14px", alignItems: "flex-start",
-                background: node.highlight ? "#1a3a20" : "#0d1f14",
-                border: `1px solid ${node.highlight ? node.color : "#1b4332"}`,
-                borderRadius: "10px", padding: "12px 14px",
-                marginLeft: "20px",
-                transition: "all 0.2s",
-              }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 4px 14px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; e.currentTarget.style.transform = "translateX(6px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; e.currentTarget.style.transform = "translateX(0)"; }}
-              >
-
-                <div style={{ fontSize: "22px", flexShrink: 0, lineHeight: 1 }}>{node.emoji}</div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "4px" }}>
-                    <div style={{ fontSize: "13px", fontWeight: "bold", color: node.color }}>{node.titulo}</div>
-                    {node.optional && <div style={{ fontSize: "9px", color: "#52b788", background: "#1b4332", padding: "2px 6px", borderRadius: "4px", flexShrink: 0, marginLeft: "8px" }}>OPCIONAL</div>}
-                  </div>
-                  <div style={{ fontSize: "10px", color: "#40916c", marginBottom: "5px" }}>{node.semana}</div>
-                  <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5" }}>{node.desc}</div>
-                  <div style={{ fontSize: "10px", color: "#2d6a4f", marginTop: "6px" }}>→ Ver sección completa</div>
-                </div>
-              </div>
-            </button>
-          </div>
-        ))}
-      </div>
+      <TimelineList
+        c={CANNABIS_COLORS}
+        tabs={[{ id: "interior", label: "🏠 Interior" }, { id: "exterior", label: "🌲 Exterior" }]}
+        activeTab={tab}
+        onTabChange={setTab}
+        nodes={nodes}
+        onClick={(node) => navigate(node.mode, node.phase)}
+      />
     </div>
   );
 }
