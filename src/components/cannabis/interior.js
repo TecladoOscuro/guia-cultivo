@@ -886,39 +886,90 @@ function GOTEO() {
     <div>
       <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
         <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.7" }}>
-          El riego automático por goteo es la mejor decisión para cultivo interior: reduces las aperturas del armario al mínimo, eliminas el riesgo de regar de más por descuido, y el olor hacia la habitación baja drásticamente. Para principiante absoluto es especialmente útil porque elimina el error más común.
+          Riego automático por goteo = LA MEJOR decisión para cultivo interior. Reduce aperturas del armario, elimina riesgo de regar de más, baja olor a habitación. Para novato absoluto: elimina el error más común (sobrerriego).
         </p>
       </div>
 
-      <SectionTitle>QUÉ COMPRAR</SectionTitle>
-      <Step num={1} text="Kit de riego por goteo con temporizador digital — ~20–35€" why="Busca un kit que incluya: temporizador, bomba o sistema de gravedad, tubos de 4–6mm, y goteros regulables. En internet busca 'kit riego goteo interior plantas' o 'drip irrigation kit indoor'. No necesitas nada caro." />
-      <Step num={2} text="Depósito de agua 15–20L con tapa — ~10–15€" why="El depósito va FUERA del armario. El tubo pasa por una de las aperturas laterales (todos los armarios tienen). Así rellenas el agua sin abrir la tienda nunca." />
-      <Step num={3} text="Tubo silicona alimentario 6mm — 2–3 metros — ~5€" why="Para conectar el depósito exterior con los goteros dentro. El tubo de silicona es flexible y no transfiere sabores ni sustancias al agua." />
+      <SectionTitle>CÓMO FUNCIONA EL GOTEO — ESQUEMA MENTAL</SectionTitle>
+      <InfoBox>
+        Sistema simple: <strong>depósito de agua FUERA del armario → tubo principal → temporizador → ramales (1 por maceta) → gotero regulable en cada maceta</strong>.<br/><br/>
+        El temporizador abre la válvula durante X minutos según programación. El agua cae por gravedad (depósito elevado) o por bomba sumergible (kit con bomba). Los goteros tienen una válvula que regula gotas/segundo.
+      </InfoBox>
+
+      <SectionTitle>LISTA DE COMPRA — KIT GOTEO COMPLETO ~50€</SectionTitle>
+      <Step num={1} text="Kit riego por goteo con temporizador digital — 20-35€. Busca kit que incluya: temporizador (preferiblemente con bomba sumergible si tu depósito está bajo), tubo principal 8-10mm, micro-tubos 4-6mm, goteros regulables y conectores." why="En internet busca 'kit riego goteo interior plantas' o 'drip irrigation kit'. Marcas: Gardena Micro-Drip, ELGo, Rainpoint." />
+      <Step num={2} text="Depósito 15-20L con tapa hermética — 10-15€. Cubo plástico tipo IKEA o garrafa con grifo." why="Tapa = evita evaporación + algas + insectos. Hermético importante." />
+      <Step num={3} text="Tubo silicona/PVC alimentario 6mm — 3-5m — 5€" why="Conecta depósito (fuera) → goteros (dentro). Pasa por aperturas laterales preparadas del armario." />
+      <Step num={4} text="(Opcional) Bomba sumergible mini 12V — 10-15€" why="Si tu depósito no puede estar elevado, la bomba empuja el agua. Algunos kits ya la incluyen." />
+      <Step num={5} text="Verifica el caudal del kit: lee la caja. Goteros típicos: 2L/h, 4L/h, 8L/h. Para 2 plantas en armario 80x80: 4L/h por gotero es estándar." />
+
+      <SectionTitle>CAUDAL DE LOS GOTEROS — TABLA REFERENCIA</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 EQUIVALENCIAS CAUDAL × TIEMPO</div>
+        {[
+          { gotero: "2 L/h (gotero 'lento')", calc: "33ml/min · 0.55ml/seg · ~1 gota/seg", uso: "Plántulas y vegetativa temprana. Mucho control fino." },
+          { gotero: "4 L/h (gotero estándar)", calc: "67ml/min · 1.1ml/seg · ~2 gotas/seg", uso: "Vegetativa madura + floración temprana. Caudal universal." },
+          { gotero: "8 L/h (gotero 'rápido')", calc: "133ml/min · 2.2ml/seg · ~4 gotas/seg", uso: "Floración avanzada o macetas grandes (>15L). Riegas en menos tiempo." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 2 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.gotero}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2", marginBottom: "3px" }}>📏 {row.calc}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>{row.uso}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle>CALCULADORA — CUÁNTO TIEMPO DE RIEGO POR FASE</SectionTitle>
+      <InfoBox>
+        Fórmula: <strong>Tiempo (min) = ml necesarios ÷ caudal (ml/min)</strong><br/>
+        Si gotero de 4L/h (= 67 ml/min):<br/>
+        - Necesitas 200ml → 200÷67 = <strong>3 min</strong><br/>
+        - Necesitas 500ml → 500÷67 = <strong>7-8 min</strong><br/>
+        - Necesitas 1L (1000ml) → 1000÷67 = <strong>15 min</strong>
+      </InfoBox>
+
+      <SectionTitle>PROGRAMACIÓN DEL TEMPORIZADOR POR FASE</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>🕐 PROGRAMACIÓN POR ETAPA (gotero 4L/h)</div>
+        {[
+          { fase: "Sem 1-2 (plántula)", config: "❌ NO USAR GOTEO. Spray manual 50-100ml/día.", explicacion: "Plántula muy frágil. Goteo automático puede ahogar." },
+          { fase: "Sem 3-4 (vegetativa joven)", config: "1 riego/día, 3 min, mañana al encender luz", explicacion: "≈ 200ml/riego. Total 200ml/día." },
+          { fase: "Sem 5-6 (vegetativa madura)", config: "1 riego/día, 5-7 min, mañana", explicacion: "≈ 350-470ml/riego. Total ≈400-500ml/día." },
+          { fase: "Sem 7-8 (transición flor)", config: "1 riego/día, 7-10 min", explicacion: "≈ 470-670ml/riego. La planta bebe MÁS." },
+          { fase: "Sem 9-12 (floración pico)", config: "2 riegos/día, 5-7 min cada uno (mañana + tarde)", explicacion: "Total 700ml-1.5L/día. Cogollos creciendo intensamente." },
+          { fase: "Última semana (lavado)", config: "1-2 riegos/día, sin nutrientes (solo agua pH 6.3)", explicacion: "Limpia raíces antes de cosecha." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.fase}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2", marginBottom: "3px" }}>⏱️ {row.config}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>→ {row.explicacion}</div>
+          </div>
+        ))}
+      </div>
 
       <SectionTitle>INSTALACIÓN PASO A PASO</SectionTitle>
-      <Step num={1} text="Coloca el depósito en una silla o estante a la misma altura o ligeramente más alto que las macetas, FUERA del armario." why="La gravedad es suficiente para mover el agua si el depósito está a la misma altura o más alto. No necesitas bomba eléctrica para un setup de 2 plantas." />
-      <Step num={2} text="Pasa el tubo principal por una de las aperturas laterales pequeñas del armario. Hay varias de diferentes tamaños — elige la más ajustada al tubo." why="Estas aperturas están cosidas con velcro o goma para sellar alrededor de tubos y cables. El armario las tiene precisamente para esto." />
-      <Step num={3} text="Dentro del armario, divide el tubo principal en 2 ramales (uno por planta) con un conector en Y." />
-      <Step num={4} text="Al final de cada ramal coloca un gotero regulable. Ponlo en el borde de la maceta, no en el centro." why="Si el gotero está en el centro cae directamente sobre las raíces principales. En el borde el agua se distribuye mejor y las raíces crecen buscándola." />
-      <Step num={5} text="Conecta el temporizador entre el depósito y el tubo principal. Ponlo fuera del armario para poder ajustarlo sin abrir." />
-      <Step num={6} text="Haz una prueba con agua sola: abre el gotero al mínimo y mira cuánto tarda en salir medio litro. Anota el tiempo." why="Necesitas saber el caudal real para programar el temporizador correctamente. Cada gotero es diferente aunque pongan lo mismo en la caja." />
-
-      <SectionTitle>CONFIGURACIÓN DEL TEMPORIZADOR</SectionTitle>
-      <Step num={7} text="Fase vegetativa (semanas 2–4): programa 1 riego al día, por la mañana, de 3–5 minutos." why="Por la mañana coincide con el inicio del ciclo de luz. Las plantas absorben más agua con luz. Empieza corto — siempre puedes alargar, nunca puedes deshacer el exceso de agua." />
-      <Step num={8} text="Fase floración (semanas 4–10): 1–2 riegos al día de 4–6 minutos." why="En floración la planta consume más agua. Pero sigue siendo mejor quedarse corto y ajustar que pasarse." />
-      <Step num={9} text="Cómo saber si el tiempo está bien: al día siguiente del riego, mete el dedo en el sustrato. Si está húmedo a 2cm: perfecto. Si está empapado: reduce el tiempo. Si está seco: auméntalo." />
-      <Step num={10} text="IMPORTANTE: los primeros 7–10 días desde que plantas la semilla, el riego automático NO — usa spray a mano. La plántula es demasiado pequeña y frágil." why="El goteo está pensado para plantas con raíces desarrolladas. Una plántula de 3cm puede ahogarse con el caudal mínimo de un gotero." />
+      <Step num={1} text="Coloca el depósito FUERA del armario, en silla/estante a misma altura o ligeramente MÁS ALTO que las macetas (gravedad). Si tienes bomba: depósito puede ir en suelo." why="La altura del depósito determina el caudal. Más alto = más presión = más caudal." />
+      <Step num={2} text="Pasa el tubo principal por una apertura lateral del armario (todas las tiendas tienen aperturas selladas con velcro/goma para tubos)." />
+      <Step num={3} text="Dentro: divide el tubo principal en 2 ramales (uno por maceta) con conector en Y." />
+      <Step num={4} text="Coloca el gotero regulable en el BORDE de la maceta, NO en el centro. 2-3 goteros por maceta para macetas &gt;15L (distribución uniforme)." why="Centro = agua cae directamente sobre tallo y raíces principales. Borde = se distribuye uniformemente, raíces crecen buscando agua." />
+      <Step num={5} text="Coloca el temporizador entre depósito y tubo principal. FUERA del armario para ajustar sin abrir." />
+      <Step num={6} text="TEST INICIAL: programa 5 minutos con sólo agua (sin nutrientes, sin pH). Mide cuánto sale en cada gotero usando un vaso medidor." why="Cada gotero es ligeramente distinto aunque la caja diga el mismo caudal. CALIBRAR antes de empezar." />
+      <Step num={7} text="Ajusta los goteros (regulables) hasta que cada uno dé el mismo caudal. Anota: 'mi gotero a 1.5 vueltas = 4L/h real'." />
 
       <SectionTitle>PREPARACIÓN DEL AGUA EN EL DEPÓSITO</SectionTitle>
-      <Step num={11} text="Llena el depósito. Añade los nutrientes según la fase (Grow o Bloom). Ajusta el pH a 6.2–6.5 con pH Down. Tapa." />
-      <Step num={12} text="El agua preparada aguanta bien 3–4 días en el depósito con tapa. Prepara solo lo que vayas a usar en ese tiempo." why="Más de 4–5 días el agua puede empezar a tener algas o bacterias, especialmente con nutrientes orgánicos. Con tapa y en lugar fresco dura bien." />
-      <Step num={13} text="Cada vez que rellenes el depósito: mide el pH de nuevo y ajusta. No asumas que el pH es el mismo que la vez anterior." />
+      <Step num={1} text="Llena el depósito con agua del grifo (idealmente reposada 24h en jarra abierta para evaporar cloro)." />
+      <Step num={2} text="Añade nutrientes según fase: BioBizz Grow 1-3ml/L (vegetativa) o Bloom 2-4ml/L (floración). Mezcla bien." />
+      <Step num={3} text="MIDE el pH del depósito. Probable: 7-8 (alcalino del grifo)." />
+      <Step num={4} text="Añade pH Down GOTA A GOTA mezclando, mide otra vez. Repite hasta llegar a 6.2-6.5." why="Solo añade pH Down DESPUÉS de los nutrientes. Si lo añades antes, los nutrientes pueden volver a alcalinizar y vuelves a empezar." warning />
+      <Step num={5} text="Tapa el depósito. Anota la fecha de preparación." />
+      <Step num={6} text="DURACIÓN del agua preparada: 3-5 días con nutrientes. Más tiempo → bacterias/algas. Si pasa más, vacía y prepara nuevo." />
 
-      <SectionTitle>RUTINA SEMANAL CON GOTEO AUTOMÁTICO</SectionTitle>
+      <SectionTitle color="#52b788">RUTINA SEMANAL CON GOTEO</SectionTitle>
       {[
-        { dia: "Cada 2–3 días", tarea: "Rellenar depósito y ajustar pH/nutrientes. Sin abrir el armario." },
-        { dia: "1 vez por semana", tarea: "Abrir el armario (con protocolo extractor): revisión visual rápida, bajar la luz si creció, comprobar que los goteros no están obstruidos." },
-        { dia: "Cuando toca trasplantar", tarea: "Apertura necesaria. Aprovecha para limpiar los goteros con agua limpia." },
+        { dia: "Cada 3-4 días", tarea: "Rellenar depósito (verificar pH al rellenar). Sin abrir el armario." },
+        { dia: "1 vez/semana", tarea: "Abrir armario brevemente: revisión visual plantas, bajar luz si crecieron, verificar que cada gotero gotea correctamente." },
+        { dia: "1 vez/2 semanas", tarea: "Limpiar el depósito: vaciar, enjuagar, llenar nuevo. Evita acumulación de sales y biofilm." },
+        { dia: "Ajustes según fase", tarea: "Reprogramar el temporizador cuando cambie de fase vegetativa→floración (sem 4-5)." },
       ].map((r, i) => (
         <div key={i} style={{
           background: "#0d1f14", border: "1px solid #1b4332",
@@ -930,10 +981,19 @@ function GOTEO() {
         </div>
       ))}
 
+      <SectionTitle>MANUAL VS GOTEO — COMPARATIVA NOVATO</SectionTitle>
+      <InfoBox>
+        🚿 <strong>RIEGO MANUAL</strong>: regadera de 5L con cuello fino. Riegas cuando el dedo dice (sustrato seco a 2cm). Cantidades exactas según fase (ver phase Vegetativa). Pros: control total, ves la planta cada vez, cero riesgo de fallo mecánico. Contras: tienes que estar disponible cada 1-3 días, abres armario cada vez (olor + apertura).<br/><br/>
+        💧 <strong>RIEGO POR GOTEO</strong>: programado, automático. Pros: cero apertura del armario, cero olvidos, distribución uniforme, ahorras tiempo. Contras: 50€ inicial, requiere CALIBRAR (test al principio), si se obstruye un gotero la planta sufre.<br/><br/>
+        💡 <strong>Recomendación primer cultivo</strong>: HAZ MANUAL para aprender a leer la planta. En el segundo cultivo: pasa a goteo. El manual te da intuición que el goteo no enseña.
+      </InfoBox>
+
       <SectionTitle color="#e63946">🚫 ERRORES COMUNES</SectionTitle>
       <ErrorCard error="Programar el goteo igual todo el cultivo" consecuencia="En germinación y plántula el goteo mata. En floración puede quedarse corto." fix="Ajusta el temporizador en cada fase. No es lo mismo semana 1 que semana 7." />
       <ErrorCard error="No revisar que los goteros funcionan" consecuencia="Un gotero obstruido y una planta sin agua durante 2 días puede ser fatal." fix="Una vez por semana en la revisión visual, comprueba que gotea correctamente." />
       <ErrorCard error="Preparar el depósito y no medir el pH" consecuencia="El agua con nutrientes cambia el pH. Si no mides después de añadirlos, estás regando a pH incorrecto." fix="Añade nutrientes → después mide y ajusta pH. Siempre en ese orden." />
+      <ErrorCard error="Usar nutrientes orgánicos no recomendados para goteo" consecuencia="Algunos nutrientes orgánicos (compost, guano) tienen partículas que obstruyen los goteros. Ruina del sistema." fix="Para goteo: nutrientes líquidos sintéticos o orgánicos filtrados (BioBizz, GHE, Canna). No mezclas caseras con sólidos." />
+      <ErrorCard error="No calibrar los goteros antes" consecuencia="Crees que estás dando 200ml pero das 50ml o 600ml. Plantas mal." fix="TEST inicial obligatorio: 5 min con vaso medidor bajo cada gotero. Ajusta hasta uniformidad." />
     </div>
   );
 }

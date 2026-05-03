@@ -575,6 +575,64 @@ function RIEGO_EXT() {
         </div>
       </div>
 
+      <SectionTitle>CUÁNTA AGUA POR PLANTA INDIVIDUAL — TABLA EXACTA</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 LITROS POR PLANTA (no total) SEGÚN MES + TAMAÑO</div>
+        {[
+          { mes: "Marzo-Abril (plántula 10-30cm)", agua: "1-2L", freq: "cada 3-4 días", nota: "Plantita pequeña en macetita o recién trasplantada al hoyo. Riego suave alrededor del cuello del tallo." },
+          { mes: "Mayo (joven 30-80cm)", agua: "2-4L", freq: "cada 3 días", nota: "Crecimiento iniciado. Las raíces se establecen — riego deep menos frecuente." },
+          { mes: "Junio (vegetativa 80-150cm)", agua: "4-7L", freq: "cada 2-3 días", nota: "Plantón en pleno crecimiento. En zonas calurosas: cada 2 días. Lluvias = saltar riego." },
+          { mes: "Julio (vegetativa pico 1.5-2m+)", agua: "7-12L", freq: "DIARIO o cada 2 días", nota: "Mes crítico calor. Plantas grandes consumen MUCHA agua. Sin riego = muerte en 2-3 días. Con acolchado: -50% frecuencia." },
+          { mes: "Agosto (inicio floración)", agua: "5-10L", freq: "cada 2 días", nota: "Días empiezan a acortar. Pelitos blancos aparecen. Mantener hidratación constante para flores grandes." },
+          { mes: "Septiembre (floración avanzada)", agua: "4-8L", freq: "cada 2-3 días", nota: "Reducir gradualmente. Mes crítico para Botrytis = NO mojar cogollos. Solo suelo." },
+          { mes: "Octubre últimas 2 sem (lavado)", agua: "3-5L", freq: "cada 3 días", nota: "Solo agua pH 6.3 (sin nutrientes). Lava sales acumuladas. Importante para sabor final." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 6 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.mes}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2" }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle>SEÑALES VISUALES EN EXTERIOR — QUÉ NOTAR</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 SEÑALES PLANTA EXTERIOR</div>
+        {[
+          { signo: "✅ Hojas verde brillante, firmes, apuntando ligeramente hacia arriba", lectura: "PERFECTO. Hidratación correcta. Sigue así." },
+          { signo: "🟡 Hojas suavemente caídas pero verdes (mañana temprano)", lectura: "Posible falta agua reciente. Verificar suelo. Si seco a 5cm = regar." },
+          { signo: "🟡 Hojas caídas durante mediodía calor extremo", lectura: "DEFENSA NATURAL contra calor (transpiración reducida). Si por la tarde se recuperan = NORMAL. Si no = sed real." },
+          { signo: "🔴 Hojas MUY caídas a media mañana sin sol intenso", lectura: "EMERGENCIA. Riego YA con 5-10L. Recuperación en 4-12h si no es muy tarde." },
+          { signo: "🟡 Hojas amarillas que caen empezando por bajo", lectura: "Deficiencia de Nitrógeno o falta de riego prolongada. Aplicar Bio Grow + verificar humedad suelo." },
+          { signo: "🟡 Puntas de hojas marrones secas", lectura: "Quemadura sales (sobrealimentación) o sol intenso + sed. Reducir nutrientes 50% + aumentar riego." },
+          { signo: "🔴 Manchas blancas peludas en cogollos (sept-oct)", lectura: "BOTRYTIS (moho). Cosechar zona afectada YA. Eliminar cogollos infectados completamente. Mejorar ventilación." },
+          { signo: "🟡 Plagas visibles: pulgones (envés hojas), ácaros (telarañas), orugas (mordidas)", lectura: "Tratar con Bt (orugas) o jabón potásico (pulgones/ácaros). Ver phase Plagas." },
+          { signo: "✅ Crecimiento vigoroso 3-8cm/día en junio-julio", lectura: "EXCELENTE. Planta sana. Mantén el riego." },
+          { signo: "🌸 Pelos blancos saliendo de los nudos en agosto", lectura: "INICIO DE FLORACIÓN. Cambia a Bio Bloom. Riego se mantiene." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 9 ? "1px solid #1b4332" : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: "#d8f3dc", marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle>CALCULADORA — RIEGO AUTOMÁTICO POR GRAVEDAD</SectionTitle>
+      <InfoBox>
+        Con el sistema de gravedad de bidón elevado, el caudal es BAJO (1-3 L/h por gotero). Adaptación de cálculo:<br/><br/>
+        Si necesitas <strong>10L/día por planta</strong> en julio y tu gotero da <strong>2 L/h</strong>:<br/>
+        - 10L ÷ 2L/h = <strong>5 horas de riego/día</strong><br/>
+        - El temporizador a pilas se programa para abrir 5h (puede dividirse: 2.5h mañana + 2.5h tarde)<br/><br/>
+        Si tienes 3 plantas y un solo bidón: necesitas 30L/día → llenar bidón 30L cada 1-2 días, o usar 2 bidones de 20L alternando.
+      </InfoBox>
+
+      <SectionTitle color="#52b788">MANUAL VS AUTOMÁTICO EXTERIOR — DECISIÓN</SectionTitle>
+      <InfoBox>
+        🚿 <strong>RIEGO MANUAL CON BIDÓN</strong>: vas al spot cada 1-3 días llevando el agua preparada. Pros: control total, ves la planta, detectas problemas pronto, cero infraestructura. Contras: en julio cada 1-2 días, mucho desplazamiento, peso del bidón.<br/><br/>
+        💧 <strong>SISTEMA POR GRAVEDAD CON TEMPORIZADOR A PILAS</strong> (50-100€): instalación inicial + bidón 20L cada 3-4 días en julio. Pros: menos visitas (cada 3-5 días), no fallas si te enfermas/viajas. Contras: setup inicial, bidón visible (cuidado seguridad), gotero puede obstruirse con sedimento agua del río.<br/><br/>
+        💡 <strong>Compromiso ideal exterior</strong>: empezar manual (mayo-junio), instalar gravedad para julio (mes crítico), volver a manual para septiembre (vigilancia plagas/moho).
+      </InfoBox>
+
       <SectionTitle>🎋 TUTORES — CÓMO Y CUÁNDO USARLOS</SectionTitle>
       <Step num={1} text="Las plantas de fotoperiodo en exterior pueden llegar a 1.5-2m. En floración los cogollos pesan mucho y las ramas se doblan o rompen." />
       <Step num={2} text="Cuándo ponerlos: a partir de agosto cuando los cogollos empiezan a engordar. No es necesario antes." />
