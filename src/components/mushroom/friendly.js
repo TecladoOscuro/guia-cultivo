@@ -2,7 +2,7 @@
 // Cultivo desde cero pero usando productos pre-esterilizados (sin olla a presión, sin SAB, sin esporada).
 // Tiempo: 4-6 semanas. Dificultad: media. Ideal novatos que quieren más control que el kit pero no quieren microbiología.
 
-function COMPRA_SETAS_MANUAL() {
+function COMPRA_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -53,7 +53,7 @@ function COMPRA_SETAS_MANUAL() {
   );
 }
 
-function ESTERILIZACION() {
+function PREP_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -88,7 +88,7 @@ function ESTERILIZACION() {
   );
 }
 
-function INOCULACION() {
+function INOCULACION_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -130,7 +130,7 @@ function INOCULACION() {
   );
 }
 
-function INCUBACION_SETAS_MANUAL() {
+function INCUBACION_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -171,7 +171,7 @@ function INCUBACION_SETAS_MANUAL() {
   );
 }
 
-function FRUCTIFICACION_SETAS_MANUAL() {
+function FRUCTIFICACION_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -225,7 +225,7 @@ function FRUCTIFICACION_SETAS_MANUAL() {
   );
 }
 
-function COSECHA_SETAS_MANUAL() {
+function COSECHA_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>
@@ -268,7 +268,7 @@ function COSECHA_SETAS_MANUAL() {
   );
 }
 
-function SECADO_SETAS_MANUAL() {
+function SECADO_SETAS_FRIENDLY() {
   return (
     <div>
       <InfoBoxM>

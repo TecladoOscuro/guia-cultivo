@@ -2,9 +2,10 @@ function GuiaCultivo() {
 
   const [mode, setMode] = useState("interior");
   const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom"
-  const [mushroomMode, setMushroomMode] = useState("kit"); // "kit" | "manual" | "general"
+  const [mushroomMode, setMushroomMode] = useState("kit"); // "kit" | "friendly" | "advanced" | "general"
   const [activeMushroomKit, setActiveMushroomKit] = useState("compra_kit");
-  const [activeMushroomManual, setActiveMushroomManual] = useState("compra_manual");
+  const [activeMushroomFriendly, setActiveMushroomFriendly] = useState("compra_friendly");
+  const [activeMushroomAdvanced, setActiveMushroomAdvanced] = useState("compra_advanced");
   const [activeMushroomGen, setActiveMushroomGen] = useState("timeline_setas");
   const [activePhase, setActivePhase] = useState("compra");
   const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
@@ -22,7 +23,8 @@ function GuiaCultivo() {
     setGuide("mushroom");
     setMushroomMode(targetMode);
     if (targetMode === "kit") setActiveMushroomKit(targetPhase);
-    else if (targetMode === "manual") setActiveMushroomManual(targetPhase);
+    else if (targetMode === "friendly") setActiveMushroomFriendly(targetPhase);
+    else if (targetMode === "advanced") setActiveMushroomAdvanced(targetPhase);
     else setActiveMushroomGen(targetPhase);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -108,16 +110,27 @@ function GuiaCultivo() {
           case "secado_kit": return <SECADO_SETAS_KIT />;
           default: return <COMPRA_SETAS_KIT />;
         }
-      } else if (mushroomMode === "manual") {
-        switch (activeMushroomManual) {
-          case "compra_manual": return <COMPRA_SETAS_MANUAL />;
-          case "esterilizar": return <ESTERILIZACION />;
-          case "inoculacion": return <INOCULACION />;
-          case "incubacion_manual": return <INCUBACION_SETAS_MANUAL />;
-          case "fructificacion_manual": return <FRUCTIFICACION_SETAS_MANUAL />;
-          case "cosecha_manual": return <COSECHA_SETAS_MANUAL />;
-          case "secado_manual": return <SECADO_SETAS_MANUAL />;
-          default: return <COMPRA_SETAS_MANUAL />;
+      } else if (mushroomMode === "friendly") {
+        switch (activeMushroomFriendly) {
+          case "compra_friendly": return <COMPRA_SETAS_FRIENDLY />;
+          case "prep_friendly": return <PREP_SETAS_FRIENDLY />;
+          case "inoculacion_friendly": return <INOCULACION_SETAS_FRIENDLY />;
+          case "incubacion_friendly": return <INCUBACION_SETAS_FRIENDLY />;
+          case "fructificacion_friendly": return <FRUCTIFICACION_SETAS_FRIENDLY />;
+          case "cosecha_friendly": return <COSECHA_SETAS_FRIENDLY />;
+          case "secado_friendly": return <SECADO_SETAS_FRIENDLY />;
+          default: return <COMPRA_SETAS_FRIENDLY />;
+        }
+      } else if (mushroomMode === "advanced") {
+        switch (activeMushroomAdvanced) {
+          case "compra_advanced": return <COMPRA_SETAS_ADVANCED />;
+          case "esterilizar_advanced": return <ESTERILIZACION_SETAS_ADVANCED />;
+          case "inoculacion_advanced": return <INOCULACION_SETAS_ADVANCED />;
+          case "incubacion_advanced": return <INCUBACION_SETAS_ADVANCED />;
+          case "fructificacion_advanced": return <FRUCTIFICACION_SETAS_ADVANCED />;
+          case "cosecha_advanced": return <COSECHA_SETAS_ADVANCED />;
+          case "secado_advanced": return <SECADO_SETAS_ADVANCED />;
+          default: return <COMPRA_SETAS_ADVANCED />;
         }
       } else {
         switch (activeMushroomGen) {
@@ -130,17 +143,21 @@ function GuiaCultivo() {
     }
   };
 
+  const mushroomPhasesMap = { kit: mushroomKitPhases, friendly: mushroomFriendlyPhases, advanced: mushroomAdvancedPhases, general: mushroomGeneral };
+  const mushroomActiveMap = { kit: activeMushroomKit, friendly: activeMushroomFriendly, advanced: activeMushroomAdvanced, general: activeMushroomGen };
+  const mushroomSetterMap = { kit: setActiveMushroomKit, friendly: setActiveMushroomFriendly, advanced: setActiveMushroomAdvanced, general: setActiveMushroomGen };
+
   const currentPhases = guide === "cannabis"
     ? (mode === "interior" ? phases : mode === "exterior" ? extPhases : generalPhases)
-    : (mushroomMode === "kit" ? mushroomKitPhases : mushroomMode === "manual" ? mushroomManualPhases : mushroomGeneral);
+    : mushroomPhasesMap[mushroomMode];
 
   const currentActive = guide === "cannabis"
     ? (mode === "interior" ? activePhase : mode === "exterior" ? activePhaseExt : activePhaseGen)
-    : (mushroomMode === "kit" ? activeMushroomKit : mushroomMode === "manual" ? activeMushroomManual : activeMushroomGen);
+    : mushroomActiveMap[mushroomMode];
 
   const setCurrentActive = guide === "cannabis"
     ? (mode === "interior" ? setActivePhase : mode === "exterior" ? setActivePhaseExt : setActivePhaseGen)
-    : (mushroomMode === "kit" ? setActiveMushroomKit : mushroomMode === "manual" ? setActiveMushroomManual : setActiveMushroomGen);
+    : mushroomSetterMap[mushroomMode];
 
   const colors = guide === "cannabis" ? CANNABIS_COLORS : MUSHROOM_COLORS;
   const title = guide === "cannabis" ? "🌿 Guía de Cultivo Cannabis" : "🍄 Guía de Cultivo Setas";
@@ -152,7 +169,8 @@ function GuiaCultivo() {
       ]
     : [
         { id: "kit", label: "🛒 Kit", sub: "Listo" },
-        { id: "manual", label: "🧫 Manual", sub: "Desde 0" },
+        { id: "friendly", label: "🧼 Friendly", sub: "Pre-esteril." },
+        { id: "advanced", label: "🧫 Avanzado", sub: "Desde lab" },
         { id: "general", label: "📋 General", sub: "Común" },
       ];
 

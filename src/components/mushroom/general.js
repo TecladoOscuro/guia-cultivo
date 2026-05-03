@@ -11,22 +11,34 @@ function TIMELINE_SETAS({ navigate }) {
     { dia: "Días 14-21", titulo: "Fructificación / Pinheads", emoji: "🍄", desc: "Aparecen primordios (puntos blancos). Nebulizar 3-4x/día. FAE cada 6-12h abriendo cámara. Crecimiento rápido.", mode: "kit", phase: "fructificacion_kit", color: "#dbb98c", highlight: true },
     { dia: "Días 21-25", titulo: "Primera cosecha", emoji: "✂️", desc: "Cosecha cuando velo a punto de romperse. Técnica giro-tirón. Rendimiento 70-150g fresco. Limpia bien la base.", mode: "kit", phase: "cosecha_kit", color: "#eed8b4" },
     { dia: "Días 25-50", titulo: "Flushes 2-4", emoji: "🔄", desc: "Cold shock (24h nevera) + rehidratar. Siguiente flush en 5-10 días. Cada flush 50-70% del anterior. Total 4-6 flushes.", mode: "kit", phase: "fructificacion_kit", color: "#f5e6d0" },
-    { dia: "Días 50-55", titulo: "Secado final", emoji: "🌬️", desc: "Presecado + sílica gel hasta cracker dry. Total seco: 30-60g. Almacenamiento 6m-5años según método.", mode: "general", phase: "conceptos_setas", color: "#fdf5ea" },
+    { dia: "Días 50-55", titulo: "Secado final", emoji: "🌬️", desc: "Presecado + sílica gel hasta cracker dry. Total seco: 30-60g. Almacenamiento 6m-5años según método.", mode: "kit", phase: "secado_kit", color: "#fdf5ea" },
   ];
 
-  const manualNodes = [
-    { dia: "Día 0", titulo: "Compra friendly", emoji: "🛒", desc: "Spawn bag pre-esterilizado + cultura líquida + bulk substrate CVG + monotub. 100-180€. NO olla a presión, NO SAB.", mode: "manual", phase: "compra_manual", color: "#8a6240" },
-    { dia: "Día 1", titulo: "Prep limpio + Inoculación", emoji: "💉", desc: "Ducha vapor, alcohol, mascarilla FFP2. Flameo aguja, inyección 2-3ml cultura líquida en spawn bag. 5 min.", mode: "manual", phase: "inoculacion", color: "#aa7c52" },
-    { dia: "Días 1-18", titulo: "Incubación spawn bag", emoji: "🔮", desc: "El micelio coloniza el grano. 24-26°C oscuro. Inspección visual diaria SIN abrir. Día 14-18 → 100% blanco.", mode: "manual", phase: "incubacion_manual", color: "#c49a6c" },
-    { dia: "Día 18", titulo: "Mezcla S2B en monotub", emoji: "📦", desc: "En espacio limpio: romper spawn, mezclar 1:2 con bulk CVG en monotub (con 4-6 agujeros micropore). Casing layer opcional.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c" },
-    { dia: "Días 18-25", titulo: "Colonización bulk", emoji: "⚪", desc: "Micelio se extiende por bulk. FAE cada 2 días. Día 25: superficie 95-100% blanca. NO nebulizar todavía.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c" },
-    { dia: "Días 25-35", titulo: "Fructificación / Pinning", emoji: "🍄", desc: "Iniciar nebulización paredes 2x/día + FAE 2x/día. Luz 12/12. Pinheads aparecen día 28-30. Crecimiento rápido.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c", highlight: true },
-    { dia: "Días 35-40", titulo: "Primera cosecha", emoji: "✂️", desc: "Cosechar antes de que el velo se rompa. Giro-tirón. Rendimiento 200-500g fresco. Retira pinheads abortados.", mode: "manual", phase: "cosecha_manual", color: "#eed8b4" },
-    { dia: "Días 40-90", titulo: "Flushes 2-6 (dunk)", emoji: "🔄", desc: "Dunk: cubrir sustrato con agua fría 6-12h en nevera entre flushes. Vaciar, volver a rutina. 4-6 flushes totales.", mode: "manual", phase: "cosecha_manual", color: "#f5e6d0" },
-    { dia: "Días 90-95", titulo: "Secado final", emoji: "🌬️", desc: "Total seco: 60-150g. Cracker dry obligatorio antes de almacenar. Frasco hermético + sílica gel.", mode: "manual", phase: "secado_manual", color: "#fdf5ea" },
+  const friendlyNodes = [
+    { dia: "Día 0", titulo: "Compra friendly", emoji: "🛒", desc: "Spawn bag pre-esterilizado + cultura líquida + bulk substrate CVG + monotub. 100-180€. NO olla a presión, NO SAB.", mode: "friendly", phase: "compra_friendly", color: "#8a6240" },
+    { dia: "Día 1", titulo: "Prep limpio + Inoculación", emoji: "💉", desc: "Ducha vapor, alcohol, mascarilla FFP2. Flameo aguja, inyección 2-3ml cultura líquida en spawn bag. 5 min.", mode: "friendly", phase: "inoculacion_friendly", color: "#aa7c52" },
+    { dia: "Días 1-18", titulo: "Incubación spawn bag", emoji: "🔮", desc: "El micelio coloniza el grano. 24-26°C oscuro. Inspección visual diaria SIN abrir. Día 14-18 → 100% blanco.", mode: "friendly", phase: "incubacion_friendly", color: "#c49a6c" },
+    { dia: "Día 18", titulo: "Mezcla S2B en monotub", emoji: "📦", desc: "En espacio limpio: romper spawn, mezclar 1:2 con bulk CVG en monotub (con 4-6 agujeros micropore). Casing layer opcional.", mode: "friendly", phase: "fructificacion_friendly", color: "#dbb98c" },
+    { dia: "Días 18-25", titulo: "Colonización bulk", emoji: "⚪", desc: "Micelio se extiende por bulk. FAE cada 2 días. Día 25: superficie 95-100% blanca. NO nebulizar todavía.", mode: "friendly", phase: "fructificacion_friendly", color: "#dbb98c" },
+    { dia: "Días 25-35", titulo: "Fructificación / Pinning", emoji: "🍄", desc: "Iniciar nebulización paredes 2x/día + FAE 2x/día. Luz 12/12. Pinheads aparecen día 28-30. Crecimiento rápido.", mode: "friendly", phase: "fructificacion_friendly", color: "#dbb98c", highlight: true },
+    { dia: "Días 35-40", titulo: "Primera cosecha", emoji: "✂️", desc: "Cosechar antes de que el velo se rompa. Giro-tirón. Rendimiento 200-500g fresco. Retira pinheads abortados.", mode: "friendly", phase: "cosecha_friendly", color: "#eed8b4" },
+    { dia: "Días 40-90", titulo: "Flushes 2-6 (dunk)", emoji: "🔄", desc: "Dunk: cubrir sustrato con agua fría 6-12h en nevera entre flushes. Vaciar, volver a rutina. 4-6 flushes totales.", mode: "friendly", phase: "cosecha_friendly", color: "#f5e6d0" },
+    { dia: "Días 90-95", titulo: "Secado final", emoji: "🌬️", desc: "Total seco: 60-150g. Cracker dry obligatorio antes de almacenar. Frasco hermético + sílica gel.", mode: "friendly", phase: "secado_friendly", color: "#fdf5ea" },
   ];
 
-  const nodes = tab === "kit" ? kitNodes : manualNodes;
+  const advancedNodes = [
+    { dia: "Día 0", titulo: "Compra equipo lab", emoji: "🛒", desc: "Olla a presión + frascos cristal + grano centeno + jeringa esporas + SAB DIY + alcohol + aguja. 200-350€. Equipo permanente para múltiples ciclos.", mode: "advanced", phase: "compra_advanced", color: "#8a6240" },
+    { dia: "Días 1-2", titulo: "Cocer grano + Esterilizar", emoji: "🔥", desc: "Hidratar grano 24h. Cocer 90 min. Escurrir, secar. Llenar frascos. Olla presión 90 min @ 15 PSI. Enfriar 12h.", mode: "advanced", phase: "esterilizar_advanced", color: "#aa7c52" },
+    { dia: "Día 3", titulo: "Inoculación SAB", emoji: "💉", desc: "Limpiar SAB con alcohol. Flameo aguja roja → enfriar. Agitar jeringa esporas. Inyectar 1ml por frasco a través del puerto micropore.", mode: "advanced", phase: "inoculacion_advanced", color: "#c49a6c" },
+    { dia: "Días 3-24", titulo: "Incubación + agitar grano", emoji: "🔮", desc: "21 días @ 24-26°C oscuro. Día 8-10: agitar frascos para distribuir micelio. Día 20-24: 100% colonizado (todo blanco). Vigilar contaminación.", mode: "advanced", phase: "incubacion_advanced", color: "#dbb98c" },
+    { dia: "Día 25", titulo: "Bulk tek + Mezcla S2B", emoji: "📦", desc: "Hidratar coco coir + perlita (campo capacidad). Pasteurizar 1h vapor. Enfriar. Mezclar spawn 1:2 con bulk en monotub. Aplanar superficie.", mode: "advanced", phase: "fructificacion_advanced", color: "#eed8b4" },
+    { dia: "Días 25-35", titulo: "Colonización bulk + Pinning", emoji: "🍄", desc: "Bulk colonizado en 7-10 días. Iniciar fructificación: bajar temp 22-24°C, FAE, light shock, nebulizar paredes. Pinheads día 30-32.", mode: "advanced", phase: "fructificacion_advanced", color: "#eed8b4", highlight: true },
+    { dia: "Días 35-45", titulo: "Cosecha primera oleada", emoji: "✂️", desc: "Cosechar antes de romper velo. Rendimiento 200-500g fresco (puede más con mejor cepa/manejo). Giro-tirón.", mode: "advanced", phase: "cosecha_advanced", color: "#f5e6d0" },
+    { dia: "Días 45-110", titulo: "Flushes 2-6 + dunk", emoji: "🔄", desc: "Cold shock + rehidratar entre flushes. 4-6 flushes totales. Producción decreciente. Tras último flush: tirar bulk.", mode: "advanced", phase: "cosecha_advanced", color: "#fdf5ea" },
+    { dia: "Días 110-115", titulo: "Secado final", emoji: "🌬️", desc: "Total seco: 80-200g. Cracker dry. Almacenar frascos herméticos + sílica.", mode: "advanced", phase: "secado_advanced", color: "#fdf5ea" },
+  ];
+
+  const nodes = tab === "kit" ? kitNodes : tab === "friendly" ? friendlyNodes : advancedNodes;
 
   return (
     <div>
@@ -35,7 +47,7 @@ function TIMELINE_SETAS({ navigate }) {
       </InfoBoxM>
 
       <div style={{ display: "flex", background: MUSHROOM_COLORS.bg2, borderRadius: "10px", padding: "4px", gap: "4px", marginBottom: "24px" }}>
-        {[{ id: "kit", label: "📦 Kit (3-4 sem)" }, { id: "manual", label: "🧪 Manual friendly (6-13 sem)" }].map(t => (
+        {[{ id: "kit", label: "📦 Kit (3-4 sem)" }, { id: "friendly", label: "🧼 Friendly (6-13 sem)" }, { id: "advanced", label: "🧫 Avanzado (12-16 sem)" }].map(t => (
           <button key={t.id} onClick={() => setTab(t.id)} style={{
             flex: 1, padding: "10px", border: "none", borderRadius: "8px",
             background: tab === t.id ? MUSHROOM_COLORS.border2 : "transparent",
@@ -82,9 +94,10 @@ function TIMELINE_SETAS({ navigate }) {
 
       <div style={{ background: MUSHROOM_COLORS.bg3, borderRadius: "10px", padding: "14px", marginTop: "20px" }}>
         <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.textBright, lineHeight: "1.6" }}>
-          <strong>Diferencias clave Kit vs Manual:</strong><br/>
+          <strong>Diferencias clave entre los 3 modos:</strong><br/>
           📦 <strong>Kit:</strong> 3-4 semanas, 30-60g secos finales, 150-250€, fácil. Para empezar.<br/>
-          🧪 <strong>Manual:</strong> 6-13 semanas, 60-150g secos finales, 100-180€, dificultad media. Más rendimiento, control de cepa.
+          🧼 <strong>Friendly:</strong> 6-13 semanas, 60-150g secos finales, 100-180€, dificultad media. Pre-esterilizado, sin lab.<br/>
+          🧫 <strong>Avanzado:</strong> 12-16 semanas, 80-200g secos finales, 200-350€ (equipo reutilizable). Olla presión + SAB + esporada. Máximo control y rendimiento por ciclo.
         </div>
       </div>
     </div>

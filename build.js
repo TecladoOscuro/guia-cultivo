@@ -14,7 +14,8 @@ const sourceFiles = [
   'src/components/cannabis/exterior.js',
   'src/components/cannabis/general.js',
   'src/components/mushroom/kit.js',
-  'src/components/mushroom/manual.js',
+  'src/components/mushroom/friendly.js',
+  'src/components/mushroom/advanced.js',
   'src/components/mushroom/general.js',
   'src/app/gui-cultivo.js',
 ];

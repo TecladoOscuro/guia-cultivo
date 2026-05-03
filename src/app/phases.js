@@ -45,14 +45,24 @@ const mushroomKitPhases = [
   { id: "secado_kit", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
 ];
 
-const mushroomManualPhases = [
-  { id: "compra_manual", emoji: "🛒", title: "Compra", subtitle: "Pre-esterilizado" },
-  { id: "esterilizar", emoji: "🧼", title: "Prep limpio", subtitle: "Sin olla a presión" },
-  { id: "inoculacion", emoji: "💉", title: "Inoculación", subtitle: "Cultura líquida" },
-  { id: "incubacion_manual", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
-  { id: "fructificacion_manual", emoji: "🍄", title: "Fructificación", subtitle: "Monotub" },
-  { id: "cosecha_manual", emoji: "✂️", title: "Cosecha", subtitle: "Múltiples flush" },
-  { id: "secado_manual", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
+const mushroomFriendlyPhases = [
+  { id: "compra_friendly", emoji: "🛒", title: "Compra", subtitle: "Pre-esterilizado" },
+  { id: "prep_friendly", emoji: "🧼", title: "Prep limpio", subtitle: "Sin olla a presión" },
+  { id: "inoculacion_friendly", emoji: "💉", title: "Inoculación", subtitle: "Cultura líquida" },
+  { id: "incubacion_friendly", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
+  { id: "fructificacion_friendly", emoji: "🍄", title: "Fructificación", subtitle: "Monotub" },
+  { id: "cosecha_friendly", emoji: "✂️", title: "Cosecha", subtitle: "Múltiples flush" },
+  { id: "secado_friendly", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
+];
+
+const mushroomAdvancedPhases = [
+  { id: "compra_advanced", emoji: "🛒", title: "Compra", subtitle: "Lab desde cero" },
+  { id: "esterilizar_advanced", emoji: "🧫", title: "Esterilizar", subtitle: "Olla a presión" },
+  { id: "inoculacion_advanced", emoji: "💉", title: "Inoculación", subtitle: "SAB + esporada" },
+  { id: "incubacion_advanced", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
+  { id: "fructificacion_advanced", emoji: "🍄", title: "Fructificación", subtitle: "Bulk monotub" },
+  { id: "cosecha_advanced", emoji: "✂️", title: "Cosecha", subtitle: "Múltiples flush" },
+  { id: "secado_advanced", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
 ];
 
 const mushroomGeneral = [
