@@ -217,6 +217,7 @@ function GuiaCultivo() {
     } else if (guide === "plantas") {
       switch (activePlantas) {
         case "intro_plantas": return <INTRO_PLANTAS />;
+        case "compra_plantas": return <COMPRA_PLANTAS />;
         case "salvia": return <SALVIA />;
         case "damiana": return <DAMIANA />;
         case "blue_lotus": return <BLUE_LOTUS />;
@@ -230,6 +231,7 @@ function GuiaCultivo() {
     } else if (guide === "amanita") {
       switch (activeAmanita) {
         case "intro_amanita": return <INTRO_AMANITA />;
+        case "compra_amanita": return <COMPRA_AMANITA />;
         case "identificacion_amanita": return <IDENTIFICACION_AMANITA />;
         case "recoleccion_amanita": return <RECOLECCION_AMANITA />;
         case "secado_amanita": return <SECADO_AMANITA />;
@@ -256,6 +258,7 @@ function GuiaCultivo() {
       switch (activeDmt) {
         case "intro_dmt": return <INTRO_DMT />;
         case "fuentes_dmt": return <FUENTES_DMT />;
+        case "compra_dmt": return <COMPRA_DMT />;
         case "cultivo_mimosa": return <CULTIVO_MIMOSA />;
         case "extraccion_dmt": return <EXTRACCION_DMT />;
         case "consumo_dmt": return <CONSUMO_DMT />;

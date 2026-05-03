@@ -46,6 +46,113 @@ function INTRO_PLANTAS() {
   );
 }
 
+function COMPRA_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  const items = [
+    // Salvia divinorum
+    { item: "🍃 Esqueje Salvia divinorum (enraizado)", precio: "15-30€", donde: "Internet", nota: "Vendedores etnobotánicos UE (Avalon, World Seed Supply, ethnopharm). Variedades: Bunk, Hofmann, Wasson — diferencias mínimas. Difícil de cultivar (humedad alta) pero potencia máxima.", planta: "Salvia", prioridad: "ESENCIAL" },
+    { item: "🍃 Hojas Salvia secas (atajo)", precio: "10-25€ / 10g", donde: "Internet", nota: "Vendedores especializados. Cuidado: la mayoría de potencia se pierde en hojas mal secadas o muy viejas.", planta: "Salvia", prioridad: "ÚTIL" },
+    // Damiana
+    { item: "🌿 Semillas Damiana", precio: "3-8€ / sobre", donde: "Internet", nota: "Vendedores de plantas medicinales. Germinación 60-80%. Plantar primavera.", planta: "Damiana", prioridad: "IMPORTANTE" },
+    { item: "🌿 Hojas Damiana secas", precio: "5-12€ / 50g", donde: "Tienda física", nota: "EN HERBORISTERÍAS DE BARRIO normalmente la tienen (planta tradicional). Ahorra cultivo si solo quieres probar.", planta: "Damiana", prioridad: "ESENCIAL" },
+    // Blue Lotus
+    { item: "🪷 Tubérculo Blue Lotus", precio: "10-25€", donde: "Internet", nota: "Vendedores de plantas acuáticas o etnobotánicos. Necesitas estanque o barreño grande para plantarlo.", planta: "Blue Lotus", prioridad: "ESENCIAL" },
+    { item: "🪷 Flores secas Blue Lotus", precio: "10-20€ / 10g", donde: "Internet", nota: "Vendedores etnobotánicos UE. Buscar 'Nymphaea caerulea dried flowers'. Calidad variable.", planta: "Blue Lotus", prioridad: "IMPORTANTE" },
+    // Wild Lettuce
+    { item: "🥬 Semillas Lechuga silvestre (Lactuca virosa)", precio: "1-3€ / sobre", donde: "Internet", nota: "Cualquier vendedor de semillas medicinales. Crece como mala hierba — muy fácil. Plantar marzo o septiembre.", planta: "Wild Lettuce", prioridad: "ESENCIAL" },
+    { item: "🥬 Lactucario (látex seco)", precio: "10-20€ / 10g", donde: "Internet", nota: "Si no quieres extraer tú: vendedores etnobotánicos venden lactucario ya listo.", planta: "Wild Lettuce", prioridad: "ÚTIL" },
+    // Calea
+    { item: "💭 Esqueje Calea zacatechichi", precio: "10-20€", donde: "Internet", nota: "Más fácil que semillas (delicadas). Vendedores etnobotánicos. Crecimiento medio.", planta: "Calea", prioridad: "ESENCIAL" },
+    { item: "💭 Hojas Calea secas", precio: "8-18€ / 25g", donde: "Internet", nota: "Vendedores etnobotánicos UE. Sabor MUY amargo — quizás añadir limón/miel.", planta: "Calea", prioridad: "IMPORTANTE" },
+    // Kava
+    { item: "🌴 Esqueje Kava (Piper methysticum)", precio: "30-60€", donde: "Internet", nota: "Vendedores etnobotánicos UE. Variedades novatos: 'Borogu' o 'Mahakea'. Cultivo INTERIOR obligatorio en España.", planta: "Kava", prioridad: "IMPORTANTE" },
+    { item: "🌴 Raíz Kava molida (atajo)", precio: "20-50€ / 250g", donde: "Internet", nota: "Buscar 'kava noble' (NO extractos baratos con solventes — toxicidad hepática histórica fue por extractos malos). Suficiente para 10-20 sesiones.", planta: "Kava", prioridad: "ESENCIAL" },
+    { item: "🥄 Kava strainer bag", precio: "5-10€", donde: "Internet", nota: "Bolsa de tela para preparar Kava tradicional. Reutilizable. Buscar 'kava strainer bag'.", planta: "Kava", prioridad: "ESENCIAL" },
+    // Kanna
+    { item: "🌵 Esqueje Sceletium tortuosum (Kanna)", precio: "8-20€", donde: "Internet", nota: "Vendedores etnobotánicos UE. Crece rápido, muy fácil. Mediterráneo: exterior posible.", planta: "Kanna", prioridad: "ESENCIAL" },
+    { item: "🌵 Kanna fermentada en polvo", precio: "15-30€ / 25g", donde: "Internet", nota: "Si no quieres cultivar/fermentar: comprar polvo ya fermentado. 'Kanna powder fermented' o 'Sceletium fermented'.", planta: "Kanna", prioridad: "ÚTIL" },
+  ];
+  const [filterPlanta, setFilterPlanta] = React.useState([]);
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const togglePlanta = (p) => setFilterPlanta(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const filtered = items.filter(i =>
+    (filterPlanta.length === 0 || filterPlanta.includes(i.planta)) &&
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad))
+  );
+  const plantas = ["Salvia", "Damiana", "Blue Lotus", "Wild Lettuce", "Calea", "Kava", "Kanna"];
+  const plantaColor = { "Salvia": "#9070b8", "Damiana": "#a888c8", "Blue Lotus": "#bda3d4", "Wild Lettuce": "#d3bee0", "Calea": "#e8d8ee", "Kava": "#a888c8", "Kanna": "#bda3d4" };
+  const prioColor = { "ESENCIAL": "#e88aa8", "IMPORTANTE": "#bda3d4", "ÚTIL": "#a888c8" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Lista completa de compra para las 7 plantas suaves: esquejes/semillas + alternativas atajo (producto seco listo). Filtra por planta para ver solo lo que necesitas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PLANTA</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {plantas.map(p => {
+          const active = filterPlanta.includes(p);
+          const cc = plantaColor[p];
+          return (
+            <button key={p} onClick={() => togglePlanta(p)} style={{
+              background: active ? cc : "transparent",
+              color: active ? c.bg : cc,
+              border: `1.5px solid ${cc}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      {(filterPlanta.length > 0 || filterPrio.length > 0) && (
+        <button onClick={() => { setFilterPlanta([]); setFilterPrio([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>LISTA COMPRA PLANTAS SUAVES ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: plantaColor[item.planta], border: `1px solid ${plantaColor[item.planta]}`, fontWeight: "bold" }}>{item.planta}</span>
+          </div>
+          <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+
+      <InfoBoxX c={c}>
+        💡 <strong>Vendedores recomendados (etnobotánica EU):</strong> Avalon Magic Plants (Holanda), World Seed Supply (USA pero envía a EU), Tatanka (Holanda), Herbalistics (UK), Magic Mushrooms Shop. Comparar precios + leer reviews antes de comprar.
+      </InfoBoxX>
+    </div>
+  );
+}
+
 function SALVIA() {
   const c = PLANTAS_COLORS;
   return (

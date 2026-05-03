@@ -98,6 +98,96 @@ function FUENTES_DMT() {
   );
 }
 
+function COMPRA_DMT() {
+  const c = DMT_COLORS;
+  const items = [
+    { item: "🌰 Semillas Mimosa hostilis (50-100 sem)", precio: "5-15€", donde: "Internet", nota: "Vendedores etnobotánicos UE: Avalon Magic Plants, World Seed Supply, viveros especializados. Buscar 'Mimosa hostilis seeds' o 'Jurema preta semillas'. Las semillas necesitan escarificación antes de germinar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌱 Esquejes/plántulas Mimosa (alternativa)", precio: "20-40€", donde: "Internet", nota: "Más rápido que semillas. Plantas pequeñas ya enraizadas. Suelen llegar en macetas pequeñas. Atajo recomendado si quieres ver crecimiento desde el primer mes.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🪵 Corteza MHRB seca (atajo cosecha)", precio: "25-50€ / 100g", donde: "Internet", nota: "Si no quieres esperar 3+ años: comprar corteza ya seca como 'tinte natural' (legal en EU). Vendedores: Avalon, herbalistics, eBay (buscar 'Mimosa hostilis bark powder' o 'MHRB tinte natural'). Calidad variable — leer reviews.", prioridad: "ÚTIL", tipo: "Consumible" },
+    { item: "🪴 Maceta grande (40-50L)", precio: "15-30€", donde: "Tienda física", nota: "Para plantar la Mimosa. Los árboles jóvenes necesitan espacio para raíces que producirán la corteza activa. Maceta con drenaje generoso.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪨 Sustrato bien drenado", precio: "5-12€", donde: "Tienda física", nota: "Mezcla 50% turba + 30% perlita + 20% mantillo. PH 5-6 ácido. Mimosa crece bien en suelos pobres pero requiere drenaje extremo.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🔥 Hormona de enraizamiento (gel/polvo)", precio: "5-10€", donde: "Tienda física", nota: "Para escarificación + activación de semillas. También útil si haces esquejes.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/higrómetro digital", precio: "8-15€", donde: "Internet", nota: "Para monitorizar germinación (25-28°C constante). Imprescindible para germinación predecible.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Manta térmica para reptiles", precio: "15-30€", donde: "Internet", nota: "Si vives en zona fría: manta térmica bajo la maceta de germinación. Mantiene calor constante 25-28°C que las semillas necesitan.", prioridad: "ÚTIL", tipo: "Equipo" },
+    { item: "✂️ Cuchillo afilado + alcohol 70%", precio: "5-10€", donde: "Tienda física", nota: "Para cosechar corteza de raíz cuando esté lista. Cuchillo limpio = corte sano que cicatriza.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🫙 Frasco vidrio oscuro hermético", precio: "5-15€", donde: "Tienda física", nota: "Para conservar corteza seca y triturada. Oscuro = protege de luz UV que degrada alcaloides.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "📚 Libro 'DMT: The Spirit Molecule' (R. Strassman)", precio: "15-25€", donde: "Internet", nota: "Lectura recomendada antes de cualquier experiencia. Investigación clínica completa sobre DMT.", prioridad: "ÚTIL", tipo: "Consumible" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#a094c5", "IMPORTANTE": "#bcb1d8", "ÚTIL": "#d4cce6" };
+  const tipoColor = { "Equipo": "#605e8a", "Consumible": "#8579b0" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Lista para cultivo de <GlossaryLink term="Mimosa hostilis (Jurema)">Mimosa hostilis</GlossaryLink>. Inversión inicial 50-100€ (equipo reutilizable). Atajo: comprar corteza seca lista (25-50€) si no quieres esperar 3+ años de cultivo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleX c={c}>FILTRAR POR TIPO</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? c.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>LISTA DE COMPRA DMT/MIMOSA ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
+          </div>
+          <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function CULTIVO_MIMOSA() {
   const c = DMT_COLORS;
   return (

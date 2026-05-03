@@ -118,6 +118,7 @@ const fermentSidraPhases = [
 // Plantas psicoactivas suaves — un solo modo, cada planta = phase
 const plantasPhases = [
   { id: "intro_plantas", emoji: "🌟", title: "Intro", subtitle: "Plantas suaves" },
+  { id: "compra_plantas", emoji: "🛒", title: "Compra", subtitle: "Donde conseguir" },
   { id: "salvia", emoji: "🍃", title: "Salvia divinorum", subtitle: "Disociativo intenso" },
   { id: "damiana", emoji: "🌿", title: "Damiana", subtitle: "Eufórico ligero" },
   { id: "blue_lotus", emoji: "🪷", title: "Blue Lotus", subtitle: "Sedante onírico" },
@@ -131,6 +132,7 @@ const plantasPhases = [
 // Amanita muscaria — forrajeo + preparación (no se cultiva)
 const amanitaPhases = [
   { id: "intro_amanita", emoji: "🌟", title: "Intro", subtitle: "Qué es Amanita" },
+  { id: "compra_amanita", emoji: "🛒", title: "Equipo", subtitle: "Forrajeo + procesado" },
   { id: "identificacion_amanita", emoji: "🔍", title: "Identificación", subtitle: "Vs venenosas" },
   { id: "recoleccion_amanita", emoji: "🍂", title: "Recolección", subtitle: "Otoño bosque" },
   { id: "secado_amanita", emoji: "🌬️", title: "Secado", subtitle: "Decarbox crítica" },
@@ -157,6 +159,7 @@ const ayahuascaPhases = [
 const dmtPhases = [
   { id: "intro_dmt", emoji: "🌟", title: "Intro", subtitle: "Qué es DMT" },
   { id: "fuentes_dmt", emoji: "🌳", title: "Fuentes", subtitle: "Mimosa, Acacia, etc" },
+  { id: "compra_dmt", emoji: "🛒", title: "Compra", subtitle: "Semillas + equipo" },
   { id: "cultivo_mimosa", emoji: "🌱", title: "Mimosa", subtitle: "Cultivo árbol" },
   { id: "extraccion_dmt", emoji: "🧪", title: "Extracción", subtitle: "Vista general A/B" },
   { id: "consumo_dmt", emoji: "💨", title: "Consumo", subtitle: "Vapor / changa" },

@@ -40,6 +40,104 @@ function INTRO_AMANITA() {
   );
 }
 
+function COMPRA_AMANITA() {
+  const c = AMANITA_COLORS;
+  const items = [
+    { item: "🧺 Cesta de mimbre", precio: "10-25€", donde: "Tienda física", nota: "Permite que las esporas se dispersen mientras caminas (siembra el bosque). Bolsa plástico = setas se aplastan + sin esporulación. En cualquier ferretería rural o tiendas de productos del campo.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🔪 Cuchillo plegable afilado", precio: "10-25€", donde: "Tienda física", nota: "Para cortar a nivel del suelo sin arrancar el micelio. Hoja 5-8cm. Marcas: Opinel #8 (clásico, ~15€), Victorinox. Mantener afilado.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Cepillo pequeño de cerdas suaves", precio: "3-8€", donde: "Tienda física", nota: "Para limpiar tierra del pie ANTES de meter en cesta. Reduce contaminación del cesto. Cualquier cepillo de pelo viejo sirve.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "📚 Guía micológica regional", precio: "15-30€", donde: "Tienda física", nota: "Imprescindible primera vez. Recomendados: 'Setas de la Península Ibérica' (Pascual García Rollán), 'Setas y Hongos' (Régis Courtecuisse). En librerías o webs como Casa del Libro.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📱 App identificación setas", precio: "Gratis-10€", donde: "Internet", nota: "Picture Mushroom (gratuita), Mushroom Identifier, iNaturalist. AUXILIAR — nunca como única fuente. Doble check con experto siempre primera vez.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "📷 Cámara o móvil", precio: "0€", donde: "Tienes ya", nota: "Foto de cada espécimen ANTES de cortar: vista superior, vista inferior (láminas), corte longitudinal, base con bulbo, hábitat alrededor. Documentación crítica para verificación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🗺️ GPS / app navegación", precio: "Gratis", donde: "Tienes ya", nota: "Bosques de coníferas se ven todos iguales. Marca tu coche o sendero al entrar. Apps gratuitas: Maps.me, OsmAnd, Google Maps offline.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "👥 Sociedad micológica local", precio: "20-50€/año cuota", donde: "Internet (busca por provincia)", nota: "Casi todas las provincias tienen una. Salidas guiadas, identificación gratuita primera vez, cursos. La forma MÁS SEGURA de aprender. Buscar 'sociedad micológica [tu provincia]'.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🥾 Botas + chubasquero", precio: "30-80€", donde: "Tienda física", nota: "Para forrajeo en otoño tras lluvia. Bosque húmedo + frío = imprescindibles. Cualquier tienda de montaña.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🍃 Bandeja con rejilla para secado", precio: "5-15€", donde: "Tienda física", nota: "Para secar las setas en casa. Cualquier rejilla de cocina sobre bandeja sirve. Permite circular aire por debajo.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🫙 Frascos vidrio oscuro hermético (2-3 uds)", precio: "10-20€", donde: "Tienda física", nota: "Para conservar Amanita seca. Tamaño 250-500ml. Oscuro = protege de luz UV.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌿 Sílica gel desecante (sobrecitos)", precio: "5-10€", donde: "Internet", nota: "Para meter dentro de los frascos. Mantiene seco + alarga vida útil. Sobrecitos pequeños o gel granular para reutilizar.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🍋 Limones / vinagre blanco", precio: "2-5€", donde: "Tienda física", nota: "Para acidificar el agua durante preparación de té (acelera decarboxilación iboténico → muscimol).", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🔥 Mechero o cocina", precio: "0€", donde: "Tienes ya", nota: "Para cocer el té de Amanita. 30-45 min hervor suave.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "⚖️ Báscula digital de precisión", precio: "10-20€", donde: "Internet", nota: "CRÍTICA para dosificación. Precisión ±0.1g. Cualquier báscula digital de cocina con precisión decimal.", prioridad: "ESENCIAL", tipo: "Equipo" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#c25b6e", "IMPORTANTE": "#dc8e9c", "ÚTIL": "#e7adb7" };
+  const tipoColor = { "Equipo": "#783545", "Consumible": "#9b4555" };
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Equipo para forrajeo + procesado + conservación de Amanita muscaria. Inversión total: 100-200€ (mayor parte reutilizable años). Lo crítico: cesta de mimbre + cuchillo + guía + báscula precisión.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>FILTRAR POR PRIORIDAD</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? c.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleX c={c}>FILTRAR POR TIPO</SectionTitleX>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? c.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c}>EQUIPO AMANITA ({filtered.length}/{items.length})</SectionTitleX>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: c.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
+          </div>
+          <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: c.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+
+      <InfoBoxX c={c}>
+        💡 <strong>¿Comprar Amanita muscaria seca?</strong> Sí, es legal en España. Vendedores etnobotánicos UE: 15-40€ por 50-100g. Si NO quieres forrajear: opción válida. Verificar reputación del vendedor (origen + secado correctos importan).
+      </InfoBoxX>
+    </div>
+  );
+}
+
 function IDENTIFICACION_AMANITA() {
   const c = AMANITA_COLORS;
   return (
