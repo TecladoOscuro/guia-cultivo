@@ -2,7 +2,7 @@
 // NO se cultiva (micorriza con árboles). Solo se recoge en bosque + procesa.
 // IMPORTANTE: muscimol activo, NO psilocibina. Diferente a Psilocybe.
 
-function INTRO_AMANITA() {
+function INTRO_AMANITA({ setPhase }) {
   const c = AMANITA_COLORS;
   return (
     <div>
@@ -36,6 +36,16 @@ function INTRO_AMANITA() {
       <InfoBoxX c={c}>
         En España: 100% legal recolectar, poseer, consumir Amanita muscaria. NO está en listas de sustancias controladas. La psilocibina sí, pero el muscimol no. Curiosamente más legal que las otras Amanitas peligrosas.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (TEMPORADA)</SectionTitleX>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Pre-temporada", evento: "🛒 Compra equipo forrajeo (cesta, cuchillo, guía, etc.)", phase: "compra_amanita", color: c.accent1 },
+        { tiempo: "Septiembre-Octubre", evento: "🔍 Identificación: estudiar diferencias vs Amanitas mortales", phase: "identificacion_amanita", color: c.accent2 },
+        { tiempo: "Tras lluvias otoño", evento: "🍂 Recolección: bosque abedul/pino/abeto, técnica ética", phase: "recoleccion_amanita", color: c.accent3 },
+        { tiempo: "Día siguiente cosecha", evento: "🌬️ Secado 5-15 días + decarboxilación (iboténico → muscimol)", phase: "secado_amanita", color: c.accent3, highlight: true },
+        { tiempo: "Tras secado completo", evento: "🍵 Preparación: té con limón, cápsulas, tintura", phase: "preparacion_amanita", color: c.accent4 },
+        { tiempo: "Conservación", evento: "🫙 Frasco hermético + sílica gel, 1-5 años según método", phase: "conservacion_amanita", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ España: 100% LEGAL recolectar, poseer, consumir, secar, tincturar.<br/>✅ Venta legal en tiendas etnobotánicas UE (15-40€/100g).<br/>❌ Reino Unido: ilegal desde 2005.<br/>🇳🇱 Holanda: regulado como 'planta tóxica'.<br/>🇦🇺 Australia: ilegal.<br/>Verifica si viajas con ellas.</>}

@@ -252,6 +252,33 @@ const WarningBoxX = ({ children, c }) => (
   </div>
 );
 
+// Timeline visual uniforme — usado en todas las guías. Línea vertical + bolitas alineadas + cards clickables (si phase) con hover translateX.
+// nodes = [{ tiempo, evento, phase (opcional, si presente click navega), color (opcional, default c.accent1), highlight (opcional) }]
+const TimelineList = ({ c, nodes, onClick }) => (
+  <div style={{ position: "relative", paddingLeft: "20px", marginBottom: "20px" }}>
+    <div style={{ position: "absolute", left: "5px", top: "10px", bottom: "10px", width: "2px", background: `linear-gradient(180deg, ${c.accent1} 0%, ${c.accent3} 100%)` }} />
+    {nodes.map((n, i) => {
+      const dotColor = n.color || c.accent1;
+      const clickable = !!(n.phase && onClick);
+      return (
+        <div key={i} style={{ position: "relative", marginBottom: "12px" }}>
+          <div style={{ position: "absolute", left: "-23px", top: "14px", width: "16px", height: "16px", borderRadius: "50%", background: dotColor, border: `2px solid ${c.bg}`, zIndex: 2 }} />
+          <div
+            onClick={() => clickable && onClick(n.phase)}
+            style={{ background: c.bg2, border: `1px solid ${n.highlight ? dotColor : c.border1}`, borderRadius: "8px", padding: "10px 12px", transition: "all 0.2s", cursor: clickable ? "pointer" : "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? dotColor : c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
+          >
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{n.tiempo.toUpperCase()}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, marginBottom: clickable ? "4px" : 0, lineHeight: "1.5" }}>{n.evento}</div>
+            {clickable && <div style={{ fontSize: "10px", color: c.accent1, textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+);
+
 // Bloque uniforme legalidad + salud + recursos. Usado en INTRO de cada guía.
 const LegalHealthBox = ({ c, legal, salud, contraindicaciones, recursos }) => (
   <div style={{ marginTop: "20px", marginBottom: "20px" }}>

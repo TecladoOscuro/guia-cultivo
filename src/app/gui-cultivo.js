@@ -170,7 +170,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "cactus") {
       switch (activeCactus) {
-        case "intro_cactus": return <INTRO_CACTUS />;
+        case "intro_cactus": return <INTRO_CACTUS setPhase={setActiveCactus} />;
         case "compra_cactus": return <COMPRA_CACTUS />;
         case "germinacion_cactus": return <GERMINACION_CACTUS />;
         case "cuidados_cactus": return <CUIDADOS_CACTUS />;
@@ -237,7 +237,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "amanita") {
       switch (activeAmanita) {
-        case "intro_amanita": return <INTRO_AMANITA />;
+        case "intro_amanita": return <INTRO_AMANITA setPhase={setActiveAmanita} />;
         case "compra_amanita": return <COMPRA_AMANITA />;
         case "identificacion_amanita": return <IDENTIFICACION_AMANITA />;
         case "recoleccion_amanita": return <RECOLECCION_AMANITA />;
@@ -250,7 +250,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "trufas") {
       switch (activeTrufas) {
-        case "intro_trufas": return <INTRO_TRUFAS />;
+        case "intro_trufas": return <INTRO_TRUFAS setPhase={setActiveTrufas} />;
         case "compra_trufas": return <COMPRA_TRUFAS />;
         case "inoculacion_trufas": return <INOCULACION_TRUFAS />;
         case "incubacion_trufas": return <INCUBACION_TRUFAS />;
@@ -263,7 +263,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "ayahuasca") {
       switch (activeAyahuasca) {
-        case "intro_aya": return <INTRO_AYA />;
+        case "intro_aya": return <INTRO_AYA setPhase={setActiveAyahuasca} />;
         case "compra_aya": return <COMPRA_AYA />;
         case "cultivo_caapi": return <CULTIVO_CAAPI />;
         case "cultivo_chacruna": return <CULTIVO_CHACRUNA />;
@@ -276,7 +276,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "dmt") {
       switch (activeDmt) {
-        case "intro_dmt": return <INTRO_DMT />;
+        case "intro_dmt": return <INTRO_DMT setPhase={setActiveDmt} />;
         case "fuentes_dmt": return <FUENTES_DMT />;
         case "compra_dmt": return <COMPRA_DMT />;
         case "cultivo_mimosa": return <CULTIVO_MIMOSA />;

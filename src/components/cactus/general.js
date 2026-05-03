@@ -1,7 +1,7 @@
 // CACTUS MESCALINA — San Pedro / Bolivian Torch / Peyote
 // Cultivo casero. Cactus ornamentales legales en España; consumo = zona gris.
 
-function INTRO_CACTUS() {
+function INTRO_CACTUS({ setPhase }) {
   const c = CACTUS_COLORS;
   return (
     <div>
@@ -35,6 +35,16 @@ function INTRO_CACTUS() {
       <WarningBoxX c={c}>
         ⚠️ <strong>Harm reduction obligatorio.</strong> La <GlossaryLink term="Mescalina">mescalina</GlossaryLink> causa experiencia visionaria de 8-12h. Dosis inadecuadas, contexto erróneo, problemas mentales preexistentes = riesgos serios. Investiga DOSIFICACIÓN RESPONSABLE, <GlossaryLink term="Set & Setting">SET & SETTING</GlossaryLink>, y considera tener un <GlossaryLink term="Sitter / Acompañante">sitter</GlossaryLink> la primera vez. Esta guía cubre cultivo, no protocolos de consumo.
       </WarningBoxX>
+
+      <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esqueje San Pedro o semillas Trichocereus", phase: "compra_cactus", color: c.accent1 },
+        { tiempo: "Semana 1-4", evento: "🌱 Germinación (si semillas) o callusing 2 semanas + plantar (si esqueje)", phase: "germinacion_cactus", color: c.accent2 },
+        { tiempo: "Mes 2-12", evento: "💧 Cuidados básicos: 4 reglas de oro (riego, sol, temp, sustrato)", phase: "cuidados_cactus", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "📈 Crecimiento 30-50cm/año en San Pedro mediterráneo", phase: "crecimiento_cactus", color: c.accent3 },
+        { tiempo: "Año 2-4", evento: "✂️ Primera cosecha posible (cortar punta, callusing planta madre)", phase: "cosecha_cactus", color: c.accent4, highlight: true },
+        { tiempo: "Año 4+", evento: "🪵 Preparación tradicional (limpiar, secar, conservar)", phase: "preparacion_cactus", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de cactus columnares como ornamentales: 100% LEGAL. CITES no controla Trichocereus.<br/>🟡 Posesión de cactus seco/triturado: zona gris (no se persigue uso personal).<br/>❌ Extracción química de mescalina: ILEGAL (sustancia Lista I controlada).<br/>❌ Comercializar polvo/extracto: ILEGAL.</>}

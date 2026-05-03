@@ -1,7 +1,7 @@
 // AYAHUASCA — vid Banisteriopsis caapi + arbusto Psychotria viridis
 // Cultivo plantas LEGAL en España. Brebaje ZONA GRIS legal (preparación oral DMT-MAOI).
 
-function INTRO_AYA() {
+function INTRO_AYA({ setPhase }) {
   const c = AYAHUASCA_COLORS;
   return (
     <div>
@@ -45,25 +45,15 @@ function INTRO_AYA() {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (DESDE 0)</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Compra esquejes/plantas o semillas" },
-          { tiempo: "Mes 1-3", evento: "🌱 Establecer plantas en invernadero/interior cálido" },
-          { tiempo: "Año 1-2", evento: "🌿 Caapi crece rápido (3-5m), Chacruna lenta (50cm)" },
-          { tiempo: "Año 2-3", evento: "✂️ Primera cosecha mínima (Caapi). Chacruna aún pequeña" },
-          { tiempo: "Año 3-5", evento: "🍃 Chacruna produce hojas suficientes para 1 brebaje" },
-          { tiempo: "Año 4-5+", evento: "🍵 Producción regular sostenible" },
-          { tiempo: "Atajo:", evento: "🛒 Comprar plantas secas online (10-30€) — listo para 1 brebaje" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esquejes/plantas o semillas", phase: "compra_aya", color: c.accent1 },
+        { tiempo: "Mes 1-3", evento: "🌱 Establecer plantas en invernadero/interior cálido", phase: "cuidados_aya", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "🌿 Caapi crece rápido (3-5m), Chacruna lenta (50cm)", phase: "cultivo_caapi", color: c.accent2 },
+        { tiempo: "Año 2-3", evento: "✂️ Primera cosecha mínima (Caapi). Chacruna aún pequeña", phase: "cultivo_chacruna", color: c.accent3 },
+        { tiempo: "Año 3-5", evento: "🍃 Chacruna produce hojas suficientes para 1 brebaje", phase: "preparacion_brebaje", color: c.accent4, highlight: true },
+        { tiempo: "Año 4-5+", evento: "🍵 Producción regular sostenible — preparación brebaje + ceremonia", phase: "ceremonia_aya", color: c.accent5 },
+        { tiempo: "Atajo:", evento: "🛒 Comprar plantas secas online (10-30€) — listo para 1 brebaje", phase: "compra_aya", color: c.accent3 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de Caapi y Chacruna como ornamentales: 100% LEGAL.<br/>✅ Posesión de plantas secas: LEGAL.<br/>🟡 Brebaje preparado uso personal: zona gris (DMT en Lista I pero uso ritual no se persigue activamente).<br/>❌ Comercializar/distribuir: ILEGAL.<br/>🇪🇺 Sentencias favorables Santo Daime + UDV en algunos países UE.</>}

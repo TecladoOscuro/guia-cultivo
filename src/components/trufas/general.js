@@ -2,7 +2,7 @@
 // Mismo activo (psilocibina + psilocina) que setas Psilocybe pero forma distinta:
 // crecimiento subterráneo (esclerocios) en lugar de fructificación aérea (setas).
 
-function INTRO_TRUFAS() {
+function INTRO_TRUFAS({ setPhase }) {
   const c = TRUFAS_COLORS;
   return (
     <div>
@@ -53,25 +53,15 @@ function INTRO_TRUFAS() {
       </InfoBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Compra esporada + equipo" },
-          { tiempo: "Día 1-2", evento: "🌾 Esterilizar grano (olla a presión 90 min)" },
-          { tiempo: "Día 3", evento: "💉 Inoculación con esporada" },
-          { tiempo: "Días 3-21", evento: "🔮 Colonización del grano (3 semanas)" },
-          { tiempo: "Días 21-90", evento: "🍯 Formación de esclerocios subterráneos (8-12 semanas)" },
-          { tiempo: "Días 90-110", evento: "✂️ Primera cosecha" },
-          { tiempo: "Día 110+", evento: "🍯 Conservar / consumir" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esporada + equipo", phase: "compra_trufas", color: c.accent1 },
+        { tiempo: "Día 1-2", evento: "🌾 Esterilizar grano (olla a presión 90 min)", phase: "inoculacion_trufas", color: c.accent2 },
+        { tiempo: "Día 3", evento: "💉 Inoculación con esporada", phase: "inoculacion_trufas", color: c.accent2 },
+        { tiempo: "Días 3-21", evento: "🔮 Colonización del grano (3 semanas)", phase: "incubacion_trufas", color: c.accent3 },
+        { tiempo: "Días 21-90", evento: "🍯 Formación de esclerocios subterráneos (8-12 semanas)", phase: "incubacion_trufas", color: c.accent3, highlight: true },
+        { tiempo: "Días 90-110", evento: "✂️ Primera cosecha", phase: "cosecha_trufas", color: c.accent4 },
+        { tiempo: "Día 110+", evento: "🍯 Conservar / consumir", phase: "conservacion_trufas", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>🇳🇱 Holanda: 100% LEGAL — venta abierta en smartshops desde 2008.<br/>🇪🇸 España: zona gris (mismo estado que setas Psilocybe). Cultivo casero TOLERADO uso personal.<br/>❌ Comercializar/vender: ILEGAL.<br/>🇪🇺 Resto UE varía — verificar país antes de viajar.</>}

@@ -619,6 +619,33 @@ const WarningBoxX = ({ children, c }) => (
   </div>
 );
 
+// Timeline visual uniforme — usado en todas las guías. Línea vertical + bolitas alineadas + cards clickables (si phase) con hover translateX.
+// nodes = [{ tiempo, evento, phase (opcional, si presente click navega), color (opcional, default c.accent1), highlight (opcional) }]
+const TimelineList = ({ c, nodes, onClick }) => (
+  <div style={{ position: "relative", paddingLeft: "20px", marginBottom: "20px" }}>
+    <div style={{ position: "absolute", left: "5px", top: "10px", bottom: "10px", width: "2px", background: `linear-gradient(180deg, ${c.accent1} 0%, ${c.accent3} 100%)` }} />
+    {nodes.map((n, i) => {
+      const dotColor = n.color || c.accent1;
+      const clickable = !!(n.phase && onClick);
+      return (
+        <div key={i} style={{ position: "relative", marginBottom: "12px" }}>
+          <div style={{ position: "absolute", left: "-23px", top: "14px", width: "16px", height: "16px", borderRadius: "50%", background: dotColor, border: `2px solid ${c.bg}`, zIndex: 2 }} />
+          <div
+            onClick={() => clickable && onClick(n.phase)}
+            style={{ background: c.bg2, border: `1px solid ${n.highlight ? dotColor : c.border1}`, borderRadius: "8px", padding: "10px 12px", transition: "all 0.2s", cursor: clickable ? "pointer" : "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? dotColor : c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
+          >
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{n.tiempo.toUpperCase()}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, marginBottom: clickable ? "4px" : 0, lineHeight: "1.5" }}>{n.evento}</div>
+            {clickable && <div style={{ fontSize: "10px", color: c.accent1, textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+);
+
 // Bloque uniforme legalidad + salud + recursos. Usado en INTRO de cada guía.
 const LegalHealthBox = ({ c, legal, salud, contraindicaciones, recursos }) => (
   <div style={{ marginTop: "20px", marginBottom: "20px" }}>
@@ -4877,7 +4904,7 @@ function FAQ_SETAS() {
 // CACTUS MESCALINA — San Pedro / Bolivian Torch / Peyote
 // Cultivo casero. Cactus ornamentales legales en España; consumo = zona gris.
 
-function INTRO_CACTUS() {
+function INTRO_CACTUS({ setPhase }) {
   const c = CACTUS_COLORS;
   return (
     <div>
@@ -4911,6 +4938,16 @@ function INTRO_CACTUS() {
       <WarningBoxX c={c}>
         ⚠️ <strong>Harm reduction obligatorio.</strong> La <GlossaryLink term="Mescalina">mescalina</GlossaryLink> causa experiencia visionaria de 8-12h. Dosis inadecuadas, contexto erróneo, problemas mentales preexistentes = riesgos serios. Investiga DOSIFICACIÓN RESPONSABLE, <GlossaryLink term="Set & Setting">SET & SETTING</GlossaryLink>, y considera tener un <GlossaryLink term="Sitter / Acompañante">sitter</GlossaryLink> la primera vez. Esta guía cubre cultivo, no protocolos de consumo.
       </WarningBoxX>
+
+      <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esqueje San Pedro o semillas Trichocereus", phase: "compra_cactus", color: c.accent1 },
+        { tiempo: "Semana 1-4", evento: "🌱 Germinación (si semillas) o callusing 2 semanas + plantar (si esqueje)", phase: "germinacion_cactus", color: c.accent2 },
+        { tiempo: "Mes 2-12", evento: "💧 Cuidados básicos: 4 reglas de oro (riego, sol, temp, sustrato)", phase: "cuidados_cactus", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "📈 Crecimiento 30-50cm/año en San Pedro mediterráneo", phase: "crecimiento_cactus", color: c.accent3 },
+        { tiempo: "Año 2-4", evento: "✂️ Primera cosecha posible (cortar punta, callusing planta madre)", phase: "cosecha_cactus", color: c.accent4, highlight: true },
+        { tiempo: "Año 4+", evento: "🪵 Preparación tradicional (limpiar, secar, conservar)", phase: "preparacion_cactus", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de cactus columnares como ornamentales: 100% LEGAL. CITES no controla Trichocereus.<br/>🟡 Posesión de cactus seco/triturado: zona gris (no se persigue uso personal).<br/>❌ Extracción química de mescalina: ILEGAL (sustancia Lista I controlada).<br/>❌ Comercializar polvo/extracto: ILEGAL.</>}
@@ -7306,7 +7343,7 @@ function FAQ_PLANTAS() {
 // NO se cultiva (micorriza con árboles). Solo se recoge en bosque + procesa.
 // IMPORTANTE: muscimol activo, NO psilocibina. Diferente a Psilocybe.
 
-function INTRO_AMANITA() {
+function INTRO_AMANITA({ setPhase }) {
   const c = AMANITA_COLORS;
   return (
     <div>
@@ -7340,6 +7377,16 @@ function INTRO_AMANITA() {
       <InfoBoxX c={c}>
         En España: 100% legal recolectar, poseer, consumir Amanita muscaria. NO está en listas de sustancias controladas. La psilocibina sí, pero el muscimol no. Curiosamente más legal que las otras Amanitas peligrosas.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (TEMPORADA)</SectionTitleX>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Pre-temporada", evento: "🛒 Compra equipo forrajeo (cesta, cuchillo, guía, etc.)", phase: "compra_amanita", color: c.accent1 },
+        { tiempo: "Septiembre-Octubre", evento: "🔍 Identificación: estudiar diferencias vs Amanitas mortales", phase: "identificacion_amanita", color: c.accent2 },
+        { tiempo: "Tras lluvias otoño", evento: "🍂 Recolección: bosque abedul/pino/abeto, técnica ética", phase: "recoleccion_amanita", color: c.accent3 },
+        { tiempo: "Día siguiente cosecha", evento: "🌬️ Secado 5-15 días + decarboxilación (iboténico → muscimol)", phase: "secado_amanita", color: c.accent3, highlight: true },
+        { tiempo: "Tras secado completo", evento: "🍵 Preparación: té con limón, cápsulas, tintura", phase: "preparacion_amanita", color: c.accent4 },
+        { tiempo: "Conservación", evento: "🫙 Frasco hermético + sílica gel, 1-5 años según método", phase: "conservacion_amanita", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ España: 100% LEGAL recolectar, poseer, consumir, secar, tincturar.<br/>✅ Venta legal en tiendas etnobotánicas UE (15-40€/100g).<br/>❌ Reino Unido: ilegal desde 2005.<br/>🇳🇱 Holanda: regulado como 'planta tóxica'.<br/>🇦🇺 Australia: ilegal.<br/>Verifica si viajas con ellas.</>}
@@ -7799,7 +7846,7 @@ function FAQ_AMANITA() {
 // Mismo activo (psilocibina + psilocina) que setas Psilocybe pero forma distinta:
 // crecimiento subterráneo (esclerocios) en lugar de fructificación aérea (setas).
 
-function INTRO_TRUFAS() {
+function INTRO_TRUFAS({ setPhase }) {
   const c = TRUFAS_COLORS;
   return (
     <div>
@@ -7850,25 +7897,15 @@ function INTRO_TRUFAS() {
       </InfoBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Compra esporada + equipo" },
-          { tiempo: "Día 1-2", evento: "🌾 Esterilizar grano (olla a presión 90 min)" },
-          { tiempo: "Día 3", evento: "💉 Inoculación con esporada" },
-          { tiempo: "Días 3-21", evento: "🔮 Colonización del grano (3 semanas)" },
-          { tiempo: "Días 21-90", evento: "🍯 Formación de esclerocios subterráneos (8-12 semanas)" },
-          { tiempo: "Días 90-110", evento: "✂️ Primera cosecha" },
-          { tiempo: "Día 110+", evento: "🍯 Conservar / consumir" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esporada + equipo", phase: "compra_trufas", color: c.accent1 },
+        { tiempo: "Día 1-2", evento: "🌾 Esterilizar grano (olla a presión 90 min)", phase: "inoculacion_trufas", color: c.accent2 },
+        { tiempo: "Día 3", evento: "💉 Inoculación con esporada", phase: "inoculacion_trufas", color: c.accent2 },
+        { tiempo: "Días 3-21", evento: "🔮 Colonización del grano (3 semanas)", phase: "incubacion_trufas", color: c.accent3 },
+        { tiempo: "Días 21-90", evento: "🍯 Formación de esclerocios subterráneos (8-12 semanas)", phase: "incubacion_trufas", color: c.accent3, highlight: true },
+        { tiempo: "Días 90-110", evento: "✂️ Primera cosecha", phase: "cosecha_trufas", color: c.accent4 },
+        { tiempo: "Día 110+", evento: "🍯 Conservar / consumir", phase: "conservacion_trufas", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>🇳🇱 Holanda: 100% LEGAL — venta abierta en smartshops desde 2008.<br/>🇪🇸 España: zona gris (mismo estado que setas Psilocybe). Cultivo casero TOLERADO uso personal.<br/>❌ Comercializar/vender: ILEGAL.<br/>🇪🇺 Resto UE varía — verificar país antes de viajar.</>}
@@ -8339,7 +8376,7 @@ function FAQ_TRUFAS() {
 // AYAHUASCA — vid Banisteriopsis caapi + arbusto Psychotria viridis
 // Cultivo plantas LEGAL en España. Brebaje ZONA GRIS legal (preparación oral DMT-MAOI).
 
-function INTRO_AYA() {
+function INTRO_AYA({ setPhase }) {
   const c = AYAHUASCA_COLORS;
   return (
     <div>
@@ -8383,25 +8420,15 @@ function INTRO_AYA() {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO (DESDE 0)</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Compra esquejes/plantas o semillas" },
-          { tiempo: "Mes 1-3", evento: "🌱 Establecer plantas en invernadero/interior cálido" },
-          { tiempo: "Año 1-2", evento: "🌿 Caapi crece rápido (3-5m), Chacruna lenta (50cm)" },
-          { tiempo: "Año 2-3", evento: "✂️ Primera cosecha mínima (Caapi). Chacruna aún pequeña" },
-          { tiempo: "Año 3-5", evento: "🍃 Chacruna produce hojas suficientes para 1 brebaje" },
-          { tiempo: "Año 4-5+", evento: "🍵 Producción regular sostenible" },
-          { tiempo: "Atajo:", evento: "🛒 Comprar plantas secas online (10-30€) — listo para 1 brebaje" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Compra esquejes/plantas o semillas", phase: "compra_aya", color: c.accent1 },
+        { tiempo: "Mes 1-3", evento: "🌱 Establecer plantas en invernadero/interior cálido", phase: "cuidados_aya", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "🌿 Caapi crece rápido (3-5m), Chacruna lenta (50cm)", phase: "cultivo_caapi", color: c.accent2 },
+        { tiempo: "Año 2-3", evento: "✂️ Primera cosecha mínima (Caapi). Chacruna aún pequeña", phase: "cultivo_chacruna", color: c.accent3 },
+        { tiempo: "Año 3-5", evento: "🍃 Chacruna produce hojas suficientes para 1 brebaje", phase: "preparacion_brebaje", color: c.accent4, highlight: true },
+        { tiempo: "Año 4-5+", evento: "🍵 Producción regular sostenible — preparación brebaje + ceremonia", phase: "ceremonia_aya", color: c.accent5 },
+        { tiempo: "Atajo:", evento: "🛒 Comprar plantas secas online (10-30€) — listo para 1 brebaje", phase: "compra_aya", color: c.accent3 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de Caapi y Chacruna como ornamentales: 100% LEGAL.<br/>✅ Posesión de plantas secas: LEGAL.<br/>🟡 Brebaje preparado uso personal: zona gris (DMT en Lista I pero uso ritual no se persigue activamente).<br/>❌ Comercializar/distribuir: ILEGAL.<br/>🇪🇺 Sentencias favorables Santo Daime + UDV en algunos países UE.</>}
@@ -9031,7 +9058,7 @@ function FAQ_AYA() {
 // Cultivo de Mimosa hostilis = LEGAL. Extracción química = ILEGAL en España.
 // Esta guía cubre cultivo + información educativa. NO da recetas paso-a-paso de extracción.
 
-function INTRO_DMT() {
+function INTRO_DMT({ setPhase }) {
   const c = DMT_COLORS;
   return (
     <div>
@@ -9072,23 +9099,13 @@ function INTRO_DMT() {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Comprar semillas/esquejes Mimosa hostilis" },
-          { tiempo: "Mes 1-3", evento: "🌱 Germinación + plantación inicial" },
-          { tiempo: "Año 1-2", evento: "🌳 Crecimiento (climas cálidos rápido, fríos lento)" },
-          { tiempo: "Año 3-5", evento: "🪵 Cosecha de corteza posible (raíz)" },
-          { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Comprar semillas/esquejes Mimosa hostilis", phase: "compra_dmt", color: c.accent1 },
+        { tiempo: "Mes 1-3", evento: "🌱 Germinación + plantación inicial", phase: "cultivo_mimosa", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "🌳 Crecimiento (climas cálidos rápido, fríos lento)", phase: "cultivo_mimosa", color: c.accent3 },
+        { tiempo: "Año 3-5", evento: "🪵 Cosecha de corteza posible (raíz)", phase: "cultivo_mimosa", color: c.accent4, highlight: true },
+        { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)", phase: "compra_dmt", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de Mimosa hostilis, Acacia confusa: 100% LEGAL como ornamentales.<br/>✅ Posesión de plantas/corteza secas: LEGAL (MHRB se vende como tinte natural).<br/>🟡 Brebaje ayahuasca uso personal: zona gris.<br/>❌ Extracción química DMT puro: ILEGAL (Lista I).<br/>❌ Posesión cristal DMT: ILEGAL.<br/>❌ Comercializar: ILEGAL.</>}
@@ -9891,7 +9908,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "cactus") {
       switch (activeCactus) {
-        case "intro_cactus": return <INTRO_CACTUS />;
+        case "intro_cactus": return <INTRO_CACTUS setPhase={setActiveCactus} />;
         case "compra_cactus": return <COMPRA_CACTUS />;
         case "germinacion_cactus": return <GERMINACION_CACTUS />;
         case "cuidados_cactus": return <CUIDADOS_CACTUS />;
@@ -9958,7 +9975,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "amanita") {
       switch (activeAmanita) {
-        case "intro_amanita": return <INTRO_AMANITA />;
+        case "intro_amanita": return <INTRO_AMANITA setPhase={setActiveAmanita} />;
         case "compra_amanita": return <COMPRA_AMANITA />;
         case "identificacion_amanita": return <IDENTIFICACION_AMANITA />;
         case "recoleccion_amanita": return <RECOLECCION_AMANITA />;
@@ -9971,7 +9988,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "trufas") {
       switch (activeTrufas) {
-        case "intro_trufas": return <INTRO_TRUFAS />;
+        case "intro_trufas": return <INTRO_TRUFAS setPhase={setActiveTrufas} />;
         case "compra_trufas": return <COMPRA_TRUFAS />;
         case "inoculacion_trufas": return <INOCULACION_TRUFAS />;
         case "incubacion_trufas": return <INCUBACION_TRUFAS />;
@@ -9984,7 +10001,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "ayahuasca") {
       switch (activeAyahuasca) {
-        case "intro_aya": return <INTRO_AYA />;
+        case "intro_aya": return <INTRO_AYA setPhase={setActiveAyahuasca} />;
         case "compra_aya": return <COMPRA_AYA />;
         case "cultivo_caapi": return <CULTIVO_CAAPI />;
         case "cultivo_chacruna": return <CULTIVO_CHACRUNA />;
@@ -9997,7 +10014,7 @@ function GuiaCultivo() {
       }
     } else if (guide === "dmt") {
       switch (activeDmt) {
-        case "intro_dmt": return <INTRO_DMT />;
+        case "intro_dmt": return <INTRO_DMT setPhase={setActiveDmt} />;
         case "fuentes_dmt": return <FUENTES_DMT />;
         case "compra_dmt": return <COMPRA_DMT />;
         case "cultivo_mimosa": return <CULTIVO_MIMOSA />;

@@ -2,7 +2,7 @@
 // Cultivo de Mimosa hostilis = LEGAL. Extracción química = ILEGAL en España.
 // Esta guía cubre cultivo + información educativa. NO da recetas paso-a-paso de extracción.
 
-function INTRO_DMT() {
+function INTRO_DMT({ setPhase }) {
   const c = DMT_COLORS;
   return (
     <div>
@@ -43,23 +43,13 @@ function INTRO_DMT() {
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
-      <div style={{ display: "grid", gap: "8px" }}>
-        {[
-          { tiempo: "Día 0", evento: "🛒 Comprar semillas/esquejes Mimosa hostilis" },
-          { tiempo: "Mes 1-3", evento: "🌱 Germinación + plantación inicial" },
-          { tiempo: "Año 1-2", evento: "🌳 Crecimiento (climas cálidos rápido, fríos lento)" },
-          { tiempo: "Año 3-5", evento: "🪵 Cosecha de corteza posible (raíz)" },
-          { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)" },
-        ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.background = c.bg3; e.currentTarget.style.boxShadow = `0 4px 14px ${c.accent1}55`; e.currentTarget.style.transform = "translateX(6px)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.background = c.bg2; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateX(0)"; }}
-          >
-            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
-            <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
-          </div>
-        ))}
-      </div>
+      <TimelineList c={c} onClick={setPhase} nodes={[
+        { tiempo: "Día 0", evento: "🛒 Comprar semillas/esquejes Mimosa hostilis", phase: "compra_dmt", color: c.accent1 },
+        { tiempo: "Mes 1-3", evento: "🌱 Germinación + plantación inicial", phase: "cultivo_mimosa", color: c.accent2 },
+        { tiempo: "Año 1-2", evento: "🌳 Crecimiento (climas cálidos rápido, fríos lento)", phase: "cultivo_mimosa", color: c.accent3 },
+        { tiempo: "Año 3-5", evento: "🪵 Cosecha de corteza posible (raíz)", phase: "cultivo_mimosa", color: c.accent4, highlight: true },
+        { tiempo: "Atajo:", evento: "🛒 Comprar corteza Mimosa Hostilis (MHRB) seca online (legal en EU)", phase: "compra_dmt", color: c.accent5 },
+      ]} />
 
       <LegalHealthBox c={c}
         legal={<>✅ Cultivo de Mimosa hostilis, Acacia confusa: 100% LEGAL como ornamentales.<br/>✅ Posesión de plantas/corteza secas: LEGAL (MHRB se vende como tinte natural).<br/>🟡 Brebaje ayahuasca uso personal: zona gris.<br/>❌ Extracción química DMT puro: ILEGAL (Lista I).<br/>❌ Posesión cristal DMT: ILEGAL.<br/>❌ Comercializar: ILEGAL.</>}
