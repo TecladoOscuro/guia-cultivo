@@ -242,6 +242,243 @@ function CALEA() {
   );
 }
 
+function KAVA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Kava (Piper methysticum)</strong> — arbusto del Pacífico (Hawaii, Fiji, Vanuatu). Bebida ceremonial milenaria. Efecto: relajación muscular profunda + ansiolítico + leve euforia social. SIN deterioro cognitivo ni resaca. Legal en España.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ KAVA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✨ Reemplazo natural de alcohol/benzos para socializar, dormir, calmar ansiedad<br/>
+        ✨ NO adictivo (consumo diario tradicional sin dependencia)<br/>
+        ✨ Activa GABA sin afectar memoria ni coordinación severamente<br/>
+        ⚠️ Sabor terroso/amargo — aprendido (gusta o no)<br/>
+        ⚠️ Posible toxicidad hepática con uso EXCESIVO o productos malos (extractos con solventes)
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO — INTERIOR OBLIGATORIO EN ESPAÑA</SectionTitleX>
+      <WarningBoxX c={c}>
+        🌴 Kava es TROPICAL. NO sobrevive heladas, NO sobrevive bajo 10°C, necesita humedad alta + sol filtrado. En España: <strong>SOLO INTERIOR o invernadero climatizado</strong>. Exterior solo en Canarias (clima subtropical) o jardines muy abrigados de Andalucía/Levante.
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+        <StatBoxX c={c} label="Temperatura" value="22-30°C constante" />
+        <StatBoxX c={c} label="Humedad" value="70-90% (alta)" />
+        <StatBoxX c={c} label="Luz" value="Indirecta brillante" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, ácido (pH 5.5-6.5)" />
+      </div>
+
+      <SectionTitleX c={c}>COMPRA</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 <strong>Esquejes (preferible):</strong> 30-60€ por esqueje enraizado. Vendedores etnobotánicos UE. Variedades para empezar: 'Borogu' o 'Mahakea' (rendimiento alto, kavalactonas balanceadas).<br/>
+        🌰 <strong>Semillas:</strong> raras y germinación errática (10-20%). NO recomendadas para empezar.<br/>
+        💵 <strong>Atajo:</strong> raíz seca molida ya lista, 20-50€ por 250g. Suficiente para 10-20 sesiones. Hawai'i Kava o vendedores europeos certificados (busca "kava noble").
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — DESDE ESQUEJE</SectionTitleX>
+      <StepX c={c} num={1} text="Recibes esqueje de 20-40cm con raíz iniciada. Hidratar 24h en agua templada." />
+      <StepX c={c} num={2} text="Maceta GRANDE (40-60L), sustrato: 50% turba + 30% perlita + 20% mantillo orgánico. Drenaje crítico." />
+      <StepX c={c} num={3} text="Plantar SIN enterrar el cuello (donde tallo y raíz se unen). Riego abundante." />
+      <StepX c={c} num={4} text="Coloca en zona luminosa pero SIN sol directo intenso. Junto a ventana sur con cortina translúcida = ideal." why="Sol directo quema las hojas grandes de Kava. Necesita luz brillante pero filtrada (como el sotobosque tropical donde crece)." />
+      <StepX c={c} num={5} text="Humedad: humidificador 24/7 o bandeja con guijarros + agua bajo la maceta. Pulverizar hojas 2x/día." warning />
+      <StepX c={c} num={6} text="Temperatura: 22-28°C constante. NUNCA bajar de 15°C. En invierno: cerca de calefactor o usar manta térmica para reptiles bajo la maceta." />
+      <StepX c={c} num={7} text="Riego: mantener sustrato HÚMEDO sin encharcar. Verificar diariamente con dedo en tierra. Kava bebe mucho." />
+      <StepX c={c} num={8} text="Fertilizar: NPK equilibrado (10-10-10) cada 3-4 semanas en primavera-verano. NADA en invierno." />
+
+      <SectionTitleX c={c}>CUIDADOS A LARGO PLAZO</SectionTitleX>
+      <StepX c={c} num={1} text="Mes 1-6: aclimatación, crecimiento lento. La planta puede perder hojas iniciales — normal." />
+      <StepX c={c} num={2} text="Año 1: 30-60cm de altura. Hojas grandes en forma de corazón. Aún no cosechable." />
+      <StepX c={c} num={3} text="Año 2: 80-120cm. Hojas más densas. Empieza a desarrollar raíces gruesas." />
+      <StepX c={c} num={4} text="Año 3-4: 1.5-2.5m. Listo para primera cosecha de raíces." />
+      <StepX c={c} num={5} text="Trasplante a maceta más grande cada 2 años (50→80→120L). Sin más espacio = crecimiento parado." />
+
+      <SectionTitleX c={c}>RECOLECCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Espera mínimo 3 años desde plantar el esqueje. La concentración de kavalactonas se desarrolla con la edad." />
+      <StepX c={c} num={2} text="Sacar la planta entera de la maceta. Sacudir tierra. Ver el rizoma (raíz gruesa horizontal) y las raíces finas." />
+      <StepX c={c} num={3} text="Cortar las raíces más gruesas (1cm+ de grosor) — son las más ricas. Conservar el rizoma central + algunos esquejes para replantar." why="Las raíces finas tienen menos kavalactonas. La proporción óptima es: 30% rizoma + 70% raíces grandes." />
+      <StepX c={c} num={4} text="Lavar bien con agua fría. Cortar en trozos pequeños (2-3cm)." />
+      <StepX c={c} num={5} text="Secar al aire (sombra ventilada) 2-4 semanas hasta crujiente." />
+      <StepX c={c} num={6} text="Replantar: trozos de tallo + algunos rizomas pequeños = nuevas plantas. Una planta cosechada = 5-10 esquejes nuevos." />
+
+      <SectionTitleX c={c}>RENDIMIENTO</SectionTitleX>
+      <InfoBoxX c={c}>
+        Una planta de 4 años: 300-800g de raíz seca total. Suficiente para 30-80 sesiones de Kava (10g por sesión típica). Si replantas los esquejes = producción regular cada 3-4 años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PREPARACIÓN TRADICIONAL</SectionTitleX>
+      <StepX c={c} num={1} text="Pesa 8-15g de raíz seca molida (consulta proveedor para potencia exacta — varía mucho)." />
+      <StepX c={c} num={2} text="Pon el polvo en una bolsa de filtro de tela ('kava strainer bag', 5-10€ online) o en una media de nylon limpia." />
+      <StepX c={c} num={3} text="Sumerge la bolsa en 250-400ml de agua FRÍA o tibia (NUNCA hirviendo — destruye kavalactonas)." warning />
+      <StepX c={c} num={4} text="Masajear/escurrir la bolsa dentro del agua durante 10-15 minutos. El líquido se vuelve marrón-lechoso." why="Las kavalactonas son liposolubles, no hidrosolubles. El masajeo libera los aceites que se emulsionan en el agua." />
+      <StepX c={c} num={5} text="Sacar la bolsa, escurrir bien. El líquido = bebida lista. Los restos del polvo se desechan o se reusan para una segunda extracción más débil." />
+      <StepX c={c} num={6} text="Beber RÁPIDO (de un trago si puedes). Sabor terroso/amargo intenso. Tradicional Vanuatu: tres conchas seguidas y ya." />
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 15-30 min después de beber. Pico: 1-2h. Total: 4-6h.<br/>
+        Sensaciones: relajación muscular profunda (sientes el cuerpo "pesado"), ansiolítico fuerte (calma social), ligera euforia, posible adormecimiento de boca y lengua (NORMAL — efecto local de las kavalactonas en mucosa). NO hay deterioro cognitivo significativo — puedes pensar y hablar normal, solo con menos ansiedad. NO resaca al día siguiente.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Raíz seca molida:</strong> frasco hermético oscuro, lugar fresco. Dura 2-3 años manteniendo potencia.<br/>
+        🥄 <strong>Bebida preparada:</strong> CONSUMIR EN EL DÍA. Si guardas en nevera: máximo 24h. Las kavalactonas precipitan y pierde efecto.<br/>
+        🥄 <strong>Pasta concentrada (tradicional):</strong> reducir el líquido a fuego muy bajo (no hervir). Pasta densa que se conserva 1-2 semanas en nevera.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Beber a diario en grandes cantidades durante meses"
+        consecuencia="Posible 'kava dermopathy' — piel seca/escamosa (reversible al parar). Algunos casos raros de toxicidad hepática reportados."
+        fix="Uso ocasional (1-3 veces/semana). Descansos 1+ semana cada mes. Si notas piel seca: PARA y consulta médico."
+      />
+      <ErrorCardX c={c}
+        error="Mezclar con alcohol u otras drogas depresoras"
+        consecuencia="Sumar depresores SNC = sedación excesiva, posible vómito o pérdida de consciencia."
+        fix="Kava sola. Si tomas medicación: consultar — interactúa con benzos, opiáceos, alcohol."
+      />
+      <ErrorCardX c={c}
+        error="Comprar extractos baratos con solventes"
+        consecuencia="Los casos históricos de toxicidad hepática vinculados a kava fueron extractos químicos con solventes que extraían toxinas, no kavalactonas. La raíz tradicional NO tiene este problema."
+        fix="Solo raíz molida tradicional o productos certificados 'kava noble'. NO extractos baratos sin certificación."
+      />
+    </div>
+  );
+}
+
+function KANNA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Kanna (Sceletium tortuosum)</strong> — suculenta sudafricana, usada por bosquimanos hace 400 años. Activos: mesembrina, mesembrenona — actúan como SSRI natural + leve euforia. Antidepresivo, ansiolítico, social. Legal en España.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ KANNA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✨ Antidepresivo natural, eleva ánimo en 30-60 min<br/>
+        ✨ Reduce ansiedad social — "lubricante social" suave<br/>
+        ✨ Suculenta DURÍSIMA — sobrevive sequía, calor, abandono<br/>
+        ✨ Ideal para mediterráneo: exterior posible TODO EL AÑO<br/>
+        ⚠️ NO mezclar con SSRI/IMAO (síndrome serotonérgico)<br/>
+        ⚠️ Tolerancia rápida con uso diario
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO — DOS OPCIONES VIABLES EN ESPAÑA</SectionTitleX>
+      <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
+        {[
+          { tipo: "🌞 Exterior mediterráneo (Andalucía, Levante, Baleares)", det: "PERFECTO. Suculenta nativa de zonas semidesérticas — ama el calor y soporta heladas suaves. Plantar en jardín o macetas en terraza. Riego mínimo. Crece todo el año." },
+          { tipo: "🪴 Interior con luz directa (resto España)", det: "Junto a ventana SUR con luz directa 4-6h/día. Maceta tipo cactus con drenaje extremo. Riego cuando esté COMPLETAMENTE seca (cada 2-3 semanas)." },
+          { tipo: "🌲 Guerrilla en zona rural seca/cálida", det: "OPCIÓN VIABLE en Murcia, sur de Aragón, Almería, etc. Suculenta poco visible (parece planta común), no llama atención. Plantar entre rocas o matorral, riego inicial 1-2 meses, después AUTOSOSTENIBLE." },
+          { tipo: "❄️ Norte húmedo (Galicia, Cantábrico)", det: "DIFÍCIL. Demasiado lluvia + bajas temperaturas para una suculenta semidesértica. Solo viable interior con sol directo y NUNCA exterior." },
+        ].map((opt, i) => (
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "4px" }}>{opt.tipo}</div>
+            <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{opt.det}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-35°C (tolerante)" />
+        <StatBoxX c={c} label="Humedad" value="20-50% (baja)" />
+        <StatBoxX c={c} label="Luz" value="Sol directo pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Cactus + arena, MUY drenado" />
+      </div>
+
+      <SectionTitleX c={c}>COMPRA</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 <strong>Esquejes (preferible):</strong> 8-20€ por esqueje. Crecimiento garantizado, enraíza en 2-3 semanas. Vendedores etnobotánicos UE.<br/>
+        🌰 <strong>Semillas:</strong> 5-10€ por 50 sem. Germinación 60-70% (mucho mejor que kava). Posible para empezar.<br/>
+        💵 <strong>Atajo:</strong> hojas/tallos secos ya fermentados, 15-30€ por 25g. Suficiente para muchas dosis (200-300mg típico).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — DESDE ESQUEJE</SectionTitleX>
+      <StepX c={c} num={1} text="Recibes esqueje de 5-15cm. Dejar callusing (cicatrizar el corte) 3-5 días en sombra antes de plantar." why="Igual que cactus: callusing previene pudrición de la base al plantar." />
+      <StepX c={c} num={2} text="Maceta 5-15L (no necesita gigante), o directamente al suelo en exterior. Sustrato cactus + 30% arena gruesa." />
+      <StepX c={c} num={3} text="Plantar enterrando solo 2-3cm. Apretar suavemente la tierra alrededor." />
+      <StepX c={c} num={4} text="Sol directo desde el primer día (Kanna AMA el sol). Pero esquejes recién plantados: aclimatación gradual 1 semana en semi-sombra antes de sol pleno." />
+      <StepX c={c} num={5} text="NO regar la primera semana. Después: riego ligero cada 7-10 días." why="Riego antes de que enraíce → pudrición. Mejor sequía que encharcamiento siempre con Kanna." warning />
+      <StepX c={c} num={6} text="Mes 1-2: enraizamiento. Verás nuevos brotes apareciendo. Empieza riego regular cada 10-14 días." />
+      <StepX c={c} num={7} text="Mes 3-12: crecimiento explosivo. La planta se extiende horizontalmente y forma alfombra densa." />
+
+      <SectionTitleX c={c}>CULTIVO GUERRILLA — DETALLES</SectionTitleX>
+      <StepX c={c} num={1} text="Elige zona seca y soleada: matorral, bordes de campos abandonados, entre rocas. NO zonas con riego agrícola activo." />
+      <StepX c={c} num={2} text="Plantar en primavera (marzo-mayo) o otoño (septiembre-octubre). Evita verano (calor extremo durante enraizamiento)." />
+      <StepX c={c} num={3} text="Visitas iniciales: 2-3 visitas en primer mes para regar (1L de agua por visita). Después AUTÓNOMA — no necesita más cuidados." why="Una vez establecida, Kanna sobrevive con el agua de lluvia natural en mediterráneo. Eso es la magia del cultivo guerrilla con suculentas." />
+      <StepX c={c} num={4} text="Camuflaje: parece planta crasa común. Bajo perfil, no atrae atención. No huele, no llama la atención." />
+      <StepX c={c} num={5} text="Cosechas: visitas 1-2 al año en otoño. Cosechar tallos largos, dejar la base intacta. La planta rebrota desde la base." />
+
+      <SectionTitleX c={c}>RECOLECCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Cosecha posible a partir de 6-12 meses desde plantar. Mejor temporada: otoño (concentración máxima de mesembrina)." />
+      <StepX c={c} num={2} text="Cortar tallos largos (15-30cm) con tijera limpia. Dejar al menos 50% de la planta intacta." />
+      <StepX c={c} num={3} text="La planta sigue creciendo desde los nodos restantes. Cosechas regulares estimulan más crecimiento." />
+
+      <SectionTitleX c={c}>PREPARACIÓN TRADICIONAL — FERMENTACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tradicional bosquimano: fermentar Kanna mejora potencia y reduce alcaloides amargos. Es el método que DA EL EFECTO completo. Sin fermentación = experiencia mucho más débil.
+      </InfoBoxX>
+
+      <StepX c={c} num={1} text="Cosechar 50-100g de hojas + tallos frescos." />
+      <StepX c={c} num={2} text="Aplastar el material con mortero o piedra (machacar pero no triturar a polvo)." why="Romper las células libera los enzimas que activan la fermentación." />
+      <StepX c={c} num={3} text="Meter en bolsa hermética de plástico (Ziplock) o frasco con tapa. Comprimir bien para sacar el aire." />
+      <StepX c={c} num={4} text="Dejar al SOL durante 8-10 días. Cada 1-2 días: abrir, mezclar/aplastar de nuevo, cerrar." why="Calor + bacterias de la planta = fermentación que convierte mesembrina en formas más activas." />
+      <StepX c={c} num={5} text="Día 8-10: el material es marrón oscuro, blando, olor característico (no podrido — fermentado). Listo." />
+      <StepX c={c} num={6} text="Secar al sol 2-3 días hasta crujiente. Triturar a polvo en molinillo." />
+      <StepX c={c} num={7} text="Conservar en frasco hermético oscuro. Dura 1-2 años." />
+
+      <SectionTitleX c={c}>MÉTODO RÁPIDO (SIN FERMENTACIÓN)</SectionTitleX>
+      <StepX c={c} num={1} text="Si no quieres esperar 8 días: secar las hojas/tallos al aire (sombra ventilada) 1 semana hasta crujiente." />
+      <StepX c={c} num={2} text="Triturar a polvo. Listo para usar." />
+      <StepX c={c} num={3} text="Efecto MÁS DÉBIL que la fermentada (~50%). Para uso diario suave puede bastar." />
+
+      <SectionTitleX c={c}>CONSUMO</SectionTitleX>
+      <InfoBoxX c={c}>
+        💊 <strong>Sublingual:</strong> 100-300mg de polvo bajo la lengua. Mantener 5-10 min, escupir o tragar. Inicio: 5-15 min. La forma más rápida y eficiente.<br/>
+        💨 <strong>Snortado:</strong> 50-150mg. Inicio inmediato. Picazón nasal intensa. Para situaciones donde necesitas efecto YA.<br/>
+        🍵 <strong>Té:</strong> 200-500mg en infusión 5-10 min. Más suave, más largo (hasta 4h). Combinar con manzanilla para potenciar relajación.<br/>
+        🚬 <strong>Fumado:</strong> 100-300mg en pipa. Efecto suave, breve (1-2h). Sabor herbal.<br/>
+        💊 <strong>Cápsulas:</strong> rellenar cápsulas vacías con 200-400mg. Conveniente, sin sabor.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 5-15 min (sublingual/snort) o 30-60 min (té/cápsulas). Pico: 1-2h. Total: 2-4h.<br/>
+        Sensaciones: elevación de ánimo notable, ansiolítico fuerte (calma social), ligera euforia, motivación, claridad mental. Como un café + un ansiolítico suave, sin la "subida" cafeínica. NO alucinógeno. NO deterioro cognitivo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Polvo seco:</strong> frasco hermético oscuro. Dura 1-2 años. Mejor con sílica gel para mantener seco.<br/>
+        🥄 <strong>Tintura alcohólica:</strong> 50g de polvo en 250ml vodka. Macerar 2 semanas. Filtrar. Dura años. Dosis: 1-3ml sublingual.<br/>
+        🌱 <strong>Plantas vivas:</strong> en exterior mediterráneo viven INDEFINIDAMENTE. Una planta = recurso para décadas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Combinar con SSRI/IMAO/antidepresivos"
+        consecuencia="Riesgo SÍNDROME SEROTONÉRGICO. Kanna actúa como SSRI natural — sumar = exceso de serotonina."
+        fix="No tomar si estás con medicación serotonérgica. Off-meds 4-6 semanas antes de probar Kanna."
+      />
+      <ErrorCardX c={c}
+        error="Uso diario durante meses"
+        consecuencia="Tolerancia rápida — el efecto se va perdiendo. También posible bajada de ánimo al parar."
+        fix="Máximo 2-3 veces por semana. Descansos 1+ semana cada mes."
+      />
+      <ErrorCardX c={c}
+        error="Mezclar con MDMA u otros estimulantes serotonérgicos"
+        consecuencia="Síndrome serotonérgico. Riesgo grave."
+        fix="Kanna sola. Esperar 24h+ entre Kanna y otras sustancias serotonérgicas."
+      />
+    </div>
+  );
+}
+
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
   const faqs = [

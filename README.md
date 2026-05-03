@@ -1,174 +1,129 @@
 # 🌱 Guía de Cultivo
 
-Guía completa y autónoma para cultivar/preparar 8 sustancias en casa: cannabis, setas psilocybe, cactus mescalina, ayahuasca, DMT (Mimosa hostilis), fermentaciones, plantas psicoactivas suaves y Amanita muscaria. Desde compra hasta cosecha. Sin instalación, sin cuenta.
+App web para cultivar y preparar **8 sustancias en casa**: cannabis, setas, cactus, ayahuasca, DMT, fermentaciones, plantas suaves y Amanita. Sin instalación, sin cuenta, funciona en el móvil.
 
-**🌐 [Abre la guía](https://tecladooscuro.github.io/guia-cultivo/)**
-
----
-
-## 📚 Las 8 guías
-
-### 🌿 Cannabis · 3 modos · 27 phases
-- **Interior** — armario completo (LED, extractor, sustrato, nutrientes), 10 phases del ciclo
-- **Exterior** — bosque/jardín, fotoperiodo mediterráneo, 8 phases mar-oct
-- **General** — timeline, mis semillas, poda, cosecha, conservación, diagnóstico, extracciones, FAQ, glosario (50+ términos)
-
-### 🍄 Setas Psilocybe · 4 modos · 27 phases
-- **Kit** — Pan de micelio + SGFC. 3-4 sem, 30-60g secos. Para empezar.
-- **Friendly** — spawn bag pre-esterilizado + cultura líquida + bulk CVG. SIN olla a presión, SIN SAB. 6-13 sem, 60-150g secos.
-- **Avanzado** — olla presión 90min/15PSI + SAB + jeringa esporas + bulk tek desde cero. 12-16 sem, 80-200g secos.
-- **General** — Timeline (cronograma comparativo Kit/Friendly/Avanzado), Glosario, FAQ.
-
-### 🌵 Cactus mescalina · 1 modo · 8 phases
-San Pedro, Bolivian Torch, Peruvian Torch, Peyote (no recomendado). Cultivo legal como ornamental, plantas de décadas. Compra esquejes/semillas, germinación tupperware, 4 reglas de oro de cuidados, ciclo anual, cosecha sostenible giro-tirón, preparación tradicional. NO recetas de extracción química.
-
-### 🍯 Fermentaciones · 3 modos · 14 phases
-Bebidas alcohólicas caseras, 100% legales en España (sin destilación).
-- **Hidromiel** — receta 4L: miel + agua + levadura. Compra → mosto → fermentación 4-6 sem → embotellado → cata. Variantes: melomel, metheglin, pyment, bochet.
-- **Cerveza casera** — kit extracto o all-grain. Compra → macerado 66°C → hervor 60min con 4 adiciones de lúpulo → fermentación 1-2 sem → priming → carbonatación 14 días.
-- **General** — qué fermentar (sidra, kvass, kombucha, vino), higiene crítica (Star San), FAQ.
-
-### 🪷 Plantas psicoactivas suaves · 1 modo · 7 phases
-5 plantas legales en España con harm reduction.
-- **Salvia divinorum** — visionario intenso 5-15min, sitter obligatorio
-- **Damiana** — eufórico ligero, infusión/licor, la más amigable
-- **Blue Lotus** — acuática, vino macerado egipcio, sedante onírico
-- **Wild Lettuce** — lactucario casero, analgésico suave
-- **Calea zacatechichi** — oneirogenic, sueños lúcidos antes de dormir
-+ Intro y FAQ.
-
-### 🟥 Amanita muscaria · 1 modo · 8 phases
-Forrajeo otoño en bosque (NO se cultiva, micorrícica con abedules/pinos).
-- Identificación crítica vs Amanitas mortales (phalloides, virosa, pantherina)
-- Recolección ética
-- Secado + decarboxilación (iboténico → muscimol)
-- Preparación: té con limón, cápsulas, tintura
-- Conservación largo plazo (1-5 años según método)
-- Harm reduction: tabla de dosis (0.5g micro a 10g+ intensa), set/setting, contraindicaciones, qué hacer si va mal
-
-### 🌿 Ayahuasca · 1 modo · 9 phases
-Brebaje amazónico tradicional. Vid Banisteriopsis caapi (IMAOs) + Psychotria viridis (DMT).
-- Intro y diferencia con DMT puro
-- Compra de plantas/preparados con filtros pill (prioridad/tipo/donde)
-- Cultivo Caapi (vid trepadora, rápido en cálido)
-- Cultivo Chacruna (arbusto, MUY exigente: humedad 80-95%)
-- Cuidados generales tropicales
-- Preparación brebaje (cocción 6-12h con limón, triple cocción)
-- Ceremonia: dieta previa OBLIGATORIA (sin tiramina), set/setting/sitter
-- Harm reduction: síndrome serotonérgico, contraindicaciones, qué hacer si algo va mal
-- FAQ + glosario integrado
-
-### 🌌 DMT · 1 modo · 8 phases
-N,N-Dimetiltriptamina. Cultivo Mimosa hostilis legal, extracción química ILEGAL en España.
-- Intro: 4 formas de consumo (fumado, changa, ayahuasca, rapé Yopo)
-- Fuentes: Mimosa, Acacia confusa, Chacruna, Diplopterys cabrerana
-- Cultivo Mimosa hostilis: germinación con escarificación, crecimiento, cosecha de corteza de raíz
-- Extracción A/B (vista educativa, NO recetas paso-a-paso)
-- Consumo: cristal fumado, changa, rapé Yopo
-- Experiencia: 7 fases del breakthrough (5-15 min), entidades reportadas, efectos positivos/negativos
-- Harm reduction: contraindicaciones, set/setting, frecuencia recomendada
-- FAQ: legalidad, alternativas, diferencia con otras moléculas
+**🌐 [Abre la guía aquí](https://tecladooscuro.github.io/guia-cultivo/)**
 
 ---
 
-## 🚀 Cómo usar
+## Cómo funciona
 
-1. Abre la URL en cualquier navegador (móvil o desktop): https://tecladooscuro.github.io/guia-cultivo/
-2. **Toggle de guía** arriba: 6 botones (🌿 🍄 🌵 🍯 🪷 🟥). Cambia paleta de colores y contenido al instante.
-3. **Mode switcher** debajo del título: cambia entre sub-modos de la guía actual (ej: Interior/Exterior/General en cannabis).
-4. **Tabs** (sidebar vertical en desktop, scroll horizontal en móvil): navega entre phases del modo activo.
-5. **Filtros pill** en listas de compra: click para filtrar por prioridad (ESENCIAL/IMPORTANTE/ÚTIL), tipo (Equipo/Consumible) y dónde (Internet/Grow shop/Farmacia/Tienda física).
-6. **Enlaces azules** dentro del texto: click → salto al glosario con el término ya filtrado en el buscador.
-7. **Buscador de glosario**: cada guía tiene su glosario con búsqueda integrada (cannabis y setas).
-8. **Footer contextual**: muestra info útil sobre la guía/modo activo (planning estacional cannabis, comparativa de tiempos setas, etc.).
+1. **Elige guía** arriba (8 botones con emoji)
+2. **Elige modo** debajo del título (las que tienen submodos: Cannabis, Setas, Fermentar)
+3. **Navega phases** en pestañas (vertical en desktop, horizontal en móvil)
+4. **Filtra listas de compra** con pills clickables (prioridad, tipo, dónde comprar)
+5. **Click en azul** = enlace al glosario con búsqueda automática
+6. **Footer** = info contextual de la sección activa
 
-No requiere instalación, cuenta, conexión continua. Funciona offline tras el primer load.
+Funciona offline tras el primer load.
 
 ---
 
-## 🎨 Diseño
+## Las 8 guías
 
-Cada guía tiene su paleta:
+### 🌿 Cannabis
+**3 modos:** Interior · Exterior · General
+Compra → semillas → setup → germinación → vegetativa → floración → cosecha → curado. Diagnóstico de deficiencias, extracciones (hash, mantequilla), 50+ términos en glosario.
 
-| Guía | Paleta |
+### 🍯 Fermentaciones
+**4 modos:** General · Hidromiel · Cerveza · Sidra
+Bebidas alcohólicas caseras, 100% legales (sin destilación). Recetas paso-a-paso, troubleshooting, embotellado natural o con gas.
+- 🍯 Hidromiel: miel + agua, 4-8 semanas
+- 🍺 Cerveza: kit extracto o all-grain, 4-6 semanas
+- 🍎 Sidra: manzana otoñal, 3-6 semanas, espumosa o natural
+
+### 🍄 Setas Psilocybe
+**4 modos:** Kit · Friendly · Avanzado · General
+- Kit: pan de micelio + SGFC, 3-4 sem
+- Friendly: spawn bag pre-esterilizado + cultura líquida, sin lab, 6-13 sem
+- Avanzado: olla a presión + SAB + jeringa esporas, 12-16 sem
+- Timeline visual comparando los 3 modos + glosario + FAQ
+
+### 🌵 Cactus mescalina
+San Pedro / Bolivian Torch / Peruvian Torch. Cultivo legal como ornamental. Inversión: TIEMPO (2-4 años para primera cosecha desde esqueje). Una planta dura décadas.
+
+### 🌿 Ayahuasca
+Vid Banisteriopsis caapi (IMAOs) + Psychotria viridis (DMT). Cultivo plantas + brebaje tradicional. Cocción 6-12h. **Requiere dieta previa estricta** (sin tiramina) por riesgo de síndrome serotonérgico.
+
+### 🌌 DMT
+Cultivo de Mimosa hostilis (legal). Visión general de extracción A/B (educativa, NO recetas — extracción ilegal en España). Información sobre experiencia, harm reduction, alternativas legales (ayahuasca casera, ceremonias).
+
+### 🟥 Amanita muscaria
+Forrajeo en bosque (no se cultiva — micorrícica). Identificación crítica vs Amanitas mortales. Secado + decarboxilación (iboténico → muscimol). Conservación 1-5 años según método. Tabla de dosificación con harm reduction completo.
+
+### 🪷 Plantas suaves (8 plantas)
+Salvia divinorum · Damiana · Blue Lotus · Lechuga silvestre · Calea zacatechichi · **Kava** · **Kanna** + FAQ.
+Todas legales, cultivo casero o forrajeo, harm reduction por planta. Kanna se puede cultivar en guerrilla en zonas mediterráneas secas.
+
+---
+
+## Diseño
+
+- **Cada guía con su paleta** (verde cannabis, marrón setas, dorado fermentar, etc.) — visual rápido para saber dónde estás
+- **Inter** body + **Fraunces** headings (Google Fonts)
+- **Dark mode** por defecto
+- **Responsive**: sidebar vertical en desktop ≥900px, scroll horizontal en móvil
+- **Tags coloridos** (ESENCIAL/IMPORTANTE/ÚTIL, Equipo/Consumible, Internet/Grow shop/Farmacia/Tienda física)
+
+---
+
+## Legalidad (España)
+
+| Guía | Estado |
 |---|---|
-| 🌿 Cannabis | Verde bosque |
-| 🍯 Fermentaciones | Dorado-ámbar |
-| 🍄 Setas | Marrón cálido |
-| 🌵 Cactus | Azul-desértico |
-| 🌿 Ayahuasca | Verde-jungla profundo |
-| 🌌 DMT | Púrpura-cristal |
-| 🟥 Amanita | Rojo intenso |
-| 🪷 Plantas suaves | Púrpura-malva |
-
-- Tipografía: **Inter** (body) + **Fraunces** (headings) — ambas Google Fonts
-- Layout: CSS Grid responsive — sidebar vertical en desktop ≥900px, tabs horizontales en móvil
-- Dark mode por defecto (mejor para lectura nocturna)
-- Pills clickables, tags coloridas, cards consistentes
+| Cannabis | ✅ Cultivo personal tolerado |
+| Fermentaciones (sin destilar) | ✅ 100% legal |
+| Setas Psilocybe | 🟡 Cultivo casero gris/tolerado |
+| Cactus mescalina | ✅ Cultivo ornamental legal · 🟡 consumo gris |
+| Ayahuasca | ✅ Plantas legales · 🟡 brebaje gris |
+| DMT (Mimosa) | ✅ Planta legal · ❌ extracción cristal ilegal |
+| Amanita muscaria | ✅ 100% legal recolectar/poseer/consumir |
+| Plantas suaves | ✅ Las 7 listadas legales |
 
 ---
 
-## ⚠️ Harm reduction y legalidad
+## Lo que NO hace esta guía
 
-Todas las sustancias incluidas se rigen por marco legal español:
-- ✅ Cultivo personal de cannabis (en casa, consumo propio): TOLERADO
-- ✅ Setas Psilocybe: cultivo y posesión casero TOLERADO (gris legal)
-- ✅ Cactus mescalina: ornamental 100% LEGAL; consumo gris
-- ✅ Ayahuasca (cultivo plantas + brebaje uso personal): plantas legales, brebaje gris
-- ✅ DMT (cultivo Mimosa hostilis): planta legal; extracción química ILEGAL; ayahuasca gris
-- ✅ Fermentaciones (sin destilación): 100% LEGAL
-- ✅ Plantas psicoactivas suaves (las 5 listadas): 100% LEGAL
-- ✅ Amanita muscaria: 100% LEGAL recolectar/poseer/consumir
-
-❌ Sustancias deliberadamente excluidas: Datura/Brugmansia (peligro real de muerte), Iboga (cardíaco), Khat (ilegal EU), Adormidera (extracción ilegal), Coca (totalmente ilegal).
-
-❌ Esta guía NO incluye: extracción química de alcaloides, destilación de alcohol, síntesis, métodos peligrosos de consumo. Todo es cultivo + preparación tradicional + harm reduction.
+- Recetas paso-a-paso de extracción química de DMT (ilegal)
+- Destilación de alcohol casero (ilegal)
+- Síntesis de drogas controladas
+- Sustancias deliberadamente excluidas: Datura/Brugmansia (peligro de muerte), Iboga (cardíaco), Khat (ilegal EU), Coca (ilegal)
 
 ---
 
-## 🛠️ Para contribuir / desarrollar local
-
-Estructura modular del proyecto (no es necesario para usar — solo si quieres editar):
+## Para desarrollar local
 
 ```
 src/
 ├── app/
-│   ├── colors.js          # 6 paletas (CANNABIS, MUSHROOM, CACTUS, FERMENT, PLANTAS, AMANITA)
-│   ├── phases.js          # Definición de tabs/phases para cada guía
-│   └── gui-cultivo.js     # Componente principal (estado, navegación, render)
+│   ├── colors.js          # 8 paletas
+│   ├── phases.js          # Pestañas por guía/modo
+│   └── gui-cultivo.js     # Componente principal
 ├── helpers/
-│   └── components.js      # Step, InfoBox, ErrorCard, GlossaryLink + variantes M, X (genéricos)
-├── components/
-│   ├── cannabis/          # interior.js, exterior.js, general.js
-│   ├── mushroom/          # kit.js, friendly.js, advanced.js, general.js
-│   ├── cactus/            # general.js (8 componentes)
-│   ├── fermentation/      # general.js, hidromiel.js, cerveza.js
-│   ├── plantas/           # general.js (7 componentes)
-│   ├── amanita/           # general.js (8 componentes)
-│   ├── ayahuasca/         # general.js (9 componentes)
-│   └── dmt/               # general.js (8 componentes)
-└── README.md              # Documentación arquitectura
+│   └── components.js      # Step, InfoBox, GlossaryLink + variantes
+└── components/
+    ├── cannabis/          # interior/exterior/general
+    ├── mushroom/          # kit/friendly/advanced/general
+    ├── fermentation/      # hidromiel/cerveza/sidra/general
+    ├── cactus/            # general
+    ├── ayahuasca/         # general
+    ├── dmt/               # general
+    ├── amanita/           # general
+    └── plantas/           # general (8 plantas)
 ```
-
-Build:
 
 ```bash
-node build.js
+node build.js   # genera index.html desde src/
 ```
 
-Concatena `src/*.js` en orden y los inyecta en `html-template.html` para generar `index.html` (artefacto desplegable). El navegador no entiende `import/export` sin bundler — el build es la forma de servir todo en un único `<script type="text/babel">`.
-
-`html-template.html` = esqueleto HTML + CSS + scripts CDN (React 18, Babel standalone, Google Fonts).
-`index.html` = artefacto generado, NO editar a mano.
+`html-template.html` = esqueleto. `index.html` = generado, no editar.
 
 ---
 
-## 📝 Licencia
+## Licencia
 
-Contenido educativo. Úsalo, comparte, aprende. Sin garantía.
+Educativo. Úsalo, comparte, aprende. Sin garantía.
 
 ---
-
-## 🌱 Empezar ahora
 
 [**👉 https://tecladooscuro.github.io/guia-cultivo/**](https://tecladooscuro.github.io/guia-cultivo/)

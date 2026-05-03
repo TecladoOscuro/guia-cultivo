@@ -21,6 +21,7 @@ const sourceFiles = [
   'src/components/fermentation/general.js',
   'src/components/fermentation/hidromiel.js',
   'src/components/fermentation/cerveza.js',
+  'src/components/fermentation/sidra.js',
   'src/components/plantas/general.js',
   'src/components/amanita/general.js',
   'src/components/ayahuasca/general.js',

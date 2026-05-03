@@ -18,10 +18,11 @@ function GuiaCultivo() {
   // Cactus state (single mode)
   const [activeCactus, setActiveCactus] = useState("intro_cactus");
 
-  // Ferment state (3 modes: hidromiel, cerveza, general)
+  // Ferment state (4 modes: hidromiel, cerveza, sidra, general)
   const [fermentMode, setFermentMode] = useState("general");
   const [activeFermentHidromiel, setActiveFermentHidromiel] = useState("compra_hidromiel");
   const [activeFermentCerveza, setActiveFermentCerveza] = useState("compra_cerveza");
+  const [activeFermentSidra, setActiveFermentSidra] = useState("compra_sidra");
   const [activeFermentGen, setActiveFermentGen] = useState("intro_ferment");
 
   // Plantas state (single mode)
@@ -196,6 +197,15 @@ function GuiaCultivo() {
           case "cata_cerveza": return <CATA_CERVEZA />;
           default: return <COMPRA_CERVEZA />;
         }
+      } else if (fermentMode === "sidra") {
+        switch (activeFermentSidra) {
+          case "compra_sidra": return <COMPRA_SIDRA />;
+          case "prep_sidra": return <PREP_SIDRA />;
+          case "fermentacion_sidra": return <FERMENTACION_SIDRA />;
+          case "embotellado_sidra": return <EMBOTELLADO_SIDRA />;
+          case "cata_sidra": return <CATA_SIDRA />;
+          default: return <COMPRA_SIDRA />;
+        }
       } else {
         switch (activeFermentGen) {
           case "intro_ferment": return <INTRO_FERMENT />;
@@ -212,6 +222,8 @@ function GuiaCultivo() {
         case "blue_lotus": return <BLUE_LOTUS />;
         case "wild_lettuce": return <WILD_LETTUCE />;
         case "calea": return <CALEA />;
+        case "kava": return <KAVA />;
+        case "kanna": return <KANNA />;
         case "faq_plantas": return <FAQ_PLANTAS />;
         default: return <INTRO_PLANTAS />;
       }
@@ -260,9 +272,9 @@ function GuiaCultivo() {
   const mushroomActiveMap = { kit: activeMushroomKit, friendly: activeMushroomFriendly, advanced: activeMushroomAdvanced, general: activeMushroomGen };
   const mushroomSetterMap = { kit: setActiveMushroomKit, friendly: setActiveMushroomFriendly, advanced: setActiveMushroomAdvanced, general: setActiveMushroomGen };
 
-  const fermentPhasesMap = { hidromiel: fermentHidromielPhases, cerveza: fermentCervezaPhases, general: fermentGeneralPhases };
-  const fermentActiveMap = { hidromiel: activeFermentHidromiel, cerveza: activeFermentCerveza, general: activeFermentGen };
-  const fermentSetterMap = { hidromiel: setActiveFermentHidromiel, cerveza: setActiveFermentCerveza, general: setActiveFermentGen };
+  const fermentPhasesMap = { hidromiel: fermentHidromielPhases, cerveza: fermentCervezaPhases, sidra: fermentSidraPhases, general: fermentGeneralPhases };
+  const fermentActiveMap = { hidromiel: activeFermentHidromiel, cerveza: activeFermentCerveza, sidra: activeFermentSidra, general: activeFermentGen };
+  const fermentSetterMap = { hidromiel: setActiveFermentHidromiel, cerveza: setActiveFermentCerveza, sidra: setActiveFermentSidra, general: setActiveFermentGen };
 
   let currentPhases, currentActive, setCurrentActive, colors, title, modeOptions, currentMode, setCurrentMode;
 
@@ -309,6 +321,7 @@ function GuiaCultivo() {
       { id: "general", label: "📋 General", sub: "Intro/FAQ" },
       { id: "hidromiel", label: "🍯 Hidromiel", sub: "Miel + agua" },
       { id: "cerveza", label: "🍺 Cerveza", sub: "Malta + lúpulo" },
+      { id: "sidra", label: "🍎 Sidra", sub: "Manzana otoño" },
     ];
     currentMode = fermentMode; setCurrentMode = setFermentMode;
   } else if (guide === "plantas") {
@@ -461,7 +474,7 @@ function GuiaCultivo() {
         )}
         {guide === "ferment" && (
           <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
-            🍯 Hidromiel 4-8 semanas ⎜ 🍺 Cerveza 4-6 semanas ⎜ Equipo reutilizable indefinidamente
+            🍯 Hidromiel 4-8 sem ⎜ 🍺 Cerveza 4-6 sem ⎜ 🍎 Sidra 3-6 sem ⎜ Equipo reutilizable
           </div>
         )}
         {guide === "plantas" && (

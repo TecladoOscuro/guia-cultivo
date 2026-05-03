@@ -107,6 +107,14 @@ const fermentGeneralPhases = [
   { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
 ];
 
+const fermentSidraPhases = [
+  { id: "compra_sidra", emoji: "🛒", title: "Compra", subtitle: "Manzanas + equipo" },
+  { id: "prep_sidra", emoji: "🍎", title: "Prep mosto", subtitle: "Triturar + prensar" },
+  { id: "fermentacion_sidra", emoji: "🫧", title: "Fermentación", subtitle: "3-6 semanas" },
+  { id: "embotellado_sidra", emoji: "🍾", title: "Embotellado", subtitle: "Natural / espumosa" },
+  { id: "cata_sidra", emoji: "🥂", title: "Cata", subtitle: "Maduración" },
+];
+
 // Plantas psicoactivas suaves — un solo modo, cada planta = phase
 const plantasPhases = [
   { id: "intro_plantas", emoji: "🌟", title: "Intro", subtitle: "Plantas suaves" },
@@ -115,6 +123,8 @@ const plantasPhases = [
   { id: "blue_lotus", emoji: "🪷", title: "Blue Lotus", subtitle: "Sedante onírico" },
   { id: "wild_lettuce", emoji: "🥬", title: "Lechuga silvestre", subtitle: "Analgésico" },
   { id: "calea", emoji: "💭", title: "Calea zacatechichi", subtitle: "Sueños lúcidos" },
+  { id: "kava", emoji: "🌴", title: "Kava", subtitle: "Relajante muscular" },
+  { id: "kanna", emoji: "🌵", title: "Kanna", subtitle: "Antidepresivo + euforia" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
 ];
 
