@@ -21,6 +21,12 @@
     /* Override inline Georgia, serif fontFamily across all components */
     [style*="Georgia"] { font-family: 'Inter', system-ui, sans-serif !important; }
 
+    /* Guides toggle: dropdown en mobile, fila en desktop */
+    @media (min-width: 900px) {
+      .guides-dropdown { display: none !important; }
+      .guides-row { display: flex !important; }
+    }
+
     /* Desktop layout */
     @media (min-width: 900px) {
       .app-layout {

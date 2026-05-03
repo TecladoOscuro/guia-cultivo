@@ -384,33 +384,83 @@ function GuiaCultivo() {
     return acc;
   }, {});
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const currentGuide = guides.find(g => g.id === guide);
+
   return (
     <div className="app-layout" style={{ background: colors.bg, minHeight: "100vh", color: colors.text }}>
       <div className="app-header" style={{ background: colors.gradient, padding: "24px 24px 20px", textAlign: "center", borderBottom: `2px solid ${colors.borderAccent}` }}>
-        <div style={{ marginBottom: "16px", display: "flex", flexDirection: "column", gap: "10px" }}>
-          {Object.entries(grupos).map(([grupoLabel, gs]) => (
-            <div key={grupoLabel}>
-              <div style={{
-                fontSize: "10px", letterSpacing: "2px", color: colors.accent2, opacity: 0.7,
-                marginBottom: "6px", textTransform: "uppercase", fontWeight: "bold",
-              }}>{grupoLabel}</div>
-              <div style={{ display: "flex", gap: "6px", justifyContent: "center", flexWrap: "wrap" }}>
-                {gs.map(g => {
-                  const active = guide === g.id;
-                  return (
-                    <button key={g.id} onClick={() => setGuide(g.id)} style={{
-                      padding: "8px 14px", fontSize: "12px", fontWeight: "bold",
-                      borderRadius: "8px", cursor: "pointer", transition: "all 0.2s",
-                      background: active ? g.accent : "transparent",
-                      color: active ? "#0a0a0a" : g.accent,
-                      border: `1.5px solid ${g.accent}`,
-                    }}>
-                      {g.emoji} {g.label}
-                    </button>
-                  );
-                })}
-              </div>
+        {/* MOBILE: dropdown compacto */}
+        <div className="guides-dropdown" style={{ marginBottom: "16px", position: "relative", maxWidth: "320px", margin: "0 auto 16px" }}>
+          <button onClick={() => setDropdownOpen(!dropdownOpen)} style={{
+            width: "100%", padding: "10px 14px", fontSize: "13px", fontWeight: "bold",
+            borderRadius: "8px", cursor: "pointer",
+            background: currentGuide.accent, color: "#0a0a0a",
+            border: `1.5px solid ${currentGuide.accent}`,
+            display: "flex", justifyContent: "space-between", alignItems: "center",
+          }}>
+            <span>{currentGuide.emoji} {currentGuide.label}</span>
+            <span style={{ fontSize: "10px" }}>{dropdownOpen ? "▲" : "▼"}</span>
+          </button>
+          {dropdownOpen && (
+            <div style={{
+              position: "absolute", top: "100%", left: 0, right: 0, marginTop: "4px",
+              background: colors.bg2, border: `1px solid ${colors.border1}`,
+              borderRadius: "8px", padding: "8px", zIndex: 100,
+              boxShadow: "0 4px 12px rgba(0,0,0,0.4)",
+              maxHeight: "70vh", overflowY: "auto",
+            }}>
+              {Object.entries(grupos).map(([grupoLabel, gs]) => (
+                <div key={grupoLabel} style={{ marginBottom: "8px" }}>
+                  <div style={{
+                    fontSize: "9px", letterSpacing: "1.5px", color: colors.accent2, opacity: 0.6,
+                    padding: "4px 8px", textTransform: "uppercase", fontWeight: "bold",
+                  }}>{grupoLabel}</div>
+                  {gs.map(g => {
+                    const active = guide === g.id;
+                    return (
+                      <button key={g.id} onClick={() => { setGuide(g.id); setDropdownOpen(false); }} style={{
+                        display: "block", width: "100%", textAlign: "left",
+                        padding: "8px 12px", fontSize: "12px", fontWeight: active ? "bold" : "normal",
+                        borderRadius: "6px", cursor: "pointer", border: "none",
+                        background: active ? g.accent : "transparent",
+                        color: active ? "#0a0a0a" : g.accent,
+                        marginBottom: "2px",
+                      }}>
+                        {g.emoji} {g.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
+          )}
+        </div>
+
+        {/* DESKTOP: fila horizontal con separadores de grupo */}
+        <div className="guides-row" style={{ marginBottom: "16px", display: "none", alignItems: "center", justifyContent: "center", gap: "8px", flexWrap: "wrap", rowGap: "8px" }}>
+          {Object.entries(grupos).map(([grupoLabel, gs], gi) => (
+            <React.Fragment key={grupoLabel}>
+              {gi > 0 && <div style={{ width: "1px", height: "20px", background: colors.border1, opacity: 0.5 }} />}
+              <span style={{
+                fontSize: "9px", letterSpacing: "1.5px", color: colors.accent2, opacity: 0.6,
+                textTransform: "uppercase", fontWeight: "bold", marginRight: "4px",
+              }}>{grupoLabel.replace(/^.+? /, '')}</span>
+              {gs.map(g => {
+                const active = guide === g.id;
+                return (
+                  <button key={g.id} onClick={() => setGuide(g.id)} style={{
+                    padding: "5px 10px", fontSize: "11px", fontWeight: "bold",
+                    borderRadius: "6px", cursor: "pointer", transition: "all 0.2s",
+                    background: active ? g.accent : "transparent",
+                    color: active ? "#0a0a0a" : g.accent,
+                    border: `1.5px solid ${g.accent}`,
+                  }}>
+                    {g.emoji} {g.label}
+                  </button>
+                );
+              })}
+            </React.Fragment>
           ))}
         </div>
         <h1 className="heading-serif" style={{ fontSize: "22px", fontWeight: "bold", margin: "0 0 16px", color: colors.textBright }}>
