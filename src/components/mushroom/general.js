@@ -21,6 +21,15 @@ function CONCEPTOS_SETAS() {
     { term: "SAB (Still Air Box)", def: "Caja hermética con guantes para inocular asépticamente. Reduce aire contaminado. Crítico en modo manual." },
     { term: "Perlita", def: "Mineral poroso que absorbe y evapora agua lentamente. Mantiene humedad en cámara sin encharcamiento." },
     { term: "Presecado", def: "Primera fase de secado a temperatura ambiente (2-3h). Elimina 50% del agua rápido antes de usar desecador." },
+    { term: "Cultura líquida", def: "Micelio activo suspendido en agua nutritiva. Reemplaza la jeringa de esporas en el modo friendly: ya está en fase vegetativa (micelio), no esporas — coloniza más rápido (10-14 días vs 21) y resiste mejor la contaminación. Se inyecta igual que esporas pero con menos riesgo." },
+    { term: "Spawn bag", def: "Bolsa de plástico transparente con grano de centeno (u otro cereal) ya cocido, esterilizado y sellado. Tiene un puerto de inyección con filtro micropore. En el modo friendly reemplaza la olla a presión + frascos: compras esterilizado, solo inyectas." },
+    { term: "Bulk substrate CVG", def: "Coco coir + Vermiculita + Yeso (Gypsum) ya hidratado y pasteurizado. Listo para mezclar con spawn en monotub. Reemplaza el proceso manual de hidratar coco coir + pasteurizar." },
+    { term: "FAE pasivo", def: "Fresh Air Exchange automático mediante agujeros con filtro micropore en el monotub. El intercambio de aire ocurre por difusión sin que tú abras nada. Alternativa al FAE activo (abrir la tapa)." },
+    { term: "Casing layer", def: "Capa fina de vermiculita seca (1cm) sobre el sustrato colonizado. Mantiene humedad superficial sin encharcar y aumenta rendimiento 20-30%. Opcional pero recomendado en monotub." },
+    { term: "Pinheads abortados", def: "Primordios que empezaron a crecer pero pararon (pequeños, marchitos, color marrón). Aparecen entre flushes. Hay que retirarlos antes del siguiente flush para evitar que pudran y contaminen." },
+    { term: "Dunk", def: "Sumergir el sustrato del monotub en agua fría (nevera 6-12h) entre flushes. Cold shock + rehidratación. Induce el siguiente flush simulando lluvia + bajada de temperatura otoñal." },
+    { term: "Flameado", def: "Pasar la aguja por la llama de un mechero hasta poner roja (3-5s). Mata cualquier bacteria. Esperar 20s para enfriar antes de inyectar (sino mata el micelio que estás inyectando)." },
+    { term: "Esterilización", def: "Eliminar TODA forma de vida microbiana. Requiere olla a presión a 15 PSI durante 90 min. En el modo friendly te ahorras este paso comprando spawn bag y substrate ya esterilizados/pasteurizados." },
   ];
 
   const [search, setSearch] = React.useState('');

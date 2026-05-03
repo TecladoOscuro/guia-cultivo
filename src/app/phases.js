@@ -46,9 +46,9 @@ const mushroomKitPhases = [
 ];
 
 const mushroomManualPhases = [
-  { id: "compra_manual", emoji: "🛒", title: "Compra", subtitle: "Desde cero" },
-  { id: "esterilizar", emoji: "🧫", title: "Esterilizar", subtitle: "Olla a presión" },
-  { id: "inoculacion", emoji: "💉", title: "Inoculación", subtitle: "SAB aséptico" },
+  { id: "compra_manual", emoji: "🛒", title: "Compra", subtitle: "Pre-esterilizado" },
+  { id: "esterilizar", emoji: "🧼", title: "Prep limpio", subtitle: "Sin olla a presión" },
+  { id: "inoculacion", emoji: "💉", title: "Inoculación", subtitle: "Cultura líquida" },
   { id: "incubacion_manual", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
   { id: "fructificacion_manual", emoji: "🍄", title: "Fructificación", subtitle: "Monotub" },
   { id: "cosecha_manual", emoji: "✂️", title: "Cosecha", subtitle: "Múltiples flush" },
