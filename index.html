@@ -2622,7 +2622,7 @@ function COSECHA() {
       <Step num={12} text="Pon un higrómetro pequeño dentro de cada bote." why="La humedad dentro del bote debe estar entre 58–65%. Sin higrómetro estás completamente a ciegas." />
       <Step num={13} text="Las primeras 2 semanas: abre cada bote 15 minutos al día. Se llama 'burping'." why="El material sigue liberando humedad residual después de parecer seco. Si no la liberas, se acumula y aparece moho aunque el cogollo pareciera listo al meterlo." />
       <Step num={14} text="Si el higrómetro marca más de 70%: deja el bote abierto 1–2 horas. Si marca menos de 55%: ciérralo hasta mañana." />
-      <Step num={15} text="Mínimo 2 semanas de curado. 4 semanas es notablemente mejor. 8 semanas es lo ideal." why="El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los terpenos (el aroma y sabor final). No hay atajos posibles." />
+      <Step num={15} text={<>Mínimo 2 semanas de <GlossaryLink term="Cure / Curado">curado</GlossaryLink>. 4 semanas es notablemente mejor. 8 semanas es lo ideal.</>} why={<>El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los <GlossaryLink term="Terpeno">terpenos</GlossaryLink> (el aroma y sabor final). No hay atajos posibles.</>} />
 
       <SectionTitle color="#e63946">🚫 ERRORES QUE CUESTAN GRAMOS</SectionTitle>
       <ErrorCard error="Secar con ventilador directo encima de las ramas" consecuencia="Exterior seco, interior húmedo. Moho invisible dentro del cogollo." fix="Airflow indirecto. El aire circula en la habitación pero no apunta a las ramas." />
@@ -4415,7 +4415,7 @@ function COSECHA_SETAS_ADVANCED() {
       <StepM num={2} text="No laves con agua — el hongo es esponja, se empaparía. Usa cepillo suave si necesitas." />
 
       <SectionTitleM>ENTRE FLUSHES (COLD SHOCK + REHYDRATION)</SectionTitleM>
-      <StepM num={1} text="Después de cosechar: mete el monotub en nevera 24h a 4-10°C. Es el 'cold shock' que dispara siguiente flush." why="Imita invierno/lluvia en naturaleza. Dice al micelio: hora de reproducir de nuevo." />
+      <StepM num={1} text={<>Después de cosechar: mete el monotub en nevera 24h a 4-10°C. Es el <GlossaryLink term="Cold shock">cold shock</GlossaryLink> que dispara siguiente flush.</>} why="Imita invierno/lluvia en naturaleza. Dice al micelio: hora de reproducir de nuevo." />
       <StepM num={2} text="Pasadas 24h: saca del frío. Rocía sustrato abundantemente (casi como 'riego'). Deja 4-6h mojado." />
       <StepM num={3} text="Drena exceso de agua. Vuelve a FAE + nebulización cada 12h." />
       <StepM num={4} text="Espera 5-7 días para 2º flush. Rendimiento baja: ~60% del 1º (130-200g típico)." />
@@ -9456,7 +9456,7 @@ function EXPERIENCIA_DMT() {
           { tiempo: "90-180 segundos", fase: "BREAKTHROUGH (si dosis fue suficiente). Pérdida total de la realidad. Geometría imposible, 'entidades', sensación de estar en otro 'lugar'. Tiempo se distorsiona o desaparece." },
           { tiempo: "3-8 min", fase: "PICO. La experiencia varía enormemente: viajes interdimensionales, encuentros con seres, paisajes alienígenas, mensajes." },
           { tiempo: "8-12 min", fase: "DESCENSO. Vuelta gradual a la realidad. Visiones se desvanecen pero geometría sigue." },
-          { tiempo: "12-15 min", fase: "REGRESO. Realidad consensual vuelve. Sensación de afterglow, asombro, posible necesidad de procesar." },
+          { tiempo: "12-15 min", fase: <>REGRESO. Realidad consensual vuelve. Sensación de <GlossaryLink term="Afterglow">afterglow</GlossaryLink>, asombro, posible necesidad de procesar.</> },
           { tiempo: "1-24 horas", fase: "INTEGRACIÓN. Reflexión sobre lo experimentado. Algunos reportan cambios de perspectiva profundos. Otros: solo memoria viva." },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>

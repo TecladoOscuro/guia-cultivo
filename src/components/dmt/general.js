@@ -507,7 +507,7 @@ function EXPERIENCIA_DMT() {
           { tiempo: "90-180 segundos", fase: "BREAKTHROUGH (si dosis fue suficiente). Pérdida total de la realidad. Geometría imposible, 'entidades', sensación de estar en otro 'lugar'. Tiempo se distorsiona o desaparece." },
           { tiempo: "3-8 min", fase: "PICO. La experiencia varía enormemente: viajes interdimensionales, encuentros con seres, paisajes alienígenas, mensajes." },
           { tiempo: "8-12 min", fase: "DESCENSO. Vuelta gradual a la realidad. Visiones se desvanecen pero geometría sigue." },
-          { tiempo: "12-15 min", fase: "REGRESO. Realidad consensual vuelve. Sensación de afterglow, asombro, posible necesidad de procesar." },
+          { tiempo: "12-15 min", fase: <>REGRESO. Realidad consensual vuelve. Sensación de <GlossaryLink term="Afterglow">afterglow</GlossaryLink>, asombro, posible necesidad de procesar.</> },
           { tiempo: "1-24 horas", fase: "INTEGRACIÓN. Reflexión sobre lo experimentado. Algunos reportan cambios de perspectiva profundos. Otros: solo memoria viva." },
         ].map((t, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>

@@ -290,7 +290,7 @@ function COSECHA_SETAS_ADVANCED() {
       <StepM num={2} text="No laves con agua — el hongo es esponja, se empaparía. Usa cepillo suave si necesitas." />
 
       <SectionTitleM>ENTRE FLUSHES (COLD SHOCK + REHYDRATION)</SectionTitleM>
-      <StepM num={1} text="Después de cosechar: mete el monotub en nevera 24h a 4-10°C. Es el 'cold shock' que dispara siguiente flush." why="Imita invierno/lluvia en naturaleza. Dice al micelio: hora de reproducir de nuevo." />
+      <StepM num={1} text={<>Después de cosechar: mete el monotub en nevera 24h a 4-10°C. Es el <GlossaryLink term="Cold shock">cold shock</GlossaryLink> que dispara siguiente flush.</>} why="Imita invierno/lluvia en naturaleza. Dice al micelio: hora de reproducir de nuevo." />
       <StepM num={2} text="Pasadas 24h: saca del frío. Rocía sustrato abundantemente (casi como 'riego'). Deja 4-6h mojado." />
       <StepM num={3} text="Drena exceso de agua. Vuelve a FAE + nebulización cada 12h." />
       <StepM num={4} text="Espera 5-7 días para 2º flush. Rendimiento baja: ~60% del 1º (130-200g típico)." />

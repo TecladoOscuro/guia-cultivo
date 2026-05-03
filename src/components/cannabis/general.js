@@ -229,7 +229,7 @@ function COSECHA() {
       <Step num={12} text="Pon un higrómetro pequeño dentro de cada bote." why="La humedad dentro del bote debe estar entre 58–65%. Sin higrómetro estás completamente a ciegas." />
       <Step num={13} text="Las primeras 2 semanas: abre cada bote 15 minutos al día. Se llama 'burping'." why="El material sigue liberando humedad residual después de parecer seco. Si no la liberas, se acumula y aparece moho aunque el cogollo pareciera listo al meterlo." />
       <Step num={14} text="Si el higrómetro marca más de 70%: deja el bote abierto 1–2 horas. Si marca menos de 55%: ciérralo hasta mañana." />
-      <Step num={15} text="Mínimo 2 semanas de curado. 4 semanas es notablemente mejor. 8 semanas es lo ideal." why="El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los terpenos (el aroma y sabor final). No hay atajos posibles." />
+      <Step num={15} text={<>Mínimo 2 semanas de <GlossaryLink term="Cure / Curado">curado</GlossaryLink>. 4 semanas es notablemente mejor. 8 semanas es lo ideal.</>} why={<>El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los <GlossaryLink term="Terpeno">terpenos</GlossaryLink> (el aroma y sabor final). No hay atajos posibles.</>} />
 
       <SectionTitle color="#e63946">🚫 ERRORES QUE CUESTAN GRAMOS</SectionTitle>
       <ErrorCard error="Secar con ventilador directo encima de las ramas" consecuencia="Exterior seco, interior húmedo. Moho invisible dentro del cogollo." fix="Airflow indirecto. El aire circula en la habitación pero no apunta a las ramas." />
