@@ -31,6 +31,9 @@ function GuiaCultivo() {
   // Amanita state (single mode)
   const [activeAmanita, setActiveAmanita] = useState("intro_amanita");
 
+  // Trufas state (single mode)
+  const [activeTrufas, setActiveTrufas] = useState("intro_trufas");
+
   // Ayahuasca state (single mode)
   const [activeAyahuasca, setActiveAyahuasca] = useState("intro_aya");
 
@@ -244,6 +247,19 @@ function GuiaCultivo() {
         case "faq_amanita": return <FAQ_AMANITA />;
         default: return <INTRO_AMANITA />;
       }
+    } else if (guide === "trufas") {
+      switch (activeTrufas) {
+        case "intro_trufas": return <INTRO_TRUFAS />;
+        case "compra_trufas": return <COMPRA_TRUFAS />;
+        case "inoculacion_trufas": return <INOCULACION_TRUFAS />;
+        case "incubacion_trufas": return <INCUBACION_TRUFAS />;
+        case "cosecha_trufas": return <COSECHA_TRUFAS />;
+        case "preparacion_trufas": return <PREPARACION_TRUFAS />;
+        case "conservacion_trufas": return <CONSERVACION_TRUFAS />;
+        case "harm_reduction_trufas": return <HARM_REDUCTION_TRUFAS />;
+        case "faq_trufas": return <FAQ_TRUFAS />;
+        default: return <INTRO_TRUFAS />;
+      }
     } else if (guide === "ayahuasca") {
       switch (activeAyahuasca) {
         case "intro_aya": return <INTRO_AYA />;
@@ -348,6 +364,14 @@ function GuiaCultivo() {
     title = "🍄 Amanita Muscaria";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
+  } else if (guide === "trufas") {
+    currentPhases = trufasPhases;
+    currentActive = activeTrufas;
+    setCurrentActive = setActiveTrufas;
+    colors = TRUFAS_COLORS;
+    title = "🍯 Trufas Mágicas";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
   } else if (guide === "ayahuasca") {
     currentPhases = ayahuascaPhases;
     currentActive = activeAyahuasca;
@@ -377,6 +401,7 @@ function GuiaCultivo() {
     { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "🌱 Cultivar plantas", accent: PLANTAS_COLORS.accent1 },
     // 🍄 CULTIVAR/FORRAJEAR HONGOS
     { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "🍄 Cultivar / forrajear hongos", accent: MUSHROOM_COLORS.accent1 },
+    { id: "trufas", emoji: "🍯", label: "Trufas mágicas", grupo: "🍄 Cultivar / forrajear hongos", accent: TRUFAS_COLORS.accent1 },
     { id: "amanita", emoji: "🟥", label: "Amanita", grupo: "🍄 Cultivar / forrajear hongos", accent: AMANITA_COLORS.accent1 },
     // 🫙 FERMENTAR
     { id: "ferment", emoji: "🍯", label: "Fermentar", grupo: "🫙 Fermentar", accent: FERMENT_COLORS.accent1 },
@@ -565,6 +590,11 @@ function GuiaCultivo() {
         {guide === "amanita" && (
           <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
             🟥 Forrajeo otoño + decarboxilación. Identificación correcta es CRÍTICA.
+          </div>
+        )}
+        {guide === "trufas" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🍯 Esclerocios subterráneos · 8-16 semanas · MÁS FÁCIL que setas (sin fructificación)
           </div>
         )}
         {guide === "ayahuasca" && (

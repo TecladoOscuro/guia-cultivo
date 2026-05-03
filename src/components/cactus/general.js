@@ -6,7 +6,7 @@ function INTRO_CACTUS() {
   return (
     <div>
       <InfoBoxX c={c}>
-        Cactus columnares con mescalina (alcaloide visionario tipo ayahuasca/peyote). Cultivar como ornamental es 100% legal en España; consumo entra en zona gris. Esta guía cubre cultivo + preparación. NO da recetas de extracción química.
+        Cactus columnares con <GlossaryLink term="Mescalina">mescalina</GlossaryLink> (<GlossaryLink term="Alcaloide">alcaloide</GlossaryLink> visionario tipo ayahuasca/peyote). Cultivar como ornamental es 100% legal en España; consumo entra en zona gris. Esta guía cubre cultivo + preparación. NO da recetas de extracción química.
       </InfoBoxX>
 
       <SectionTitleX c={c}>VARIEDADES PRINCIPALES</SectionTitleX>

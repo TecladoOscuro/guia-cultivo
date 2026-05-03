@@ -39,7 +39,7 @@ function INTRO_DMT() {
       </InfoBoxX>
 
       <WarningBoxX c={c}>
-        ⚠️ <strong>DMT FUMADO ES INTENSO.</strong> Es probablemente la experiencia psicodélica más fuerte conocida. NO recreativo en sentido fiestero. Requiere preparación mental, set/setting, y MUCHO respeto. Primera vez = posible "breakthrough" que muchos describen como "encontrarse con entidades". No es para todo el mundo. Investiga antes en Erowid.
+        ⚠️ <strong>DMT FUMADO ES INTENSO.</strong> Es probablemente la experiencia psicodélica más fuerte conocida. NO recreativo en sentido fiestero. Requiere preparación mental, <GlossaryLink term="Set & Setting">set/setting</GlossaryLink>, y MUCHO respeto. Primera vez = posible <GlossaryLink term="Breakthrough">"breakthrough"</GlossaryLink> que muchos describen como "encontrarse con entidades". No es para todo el mundo. Investiga antes en Erowid.
       </WarningBoxX>
 
       <SectionTitleX c={c}>TIMELINE PROYECTO COMPLETO</SectionTitleX>
@@ -444,7 +444,7 @@ function CONSUMO_DMT() {
 
       <SectionTitleX c={c}>RAPÉ YOPO (SNORTADO)</SectionTitleX>
       <InfoBoxX c={c}>
-        Tradicional indígena. Polvo de semillas tostadas y trituradas de Anadenanthera peregrina, soplado por la nariz con un tubo. Contiene DMT + bufotenina (5-HO-DMT) + 5-MeO-DMT.<br/><br/>
+        Tradicional indígena. Polvo de semillas tostadas y trituradas de Anadenanthera peregrina, soplado por la nariz con un tubo. Contiene DMT + <GlossaryLink term="Bufotenina (5-HO-DMT)">bufotenina (5-HO-DMT)</GlossaryLink> + <GlossaryLink term="5-MeO-DMT">5-MeO-DMT</GlossaryLink>.<br/><br/>
         Efecto: muy intenso, dura 30-60 min. Picazón nasal extrema, lágrimeo, posibles náuseas. Visión cerrada profunda.<br/><br/>
         Solo experimentados. Cultivo del árbol posible pero MUY lento.
       </InfoBoxX>
@@ -510,7 +510,7 @@ function EXPERIENCIA_DMT() {
         fix="Set/setting. Sitter. Recordar 'esto pasa en 15 min'. Respiración lenta. La experiencia siempre termina."
       />
       <ErrorCardX c={c}
-        error="HPPD (trastorno persistente de percepción)"
+        error={<><GlossaryLink term="HPPD">HPPD</GlossaryLink> (trastorno persistente de percepción)</>}
         consecuencia="Raro pero posible: alteraciones visuales persistentes después de la experiencia (motas, halos, geometría leve)."
         fix="Más común con uso frecuente. Espaciar experiencias mínimo 1 mes."
       />

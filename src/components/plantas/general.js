@@ -158,7 +158,7 @@ function SALVIA() {
   return (
     <div>
       <InfoBoxX c={c}>
-        <strong>Salvia divinorum</strong> — planta mexicana con salvinorina A, el psicoactivo natural más potente conocido. Experiencia disociativa intensa de 5-15 min. NO es como cannabis o setas — es completamente distinto, alienante, a veces aterrador. Solo para gente que entiende lo que va a hacer.
+        <strong>Salvia divinorum</strong> — planta mexicana con <GlossaryLink term="Salvinorina A">salvinorina A</GlossaryLink>, el <GlossaryLink term="Psicoactivo">psicoactivo</GlossaryLink> natural más potente conocido. Experiencia disociativa intensa de 5-15 min. NO es como cannabis o setas — es completamente distinto, alienante, a veces aterrador. Solo para gente que entiende lo que va a hacer.
       </InfoBoxX>
 
       <WarningBoxX c={c}>
@@ -475,7 +475,7 @@ function KAVA() {
   return (
     <div>
       <InfoBoxX c={c}>
-        <strong>Kava (Piper methysticum)</strong> — arbusto del Pacífico (Hawaii, Fiji, Vanuatu). Bebida ceremonial milenaria. Efecto: relajación muscular profunda + ansiolítico + leve euforia social. SIN deterioro cognitivo ni resaca. Legal en España.
+        <strong>Kava (Piper methysticum)</strong> — arbusto del Pacífico (Hawaii, Fiji, Vanuatu). Bebida ceremonial milenaria. Activos: <GlossaryLink term="Kavalactona">kavalactonas</GlossaryLink>. Efecto: relajación muscular profunda + ansiolítico + leve euforia social. SIN deterioro cognitivo ni resaca. Legal en España.
       </InfoBoxX>
 
       <SectionTitleX c={c}>POR QUÉ KAVA</SectionTitleX>
@@ -583,7 +583,7 @@ function KANNA() {
   return (
     <div>
       <InfoBoxX c={c}>
-        <strong>Kanna (Sceletium tortuosum)</strong> — suculenta sudafricana, usada por bosquimanos hace 400 años. Activos: mesembrina, mesembrenona — actúan como SSRI natural + leve euforia. Antidepresivo, ansiolítico, social. Legal en España.
+        <strong>Kanna (Sceletium tortuosum)</strong> — suculenta sudafricana, usada por bosquimanos hace 400 años. Activos: <GlossaryLink term="Mesembrina">mesembrina</GlossaryLink>, mesembrenona — actúan como SSRI natural + leve euforia. Antidepresivo, ansiolítico, social. Legal en España.
       </InfoBoxX>
 
       <SectionTitleX c={c}>POR QUÉ KANNA</SectionTitleX>
@@ -799,7 +799,7 @@ function MUCUNA() {
   return (
     <div>
       <InfoBoxX c={c}>
-        <strong>Mucuna pruriens</strong> — leguminosa trepadora tropical. Semillas con 4-7% de <strong>L-DOPA natural</strong> (precursor de dopamina). Eufórica sutil, mejora ánimo, libido, recuperación muscular. Suplemento popular en biohacking.
+        <strong>Mucuna pruriens</strong> — leguminosa trepadora tropical. Semillas con 4-7% de <strong><GlossaryLink term="L-DOPA">L-DOPA</GlossaryLink> natural</strong> (precursor de dopamina). Eufórica sutil, mejora ánimo, libido, recuperación muscular. Suplemento popular en biohacking.
       </InfoBoxX>
 
       <SectionTitleX c={c}>POR QUÉ MUCUNA</SectionTitleX>

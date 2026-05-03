@@ -68,6 +68,16 @@ const AYAHUASCA_COLORS = {
   error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
 };
 
+// Trufas mágicas (esclerocios Psilocybe) — marrón-oliva subterráneo
+const TRUFAS_COLORS = {
+  bg: "#0c0e0a", bg2: "#161812", bg3: "#22241c", bg4: "#2e3024",
+  border1: "#3a3d2e", border2: "#535742", borderAccent: "#6e7256",
+  accent1: "#8a8e6e", accent2: "#a4a785", accent3: "#bfc0a0", accent4: "#d9dabd", accent5: "#ecedda",
+  text: "#e6e6cc", textBright: "#f4f4dc",
+  gradient: "linear-gradient(135deg, #3a3d2e 0%, #6e7256 50%, #3a3d2e 100%)",
+  error: "#d4755b", errorBg: "#1a0c08", errorBorder: "#5a3020",
+};
+
 // DMT — amarillo-dorado cristal psicodélico
 const DMT_COLORS = {
   bg: "#0a0a14", bg2: "#10101e", bg3: "#181828", bg4: "#222236",

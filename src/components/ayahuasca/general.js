@@ -12,7 +12,7 @@ function INTRO_AYA() {
       <SectionTitleX c={c}>QUÉ HACE QUÉ</SectionTitleX>
       <div style={{ display: "grid", gap: "10px", marginBottom: "20px" }}>
         {[
-          { nombre: "🌿 Caapi (vid)", aporta: <><GlossaryLink term="IMAO">IMAOs</GlossaryLink> (harmina, harmalina) — bloquean la enzima MAO en el estómago para que el DMT pueda llegar al cerebro. También aportan efectos propios: estado meditativo, calma, purga (limpieza física)</> },
+          { nombre: "🌿 Caapi (vid)", aporta: <><GlossaryLink term="IMAO">IMAOs</GlossaryLink> (<GlossaryLink term="Harmina / Harmalina">harmina, harmalina</GlossaryLink>) — bloquean la enzima MAO en el estómago para que el DMT pueda llegar al cerebro. También aportan efectos propios: estado meditativo, calma, purga (limpieza física)</> },
           { nombre: "🍃 Chacruna (hojas)", aporta: <>DMT — el psicoactivo visionario. Sin IMAO sería destruido en estómago. Combinado con Caapi = experiencia oral 4-6h</> },
           { nombre: "💧 Agua + cocción larga", aporta: <>Extrae alcaloides de ambas plantas. Cocción 6-12h, varias rondas, reducción a brebaje espeso</> },
         ].map((p, i) => (
@@ -435,6 +435,9 @@ function CEREMONIA_AYA() {
       </InfoBoxX>
 
       <SectionTitleX c={c}>SET (PREPARACIÓN MENTAL)</SectionTitleX>
+      <InfoBoxX c={c}>
+        El concepto de <GlossaryLink term="Set & Setting">set & setting</GlossaryLink> es fundamental — más del 50% de la experiencia depende de tu estado mental + entorno físico, más que del brebaje en sí.
+      </InfoBoxX>
       <StepX c={c} num={1} text="Define tu intención: ¿por qué tomas ayahuasca? ¿Qué quieres procesar/explorar? Escríbelo." />
       <StepX c={c} num={2} text="Días previos: meditar, journaling, evitar conflictos, preparar mentalmente." />
       <StepX c={c} num={3} text="No tomar si: estás en crisis emocional aguda, depresión severa, paranoia activa, embarazo, lactancia, hay diagnóstico psiquiátrico (esquizofrenia, bipolar)." warning />
@@ -448,7 +451,7 @@ function CEREMONIA_AYA() {
 
       <SectionTitleX c={c}>SITTER (ACOMPAÑANTE)</SectionTitleX>
       <InfoBoxX c={c}>
-        Una persona SOBRIA durante toda la sesión. Funciones:<br/>
+        Una persona SOBRIA (<GlossaryLink term="Sitter / Acompañante">sitter</GlossaryLink>) durante toda la sesión. Funciones:<br/>
         🤝 Tranquilizar si hay pánico (recordar "esto pasa en horas")<br/>
         🚰 Asegurar agua, manta si frío, cubo si vómito<br/>
         🚨 Llamar emergencias si hay reacción física grave (ratísimo)<br/>

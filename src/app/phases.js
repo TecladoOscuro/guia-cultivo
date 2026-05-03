@@ -145,6 +145,19 @@ const amanitaPhases = [
   { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
 ];
 
+// Trufas mágicas (esclerocios Psilocybe tampanensis/mexicana/atlantis)
+const trufasPhases = [
+  { id: "intro_trufas", emoji: "🌟", title: "Intro", subtitle: "Qué son trufas" },
+  { id: "compra_trufas", emoji: "🛒", title: "Compra", subtitle: "Esporada + equipo" },
+  { id: "inoculacion_trufas", emoji: "💉", title: "Inoculación", subtitle: "Esporas en grano" },
+  { id: "incubacion_trufas", emoji: "🔮", title: "Incubación", subtitle: "8-16 semanas oscuro" },
+  { id: "cosecha_trufas", emoji: "✂️", title: "Cosecha", subtitle: "Esclerocios del frasco" },
+  { id: "preparacion_trufas", emoji: "🍯", title: "Preparación", subtitle: "Consumo + dosis" },
+  { id: "conservacion_trufas", emoji: "🫙", title: "Conservación", subtitle: "Frescas/secas/miel" },
+  { id: "harm_reduction_trufas", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
+  { id: "faq_trufas", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+];
+
 // Ayahuasca — vid + arbusto + brebaje
 const ayahuascaPhases = [
   { id: "intro_aya", emoji: "🌟", title: "Intro", subtitle: "Qué es ayahuasca" },

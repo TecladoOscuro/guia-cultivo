@@ -7,12 +7,12 @@ function INTRO_AMANITA() {
   return (
     <div>
       <InfoBoxX c={c}>
-        <strong>Amanita muscaria</strong> — el hongo rojo con motas blancas de los cuentos. Activos: muscimol + ácido iboténico. Efectos disociativos/oníricos, MUY DIFERENTES a Psilocybe (no es serotonérgico, es GABAérgico). Conocido por chamanes siberianos durante miles de años.
+        <strong>Amanita muscaria</strong> — el hongo rojo con motas blancas de los cuentos. Activos: <GlossaryLink term="Muscimol">muscimol</GlossaryLink> + <GlossaryLink term="Ácido iboténico">ácido iboténico</GlossaryLink>. Efectos disociativos/oníricos, MUY DIFERENTES a Psilocybe (no es serotonérgico, es GABAérgico). Conocido por chamanes siberianos durante miles de años.
       </InfoBoxX>
 
       <SectionTitleX c={c}>POR QUÉ ESTA SECCIÓN ES DIFERENTE</SectionTitleX>
       <InfoBoxX c={c}>
-        Amanita muscaria NO se cultiva — vive en simbiosis con raíces de árboles (micorriza con abedules, pinos, abetos). Imposible reproducir esa relación en casa. La única forma de conseguirlo es FORRAJEO — recogerlo en bosque otoño. Esta guía cubre identificación, recolección, secado, decarboxilación y consumo seguro.
+        Amanita muscaria NO se cultiva — vive en simbiosis con raíces de árboles (<GlossaryLink term="Micorriza">micorriza</GlossaryLink> con abedules, pinos, abetos). Imposible reproducir esa relación en casa. La única forma de conseguirlo es <GlossaryLink term="Forrajeo">forrajeo</GlossaryLink> — recogerlo en bosque otoño. Esta guía cubre identificación, recolección, secado, <GlossaryLink term="Decarboxilación / Decarbox">decarboxilación</GlossaryLink> y consumo seguro.
       </InfoBoxX>
 
       <SectionTitleX c={c}>EFECTOS — QUÉ ESPERAR</SectionTitleX>
