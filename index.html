@@ -21,7 +21,7 @@
     /* Override inline Georgia, serif fontFamily across all components */
     [style*="Georgia"] { font-family: 'Inter', system-ui, sans-serif !important; }
 
-    /* Guides toggle: dropdown en mobile, fila en desktop */
+    /* Guides toggle: dropdown en mobile, filas en desktop */
     @media (min-width: 900px) {
       .guides-dropdown { display: none !important; }
       .guides-row { display: flex !important; }
@@ -8508,15 +8508,14 @@ function GuiaCultivo() {
           )}
         </div>
 
-        {/* DESKTOP: fila horizontal con separadores de grupo */}
-        <div className="guides-row" style={{ marginBottom: "16px", display: "none", alignItems: "center", justifyContent: "center", gap: "8px", flexWrap: "wrap", rowGap: "8px" }}>
-          {Object.entries(grupos).map(([grupoLabel, gs], gi) => (
-            <React.Fragment key={grupoLabel}>
-              {gi > 0 && <div style={{ width: "1px", height: "20px", background: colors.border1, opacity: 0.5 }} />}
+        {/* DESKTOP: 3 filas, una por grupo */}
+        <div className="guides-row" style={{ marginBottom: "16px", display: "none", flexDirection: "column", gap: "6px" }}>
+          {Object.entries(grupos).map(([grupoLabel, gs]) => (
+            <div key={grupoLabel} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", flexWrap: "wrap" }}>
               <span style={{
                 fontSize: "9px", letterSpacing: "1.5px", color: colors.accent2, opacity: 0.6,
-                textTransform: "uppercase", fontWeight: "bold", marginRight: "4px",
-              }}>{grupoLabel.replace(/^.+? /, '')}</span>
+                textTransform: "uppercase", fontWeight: "bold", minWidth: "180px", textAlign: "right",
+              }}>{grupoLabel}</span>
               {gs.map(g => {
                 const active = guide === g.id;
                 return (
@@ -8531,7 +8530,7 @@ function GuiaCultivo() {
                   </button>
                 );
               })}
-            </React.Fragment>
+            </div>
           ))}
         </div>
         <h1 className="heading-serif" style={{ fontSize: "22px", fontWeight: "bold", margin: "0 0 16px", color: colors.textBright }}>
