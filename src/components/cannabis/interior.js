@@ -616,9 +616,74 @@ function VEGETATIVA() {
       </InfoBox>
 
       <SectionTitle>EL RIEGO — LO MÁS IMPORTANTE DE TODA LA GUÍA</SectionTitle>
-      <Step num={1} text="Antes de regar, mete el dedo índice 2cm en el sustrato. Si notas húmedo: NO riegas. Si notas seco: riegas." why="El error nº1 de principiantes es regar por rutina ('toca regar hoy'). Las plantas no tienen calendario. La sobreirrigación mata más plantas que cualquier otra cosa porque las raíces se asfixian sin oxígeno." />
-      <Step num={2} text="Cuando riegues, hazlo hasta que salga agua por los agujeros de abajo de la maceta." why="Así te aseguras de que toda la tierra se humedece uniformemente. El agua que drena por abajo es normal, no la desperdicies — significa que llegó a todas las raíces." />
-      <Step num={3} text="Levanta la maceta justo después de regar. Nota su peso. Vuelve a regar solo cuando se sienta claramente más ligera." why="Una maceta mojada pesa el doble que una seca. En pocas semanas aprenderás a saber solo con el peso si necesita agua. Es la habilidad más útil del cultivo." />
+
+      <InfoBox>
+        Si NUNCA has cultivado: lee esto entero. El riego es el 80% del éxito o fracaso. No es complicado, pero hay que entender los números — no regar "por rutina" sino por NECESIDAD.
+      </InfoBox>
+
+      <SectionTitle color="#52b788">CANTIDADES EXACTAS POR SEMANA (MACETA 11L)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>📏 TABLA DE RIEGO PARA NOVATOS</div>
+        {[
+          { sem: "Semana 1-2 (plántula 5-15cm)", ml: "100-200ml", freq: "cada 3-4 días", nota: "Solo agua, sin nutrientes. La planta es pequeña — más agua = encharcamiento." },
+          { sem: "Semana 3-4 (planta joven 15-30cm)", ml: "300-500ml", freq: "cada 2-3 días", nota: "Empieza nutrientes BioGrow 1ml/L. Verifica que el agua salga por debajo." },
+          { sem: "Semana 5-6 (vegetativa madura 30-50cm)", ml: "500-800ml", freq: "cada 2-3 días", nota: "Bio Grow 2-3ml/L. La planta bebe MÁS — observa peso de maceta." },
+          { sem: "Semana 7-8 (transición a flor)", ml: "800ml-1L", freq: "cada 2 días", nota: "Cambio gradual a Bio Bloom. Plantas grandes pueden necesitar más." },
+          { sem: "Semana 9-12 (floración)", ml: "1-2L", freq: "cada 2 días en pico", nota: "Pico de consumo de agua. Cogollos creciendo. Bio Bloom 2-4ml/L." },
+          { sem: "Última semana (lavado)", ml: "1-2L", freq: "cada 2 días", nota: "Solo agua con pH 6.3, sin nutrientes. Limpia las raíces antes de cosecha." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.sem}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2" }}>💧 <strong>{row.ml}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle color="#52b788">EL pH DEL AGUA — IMPRESCINDIBLE</SectionTitle>
+      <InfoBox>
+        🧪 <strong>pH objetivo: 6.2-6.5</strong> en sustrato (BioBizz Light Mix). Fuera de este rango la planta NO PUEDE absorber nutrientes aunque estén ahí. El error nº1 de principiantes es no medir pH.<br/><br/>
+        El agua del grifo en España suele estar pH 7-8 (alcalina). Hay que <strong>BAJARLO con pH Down</strong> antes de regar.
+      </InfoBox>
+
+      <Step num={1} text={<>Llena la regadera con agua del grifo. <strong>Espera 24h</strong> en jarra abierta — el cloro se evapora.</>} why="Cloro mata bacterias beneficiosas del sustrato y puede dañar raíces sensibles." />
+      <Step num={2} text={<>Mide el pH con pHmetro digital (15-30€). Anota el valor. Probablemente será 7.0-7.8.</>} />
+      <Step num={3} text={<>Añade pH Down GOTA A GOTA (líquido pH-): 1-2 gotas por litro de agua. Mezcla y mide otra vez.</>} why="Empieza con 1 gota — el pH Down es muy concentrado. Sobre-acidificar (pH &lt;5) es peor que pH alto." />
+      <Step num={4} text={<>Repite hasta llegar a <strong>pH 6.2-6.5</strong>. Listo para regar.</>} />
+      <Step num={5} text={<>(Opcional, intermedio) Mide el pH del 'runoff' — el agua que sale por abajo de la maceta. Debe ser similar al que entró (±0.5). Si difiere &gt;0.5, el sustrato tiene acumulación de sales. Solución: <GlossaryLink guide="cannabis" term="Lavado de raíces">lavado de raíces</GlossaryLink>.</>} />
+
+      <SectionTitle color="#52b788">SEÑALES VISUALES — QUÉ MIRAR PARA SABER QUÉ HACER</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 LO QUE DEBES NOTAR EN LA PLANTA</div>
+        {[
+          { signo: "✅ Hojas firmes apuntando hacia arriba (turgentes)", lectura: "PERFECTO. Riego correcto, planta hidratada y feliz. NO toques nada." },
+          { signo: "🟡 Hojas LIGERAMENTE caídas hacia abajo (las puntas)", lectura: "PROBABLEMENTE FALTA AGUA. Verifica con el dedo. Si seco a 2cm: regar." },
+          { signo: "❌ Hojas MUY caídas, rama colgando, planta marchita", lectura: "EMERGENCIA. Riega YA con 500ml-1L. Recuperación en 4-12h si no es muy tarde." },
+          { signo: "❌ Hojas MUY caídas pero el sustrato está empapado", lectura: "ENCHARCAMIENTO. PARA de regar. Espera 5-7 días sin agua. Si sigue mal: trasplante a sustrato seco." },
+          { signo: "🟡 Puntas de hojas amarillas/marrones", lectura: "Quemadura de nutrientes (sobrealimentación) o pH mal. Reduce dosis 50% y verifica pH." },
+          { signo: "🟡 Hojas bajas amarillas, hojas altas verdes", lectura: "Deficiencia de Nitrógeno. Sube Bio Grow a 2-3ml/L." },
+          { signo: "🟡 Hojas RIZADAS hacia ARRIBA (forma de canoa)", lectura: "CALOR/SED. Temperatura demasiado alta o falta agua. Verifica ambos." },
+          { signo: "🟡 Hojas RIZADAS hacia ABAJO (puntas hacia el tallo)", lectura: "EXCESO DE NUTRIENTES o riego excesivo. Reduce dosis y/o salta un riego." },
+          { signo: "🟡 Manchas blancas/oscuras en hojas medias", lectura: "Posible deficiencia de Calcio/Magnesio o pH bajo. Verifica pH agua." },
+          { signo: "✅ Crecimiento vigoroso 2-5cm/día en vegetativa", lectura: "TODO BIEN. Eres un cultivador feliz. Sigue así." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 9 ? "1px solid #1b4332" : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: "#d8f3dc", marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle color="#52b788">CÓMO SABER CUÁNDO REGAR (3 MÉTODOS)</SectionTitle>
+      <Step num={1} text={<><strong>Método 1 (mejor para empezar): el dedo.</strong> Mete el dedo índice 2-3cm en el sustrato. Si notas HÚMEDO: NO regar (espera 1 día). Si notas SECO o ligeramente fresco: REGAR.</>} why="Las raíces necesitan ciclos de 'mojado y seco' para crecer. Sustrato siempre húmedo = raíces sin oxígeno = pudrición." />
+      <Step num={2} text={<><strong>Método 2: el peso.</strong> Levanta la maceta justo tras regar. Memoriza ese peso. Cuando se sienta CLARAMENTE MÁS LIGERA = hora de regar. Una maceta seca pesa la mitad que mojada.</>} />
+      <Step num={3} text={<><strong>Método 3 (avanzado): el medidor.</strong> Higrómetros de sustrato (5-15€) miden humedad %. Regar cuando llegue a 30-40%. Sobra para empezar — el dedo basta.</>} />
+
+      <SectionTitle color="#52b788">TÉCNICA DE RIEGO</SectionTitle>
+      <Step num={1} text={<>Riega <strong>LENTAMENTE</strong> en círculos alrededor del tallo. NO sobre el tallo directamente.</>} why="Riego rápido erosiona el sustrato y compacta la zona. Riego lento penetra uniformemente." />
+      <Step num={2} text={<>Riega hasta que veas agua salir por los agujeros de abajo (el plato debajo se llena). Es señal de que el agua llegó hasta el fondo.</>} />
+      <Step num={3} text={<>Vacía el plato 30 min después. Dejar la maceta sentada en agua = raíces ahogadas.</>} warning />
+      <Step num={4} text={<>NO regar de noche con luz apagada — sin luz no transpiran y queda agua sin uso → moho. Regar al inicio del fotoperiodo (cuando se enciende la luz).</>} />
 
       <SectionTitle>LA LUZ</SectionTitle>
       <Step num={4} text="Semanas 1–2: luz a 60–70cm de la planta." />

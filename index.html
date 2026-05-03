@@ -1320,9 +1320,74 @@ function VEGETATIVA() {
       </InfoBox>
 
       <SectionTitle>EL RIEGO — LO MÁS IMPORTANTE DE TODA LA GUÍA</SectionTitle>
-      <Step num={1} text="Antes de regar, mete el dedo índice 2cm en el sustrato. Si notas húmedo: NO riegas. Si notas seco: riegas." why="El error nº1 de principiantes es regar por rutina ('toca regar hoy'). Las plantas no tienen calendario. La sobreirrigación mata más plantas que cualquier otra cosa porque las raíces se asfixian sin oxígeno." />
-      <Step num={2} text="Cuando riegues, hazlo hasta que salga agua por los agujeros de abajo de la maceta." why="Así te aseguras de que toda la tierra se humedece uniformemente. El agua que drena por abajo es normal, no la desperdicies — significa que llegó a todas las raíces." />
-      <Step num={3} text="Levanta la maceta justo después de regar. Nota su peso. Vuelve a regar solo cuando se sienta claramente más ligera." why="Una maceta mojada pesa el doble que una seca. En pocas semanas aprenderás a saber solo con el peso si necesita agua. Es la habilidad más útil del cultivo." />
+
+      <InfoBox>
+        Si NUNCA has cultivado: lee esto entero. El riego es el 80% del éxito o fracaso. No es complicado, pero hay que entender los números — no regar "por rutina" sino por NECESIDAD.
+      </InfoBox>
+
+      <SectionTitle color="#52b788">CANTIDADES EXACTAS POR SEMANA (MACETA 11L)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>📏 TABLA DE RIEGO PARA NOVATOS</div>
+        {[
+          { sem: "Semana 1-2 (plántula 5-15cm)", ml: "100-200ml", freq: "cada 3-4 días", nota: "Solo agua, sin nutrientes. La planta es pequeña — más agua = encharcamiento." },
+          { sem: "Semana 3-4 (planta joven 15-30cm)", ml: "300-500ml", freq: "cada 2-3 días", nota: "Empieza nutrientes BioGrow 1ml/L. Verifica que el agua salga por debajo." },
+          { sem: "Semana 5-6 (vegetativa madura 30-50cm)", ml: "500-800ml", freq: "cada 2-3 días", nota: "Bio Grow 2-3ml/L. La planta bebe MÁS — observa peso de maceta." },
+          { sem: "Semana 7-8 (transición a flor)", ml: "800ml-1L", freq: "cada 2 días", nota: "Cambio gradual a Bio Bloom. Plantas grandes pueden necesitar más." },
+          { sem: "Semana 9-12 (floración)", ml: "1-2L", freq: "cada 2 días en pico", nota: "Pico de consumo de agua. Cogollos creciendo. Bio Bloom 2-4ml/L." },
+          { sem: "Última semana (lavado)", ml: "1-2L", freq: "cada 2 días", nota: "Solo agua con pH 6.3, sin nutrientes. Limpia las raíces antes de cosecha." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.sem}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2" }}>💧 <strong>{row.ml}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle color="#52b788">EL pH DEL AGUA — IMPRESCINDIBLE</SectionTitle>
+      <InfoBox>
+        🧪 <strong>pH objetivo: 6.2-6.5</strong> en sustrato (BioBizz Light Mix). Fuera de este rango la planta NO PUEDE absorber nutrientes aunque estén ahí. El error nº1 de principiantes es no medir pH.<br/><br/>
+        El agua del grifo en España suele estar pH 7-8 (alcalina). Hay que <strong>BAJARLO con pH Down</strong> antes de regar.
+      </InfoBox>
+
+      <Step num={1} text={<>Llena la regadera con agua del grifo. <strong>Espera 24h</strong> en jarra abierta — el cloro se evapora.</>} why="Cloro mata bacterias beneficiosas del sustrato y puede dañar raíces sensibles." />
+      <Step num={2} text={<>Mide el pH con pHmetro digital (15-30€). Anota el valor. Probablemente será 7.0-7.8.</>} />
+      <Step num={3} text={<>Añade pH Down GOTA A GOTA (líquido pH-): 1-2 gotas por litro de agua. Mezcla y mide otra vez.</>} why="Empieza con 1 gota — el pH Down es muy concentrado. Sobre-acidificar (pH &lt;5) es peor que pH alto." />
+      <Step num={4} text={<>Repite hasta llegar a <strong>pH 6.2-6.5</strong>. Listo para regar.</>} />
+      <Step num={5} text={<>(Opcional, intermedio) Mide el pH del 'runoff' — el agua que sale por abajo de la maceta. Debe ser similar al que entró (±0.5). Si difiere &gt;0.5, el sustrato tiene acumulación de sales. Solución: <GlossaryLink guide="cannabis" term="Lavado de raíces">lavado de raíces</GlossaryLink>.</>} />
+
+      <SectionTitle color="#52b788">SEÑALES VISUALES — QUÉ MIRAR PARA SABER QUÉ HACER</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 LO QUE DEBES NOTAR EN LA PLANTA</div>
+        {[
+          { signo: "✅ Hojas firmes apuntando hacia arriba (turgentes)", lectura: "PERFECTO. Riego correcto, planta hidratada y feliz. NO toques nada." },
+          { signo: "🟡 Hojas LIGERAMENTE caídas hacia abajo (las puntas)", lectura: "PROBABLEMENTE FALTA AGUA. Verifica con el dedo. Si seco a 2cm: regar." },
+          { signo: "❌ Hojas MUY caídas, rama colgando, planta marchita", lectura: "EMERGENCIA. Riega YA con 500ml-1L. Recuperación en 4-12h si no es muy tarde." },
+          { signo: "❌ Hojas MUY caídas pero el sustrato está empapado", lectura: "ENCHARCAMIENTO. PARA de regar. Espera 5-7 días sin agua. Si sigue mal: trasplante a sustrato seco." },
+          { signo: "🟡 Puntas de hojas amarillas/marrones", lectura: "Quemadura de nutrientes (sobrealimentación) o pH mal. Reduce dosis 50% y verifica pH." },
+          { signo: "🟡 Hojas bajas amarillas, hojas altas verdes", lectura: "Deficiencia de Nitrógeno. Sube Bio Grow a 2-3ml/L." },
+          { signo: "🟡 Hojas RIZADAS hacia ARRIBA (forma de canoa)", lectura: "CALOR/SED. Temperatura demasiado alta o falta agua. Verifica ambos." },
+          { signo: "🟡 Hojas RIZADAS hacia ABAJO (puntas hacia el tallo)", lectura: "EXCESO DE NUTRIENTES o riego excesivo. Reduce dosis y/o salta un riego." },
+          { signo: "🟡 Manchas blancas/oscuras en hojas medias", lectura: "Posible deficiencia de Calcio/Magnesio o pH bajo. Verifica pH agua." },
+          { signo: "✅ Crecimiento vigoroso 2-5cm/día en vegetativa", lectura: "TODO BIEN. Eres un cultivador feliz. Sigue así." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 9 ? "1px solid #1b4332" : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: "#d8f3dc", marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle color="#52b788">CÓMO SABER CUÁNDO REGAR (3 MÉTODOS)</SectionTitle>
+      <Step num={1} text={<><strong>Método 1 (mejor para empezar): el dedo.</strong> Mete el dedo índice 2-3cm en el sustrato. Si notas HÚMEDO: NO regar (espera 1 día). Si notas SECO o ligeramente fresco: REGAR.</>} why="Las raíces necesitan ciclos de 'mojado y seco' para crecer. Sustrato siempre húmedo = raíces sin oxígeno = pudrición." />
+      <Step num={2} text={<><strong>Método 2: el peso.</strong> Levanta la maceta justo tras regar. Memoriza ese peso. Cuando se sienta CLARAMENTE MÁS LIGERA = hora de regar. Una maceta seca pesa la mitad que mojada.</>} />
+      <Step num={3} text={<><strong>Método 3 (avanzado): el medidor.</strong> Higrómetros de sustrato (5-15€) miden humedad %. Regar cuando llegue a 30-40%. Sobra para empezar — el dedo basta.</>} />
+
+      <SectionTitle color="#52b788">TÉCNICA DE RIEGO</SectionTitle>
+      <Step num={1} text={<>Riega <strong>LENTAMENTE</strong> en círculos alrededor del tallo. NO sobre el tallo directamente.</>} why="Riego rápido erosiona el sustrato y compacta la zona. Riego lento penetra uniformemente." />
+      <Step num={2} text={<>Riega hasta que veas agua salir por los agujeros de abajo (el plato debajo se llena). Es señal de que el agua llegó hasta el fondo.</>} />
+      <Step num={3} text={<>Vacía el plato 30 min después. Dejar la maceta sentada en agua = raíces ahogadas.</>} warning />
+      <Step num={4} text={<>NO regar de noche con luz apagada — sin luz no transpiran y queda agua sin uso → moho. Regar al inicio del fotoperiodo (cuando se enciende la luz).</>} />
 
       <SectionTitle>LA LUZ</SectionTitle>
       <Step num={4} text="Semanas 1–2: luz a 60–70cm de la planta." />
@@ -4586,6 +4651,35 @@ function CONCEPTOS_SETAS() {
     { term: "Micorriza", def: "Simbiosis raíz de planta + hongo subterráneo. Hongo da minerales del suelo a la planta, planta da azúcares al hongo. Amanita muscaria es micorrícica obligatoria (necesita árboles compatibles — abedul, pino, abeto). Por eso NO se cultiva en casa." },
     { term: "Forrajeo", def: "Recolección de plantas/hongos silvestres para uso humano. Para Amanita: bosques de abedules/pinos en otoño tras lluvia. Requiere identificación experta — confusión con especies tóxicas puede ser MORTAL. Sociedad micológica local = mejor recurso." },
     { term: "Decarboxilación / Decarbox", def: "Reacción química que convierte una forma de molécula en otra activa. Cannabis: THCA → THC con calor (105°C+). Amanita: ácido iboténico → muscimol con secado prolongado. La decarboxilación es lo que activa el efecto psicoactivo en muchas sustancias." },
+    { term: "Lemon tek", def: "Técnica para potenciar setas Psilocybe. Macerar setas trituradas en zumo de limón 15-20 min antes de tomar. El ácido convierte psilocibina → psilocina más rápido. Resultado: efecto en 15 min vs 30-60 min, viaje más intenso pero más corto (2-3h vs 4-6h)." },
+    { term: "Cold shock", def: "Bajada brusca de temperatura para inducir fructificación de hongos. Setas Psilocybe: 24h en nevera entre flushes para estimular siguiente cosecha. Imita lluvias de otoño en naturaleza. También aplicable a Amanita y otros hongos." },
+    { term: "Pinning", def: "Aparición de los primeros 'pinheads' (primordios pequeños) en cultivo de setas. Marca el inicio de la fructificación. Disparado por: humedad alta, FAE, light shock, bajada de temperatura. Ver Primordio/Pinhead." },
+    { term: "S2B (Spawn-to-Bulk)", def: "Ratio de mezcla en bulk tek de setas. Típico 1:2 o 1:3 (1 parte spawn colonizado + 2-3 partes bulk substrate). Más spawn = colonización rápida pero menor rendimiento por gramo. Menos spawn = riesgo contaminación pero más eficiente." },
+    { term: "PF Tek", def: "Técnica clásica para cultivar setas Psilocybe en frasco con sustrato (vermiculita + harina arroz integral + agua). Inventada por Robert McPherson 'Psilocybe Fanaticus'. Más simple que bulk tek pero menor rendimiento. Buena para empezar con setas." },
+    { term: "Bulk substrate", def: "Sustrato voluminoso para fructificación de setas en monotub. Mezcla típica: coco coir + perlita + yeso (CVG) + agua. Pasteurizado pero no esterilizado. Sirve como base donde el spawn colonizado se expande para producir muchas más setas." },
+    { term: "Pasteurización", def: "Calentar a 60-65°C 15-30 min para matar bacterias salvajes sin destruir esporas beneficiosas ni nutrientes. Usado en bulk substrate de setas, mosto de hidromiel, bebidas fermentadas. Distinto de esterilización (más agresivo, mata todo)." },
+    { term: "Spore syringe / esporada", def: "Jeringa con esporas de hongo en solución estéril. Se inyecta en sustrato esterilizado para inocular cultivo. Para setas Psilocybe y trufas. 1 jeringa = inocular 5-10 frascos. Comprar de vendedor reputado (calidad varía)." },
+    { term: "Spore print", def: "Esporulación de un hongo recogida en papel de aluminio o cristal. Color del spore print = útil para identificación de especies. Más estable y duradero que jeringa de esporas (años) — pero requiere paso extra de hidratar antes de inocular." },
+    { term: "Body load", def: "Sensación FÍSICA de una sustancia. Setas: pesadez corporal, frío, posibles temblores. Mescalina: náusea + relajación profunda. DMT: ninguno significativo (todo psicológico). Ayahuasca: muy fuerte (purga, presión arterial). Importante saber qué esperar." },
+    { term: "Comeup", def: "Fase de subida de una sustancia psicodélica. Primeros minutos-horas tras dosis hasta llegar al pico. Setas: 30-60 min. LSD: 30-90 min. Mescalina: 60-120 min. DMT fumado: 30 segundos. Sensación intensa de cambio inminente." },
+    { term: "Plateau / Pico", def: "Fase de máxima intensidad de una experiencia psicodélica. Donde 'sucede' lo principal. Duración varía: setas 1-2h, LSD 4-6h, mescalina 4-6h, DMT 3-8 min." },
+    { term: "Comedown", def: "Fase de bajada de una experiencia psicodélica. Tras el pico, el efecto se reduce gradualmente. Reflexión, integración inicial. Sin la 'resaca' del MDMA o alcohol." },
+    { term: "Afterglow", def: "Período post-experiencia (24-72h después) caracterizado por estado de ánimo elevado, claridad mental, sensación de bienestar. Especialmente reportado con setas, ayahuasca, MDMA. Útil para procesar insights de la experiencia." },
+    { term: "Tek (técnica)", def: "Jerga del mundo del cultivo psicoactivo. Significa 'technique' (técnica). Ej: PF Tek (Psilocybe Fanaticus technique), Bulk Tek, BRF Tek. Cada tek tiene sus particularidades de sustrato y método." },
+    { term: "Auto-healing port / Puerto de inyección", def: "Disco de goma o filtro micropore en spawn bag o frasco que permite inyectar esporas/cultura líquida sin abrir el envase. La goma se 'cura' tras la inyección. Reduce riesgo de contaminación drásticamente vs abrir el frasco." },
+    { term: "Field capacity", def: "Punto óptimo de hidratación de un sustrato para hongos: húmedo pero NO mojado. Si aprietas sustrato con la mano y solo gotean 1-3 gotas = field capacity. Demasiado seco = sin colonización. Demasiado mojado = bacterias/podredumbre." },
+    { term: "Ego dissolution / Disolución del ego", def: "Pérdida temporal del sentido de 'yo' durante experiencias psicodélicas profundas. Reportado con setas dosis altas, DMT breakthrough, 5-MeO-DMT, ayahuasca. Puede ser liberador o aterrador según preparación. Reset psicológico potente." },
+    { term: "Trip killer / Matatripsis", def: "Sustancia que reduce o termina experiencia psicodélica si va mal. Para setas/LSD: benzodiacepina (Xanax 1mg) o antipsicótico (olanzapina 5mg). NO cura el bad trip pero reduce intensidad. Usar solo si pánico severo no manejable. Mejor: cambiar set/setting primero." },
+    { term: "Tincture / Tintura sublingual", def: "Extracción concentrada en alcohol (40-95%). Plantas trituradas en alcohol 4-6 semanas. Filtrar. Conservación años en frasco oscuro. Dosis típica: 1-3ml bajo lengua (sublingual) — absorción rápida sin pasar por estómago. Aplica a Damiana, Calea, Kanna, etc." },
+    { term: "Cure / Curado", def: "Proceso post-cosecha para mejorar calidad. Cannabis: 2-4 semanas en frascos herméticos con humedad controlada (58-65%) + 'burping' diario. Mejora sabor, aroma, suavidad. Sin curado = cannabis 'verde' áspero." },
+    { term: "Burping", def: "Abrir frascos de cannabis durante curado 15-30 min/día las primeras 2 semanas. Permite intercambio de gases, evita moho, equilibra humedad. Imprescindible para curado correcto." },
+    { term: "Boveda / Higrómetro de bolsa", def: "Pequeñas bolsitas con sales reguladoras de humedad. 58%, 62%, 65% son comunes. Se ponen en frascos de cannabis curado para mantener humedad estable. Más fáciles que higrómetros analógicos. Reutilizables 1 año." },
+    { term: "Terpeno", def: "Compuestos aromáticos volátiles en plantas. En cannabis: linalool (lavanda), myrceno (sedante), limoneno (cítrico), pineno (pino). Modulan los efectos del THC y dan sabor/aroma. En lúpulo, hierbas culinarias, cítricos." },
+    { term: "Cannabinoide", def: "Familia de compuestos producidos por cannabis. THC (psicoactivo), CBD (no psicoactivo, medicinal), CBN (sedante), CBG (precursor), THCV. Más de 100 conocidos. Se generan por decarboxilación de THCA, CBDA, etc." },
+    { term: "Trichomes / Tricomas", def: "Las pequeñas glándulas resinosas que cubren cogollos y hojas pequeñas de cannabis. Contienen toda la concentración de cannabinoides + terpenos. Color indica madurez: claro = inmaduro, lechoso = pico, ámbar = sedante. Se ven con lupa 60x." },
+    { term: "Hash / BHO / Rosin", def: "Concentrados de cannabis. Hash: tricomas separados (kief prensado o ice-water hash). BHO (Butane Honey Oil): extracción con butano = potente pero riesgo solvente residual. Rosin: prensado con calor + presión, sin solventes (más seguro casero)." },
+    { term: "Microdosing protocols", def: "Pautas para microdosis de psicodélicos. Fadiman: 1 día sí, 2 no (3 ciclos = 1 semana). Stamets: 4 días sí, 3 no (5-HT2A receptor desensibilización). Cada uno minimiza tolerancia. Duración típica del ciclo: 4-8 semanas." },
+    { term: "Spawn run", def: "Período de colonización del spawn por el micelio. 7-21 días para setas, 3-5 semanas para trufas. Mantener oscuro, 24-26°C, sin abrir. Cuando spawn está 100% blanco = listo para fructificación o para pasar a bulk." },
   ];
 
   const [search, setSearch] = React.useState('');
@@ -4871,6 +4965,60 @@ function CUIDADOS_CACTUS() {
       <StepX c={c} num={2} text="🌞 Mayo-Septiembre: temporada de crecimiento. Riego cada 10-14 días. Fertilizar cactáceas a media dosis cada 3-4 semanas. Sol pleno." />
       <StepX c={c} num={3} text="🍂 Octubre: reducir riego. Última fertilización antes del 20 sept." />
       <StepX c={c} num={4} text="❄️ Noviembre-Febrero: hibernación. NO regar. NO fertilizar. Mantener seco y fresco (10-15°C ideal)." why="La hibernación seca induce floración y crecimiento más vigoroso en primavera. Cactus regado en invierno = blando, podrido o etiolado." />
+
+      <SectionTitleX c={c}>RIEGO DETALLADO POR TEMPORADA — TABLA NOVATO</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO POR ÉPOCA — MACETA TERRACOTA 25-30CM</div>
+        {[
+          { epoca: "🌸 Marzo-Abril (despertar)", agua: "500-800ml", freq: "1 riego inicial + esperar 2-3 semanas seco", nota: "Primer riego del año tras el invierno seco. Regar abundante UNA vez. Después esperar a que se seque por completo." },
+          { epoca: "🌞 Mayo-Junio (crecimiento)", agua: "500-800ml", freq: "cada 10-14 días", nota: "Tras temperaturas estables &gt;18°C noche. Esperar a que el sustrato esté COMPLETAMENTE seco (palillo seco al sacarlo)." },
+          { epoca: "☀️ Julio-Agosto (pico calor)", agua: "800ml-1L", freq: "cada 7-10 días", nota: "El sol intenso evapora más rápido. Pulverizar exterior por la noche en olas de calor extremo (por encima 35°C) ayuda." },
+          { epoca: "🍂 Septiembre", agua: "500-800ml", freq: "cada 10-14 días", nota: "Mantener riego como verano. Última fertilización antes del 20 sept." },
+          { epoca: "🍁 Octubre", agua: "300-500ml", freq: "cada 14-21 días", nota: "Reducir gradualmente. La planta empieza a 'dormirse'." },
+          { epoca: "❄️ Noviembre-Febrero (hibernación)", agua: "0ml — NO REGAR", freq: "Nunca", nota: "Riego en invierno = pudrición casi segura. Solo emergencia: si la planta está en interior con calefacción y se arruga visiblemente, 100ml en 4 meses." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.epoca}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>EL pH DEL AGUA EN CACTUS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🧪 <strong>pH objetivo: 5.5-6.5</strong> (ligeramente más ácido que cannabis). Cactus mescalina vienen de suelos volcánicos andinos con pH bajo. El agua del grifo española (pH 7-8) está demasiado alcalina — corregir.<br/><br/>
+        💧 <strong>Cómo:</strong> dejar agua en jarra abierta 24h (cloro se evapora) → medir pH con pHmetro → añadir gota a gota de pH Down hasta llegar a 6.0. Si no tienes pHmetro: añade 1-2 gotas de zumo de limón por litro (no perfecto pero ayuda).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES — QUÉ MIRAR EN TU CACTUS</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 LO QUE NOTAS EN EL CACTUS</div>
+        {[
+          { signo: "✅ Cuerpo firme, costillas pronunciadas, color verde uniforme", lectura: "PERFECTO. Cactus feliz, no tocar nada." },
+          { signo: "🟡 Costillas se ven más profundas, cuerpo ligeramente arrugado", lectura: "FALTA AGUA. Riego ya. Tras 24-48h debería 'inflarse' otra vez." },
+          { signo: "🔴 Cuerpo muy arrugado, columna delgada y caída", lectura: "MUY DESHIDRATADO. Riego abundante (1L). Si en 1 semana no recupera = revisar raíces." },
+          { signo: "🔴 Base AMARILLA o MARRÓN, blanda al tacto", lectura: "PUDRICIÓN — emergencia. PARA de regar. Sacar de maceta, cortar parte podrida con cuchillo esterilizado, callusing 2-3 sem, replantar en sustrato seco." },
+          { signo: "🟡 Manchas amarillentas en lados expuestos al sol", lectura: "QUEMADURA SOLAR. Mover a sombra parcial 1-2 sem para aclimatación gradual." },
+          { signo: "🟡 Cuerpo PÁLIDO/AMARILLENTO general", lectura: "Posible exceso de sol O exceso de riego. Verifica ambos." },
+          { signo: "🟡 Crecimiento delgado, débil, sin espinas robustas (etiolación)", lectura: "FALTA DE LUZ. Mover a posición con más sol directo (gradualmente)." },
+          { signo: "✅ Crecimiento de 2-5cm/mes en verano (San Pedro)", lectura: "EXCELENTE. Cactus en pleno crecimiento. Sigue así." },
+          { signo: "🟢 Hijos/hijuelos saliendo en la base", lectura: "MUY BIEN. Cactus maduro y feliz. Puedes separar los hijos para multiplicar." },
+          { signo: "🌸 Flores blancas que se abren de noche", lectura: "Cactus maduro (4+ años). Marca de calidad. Polinización manual = semillas." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 9 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: c.textBright, marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>CÓMO REGAR — TÉCNICA</SectionTitleX>
+      <StepX c={c} num={1} text="Verifica con palillo de madera: meterlo 5cm en el sustrato. Si sale SECO/limpio = regar. Si sale con tierra húmeda pegada = NO regar." why="El método más fiable para cactus. El dedo no llega lo suficiente profundo en macetas grandes." />
+      <StepX c={c} num={2} text="Riega LENTO en círculos alrededor del cactus, sin mojar el cactus mismo." why="Agua sobre el cuerpo del cactus puede causar manchas marrones y favorecer pudrición de la base." />
+      <StepX c={c} num={3} text="Cantidad: agua hasta que salga por debajo (~25% del volumen de la maceta). Para 25cm Ø ≈ 500-800ml." />
+      <StepX c={c} num={4} text="ESPERA mínimo 2 semanas (verano) o 4 semanas (transición) antes del siguiente riego. Cactus prefieren la sequía a la humedad." warning />
+      <StepX c={c} num={5} text="Vacía el plato 30 min después. NUNCA dejar maceta en agua estancada — ahogamiento garantizado." />
     </div>
   );
 }
@@ -8637,6 +8785,17 @@ function FAQ_AYA() {
     { q: "¿Una sola experiencia me cambiará la vida?", a: "Probablemente NO. La experiencia da insights, pero el cambio real viene de la INTEGRACIÓN posterior — reflexión, journaling, posible terapia. Sin integración los insights se desvanecen en semanas." },
     { q: "¿Diferencia con yagé?", a: "Yagé = nombre indígena ecuatoriano/colombiano para ayahuasca, suele incluir Diplopterys cabrerana (Chaliponga) en lugar de Chacruna como fuente de DMT." },
     { q: "¿Niños indígenas la toman?", a: "En algunas tribus amazónicas sí, ceremonialmente, en pequeñas dosis. Distinto contexto cultural. NO recomendado para menores en contexto occidental." },
+    { q: "¿Es la ayahuasca adictiva?", a: "No físicamente — sin dependencia documentada. Tampoco psicológicamente típica: la experiencia es lo suficientemente intensa que la mayoría no quiere repetir frecuentemente. Hay 'turismo ayahuasquero' patológico (gente que va de ceremonia en ceremonia buscando insight) pero no es adicción química." },
+    { q: "¿Qué tan caro sale hacer una ceremonia en España?", a: "Ceremonias organizadas con curandero/facilitador: 100-300€ por sesión (incluye brebaje + acompañamiento). Casero (cultivo + brebaje): inversión inicial 80-200€, después 20-30€/dosis (recomprar plantas si no cultivas). Santo Daime/UDV: donaciones según grupo." },
+    { q: "¿Hay diferencia entre 'ayahuasca' y 'yagé'?", a: "Yagé = nombre indígena ecuatoriano/colombiano. Suele incluir Diplopterys cabrerana (Chaliponga) en lugar de Chacruna como fuente de DMT. Misma idea (IMAO + DMT) pero perfil ligeramente distinto (más visual, más rápido peak). Ayahuasca = nombre quechua peruano." },
+    { q: "¿Cuál es la base científica de los IMAOs naturales?", a: "Investigaciones desde 1957: harmina, harmalina, tetrahidroharmina son MAOI selectivos REVERSIBLES (a diferencia de los MAOIs farmacéuticos como fenelzina que son irreversibles). Esto explica que el efecto sea más manejable y predecible. La β-carbolina del Caapi también tiene actividad psicoactiva propia (sedante + antidepresiva)." },
+    { q: "¿Por qué Chacruna específicamente y no otra planta?", a: "Tradición + biodisponibilidad. Chacruna tiene una proporción específica de alcaloides que combina bien con Caapi. Otras plantas con DMT (Mimosa, Acacia) requieren más cantidad y dan perfiles distintos. Chacruna es la opción 'clásica' por razones culturales + farmacológicas." },
+    { q: "¿Es seguro mezclar ayahuasca con cannabis?", a: "GRIS. Cannabis amplifica ansiedad — durante peak puede gatillar pánico. Algunos lo combinan tras peak para integración. Si propenso a paranoia: NO mezclar. Si ya hace tiempo que usas ambos: empezar sin cannabis primera vez." },
+    { q: "¿Qué hago durante el peak si estoy abrumado?", a: "(1) Aceptar la experiencia: 'lo que pase, pasará'. La resistencia empeora. (2) Respiración lenta profunda. (3) Cambiar entorno: música, luz tenue, posición. (4) Hablar con sitter: una palabra puede anclar. (5) Recordar: 'esto pasa en horas'. (6) Si pánico extremo: trip killer (benzodiacepina) — pero rara vez necesario." },
+    { q: "¿Cómo elijo facilitador/curandero confiable?", a: "Buscar referencias de personas que ya hayan ido. Verificar formación en preparación de brebaje + acompañamiento. Chequear si ofrecen INTEGRACIÓN posterior (no solo ceremonia). Evitar grupos con sectarismo o que prohíben otros grupos. Investigar online (Reddit, foros). Idealmente probar primero ceremonia pequeña antes de retiro largo." },
+    { q: "¿Puedo combinar Caapi con setas Psilocybe?", a: "Tradicional en algunas tribus. Combinar potencia las setas (IMAO bloquea destrucción de psilocibina). Resultado: experiencia más larga, más visionaria. Riesgo: dosis difícil de controlar. NO recomendado para principiantes." },
+    { q: "¿Qué dieta exacta sigo antes?", a: "Día -7 hasta día 0: SIN tiramina (queso curado, vino tinto, embutidos curados, soja fermentada, pescado salazón, plátano muy maduro, aguacate maduro, chocolate negro, cacao). SIN café/cafeína 24h antes. Última comida 6-8h antes (estómago vacío). Sí: verduras frescas, carne fresca, frutas frescas, agua." },
+    { q: "¿La ayahuasca cura depresión?", a: "Estudios clínicos preliminares (Brasil 2014-2020) mostraron resultados prometedores en depresión resistente. UN solo curso de ayahuasca + terapia de integración produjo mejoras significativas en escalas de depresión. NO es 'cura mágica' — funciona en contexto de psicoterapia, set/setting, integración. Investigación en curso." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -9291,6 +9450,14 @@ function FAQ_DMT() {
     { q: "¿Qué relación tiene el DMT con la pineal?", a: "Estudios de Rick Strassman (años 90) encontraron trazas de DMT en líquido cefalorraquídeo humano y mostraron que la pineal puede sintetizarlo. Hipótesis especulativa: liberación masiva de DMT al morir podría explicar near-death experiences. Ciencia aún no resuelta — investigación abierta." },
     { q: "¿Diferencia ayahuasca vs DMT vapeable?", a: "Ayahuasca: oral, 4-6h, contemplativa, con purga (vómito), ceremonial. DMT vapeable: 5-15 min, breakthrough total, intenso, sin preparación tan ritual. Mismas moléculas, experiencias funcionalmente distintas." },
     { q: "¿Compatible con cannabis?", a: "Algunos potencia el DMT (mezcla en changa). Cuidado: cannabis amplifica ansiedad — si propenso a paranoia, mejor sin cannabis. Investigar antes." },
+    { q: "¿Por qué algunas personas no tienen breakthrough en su primera vez?", a: "Causas comunes: (1) dosis insuficiente — DMT necesita 30-50mg vaporizado bien para breakthrough completo, (2) técnica de inhalación pobre — debe inhalar lentamente y mantener 10+ segundos, (3) temperatura del vape mal — 250-300°C ideal, (4) miedo/ansiedad subconsciente que limita el surrender. Repetir con dosis correcta + mejor entorno suele funcionar." },
+    { q: "¿Qué hago durante un mal viaje de DMT?", a: "Solo dura 5-15 min. Recordar: 'esto es DMT, va a pasar pronto'. Acostarse, ojos cerrados, respiración profunda lenta. Sitter habla calmado. La resistencia EMPEORA el viaje — soltar y observar es mejor. Tras 15 min volverás a la realidad." },
+    { q: "¿Qué hace que el DMT sea tan visual?", a: "DMT activa receptores 5-HT2A en córtex visual con intensidad extrema. Patrones geométricos (mandala, fractales) son característicos del agonismo 5-HT2A — también se ven con LSD y setas en menor grado. Estructuras matemáticas reportadas son consistentes entre miles de usuarios sin contacto entre sí." },
+    { q: "¿Existe el 'efecto Mantis' u otras entidades específicas?", a: "Sí, hay arquetipos consistentes en reportes: 'Machine Elves' (Terence McKenna), insectos/mantis, geometrías vivas, 'la Reina del DMT'. Estudios de Andrew Gallimore documentaron esto sistemáticamente. Si son 'reales' o construcciones de la mente está abierto a debate. Lo que sí es real: la coherencia entre reportes de usuarios independientes." },
+    { q: "¿Puedo usar DMT terapéuticamente?", a: "Investigación clínica activa con DMT (Imperial College London, MAPS) para depresión resistente y ansiedad. Resultados preliminares prometedores. Pero ILEGAL en España fuera de ensayos. Alternativa: ayahuasca con grupo religioso reconocido (Santo Daime) tiene precedente de uso terapéutico." },
+    { q: "¿Es peor que LSD/setas?", a: "MÁS INTENSO sí. PEOR no. Más corto (15 min vs 8h) lo hace más accesible para integración. Físicamente más seguro (no daño documentado). Mentalmente más demandante por la velocidad de la experiencia. No es 'malo' o 'bueno' — es DIFERENTE." },
+    { q: "¿Funciona el DMT vaporizador?", a: "Sí, los vaporizadores tipo TerpPen o Volcano son más eficientes que pipa de cristal. Temperatura 250-300°C óptima. Dosis más controlada. Ventaja: menos pérdida por combustión vs pipa. Para principiantes: pipa con malla acero más barata pero menos eficiente." },
+    { q: "¿Cómo afecta DMT al cuerpo durante la experiencia?", a: "Aumento moderado de presión arterial (10-30mmHg sistólica), taquicardia leve (10-20bpm extra), midriasis (pupilas dilatadas), posible vasoconstricción periférica. Sin daño documentado en personas sanas. Cardiopatía grave = NO." },
   ];
 
   const filtered = faqs.filter(f =>

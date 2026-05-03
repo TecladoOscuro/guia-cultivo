@@ -178,6 +178,60 @@ function CUIDADOS_CACTUS() {
       <StepX c={c} num={2} text="🌞 Mayo-Septiembre: temporada de crecimiento. Riego cada 10-14 días. Fertilizar cactáceas a media dosis cada 3-4 semanas. Sol pleno." />
       <StepX c={c} num={3} text="🍂 Octubre: reducir riego. Última fertilización antes del 20 sept." />
       <StepX c={c} num={4} text="❄️ Noviembre-Febrero: hibernación. NO regar. NO fertilizar. Mantener seco y fresco (10-15°C ideal)." why="La hibernación seca induce floración y crecimiento más vigoroso en primavera. Cactus regado en invierno = blando, podrido o etiolado." />
+
+      <SectionTitleX c={c}>RIEGO DETALLADO POR TEMPORADA — TABLA NOVATO</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💧 RIEGO POR ÉPOCA — MACETA TERRACOTA 25-30CM</div>
+        {[
+          { epoca: "🌸 Marzo-Abril (despertar)", agua: "500-800ml", freq: "1 riego inicial + esperar 2-3 semanas seco", nota: "Primer riego del año tras el invierno seco. Regar abundante UNA vez. Después esperar a que se seque por completo." },
+          { epoca: "🌞 Mayo-Junio (crecimiento)", agua: "500-800ml", freq: "cada 10-14 días", nota: "Tras temperaturas estables &gt;18°C noche. Esperar a que el sustrato esté COMPLETAMENTE seco (palillo seco al sacarlo)." },
+          { epoca: "☀️ Julio-Agosto (pico calor)", agua: "800ml-1L", freq: "cada 7-10 días", nota: "El sol intenso evapora más rápido. Pulverizar exterior por la noche en olas de calor extremo (por encima 35°C) ayuda." },
+          { epoca: "🍂 Septiembre", agua: "500-800ml", freq: "cada 10-14 días", nota: "Mantener riego como verano. Última fertilización antes del 20 sept." },
+          { epoca: "🍁 Octubre", agua: "300-500ml", freq: "cada 14-21 días", nota: "Reducir gradualmente. La planta empieza a 'dormirse'." },
+          { epoca: "❄️ Noviembre-Febrero (hibernación)", agua: "0ml — NO REGAR", freq: "Nunca", nota: "Riego en invierno = pudrición casi segura. Solo emergencia: si la planta está en interior con calefacción y se arruga visiblemente, 100ml en 4 meses." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{row.epoca}</div>
+            <div style={{ fontSize: "11px", color: c.accent2 }}>💧 <strong>{row.agua}</strong> · ⏱️ {row.freq}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, marginTop: "3px", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>EL pH DEL AGUA EN CACTUS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🧪 <strong>pH objetivo: 5.5-6.5</strong> (ligeramente más ácido que cannabis). Cactus mescalina vienen de suelos volcánicos andinos con pH bajo. El agua del grifo española (pH 7-8) está demasiado alcalina — corregir.<br/><br/>
+        💧 <strong>Cómo:</strong> dejar agua en jarra abierta 24h (cloro se evapora) → medir pH con pHmetro → añadir gota a gota de pH Down hasta llegar a 6.0. Si no tienes pHmetro: añade 1-2 gotas de zumo de limón por litro (no perfecto pero ayuda).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>SEÑALES VISUALES — QUÉ MIRAR EN TU CACTUS</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>👀 LO QUE NOTAS EN EL CACTUS</div>
+        {[
+          { signo: "✅ Cuerpo firme, costillas pronunciadas, color verde uniforme", lectura: "PERFECTO. Cactus feliz, no tocar nada." },
+          { signo: "🟡 Costillas se ven más profundas, cuerpo ligeramente arrugado", lectura: "FALTA AGUA. Riego ya. Tras 24-48h debería 'inflarse' otra vez." },
+          { signo: "🔴 Cuerpo muy arrugado, columna delgada y caída", lectura: "MUY DESHIDRATADO. Riego abundante (1L). Si en 1 semana no recupera = revisar raíces." },
+          { signo: "🔴 Base AMARILLA o MARRÓN, blanda al tacto", lectura: "PUDRICIÓN — emergencia. PARA de regar. Sacar de maceta, cortar parte podrida con cuchillo esterilizado, callusing 2-3 sem, replantar en sustrato seco." },
+          { signo: "🟡 Manchas amarillentas en lados expuestos al sol", lectura: "QUEMADURA SOLAR. Mover a sombra parcial 1-2 sem para aclimatación gradual." },
+          { signo: "🟡 Cuerpo PÁLIDO/AMARILLENTO general", lectura: "Posible exceso de sol O exceso de riego. Verifica ambos." },
+          { signo: "🟡 Crecimiento delgado, débil, sin espinas robustas (etiolación)", lectura: "FALTA DE LUZ. Mover a posición con más sol directo (gradualmente)." },
+          { signo: "✅ Crecimiento de 2-5cm/mes en verano (San Pedro)", lectura: "EXCELENTE. Cactus en pleno crecimiento. Sigue así." },
+          { signo: "🟢 Hijos/hijuelos saliendo en la base", lectura: "MUY BIEN. Cactus maduro y feliz. Puedes separar los hijos para multiplicar." },
+          { signo: "🌸 Flores blancas que se abren de noche", lectura: "Cactus maduro (4+ años). Marca de calidad. Polinización manual = semillas." },
+        ].map((s, i) => (
+          <div key={i} style={{ borderBottom: i < 9 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+            <div style={{ fontSize: "12px", color: c.textBright, marginBottom: "2px" }}>{s.signo}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>→ {s.lectura}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>CÓMO REGAR — TÉCNICA</SectionTitleX>
+      <StepX c={c} num={1} text="Verifica con palillo de madera: meterlo 5cm en el sustrato. Si sale SECO/limpio = regar. Si sale con tierra húmeda pegada = NO regar." why="El método más fiable para cactus. El dedo no llega lo suficiente profundo en macetas grandes." />
+      <StepX c={c} num={2} text="Riega LENTO en círculos alrededor del cactus, sin mojar el cactus mismo." why="Agua sobre el cuerpo del cactus puede causar manchas marrones y favorecer pudrición de la base." />
+      <StepX c={c} num={3} text="Cantidad: agua hasta que salga por debajo (~25% del volumen de la maceta). Para 25cm Ø ≈ 500-800ml." />
+      <StepX c={c} num={4} text="ESPERA mínimo 2 semanas (verano) o 4 semanas (transición) antes del siguiente riego. Cactus prefieren la sequía a la humedad." warning />
+      <StepX c={c} num={5} text="Vacía el plato 30 min después. NUNCA dejar maceta en agua estancada — ahogamiento garantizado." />
     </div>
   );
 }
