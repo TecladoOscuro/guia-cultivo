@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const fs = require('fs');
-const path = require('path');
 
 // Read HTML template
 const htmlTemplate = fs.readFileSync('html-template.html', 'utf-8');
@@ -11,6 +10,8 @@ const sourceFiles = [
   'src/app/colors.js',
   'src/app/phases.js',
   'src/helpers/components.js',
+  'src/components/cannabis/interior.js',
+  'src/components/cannabis/exterior.js',
   'src/components/cannabis/general.js',
   'src/components/mushroom/kit.js',
   'src/components/mushroom/manual.js',

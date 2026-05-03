@@ -365,6 +365,8 @@ const ErrorCardM = ({ error, consecuencia, fix }) => (
 );
 
 
+// Cannabis interior cultivation components
+
 function COMPRA() {
   const priorityColor = { "ESENCIAL": "#e63946", "IMPORTANTE": "#f4a261", "ÚTIL": "#52b788" };
   const dondeColor = {
@@ -663,198 +665,6 @@ function COMPRA() {
   );
 }
 
-function MIS_SEMILLAS() {
-  const semillas = [
-    {
-      nombre: "Strawberry Banana Auto",
-      marca: "FastBuds",
-      tipo: "Autofloreciente",
-      cantidad: "1 semilla",
-      genetica: "70% indica / 30% sativa",
-      thc: "25%",
-      cbd: "<1%",
-      altura_indoor: "80–120cm",
-      altura_outdoor: "80–150cm",
-      ciclo: "8–9 semanas desde semilla",
-      rendimiento_indoor: "400–600g/m²",
-      rendimiento_outdoor: "50–200g/planta",
-      efecto: "Relajante y eufórico. Cuerpo y mente. Sabor intenso a fresa madura y plátano dulce.",
-      color: "#e63946",
-      donde: "🏠 Interior (prioritario) · 🌲 Exterior posible",
-      notas_indoor: [
-        "Puede crecer bastante para ser auto — hasta 120cm. Aplica LST desde semana 2-3 para mantenerla en rango.",
-        "Muy aromática durante la floración — asegúrate de que el filtro de carbón esté bien sellado.",
-        "Produce mucha resina — las tijeras se pegarán rápido en la cosecha. Alcohol isopropílico a mano.",
-        "Ciclo algo más largo que otras autos — no la coseches antes de tiempo. Espera a los tricomas.",
-        "Responde muy bien al LST — con buena técnica puede doblar el rendimiento esperado.",
-      ],
-      notas_outdoor: [
-        "En exterior puede desarrollarse mucho más — hasta 150cm en condiciones óptimas.",
-        "Al ser auto, florece sola sin importar el ciclo de luz. Puedes plantarla en mayo y cosechar en julio.",
-        "Resistencia media a hongos — vigila la Botrytis en septiembre si la dejas hasta entonces.",
-        "Buen rendimiento en exterior mediterráneo. Más discreta en tamaño que el fotoperiodo.",
-      ],
-    },
-    {
-      nombre: "White Widow",
-      marca: "Desconocida / Feminizada",
-      tipo: "Fotoperiodo feminizada",
-      cantidad: "3 semillas",
-      genetica: "60% indica / 40% sativa",
-      thc: "18–20%",
-      cbd: "<1%",
-      altura_indoor: "60–100cm",
-      altura_outdoor: "100–150cm",
-      ciclo: "8–9 semanas de floración (tras cambio a 12/12h)",
-      rendimiento_indoor: "400–500g/m²",
-      rendimiento_outdoor: "200–400g/planta",
-      efecto: "Equilibrado y versátil. Eufórico y relajante. La clásica por excelencia — robusta y muy resistente.",
-      color: "#95d5b2",
-      donde: "🏠 Interior · 🌲 Exterior ambas válidas",
-      notas_indoor: [
-        "Fotoperiodo: NO florece sola. Cuando llegue a 40-50cm cambia el temporizador a 12h/12h.",
-        "Muy robusta y resistente — perfecta para principiantes. Perdona errores de riego y nutrientes mejor que otras.",
-        "Compacta para ser fotoperiodo — en 120×120 caben 4 plantas cómodamente con margen.",
-        "Muy resinosa — los cogollos se cubren de tricomas blancos (de ahí el nombre). Fácil de saber cuándo cosechar.",
-        "Tienes 3 semillas — germina 2 y guarda 1 de reserva. Si las dos funcionan bien, perfecto.",
-      ],
-      notas_outdoor: [
-        "En exterior florece sola en agosto cuando los días se acortan. No tienes que hacer nada.",
-        "Excelente para exterior mediterráneo — resistente al moho y las plagas.",
-        "Puede llegar a 150cm en exterior con buena vegetativa. Pon tutores en agosto.",
-        "Cosecha en octubre. Con suerte antes de las lluvias fuertes.",
-        "La más recomendada de tus semillas para el bosque — robustez y rendimiento garantizados.",
-      ],
-    },
-    {
-      nombre: "Zkittlez OG Auto",
-      marca: "Barney's Farm",
-      tipo: "Autofloreciente",
-      cantidad: "Muestra exclusiva (1–3 semillas)",
-      genetica: "Indica dominante",
-      thc: "22–24%",
-      cbd: "<1%",
-      altura_indoor: "70–100cm",
-      altura_outdoor: "80–130cm",
-      ciclo: "8–9 semanas desde semilla",
-      rendimiento_indoor: "450–550g/m²",
-      rendimiento_outdoor: "50–150g/planta",
-      efecto: "Muy relajante y sedante. Sabor afrutado intenso a caramelo y frutos del bosque.",
-      color: "#f4a261",
-      donde: "🏠 Interior (ideal) · 🌲 Exterior posible",
-      notas_indoor: [
-        "Barney's Farm hace semillas de primera calidad — esta muestra es premium.",
-        "Tamaño compacto y manejable — ideal para el 120×120 sin necesidad de LST agresivo.",
-        "Como es muestra exclusiva, tienes pocas semillas — germínala cuando ya tengas experiencia de una cosecha anterior.",
-        "Muy alta producción de resina — cogollos densos y muy aromáticos en floración.",
-        "El sabor final mejora mucho con curado largo — mínimo 4 semanas para esta variedad.",
-      ],
-      notas_outdoor: [
-        "Al ser auto, florece sola. Puedes plantarla en mayo para cosechar en julio.",
-        "Tamaño discreto — buena opción si el spot tiene restricciones de altura o visibilidad.",
-        "Resistencia media — vigila bien en septiembre si hay humedad nocturna alta.",
-      ],
-    },
-    {
-      nombre: "Watermelon Zkittlez Auto",
-      marca: "Barney's Farm",
-      tipo: "Autofloreciente",
-      cantidad: "Muestra exclusiva (1–3 semillas)",
-      genetica: "Indica dominante",
-      thc: "22%",
-      cbd: "<1%",
-      altura_indoor: "70–100cm",
-      altura_outdoor: "80–120cm",
-      ciclo: "8–9 semanas desde semilla",
-      rendimiento_indoor: "400–500g/m²",
-      rendimiento_outdoor: "50–130g/planta",
-      efecto: "Relajante y sedante. Sabor a sandía fresca y frutas tropicales muy marcado.",
-      color: "#52b788",
-      donde: "🏠 Interior (ideal) · 🌲 Exterior posible",
-      notas_indoor: [
-        "Hermana de la Zkittlez OG — misma calidad Barney's Farm pero con perfil de sandía.",
-        "Muy aromática durante la floración — una de las más llamativas en olor. Filtro de carbón imprescindible.",
-        "Compacta y manejable en el 120×120.",
-        "Como la Zkittlez OG, guárdala para cuando ya tengas experiencia — es una semilla premium para aprovecharla bien.",
-        "El curado largo (4-6 semanas) hace que el sabor a sandía se exprese al máximo.",
-      ],
-      notas_outdoor: [
-        "Discreta en tamaño — buena para spots con poca altura disponible.",
-        "Mismas consideraciones que la Zkittlez OG en exterior.",
-      ],
-    },
-  ];
-
-  return (
-    <div>
-      <InfoBox>
-        Estas son las semillas que tienes actualmente. Para cada una encontrarás sus características reales, notas específicas para cultivo indoor y outdoor, y recomendaciones sobre cuándo y cómo usarlas según tu nivel de experiencia.
-      </InfoBox>
-
-      <div style={{ background: "#1a2a10", border: "1px solid #4a7a20", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#74c69d", marginBottom: "10px" }}>ORDEN RECOMENDADO DE USO</div>
-        {[
-          { num: "1ª", semilla: "White Widow (fotoperiodo)", cuando: "Cuando tengas el armario listo. Tienes 3 semillas — margen para aprender.", porq: "La más robusta y que más perdona errores. Ideal para primera cosecha." },
-          { num: "2ª", semilla: "Strawberry Banana Auto (FastBuds)", cuando: "Segunda o tercera cosecha.", porq: "Autofloreciente de alta calidad. Más sencilla pero algo más exigente que la White Widow." },
-          { num: "3ª", semilla: "Zkittlez OG Auto o Watermelon Zkittlez (Barney's Farm)", cuando: "Cuando ya controles el proceso.", porq: "Son muestras exclusivas — pocas semillas sin segunda oportunidad. Aprovéchalas con experiencia." },
-        ].map((r, i) => (
-          <div key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", borderBottom: i < 2 ? "1px solid #1b4332" : "none" }}>
-            <div style={{ fontSize: "14px", fontWeight: "bold", color: "#52b788", flexShrink: 0, width: "28px" }}>{r.num}</div>
-            <div>
-              <div style={{ fontSize: "13px", color: "#d8f3dc", marginBottom: "3px" }}>{r.semilla}</div>
-              <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "2px" }}>Cuándo: {r.cuando}</div>
-              <div style={{ fontSize: "11px", color: "#74c69d" }}>Por qué: {r.porq}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {semillas.map((s, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${s.color}33`, borderLeft: `4px solid ${s.color}`, borderRadius: "12px", padding: "16px", marginBottom: "20px" }}>
-          <div style={{ marginBottom: "12px" }}>
-            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{s.nombre}</div>
-            <div style={{ fontSize: "11px", color: s.color, marginBottom: "2px" }}>{s.marca} · {s.tipo} · {s.cantidad}</div>
-            <div style={{ fontSize: "12px", color: "#74c69d" }}>{s.donde}</div>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", marginBottom: "12px" }}>
-            {[["Genética", s.genetica], ["THC", s.thc], ["Altura indoor", s.altura_indoor], ["Altura outdoor", s.altura_outdoor], ["Ciclo", s.ciclo], ["Rend. indoor", s.rendimiento_indoor]].map(([k, v]) => (
-              <div key={k} style={{ fontSize: "11px" }}>
-                <span style={{ color: "#40916c" }}>{k}: </span>
-                <span style={{ color: "#95d5b2" }}>{v}</span>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ background: "#162a1e", borderRadius: "8px", padding: "10px 12px", marginBottom: "12px" }}>
-            <div style={{ fontSize: "11px", color: s.color, marginBottom: "3px" }}>Efecto y sabor</div>
-            <div style={{ fontSize: "12px", color: "#95d5b2", lineHeight: "1.5" }}>{s.efecto}</div>
-          </div>
-
-          <div style={{ marginBottom: "10px" }}>
-            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>🏠 NOTAS PARA INDOOR</div>
-            {s.notas_indoor.map((n, j) => (
-              <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
-                <div style={{ color: s.color, flexShrink: 0, fontSize: "12px" }}>→</div>
-                <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{n}</div>
-              </div>
-            ))}
-          </div>
-
-          <div>
-            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#74c69d", marginBottom: "8px" }}>🌲 NOTAS PARA OUTDOOR</div>
-            {s.notas_outdoor.map((n, j) => (
-              <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
-                <div style={{ color: "#74c69d", flexShrink: 0, fontSize: "12px" }}>→</div>
-                <div style={{ fontSize: "12px", color: "#95d5b2", lineHeight: "1.5" }}>{n}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function SEMILLAS_INT() {
   return (
@@ -1263,128 +1073,6 @@ function FLORACION() {
   );
 }
 
-function COSECHA() {
-  return (
-    <div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
-        <StatBox label="Secado" value="10–14 días" />
-        <StatBox label="Temp. secado" value="18–20°C" />
-        <StatBox label="Humedad secado" value="45–55%" />
-        <StatBox label="Curado mínimo" value="2–4 semanas" />
-      </div>
-
-      <SectionTitle>EL DÍA DE LA COSECHA</SectionTitle>
-      <Step num={1} text="48h antes de cortar: apaga la luz y déjala en oscuridad total." why="Muchos growers lo hacen creyendo que dispara la producción de resina en las últimas horas. No está 100% demostrado, pero no cuesta nada y muchos ven mejoras. Es el último empujón antes de cosechar." />
-      <Step num={2} text="Ponte guantes de nitrilo antes de tocar los cogollos." why="La resina es muy pegajosa y difícil de quitar de la piel. Además, el calor de las manos puede degradarla." />
-      <Step num={3} text="Corta la planta a nivel del sustrato con tijeras limpias. Puedes cortar entera o rama a rama." />
-      <Step num={4} text="Quita las hojas grandes (fan leaves, las hojas grandes sin resina) con los dedos o tijeras." why="Tienen poco valor, ralentizan el secado y si las dejas pueden acumular humedad. Las hojas pequeñas que rodean los cogollos se dejan para la manicura posterior." />
-
-      <SectionTitle>EL SECADO</SectionTitle>
-      <Step num={5} text="Cuelga las ramas boca abajo en un lugar oscuro, 18–20°C, 45–55% humedad. Airflow suave en la habitación pero sin ventilador apuntando directamente." why="La oscuridad protege los cannabinoides de la degradación por la luz. El aire directo seca el exterior demasiado rápido mientras el interior sigue húmedo — eso provoca moho dentro del cogollo aunque por fuera parezca seco." />
-      <Step num={6} text="No toques ni muevas las ramas durante el secado." />
-      <Step num={7} text="TEST de secado listo: coge una ramita fina. Dóblala. Si craquea (se parte limpio y seco), está lista. Si se dobla sin romperse, necesita más tiempo." why="Este test es más fiable que mirar el color o tocar el cogollo con los dedos. El interior seca más lento que el exterior y este test lo detecta perfectamente." />
-      <Step num={8} text="Duración habitual: 10–14 días. En julio con calor puede ser algo menos." />
-
-      <SectionTitle>LA MANICURA</SectionTitle>
-      <Step num={9} text="Una vez seco, recorta con tijeras de punta fina las hojas pequeñas que rodean cada cogollo (sugarleaves)." why="Son material de menor calidad. Retirarlas mejora el aspecto, el sabor y la experiencia final." />
-      <Step num={10} text="Guarda los recortes (trim) aparte en una bolsa. Sirven para hacer aceite, mantequilla u otros usos." />
-
-      <SectionTitle>EL CURADO — EL PASO QUE MÁS DIFERENCIA EL RESULTADO</SectionTitle>
-      <Step num={11} text="Mete los cogollos en botes de cristal herméticos (Mason jars). Llénalos al 75%." why="Muy llenos: la humedad no circula bien. Muy vacíos: se seca demasiado rápido en el bote." />
-      <Step num={12} text="Pon un higrómetro pequeño dentro de cada bote." why="La humedad dentro del bote debe estar entre 58–65%. Sin higrómetro estás completamente a ciegas." />
-      <Step num={13} text="Las primeras 2 semanas: abre cada bote 15 minutos al día. Se llama 'burping'." why="El material sigue liberando humedad residual después de parecer seco. Si no la liberas, se acumula y aparece moho aunque el cogollo pareciera listo al meterlo." />
-      <Step num={14} text="Si el higrómetro marca más de 70%: deja el bote abierto 1–2 horas. Si marca menos de 55%: ciérralo hasta mañana." />
-      <Step num={15} text="Mínimo 2 semanas de curado. 4 semanas es notablemente mejor. 8 semanas es lo ideal." why="El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los terpenos (el aroma y sabor final). No hay atajos posibles." />
-
-      <SectionTitle color="#e63946">🚫 ERRORES QUE CUESTAN GRAMOS</SectionTitle>
-      <ErrorCard error="Secar con ventilador directo encima de las ramas" consecuencia="Exterior seco, interior húmedo. Moho invisible dentro del cogollo." fix="Airflow indirecto. El aire circula en la habitación pero no apunta a las ramas." />
-      <ErrorCard error="Meter en bote antes de hacer el test de la ramita" consecuencia="Moho en el curado. Pierdes toda la cosecha después de meses de trabajo, en los últimos días." fix="Test de la ramita sin excepción. Si dobla sin romperse, espera más días." />
-      <ErrorCard error="Saltarse el curado o hacerlo solo 3–4 días" consecuencia="Sabor vegetal, efecto brusco. Todo el trabajo de meses con un resultado pobre." fix="El curado es parte del cultivo, no un extra. 2 semanas mínimo, 4 ideal." />
-      <ErrorCard error="No hacer burping diario las primeras semanas" consecuencia="Moho en el bote. Todo perdido en la recta final." fix="15 minutos al día abriendo el bote. Con el higrómetro dentro sabes exactamente qué pasa." />
-
-      <SectionTitle>📦 CONSERVACIÓN A LARGO PLAZO</SectionTitle>
-      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#95d5b2", lineHeight: "1.6" }}>
-          Los cuatro enemigos del producto son: <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>luz, oxígeno, humedad y calor</span>. Cualquier método de conservación busca eliminar alguno de estos cuatro factores.
-        </p>
-      </div>
-
-      {[
-        {
-          metodo: "🫙 Botes de cristal herméticos + oscuridad",
-          duracion: "6–12 meses",
-          color: "#52b788",
-          recomendado: "✅ Método estándar",
-          pasos: [
-            "Botes Mason jar de cristal al 75% de capacidad, humedad interior 58-65%, lugar oscuro y fresco.",
-            "La luz UV degrada los cannabinoides — no uses botes transparentes en zonas con luz. Los de cristal ámbar o guardarlos en caja oscura.",
-            "Temperatura ideal: 15-21°C. Por encima de 25°C los terpenos se evaporan y el producto pierde aroma.",
-            "Con estas condiciones mantienes calidad completa hasta 12 meses.",
-          ],
-        },
-        {
-          metodo: "🔵 Envasado al vacío",
-          duracion: "12–18 meses",
-          color: "#74c69d",
-          recomendado: "✅ Recomendado para excedente",
-          pasos: [
-            "Elimina el oxígeno que oxida y degrada los cannabinoides. Extiende la vida útil considerablemente.",
-            "IMPORTANTE: solo después del curado completo (mínimo 4 semanas). Si envásas al vacío antes de que el curado haya terminado, el proceso se interrumpe.",
-            "Problema: las máquinas de vacío domésticas pueden aplastar los cogollos y romper los tricomas. Solución: mete los cogollos en el congelador 20-30 minutos antes de envasar — se quedan rígidos y aguantan la presión sin aplastarse.",
-            "Una vez envasado al vacío, guarda en lugar oscuro y fresco.",
-          ],
-        },
-        {
-          metodo: "❄️ Congelación",
-          duracion: "1–2 años",
-          color: "#95d5b2",
-          recomendado: "⚠️ Solo para largo plazo — con precauciones",
-          pasos: [
-            "Funciona bien para conservación muy larga pero requiere cuidado. Los tricomas congelados son extremadamente frágiles — se rompen con el mínimo contacto y pierdes potencia.",
-            "Nunca toques los cogollos cuando están fríos o recién sacados del congelador.",
-            "Descongela siempre dentro del bote cerrado y hermético. Espera a temperatura ambiente antes de abrir. La condensación es el mayor riesgo — si el vapor de agua toca los cogollos directamente aparece moho.",
-            "No congeles y descongeles repetidamente. Descongela solo lo que vayas a consumir próximamente.",
-          ],
-        },
-        {
-          metodo: "🏆 Vacío + congelación",
-          duracion: "2+ años",
-          color: "#d8f3dc",
-          recomendado: "✅ Mejor método para largo plazo",
-          pasos: [
-            "La combinación más efectiva: sin oxígeno y sin temperatura. Mínima degradación posible.",
-            "Proceso: curado completo (4+ semanas) → congelación 30 min para endurecer → envasado al vacío → congelador.",
-            "Para consumir: saca del congelador, deja descongelar sin abrir 2-3 horas a temperatura ambiente, abre solo cuando el bote esté a temperatura ambiente.",
-            "Ideal si tienes una cosecha exterior grande (200-500g) y no puedes consumirlo todo en 12 meses.",
-          ],
-        },
-      ].map((m, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${m.color}33`, borderLeft: `3px solid ${m.color}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-            <div style={{ fontSize: "14px", color: "#d8f3dc", fontWeight: "bold" }}>{m.metodo}</div>
-            <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "10px" }}>
-              <div style={{ fontSize: "11px", color: m.color, fontWeight: "bold" }}>{m.duracion}</div>
-              <div style={{ fontSize: "10px", color: "#74c69d", marginTop: "2px" }}>{m.recomendado}</div>
-            </div>
-          </div>
-          {m.pasos.map((p, j) => (
-            <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
-              <div style={{ color: m.color, flexShrink: 0, fontSize: "11px" }}>{j + 1}.</div>
-              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5" }}>{p}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-
-      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
-        <div style={{ fontSize: "12px", color: "#d8f3dc", lineHeight: "1.6" }}>
-          <span style={{ fontWeight: "bold" }}>Recomendación práctica: </span>
-          Con 3 cosechas de interior al año (80-150g cada una) el consumo y producción suelen equilibrarse. Los botes de cristal bien curados son más que suficientes. Usa el vacío solo si acumulas más de lo que consumes, y la congelación solo para el excedente de una gran cosecha exterior.
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function PLAGAS_INT() {
   return (
@@ -1449,256 +1137,6 @@ function PLAGAS_INT() {
   );
 }
 
-function CONSERVACION() {
-  return (
-    <div>
-      <InfoBox>
-        Los cuatro enemigos del producto cosechado son: <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>luz, oxígeno, humedad y calor</span>. Cualquier método de conservación busca eliminar alguno de estos cuatro factores. Esta sección aplica igual si has cultivado en interior o en exterior.
-      </InfoBox>
-
-      {[
-        {
-          metodo: "🫙 Botes de cristal herméticos + oscuridad",
-          duracion: "6–12 meses",
-          color: "#52b788",
-          recomendado: "✅ Método estándar — lo que usarás normalmente",
-          pasos: [
-            "Botes Mason jar de cristal al 75% de capacidad, humedad interior 58-65%, lugar oscuro y fresco.",
-            "La luz UV degrada los cannabinoides — guarda los botes en un cajón oscuro o en caja. Si los botes son transparentes, que no les dé luz directa.",
-            "Temperatura ideal: 15-21°C. Por encima de 25°C los terpenos se evaporan y el producto pierde aroma y sabor.",
-            "Con estas condiciones mantienes calidad completa hasta 12 meses.",
-          ],
-        },
-        {
-          metodo: "🔵 Envasado al vacío",
-          duracion: "12–18 meses",
-          color: "#74c69d",
-          recomendado: "✅ Recomendado para guardar excedente",
-          pasos: [
-            "Elimina el oxígeno que oxida y degrada los cannabinoides. Extiende la vida útil considerablemente.",
-            "IMPORTANTE: solo después del curado completo (mínimo 4 semanas). Si envasas antes de terminar el curado, el proceso se interrumpe.",
-            "Problema: las máquinas de vacío domésticas pueden aplastar los cogollos y romper los tricomas. Solución: mete los cogollos en el congelador 20-30 minutos antes — se quedan rígidos y aguantan la presión sin aplastarse.",
-            "Una vez envasado al vacío, guarda en lugar oscuro y fresco.",
-          ],
-        },
-        {
-          metodo: "❄️ Congelación",
-          duracion: "1–2 años",
-          color: "#95d5b2",
-          recomendado: "⚠️ Solo para largo plazo — con precauciones",
-          pasos: [
-            "Los tricomas congelados son extremadamente frágiles — se rompen con el mínimo contacto y pierdes potencia. Nunca toques los cogollos cuando están fríos.",
-            "Descongela siempre dentro del bote cerrado y hermético. Espera a temperatura ambiente antes de abrir. La condensación es el mayor riesgo — el vapor de agua sobre los cogollos puede causar moho.",
-            "No congeles y descongeles repetidamente. Solo descongela lo que vayas a consumir pronto.",
-          ],
-        },
-        {
-          metodo: "🏆 Vacío + congelación",
-          duracion: "2+ años",
-          color: "#d8f3dc",
-          recomendado: "✅ El mejor método para grandes cosechas de exterior",
-          pasos: [
-            "La combinación más efectiva: sin oxígeno y sin temperatura. Mínima degradación posible.",
-            "Proceso: curado completo (4+ semanas) → congela 30 min para endurecer → envasa al vacío → congelador.",
-            "Para consumir: saca del congelador, deja descongelar sin abrir 2-3 horas a temperatura ambiente, abre solo cuando el bote esté a temperatura ambiente.",
-            "Ideal si tienes una cosecha exterior grande (200-500g) y no puedes consumirla en 12 meses.",
-          ],
-        },
-      ].map((m, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${m.color}33`, borderLeft: `3px solid ${m.color}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-            <div style={{ fontSize: "14px", color: "#d8f3dc", fontWeight: "bold" }}>{m.metodo}</div>
-            <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "10px" }}>
-              <div style={{ fontSize: "11px", color: m.color, fontWeight: "bold" }}>{m.duracion}</div>
-            </div>
-          </div>
-          <div style={{ fontSize: "11px", color: m.color, marginBottom: "10px" }}>{m.recomendado}</div>
-          {m.pasos.map((p, j) => (
-            <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
-              <div style={{ color: m.color, flexShrink: 0, fontSize: "11px" }}>{j + 1}.</div>
-              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5" }}>{p}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-
-      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
-        <div style={{ fontSize: "12px", color: "#d8f3dc", lineHeight: "1.6" }}>
-          <span style={{ fontWeight: "bold" }}>Recomendación práctica: </span>
-          Con 3 cosechas de interior al año los botes de cristal herméticos son más que suficientes. Usa el vacío solo si acumulas más de lo que consumes. La congelación solo para el excedente de una gran cosecha exterior.
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function CONCEPTOS() {
-  const categories = [
-    {
-      cat: "🌿 TÉCNICAS DE CULTIVO",
-      color: "#52b788",
-      terms: [
-        { term: "LST (Low Stress Training)", def: "Técnica de doblar las ramas de la planta hacia fuera y fijarlas con clips o cuerdas para que crezca en forma de abanico horizontal en vez de vertical. El objetivo es que la luz llegue a más puntos de la planta al mismo tiempo, aumentando el rendimiento. Se hace en vegetativa, semana 2-3, cuando las ramas aún son flexibles. No se corta nada — solo se doblan y sujetan. Es la técnica más recomendada para principiantes porque si la haces mal, la planta simplemente vuelve a su posición.", visual: "🌿→📐 Planta vertical → Planta en abanico horizontal" },
-        { term: "Topping", def: "Cortar la punta principal de la planta para que en vez de un solo cola principal crezcan dos. Genera más cogollos pero estresa a la planta — no recomendado para autoflorecientes ni para principiantes.", visual: "✂️ Corte en la punta → 2 ramas principales" },
-        { term: "FIM", def: "Similar al topping pero pellizcando en vez de cortando limpiamente. Genera 4 puntas en vez de 2. Técnica avanzada — no recomendada para empezar.", visual: null },
-        { term: "Defoliación", def: "Quitar hojas grandes que hacen sombra a los cogollos que están creciendo debajo. Solo 2-3 hojas por sesión máximo, con días de descanso entre sesiones. Solo en vegetativa o inicio de floración, nunca en floración avanzada.", visual: null },
-        { term: "SOG (Sea of Green)", def: "Poner muchas plantas pequeñas juntas para que formen un 'mar verde' uniforme. Técnica para maximizar rendimiento en poco espacio. No recomendada para empezar.", visual: null },
-        { term: "ScrOG (Screen of Green)", def: "Poner una red horizontal sobre las plantas y pasar las ramas por los agujeros para tener una capa uniforme de cogollos a la misma altura. Maximiza el uso de la luz. Técnica intermedia.", visual: null },
-        { term: "Acolchado / Mulching", def: "Cubrir el suelo alrededor de la planta con hojas secas, corteza o hierba. Retiene la humedad del suelo evitando que el calor la evapore. En exterior reduce el riego a la mitad en verano. Coste cero — usas lo que hay en el bosque.", visual: null },
-      ]
-    },
-    {
-      cat: "🌱 LA PLANTA",
-      color: "#74c69d",
-      terms: [
-        { term: "Vegetativa (fase)", def: "La primera etapa de vida de la planta. Solo crece en tamaño — raíces, tallo y hojas. No hay cogollos todavía. En interior con luz 18h/6h. En autoflorecientes dura 3-4 semanas. En fotoperiodo dura hasta que cambias el ciclo de luz.", visual: null },
-        { term: "Floración (fase)", def: "La segunda etapa, cuando la planta deja de crecer en altura y empieza a producir cogollos. En autoflorecientes empieza sola a los 30-35 días. En fotoperiodo empieza cuando cambias el temporizador a 12h/12h.", visual: null },
-        { term: "Autofloreciente", def: "Variedad que florece sola según su edad, sin importar las horas de luz. Ciclo corto de 70-80 días desde semilla. Perfecta para principiantes. No puedes controlar cuándo florece.", visual: null },
-        { term: "Fotoperiodo", def: "Variedad que solo florece cuando cambias el temporizador a 12h de luz / 12h de oscuridad. Tú decides cuándo empieza a florecer. Más producción pero más compleja. Tus White Widow son fotoperiodo.", visual: null },
-        { term: "Feminizada", def: "Semilla modificada para producir solo plantas hembra (las que dan cogollos). Sin feminizar, el 50% de plantas serían macho y no producirían cogollos. Todas tus semillas son feminizadas.", visual: null },
-        { term: "Pistilo", def: "Los pelos blancos que aparecen en la planta cuando empieza a florecer. Al principio son blancos y se van volviendo naranjas/marrones conforme madura. Cuando el 70-80% son naranjas, la cosecha se acerca.", visual: "🔍 Pelo blanco fino que sale de los nudos de la planta" },
-        { term: "Tricoma", def: "Las pequeñas 'gotitas' de resina que cubren los cogollos. Contienen los cannabinoides y terpenos. Su color indica el punto de madurez: transparentes = pronto, lechosos = óptimo, ámbar = maduro.", visual: "🔬 Necesitas lupa 60x para verlos bien" },
-        { term: "Cola / Cogollo", def: "La flor de la planta hembra. Es lo que se cosecha y cura. Se forma durante la fase de floración.", visual: null },
-        { term: "Cotiledones", def: "Las dos primeras hojitas redondeadas que salen cuando la semilla germina. No parecen cannabis — son redondas y simples. Son normales. Las hojas características aparecen a partir del día 5-7.", visual: "🌱 Las dos primeras hojas redondeadas = normales" },
-        { term: "Fan leaves", def: "Las hojas grandes y características de la planta. No tienen resina. Se retiran en la cosecha porque no tienen valor y ralentizan el secado.", visual: null },
-        { term: "Sugarleaves", def: "Las hojas pequeñas que rodean los cogollos, cubiertas de resina (tricomas). Se recortan en la manicura post-cosecha. Sirven para hacer extractos o mantequilla.", visual: null },
-        { term: "Nudo", def: "El punto del tallo donde sale una rama. En floración, los pistilos aparecen primero en los nudos. Cuantos más nudos tiene una planta, más potencial de producción.", visual: null },
-        { term: "Ápice", def: "La punta más alta de la planta. La que crece hacia la luz. Es el punto de referencia para medir la distancia entre la planta y el LED.", visual: "☝️ La punta más alta = ápice" },
-        { term: "Radícula", def: "La primera raíz blanca que sale de la semilla cuando germina. Cuando mide 1-2cm es el momento de plantarla.", visual: "🌱 Raíz blanca que sale de la semilla" },
-      ]
-    },
-    {
-      cat: "🧪 NUTRIENTES Y SUSTRATO",
-      color: "#95d5b2",
-      terms: [
-        { term: "Sustrato", def: "La tierra donde crece la planta. No es tierra de jardín normal — está formulado específicamente para cannabis con la estructura, pH y nutrientes adecuados. BioBizz Light Mix es el más recomendado para principiantes.", visual: null },
-        { term: "Nutrientes / Fertilizantes", def: "Los 'alimentos' que le das a la planta diluidos en el agua de riego. Los básicos son nitrógeno (N) para crecer y fósforo-potasio (P-K) para florecer. Bio Grow = crecimiento, Bio Bloom = floración.", visual: null },
-        { term: "pH", def: "Medida de acidez del agua en escala del 1 al 14. 7 es neutro. Las plantas en sustrato necesitan que el agua esté entre 6.0 y 6.8 para poder absorber los nutrientes. Fuera de ese rango, los nutrientes están ahí pero la planta no puede tomarlos — como tener comida en un bote con tapa.", visual: "💧 pH 6.0-6.8 = agua correcta para regar" },
-        { term: "pH Down", def: "Líquido ácido que añades al agua para bajar el pH. El agua del grifo suele estar en pH 7-8. Unas pocas gotas llevan el agua al rango correcto.", visual: null },
-        { term: "pHmetro", def: "Aparato digital que metes en el agua y te dice exactamente el pH. Imprescindible — sin él cultivas a ciegas.", visual: "📏 Aparato pequeño con pantalla y punta metálica" },
-        { term: "EC / TDS", def: "Medida de la concentración de sales minerales (nutrientes) en el agua. A mayor EC, más nutrientes. Herramienta avanzada — no imprescindible para empezar con sustratos.", visual: null },
-        { term: "Lavado de raíces", def: "Los últimos 10-14 días antes de cosechar, dejas de dar nutrientes y solo riegas con agua con pH correcto. La planta consume sus propias reservas y el producto final tiene mejor sabor. Sin lavado, los cogollos saben a químico.", visual: null },
-        { term: "Quemar (plantas)", def: "Cuando das demasiados nutrientes y las raíces se 'queman' por el exceso de sales. Síntoma: puntas de hojas marrones. La solución es reducir la dosis, no añadir más.", visual: "🍂 Puntas de hojas marrones = exceso de nutrientes" },
-        { term: "Cepellón", def: "El bloque compacto de tierra con raíces que se forma dentro de la maceta. En el trasplante hay que sacarlo intacto para no dañar las raíces.", visual: null },
-      ]
-    },
-    {
-      cat: "🏠 SETUP E INSTALACIÓN",
-      color: "#b7e4c7",
-      terms: [
-        { term: "Armario de cultivo / Tienda", def: "La estructura de tela reflectante donde viven las plantas. Interior reflectante para aprovechar la luz. Con cremalleras, aperturas para tubos y cables. Se monta con varillas metálicas.", visual: null },
-        { term: "LED", def: "Tipo de iluminación de bajo consumo para cultivo. El estándar actual — más eficiente que las lámparas de sodio antiguas (HPS). Genera menos calor por watt de luz producido.", visual: null },
-        { term: "HPS (High Pressure Sodium)", def: "Tipo de iluminación antigua de sodio de alta presión. Más calor y más consumo que LED para el mismo resultado. Aún muy usada pero en retirada.", visual: null },
-        { term: "Extractor", def: "Ventilador en línea que aspira el aire del interior del armario y lo expulsa hacia el exterior. Crea la presión negativa y controla la temperatura y humedad. Siempre conectado al filtro de carbón para eliminar el olor.", visual: "💨 Aspirador de aire que va conectado al filtro" },
-        { term: "Extractor en línea (TT)", def: "El tipo correcto de extractor para uso con filtro de carbón. Cilíndrico, se instala en el tubo entre el filtro y la salida al exterior. Compatible con filtros anti-olor.", visual: null },
-        { term: "Extractor helicoidal", def: "Tipo de ventilador barato que NO es compatible con filtro de carbón. Si el kit lo incluye, el sistema anti-olor no funcionará correctamente.", visual: "❌ No sirve para control de olores" },
-        { term: "Filtro de carbón", def: "Cilindro relleno de carbón activo que absorbe las moléculas de olor antes de que el aire salga al exterior. Dura 12-18 meses. El elemento más importante para el control de olores.", visual: "🛢️ Cilindro negro que va dentro del armario en la parte alta" },
-        { term: "Presión negativa", def: "Estado del armario cuando el extractor aspira más de lo que entra por las aperturas inferiores. Las paredes del armario se 'chupan' ligeramente hacia dentro. Significa que todo el aire sale por el filtro.", visual: "📦 Paredes hundidas hacia dentro = correcto" },
-        { term: "Temporizador", def: "Enchufe programable que enciende y apaga la luz automáticamente. Se programa con el ciclo de luz deseado: 18/6h para vegetativa, 12/12h para forzar floración en fotoperiodo.", visual: null },
-        { term: "Higrómetro", def: "Aparato que mide la humedad relativa del ambiente y la temperatura. Se coloca a la altura de las plantas dentro del armario.", visual: "📊 Pantalla pequeña con temperatura y % de humedad" },
-        { term: "Controlador de clima", def: "Aparato que regula automáticamente la velocidad del extractor según la temperatura y/o humedad. Mantiene el clima del armario estable sin que tengas que ajustar nada manualmente.", visual: null },
-        { term: "Polea de cuerda", def: "Sistema de cuerda con trinquete que se engancha al techo del armario para colgar el LED. Permite subir y bajar la luz fácilmente según crece la planta.", visual: "🪝 Cuerda con trinquete para regular la altura del LED" },
-        { term: "Maceta de tela", def: "Maceta de material poroso que permite que el aire entre por los laterales. Las raíces se 'autopodán' al llegar al borde — la planta desarrolla más raíces secundarias y crece mejor que en maceta de plástico.", visual: null },
-        { term: "Setup", def: "Todo el conjunto de equipamiento instalado y configurado. Cuando alguien dice 'mi setup' se refiere a su armario con todo lo que lleva.", visual: null },
-      ]
-    },
-    {
-      cat: "✂️ COSECHA Y CURADO",
-      color: "#d8f3dc",
-      terms: [
-        { term: "Cosecha", def: "El momento de cortar la planta. Se hace cuando los tricomas están en el punto óptimo (70-80% lechosos). Incluye cortar, secar, manicurar y curar.", visual: null },
-        { term: "Secado", def: "Fase de 10-14 días donde las ramas cuelgan boca abajo en lugar oscuro, fresco y con algo de circulación de aire. El agua se evapora lentamente. Listo cuando las ramitas finas craquean al doblarlas.", visual: null },
-        { term: "Manicura / Trim", def: "Recortar las hojas pequeñas (sugarleaves) que rodean los cogollos después del secado. Se hace con tijeras de punta fina. Los recortes (trim) sirven para extractos.", visual: "✂️ Recortar las hojitas alrededor del cogollo" },
-        { term: "Curado", def: "Guardar los cogollos en botes herméticos de cristal durante semanas o meses después del secado. Ocurren reacciones químicas que eliminan el sabor vegetal y desarrollan el aroma. Sin curado el resultado es notablemente peor.", visual: null },
-        { term: "Burping", def: "Abrir los botes de curado 15 minutos al día durante las primeras semanas para liberar la humedad residual que siguen soltando los cogollos. Sin burping puede aparecer moho en el bote.", visual: "🫙 Abrir el bote 15 min al día" },
-        { term: "Botrytis", def: "Moho gris que ataca los cogollos desde dentro, especialmente con humedad alta en otoño o en armarios con poca ventilación. Cuando lo ves ya hay daño importante. Prevención: humedad por debajo del 55% en floración.", visual: "🔍 Manchas grises/marrones dentro del cogollo" },
-        { term: "Terpenos", def: "Los compuestos que dan el aroma y sabor característico de cada variedad. Se desarrollan y se potencian durante el curado. Por eso el curado largo (4-8 semanas) marca tanta diferencia en el resultado final.", visual: null },
-      ]
-    },
-    {
-      cat: "📐 MEDIDAS Y TÉRMINOS TÉCNICOS",
-      color: "#f4a261",
-      terms: [
-        { term: "g/m² (gramos por metro cuadrado)", def: "La medida estándar de producción en interior. Si ves 'rendimiento 400g/m²' significa que en 1 metro cuadrado de superficie se pueden producir 400 gramos. Tu armario 120×120 tiene 1.44m² de superficie.", visual: null },
-        { term: "Ciclo 18/6", def: "18 horas de luz encendida y 6 horas de oscuridad. El ciclo estándar para la fase vegetativa en interior. Simula los días largos de verano.", visual: "💡 18h luz + 🌑 6h oscuridad = vegetativa" },
-        { term: "Ciclo 12/12", def: "12 horas de luz y 12 horas de oscuridad. Simula los días otoñales. Las plantas fotoperiodo reciben esta señal y empiezan a florecer. Se cambia manualmente en el temporizador.", visual: "💡 12h luz + 🌑 12h oscuridad = floración fotoperiodo" },
-        { term: "Humedad relativa (HR / RH)", def: "Porcentaje de humedad en el aire. En vegetativa: 50-70%. En floración: 40-50%. Por encima del 60% en floración, riesgo alto de Botrytis.", visual: "💧 % de agua en el aire — mide el higrómetro" },
-        { term: "THC", def: "El principal cannabinoide psicoactivo del cannabis. A mayor %, mayor potencia del efecto. Tus semillas tienen entre 20-25% THC.", visual: null },
-        { term: "CBD", def: "Cannabinoide no psicoactivo con propiedades medicinales. Las variedades estándar tienen menos del 1%. Las variedades CBD tienen altos niveles de CBD y muy bajo THC.", visual: null },
-        { term: "Indica", def: "Tipo genético de cannabis. Plantas más compactas, hojas anchas, efecto relajante y sedante, ciclo de floración más corto. Ideal para uso nocturno.", visual: null },
-        { term: "Sativa", def: "Tipo genético de cannabis. Plantas más altas, hojas finas, efecto más energético y cerebral, ciclo de floración más largo. Ideal para uso diurno.", visual: null },
-        { term: "Híbrido", def: "Cruce de indica y sativa. La mayoría de variedades modernas son híbridos con porcentaje variable de cada una. Ejemplo: '70% indica / 30% sativa'.", visual: null },
-        { term: "Muestra exclusiva (Exclusive Sample)", def: "Pack promocional de pocas semillas (1-3) que los bancos de semillas dan como regalo o muestra. Las de Barney's Farm que tienes son muestras — probablemente 1-2 semillas cada una. Úsalas con cuidado.", visual: null },
-      ]
-    },
-  ];
-
-  const [searchTerm, setSearchTerm] = React.useState('');
-  const allTerms = categories.flatMap(c => c.terms.map(t => ({...t, cat: c.cat, color: c.color})));
-  const filtered = searchTerm.length > 1
-    ? allTerms.filter(t => t.term.toLowerCase().includes(searchTerm.toLowerCase()) || t.def.toLowerCase().includes(searchTerm.toLowerCase()))
-    : null;
-
-  return (
-    <div>
-      <InfoBox>
-        Aquí encontrarás todos los términos técnicos explicados en lenguaje de cero conocimiento. Usa la búsqueda para encontrar cualquier palabra que no entiendas de la guía.
-      </InfoBox>
-
-      {/* Buscador */}
-      <div style={{ marginBottom: "20px" }}>
-        <input
-          type="text"
-          placeholder="🔍 Buscar término... (ej: LST, pH, tricoma)"
-          value={searchTerm}
-          onChange={e => setSearchTerm(e.target.value)}
-          style={{
-            width: "100%", padding: "12px 16px", fontSize: "14px",
-            background: "#0d1f14", border: "1px solid #2d6a4f",
-            borderRadius: "8px", color: "#d8f3dc", outline: "none",
-          }}
-        />
-      </div>
-
-      {/* Resultados de búsqueda */}
-      {filtered && (
-        <div style={{ marginBottom: "20px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px" }}>
-            {filtered.length} RESULTADO{filtered.length !== 1 ? 'S' : ''}
-          </div>
-          {filtered.length === 0 && (
-            <div style={{ fontSize: "13px", color: "#74c69d", padding: "12px" }}>No encontrado. Escríbelo en la siguiente cosulta a Claude 😉</div>
-          )}
-          {filtered.map((item, i) => (
-            <div key={i} style={{ background: "#0d1f14", border: `1px solid ${item.color}44`, borderLeft: `3px solid ${item.color}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
-              <div style={{ fontSize: "13px", fontWeight: "bold", color: item.color, marginBottom: "4px" }}>{item.term}</div>
-              {item.visual && <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>{item.visual}</div>}
-              <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.5" }}>{item.def}</div>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Categorías completas */}
-      {!filtered && categories.map((cat, ci) => (
-        <div key={ci} style={{ marginBottom: "28px" }}>
-          <div style={{ fontSize: "11px", letterSpacing: "2px", color: cat.color, marginBottom: "12px", paddingBottom: "6px", borderBottom: `1px solid ${cat.color}33` }}>
-            {cat.cat}
-          </div>
-          {cat.terms.map((item, i) => (
-            <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderLeft: `3px solid ${cat.color}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
-              <div style={{ fontSize: "13px", fontWeight: "bold", color: cat.color, marginBottom: "4px" }}>{item.term}</div>
-              {item.visual && (
-                <div style={{ fontSize: "11px", color: "#52b788", background: "#162a1e", padding: "4px 8px", borderRadius: "4px", marginBottom: "6px", display: "inline-block" }}>{item.visual}</div>
-              )}
-              <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.5" }}>{item.def}</div>
-            </div>
-          ))}
-        </div>
-      ))}
-    </div>
-  );
-}
 
 function GOTEO() {
   return (
@@ -1757,103 +1195,9 @@ function GOTEO() {
   );
 }
 
-function PODA() {
-  return (
-    <div>
-      <div style={{ background: "#1a2a10", border: "1px solid #4a7a20", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
-        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#c5e8a0", lineHeight: "1.6", fontWeight: "bold" }}>
-          ⚠️ Regla de oro para autoflorecientes: menos es más.
-        </p>
-        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
-          Las autoflorecientes tienen un ciclo de vida fijo — no pueden "recuperar tiempo perdido" como las de fotoperiodo. Cualquier estrés (cortes, daños) come días de su vida útil. La poda agresiva en autos puede reducir el rendimiento final. Con esto en mente, hay técnicas seguras y técnicas a evitar.
-        </p>
-      </div>
 
-      <SectionTitle color="#4a7a20">✅ LO QUE SÍ PUEDES HACER</SectionTitle>
 
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>LST — Low Stress Training (doblar, no cortar)</div>
-        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
-          La técnica más recomendada para principiantes con autos. Consiste en doblar suavemente las ramas hacia fuera y fijarlas con clips o cuerdas para que la planta crezca más horizontal. Así la luz llega a más puntos y produces más cogollos sin cortar nada.
-        </div>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CÓMO HACERLO</div>
-        <Step num={1} text="Semana 2–3 de vegetativa: cuando la planta tenga 4–5 nudos y unos 15cm." />
-        <Step num={2} text="Dobla suavemente la rama principal hacia un lado, en ángulo de ~45°. No fuerces — si notas resistencia, para." why="Las ramas jóvenes son flexibles. Si intentas doblar una rama leñosa y gruesa se rompe. Hazlo temprano cuando aún son flexibles." />
-        <Step num={3} text="Fija la rama doblada con un clip de bonsái, una pinza de ropa pequeña, o cuerda suave atada a la maceta." />
-        <Step num={4} text="En 24–48h verás que las ramas laterales empiezan a crecer hacia arriba buscando la luz. Eso es exactamente lo que quieres." />
-        <Step num={5} text="Repite con las ramas laterales si se vuelven a poner verticales. El objetivo es una planta en forma de abanico, no de árbol." />
-        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
-          <span style={{ color: "#52b788", fontWeight: "bold" }}>Qué necesitas comprar: </span>Clips de bonsái (pack 20 uds, ~5€) o simplemente cuerda de jardín suave (~3€). Nada más.
-        </div>
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>ScrOG — Screen of Green (para fotoperiodo)</div>
-        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
-          Red de cultivo horizontal que mantiene la altura bajo control y maximiza los puntos de floración bajo una luz. Solo viable para fotoperiodo — tienes tiempo para entrenar. No para autoflorecientes.
-        </div>
-        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CÓMO HACERLO</div>
-        <Step num={1} text="Fotoperiodo: cuando la planta llegue a semana 3–4 de vegetativa (20–30cm de altura), instala la red a 20–25cm por encima de la planta." why="Necesitas espacio bajo la red para que crezca. Demasiado alta = desperdicio de la zona; demasiado baja = la planta no cabe." />
-        <Step num={2} text="Red: malla elástica 5×5cm o hilo de jardinería formando una rejilla. Cuesta ~20-30€ o hazla tú con cuerda." />
-        <Step num={3} text="Cuando las ramas crecen hacia la luz, pasa cada rama que sale de la red por debajo de ella, horizontalmente. El objetivo es llenar toda la red de puntas de crecimiento a la misma altura." />
-        <Step num={4} text="A medida que las ramas nuevas crecen hacia arriba, mételas bajo la red también. Al final tendrás una planta plana como una sábana." />
-        <Step num={5} text="Cuando el 80% de la red está llena de puntas verdes, cambia a 12/12h." why="Ahora todos los puntos están a la misma distancia de la luz y florecerán uniformemente. El rendimiento es 30-40% mayor que sin ScrOG." />
-        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
-          <span style={{ color: "#52b788", fontWeight: "bold" }}>Material: </span>Red de ScrOG (20-30€) o cuerda de jardinería y dos soportes, o simplemente clips fijando hilo a los lados del armario. No es complicado.
-        </div>
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>Defoliación leve (quitar hojas que bloquean luz)</div>
-        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
-          Consiste en quitar hojas grandes que hacen sombra a los cogollos que están creciendo debajo. No es cortar ramas — solo quitar hojas individualmente.
-        </div>
-        <Step num={1} text="Solo en vegetativa o inicio de floración — nunca en floración avanzada." why="En floración avanzada la planta ya no puede recuperarse del estrés y cada hoja quitada es energía que pierde." />
-        <Step num={2} text="Quita solo las hojas grandes (fan leaves) que estén tapando completamente un punto de crecimiento." />
-        <Step num={3} text="Máximo 2–3 hojas por sesión. Espera 3–4 días entre sesiones." why="Quitar demasiadas hojas a la vez es un estrés importante. Las hojas son los paneles solares de la planta — quitarlas reduce su capacidad de fotosíntesis." />
-        <Step num={4} text="Corta la hoja desde la base del peciolo (el rabillo). Con tijeras limpias, corte limpio." />
-        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
-          <span style={{ color: "#52b788", fontWeight: "bold" }}>Material: </span>Tijeras de punta fina. Limpia con alcohol isopropílico antes de usar.
-        </div>
-      </div>
-
-      <SectionTitle color="#e63946">❌ LO QUE NO DEBES HACER CON AUTOFLORECIENTES</SectionTitle>
-
-      <ErrorCard
-        error="Topping (cortar la punta principal)"
-        consecuencia="En fotoperiodo genera dos puntas principales. En autos come 1–2 semanas de vida que no recupera nunca. Rendimiento final peor."
-        fix="Con autos nunca hagas topping. Es técnica de fotoperiodo."
-      />
-      <ErrorCard
-        error="FIM (técnica similar al topping)"
-        consecuencia="Mismo problema. Las autos no tienen tiempo de recuperación."
-        fix="Reserva estas técnicas para cuando tengas experiencia con fotoperiodo."
-      />
-      <ErrorCard
-        error="Defoliación agresiva (quitar muchas hojas a la vez)"
-        consecuencia="La planta entra en estrés severo y para de crecer durante varios días — días que con autos no puedes recuperar."
-        fix="Máximo 2–3 hojas cada 3–4 días. Si tienes dudas, no quites nada."
-      />
-      <ErrorCard
-        error="Podar en floración avanzada (semana 4+)"
-        consecuencia="Los cogollos están en pleno desarrollo. Cualquier estrés reduce el rendimiento final directamente."
-        fix="Toda la poda y LST en vegetativa o primeras 2 semanas de floración. Después, manos fuera."
-      />
-
-      <SectionTitle>PARA TU PRIMERA VEZ — RECOMENDACIÓN HONESTA</SectionTitle>
-      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
-        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
-          En la primera cosecha, haz solo LST si te apetece experimentar. Si no, no hagas nada de poda — una planta sin tocar con buena luz, buen riego y buenos nutrientes da mejor resultado que una planta podada incorrectamente.
-        </p>
-        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
-          El LST es la única técnica que no penaliza si la haces mal — en el peor caso la rama vuelve a su posición. Empieza por ahí en la segunda o tercera ronda cuando ya controles el resto.
-        </p>
-      </div>
-    </div>
-  );
-}
-
-// ─── EXTERIOR COMPONENTS ─────────────────────────────────────────────────────
+// Cannabis exterior cultivation components
 
 function COMPRA_EXT() {
   const priorityColor = { "ESENCIAL": "#e63946", "IMPORTANTE": "#f4a261", "ÚTIL": "#52b788" };
@@ -2574,6 +1918,679 @@ function COSECHA_EXT() {
     </div>
   );
 }
+
+
+
+// Cannabis general/shared components (works for interior + exterior)
+
+function MIS_SEMILLAS() {
+  const semillas = [
+    {
+      nombre: "Strawberry Banana Auto",
+      marca: "FastBuds",
+      tipo: "Autofloreciente",
+      cantidad: "1 semilla",
+      genetica: "70% indica / 30% sativa",
+      thc: "25%",
+      cbd: "<1%",
+      altura_indoor: "80–120cm",
+      altura_outdoor: "80–150cm",
+      ciclo: "8–9 semanas desde semilla",
+      rendimiento_indoor: "400–600g/m²",
+      rendimiento_outdoor: "50–200g/planta",
+      efecto: "Relajante y eufórico. Cuerpo y mente. Sabor intenso a fresa madura y plátano dulce.",
+      color: "#e63946",
+      donde: "🏠 Interior (prioritario) · 🌲 Exterior posible",
+      notas_indoor: [
+        "Puede crecer bastante para ser auto — hasta 120cm. Aplica LST desde semana 2-3 para mantenerla en rango.",
+        "Muy aromática durante la floración — asegúrate de que el filtro de carbón esté bien sellado.",
+        "Produce mucha resina — las tijeras se pegarán rápido en la cosecha. Alcohol isopropílico a mano.",
+        "Ciclo algo más largo que otras autos — no la coseches antes de tiempo. Espera a los tricomas.",
+        "Responde muy bien al LST — con buena técnica puede doblar el rendimiento esperado.",
+      ],
+      notas_outdoor: [
+        "En exterior puede desarrollarse mucho más — hasta 150cm en condiciones óptimas.",
+        "Al ser auto, florece sola sin importar el ciclo de luz. Puedes plantarla en mayo y cosechar en julio.",
+        "Resistencia media a hongos — vigila la Botrytis en septiembre si la dejas hasta entonces.",
+        "Buen rendimiento en exterior mediterráneo. Más discreta en tamaño que el fotoperiodo.",
+      ],
+    },
+    {
+      nombre: "White Widow",
+      marca: "Desconocida / Feminizada",
+      tipo: "Fotoperiodo feminizada",
+      cantidad: "3 semillas",
+      genetica: "60% indica / 40% sativa",
+      thc: "18–20%",
+      cbd: "<1%",
+      altura_indoor: "60–100cm",
+      altura_outdoor: "100–150cm",
+      ciclo: "8–9 semanas de floración (tras cambio a 12/12h)",
+      rendimiento_indoor: "400–500g/m²",
+      rendimiento_outdoor: "200–400g/planta",
+      efecto: "Equilibrado y versátil. Eufórico y relajante. La clásica por excelencia — robusta y muy resistente.",
+      color: "#95d5b2",
+      donde: "🏠 Interior · 🌲 Exterior ambas válidas",
+      notas_indoor: [
+        "Fotoperiodo: NO florece sola. Cuando llegue a 40-50cm cambia el temporizador a 12h/12h.",
+        "Muy robusta y resistente — perfecta para principiantes. Perdona errores de riego y nutrientes mejor que otras.",
+        "Compacta para ser fotoperiodo — en 120×120 caben 4 plantas cómodamente con margen.",
+        "Muy resinosa — los cogollos se cubren de tricomas blancos (de ahí el nombre). Fácil de saber cuándo cosechar.",
+        "Tienes 3 semillas — germina 2 y guarda 1 de reserva. Si las dos funcionan bien, perfecto.",
+      ],
+      notas_outdoor: [
+        "En exterior florece sola en agosto cuando los días se acortan. No tienes que hacer nada.",
+        "Excelente para exterior mediterráneo — resistente al moho y las plagas.",
+        "Puede llegar a 150cm en exterior con buena vegetativa. Pon tutores en agosto.",
+        "Cosecha en octubre. Con suerte antes de las lluvias fuertes.",
+        "La más recomendada de tus semillas para el bosque — robustez y rendimiento garantizados.",
+      ],
+    },
+    {
+      nombre: "Zkittlez OG Auto",
+      marca: "Barney's Farm",
+      tipo: "Autofloreciente",
+      cantidad: "Muestra exclusiva (1–3 semillas)",
+      genetica: "Indica dominante",
+      thc: "22–24%",
+      cbd: "<1%",
+      altura_indoor: "70–100cm",
+      altura_outdoor: "80–130cm",
+      ciclo: "8–9 semanas desde semilla",
+      rendimiento_indoor: "450–550g/m²",
+      rendimiento_outdoor: "50–150g/planta",
+      efecto: "Muy relajante y sedante. Sabor afrutado intenso a caramelo y frutos del bosque.",
+      color: "#f4a261",
+      donde: "🏠 Interior (ideal) · 🌲 Exterior posible",
+      notas_indoor: [
+        "Barney's Farm hace semillas de primera calidad — esta muestra es premium.",
+        "Tamaño compacto y manejable — ideal para el 120×120 sin necesidad de LST agresivo.",
+        "Como es muestra exclusiva, tienes pocas semillas — germínala cuando ya tengas experiencia de una cosecha anterior.",
+        "Muy alta producción de resina — cogollos densos y muy aromáticos en floración.",
+        "El sabor final mejora mucho con curado largo — mínimo 4 semanas para esta variedad.",
+      ],
+      notas_outdoor: [
+        "Al ser auto, florece sola. Puedes plantarla en mayo para cosechar en julio.",
+        "Tamaño discreto — buena opción si el spot tiene restricciones de altura o visibilidad.",
+        "Resistencia media — vigila bien en septiembre si hay humedad nocturna alta.",
+      ],
+    },
+    {
+      nombre: "Watermelon Zkittlez Auto",
+      marca: "Barney's Farm",
+      tipo: "Autofloreciente",
+      cantidad: "Muestra exclusiva (1–3 semillas)",
+      genetica: "Indica dominante",
+      thc: "22%",
+      cbd: "<1%",
+      altura_indoor: "70–100cm",
+      altura_outdoor: "80–120cm",
+      ciclo: "8–9 semanas desde semilla",
+      rendimiento_indoor: "400–500g/m²",
+      rendimiento_outdoor: "50–130g/planta",
+      efecto: "Relajante y sedante. Sabor a sandía fresca y frutas tropicales muy marcado.",
+      color: "#52b788",
+      donde: "🏠 Interior (ideal) · 🌲 Exterior posible",
+      notas_indoor: [
+        "Hermana de la Zkittlez OG — misma calidad Barney's Farm pero con perfil de sandía.",
+        "Muy aromática durante la floración — una de las más llamativas en olor. Filtro de carbón imprescindible.",
+        "Compacta y manejable en el 120×120.",
+        "Como la Zkittlez OG, guárdala para cuando ya tengas experiencia — es una semilla premium para aprovecharla bien.",
+        "El curado largo (4-6 semanas) hace que el sabor a sandía se exprese al máximo.",
+      ],
+      notas_outdoor: [
+        "Discreta en tamaño — buena para spots con poca altura disponible.",
+        "Mismas consideraciones que la Zkittlez OG en exterior.",
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      <InfoBox>
+        Estas son las semillas que tienes actualmente. Para cada una encontrarás sus características reales, notas específicas para cultivo indoor y outdoor, y recomendaciones sobre cuándo y cómo usarlas según tu nivel de experiencia.
+      </InfoBox>
+
+      <div style={{ background: "#1a2a10", border: "1px solid #4a7a20", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#74c69d", marginBottom: "10px" }}>ORDEN RECOMENDADO DE USO</div>
+        {[
+          { num: "1ª", semilla: "White Widow (fotoperiodo)", cuando: "Cuando tengas el armario listo. Tienes 3 semillas — margen para aprender.", porq: "La más robusta y que más perdona errores. Ideal para primera cosecha." },
+          { num: "2ª", semilla: "Strawberry Banana Auto (FastBuds)", cuando: "Segunda o tercera cosecha.", porq: "Autofloreciente de alta calidad. Más sencilla pero algo más exigente que la White Widow." },
+          { num: "3ª", semilla: "Zkittlez OG Auto o Watermelon Zkittlez (Barney's Farm)", cuando: "Cuando ya controles el proceso.", porq: "Son muestras exclusivas — pocas semillas sin segunda oportunidad. Aprovéchalas con experiencia." },
+        ].map((r, i) => (
+          <div key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", borderBottom: i < 2 ? "1px solid #1b4332" : "none" }}>
+            <div style={{ fontSize: "14px", fontWeight: "bold", color: "#52b788", flexShrink: 0, width: "28px" }}>{r.num}</div>
+            <div>
+              <div style={{ fontSize: "13px", color: "#d8f3dc", marginBottom: "3px" }}>{r.semilla}</div>
+              <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "2px" }}>Cuándo: {r.cuando}</div>
+              <div style={{ fontSize: "11px", color: "#74c69d" }}>Por qué: {r.porq}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {semillas.map((s, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${s.color}33`, borderLeft: `4px solid ${s.color}`, borderRadius: "12px", padding: "16px", marginBottom: "20px" }}>
+          <div style={{ marginBottom: "12px" }}>
+            <div style={{ fontSize: "16px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{s.nombre}</div>
+            <div style={{ fontSize: "11px", color: s.color, marginBottom: "2px" }}>{s.marca} · {s.tipo} · {s.cantidad}</div>
+            <div style={{ fontSize: "12px", color: "#74c69d" }}>{s.donde}</div>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px", marginBottom: "12px" }}>
+            {[["Genética", s.genetica], ["THC", s.thc], ["Altura indoor", s.altura_indoor], ["Altura outdoor", s.altura_outdoor], ["Ciclo", s.ciclo], ["Rend. indoor", s.rendimiento_indoor]].map(([k, v]) => (
+              <div key={k} style={{ fontSize: "11px" }}>
+                <span style={{ color: "#40916c" }}>{k}: </span>
+                <span style={{ color: "#95d5b2" }}>{v}</span>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ background: "#162a1e", borderRadius: "8px", padding: "10px 12px", marginBottom: "12px" }}>
+            <div style={{ fontSize: "11px", color: s.color, marginBottom: "3px" }}>Efecto y sabor</div>
+            <div style={{ fontSize: "12px", color: "#95d5b2", lineHeight: "1.5" }}>{s.efecto}</div>
+          </div>
+
+          <div style={{ marginBottom: "10px" }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>🏠 NOTAS PARA INDOOR</div>
+            {s.notas_indoor.map((n, j) => (
+              <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
+                <div style={{ color: s.color, flexShrink: 0, fontSize: "12px" }}>→</div>
+                <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{n}</div>
+              </div>
+            ))}
+          </div>
+
+          <div>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#74c69d", marginBottom: "8px" }}>🌲 NOTAS PARA OUTDOOR</div>
+            {s.notas_outdoor.map((n, j) => (
+              <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
+                <div style={{ color: "#74c69d", flexShrink: 0, fontSize: "12px" }}>→</div>
+                <div style={{ fontSize: "12px", color: "#95d5b2", lineHeight: "1.5" }}>{n}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+function COSECHA() {
+  return (
+    <div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+        <StatBox label="Secado" value="10–14 días" />
+        <StatBox label="Temp. secado" value="18–20°C" />
+        <StatBox label="Humedad secado" value="45–55%" />
+        <StatBox label="Curado mínimo" value="2–4 semanas" />
+      </div>
+
+      <SectionTitle>EL DÍA DE LA COSECHA</SectionTitle>
+      <Step num={1} text="48h antes de cortar: apaga la luz y déjala en oscuridad total." why="Muchos growers lo hacen creyendo que dispara la producción de resina en las últimas horas. No está 100% demostrado, pero no cuesta nada y muchos ven mejoras. Es el último empujón antes de cosechar." />
+      <Step num={2} text="Ponte guantes de nitrilo antes de tocar los cogollos." why="La resina es muy pegajosa y difícil de quitar de la piel. Además, el calor de las manos puede degradarla." />
+      <Step num={3} text="Corta la planta a nivel del sustrato con tijeras limpias. Puedes cortar entera o rama a rama." />
+      <Step num={4} text="Quita las hojas grandes (fan leaves, las hojas grandes sin resina) con los dedos o tijeras." why="Tienen poco valor, ralentizan el secado y si las dejas pueden acumular humedad. Las hojas pequeñas que rodean los cogollos se dejan para la manicura posterior." />
+
+      <SectionTitle>EL SECADO</SectionTitle>
+      <Step num={5} text="Cuelga las ramas boca abajo en un lugar oscuro, 18–20°C, 45–55% humedad. Airflow suave en la habitación pero sin ventilador apuntando directamente." why="La oscuridad protege los cannabinoides de la degradación por la luz. El aire directo seca el exterior demasiado rápido mientras el interior sigue húmedo — eso provoca moho dentro del cogollo aunque por fuera parezca seco." />
+      <Step num={6} text="No toques ni muevas las ramas durante el secado." />
+      <Step num={7} text="TEST de secado listo: coge una ramita fina. Dóblala. Si craquea (se parte limpio y seco), está lista. Si se dobla sin romperse, necesita más tiempo." why="Este test es más fiable que mirar el color o tocar el cogollo con los dedos. El interior seca más lento que el exterior y este test lo detecta perfectamente." />
+      <Step num={8} text="Duración habitual: 10–14 días. En julio con calor puede ser algo menos." />
+
+      <SectionTitle>LA MANICURA</SectionTitle>
+      <Step num={9} text="Una vez seco, recorta con tijeras de punta fina las hojas pequeñas que rodean cada cogollo (sugarleaves)." why="Son material de menor calidad. Retirarlas mejora el aspecto, el sabor y la experiencia final." />
+      <Step num={10} text="Guarda los recortes (trim) aparte en una bolsa. Sirven para hacer aceite, mantequilla u otros usos." />
+
+      <SectionTitle>EL CURADO — EL PASO QUE MÁS DIFERENCIA EL RESULTADO</SectionTitle>
+      <Step num={11} text="Mete los cogollos en botes de cristal herméticos (Mason jars). Llénalos al 75%." why="Muy llenos: la humedad no circula bien. Muy vacíos: se seca demasiado rápido en el bote." />
+      <Step num={12} text="Pon un higrómetro pequeño dentro de cada bote." why="La humedad dentro del bote debe estar entre 58–65%. Sin higrómetro estás completamente a ciegas." />
+      <Step num={13} text="Las primeras 2 semanas: abre cada bote 15 minutos al día. Se llama 'burping'." why="El material sigue liberando humedad residual después de parecer seco. Si no la liberas, se acumula y aparece moho aunque el cogollo pareciera listo al meterlo." />
+      <Step num={14} text="Si el higrómetro marca más de 70%: deja el bote abierto 1–2 horas. Si marca menos de 55%: ciérralo hasta mañana." />
+      <Step num={15} text="Mínimo 2 semanas de curado. 4 semanas es notablemente mejor. 8 semanas es lo ideal." why="El curado no es solo esperar. Durante ese tiempo ocurren reacciones químicas que descomponen la clorofila (que da sabor vegetal amargo) y desarrollan los terpenos (el aroma y sabor final). No hay atajos posibles." />
+
+      <SectionTitle color="#e63946">🚫 ERRORES QUE CUESTAN GRAMOS</SectionTitle>
+      <ErrorCard error="Secar con ventilador directo encima de las ramas" consecuencia="Exterior seco, interior húmedo. Moho invisible dentro del cogollo." fix="Airflow indirecto. El aire circula en la habitación pero no apunta a las ramas." />
+      <ErrorCard error="Meter en bote antes de hacer el test de la ramita" consecuencia="Moho en el curado. Pierdes toda la cosecha después de meses de trabajo, en los últimos días." fix="Test de la ramita sin excepción. Si dobla sin romperse, espera más días." />
+      <ErrorCard error="Saltarse el curado o hacerlo solo 3–4 días" consecuencia="Sabor vegetal, efecto brusco. Todo el trabajo de meses con un resultado pobre." fix="El curado es parte del cultivo, no un extra. 2 semanas mínimo, 4 ideal." />
+      <ErrorCard error="No hacer burping diario las primeras semanas" consecuencia="Moho en el bote. Todo perdido en la recta final." fix="15 minutos al día abriendo el bote. Con el higrómetro dentro sabes exactamente qué pasa." />
+
+      <SectionTitle>📦 CONSERVACIÓN A LARGO PLAZO</SectionTitle>
+      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <p style={{ margin: "0 0 8px", fontSize: "12px", color: "#95d5b2", lineHeight: "1.6" }}>
+          Los cuatro enemigos del producto son: <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>luz, oxígeno, humedad y calor</span>. Cualquier método de conservación busca eliminar alguno de estos cuatro factores.
+        </p>
+      </div>
+
+      {[
+        {
+          metodo: "🫙 Botes de cristal herméticos + oscuridad",
+          duracion: "6–12 meses",
+          color: "#52b788",
+          recomendado: "✅ Método estándar",
+          pasos: [
+            "Botes Mason jar de cristal al 75% de capacidad, humedad interior 58-65%, lugar oscuro y fresco.",
+            "La luz UV degrada los cannabinoides — no uses botes transparentes en zonas con luz. Los de cristal ámbar o guardarlos en caja oscura.",
+            "Temperatura ideal: 15-21°C. Por encima de 25°C los terpenos se evaporan y el producto pierde aroma.",
+            "Con estas condiciones mantienes calidad completa hasta 12 meses.",
+          ],
+        },
+        {
+          metodo: "🔵 Envasado al vacío",
+          duracion: "12–18 meses",
+          color: "#74c69d",
+          recomendado: "✅ Recomendado para excedente",
+          pasos: [
+            "Elimina el oxígeno que oxida y degrada los cannabinoides. Extiende la vida útil considerablemente.",
+            "IMPORTANTE: solo después del curado completo (mínimo 4 semanas). Si envásas al vacío antes de que el curado haya terminado, el proceso se interrumpe.",
+            "Problema: las máquinas de vacío domésticas pueden aplastar los cogollos y romper los tricomas. Solución: mete los cogollos en el congelador 20-30 minutos antes de envasar — se quedan rígidos y aguantan la presión sin aplastarse.",
+            "Una vez envasado al vacío, guarda en lugar oscuro y fresco.",
+          ],
+        },
+        {
+          metodo: "❄️ Congelación",
+          duracion: "1–2 años",
+          color: "#95d5b2",
+          recomendado: "⚠️ Solo para largo plazo — con precauciones",
+          pasos: [
+            "Funciona bien para conservación muy larga pero requiere cuidado. Los tricomas congelados son extremadamente frágiles — se rompen con el mínimo contacto y pierdes potencia.",
+            "Nunca toques los cogollos cuando están fríos o recién sacados del congelador.",
+            "Descongela siempre dentro del bote cerrado y hermético. Espera a temperatura ambiente antes de abrir. La condensación es el mayor riesgo — si el vapor de agua toca los cogollos directamente aparece moho.",
+            "No congeles y descongeles repetidamente. Descongela solo lo que vayas a consumir próximamente.",
+          ],
+        },
+        {
+          metodo: "🏆 Vacío + congelación",
+          duracion: "2+ años",
+          color: "#d8f3dc",
+          recomendado: "✅ Mejor método para largo plazo",
+          pasos: [
+            "La combinación más efectiva: sin oxígeno y sin temperatura. Mínima degradación posible.",
+            "Proceso: curado completo (4+ semanas) → congelación 30 min para endurecer → envasado al vacío → congelador.",
+            "Para consumir: saca del congelador, deja descongelar sin abrir 2-3 horas a temperatura ambiente, abre solo cuando el bote esté a temperatura ambiente.",
+            "Ideal si tienes una cosecha exterior grande (200-500g) y no puedes consumirlo todo en 12 meses.",
+          ],
+        },
+      ].map((m, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${m.color}33`, borderLeft: `3px solid ${m.color}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+            <div style={{ fontSize: "14px", color: "#d8f3dc", fontWeight: "bold" }}>{m.metodo}</div>
+            <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "10px" }}>
+              <div style={{ fontSize: "11px", color: m.color, fontWeight: "bold" }}>{m.duracion}</div>
+              <div style={{ fontSize: "10px", color: "#74c69d", marginTop: "2px" }}>{m.recomendado}</div>
+            </div>
+          </div>
+          {m.pasos.map((p, j) => (
+            <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
+              <div style={{ color: m.color, flexShrink: 0, fontSize: "11px" }}>{j + 1}.</div>
+              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5" }}>{p}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
+        <div style={{ fontSize: "12px", color: "#d8f3dc", lineHeight: "1.6" }}>
+          <span style={{ fontWeight: "bold" }}>Recomendación práctica: </span>
+          Con 3 cosechas de interior al año (80-150g cada una) el consumo y producción suelen equilibrarse. Los botes de cristal bien curados son más que suficientes. Usa el vacío solo si acumulas más de lo que consumes, y la congelación solo para el excedente de una gran cosecha exterior.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+function CONSERVACION() {
+  return (
+    <div>
+      <InfoBox>
+        Los cuatro enemigos del producto cosechado son: <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>luz, oxígeno, humedad y calor</span>. Cualquier método de conservación busca eliminar alguno de estos cuatro factores. Esta sección aplica igual si has cultivado en interior o en exterior.
+      </InfoBox>
+
+      {[
+        {
+          metodo: "🫙 Botes de cristal herméticos + oscuridad",
+          duracion: "6–12 meses",
+          color: "#52b788",
+          recomendado: "✅ Método estándar — lo que usarás normalmente",
+          pasos: [
+            "Botes Mason jar de cristal al 75% de capacidad, humedad interior 58-65%, lugar oscuro y fresco.",
+            "La luz UV degrada los cannabinoides — guarda los botes en un cajón oscuro o en caja. Si los botes son transparentes, que no les dé luz directa.",
+            "Temperatura ideal: 15-21°C. Por encima de 25°C los terpenos se evaporan y el producto pierde aroma y sabor.",
+            "Con estas condiciones mantienes calidad completa hasta 12 meses.",
+          ],
+        },
+        {
+          metodo: "🔵 Envasado al vacío",
+          duracion: "12–18 meses",
+          color: "#74c69d",
+          recomendado: "✅ Recomendado para guardar excedente",
+          pasos: [
+            "Elimina el oxígeno que oxida y degrada los cannabinoides. Extiende la vida útil considerablemente.",
+            "IMPORTANTE: solo después del curado completo (mínimo 4 semanas). Si envasas antes de terminar el curado, el proceso se interrumpe.",
+            "Problema: las máquinas de vacío domésticas pueden aplastar los cogollos y romper los tricomas. Solución: mete los cogollos en el congelador 20-30 minutos antes — se quedan rígidos y aguantan la presión sin aplastarse.",
+            "Una vez envasado al vacío, guarda en lugar oscuro y fresco.",
+          ],
+        },
+        {
+          metodo: "❄️ Congelación",
+          duracion: "1–2 años",
+          color: "#95d5b2",
+          recomendado: "⚠️ Solo para largo plazo — con precauciones",
+          pasos: [
+            "Los tricomas congelados son extremadamente frágiles — se rompen con el mínimo contacto y pierdes potencia. Nunca toques los cogollos cuando están fríos.",
+            "Descongela siempre dentro del bote cerrado y hermético. Espera a temperatura ambiente antes de abrir. La condensación es el mayor riesgo — el vapor de agua sobre los cogollos puede causar moho.",
+            "No congeles y descongeles repetidamente. Solo descongela lo que vayas a consumir pronto.",
+          ],
+        },
+        {
+          metodo: "🏆 Vacío + congelación",
+          duracion: "2+ años",
+          color: "#d8f3dc",
+          recomendado: "✅ El mejor método para grandes cosechas de exterior",
+          pasos: [
+            "La combinación más efectiva: sin oxígeno y sin temperatura. Mínima degradación posible.",
+            "Proceso: curado completo (4+ semanas) → congela 30 min para endurecer → envasa al vacío → congelador.",
+            "Para consumir: saca del congelador, deja descongelar sin abrir 2-3 horas a temperatura ambiente, abre solo cuando el bote esté a temperatura ambiente.",
+            "Ideal si tienes una cosecha exterior grande (200-500g) y no puedes consumirla en 12 meses.",
+          ],
+        },
+      ].map((m, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${m.color}33`, borderLeft: `3px solid ${m.color}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+            <div style={{ fontSize: "14px", color: "#d8f3dc", fontWeight: "bold" }}>{m.metodo}</div>
+            <div style={{ textAlign: "right", flexShrink: 0, marginLeft: "10px" }}>
+              <div style={{ fontSize: "11px", color: m.color, fontWeight: "bold" }}>{m.duracion}</div>
+            </div>
+          </div>
+          <div style={{ fontSize: "11px", color: m.color, marginBottom: "10px" }}>{m.recomendado}</div>
+          {m.pasos.map((p, j) => (
+            <div key={j} style={{ display: "flex", gap: "8px", marginBottom: "6px" }}>
+              <div style={{ color: m.color, flexShrink: 0, fontSize: "11px" }}>{j + 1}.</div>
+              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5" }}>{p}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
+        <div style={{ fontSize: "12px", color: "#d8f3dc", lineHeight: "1.6" }}>
+          <span style={{ fontWeight: "bold" }}>Recomendación práctica: </span>
+          Con 3 cosechas de interior al año los botes de cristal herméticos son más que suficientes. Usa el vacío solo si acumulas más de lo que consumes. La congelación solo para el excedente de una gran cosecha exterior.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CONCEPTOS() {
+  const categories = [
+    {
+      cat: "🌿 TÉCNICAS DE CULTIVO",
+      color: "#52b788",
+      terms: [
+        { term: "LST (Low Stress Training)", def: "Técnica de doblar las ramas de la planta hacia fuera y fijarlas con clips o cuerdas para que crezca en forma de abanico horizontal en vez de vertical. El objetivo es que la luz llegue a más puntos de la planta al mismo tiempo, aumentando el rendimiento. Se hace en vegetativa, semana 2-3, cuando las ramas aún son flexibles. No se corta nada — solo se doblan y sujetan. Es la técnica más recomendada para principiantes porque si la haces mal, la planta simplemente vuelve a su posición.", visual: "🌿→📐 Planta vertical → Planta en abanico horizontal" },
+        { term: "Topping", def: "Cortar la punta principal de la planta para que en vez de un solo cola principal crezcan dos. Genera más cogollos pero estresa a la planta — no recomendado para autoflorecientes ni para principiantes.", visual: "✂️ Corte en la punta → 2 ramas principales" },
+        { term: "FIM", def: "Similar al topping pero pellizcando en vez de cortando limpiamente. Genera 4 puntas en vez de 2. Técnica avanzada — no recomendada para empezar.", visual: null },
+        { term: "Defoliación", def: "Quitar hojas grandes que hacen sombra a los cogollos que están creciendo debajo. Solo 2-3 hojas por sesión máximo, con días de descanso entre sesiones. Solo en vegetativa o inicio de floración, nunca en floración avanzada.", visual: null },
+        { term: "SOG (Sea of Green)", def: "Poner muchas plantas pequeñas juntas para que formen un 'mar verde' uniforme. Técnica para maximizar rendimiento en poco espacio. No recomendada para empezar.", visual: null },
+        { term: "ScrOG (Screen of Green)", def: "Poner una red horizontal sobre las plantas y pasar las ramas por los agujeros para tener una capa uniforme de cogollos a la misma altura. Maximiza el uso de la luz. Técnica intermedia.", visual: null },
+        { term: "Acolchado / Mulching", def: "Cubrir el suelo alrededor de la planta con hojas secas, corteza o hierba. Retiene la humedad del suelo evitando que el calor la evapore. En exterior reduce el riego a la mitad en verano. Coste cero — usas lo que hay en el bosque.", visual: null },
+      ]
+    },
+    {
+      cat: "🌱 LA PLANTA",
+      color: "#74c69d",
+      terms: [
+        { term: "Vegetativa (fase)", def: "La primera etapa de vida de la planta. Solo crece en tamaño — raíces, tallo y hojas. No hay cogollos todavía. En interior con luz 18h/6h. En autoflorecientes dura 3-4 semanas. En fotoperiodo dura hasta que cambias el ciclo de luz.", visual: null },
+        { term: "Floración (fase)", def: "La segunda etapa, cuando la planta deja de crecer en altura y empieza a producir cogollos. En autoflorecientes empieza sola a los 30-35 días. En fotoperiodo empieza cuando cambias el temporizador a 12h/12h.", visual: null },
+        { term: "Autofloreciente", def: "Variedad que florece sola según su edad, sin importar las horas de luz. Ciclo corto de 70-80 días desde semilla. Perfecta para principiantes. No puedes controlar cuándo florece.", visual: null },
+        { term: "Fotoperiodo", def: "Variedad que solo florece cuando cambias el temporizador a 12h de luz / 12h de oscuridad. Tú decides cuándo empieza a florecer. Más producción pero más compleja. Tus White Widow son fotoperiodo.", visual: null },
+        { term: "Feminizada", def: "Semilla modificada para producir solo plantas hembra (las que dan cogollos). Sin feminizar, el 50% de plantas serían macho y no producirían cogollos. Todas tus semillas son feminizadas.", visual: null },
+        { term: "Pistilo", def: "Los pelos blancos que aparecen en la planta cuando empieza a florecer. Al principio son blancos y se van volviendo naranjas/marrones conforme madura. Cuando el 70-80% son naranjas, la cosecha se acerca.", visual: "🔍 Pelo blanco fino que sale de los nudos de la planta" },
+        { term: "Tricoma", def: "Las pequeñas 'gotitas' de resina que cubren los cogollos. Contienen los cannabinoides y terpenos. Su color indica el punto de madurez: transparentes = pronto, lechosos = óptimo, ámbar = maduro.", visual: "🔬 Necesitas lupa 60x para verlos bien" },
+        { term: "Cola / Cogollo", def: "La flor de la planta hembra. Es lo que se cosecha y cura. Se forma durante la fase de floración.", visual: null },
+        { term: "Cotiledones", def: "Las dos primeras hojitas redondeadas que salen cuando la semilla germina. No parecen cannabis — son redondas y simples. Son normales. Las hojas características aparecen a partir del día 5-7.", visual: "🌱 Las dos primeras hojas redondeadas = normales" },
+        { term: "Fan leaves", def: "Las hojas grandes y características de la planta. No tienen resina. Se retiran en la cosecha porque no tienen valor y ralentizan el secado.", visual: null },
+        { term: "Sugarleaves", def: "Las hojas pequeñas que rodean los cogollos, cubiertas de resina (tricomas). Se recortan en la manicura post-cosecha. Sirven para hacer extractos o mantequilla.", visual: null },
+        { term: "Nudo", def: "El punto del tallo donde sale una rama. En floración, los pistilos aparecen primero en los nudos. Cuantos más nudos tiene una planta, más potencial de producción.", visual: null },
+        { term: "Ápice", def: "La punta más alta de la planta. La que crece hacia la luz. Es el punto de referencia para medir la distancia entre la planta y el LED.", visual: "☝️ La punta más alta = ápice" },
+        { term: "Radícula", def: "La primera raíz blanca que sale de la semilla cuando germina. Cuando mide 1-2cm es el momento de plantarla.", visual: "🌱 Raíz blanca que sale de la semilla" },
+      ]
+    },
+    {
+      cat: "🧪 NUTRIENTES Y SUSTRATO",
+      color: "#95d5b2",
+      terms: [
+        { term: "Sustrato", def: "La tierra donde crece la planta. No es tierra de jardín normal — está formulado específicamente para cannabis con la estructura, pH y nutrientes adecuados. BioBizz Light Mix es el más recomendado para principiantes.", visual: null },
+        { term: "Nutrientes / Fertilizantes", def: "Los 'alimentos' que le das a la planta diluidos en el agua de riego. Los básicos son nitrógeno (N) para crecer y fósforo-potasio (P-K) para florecer. Bio Grow = crecimiento, Bio Bloom = floración.", visual: null },
+        { term: "pH", def: "Medida de acidez del agua en escala del 1 al 14. 7 es neutro. Las plantas en sustrato necesitan que el agua esté entre 6.0 y 6.8 para poder absorber los nutrientes. Fuera de ese rango, los nutrientes están ahí pero la planta no puede tomarlos — como tener comida en un bote con tapa.", visual: "💧 pH 6.0-6.8 = agua correcta para regar" },
+        { term: "pH Down", def: "Líquido ácido que añades al agua para bajar el pH. El agua del grifo suele estar en pH 7-8. Unas pocas gotas llevan el agua al rango correcto.", visual: null },
+        { term: "pHmetro", def: "Aparato digital que metes en el agua y te dice exactamente el pH. Imprescindible — sin él cultivas a ciegas.", visual: "📏 Aparato pequeño con pantalla y punta metálica" },
+        { term: "EC / TDS", def: "Medida de la concentración de sales minerales (nutrientes) en el agua. A mayor EC, más nutrientes. Herramienta avanzada — no imprescindible para empezar con sustratos.", visual: null },
+        { term: "Lavado de raíces", def: "Los últimos 10-14 días antes de cosechar, dejas de dar nutrientes y solo riegas con agua con pH correcto. La planta consume sus propias reservas y el producto final tiene mejor sabor. Sin lavado, los cogollos saben a químico.", visual: null },
+        { term: "Quemar (plantas)", def: "Cuando das demasiados nutrientes y las raíces se 'queman' por el exceso de sales. Síntoma: puntas de hojas marrones. La solución es reducir la dosis, no añadir más.", visual: "🍂 Puntas de hojas marrones = exceso de nutrientes" },
+        { term: "Cepellón", def: "El bloque compacto de tierra con raíces que se forma dentro de la maceta. En el trasplante hay que sacarlo intacto para no dañar las raíces.", visual: null },
+      ]
+    },
+    {
+      cat: "🏠 SETUP E INSTALACIÓN",
+      color: "#b7e4c7",
+      terms: [
+        { term: "Armario de cultivo / Tienda", def: "La estructura de tela reflectante donde viven las plantas. Interior reflectante para aprovechar la luz. Con cremalleras, aperturas para tubos y cables. Se monta con varillas metálicas.", visual: null },
+        { term: "LED", def: "Tipo de iluminación de bajo consumo para cultivo. El estándar actual — más eficiente que las lámparas de sodio antiguas (HPS). Genera menos calor por watt de luz producido.", visual: null },
+        { term: "HPS (High Pressure Sodium)", def: "Tipo de iluminación antigua de sodio de alta presión. Más calor y más consumo que LED para el mismo resultado. Aún muy usada pero en retirada.", visual: null },
+        { term: "Extractor", def: "Ventilador en línea que aspira el aire del interior del armario y lo expulsa hacia el exterior. Crea la presión negativa y controla la temperatura y humedad. Siempre conectado al filtro de carbón para eliminar el olor.", visual: "💨 Aspirador de aire que va conectado al filtro" },
+        { term: "Extractor en línea (TT)", def: "El tipo correcto de extractor para uso con filtro de carbón. Cilíndrico, se instala en el tubo entre el filtro y la salida al exterior. Compatible con filtros anti-olor.", visual: null },
+        { term: "Extractor helicoidal", def: "Tipo de ventilador barato que NO es compatible con filtro de carbón. Si el kit lo incluye, el sistema anti-olor no funcionará correctamente.", visual: "❌ No sirve para control de olores" },
+        { term: "Filtro de carbón", def: "Cilindro relleno de carbón activo que absorbe las moléculas de olor antes de que el aire salga al exterior. Dura 12-18 meses. El elemento más importante para el control de olores.", visual: "🛢️ Cilindro negro que va dentro del armario en la parte alta" },
+        { term: "Presión negativa", def: "Estado del armario cuando el extractor aspira más de lo que entra por las aperturas inferiores. Las paredes del armario se 'chupan' ligeramente hacia dentro. Significa que todo el aire sale por el filtro.", visual: "📦 Paredes hundidas hacia dentro = correcto" },
+        { term: "Temporizador", def: "Enchufe programable que enciende y apaga la luz automáticamente. Se programa con el ciclo de luz deseado: 18/6h para vegetativa, 12/12h para forzar floración en fotoperiodo.", visual: null },
+        { term: "Higrómetro", def: "Aparato que mide la humedad relativa del ambiente y la temperatura. Se coloca a la altura de las plantas dentro del armario.", visual: "📊 Pantalla pequeña con temperatura y % de humedad" },
+        { term: "Controlador de clima", def: "Aparato que regula automáticamente la velocidad del extractor según la temperatura y/o humedad. Mantiene el clima del armario estable sin que tengas que ajustar nada manualmente.", visual: null },
+        { term: "Polea de cuerda", def: "Sistema de cuerda con trinquete que se engancha al techo del armario para colgar el LED. Permite subir y bajar la luz fácilmente según crece la planta.", visual: "🪝 Cuerda con trinquete para regular la altura del LED" },
+        { term: "Maceta de tela", def: "Maceta de material poroso que permite que el aire entre por los laterales. Las raíces se 'autopodán' al llegar al borde — la planta desarrolla más raíces secundarias y crece mejor que en maceta de plástico.", visual: null },
+        { term: "Setup", def: "Todo el conjunto de equipamiento instalado y configurado. Cuando alguien dice 'mi setup' se refiere a su armario con todo lo que lleva.", visual: null },
+      ]
+    },
+    {
+      cat: "✂️ COSECHA Y CURADO",
+      color: "#d8f3dc",
+      terms: [
+        { term: "Cosecha", def: "El momento de cortar la planta. Se hace cuando los tricomas están en el punto óptimo (70-80% lechosos). Incluye cortar, secar, manicurar y curar.", visual: null },
+        { term: "Secado", def: "Fase de 10-14 días donde las ramas cuelgan boca abajo en lugar oscuro, fresco y con algo de circulación de aire. El agua se evapora lentamente. Listo cuando las ramitas finas craquean al doblarlas.", visual: null },
+        { term: "Manicura / Trim", def: "Recortar las hojas pequeñas (sugarleaves) que rodean los cogollos después del secado. Se hace con tijeras de punta fina. Los recortes (trim) sirven para extractos.", visual: "✂️ Recortar las hojitas alrededor del cogollo" },
+        { term: "Curado", def: "Guardar los cogollos en botes herméticos de cristal durante semanas o meses después del secado. Ocurren reacciones químicas que eliminan el sabor vegetal y desarrollan el aroma. Sin curado el resultado es notablemente peor.", visual: null },
+        { term: "Burping", def: "Abrir los botes de curado 15 minutos al día durante las primeras semanas para liberar la humedad residual que siguen soltando los cogollos. Sin burping puede aparecer moho en el bote.", visual: "🫙 Abrir el bote 15 min al día" },
+        { term: "Botrytis", def: "Moho gris que ataca los cogollos desde dentro, especialmente con humedad alta en otoño o en armarios con poca ventilación. Cuando lo ves ya hay daño importante. Prevención: humedad por debajo del 55% en floración.", visual: "🔍 Manchas grises/marrones dentro del cogollo" },
+        { term: "Terpenos", def: "Los compuestos que dan el aroma y sabor característico de cada variedad. Se desarrollan y se potencian durante el curado. Por eso el curado largo (4-8 semanas) marca tanta diferencia en el resultado final.", visual: null },
+      ]
+    },
+    {
+      cat: "📐 MEDIDAS Y TÉRMINOS TÉCNICOS",
+      color: "#f4a261",
+      terms: [
+        { term: "g/m² (gramos por metro cuadrado)", def: "La medida estándar de producción en interior. Si ves 'rendimiento 400g/m²' significa que en 1 metro cuadrado de superficie se pueden producir 400 gramos. Tu armario 120×120 tiene 1.44m² de superficie.", visual: null },
+        { term: "Ciclo 18/6", def: "18 horas de luz encendida y 6 horas de oscuridad. El ciclo estándar para la fase vegetativa en interior. Simula los días largos de verano.", visual: "💡 18h luz + 🌑 6h oscuridad = vegetativa" },
+        { term: "Ciclo 12/12", def: "12 horas de luz y 12 horas de oscuridad. Simula los días otoñales. Las plantas fotoperiodo reciben esta señal y empiezan a florecer. Se cambia manualmente en el temporizador.", visual: "💡 12h luz + 🌑 12h oscuridad = floración fotoperiodo" },
+        { term: "Humedad relativa (HR / RH)", def: "Porcentaje de humedad en el aire. En vegetativa: 50-70%. En floración: 40-50%. Por encima del 60% en floración, riesgo alto de Botrytis.", visual: "💧 % de agua en el aire — mide el higrómetro" },
+        { term: "THC", def: "El principal cannabinoide psicoactivo del cannabis. A mayor %, mayor potencia del efecto. Tus semillas tienen entre 20-25% THC.", visual: null },
+        { term: "CBD", def: "Cannabinoide no psicoactivo con propiedades medicinales. Las variedades estándar tienen menos del 1%. Las variedades CBD tienen altos niveles de CBD y muy bajo THC.", visual: null },
+        { term: "Indica", def: "Tipo genético de cannabis. Plantas más compactas, hojas anchas, efecto relajante y sedante, ciclo de floración más corto. Ideal para uso nocturno.", visual: null },
+        { term: "Sativa", def: "Tipo genético de cannabis. Plantas más altas, hojas finas, efecto más energético y cerebral, ciclo de floración más largo. Ideal para uso diurno.", visual: null },
+        { term: "Híbrido", def: "Cruce de indica y sativa. La mayoría de variedades modernas son híbridos con porcentaje variable de cada una. Ejemplo: '70% indica / 30% sativa'.", visual: null },
+        { term: "Muestra exclusiva (Exclusive Sample)", def: "Pack promocional de pocas semillas (1-3) que los bancos de semillas dan como regalo o muestra. Las de Barney's Farm que tienes son muestras — probablemente 1-2 semillas cada una. Úsalas con cuidado.", visual: null },
+      ]
+    },
+  ];
+
+  const [searchTerm, setSearchTerm] = React.useState('');
+  const allTerms = categories.flatMap(c => c.terms.map(t => ({...t, cat: c.cat, color: c.color})));
+  const filtered = searchTerm.length > 1
+    ? allTerms.filter(t => t.term.toLowerCase().includes(searchTerm.toLowerCase()) || t.def.toLowerCase().includes(searchTerm.toLowerCase()))
+    : null;
+
+  return (
+    <div>
+      <InfoBox>
+        Aquí encontrarás todos los términos técnicos explicados en lenguaje de cero conocimiento. Usa la búsqueda para encontrar cualquier palabra que no entiendas de la guía.
+      </InfoBox>
+
+      {/* Buscador */}
+      <div style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          placeholder="🔍 Buscar término... (ej: LST, pH, tricoma)"
+          value={searchTerm}
+          onChange={e => setSearchTerm(e.target.value)}
+          style={{
+            width: "100%", padding: "12px 16px", fontSize: "14px",
+            background: "#0d1f14", border: "1px solid #2d6a4f",
+            borderRadius: "8px", color: "#d8f3dc", outline: "none",
+          }}
+        />
+      </div>
+
+      {/* Resultados de búsqueda */}
+      {filtered && (
+        <div style={{ marginBottom: "20px" }}>
+          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px" }}>
+            {filtered.length} RESULTADO{filtered.length !== 1 ? 'S' : ''}
+          </div>
+          {filtered.length === 0 && (
+            <div style={{ fontSize: "13px", color: "#74c69d", padding: "12px" }}>No encontrado. Escríbelo en la siguiente cosulta a Claude 😉</div>
+          )}
+          {filtered.map((item, i) => (
+            <div key={i} style={{ background: "#0d1f14", border: `1px solid ${item.color}44`, borderLeft: `3px solid ${item.color}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: item.color, marginBottom: "4px" }}>{item.term}</div>
+              {item.visual && <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>{item.visual}</div>}
+              <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.5" }}>{item.def}</div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Categorías completas */}
+      {!filtered && categories.map((cat, ci) => (
+        <div key={ci} style={{ marginBottom: "28px" }}>
+          <div style={{ fontSize: "11px", letterSpacing: "2px", color: cat.color, marginBottom: "12px", paddingBottom: "6px", borderBottom: `1px solid ${cat.color}33` }}>
+            {cat.cat}
+          </div>
+          {cat.terms.map((item, i) => (
+            <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderLeft: `3px solid ${cat.color}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: cat.color, marginBottom: "4px" }}>{item.term}</div>
+              {item.visual && (
+                <div style={{ fontSize: "11px", color: "#52b788", background: "#162a1e", padding: "4px 8px", borderRadius: "4px", marginBottom: "6px", display: "inline-block" }}>{item.visual}</div>
+              )}
+              <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.5" }}>{item.def}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+function PODA() {
+  return (
+    <div>
+      <div style={{ background: "#1a2a10", border: "1px solid #4a7a20", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#c5e8a0", lineHeight: "1.6", fontWeight: "bold" }}>
+          ⚠️ Regla de oro para autoflorecientes: menos es más.
+        </p>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
+          Las autoflorecientes tienen un ciclo de vida fijo — no pueden "recuperar tiempo perdido" como las de fotoperiodo. Cualquier estrés (cortes, daños) come días de su vida útil. La poda agresiva en autos puede reducir el rendimiento final. Con esto en mente, hay técnicas seguras y técnicas a evitar.
+        </p>
+      </div>
+
+      <SectionTitle color="#4a7a20">✅ LO QUE SÍ PUEDES HACER</SectionTitle>
+
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>LST — Low Stress Training (doblar, no cortar)</div>
+        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
+          La técnica más recomendada para principiantes con autos. Consiste en doblar suavemente las ramas hacia fuera y fijarlas con clips o cuerdas para que la planta crezca más horizontal. Así la luz llega a más puntos y produces más cogollos sin cortar nada.
+        </div>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CÓMO HACERLO</div>
+        <Step num={1} text="Semana 2–3 de vegetativa: cuando la planta tenga 4–5 nudos y unos 15cm." />
+        <Step num={2} text="Dobla suavemente la rama principal hacia un lado, en ángulo de ~45°. No fuerces — si notas resistencia, para." why="Las ramas jóvenes son flexibles. Si intentas doblar una rama leñosa y gruesa se rompe. Hazlo temprano cuando aún son flexibles." />
+        <Step num={3} text="Fija la rama doblada con un clip de bonsái, una pinza de ropa pequeña, o cuerda suave atada a la maceta." />
+        <Step num={4} text="En 24–48h verás que las ramas laterales empiezan a crecer hacia arriba buscando la luz. Eso es exactamente lo que quieres." />
+        <Step num={5} text="Repite con las ramas laterales si se vuelven a poner verticales. El objetivo es una planta en forma de abanico, no de árbol." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Qué necesitas comprar: </span>Clips de bonsái (pack 20 uds, ~5€) o simplemente cuerda de jardín suave (~3€). Nada más.
+        </div>
+      </div>
+
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>ScrOG — Screen of Green (para fotoperiodo)</div>
+        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
+          Red de cultivo horizontal que mantiene la altura bajo control y maximiza los puntos de floración bajo una luz. Solo viable para fotoperiodo — tienes tiempo para entrenar. No para autoflorecientes.
+        </div>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CÓMO HACERLO</div>
+        <Step num={1} text="Fotoperiodo: cuando la planta llegue a semana 3–4 de vegetativa (20–30cm de altura), instala la red a 20–25cm por encima de la planta." why="Necesitas espacio bajo la red para que crezca. Demasiado alta = desperdicio de la zona; demasiado baja = la planta no cabe." />
+        <Step num={2} text="Red: malla elástica 5×5cm o hilo de jardinería formando una rejilla. Cuesta ~20-30€ o hazla tú con cuerda." />
+        <Step num={3} text="Cuando las ramas crecen hacia la luz, pasa cada rama que sale de la red por debajo de ella, horizontalmente. El objetivo es llenar toda la red de puntas de crecimiento a la misma altura." />
+        <Step num={4} text="A medida que las ramas nuevas crecen hacia arriba, mételas bajo la red también. Al final tendrás una planta plana como una sábana." />
+        <Step num={5} text="Cuando el 80% de la red está llena de puntas verdes, cambia a 12/12h." why="Ahora todos los puntos están a la misma distancia de la luz y florecerán uniformemente. El rendimiento es 30-40% mayor que sin ScrOG." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Material: </span>Red de ScrOG (20-30€) o cuerda de jardinería y dos soportes, o simplemente clips fijando hilo a los lados del armario. No es complicado.
+        </div>
+      </div>
+
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>Defoliación leve (quitar hojas que bloquean luz)</div>
+        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
+          Consiste en quitar hojas grandes que hacen sombra a los cogollos que están creciendo debajo. No es cortar ramas — solo quitar hojas individualmente.
+        </div>
+        <Step num={1} text="Solo en vegetativa o inicio de floración — nunca en floración avanzada." why="En floración avanzada la planta ya no puede recuperarse del estrés y cada hoja quitada es energía que pierde." />
+        <Step num={2} text="Quita solo las hojas grandes (fan leaves) que estén tapando completamente un punto de crecimiento." />
+        <Step num={3} text="Máximo 2–3 hojas por sesión. Espera 3–4 días entre sesiones." why="Quitar demasiadas hojas a la vez es un estrés importante. Las hojas son los paneles solares de la planta — quitarlas reduce su capacidad de fotosíntesis." />
+        <Step num={4} text="Corta la hoja desde la base del peciolo (el rabillo). Con tijeras limpias, corte limpio." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Material: </span>Tijeras de punta fina. Limpia con alcohol isopropílico antes de usar.
+        </div>
+      </div>
+
+      <SectionTitle color="#e63946">❌ LO QUE NO DEBES HACER CON AUTOFLORECIENTES</SectionTitle>
+
+      <ErrorCard
+        error="Topping (cortar la punta principal)"
+        consecuencia="En fotoperiodo genera dos puntas principales. En autos come 1–2 semanas de vida que no recupera nunca. Rendimiento final peor."
+        fix="Con autos nunca hagas topping. Es técnica de fotoperiodo."
+      />
+      <ErrorCard
+        error="FIM (técnica similar al topping)"
+        consecuencia="Mismo problema. Las autos no tienen tiempo de recuperación."
+        fix="Reserva estas técnicas para cuando tengas experiencia con fotoperiodo."
+      />
+      <ErrorCard
+        error="Defoliación agresiva (quitar muchas hojas a la vez)"
+        consecuencia="La planta entra en estrés severo y para de crecer durante varios días — días que con autos no puedes recuperar."
+        fix="Máximo 2–3 hojas cada 3–4 días. Si tienes dudas, no quites nada."
+      />
+      <ErrorCard
+        error="Podar en floración avanzada (semana 4+)"
+        consecuencia="Los cogollos están en pleno desarrollo. Cualquier estrés reduce el rendimiento final directamente."
+        fix="Toda la poda y LST en vegetativa o primeras 2 semanas de floración. Después, manos fuera."
+      />
+
+      <SectionTitle>PARA TU PRIMERA VEZ — RECOMENDACIÓN HONESTA</SectionTitle>
+      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
+        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
+          En la primera cosecha, haz solo LST si te apetece experimentar. Si no, no hagas nada de poda — una planta sin tocar con buena luz, buen riego y buenos nutrientes da mejor resultado que una planta podada incorrectamente.
+        </p>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
+          El LST es la única técnica que no penaliza si la haces mal — en el peor caso la rama vuelve a su posición. Empieza por ahí en la segunda o tercera ronda cuando ya controles el resto.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── EXTERIOR COMPONENTS ─────────────────────────────────────────────────────
+
 
 function DIAGNOSTICO() {
   return (
@@ -3578,7 +3595,7 @@ function GuiaCultivo() {
   };
 
   React.useEffect(() => {
-    window.navigateToGlossary = navigateToGlosario;
+    window.navigateToGlossary = navigateToGlossary;
     return () => { delete window.navigateToGlossary; };
   }, []);
 

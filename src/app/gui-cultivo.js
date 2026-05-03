@@ -34,7 +34,7 @@ function GuiaCultivo() {
   };
 
   React.useEffect(() => {
-    window.navigateToGlossary = navigateToGlosario;
+    window.navigateToGlossary = navigateToGlossary;
     return () => { delete window.navigateToGlossary; };
   }, []);
 
