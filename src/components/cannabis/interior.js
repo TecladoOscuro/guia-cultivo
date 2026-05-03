@@ -9,13 +9,6 @@ function COMPRA() {
   const matchesFilter = (item) =>
     (filterPriority.length === 0 || filterPriority.includes(item.priority)) &&
     (filterDonde.length === 0 || filterDonde.includes(item.donde));
-  const dondeColor = {
-    "Zamnesia": "#1a6b8a",
-    "Amazon": "#8a5a1a",
-    "Gratis": "#2d6a4f",
-    "Ferretería": "#5a3a8a",
-  };
-
   const sections = [
     {
       title: "🏠 KIT BASE",
@@ -23,7 +16,7 @@ function COMPRA() {
         {
           name: "Kit cultivo interior 80×80 completo",
           price: "400–600€", priority: "ESENCIAL", donde: null,
-          detail: "El kit completo incluye: armario 80×80×180cm, LED 240W, extractor en línea 100mm, filtro de carbón 100mm, controlador de clima, ventilador de pinza, temporizador 24h, tubo flexible, poleas y bridas. Marcas recomendadas: Zamnesia, Mammoth, Secret Jardin. OJO: el kit NO incluye macetas — hay que comprarlas aparte.",
+          detail: "El kit completo incluye: armario 80×80×180cm, LED 240W, extractor en línea 100mm, filtro de carbón 100mm, controlador de clima, ventilador de pinza, temporizador 24h, tubo flexible, poleas y bridas. Marcas recomendadas: Mammoth, Secret Jardin, Spider Farmer. OJO: el kit NO incluye macetas — hay que comprarlas aparte.",
           duracion: "Permanente",
         },
         {
@@ -40,19 +33,19 @@ function COMPRA() {
       items: [
         {
           name: "BioBizz Light Mix — saco 50L",
-          price: "12€", priority: "ESENCIAL", donde: "Amazon",
+          price: "12€", priority: "ESENCIAL", donde: "Internet",
           detail: "Es la tierra donde crecerán tus plantas. Light Mix tiene muy pocos nutrientes de base, lo que significa que no quemará las raíces cuando empieces. Es la opción más segura para principiantes. Un saco de 50L es suficiente para 2 plantas en macetas de 11L con sobras para las siguientes rondas.",
           duracion: "1–2 cosechas por saco",
         },
         {
           name: "Macetas de tela 11L (pack de 3-5)",
-          price: "10–20€", priority: "ESENCIAL", donde: "Amazon",
+          price: "10–20€", priority: "ESENCIAL", donde: "Internet",
           detail: "Las macetas de tela permiten que el aire entre por los laterales, lo que hace que las raíces crezcan mejor que en plástico. Úsalas para las plantas definitivas. El kit NO incluye macetas — esto es lo primero que mucha gente olvida comprar.",
           duracion: "Permanentes, reutilizables",
         },
         {
           name: "Platos para macetas (juego de 3-5)",
-          price: "5–15€", priority: "ESENCIAL", donde: "Amazon",
+          price: "5–15€", priority: "ESENCIAL", donde: "Internet",
           detail: "Van debajo de las macetas para recoger el agua que drena por los agujeros. Sin platos mancharás el suelo y no podrás ver cuánto drena. Compra los del mismo tamaño que las macetas.",
           duracion: "Permanentes",
         },
@@ -69,14 +62,14 @@ function COMPRA() {
       items: [
         {
           name: "BioBizz Bio·Grow + Bio·Bloom — 1L de cada",
-          price: "30–40€", priority: "ESENCIAL", donde: "Amazon",
+          price: "30–40€", priority: "ESENCIAL", donde: "Internet",
           detail: "El abono para la fase de crecimiento (vegetativa). Rico en nitrógeno, que es lo que necesita la planta para crecer en tamaño. Dosis: 1–2ml por litro de agua de riego. Empieza en la semana 3 desde que germina. Con 1L tienes para 3–4 cosechas.",
           cuando: "Semana 3 de vegetativa hasta que aparecen los primeros pelos blancos (pistilos)",
           duracion: "3–4 cosechas con 1L",
         },
         {
           name: "BioBizz Top·Max — 250ml",
-          price: "12–18€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "12–18€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Estimulador de floración — aumenta el tamaño y densidad de los cogollos. No es imprescindible para empezar, pero la diferencia en el resultado final es notable. Úsalo junto al Bio·Bloom en floración.",
           cuando: "Semanas 2–6 de floración, junto con Bio·Bloom",
           duracion: "2–3 cosechas con 250ml",
@@ -88,19 +81,19 @@ function COMPRA() {
       items: [
         {
           name: "pH Down — 500ml",
-          price: "8–15€", priority: "ESENCIAL", donde: "Amazon",
+          price: "8–15€", priority: "ESENCIAL", donde: "Internet",
           detail: "El agua del grifo suele tener pH 7–8, pero las plantas necesitan agua entre pH 6.2 y 6.5 para absorber los nutrientes correctamente. Este líquido baja el pH — solo necesitas unas pocas gotas por litro. 500ml te dura literalmente años.",
           duracion: "Años",
         },
         {
           name: "pHmetro digital",
-          price: "15–30€", priority: "ESENCIAL", donde: "Amazon",
+          price: "15–30€", priority: "ESENCIAL", donde: "Internet",
           detail: "Un aparato pequeño que metes en el agua y te dice exactamente el pH. Sin esto no puedes saber si el agua está bien. Guárdalo siempre con la punta en la solución de almacenamiento para que no se estropee.",
           duracion: "Permanente (calibrar cada mes)",
         },
         {
           name: "Kit soluciones de calibración pH (pH 4 y pH 7)",
-          price: "8–15€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "8–15€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Para calibrar el pHmetro una vez al mes y asegurarte de que mide bien. Sin calibración el aparato pierde precisión con el tiempo y puede darte lecturas erróneas sin que te enteres.",
           duracion: "Años",
         },
@@ -111,19 +104,19 @@ function COMPRA() {
       items: [
         {
           name: "Higrómetro/termómetro digital",
-          price: "8–15€", priority: "ESENCIAL", donde: "Amazon",
+          price: "8–15€", priority: "ESENCIAL", donde: "Internet",
           detail: "Un aparatito pequeño que mide temperatura y humedad dentro del armario. Lo colocas a la altura de las plantas. Sin esto no puedes saber si el clima está bien. ",
           duracion: "Permanente",
         },
         {
           name: "Lupa de bolsillo 60x",
-          price: "5–12€", priority: "ESENCIAL", donde: "Amazon",
+          price: "5–12€", priority: "ESENCIAL", donde: "Internet",
           detail: "Una lupa pequeña de bolsillo que se usa para mirar los tricomas (las gotitas de resina) de los cogollos y saber exactamente cuándo cosechar. Sin ella no puedes saber el momento óptimo de cosecha. ",
           duracion: "Permanente",
         },
         {
           name: "Higrómetros mini para botes de curado (x2-3)",
-          price: "6–12€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "6–12€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Van dentro de los botes de cristal durante el curado para medir la humedad. Sin ellos el curado es a ciegas y puedes arruinar la cosecha con moho en los últimos días. ",
           duracion: "Permanente",
         },
@@ -134,13 +127,13 @@ function COMPRA() {
       items: [
         {
           name: "Regadera 5L con cuello largo y fino",
-          price: "10–20€", priority: "ESENCIAL", donde: "Amazon",
+          price: "10–20€", priority: "ESENCIAL", donde: "Internet",
           detail: "El cuello largo y fino permite dirigir el agua exactamente donde quieres sin mojar el tallo ni las hojas. Las regaderas normales de boca ancha son muy difíciles de usar en macetas. ",
           duracion: "Permanente",
         },
         {
           name: "Spray de precisión 500ml",
-          price: "3–8€", priority: "ESENCIAL", donde: "Amazon",
+          price: "3–8€", priority: "ESENCIAL", donde: "Internet",
           detail: "Para humedecer el papel de germinar, para mojar suavemente alrededor de las plántulas recién brotadas, y para refrescar el ambiente si hace mucho calor. Uno de plástico vacío sirve perfectamente.",
           duracion: "Permanente",
         },
@@ -151,14 +144,14 @@ function COMPRA() {
       items: [
         {
           name: "Sistema riego por goteo con temporizador",
-          price: "15–35€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "15–35€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Sistema de tubos finos con goteros y un temporizador que riega automáticamente. Reduce las aperturas del armario al mínimo — abres solo 1 vez por semana para revisión. ",
           cuando: "Desde semana 2–3 de vegetativa. Las primeras semanas riega a mano con spray.",
           duracion: "Permanente",
         },
         {
           name: "Depósito de agua 15-20L con tapa",
-          price: "10–20€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "10–20€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Va fuera del armario. Preparas el agua con pH y nutrientes, y el sistema de goteo la lleva dentro solo. Solo tienes que rellenar cada 2–3 días sin abrir el armario. Busca cualquier cubo o bidón de plástico alimentario con tapa.",
           duracion: "Permanente",
         },
@@ -169,19 +162,19 @@ function COMPRA() {
       items: [
         {
           name: "Tijeras de punta fina (manicura)",
-          price: "~10–20€", priority: "ESENCIAL", donde: "Amazon",
-          detail: "Para recortar las hojas pequeñas alrededor de los cogollos en la cosecha (manicura). Las baratas de ferretería se pegan de resina rápido. Límplalas con alcohol isopropílico mientras trabajas. En Amazon busca 'tijeras manicura cogollos' o 'bud trimming scissors'.",
+          price: "~10–20€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Para recortar las hojas pequeñas alrededor de los cogollos en la cosecha (manicura). Las baratas de tienda física se pegan de resina rápido. Límplalas con alcohol isopropílico mientras trabajas. En internet busca 'tijeras manicura cogollos' o 'bud trimming scissors'.",
           duracion: "Permanente",
         },
         {
           name: "Botes Mason jar herméticos 1L (pack de 4)",
-          price: "~15–20€", priority: "ESENCIAL", donde: "Amazon",
+          price: "~15–20€", priority: "ESENCIAL", donde: "Internet",
           detail: "Para el curado de los cogollos tras el secado. Deben ser de cristal hermético — el plástico no funciona igual y puede dar sabor. Llénalos al 75% de su capacidad. ",
           duracion: "Permanente",
         },
         {
           name: "Guantes de nitrilo (caja 100 uds)",
-          price: "~8€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "~8€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Para la cosecha y manicura. La resina de los cogollos es extremadamente pegajosa — sin guantes te quedas con los dedos negros y prácticamente imposibles de limpiar. ",
           duracion: "1 caja para varias cosechas",
         },
@@ -192,13 +185,13 @@ function COMPRA() {
       items: [
         {
           name: "Cinta americana ancha",
-          price: "3–8€", priority: "ESENCIAL", donde: "Amazon",
+          price: "3–8€", priority: "ESENCIAL", donde: "Internet",
           detail: "Para sellar el tubo de extracción donde pasa por la ventana y tapar cualquier hueco alrededor. Un trapo viejo enrollado también sirve si no tienes cinta en casa.",
           duracion: "Permanente",
         },
         {
           name: "ONA Gel neutralizador de olores — 1L",
-          price: "15–30€", priority: "IMPORTANTE", donde: "Amazon",
+          price: "15–30€", priority: "IMPORTANTE", donde: "Internet",
           detail: "Neutralizador de olores para poner FUERA del armario, en la habitación. No dentro — afectaría al sabor final. Es una red de seguridad extra para cualquier fuga mínima al abrir la tienda. Dura 2–3 meses.",
           duracion: "2–3 meses por bote",
         },
@@ -209,20 +202,20 @@ function COMPRA() {
       items: [
         {
           name: "Alcohol isopropílico 99% — 500ml",
-          price: "~5–8€", priority: "IMPORTANTE", donde: "Amazon",
-          detail: "Para limpiar las tijeras de manicura cuando se llenan de resina (cada 10–15 minutos de trabajo). También para limpiar el pHmetro y cualquier herramienta. En Amazon o farmacia.",
+          price: "~5–8€", priority: "IMPORTANTE", donde: "Internet",
+          detail: "Para limpiar las tijeras de manicura cuando se llenan de resina (cada 10–15 minutos de trabajo). También para limpiar el pHmetro y cualquier herramienta. En internet o farmacia.",
           duracion: "Mucho tiempo",
         },
         {
           name: "Pinzas de punta fina (acero inoxidable)",
-          price: "3–10€", priority: "ESENCIAL", donde: "Amazon",
+          price: "3–10€", priority: "ESENCIAL", donde: "Internet",
           detail: "Para manipular las semillas durante la germinación sin tocarlas con los dedos. Los aceites naturales de la piel pueden contaminar la semilla. Cualquier pinzas de punta fina sirven.",
           duracion: "Permanente",
         },
         {
           name: "Sílica gel (desecante) — sobrecitos",
-          price: "~3–5€", priority: "IMPORTANTE", donde: "Amazon",
-          detail: "Para guardar las semillas que no uses todavía. Un sobrecito de sílica gel en el bote de cristal absorbe la humedad y mantiene las semillas en perfecto estado durante años. En Amazon busca 'silica gel sobres desecantes'.",
+          price: "~3–5€", priority: "IMPORTANTE", donde: "Internet",
+          detail: "Para guardar las semillas que no uses todavía. Un sobrecito de sílica gel en el bote de cristal absorbe la humedad y mantiene las semillas en perfecto estado durante años. En internet busca 'silica gel sobres desecantes'.",
           duracion: "Permanente",
         },
       ]
@@ -230,10 +223,11 @@ function COMPRA() {
   ];
 
   const dondeColors = {
-    "Zamnesia": { bg: "#0d2a3a", border: "#1a6b8a", text: "#74c6d5" },
-    "Amazon": { bg: "#2a1a0d", border: "#8a5a1a", text: "#d5a074" },
-    "Gratis": { bg: "#0d2a14", border: "#2d6a4f", text: "#74c69d" },
-    "Ferretería": { bg: "#1a0d2a", border: "#5a3a8a", text: "#b474d5" },
+    "Internet": { bg: "#2a1a0d", border: "#8a5a1a", text: "#d5a074" },
+    "Grow shop": { bg: "#0d2a14", border: "#2d6a4f", text: "#74c69d" },
+    "Farmacia": { bg: "#0d2a3a", border: "#1a6b8a", text: "#74c6d5" },
+    "Tienda física": { bg: "#1a0d2a", border: "#5a3a8a", text: "#b474d5" },
+    "Gratis": { bg: "#0d1f14", border: "#52b788", text: "#95d5b2" },
   };
 
   return (
@@ -245,11 +239,11 @@ function COMPRA() {
           <span style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc" }}>~880€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Zamnesia (kit + semillas)</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Grow shop (kit + semillas)</span>
           <span style={{ fontSize: "13px", color: "#95d5b2" }}>~500–650€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Amazon (accesorios)</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Internet (accesorios)</span>
           <span style={{ fontSize: "13px", color: "#95d5b2" }}>~200–300€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -281,7 +275,8 @@ function COMPRA() {
         </div>
         <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR DÓNDE COMPRAR</div>
         <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
-          {Object.entries(dondeColors).map(([label, c]) => {
+          {[...new Set(sections.flatMap(s => s.items.map(i => i.donde).filter(Boolean)))].map(label => {
+            const c = dondeColors[label] || { bg: "#1a1a1a", border: "#444", text: "#aaa" };
             const active = filterDonde.includes(label);
             return (
               <button key={label} onClick={() => toggleDonde(label)} style={{
@@ -388,7 +383,7 @@ function SEMILLAS_INT() {
       <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#9b2226", marginBottom: "10px" }}>🔴 INDICA DOMINANTE — Efecto relajante, sedante, corporal</div>
       {[
         {
-          name: "Black Diamond Auto (Zamnesia Seeds)",
+          name: "Black Diamond Auto",
           genetica: "90% indica", thc: "23%", altura: "~80cm", ciclo: "8–9 semanas",
           rendimiento: "350–450g/m²", dificultad: "Fácil",
           efecto: "Muy sedante y relajante. Ideal para noche. Sabor a uva y tierra.",
@@ -741,7 +736,7 @@ function FLORACION() {
       <Step num={8} text="Señal de que va bien: las hojas grandes empezarán a amarillear. Eso es bueno — la planta está usando lo que le queda." />
 
       <SectionTitle>SABER CUÁNDO COSECHAR (imprescindible)</SectionTitle>
-      <Step num={9} text="Compra una lupa de 60x (en Amazon ~5€). Sin ella estás adivinando." why="Los tricomas son las gotitas de resina que cubren los cogollos. Su color es el único indicador fiable del punto exacto de madurez. Sin lupa no puedes verlos." />
+      <Step num={9} text="Compra una lupa de 60x (en internet ~5€). Sin ella estás adivinando." why="Los tricomas son las gotitas de resina que cubren los cogollos. Su color es el único indicador fiable del punto exacto de madurez. Sin lupa no puedes verlos." />
       <Step num={10} text="Mira los tricomas de los cogollos (no de las hojas). Hay tres estados:" />
       <Step num={11} text="Transparentes → Aún no está. Necesita más tiempo." />
       <Step num={12} text="Blancos y lechosos (turbios) → Punto óptimo. Efecto más activo." />
@@ -831,7 +826,7 @@ function GOTEO() {
       </div>
 
       <SectionTitle>QUÉ COMPRAR</SectionTitle>
-      <Step num={1} text="Kit de riego por goteo con temporizador digital — ~20–35€" why="Busca un kit que incluya: temporizador, bomba o sistema de gravedad, tubos de 4–6mm, y goteros regulables. En Amazon busca 'kit riego goteo interior plantas' o 'drip irrigation kit indoor'. No necesitas nada caro." />
+      <Step num={1} text="Kit de riego por goteo con temporizador digital — ~20–35€" why="Busca un kit que incluya: temporizador, bomba o sistema de gravedad, tubos de 4–6mm, y goteros regulables. En internet busca 'kit riego goteo interior plantas' o 'drip irrigation kit indoor'. No necesitas nada caro." />
       <Step num={2} text="Depósito de agua 15–20L con tapa — ~10–15€" why="El depósito va FUERA del armario. El tubo pasa por una de las aperturas laterales (todos los armarios tienen). Así rellenas el agua sin abrir la tienda nunca." />
       <Step num={3} text="Tubo silicona alimentario 6mm — 2–3 metros — ~5€" why="Para conectar el depósito exterior con los goteros dentro. El tubo de silicona es flexible y no transfiere sabores ni sustancias al agua." />
 

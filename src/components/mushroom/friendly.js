@@ -4,27 +4,32 @@
 
 function COMPRA_SETAS_FRIENDLY() {
   const items = [
-    { item: "🌾 Spawn bag pre-esterilizado (1-2kg grano)", precio: "20-35€", donde: "Grow shops UE / Amazon (busca 'sterilized rye spawn bag' o 'centeno esterilizado')", nota: "Bolsa con grano de centeno ya cocido, esterilizado y sellado. Tiene puerto de inyección (filtro micropore). Es el reemplazo de la olla a presión + frascos. Compra 1 para empezar.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "💉 Cultura líquida Psilocybe cubensis", precio: "20-35€", donde: "Vendors UE (busca 'liquid culture syringe')", nota: "Más fácil y FIABLE que la jeringa de esporas. Contiene micelio ya activo en líquido nutritivo — coloniza más rápido (10-14 días vs 21) y resiste mejor la contaminación. Cepas recomendadas para novatos: Golden Teacher, B+, Mazatapec.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🪣 Bulk substrate CVG hidratado (5L)", precio: "15-25€", donde: "Grow shops UE", nota: "Coco coir + vermiculita + yeso ya mezclado, hidratado y pasteurizado. Listo para usar. NO confundir con el coco coir seco — busca 'manure-based bulk substrate' o 'CVG hydrated'.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "📦 Monotub (caja plástica 40-65L con tapa)", precio: "12-25€", donde: "Ikea / Carrefour / Amazon", nota: "Caja transparente con tapa. Tú haces 4-6 agujeros de 2.5cm en los lados (a 10cm del fondo) para FAE pasivo. Tape los agujeros con filtro micropore (incluido en algunos kits) o algodón.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "💨 Cinta micropore (tipo médica)", precio: "3-6€", donde: "Farmacia / Amazon", nota: "Para tapar agujeros del monotub. Deja pasar aire pero no contaminantes. 1 rollo basta para 5+ ciclos.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌾 Spawn bag pre-esterilizado (1-2kg grano)", precio: "20-35€", donde: "Grow shop", nota: "Bolsa con grano de centeno ya cocido, esterilizado y sellado. Tiene puerto de inyección (filtro micropore). Es el reemplazo de la olla a presión + frascos. Compra 1 para empezar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "💉 Cultura líquida Psilocybe cubensis", precio: "20-35€", donde: "Internet", nota: "Más fácil y FIABLE que la jeringa de esporas. Contiene micelio ya activo en líquido nutritivo — coloniza más rápido (10-14 días vs 21) y resiste mejor la contaminación. Cepas recomendadas para novatos: Golden Teacher, B+, Mazatapec.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🪣 Bulk substrate CVG hidratado (5L)", precio: "15-25€", donde: "Grow shop", nota: "Coco coir + vermiculita + yeso ya mezclado, hidratado y pasteurizado. Listo para usar. NO confundir con el coco coir seco — busca 'manure-based bulk substrate' o 'CVG hydrated'.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 Monotub (caja plástica 40-65L con tapa)", precio: "12-25€", donde: "Tienda física", nota: "Caja transparente con tapa. Tú haces 4-6 agujeros de 2.5cm en los lados (a 10cm del fondo) para FAE pasivo. Tape los agujeros con filtro micropore (incluido en algunos kits) o algodón.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💨 Cinta micropore (tipo médica)", precio: "3-6€", donde: "Farmacia", nota: "Para tapar agujeros del monotub. Deja pasar aire pero no contaminantes. 1 rollo basta para 5+ ciclos.", prioridad: "ESENCIAL", tipo: "Consumible" },
     { item: "🧴 Alcohol isopropílico 70% (1L)", precio: "8-12€", donde: "Farmacia", nota: "Desinfectar superficies, guantes, herramientas. Imprescindible.", prioridad: "ESENCIAL", tipo: "Consumible" },
     { item: "🧤 Guantes de nitrilo + mascarilla FFP2", precio: "5-10€", donde: "Farmacia", nota: "Reduces 90% del riesgo de contaminación. Mascarilla evita que tu aliento contamine. NO toques nada con manos desnudas durante inoculación.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🌡️ Termómetro/higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear 24-26°C en incubación, 22-24°C en fructificación. Higrómetro para verificar 90%+ HR.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "💧 Spray de agua destilada", precio: "3-8€", donde: "Farmacia / supermercado", nota: "Para nebulizar dentro del monotub durante fructificación.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🪥 Vermiculita seca (2L) — opcional", precio: "5-10€", donde: "Grow shops / Amazon", nota: "Para 'casing layer' (capa de remate sobre el sustrato). Mejora rendimiento pero no es estrictamente necesario en monotub.", prioridad: "ÚTIL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/higrómetro digital", precio: "8-15€", donde: "Internet", nota: "Monitorear 24-26°C en incubación, 22-24°C en fructificación. Higrómetro para verificar 90%+ HR.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💧 Spray de agua destilada", precio: "3-8€", donde: "Farmacia", nota: "Para nebulizar dentro del monotub durante fructificación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Vermiculita seca (2L) — opcional", precio: "5-10€", donde: "Grow shop", nota: "Para 'casing layer' (capa de remate sobre el sustrato). Mejora rendimiento pero no es estrictamente necesario en monotub.", prioridad: "ÚTIL", tipo: "Consumible" },
   ];
   const [filterPrio, setFilterPrio] = React.useState([]);
   const [filterTipo, setFilterTipo] = React.useState([]);
+  const [filterDonde, setFilterDonde] = React.useState([]);
   const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
   const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const toggleDonde = (d) => setFilterDonde(s => s.includes(d) ? s.filter(x => x !== d) : [...s, d]);
   const filtered = items.filter(i =>
     (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
-    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo)) &&
+    (filterDonde.length === 0 || filterDonde.includes(i.donde))
   );
   const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
   const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+  const dondeColor = { "Internet": "#aa7c52", "Grow shop": "#c49a6c", "Farmacia": "#8a6240", "Tienda física": "#dbb98c" };
+  const availableDonde = [...new Set(items.map(i => i.donde))];
 
   return (
     <div>
@@ -64,8 +69,25 @@ function COMPRA_SETAS_FRIENDLY() {
           );
         })}
       </div>
-      {(filterPrio.length > 0 || filterTipo.length > 0) && (
-        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+      <SectionTitleM>FILTRAR POR DÓNDE COMPRAR</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {availableDonde.map(d => {
+          const c = dondeColor[d] || "#888";
+          const active = filterDonde.includes(d);
+          return (
+            <button key={d} onClick={() => toggleDonde(d)} style={{
+              background: active ? c : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : c,
+              border: `1.5px solid ${c}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{d}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0 || filterDonde.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); setFilterDonde([]); }} style={{
           background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
           fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
         }}>✕ Limpiar filtros</button>

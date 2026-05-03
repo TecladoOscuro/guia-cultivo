@@ -773,7 +773,7 @@ function EXTRACCIONES() {
       <SectionTitle>MÉTODO 1: HASH EN SECO (Dry Sift)</SectionTitle>
       <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
         <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>La técnica más simple: tamiz + movimiento + frío</div>
-        <Step num={1} text="Necesitas: tamiz de malla 73–120µm (puedes comprarlo en Amazon, ~10€), bolsa grande, y el trim congelado." />
+        <Step num={1} text="Necesitas: tamiz de malla 73–120µm (puedes comprarlo en internet, ~10€), bolsa grande, y el trim congelado." />
         <Step num={2} text="Mete el trim congelado en una bolsa grande. Ciérrala." />
         <Step num={3} text="Coloca el tamiz sobre una bandeja o plato blanco limpio." />
         <Step num={4} text="Sobre el tamiz, pon el trim congelado. Haz movimientos circulares suaves con los dedos — frota el trim contra la malla." />

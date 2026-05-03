@@ -3,26 +3,31 @@
 
 function COMPRA_SETAS_KIT() {
   const items = [
-    { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato).", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Grow shop", nota: "Span totalmente colonizado. Listo para fructificar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Internet", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato).", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💧 Perlita", precio: "8-12€", donde: "Grow shop", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Internet", nota: "Monitorear temperatura 20-25°C y humedad 90-95%.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Tienda física", nota: "Para nebulizar el span 2-3 veces diarias.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante.", prioridad: "IMPORTANTE", tipo: "Consumible" },
     { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado.", prioridad: "IMPORTANTE", tipo: "Consumible" },
-    { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo.", prioridad: "ÚTIL", tipo: "Consumible" },
+    { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Tienda física", nota: "Para almacenar setas secas a largo plazo.", prioridad: "ÚTIL", tipo: "Consumible" },
   ];
   const [filterPrio, setFilterPrio] = React.useState([]);
   const [filterTipo, setFilterTipo] = React.useState([]);
+  const [filterDonde, setFilterDonde] = React.useState([]);
   const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
   const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const toggleDonde = (d) => setFilterDonde(s => s.includes(d) ? s.filter(x => x !== d) : [...s, d]);
   const filtered = items.filter(i =>
     (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
-    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo)) &&
+    (filterDonde.length === 0 || filterDonde.includes(i.donde))
   );
   const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
   const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+  const dondeColor = { "Internet": "#aa7c52", "Grow shop": "#c49a6c", "Farmacia": "#8a6240", "Tienda física": "#dbb98c" };
+  const availableDonde = [...new Set(items.map(i => i.donde))];
 
   return (
     <div>
@@ -62,8 +67,25 @@ function COMPRA_SETAS_KIT() {
           );
         })}
       </div>
-      {(filterPrio.length > 0 || filterTipo.length > 0) && (
-        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+      <SectionTitleM>FILTRAR POR DÓNDE COMPRAR</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {availableDonde.map(d => {
+          const c = dondeColor[d] || "#888";
+          const active = filterDonde.includes(d);
+          return (
+            <button key={d} onClick={() => toggleDonde(d)} style={{
+              background: active ? c : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : c,
+              border: `1.5px solid ${c}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{d}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0 || filterDonde.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); setFilterDonde([]); }} style={{
           background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
           fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
         }}>✕ Limpiar filtros</button>

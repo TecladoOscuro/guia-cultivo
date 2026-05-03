@@ -3,29 +3,34 @@
 
 function COMPRA_SETAS_ADVANCED() {
   const items = [
-    { item: "🔥 Olla a presión (6-10L)", precio: "40-80€", donde: "Amazon / Electro", nota: "Imprescindible para esterilización. 15 PSI, 2+ horas. Marcas: Beltran, Magefesa.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🫙 Frascos de vidrio (500ml/1L)", precio: "15-30€", donde: "Ikea / Carrefour", nota: "12-15 frascos totales. Serán contenedores para grano inoculado. Reutilizable años.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🌾 Granos de cereal (kg)", precio: "5-15€", donde: "Tiendas agrícolas", nota: "Cebada, centeno, avena. Seco. Base del sustrato. Requiere cocción + esterilización.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🧫 Jeringa de esporas Psilocybe", precio: "20-40€", donde: "Spore vendors (Europa)", nota: "Contiene esporas en solución estéril. Crítico: compra de fuente fiable.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "🪜 SAB (Still Air Box)", precio: "20-40€", donde: "DIY o Amazon", nota: "Caja hermética para inocular sin contaminación. DIY: caja + guantes de látex.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🔥 Olla a presión (6-10L)", precio: "40-80€", donde: "Internet", nota: "Imprescindible para esterilización. 15 PSI, 2+ horas. Marcas: Beltran, Magefesa.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🫙 Frascos de vidrio (500ml/1L)", precio: "15-30€", donde: "Tienda física", nota: "12-15 frascos totales. Serán contenedores para grano inoculado. Reutilizable años.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌾 Granos de cereal (kg)", precio: "5-15€", donde: "Tienda física", nota: "Cebada, centeno, avena. Seco. Base del sustrato. Requiere cocción + esterilización.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧫 Jeringa de esporas Psilocybe", precio: "20-40€", donde: "Internet", nota: "Contiene esporas en solución estéril. Crítico: compra de fuente fiable.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🪜 SAB (Still Air Box)", precio: "20-40€", donde: "Internet", nota: "Caja hermética para inocular sin contaminación. DIY: caja + guantes de látex.", prioridad: "ESENCIAL", tipo: "Equipo" },
     { item: "🔬 Alcohol isopropílico 70%", precio: "8-15€", donde: "Farmacia", nota: "Desinfectar SAB, herramientas, manos. 1L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
     { item: "🧪 Aguja 0.5mm x 25mm", precio: "3-8€", donde: "Farmacia", nota: "Inyectar esporas. Compra 2-3 (pueden romperse).", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "💧 Coco coir / Vermiculita", precio: "8-15€", donde: "Grow shops / Amazon", nota: "Sustrato para bulk tek. 5L coco coir + 5L perlita + 5L agua.", prioridad: "ESENCIAL", tipo: "Consumible" },
-    { item: "📦 Cajas/contenedores plástico", precio: "10-20€", donde: "Ikea / Carrefour", nota: "Para monotub. Aprox 40L. Necesitarás 1-2.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🌡️ Termómetro digital", precio: "5-10€", donde: "Amazon", nota: "Monitorear 24-28°C durante incubación.", prioridad: "ESENCIAL", tipo: "Equipo" },
-    { item: "🪥 Bolsas de granos esterilizables", precio: "5-10€", donde: "Grow shops", nota: "Alternativa a frascos. Spawn bags reutilizables.", prioridad: "ÚTIL", tipo: "Consumible" },
-    { item: "⚖️ Báscula digital", precio: "10-20€", donde: "Amazon", nota: "Pesar grano seco, sustrato. Precisión: ±1g.", prioridad: "IMPORTANTE", tipo: "Equipo" },
+    { item: "💧 Coco coir / Vermiculita", precio: "8-15€", donde: "Grow shop", nota: "Sustrato para bulk tek. 5L coco coir + 5L perlita + 5L agua.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 Cajas/contenedores plástico", precio: "10-20€", donde: "Tienda física", nota: "Para monotub. Aprox 40L. Necesitarás 1-2.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌡️ Termómetro digital", precio: "5-10€", donde: "Internet", nota: "Monitorear 24-28°C durante incubación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Bolsas de granos esterilizables", precio: "5-10€", donde: "Grow shop", nota: "Alternativa a frascos. Spawn bags reutilizables.", prioridad: "ÚTIL", tipo: "Consumible" },
+    { item: "⚖️ Báscula digital", precio: "10-20€", donde: "Internet", nota: "Pesar grano seco, sustrato. Precisión: ±1g.", prioridad: "IMPORTANTE", tipo: "Equipo" },
   ];
   const [filterPrio, setFilterPrio] = React.useState([]);
   const [filterTipo, setFilterTipo] = React.useState([]);
+  const [filterDonde, setFilterDonde] = React.useState([]);
   const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
   const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const toggleDonde = (d) => setFilterDonde(s => s.includes(d) ? s.filter(x => x !== d) : [...s, d]);
   const filtered = items.filter(i =>
     (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
-    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo)) &&
+    (filterDonde.length === 0 || filterDonde.includes(i.donde))
   );
   const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
   const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+  const dondeColor = { "Internet": "#aa7c52", "Grow shop": "#c49a6c", "Farmacia": "#8a6240", "Tienda física": "#dbb98c" };
+  const availableDonde = [...new Set(items.map(i => i.donde))];
 
   return (
     <div>
@@ -65,8 +70,25 @@ function COMPRA_SETAS_ADVANCED() {
           );
         })}
       </div>
-      {(filterPrio.length > 0 || filterTipo.length > 0) && (
-        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+      <SectionTitleM>FILTRAR POR DÓNDE COMPRAR</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {availableDonde.map(d => {
+          const c = dondeColor[d] || "#888";
+          const active = filterDonde.includes(d);
+          return (
+            <button key={d} onClick={() => toggleDonde(d)} style={{
+              background: active ? c : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : c,
+              border: `1.5px solid ${c}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{d}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0 || filterDonde.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); setFilterDonde([]); }} style={{
           background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
           fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
         }}>✕ Limpiar filtros</button>
