@@ -41,11 +41,12 @@ function GuiaCultivo() {
     setTimeout(() => {
       const searchInput = document.querySelector('input[placeholder*="Buscar"]');
       if (searchInput) {
-        searchInput.value = term;
+        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        nativeSetter.call(searchInput, term);
         searchInput.dispatchEvent(new Event('input', { bubbles: true }));
         searchInput.focus();
       }
-    }, 100);
+    }, 150);
   };
 
   React.useEffect(() => {
