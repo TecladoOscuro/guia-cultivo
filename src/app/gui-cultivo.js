@@ -362,33 +362,56 @@ function GuiaCultivo() {
   }
 
   // Guías agrupadas: Cultivo / Visionarias / Otras
+  // Cada guía tiene su paleta para mantener identidad visual incluso agrupada
   const guides = [
-    { id: "cannabis", emoji: "🌿", label: "Cannabis", grupo: "Cultivo" },
-    { id: "ferment", emoji: "🍯", label: "Fermentar", grupo: "Cultivo" },
-    { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "Visionarias" },
-    { id: "cactus", emoji: "🌵", label: "Cactus", grupo: "Visionarias" },
-    { id: "ayahuasca", emoji: "🌿", label: "Ayahuasca", grupo: "Visionarias" },
-    { id: "dmt", emoji: "🌌", label: "DMT", grupo: "Visionarias" },
-    { id: "amanita", emoji: "🟥", label: "Amanita", grupo: "Visionarias" },
-    { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "Visionarias" },
+    // 🌱 CULTIVAR PLANTAS
+    { id: "cannabis", emoji: "🌿", label: "Cannabis", grupo: "🌱 Cultivar plantas", accent: CANNABIS_COLORS.accent1 },
+    { id: "cactus", emoji: "🌵", label: "Cactus", grupo: "🌱 Cultivar plantas", accent: CACTUS_COLORS.accent1 },
+    { id: "ayahuasca", emoji: "🌿", label: "Ayahuasca", grupo: "🌱 Cultivar plantas", accent: AYAHUASCA_COLORS.accent1 },
+    { id: "dmt", emoji: "🌌", label: "DMT", grupo: "🌱 Cultivar plantas", accent: DMT_COLORS.accent1 },
+    { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "🌱 Cultivar plantas", accent: PLANTAS_COLORS.accent1 },
+    // 🍄 CULTIVAR/FORRAJEAR HONGOS
+    { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "🍄 Cultivar / forrajear hongos", accent: MUSHROOM_COLORS.accent1 },
+    { id: "amanita", emoji: "🟥", label: "Amanita", grupo: "🍄 Cultivar / forrajear hongos", accent: AMANITA_COLORS.accent1 },
+    // 🫙 FERMENTAR
+    { id: "ferment", emoji: "🍯", label: "Fermentar", grupo: "🫙 Fermentar", accent: FERMENT_COLORS.accent1 },
   ];
+
+  // Agrupar guías por grupo manteniendo orden de declaración
+  const grupos = guides.reduce((acc, g) => {
+    if (!acc[g.grupo]) acc[g.grupo] = [];
+    acc[g.grupo].push(g);
+    return acc;
+  }, {});
 
   return (
     <div className="app-layout" style={{ background: colors.bg, minHeight: "100vh", color: colors.text }}>
       <div className="app-header" style={{ background: colors.gradient, padding: "24px 24px 20px", textAlign: "center", borderBottom: `2px solid ${colors.borderAccent}` }}>
-        <div style={{ marginBottom: "16px" }}>
-          <div style={{ display: "flex", gap: "4px", justifyContent: "center", marginBottom: "16px", flexWrap: "wrap" }}>
-            {guides.map(g => (
-              <button key={g.id} onClick={() => setGuide(g.id)} style={{
-                padding: "8px 14px", fontSize: "12px", fontWeight: "bold", border: "none",
-                borderRadius: "8px", cursor: "pointer", transition: "all 0.2s",
-                background: guide === g.id ? colors.accent1 : colors.border1,
-                color: guide === g.id ? colors.bg : colors.accent1,
-              }}>
-                {g.emoji} {g.label}
-              </button>
-            ))}
-          </div>
+        <div style={{ marginBottom: "16px", display: "flex", flexDirection: "column", gap: "10px" }}>
+          {Object.entries(grupos).map(([grupoLabel, gs]) => (
+            <div key={grupoLabel}>
+              <div style={{
+                fontSize: "10px", letterSpacing: "2px", color: colors.accent2, opacity: 0.7,
+                marginBottom: "6px", textTransform: "uppercase", fontWeight: "bold",
+              }}>{grupoLabel}</div>
+              <div style={{ display: "flex", gap: "6px", justifyContent: "center", flexWrap: "wrap" }}>
+                {gs.map(g => {
+                  const active = guide === g.id;
+                  return (
+                    <button key={g.id} onClick={() => setGuide(g.id)} style={{
+                      padding: "8px 14px", fontSize: "12px", fontWeight: "bold",
+                      borderRadius: "8px", cursor: "pointer", transition: "all 0.2s",
+                      background: active ? g.accent : "transparent",
+                      color: active ? "#0a0a0a" : g.accent,
+                      border: `1.5px solid ${g.accent}`,
+                    }}>
+                      {g.emoji} {g.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
         <h1 className="heading-serif" style={{ fontSize: "22px", fontWeight: "bold", margin: "0 0 16px", color: colors.textBright }}>
           {title}
