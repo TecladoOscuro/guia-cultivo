@@ -979,8 +979,8 @@ function TIMELINE({ navigate }) {
                 marginLeft: "20px",
                 transition: "all 0.2s",
               }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 0 0 1px ${node.color}66, 0 4px 12px rgba(0,0,0,0.3)`; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = node.color; e.currentTarget.style.boxShadow = `0 0 0 2px ${node.color}, 0 6px 20px ${node.color}55`; e.currentTarget.style.background = "#162a1e"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = node.highlight ? node.color : "#1b4332"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.background = node.highlight ? "#1a3a20" : "#0d1f14"; }}
               >
                 {/* Círculo del nodo */}
                 <div style={{
