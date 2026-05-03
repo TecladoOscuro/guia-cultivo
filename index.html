@@ -8494,7 +8494,7 @@ function GuiaCultivo() {
                         display: "block", width: "100%", textAlign: "left",
                         padding: "8px 12px", fontSize: "12px", fontWeight: active ? "bold" : "normal",
                         borderRadius: "6px", cursor: "pointer", border: "none",
-                        background: active ? g.accent : "transparent",
+                        background: active ? g.accent : "rgba(0,0,0,0.3)",
                         color: active ? "#0a0a0a" : g.accent,
                         marginBottom: "2px",
                       }}>
@@ -8522,7 +8522,7 @@ function GuiaCultivo() {
                   <button key={g.id} onClick={() => setGuide(g.id)} style={{
                     padding: "5px 10px", fontSize: "11px", fontWeight: "bold",
                     borderRadius: "6px", cursor: "pointer", transition: "all 0.2s",
-                    background: active ? g.accent : "transparent",
+                    background: active ? g.accent : "rgba(0,0,0,0.4)",
                     color: active ? "#0a0a0a" : g.accent,
                     border: `1.5px solid ${g.accent}`,
                   }}>
