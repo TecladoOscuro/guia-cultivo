@@ -71,8 +71,8 @@ function TIMELINE_SETAS({ navigate }) {
             borderRadius: "10px", padding: "12px 14px",
             transition: "all 0.2s",
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.transform = "translateX(4px)"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.transform = "translateX(0)"; }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.boxShadow = `0 0 0 1px ${MUSHROOM_COLORS.accent1}66, 0 4px 12px rgba(0,0,0,0.3)`; }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.boxShadow = "none"; }}
           >
             <div style={{
               position: "absolute", left: "-25px", top: "12px",
