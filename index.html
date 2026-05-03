@@ -8508,13 +8508,13 @@ function GuiaCultivo() {
           )}
         </div>
 
-        {/* DESKTOP: 3 filas, una por grupo */}
-        <div className="guides-row" style={{ marginBottom: "16px", display: "none", flexDirection: "column", gap: "6px" }}>
+        {/* DESKTOP: 3 filas, una por grupo. Bloque centrado, labels left-aligned al mismo X */}
+        <div className="guides-row" style={{ marginBottom: "16px", display: "none", flexDirection: "column", gap: "6px", width: "fit-content", margin: "0 auto 16px" }}>
           {Object.entries(grupos).map(([grupoLabel, gs]) => (
-            <div key={grupoLabel} style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", flexWrap: "wrap" }}>
+            <div key={grupoLabel} style={{ display: "flex", alignItems: "center", gap: "8px", flexWrap: "wrap" }}>
               <span style={{
                 fontSize: "9px", letterSpacing: "1.5px", color: colors.accent2, opacity: 0.6,
-                textTransform: "uppercase", fontWeight: "bold", minWidth: "180px", textAlign: "right",
+                textTransform: "uppercase", fontWeight: "bold", minWidth: "230px", textAlign: "left",
               }}>{grupoLabel}</span>
               {gs.map(g => {
                 const active = guide === g.id;
