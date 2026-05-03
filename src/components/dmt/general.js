@@ -597,6 +597,7 @@ function HARM_REDUCTION_DMT() {
 
 function FAQ_DMT() {
   const c = DMT_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿DMT es lo mismo que ayahuasca?", a: "Misma molécula psicoactiva (DMT), experiencias muy distintas. DMT fumado: 5-15 min, intenso, breakthrough. Ayahuasca: 4-6h, oral, IMAO + DMT, contemplativo. Lee guía Ayahuasca para más detalle." },
     { q: "¿Es legal cultivar Mimosa hostilis?", a: "Sí. Es planta ornamental sin restricciones legales en España. Comprar semillas, plantar, cultivar = todo legal. Lo que es ilegal es la extracción química del DMT y la posesión de DMT puro." },
@@ -608,7 +609,15 @@ function FAQ_DMT() {
     { q: "¿Diferencia entre N,N-DMT, 5-MeO-DMT y 4-HO-DMT?", a: "Tres moléculas distintas:\n- N,N-DMT (esto): clásica, Mimosa, ayahuasca, intensa pero terrenal\n- 5-MeO-DMT: del sapo Bufo alvarius, MUCHO más intenso, 'unión cósmica', riesgo cardíaco real, NO recomendado\n- 4-HO-DMT (psilocina): es la molécula activa de las setas Psilocybe, oral, 4-6h" },
     { q: "¿Puedo hacer extracción casera?", a: "ILEGAL en España. Riesgos químicos reales (NaOH, solventes inflamables). Para uso personal de DMT, alternativas legales: ayahuasca casera o ceremonia con grupo religioso. Ver guía Ayahuasca." },
     { q: "¿Qué hago si quiero probar DMT pero todo es ilegal?", a: "Opciones:\n1. Cultivar Mimosa + ayahuasca casera (legal gris)\n2. Ceremonia con Santo Daime/UDV (legal en algunos contextos)\n3. Viajar a país donde sea legal (Brasil, Perú — turismo ayahuasquero)\n4. Esperar reformas legales (varios países están reconsiderando)" },
+    { q: "¿Qué relación tiene el DMT con la pineal?", a: "Estudios de Rick Strassman (años 90) encontraron trazas de DMT en líquido cefalorraquídeo humano y mostraron que la pineal puede sintetizarlo. Hipótesis especulativa: liberación masiva de DMT al morir podría explicar near-death experiences. Ciencia aún no resuelta — investigación abierta." },
+    { q: "¿Diferencia ayahuasca vs DMT vapeable?", a: "Ayahuasca: oral, 4-6h, contemplativa, con purga (vómito), ceremonial. DMT vapeable: 5-15 min, breakthrough total, intenso, sin preparación tan ritual. Mismas moléculas, experiencias funcionalmente distintas." },
+    { q: "¿Compatible con cannabis?", a: "Algunos potencia el DMT (mezcla en changa). Cuidado: cannabis amplifica ansiedad — si propenso a paranoia, mejor sin cannabis. Investigar antes." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -616,7 +625,16 @@ function FAQ_DMT() {
         Preguntas comunes sobre DMT. Recursos: Erowid, libro "DMT: The Spirit Molecule" (Rick Strassman), documental "DMT: The Spirit Molecule" (Mitch Schultz), Hamilton's Pharmacopeia (Vice TV, episodio sobre DMT).
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6", whiteSpace: "pre-line" }}>{f.a}</div>

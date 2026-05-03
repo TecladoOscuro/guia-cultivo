@@ -546,6 +546,7 @@ function HARM_REDUCTION_AYA() {
 
 function FAQ_AYA() {
   const c = AYAHUASCA_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Es legal en España?", a: "Cultivo de plantas: SÍ. Posesión de plantas secas: SÍ. Brebaje preparado para uso personal: zona gris (DMT está en Lista I pero no se persigue uso ritual personal). Comercializar/distribuir: ILEGAL. Hay sentencias favorables al Santo Daime y la UDV (uso religioso) en algunos países EU." },
     { q: "¿Puedo ir a una ceremonia en España?", a: "Sí. Hay grupos: Santo Daime (registrado como religión en algunos países), UDV (União do Vegetal), y muchas ceremonias neo-chamánicas no oficiales. Buscar referencias de personas con buena reputación. CUIDADO con falsos chamanes — investiga antes." },
@@ -557,7 +558,16 @@ function FAQ_AYA() {
     { q: "¿Puedo cultivar Caapi en piso pequeño?", a: "Difícil pero posible. Caapi necesita TUTOR vertical de 2m+. Una pared con alambres o caña vertical en una maceta puede bastar. Chacruna sí necesita más espacio + humedad alta." },
     { q: "¿Cómo conservo el brebaje preparado?", a: "Frasco vidrio oscuro hermético. Nevera: 1-2 semanas. Congelador: 3-6 meses (potencia se mantiene). Temperatura ambiente: 3-7 días si está MUY reducido (alta concentración de alcaloides actúa como conservante)." },
     { q: "¿Diferencia entre Caapi 'Cielo', 'Trueno' y 'Negro'?", a: "Cepas de Banisteriopsis caapi con diferente perfil:\n- Cielo: más visionario, suave, recomendado novatos\n- Trueno: más intenso, mayor purga, para experimentados\n- Negro: tradicional, equilibrado\nDifícil verificar autenticidad — comprar de vendedor reputado." },
+    { q: "¿Por qué casi todos vomitan?", a: "La harmina del Caapi es naturalmente emética. La 'purga' es considerada parte sagrada en tradición — limpieza física + emocional. NO significa que vaya mal. Tras vomitar la mayoría siente alivio y la experiencia se profundiza." },
+    { q: "¿Una sola experiencia me cambiará la vida?", a: "Probablemente NO. La experiencia da insights, pero el cambio real viene de la INTEGRACIÓN posterior — reflexión, journaling, posible terapia. Sin integración los insights se desvanecen en semanas." },
+    { q: "¿Diferencia con yagé?", a: "Yagé = nombre indígena ecuatoriano/colombiano para ayahuasca, suele incluir Diplopterys cabrerana (Chaliponga) en lugar de Chacruna como fuente de DMT." },
+    { q: "¿Niños indígenas la toman?", a: "En algunas tribus amazónicas sí, ceremonialmente, en pequeñas dosis. Distinto contexto cultural. NO recomendado para menores en contexto occidental." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -565,7 +575,16 @@ function FAQ_AYA() {
         Preguntas comunes sobre ayahuasca. Recursos: Erowid (sección Ayahuasca), libros de Jeremy Narby ("La Serpiente Cósmica"), Santo Daime registros oficiales, foros r/ayahuasca.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6", whiteSpace: "pre-line" }}>{f.a}</div>

@@ -980,6 +980,7 @@ function LUPULO() {
 
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuál es la más segura para empezar?", a: "Damiana. Efecto suave, sabor agradable, fácil cultivo, sin riesgos especiales. Después: Wild lettuce o Calea." },
     { q: "¿Cuál es la más intensa?", a: "Salvia divinorum, sin duda. Es la más potente psicoactivamente de toda la lista — pero también la más exigente en cultivo y la más arriesgada en uso (siempre con sitter)." },
@@ -988,8 +989,17 @@ function FAQ_PLANTAS() {
     { q: "¿Cuándo es mejor evitar?", a: "Embarazo y lactancia: TODAS contraindicadas. Medicación: consultar con médico — algunas pueden interactuar (especialmente Wild lettuce con sedantes y Damiana con antidepresivos). Conducir: nunca tras consumir cualquiera de estas." },
     { q: "¿Cuánto duran los efectos?", a: "Salvia: 5-15 min (intenso). Damiana: 2-4h. Blue Lotus: 2-4h. Wild lettuce: 3-6h. Calea: solo durante el sueño (8h aprox), efecto hipnagógico." },
     { q: "¿Dónde compro semillas/plantas en España?", a: "Online: vendedores especializados en etnobotánica (busca 'semillas etnobotánica España'). Damiana también en herboristerías como hojas secas. Salvia esquejes solo online. Blue Lotus rizomas en tiendas de plantas acuáticas." },
-    { q: "¿Estas plantas son legales seguro?", a: "Sí, las 5 son legales en España (y en EU general): cultivo + posesión + uso personal. Calea está prohibida en Polonia (excepción rara). Salvia ha sido prohibida en algunos países (USA, Australia, varios EU) pero NO en España. Verifica si viajas." },
+    { q: "¿Estas plantas son legales seguro?", a: "Sí, las 8 son legales en España (y en EU general): cultivo + posesión + uso personal. Calea está prohibida en Polonia (excepción rara). Salvia ha sido prohibida en algunos países (USA, Australia, varios EU) pero NO en España. Verifica si viajas." },
+    { q: "¿Cuál es mejor para insomnio?", a: "Wild lettuce + manzanilla = combinación clásica. Lúpulo (almohada o té) también muy bueno. Calea para sueños lúcidos pero NO ayuda a dormir." },
+    { q: "¿Cuál sirve para ansiedad social?", a: "Damiana (ligera euforia + relajación, sabor agradable) o Kava (más fuerte, sin embriagar). Kanna también ayuda pero ojo con interacciones SSRI." },
+    { q: "¿Cuál es estimulante natural?", a: "Mucuna pruriens (motivación + energía mental sin agitación cafeínica). Sinicuichi también pero efecto más auditivo, no estimulante." },
+    { q: "¿Combinar con cafeína?", a: "Mucuna + cafeína: bien (ambos dopaminérgicos suaves). Kava + cafeína: contradicción, pierde efecto. Kanna + cafeína: posible — pero cuidado si tomas SSRI." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -997,7 +1007,16 @@ function FAQ_PLANTAS() {
         Preguntas comunes sobre plantas psicoactivas suaves. Si quieres más info, recursos: Erowid.org (en inglés, biblioteca completa), TripSit, sitio español Ojos de Brujo.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>

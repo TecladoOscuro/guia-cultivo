@@ -432,6 +432,7 @@ function HARM_REDUCTION_AMANITA() {
 
 function FAQ_AMANITA() {
   const c = AMANITA_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuándo es la mejor temporada?", a: "Septiembre a noviembre en España. Pico en octubre tras lluvias seguidas + temperaturas suaves. Apunta los lugares donde encuentres — vuelven año tras año." },
     { q: "¿Por qué no se puede cultivar?", a: "Amanita muscaria es micorrícica — vive en simbiosis OBLIGADA con raíces de árboles (intercambio: el árbol da azúcares, el hongo da minerales del suelo). Reproducir esto en casa = imposible. Forrajeo es la única vía." },
@@ -441,7 +442,16 @@ function FAQ_AMANITA() {
     { q: "¿Cuánto tarda en hacer efecto?", a: "Té: 1-2h hasta sentir efecto inicial, pico a las 3-4h, declive 6-10h total. Es LENTO comparado con otras sustancias. NO tomar más antes de que pase el efecto inicial." },
     { q: "¿Se puede comer entera (cocinada)?", a: "Tradicionalmente algunas culturas la cocinan como alimento (parboiling 15min, cambiar agua, hervir otros 15min — elimina iboténico y muscimol). Resultado: ya no es psicoactiva, es solo seta comestible. Para mantener psicoactividad NO hervir tan agresivo — usar el método de té descrito." },
     { q: "¿Qué hacer con setas que recogí pero parecen dudosas?", a: "TIRARLAS. NO consumir. Una experiencia mala = nunca más. Una intoxicación grave = hospital. La duda es razón suficiente para descartar." },
+    { q: "¿Por qué Papá Noel se asocia con Amanita?", a: "Teoría popular (no confirmada científicamente): chamanes siberianos consumían Amanita muscaria, vestían rojo y blanco (colores de la seta), entraban por la chimenea (única entrada cuando había nieve). Folklore evolucionó al Santa Claus moderno. Curiosidad cultural." },
+    { q: "¿Es legal en otros países UE?", a: "Mayoría UE: legal. Excepciones: Holanda regula como 'planta tóxica', Reino Unido ilegal desde 2005, Australia ilegal. España: 100% legal." },
+    { q: "¿Qué pasa si la cocino bien (parboiled)?", a: "Hervir 15min en agua + descartar agua + hervir otros 15min = elimina iboténico y muscimol. Resultado: seta comestible NO psicoactiva (cocina tradicional rusa/báltica)." },
+    { q: "¿Microdosis es segura?", a: "0.5-1g de seta seca 2-3 veces/semana es protocolo común. Reportes anecdóticos: mejora ánimo, reducción ansiedad, mejor sueño. Investigación científica limitada — evidencia mayormente personal." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -449,7 +459,16 @@ function FAQ_AMANITA() {
         Preguntas comunes sobre Amanita muscaria. Recursos útiles: Erowid (sección Amanita), foros r/Amanitamuscaria, libros de Andy Letcher (Shroom).
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>

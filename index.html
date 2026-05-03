@@ -3102,64 +3102,70 @@ function EXTRACCIONES() {
 }
 
 function FAQ() {
+  const [query, setQuery] = React.useState("");
+  const faqs = [
+    { sec: "Crecimiento", q: "Mi planta está amarilla. ¿Qué hago?", a: "Tres causas principales: 1) Deficiencia de N (hojas bajas amarillas) — aumenta Bio Grow. 2) pH incorrecto — mide pH, ajusta a 6.2-6.5. 3) Edad (últimas semanas floración) — es normal. Primero mide pH, luego añade nutrientes si hace falta." },
+    { sec: "Crecimiento", q: "La planta no crece nada. Está parada hace 2 semanas.", a: "Causa #1: Overwatering — deja secar completamente 3-5 días. Causa #2: Luz demasiado lejos — bájala a 50-60cm. Causa #3: Temperatura <18°C — sube a 22°C mínimo. Causa #4: Suelo encharcado/sin drenaje — en exterior verifica que el hoyo drena bien." },
+    { sec: "Crecimiento", q: "¿Cuándo cosechar? ¿Cómo sé que está lista?", a: "Interior: mira los tricomas con lupa de aumento. 60-70% lechosos (blancos) = primer punto de cosecha, efecto energético. 80-90% lechosos = punto ideal. Algunos ámbar = más sedante. Exterior: espera a 70-80% lechosos, o cosecha antes si lluvia inminente." },
+    { sec: "Crecimiento", q: "Las hojas están rizadas hacia arriba. ¿Qué es?", a: "Calor o falta de agua. Mide temperatura — si está >28°C, sube extractor. Si el sustrato está seco, riega. Si es exterior, es normal en días muy calurosos — se recupera por la noche." },
+    { sec: "Crecimiento", q: "Las hojas están colgando/droopy. Acababa de regar.", a: "Overwatering. El sustrato está muy mojado y las raíces sin oxígeno. Deja de regar 5 días. Abre ventilador si es interior. La planta se recupera." },
+    { sec: "Nutrientes y pH", q: "¿Debo medir el pH? ¿Es realmente necesario?", a: "SÍ. Es la causa raíz de 50% de los problemas. Si el pH está mal, los nutrientes están ahí pero bloqueados. El pHmetro cuesta 20€ y vale cada céntimo. Interior: 6.2-6.5. Exterior: 6.0-7.0. Sin medidor estarás disparando a ciegas." },
+    { sec: "Nutrientes y pH", q: "¿Qué es el runoff? ¿Debo medirlo?", a: "Agua que drena por los agujeros de abajo cuando riegas. Mide su pH con tu pHmetro. Si difiere >0.5 puntos del agua que entraste, hay bloqueo de nutrientes (acumulación de sales). Solución: flush 2-3 días con agua sola a pH 6.3." },
+    { sec: "Nutrientes y pH", q: "Añadí nutrientes y empeó todo. ¿Qué hago?", a: "Probablemente nutrient burn. PARA de añadir nutrientes inmediatamente. Haz un flush: riega con agua sola a pH 6.3 durante 2-3 riegos consecutivos. Luego vuelve a nutrientes con dosis 50% menor." },
+    { sec: "Nutrientes y pH", q: "En exterior el pH sube solo en el depósito. ¿Qué es?", a: "Algas. El agua llena en un depósito abierto y expuesto a luz crece algas — cambiar pH. Solución: cubre el depósito con tapa opaca o bolsa negra. Las algas mueren sin luz. O: cambia el agua cada 2-3 días." },
+    { sec: "Nutrientes y pH", q: "¿Qué hago si no tengo acceso a pH Down en exterior?", a: "Urgencia: usa zumo de limón (ácido cítrico) — baja pH naturalmente. 2-3 gotas por litro. No es exacto pero funciona. Para la próxima: lleva pH Down de casa en una botella pequeña (cuesta 5€)." },
+    { sec: "Setup y clima", q: "El extractor no crea presión negativa. ¿Por qué?", a: "Causas: 1) Tubo no sellado bien — revisa que no haya fugas de aire. 2) Filtro de carbón saturado — cámbialo. 3) Extractor muy débil — actualiza a uno más potente. 4) Entrada de aire obstruida — asegúrate que entra aire (rejilla abierta en la puerta o pared)." },
+    { sec: "Setup y clima", q: "La humedad es demasiado baja (30%). ¿Qué hago?", a: "Interior: cuelga toallas mojadas en las esquinas (se evaporan). O: apaga el extractor 1-2 horas. O: moja el suelo y las paredes. Exterior: es normal en julio — no hay mucho que hacer. Asegúrate de riego frecuente." },
+    { sec: "Setup y clima", q: "Llueve mucho (exterior). ¿Protejo la planta?", a: "Un poco de lluvia es bueno (agua gratis). Demasiada lluvia = Botrytis en floración. Si llueve días seguidos en septiembre-octubre: abre cogollos para ver si hay moho. Toldo temporal sobre la planta si puedes sin bloquear luz/aire." },
+    { sec: "Setup y clima", q: "¿Luz 24h o 18/6 en interior para autos?", a: "Autos florecen solas, no dependen del fotoperiodo. 20/4 es estándar (20h luz, 4h oscuridad) — menos gasto eléctrico que 24h. 18/6 también funciona. La mayoría usa 20/4." },
+    { sec: "Setup y clima", q: "¿Puedo cultivar con luz natural exterior en febrero?", a: "No. Los días en febrero son demasiado cortos (<12h). Las plantas fotoperiodo florecen sola sin querer. Espera a marzo-mayo para germinar. Si quieres en invierno: cultiva autos o usa luz artificial interior." },
+    { sec: "Otros", q: "¿Puedo reutilizar el sustrato del año pasado?", a: "No recomendado. El sustrato se compacta y agota sus nutrientes. Para una nueva temporada compra sustrato fresco (BioBizz Light Mix). Si quieres reutilizar: mezcla 50% sustrato viejo + 50% nuevo y añade bacteria benéfica (Mycorrhizae)." },
+    { sec: "Otros", q: "Me olvidé de regar 5 días. ¿Está muerta?", a: "Probablemente no. Aunque parecer marchita, las raíces pueden estar vivas. Riega abundantemente y espera 2-3 días. Si recupera turgencia (hojas firmes) está salvada. Si sigue marchita tras 5 días, está muerta." },
+    { sec: "Otros", q: "¿Puedo dejar las plantas solas 2 semanas en julio?", a: "NO en julio (pico de calor). Las plantas mueren sin agua en 2-3 días. Con riego automático a goteros: sí, funciona. Sin automático: pide a alguien que visite cada 1-2 días, o escurza las plantas." },
+    { sec: "Otros", q: "¿Qué hago con las plantas después de cosechar?", a: "Interior: limpia el armario (vacía, deja 24h con luz + extractor para secar). Sustrato viejo desecha o reutiliza mezclado 50/50. Exterior: limpia completamente el spot — no dejes trazas." },
+    { sec: "Otros", q: "¿Es legal cultivar cannabis en España?", a: "El consumo y cultivo PRIVADO para uso personal está despenalizado (no es delito). Pero NO es legal — está en zona gris. En lugar privado, autoconsumo, sin tráfico = TOLERADO. Espacios públicos, vender, regalar a terceros = SANCIONABLE. Cantidad razonable es 2-3 plantas." },
+    { sec: "Otros", q: "¿Cuántas plantas puedo tener legalmente?", a: "No hay número exacto en la ley. Tribunales aceptan 'cantidad razonable para autoconsumo' = 2-5 plantas máximo. Más = sospecha de tráfico (delito)." },
+    { sec: "Otros", q: "¿Diferencia entre indica y sativa?", a: "Indica: efecto corporal sedante, plantas más bajas y compactas (mejor para indoor). Sativa: efecto cerebral energético, plantas más altas y largas (mejor exterior). La mayoría hoy son híbridos — etiqueta dice qué predomina." },
+    { sec: "Otros", q: "¿Qué es THC vs CBD?", a: "THC: psicoactivo (efecto recreativo). CBD: NO psicoactivo (medicinal — antiinflamatorio, anti-ansiedad, anticonvulsivo). Variedades modernas tienen ratios distintos: alto THC (recreativo), alto CBD (medicinal), 1:1 balanceado." },
+  ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase()) ||
+    f.sec.toLowerCase().includes(query.toLowerCase())
+  );
+
+  // Agrupar por sección
+  const grupos = filtered.reduce((acc, f) => {
+    if (!acc[f.sec]) acc[f.sec] = [];
+    acc[f.sec].push(f);
+    return acc;
+  }, {});
+
   return (
     <div>
       <InfoBox>
         Preguntas comunes de cultivadores principiantes. Si tu situación no está aquí, navega al Diagnóstico para síntomas más específicos.
       </InfoBox>
 
-      <SectionTitle>PROBLEMAS DE CRECIMIENTO</SectionTitle>
-      {[
-        { q: "Mi planta está amarilla. ¿Qué hago?", r: "Tres causas principales: 1) Deficiencia de N (hojas bajas amarillas) — aumenta Bio Grow. 2) pH incorrecto — mide pH, ajusta a 6.2-6.5. 3) Edad (últimas semanas floración) — es normal. Primero mide pH, luego añade nutrientes si hace falta." },
-        { q: "La planta no crece nada. Está parada hace 2 semanas.", r: "Causa #1: Overwatering — deja secar completamente 3-5 días. Causa #2: Luz demasiado lejos — bájala a 50-60cm. Causa #3: Temperatura <18°C — sube a 22°C mínimo. Causa #4: Suelo encharcado/sin drenaje — en exterior verifica que el hoyo drena bien." },
-        { q: "¿Cuándo cosechar? ¿Cómo sé que está lista?", r: "Interior: mira los tricomas con lupa de aumento. 60-70% lechosos (blancos) = primer punto de cosecha, efecto energético. 80-90% lechosos = punto ideal. Algunos ámbar = más sedante. Exterior: espera a 70-80% lechosos, o cosecha antes si lluvia inminente." },
-        { q: "Las hojas están rizadas hacia arriba. ¿Qué es?", r: "Calor o falta de agua. Mide temperatura — si está >28°C, sube extractor. Si el sustrato está seco, riega. Si es exterior, es normal en días muy calurosos — se recupera por la noche." },
-        { q: "Las hojas están colgando/droopy. Acababa de regar.", r: "Overwatering. El sustrato está muy mojado y las raíces sin oxígeno. Deja de regar 5 días. Abre ventilador si es interior. La planta se recupera." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: "#0d1f14", color: "#d8f3dc", border: "1px solid #1b4332",
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: "#74c69d", marginBottom: "16px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
 
-      <SectionTitle>PROBLEMAS DE NUTRIENTES Y pH</SectionTitle>
-      {[
-        { q: "¿Debo medir el pH? ¿Es realmente necesario?", r: "SÍ. Es la causa raíz de 50% de los problemas. Si el pH está mal, los nutrientes están ahí pero bloqueados. El pHmetro cuesta 20€ y vale cada céntimo. Interior: 6.2-6.5. Exterior: 6.0-7.0. Sin medidor estarás disparando a ciegas." },
-        { q: "¿Qué es el runoff? ¿Debo medirlo?", r: "Agua que drena por los agujeros de abajo cuando riegas. Mide su pH con tu pHmetro. Si difiere >0.5 puntos del agua que entraste, hay bloqueo de nutrientes (acumulación de sales). Solución: flush 2-3 días con agua sola a pH 6.3." },
-        { q: "Añadí nutrientes y empeó todo. ¿Qué hago?", r: "Probablemente nutrient burn. PARA de añadir nutrientes inmediatamente. Haz un flush: riega con agua sola a pH 6.3 durante 2-3 riegos consecutivos. Luego vuelve a nutrientes con dosis 50% menor." },
-        { q: "En exterior el pH sube solo en el depósito. ¿Qué es?", r: "Algas. El agua llena en un depósito abierto y expuesto a luz crece algas — cambiar pH. Solución: cubre el depósito con tapa opaca o bolsa negra. Las algas mueren sin luz. O: cambia el agua cada 2-3 días." },
-        { q: "¿Qué hago si no tengo acceso a pH Down en exterior?", r: "Urgencia: usa zumo de limón (ácido cítrico) — baja pH naturalmente. 2-3 gotas por litro. No es exacto pero funciona. Para la próxima: lleva pH Down de casa en una botella pequeña (cuesta 5€)." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
-
-      <SectionTitle>PROBLEMAS DE SETUP Y CLIMA</SectionTitle>
-      {[
-        { q: "El extractor no crea presión negativa. ¿Por qué?", r: "Causas: 1) Tubo no sellado bien — revisa que no haya fugas de aire. 2) Filtro de carbón saturado — cámbialo. 3) Extractor muy débil — actualiza a uno más potente. 4) Entrada de aire obstruida — asegúrate que entra aire (rejilla abierta en la puerta o pared)." },
-        { q: "La humedad es demasiado baja (30%). ¿Qué hago?", r: "Interior: cuelga toallas mojadas en las esquinas (se evaporan). O: apaga el extractor 1-2 horas. O: moja el suelo y las paredes. Exterior: es normal en julio — no hay mucho que hacer. Asegúrate de riego frecuente." },
-        { q: "Llueve mucho (exterior). ¿Protejo la planta?", r: "Un poco de lluvia es bueno (agua gratis). Demasiada lluvia = Botrytis en floración. Si llueve días seguidos en septiembre-octubre: abre cogollos para ver si hay moho. Toldo temporal sobre la planta si puedes sin bloquear luz/aire." },
-        { q: "¿Luz 24h o 18/6 en interior para autos?", r: "Autos florecen solas, no dependen del fotoperiodo. 20/4 es estándar (20h luz, 4h oscuridad) — menos gasto eléctrico que 24h. 18/6 también funciona. La mayoría usa 20/4." },
-        { q: "¿Puedo cultivar con luz natural exterior en febrero?", r: "No. Los días en febrero son demasiado cortos (<12h). Las plantas fotoperiodo florecen sola sin querer. Espera a marzo-mayo para germinar. Si quieres en invierno: cultiva autos o usa luz artificial interior." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
-
-      <SectionTitle>PROBLEMAS MENOS COMUNES</SectionTitle>
-      {[
-        { q: "¿Puedo reutilizar el sustrato del año pasado?", r: "No recomendado. El sustrato se compacta y agota sus nutrientes. Para una nueva temporada compra sustrato fresco (BioBizz Light Mix). Si quieres reutilizar: mezcla 50% sustrato viejo + 50% nuevo y añade bacteria benéfica (Mycorrhizae)." },
-        { q: "Me olvidé de regar 5 días. ¿Está muerta?", r: "Probablemente no. Aunque parecer marchita, las raíces pueden estar vivas. Riega abundantemente y espera 2-3 días. Si recupera turgencia (hojas firmes) está salvada. Si sigue marchita tras 5 días, está muerta." },
-        { q: "¿Puedo dejar las plantas solas 2 semanas en julio?", r: "NO en julio (pico de calor). Las plantas mueren sin agua en 2-3 días. Con riego automático a goteros: sí, funciona. Sin automático: pide a alguien que visite cada 1-2 días, o escurza las plantas." },
-        { q: "¿Qué hago con las plantas después de cosechar?", r: "Interior: limpia el armario (vacía, deja 24h con luz + extractor para secar). Sustrato viejo desecha o reutiliza mezclado 50/50. Exterior: limpia completamente el spot — no dejes trazas." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+      {Object.entries(grupos).map(([sec, items]) => (
+        <div key={sec}>
+          <SectionTitle>PROBLEMAS DE {sec.toUpperCase()}</SectionTitle>
+          {items.map((item, i) => (
+            <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.a}</div>
+            </div>
+          ))}
         </div>
       ))}
     </div>
@@ -4494,6 +4500,35 @@ function CONCEPTOS_SETAS() {
     { term: "Tiramina", def: "Amina presente en alimentos fermentados/curados (queso azul, vino tinto, embutidos curados, pescado salazón). Normalmente la enzima MAO la descompone. Con IMAO bloqueada (ayahuasca, MAOI antidepresivo) → tiramina entra al torrente → pico hipertensivo → riesgo de accidente cerebrovascular. De ahí la dieta restrictiva pre-ayahuasca." },
     { term: "Changa", def: "Mezcla casera para fumar: hierbas (caapi seca, ruda siria, mate, salvia, menta) impregnadas con DMT cristalizado. La presencia de IMAO en las hierbas alarga el efecto del DMT a 20-40 min (vs 5-15 min de DMT puro fumado). Más manejable, menos brutal." },
     { term: "Breakthrough", def: "Término para la pérdida total de la realidad consensual durante experiencia con DMT. Pico de la experiencia (3-8 min después de inhalar). Visiones de 'otro lugar', encuentros con entidades, geometría imposible. No todos llegan a breakthrough en su primera vez — depende de dosis y técnica." },
+    { term: "Set & Setting", def: "Concepto fundamental de psicodélicos. SET = estado mental/emocional con el que entras (intención, ánimo, expectativas). SETTING = entorno físico (lugar, gente, sonidos, luz). Más del 50% de la experiencia depende de set+setting más que de la sustancia. Set/setting malo = mala experiencia incluso con sustancia 'buena'." },
+    { term: "Sitter / Acompañante", def: "Persona SOBRIA que te acompaña durante experiencia psicodélica. Funciones: tranquilizar si hay pánico, asegurar agua/manta/cubo, llamar emergencias si hay problema físico grave. NO interrumpe la experiencia — solo presencia silenciosa. Imprescindible primera vez con sustancias intensas (DMT, Salvia, Ayahuasca, dosis altas de hongos)." },
+    { term: "Integración", def: "Proceso post-experiencia psicodélica de procesar lo vivido. Reflexión, journaling, hablar con sitter o terapeuta especializado. Días-semanas después. CRÍTICO para que la experiencia tenga valor terapéutico/insight duradero. Sin integración los insights se desvanecen rápido." },
+    { term: "Microdosis", def: "Dosis sub-perceptual (10-20% de dosis recreativa) tomada de forma regular. NO da experiencia psicodélica notable, pero según reportes mejora estado de ánimo, creatividad, foco. Protocolos típicos: Fadiman (1 día sí, 2 no), Stamets (4 días sí, 3 no). Investigación científica aún limitada — evidencia mayoritariamente anecdótica." },
+    { term: "Tolerancia", def: "Reducción de efectos por uso repetido. Psicodélicos clásicos (LSD, setas, mescalina) tienen tolerancia CRUZADA — usar uno reduce efecto del otro durante 1-2 semanas. DMT no genera tolerancia (puedes hacer breakthrough varias veces el mismo día). Cannabis sí (días-semanas). Recomendación: espaciar 1-4 semanas entre experiencias significativas." },
+    { term: "Psicoactivo", def: "Sustancia que altera función cerebral — percepción, ánimo, conciencia, comportamiento. Engloba: psicodélicos (LSD, setas), disociativos (ketamina, salvia), estimulantes (cafeína), depresores (alcohol), entactógenos (MDMA). NO necesariamente alucinógenos — el café también es psicoactivo." },
+    { term: "Alcaloide", def: "Familia química de compuestos de plantas que contienen nitrógeno. Muchos psicoactivos son alcaloides: nicotina, cafeína, morfina, mescalina, DMT, harmina. También en plantas no psicoactivas (atropina, quinina). El medio ácido extrae alcaloides eficientemente — de ahí el limón en preparaciones tradicionales." },
+    { term: "Tintura", def: "Extracción de planta en alcohol (40-95%). Alcohol disuelve los activos, conserva indefinidamente. Macerar 4-6 semanas, filtrar. Dosis típica: 1-3ml sublingual (bajo lengua = absorción rápida sin pasar por estómago). Forma de conservación a largo plazo más eficiente para muchas plantas." },
+    { term: "Macerar", def: "Sumergir material vegetal en líquido (alcohol, agua, vinagre, aceite) durante días-semanas para extraer activos. Tradicional en herboristería. Diferente a infusión (rápida, con calor) — la maceración es lenta y en frío." },
+    { term: "Sublingual", def: "Vía de administración: poner sustancia bajo la lengua. La mucosa absorbe directamente al torrente sanguíneo, evitando el primer paso hepático del estómago. Inicio rápido (5-15 min). Usado para tinturas, microdosis, Kanna." },
+    { term: "Mescalina", def: "Alcaloide visionario presente en cactus columnares (San Pedro, Bolivian Torch, Peyote). Estructuralmente similar a anfetamina. Experiencia 8-12h, visiones, introspección, euforia. La psicodélica natural más usada por chamanes mexicanos durante milenios. Ilegal aislada; cactus legales como ornamentales." },
+    { term: "Muscimol", def: "Activo principal de Amanita muscaria. Agonista GABA-A (deprime sistema nervioso central). Causa estado disociativo/onírico, euforia ligera, distorsiones de tamaño. SE PRODUCE SECANDO el hongo (decarboxilación de ácido iboténico → muscimol). NO es psilocibina ni serotonérgico." },
+    { term: "Ácido iboténico", def: "Compuesto presente en Amanita muscaria FRESCA. CAUSA NÁUSEAS y vómitos. Se convierte en muscimol (psicoactivo deseado) durante secado prolongado o cocción con limón. Por eso jamás consumir Amanita fresca." },
+    { term: "Psilocibina", def: "Profármaco presente en setas Psilocybe. Tu cuerpo la convierte en psilocina (la verdaderamente activa). Estructuralmente similar a serotonina. Experiencia 4-6h. Estudios clínicos recientes en depresión resistente, ansiedad terminal, adicciones. Ilegal en España (Lista I) pero cultivo casero tolerado." },
+    { term: "Psilocina", def: "Forma activa de la psilocibina (la psilocibina es profármaco — tu cuerpo la convierte). Agonista de receptores serotonérgicos 5-HT2A en cerebro. Es lo que produce la experiencia alterada con setas." },
+    { term: "Harmina / Harmalina", def: "Alcaloides IMAO presentes en Banisteriopsis caapi (vid del ayahuasca). Bloquean enzima MAO en estómago/intestino, permitiendo que el DMT oral sea activo (sin IMAO el estómago lo destruye). También causan náuseas/purga característica de ayahuasca." },
+    { term: "Salvinorina A", def: "Activo de Salvia divinorum. EL psicoactivo natural más POTENTE conocido (efectivo en mcg). Estructura única: kappa-opioide agonista (no serotonérgico como otros psicodélicos). Experiencia 5-15 min disociativa intensa. Se destruye con calor del agua — por eso infusión NO funciona." },
+    { term: "Mesembrina", def: "Alcaloide principal de Kanna (Sceletium tortuosum). Inhibidor de recaptación de serotonina (SSRI natural) + ligero PDE4 inhibitor. Antidepresivo, ansiolítico. Por eso NO mezclar Kanna con SSRI/IMAO/MDMA = riesgo síndrome serotonérgico." },
+    { term: "Kavalactona", def: "Familia de compuestos de Kava. ~18 kavalactonas distintas, las 6 principales (kavain, methysticin, etc) responsables del efecto. Activan GABA, dopamina, serotonina. Liposolubles — por eso preparación tradicional necesita masaje + emulsión, no se disuelven en agua sola." },
+    { term: "L-DOPA", def: "Precursor natural de dopamina presente en semillas de Mucuna pruriens (4-7%). El cuerpo lo convierte en dopamina. Eufórica sutil, mejora motivación/libido. Usado clínicamente para Parkinson (Levodopa). NO mezclar con MAOI/SSRI." },
+    { term: "5-MeO-DMT", def: "DMT modificado, presente en sapo Bufo alvarius y algunas plantas (Diplopterys cabrerana, Yopo). Diferente experiencia a N,N-DMT clásico: más 'unión cósmica' / disolución del ego, menos visuales geométricos. MUCHO más intenso. Riesgo cardiovascular real. NO recomendado." },
+    { term: "Bufotenina (5-HO-DMT)", def: "Alcaloide presente en Yopo (Anadenanthera peregrina). Snortado tradicional indígena. Efectos similares a DMT pero con más componente físico (sudor, taquicardia)." },
+    { term: "HPPD", def: "Hallucinogen Persisting Perception Disorder. Trastorno raro pero posible: alteraciones visuales persistentes después de uso de psicodélicos (motas, halos, geometría leve durante semanas-meses). Más común con uso muy frecuente. Sin tratamiento específico — suele desaparecer con el tiempo." },
+    { term: "Adaptógeno", def: "Sustancia (planta o hongo) que ayuda al cuerpo a adaptarse al estrés. Ej: Reishi, Cordyceps, Ashwagandha, Rhodiola. NO psicoactivos pero modulan respuesta hormonal/inmune. Uso popular en biohacking moderno." },
+    { term: "Etiolación", def: "Crecimiento débil y alargado de plantas por falta de luz. Tallos finos buscando luz, hojas pálidas/pequeñas. Problema común en cactus + cannabis interior con poca luz. Solución: aumentar exposición lumínica." },
+    { term: "Callusing", def: "Cicatrización del corte en esquejes/cactus. Dejar el corte secar al aire 2-3 días (cactus) o 2 semanas (cactus columnares grandes) ANTES de plantar. Sin callusing = pudrición del corte al contactar con tierra húmeda." },
+    { term: "Micorriza", def: "Simbiosis raíz de planta + hongo subterráneo. Hongo da minerales del suelo a la planta, planta da azúcares al hongo. Amanita muscaria es micorrícica obligatoria (necesita árboles compatibles — abedul, pino, abeto). Por eso NO se cultiva en casa." },
+    { term: "Forrajeo", def: "Recolección de plantas/hongos silvestres para uso humano. Para Amanita: bosques de abedules/pinos en otoño tras lluvia. Requiere identificación experta — confusión con especies tóxicas puede ser MORTAL. Sociedad micológica local = mejor recurso." },
+    { term: "Decarboxilación / Decarbox", def: "Reacción química que convierte una forma de molécula en otra activa. Cannabis: THCA → THC con calor (105°C+). Amanita: ácido iboténico → muscimol con secado prolongado. La decarboxilación es lo que activa el efecto psicoactivo en muchas sustancias." },
   ];
 
   const [search, setSearch] = React.useState('');
@@ -4548,29 +4583,50 @@ function CONCEPTOS_SETAS() {
 }
 
 function FAQ_SETAS() {
+  const [query, setQuery] = React.useState("");
+  const faqs = [
+    { q: "¿Cuánto tiempo tarda todo el ciclo?", a: "Kit: 2-3 semanas desde que sacas el pan hasta la 1ª cosecha. Friendly: 6-13 semanas. Avanzado: 12-16 semanas (1-2 sem esterilización + inoculación, 2-3 sem incubación, 1-2 sem fructificación)." },
+    { q: "¿Por qué se contamina?", a: "Bacterias o moho entran durante la inoculación. Una jeringa de esporas contaminada o una técnica SAB deficiente son causas. Avanzado requiere mucha más asepsia que kit." },
+    { q: "¿Cuándo cosechar?", a: "Antes de que se rompa el velo (membrana bajo el sombrero). Justo antes o justo después es óptimo. Si esperas demasiado, suelta esporas negras en el sustrato (afecta próximos flushes)." },
+    { q: "¿Qué hacer entre flushes?", a: "Cold shock: 24h en nevera. Luego sacas, dejas en SGFC, nebulizas y esperas a que salgan nuevos primordi (3-7 días). Puedes hacer 3-6 flushes totales." },
+    { q: "¿Puedo secar los hongos en horno?", a: "NO a temperatura alta — degrada los compuestos activos. Usa presecado en bandeja (2-3h a temperatura ambiente) + desecador con silica gel (24h) = cracker dry sin calor." },
+    { q: "¿Duran mucho tiempo almacenados?", a: "Cracker dry en bolsa hermética en lugar frío/oscuro dura años. Lo ideal: bolsa hermética + sílica gel + congelador = 2+ años sin perder potencia." },
+    { q: "¿Kit, Friendly o Avanzado? ¿Cuál para empezar?", a: "Kit si quieres rápido y fácil (2-3 sem). Friendly si quieres más rendimiento sin equipo de laboratorio (sin olla a presión, sin SAB). Avanzado si eres paciente y quieres aprender microbiología completa (mucho mayor rendimiento)." },
+    { q: "¿Qué temperatura exacta para incubación?", a: "Idealmente 24-28°C. Menos de 20°C = muy lento. Más de 30°C = Trichoderma aprovecha. Manta térmica es tu aliada si en tu casa hace frío." },
+    { q: "¿Está legal cultivar setas?", a: "España: cultivo casero tolerado (gris legal). Psilocybe está en Lista I pero uso personal NO se persigue activamente. Comercializar = ilegal. Otros países UE varían." },
+    { q: "¿Cuánto miligramo por hongo?", a: "Varía mucho (50-500mg dependiendo especie, tamaño, condiciones crecimiento). Empieza bajo (0.5-1g de seca) y titula. No hay dosis segura — educación es clave." },
+    { q: "¿Se pone molido en algo o entero?", a: "Entero si es posible (absorción lenta, viaje prolongado). Molido en té (lemon tek) = efecto más rápido. Molido en chocolate = enmascarar sabor." },
+    { q: "¿Pertenezco a algún grupo/comunidad?", a: "r/shrooms, Shroomery, Erowid son comunidades. Pero cultivo casero = responsabilidad personal. No hay garantías de seguridad." },
+    { q: "¿Qué es 'lemon tek'?", a: "Macerar setas molidas en zumo de limón 15-20 min antes de tomar. El ácido convierte psilocibina → psilocina (la forma activa) más rápido. Resultado: efecto en 15 min vs 30-60 min, viaje más intenso pero más corto (2-3h vs 4-6h)." },
+    { q: "¿Microdosis es seguro?", a: "0.1-0.3g de seta seca cada 3-4 días = protocolo Stamets/Fadiman. Reportes anecdóticos: mejora ánimo, creatividad, foco. Investigación científica aún limitada. Bajo riesgo si se respetan los descansos." },
+    { q: "¿Se pueden combinar con otras psicodélicas?", a: "TÉCNICAMENTE sí, pero MUY arriesgado para principiantes. Tolerancia cruzada con LSD/mescalina (1-2 semanas). NUNCA mezclar con SSRI (síndrome serotonérgico). Investigar siempre antes." },
+    { q: "¿Qué es Trichoderma?", a: "El hongo contaminante #1 en cultivo casero. Aparece como manchas verde brillante o blanco peludo. Crece más rápido que el micelio Psilocybe y lo mata. Solo se puede prevenir (asepsia), no se cura. Lote contaminado = tirar todo el sustrato." },
+  ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div>
       <InfoBoxM>
         Preguntas comunes sobre cultivo de setas. Situaciones reales que encuentran principiantes.
       </InfoBoxM>
 
-      {[
-        { q: "¿Cuánto tiempo tarda todo el ciclo?", r: "Kit: 2-3 semanas desde que sacas el pan hasta la 1ª cosecha. Manual: 4-6 semanas (1-2 de esterilización + inoculación, 2-3 de incubación, 1-2 fructificación)." },
-        { q: "¿Por qué se contamina?", r: "Bacterias o moho entran durante la inoculación. Una jeringa de esporas contaminada o una técnica SAB deficiente son causas. Manual requiere mucha más asepsia que kit." },
-        { q: "¿Cuándo cosechar?", r: "Antes de que se rompa el velo (membrana bajo el sombrero). Justo antes o justo después es óptimo. Si esperas demasiado, suelta esporas negras en el sustrato (afecta próximos flushes)." },
-        { q: "¿Qué hacer entre flushes?", r: "Cold shock: 24h en nevera. Luego sacas, dejas en SGFC, nebulizas y esperas a que salgan nuevos primordi (3-7 días). Puedes hacer 3-6 flushes totales." },
-        { q: "¿Puedo secar los hongos en horno?", r: "NO a temperatura alta — degrada los compuestos activos. Usa presecado en bandeja (2-3h a temperatura ambiente) + desecador con silica gel (24h) = cracker dry sin calor." },
-        { q: "¿Duran mucho tiempo almacenados?", r: "Cracker dry en bolsa hermética en lugar frío/oscuro dura años. Lo ideal: bolsa hermética + sílica gel + congelador = 2+ años sin perder potencia." },
-        { q: "¿Kit o Manual? ¿Cuál para empezar?", r: "Kit si quieres rápido y fácil (2 semanas). Manual si eres paciente y quieres aprender microbiología (4-6 semanas, mucho mayor rendimiento). Kit es 80% autónomo. Manual requiere precisión." },
-        { q: "¿Qué temperatura exacta para incubación?", r: "Idealmente 24-28°C. Menos de 20°C = muy lento. Más de 30°C = Trichoderma aprovecha. Manta térmica es tu aliada si en tu casa hace frío." },
-        { q: "¿Está legal cultivar setas?", r: "Varía por país. Psilocybe es Schedule I en muchos lugares. Este contenido es puramente educativo. Verifica leyes locales." },
-        { q: "¿Cuánto miligramo por hongo?", r: "Varía mucho (50-500mg dependiendo especie, tamaño, condiciones crecimiento). Empieza bajo (0.5-1g) y titula. No hay dosis segura — educación es clave." },
-        { q: "¿Se pone molido en algo o entero?", r: "Entero si es posible (absorción lenta, viaje prolongado). Molido en té (lemon tek) = efecto más rápido. Molido en chocolate = enmascarar sabor." },
-        { q: "¿Pertenezco a algún grupo/comunidad?", r: "r/shrooms, Shroomery, Erowid son comunidades. Pero cultivo casero = responsabilidad personal. No hay garantías de seguridad." },
-      ].map((item, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: MUSHROOM_COLORS.bg2, color: MUSHROOM_COLORS.textBright, border: `1px solid ${MUSHROOM_COLORS.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright, marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.6" }}>{item.r}</div>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright, marginBottom: "8px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.6" }}>{f.a}</div>
         </div>
       ))}
     </div>
@@ -4861,6 +4917,7 @@ function PREPARACION_CACTUS() {
 
 function FAQ_CACTUS() {
   const c = CACTUS_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Es legal en España?", a: "Cultivar el cactus como ornamental: SÍ, 100% legal. Poseer cactus seco/triturado: zona gris (no se persigue). Extracción química de mescalina: ILEGAL (sustancia controlada). Esta guía NO da recetas de extracción." },
     { q: "¿Cuándo florece?", a: "Trichocereus florecen alrededor de los 4-6 años desde esqueje, normalmente en verano. Flores blancas grandes y fragantes que se abren de noche. Después puedes hacer polinización cruzada para semillas." },
@@ -4870,7 +4927,17 @@ function FAQ_CACTUS() {
     { q: "¿Qué hago si hiela?", a: "Bajo riesgo: Trichocereus aguantan algo de frío si están secos. Si hace -5°C húmedo = mueren. Si hace -2°C secos = sobreviven. Cubrir con plástico o meter dentro si pronostica hielo. NUNCA regar antes de hielo." },
     { q: "¿Diferencia visual entre Trichocereus reales?", a: "MUY difícil sin experiencia — varias especies parecen idénticas. Compra siempre de vendedor reputado que garantice especie. Aspecto general: San Pedro tiene 6-9 costillas con espinas pequeñas, Bolivian Torch suele tener 4-7 costillas con espinas más largas y amarillas." },
     { q: "¿Puedo cultivar peyote?", a: "Técnicamente legal en España (no está específicamente prohibido el cactus). Pero: planta extremadamente lenta (1cm/año), CITES protegida (compra ética complicada), sagrada para pueblos huicholes. Recomendación: NO. Si quieres mescalina, San Pedro/Bolivian Torch son sostenibles, rápidos y abundantes." },
+    { q: "¿Diferencia mescalina vs LSD/setas?", a: "Mescalina: experiencia más LARGA (8-12h vs 4-6h de setas), más CORPORAL, más enérgica/eufórica menos visual. Reportes: experiencia 'más amigable' que setas si te llevas bien con ella. Náuseas iniciales primera hora son comunes." },
+    { q: "¿Puedo combinar San Pedro con otras psicodélicas?", a: "Tradicionalmente NO. La experiencia ya es larga e intensa. Combinar = imprevisible y no recomendado. Investigado tan poco que sería irresponsable mezclar." },
+    { q: "¿Riesgos de salud reales?", a: "Náusea/vómito frecuente. Hipertensión leve durante el peak. Posible diarrea. Sin riesgos serios documentados en personas sanas. Contraindicaciones: cardiopatía, problemas psiquiátricos." },
+    { q: "¿Cuánto crece un San Pedro al año?", a: "30-50cm en condiciones óptimas (sol pleno, mediterráneo, riego adecuado). Más lento en interior o clima frío. Año 1: lento. Años 2+: explosivo." },
+    { q: "¿Puede florecer y dar semillas?", a: "Sí, a partir de 4-6 años. Flores blancas grandes que se abren de noche (aroma fuerte). Polinización manual (pincel entre flores) → frutos con miles de semillas. Permite multiplicar." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -4878,7 +4945,16 @@ function FAQ_CACTUS() {
         Preguntas comunes sobre cultivo y aspectos legales/prácticos del cactus mescalina.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
@@ -4981,6 +5057,7 @@ function HIGIENE_FERMENT() {
 
 function FAQ_FERMENT() {
   const c = FERMENT_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuánto alcohol tendrá mi bebida?", a: "Depende del azúcar inicial y la levadura. Hidromiel: 10-14% típico. Cerveza: 4-7%. Sidra: 5-8%. Hay calculadoras online (busca 'ABV calculator brewing') que te dan el % exacto si mides densidad inicial y final con un hidrómetro (10-15€ herramienta básica)." },
     { q: "¿Es legal fermentar bebidas en casa?", a: "Sí en España y casi toda la UE — siempre que sea para CONSUMO PROPIO y no comercializado. La destilación SÍ es ilegal sin licencia (whisky, ron casero = ILEGAL). Fermentar = legal. Destilar = ilegal." },
@@ -4990,7 +5067,17 @@ function FAQ_FERMENT() {
     { q: "¿Por qué mi fermento no burbujea?", a: "Causas posibles: (1) levadura muerta (mosto demasiado caliente al añadirla, máx 25°C), (2) tapón mal sellado (CO₂ se escapa), (3) ya terminó (después de 2-4 semanas la actividad para). Verifica densidad con hidrómetro: si bajó del valor inicial = funcionó aunque no veas burbujas." },
     { q: "¿Necesito hervir todo o puedo usar agua del grifo?", a: "Hidromiel: SÍ, pasteurizar el mosto (calentar 60-65°C 15min) elimina bacterias. Cerveza: SÍ, hervor obligatorio (extrae lúpulo + esteriliza). Sidra/vino con frutas: opcional (la fruta tiene levaduras naturales). Agua del grifo: clorada, mata levadura — déjala reposar 24h en jarra abierta o usa agua mineral." },
     { q: "¿Conviene comprar kit o ir comprando piezas?", a: "Para empezar: KIT. Cubre lo básico, no te falta nada, viene probado. Después de 2-3 lotes y entiendes qué necesitas, puedes comprar piezas mejores individualmente (mejor garrafa de vidrio, sondas digitales de temperatura, etc.)." },
+    { q: "¿Diferencia entre Ale y Lager?", a: "Tipo de levadura. ALE: fermenta a 18-22°C, rápida (1-2 sem), sabores afrutados/intensos. Cerveza típica artesanal. LAGER: fermenta a 8-12°C, lenta (3-6 sem), limpia y crujiente. Cerveza estilo industrial (pilsner, etc). Ale = más fácil para empezar." },
+    { q: "¿Qué es un SCOBY?", a: "Symbiotic Culture Of Bacteria and Yeast. Disco gelatinoso que se forma en kombucha — combinación de bacterias acéticas + levaduras viviendo juntas. Cada lote produce un SCOBY nuevo. Se reutilizan o regalan." },
+    { q: "¿Cómo limpiar el equipo correctamente?", a: "2 fases: (1) LIMPIEZA con agua + jabón — quita suciedad visible. (2) SANITIZACIÓN con Star San o metabisulfito — mata microorganismos. Las dos son distintas. Sanitizar sin limpiar antes = inútil." },
+    { q: "¿Puedo fermentar fruta directamente sin levadura añadida?", a: "Sí — la piel de las frutas trae levaduras silvestres (de ahí 'fermentación espontánea'). Funciona pero MENOS PREDECIBLE. Resultado variable, riesgo de bacterias salvajes. Recomendado para principiantes: añadir levadura comercial." },
+    { q: "¿Cuánto tiempo aguantan las botellas?", a: "Hidromiel/cerveza/sidra naturales (sin pasteurizar): 1-3 años en frasco frío oscuro. Pasteurizadas (calor 60°C 15min antes de embotellar): 5+ años. Con tiempo: el sabor evoluciona — algunas mejoran (hidromiel), otras se oxidan (cerveza IPA pierde lúpulo)." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -4998,7 +5085,16 @@ function FAQ_FERMENT() {
         Preguntas comunes sobre fermentación casera. Si tienes dudas más específicas: foros como HomeBrewTalk, r/homebrewing, o el subreddit /r/mead son recursos excelentes.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
@@ -6769,6 +6865,7 @@ function LUPULO() {
 
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuál es la más segura para empezar?", a: "Damiana. Efecto suave, sabor agradable, fácil cultivo, sin riesgos especiales. Después: Wild lettuce o Calea." },
     { q: "¿Cuál es la más intensa?", a: "Salvia divinorum, sin duda. Es la más potente psicoactivamente de toda la lista — pero también la más exigente en cultivo y la más arriesgada en uso (siempre con sitter)." },
@@ -6777,8 +6874,17 @@ function FAQ_PLANTAS() {
     { q: "¿Cuándo es mejor evitar?", a: "Embarazo y lactancia: TODAS contraindicadas. Medicación: consultar con médico — algunas pueden interactuar (especialmente Wild lettuce con sedantes y Damiana con antidepresivos). Conducir: nunca tras consumir cualquiera de estas." },
     { q: "¿Cuánto duran los efectos?", a: "Salvia: 5-15 min (intenso). Damiana: 2-4h. Blue Lotus: 2-4h. Wild lettuce: 3-6h. Calea: solo durante el sueño (8h aprox), efecto hipnagógico." },
     { q: "¿Dónde compro semillas/plantas en España?", a: "Online: vendedores especializados en etnobotánica (busca 'semillas etnobotánica España'). Damiana también en herboristerías como hojas secas. Salvia esquejes solo online. Blue Lotus rizomas en tiendas de plantas acuáticas." },
-    { q: "¿Estas plantas son legales seguro?", a: "Sí, las 5 son legales en España (y en EU general): cultivo + posesión + uso personal. Calea está prohibida en Polonia (excepción rara). Salvia ha sido prohibida en algunos países (USA, Australia, varios EU) pero NO en España. Verifica si viajas." },
+    { q: "¿Estas plantas son legales seguro?", a: "Sí, las 8 son legales en España (y en EU general): cultivo + posesión + uso personal. Calea está prohibida en Polonia (excepción rara). Salvia ha sido prohibida en algunos países (USA, Australia, varios EU) pero NO en España. Verifica si viajas." },
+    { q: "¿Cuál es mejor para insomnio?", a: "Wild lettuce + manzanilla = combinación clásica. Lúpulo (almohada o té) también muy bueno. Calea para sueños lúcidos pero NO ayuda a dormir." },
+    { q: "¿Cuál sirve para ansiedad social?", a: "Damiana (ligera euforia + relajación, sabor agradable) o Kava (más fuerte, sin embriagar). Kanna también ayuda pero ojo con interacciones SSRI." },
+    { q: "¿Cuál es estimulante natural?", a: "Mucuna pruriens (motivación + energía mental sin agitación cafeínica). Sinicuichi también pero efecto más auditivo, no estimulante." },
+    { q: "¿Combinar con cafeína?", a: "Mucuna + cafeína: bien (ambos dopaminérgicos suaves). Kava + cafeína: contradicción, pierde efecto. Kanna + cafeína: posible — pero cuidado si tomas SSRI." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -6786,7 +6892,16 @@ function FAQ_PLANTAS() {
         Preguntas comunes sobre plantas psicoactivas suaves. Si quieres más info, recursos: Erowid.org (en inglés, biblioteca completa), TripSit, sitio español Ojos de Brujo.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
@@ -7231,6 +7346,7 @@ function HARM_REDUCTION_AMANITA() {
 
 function FAQ_AMANITA() {
   const c = AMANITA_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuándo es la mejor temporada?", a: "Septiembre a noviembre en España. Pico en octubre tras lluvias seguidas + temperaturas suaves. Apunta los lugares donde encuentres — vuelven año tras año." },
     { q: "¿Por qué no se puede cultivar?", a: "Amanita muscaria es micorrícica — vive en simbiosis OBLIGADA con raíces de árboles (intercambio: el árbol da azúcares, el hongo da minerales del suelo). Reproducir esto en casa = imposible. Forrajeo es la única vía." },
@@ -7240,7 +7356,16 @@ function FAQ_AMANITA() {
     { q: "¿Cuánto tarda en hacer efecto?", a: "Té: 1-2h hasta sentir efecto inicial, pico a las 3-4h, declive 6-10h total. Es LENTO comparado con otras sustancias. NO tomar más antes de que pase el efecto inicial." },
     { q: "¿Se puede comer entera (cocinada)?", a: "Tradicionalmente algunas culturas la cocinan como alimento (parboiling 15min, cambiar agua, hervir otros 15min — elimina iboténico y muscimol). Resultado: ya no es psicoactiva, es solo seta comestible. Para mantener psicoactividad NO hervir tan agresivo — usar el método de té descrito." },
     { q: "¿Qué hacer con setas que recogí pero parecen dudosas?", a: "TIRARLAS. NO consumir. Una experiencia mala = nunca más. Una intoxicación grave = hospital. La duda es razón suficiente para descartar." },
+    { q: "¿Por qué Papá Noel se asocia con Amanita?", a: "Teoría popular (no confirmada científicamente): chamanes siberianos consumían Amanita muscaria, vestían rojo y blanco (colores de la seta), entraban por la chimenea (única entrada cuando había nieve). Folklore evolucionó al Santa Claus moderno. Curiosidad cultural." },
+    { q: "¿Es legal en otros países UE?", a: "Mayoría UE: legal. Excepciones: Holanda regula como 'planta tóxica', Reino Unido ilegal desde 2005, Australia ilegal. España: 100% legal." },
+    { q: "¿Qué pasa si la cocino bien (parboiled)?", a: "Hervir 15min en agua + descartar agua + hervir otros 15min = elimina iboténico y muscimol. Resultado: seta comestible NO psicoactiva (cocina tradicional rusa/báltica)." },
+    { q: "¿Microdosis es segura?", a: "0.5-1g de seta seca 2-3 veces/semana es protocolo común. Reportes anecdóticos: mejora ánimo, reducción ansiedad, mejor sueño. Investigación científica limitada — evidencia mayormente personal." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -7248,7 +7373,16 @@ function FAQ_AMANITA() {
         Preguntas comunes sobre Amanita muscaria. Recursos útiles: Erowid (sección Amanita), foros r/Amanitamuscaria, libros de Andy Letcher (Shroom).
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
@@ -7807,6 +7941,7 @@ function HARM_REDUCTION_AYA() {
 
 function FAQ_AYA() {
   const c = AYAHUASCA_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Es legal en España?", a: "Cultivo de plantas: SÍ. Posesión de plantas secas: SÍ. Brebaje preparado para uso personal: zona gris (DMT está en Lista I pero no se persigue uso ritual personal). Comercializar/distribuir: ILEGAL. Hay sentencias favorables al Santo Daime y la UDV (uso religioso) en algunos países EU." },
     { q: "¿Puedo ir a una ceremonia en España?", a: "Sí. Hay grupos: Santo Daime (registrado como religión en algunos países), UDV (União do Vegetal), y muchas ceremonias neo-chamánicas no oficiales. Buscar referencias de personas con buena reputación. CUIDADO con falsos chamanes — investiga antes." },
@@ -7818,7 +7953,16 @@ function FAQ_AYA() {
     { q: "¿Puedo cultivar Caapi en piso pequeño?", a: "Difícil pero posible. Caapi necesita TUTOR vertical de 2m+. Una pared con alambres o caña vertical en una maceta puede bastar. Chacruna sí necesita más espacio + humedad alta." },
     { q: "¿Cómo conservo el brebaje preparado?", a: "Frasco vidrio oscuro hermético. Nevera: 1-2 semanas. Congelador: 3-6 meses (potencia se mantiene). Temperatura ambiente: 3-7 días si está MUY reducido (alta concentración de alcaloides actúa como conservante)." },
     { q: "¿Diferencia entre Caapi 'Cielo', 'Trueno' y 'Negro'?", a: "Cepas de Banisteriopsis caapi con diferente perfil:\n- Cielo: más visionario, suave, recomendado novatos\n- Trueno: más intenso, mayor purga, para experimentados\n- Negro: tradicional, equilibrado\nDifícil verificar autenticidad — comprar de vendedor reputado." },
+    { q: "¿Por qué casi todos vomitan?", a: "La harmina del Caapi es naturalmente emética. La 'purga' es considerada parte sagrada en tradición — limpieza física + emocional. NO significa que vaya mal. Tras vomitar la mayoría siente alivio y la experiencia se profundiza." },
+    { q: "¿Una sola experiencia me cambiará la vida?", a: "Probablemente NO. La experiencia da insights, pero el cambio real viene de la INTEGRACIÓN posterior — reflexión, journaling, posible terapia. Sin integración los insights se desvanecen en semanas." },
+    { q: "¿Diferencia con yagé?", a: "Yagé = nombre indígena ecuatoriano/colombiano para ayahuasca, suele incluir Diplopterys cabrerana (Chaliponga) en lugar de Chacruna como fuente de DMT." },
+    { q: "¿Niños indígenas la toman?", a: "En algunas tribus amazónicas sí, ceremonialmente, en pequeñas dosis. Distinto contexto cultural. NO recomendado para menores en contexto occidental." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -7826,7 +7970,16 @@ function FAQ_AYA() {
         Preguntas comunes sobre ayahuasca. Recursos: Erowid (sección Ayahuasca), libros de Jeremy Narby ("La Serpiente Cósmica"), Santo Daime registros oficiales, foros r/ayahuasca.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6", whiteSpace: "pre-line" }}>{f.a}</div>
@@ -8436,6 +8589,7 @@ function HARM_REDUCTION_DMT() {
 
 function FAQ_DMT() {
   const c = DMT_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿DMT es lo mismo que ayahuasca?", a: "Misma molécula psicoactiva (DMT), experiencias muy distintas. DMT fumado: 5-15 min, intenso, breakthrough. Ayahuasca: 4-6h, oral, IMAO + DMT, contemplativo. Lee guía Ayahuasca para más detalle." },
     { q: "¿Es legal cultivar Mimosa hostilis?", a: "Sí. Es planta ornamental sin restricciones legales en España. Comprar semillas, plantar, cultivar = todo legal. Lo que es ilegal es la extracción química del DMT y la posesión de DMT puro." },
@@ -8447,7 +8601,15 @@ function FAQ_DMT() {
     { q: "¿Diferencia entre N,N-DMT, 5-MeO-DMT y 4-HO-DMT?", a: "Tres moléculas distintas:\n- N,N-DMT (esto): clásica, Mimosa, ayahuasca, intensa pero terrenal\n- 5-MeO-DMT: del sapo Bufo alvarius, MUCHO más intenso, 'unión cósmica', riesgo cardíaco real, NO recomendado\n- 4-HO-DMT (psilocina): es la molécula activa de las setas Psilocybe, oral, 4-6h" },
     { q: "¿Puedo hacer extracción casera?", a: "ILEGAL en España. Riesgos químicos reales (NaOH, solventes inflamables). Para uso personal de DMT, alternativas legales: ayahuasca casera o ceremonia con grupo religioso. Ver guía Ayahuasca." },
     { q: "¿Qué hago si quiero probar DMT pero todo es ilegal?", a: "Opciones:\n1. Cultivar Mimosa + ayahuasca casera (legal gris)\n2. Ceremonia con Santo Daime/UDV (legal en algunos contextos)\n3. Viajar a país donde sea legal (Brasil, Perú — turismo ayahuasquero)\n4. Esperar reformas legales (varios países están reconsiderando)" },
+    { q: "¿Qué relación tiene el DMT con la pineal?", a: "Estudios de Rick Strassman (años 90) encontraron trazas de DMT en líquido cefalorraquídeo humano y mostraron que la pineal puede sintetizarlo. Hipótesis especulativa: liberación masiva de DMT al morir podría explicar near-death experiences. Ciencia aún no resuelta — investigación abierta." },
+    { q: "¿Diferencia ayahuasca vs DMT vapeable?", a: "Ayahuasca: oral, 4-6h, contemplativa, con purga (vómito), ceremonial. DMT vapeable: 5-15 min, breakthrough total, intenso, sin preparación tan ritual. Mismas moléculas, experiencias funcionalmente distintas." },
+    { q: "¿Compatible con cannabis?", a: "Algunos potencia el DMT (mezcla en changa). Cuidado: cannabis amplifica ansiedad — si propenso a paranoia, mejor sin cannabis. Investigar antes." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -8455,7 +8617,16 @@ function FAQ_DMT() {
         Preguntas comunes sobre DMT. Recursos: Erowid, libro "DMT: The Spirit Molecule" (Rick Strassman), documental "DMT: The Spirit Molecule" (Mitch Schultz), Hamilton's Pharmacopeia (Vice TV, episodio sobre DMT).
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6", whiteSpace: "pre-line" }}>{f.a}</div>

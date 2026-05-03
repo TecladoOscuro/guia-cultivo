@@ -831,64 +831,70 @@ function EXTRACCIONES() {
 }
 
 function FAQ() {
+  const [query, setQuery] = React.useState("");
+  const faqs = [
+    { sec: "Crecimiento", q: "Mi planta está amarilla. ¿Qué hago?", a: "Tres causas principales: 1) Deficiencia de N (hojas bajas amarillas) — aumenta Bio Grow. 2) pH incorrecto — mide pH, ajusta a 6.2-6.5. 3) Edad (últimas semanas floración) — es normal. Primero mide pH, luego añade nutrientes si hace falta." },
+    { sec: "Crecimiento", q: "La planta no crece nada. Está parada hace 2 semanas.", a: "Causa #1: Overwatering — deja secar completamente 3-5 días. Causa #2: Luz demasiado lejos — bájala a 50-60cm. Causa #3: Temperatura <18°C — sube a 22°C mínimo. Causa #4: Suelo encharcado/sin drenaje — en exterior verifica que el hoyo drena bien." },
+    { sec: "Crecimiento", q: "¿Cuándo cosechar? ¿Cómo sé que está lista?", a: "Interior: mira los tricomas con lupa de aumento. 60-70% lechosos (blancos) = primer punto de cosecha, efecto energético. 80-90% lechosos = punto ideal. Algunos ámbar = más sedante. Exterior: espera a 70-80% lechosos, o cosecha antes si lluvia inminente." },
+    { sec: "Crecimiento", q: "Las hojas están rizadas hacia arriba. ¿Qué es?", a: "Calor o falta de agua. Mide temperatura — si está >28°C, sube extractor. Si el sustrato está seco, riega. Si es exterior, es normal en días muy calurosos — se recupera por la noche." },
+    { sec: "Crecimiento", q: "Las hojas están colgando/droopy. Acababa de regar.", a: "Overwatering. El sustrato está muy mojado y las raíces sin oxígeno. Deja de regar 5 días. Abre ventilador si es interior. La planta se recupera." },
+    { sec: "Nutrientes y pH", q: "¿Debo medir el pH? ¿Es realmente necesario?", a: "SÍ. Es la causa raíz de 50% de los problemas. Si el pH está mal, los nutrientes están ahí pero bloqueados. El pHmetro cuesta 20€ y vale cada céntimo. Interior: 6.2-6.5. Exterior: 6.0-7.0. Sin medidor estarás disparando a ciegas." },
+    { sec: "Nutrientes y pH", q: "¿Qué es el runoff? ¿Debo medirlo?", a: "Agua que drena por los agujeros de abajo cuando riegas. Mide su pH con tu pHmetro. Si difiere >0.5 puntos del agua que entraste, hay bloqueo de nutrientes (acumulación de sales). Solución: flush 2-3 días con agua sola a pH 6.3." },
+    { sec: "Nutrientes y pH", q: "Añadí nutrientes y empeó todo. ¿Qué hago?", a: "Probablemente nutrient burn. PARA de añadir nutrientes inmediatamente. Haz un flush: riega con agua sola a pH 6.3 durante 2-3 riegos consecutivos. Luego vuelve a nutrientes con dosis 50% menor." },
+    { sec: "Nutrientes y pH", q: "En exterior el pH sube solo en el depósito. ¿Qué es?", a: "Algas. El agua llena en un depósito abierto y expuesto a luz crece algas — cambiar pH. Solución: cubre el depósito con tapa opaca o bolsa negra. Las algas mueren sin luz. O: cambia el agua cada 2-3 días." },
+    { sec: "Nutrientes y pH", q: "¿Qué hago si no tengo acceso a pH Down en exterior?", a: "Urgencia: usa zumo de limón (ácido cítrico) — baja pH naturalmente. 2-3 gotas por litro. No es exacto pero funciona. Para la próxima: lleva pH Down de casa en una botella pequeña (cuesta 5€)." },
+    { sec: "Setup y clima", q: "El extractor no crea presión negativa. ¿Por qué?", a: "Causas: 1) Tubo no sellado bien — revisa que no haya fugas de aire. 2) Filtro de carbón saturado — cámbialo. 3) Extractor muy débil — actualiza a uno más potente. 4) Entrada de aire obstruida — asegúrate que entra aire (rejilla abierta en la puerta o pared)." },
+    { sec: "Setup y clima", q: "La humedad es demasiado baja (30%). ¿Qué hago?", a: "Interior: cuelga toallas mojadas en las esquinas (se evaporan). O: apaga el extractor 1-2 horas. O: moja el suelo y las paredes. Exterior: es normal en julio — no hay mucho que hacer. Asegúrate de riego frecuente." },
+    { sec: "Setup y clima", q: "Llueve mucho (exterior). ¿Protejo la planta?", a: "Un poco de lluvia es bueno (agua gratis). Demasiada lluvia = Botrytis en floración. Si llueve días seguidos en septiembre-octubre: abre cogollos para ver si hay moho. Toldo temporal sobre la planta si puedes sin bloquear luz/aire." },
+    { sec: "Setup y clima", q: "¿Luz 24h o 18/6 en interior para autos?", a: "Autos florecen solas, no dependen del fotoperiodo. 20/4 es estándar (20h luz, 4h oscuridad) — menos gasto eléctrico que 24h. 18/6 también funciona. La mayoría usa 20/4." },
+    { sec: "Setup y clima", q: "¿Puedo cultivar con luz natural exterior en febrero?", a: "No. Los días en febrero son demasiado cortos (<12h). Las plantas fotoperiodo florecen sola sin querer. Espera a marzo-mayo para germinar. Si quieres en invierno: cultiva autos o usa luz artificial interior." },
+    { sec: "Otros", q: "¿Puedo reutilizar el sustrato del año pasado?", a: "No recomendado. El sustrato se compacta y agota sus nutrientes. Para una nueva temporada compra sustrato fresco (BioBizz Light Mix). Si quieres reutilizar: mezcla 50% sustrato viejo + 50% nuevo y añade bacteria benéfica (Mycorrhizae)." },
+    { sec: "Otros", q: "Me olvidé de regar 5 días. ¿Está muerta?", a: "Probablemente no. Aunque parecer marchita, las raíces pueden estar vivas. Riega abundantemente y espera 2-3 días. Si recupera turgencia (hojas firmes) está salvada. Si sigue marchita tras 5 días, está muerta." },
+    { sec: "Otros", q: "¿Puedo dejar las plantas solas 2 semanas en julio?", a: "NO en julio (pico de calor). Las plantas mueren sin agua en 2-3 días. Con riego automático a goteros: sí, funciona. Sin automático: pide a alguien que visite cada 1-2 días, o escurza las plantas." },
+    { sec: "Otros", q: "¿Qué hago con las plantas después de cosechar?", a: "Interior: limpia el armario (vacía, deja 24h con luz + extractor para secar). Sustrato viejo desecha o reutiliza mezclado 50/50. Exterior: limpia completamente el spot — no dejes trazas." },
+    { sec: "Otros", q: "¿Es legal cultivar cannabis en España?", a: "El consumo y cultivo PRIVADO para uso personal está despenalizado (no es delito). Pero NO es legal — está en zona gris. En lugar privado, autoconsumo, sin tráfico = TOLERADO. Espacios públicos, vender, regalar a terceros = SANCIONABLE. Cantidad razonable es 2-3 plantas." },
+    { sec: "Otros", q: "¿Cuántas plantas puedo tener legalmente?", a: "No hay número exacto en la ley. Tribunales aceptan 'cantidad razonable para autoconsumo' = 2-5 plantas máximo. Más = sospecha de tráfico (delito)." },
+    { sec: "Otros", q: "¿Diferencia entre indica y sativa?", a: "Indica: efecto corporal sedante, plantas más bajas y compactas (mejor para indoor). Sativa: efecto cerebral energético, plantas más altas y largas (mejor exterior). La mayoría hoy son híbridos — etiqueta dice qué predomina." },
+    { sec: "Otros", q: "¿Qué es THC vs CBD?", a: "THC: psicoactivo (efecto recreativo). CBD: NO psicoactivo (medicinal — antiinflamatorio, anti-ansiedad, anticonvulsivo). Variedades modernas tienen ratios distintos: alto THC (recreativo), alto CBD (medicinal), 1:1 balanceado." },
+  ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase()) ||
+    f.sec.toLowerCase().includes(query.toLowerCase())
+  );
+
+  // Agrupar por sección
+  const grupos = filtered.reduce((acc, f) => {
+    if (!acc[f.sec]) acc[f.sec] = [];
+    acc[f.sec].push(f);
+    return acc;
+  }, {});
+
   return (
     <div>
       <InfoBox>
         Preguntas comunes de cultivadores principiantes. Si tu situación no está aquí, navega al Diagnóstico para síntomas más específicos.
       </InfoBox>
 
-      <SectionTitle>PROBLEMAS DE CRECIMIENTO</SectionTitle>
-      {[
-        { q: "Mi planta está amarilla. ¿Qué hago?", r: "Tres causas principales: 1) Deficiencia de N (hojas bajas amarillas) — aumenta Bio Grow. 2) pH incorrecto — mide pH, ajusta a 6.2-6.5. 3) Edad (últimas semanas floración) — es normal. Primero mide pH, luego añade nutrientes si hace falta." },
-        { q: "La planta no crece nada. Está parada hace 2 semanas.", r: "Causa #1: Overwatering — deja secar completamente 3-5 días. Causa #2: Luz demasiado lejos — bájala a 50-60cm. Causa #3: Temperatura <18°C — sube a 22°C mínimo. Causa #4: Suelo encharcado/sin drenaje — en exterior verifica que el hoyo drena bien." },
-        { q: "¿Cuándo cosechar? ¿Cómo sé que está lista?", r: "Interior: mira los tricomas con lupa de aumento. 60-70% lechosos (blancos) = primer punto de cosecha, efecto energético. 80-90% lechosos = punto ideal. Algunos ámbar = más sedante. Exterior: espera a 70-80% lechosos, o cosecha antes si lluvia inminente." },
-        { q: "Las hojas están rizadas hacia arriba. ¿Qué es?", r: "Calor o falta de agua. Mide temperatura — si está >28°C, sube extractor. Si el sustrato está seco, riega. Si es exterior, es normal en días muy calurosos — se recupera por la noche." },
-        { q: "Las hojas están colgando/droopy. Acababa de regar.", r: "Overwatering. El sustrato está muy mojado y las raíces sin oxígeno. Deja de regar 5 días. Abre ventilador si es interior. La planta se recupera." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: "#0d1f14", color: "#d8f3dc", border: "1px solid #1b4332",
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: "#74c69d", marginBottom: "16px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
 
-      <SectionTitle>PROBLEMAS DE NUTRIENTES Y pH</SectionTitle>
-      {[
-        { q: "¿Debo medir el pH? ¿Es realmente necesario?", r: "SÍ. Es la causa raíz de 50% de los problemas. Si el pH está mal, los nutrientes están ahí pero bloqueados. El pHmetro cuesta 20€ y vale cada céntimo. Interior: 6.2-6.5. Exterior: 6.0-7.0. Sin medidor estarás disparando a ciegas." },
-        { q: "¿Qué es el runoff? ¿Debo medirlo?", r: "Agua que drena por los agujeros de abajo cuando riegas. Mide su pH con tu pHmetro. Si difiere >0.5 puntos del agua que entraste, hay bloqueo de nutrientes (acumulación de sales). Solución: flush 2-3 días con agua sola a pH 6.3." },
-        { q: "Añadí nutrientes y empeó todo. ¿Qué hago?", r: "Probablemente nutrient burn. PARA de añadir nutrientes inmediatamente. Haz un flush: riega con agua sola a pH 6.3 durante 2-3 riegos consecutivos. Luego vuelve a nutrientes con dosis 50% menor." },
-        { q: "En exterior el pH sube solo en el depósito. ¿Qué es?", r: "Algas. El agua llena en un depósito abierto y expuesto a luz crece algas — cambiar pH. Solución: cubre el depósito con tapa opaca o bolsa negra. Las algas mueren sin luz. O: cambia el agua cada 2-3 días." },
-        { q: "¿Qué hago si no tengo acceso a pH Down en exterior?", r: "Urgencia: usa zumo de limón (ácido cítrico) — baja pH naturalmente. 2-3 gotas por litro. No es exacto pero funciona. Para la próxima: lleva pH Down de casa en una botella pequeña (cuesta 5€)." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
-
-      <SectionTitle>PROBLEMAS DE SETUP Y CLIMA</SectionTitle>
-      {[
-        { q: "El extractor no crea presión negativa. ¿Por qué?", r: "Causas: 1) Tubo no sellado bien — revisa que no haya fugas de aire. 2) Filtro de carbón saturado — cámbialo. 3) Extractor muy débil — actualiza a uno más potente. 4) Entrada de aire obstruida — asegúrate que entra aire (rejilla abierta en la puerta o pared)." },
-        { q: "La humedad es demasiado baja (30%). ¿Qué hago?", r: "Interior: cuelga toallas mojadas en las esquinas (se evaporan). O: apaga el extractor 1-2 horas. O: moja el suelo y las paredes. Exterior: es normal en julio — no hay mucho que hacer. Asegúrate de riego frecuente." },
-        { q: "Llueve mucho (exterior). ¿Protejo la planta?", r: "Un poco de lluvia es bueno (agua gratis). Demasiada lluvia = Botrytis en floración. Si llueve días seguidos en septiembre-octubre: abre cogollos para ver si hay moho. Toldo temporal sobre la planta si puedes sin bloquear luz/aire." },
-        { q: "¿Luz 24h o 18/6 en interior para autos?", r: "Autos florecen solas, no dependen del fotoperiodo. 20/4 es estándar (20h luz, 4h oscuridad) — menos gasto eléctrico que 24h. 18/6 también funciona. La mayoría usa 20/4." },
-        { q: "¿Puedo cultivar con luz natural exterior en febrero?", r: "No. Los días en febrero son demasiado cortos (<12h). Las plantas fotoperiodo florecen sola sin querer. Espera a marzo-mayo para germinar. Si quieres en invierno: cultiva autos o usa luz artificial interior." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
-        </div>
-      ))}
-
-      <SectionTitle>PROBLEMAS MENOS COMUNES</SectionTitle>
-      {[
-        { q: "¿Puedo reutilizar el sustrato del año pasado?", r: "No recomendado. El sustrato se compacta y agota sus nutrientes. Para una nueva temporada compra sustrato fresco (BioBizz Light Mix). Si quieres reutilizar: mezcla 50% sustrato viejo + 50% nuevo y añade bacteria benéfica (Mycorrhizae)." },
-        { q: "Me olvidé de regar 5 días. ¿Está muerta?", r: "Probablemente no. Aunque parecer marchita, las raíces pueden estar vivas. Riega abundantemente y espera 2-3 días. Si recupera turgencia (hojas firmes) está salvada. Si sigue marchita tras 5 días, está muerta." },
-        { q: "¿Puedo dejar las plantas solas 2 semanas en julio?", r: "NO en julio (pico de calor). Las plantas mueren sin agua en 2-3 días. Con riego automático a goteros: sí, funciona. Sin automático: pide a alguien que visite cada 1-2 días, o escurza las plantas." },
-        { q: "¿Qué hago con las plantas después de cosechar?", r: "Interior: limpia el armario (vacía, deja 24h con luz + extractor para secar). Sustrato viejo desecha o reutiliza mezclado 50/50. Exterior: limpia completamente el spot — no dejes trazas." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+      {Object.entries(grupos).map(([sec, items]) => (
+        <div key={sec}>
+          <SectionTitle>PROBLEMAS DE {sec.toUpperCase()}</SectionTitle>
+          {items.map((item, i) => (
+            <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+              <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.a}</div>
+            </div>
+          ))}
         </div>
       ))}
     </div>

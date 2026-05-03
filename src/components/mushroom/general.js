@@ -143,6 +143,35 @@ function CONCEPTOS_SETAS() {
     { term: "Tiramina", def: "Amina presente en alimentos fermentados/curados (queso azul, vino tinto, embutidos curados, pescado salazón). Normalmente la enzima MAO la descompone. Con IMAO bloqueada (ayahuasca, MAOI antidepresivo) → tiramina entra al torrente → pico hipertensivo → riesgo de accidente cerebrovascular. De ahí la dieta restrictiva pre-ayahuasca." },
     { term: "Changa", def: "Mezcla casera para fumar: hierbas (caapi seca, ruda siria, mate, salvia, menta) impregnadas con DMT cristalizado. La presencia de IMAO en las hierbas alarga el efecto del DMT a 20-40 min (vs 5-15 min de DMT puro fumado). Más manejable, menos brutal." },
     { term: "Breakthrough", def: "Término para la pérdida total de la realidad consensual durante experiencia con DMT. Pico de la experiencia (3-8 min después de inhalar). Visiones de 'otro lugar', encuentros con entidades, geometría imposible. No todos llegan a breakthrough en su primera vez — depende de dosis y técnica." },
+    { term: "Set & Setting", def: "Concepto fundamental de psicodélicos. SET = estado mental/emocional con el que entras (intención, ánimo, expectativas). SETTING = entorno físico (lugar, gente, sonidos, luz). Más del 50% de la experiencia depende de set+setting más que de la sustancia. Set/setting malo = mala experiencia incluso con sustancia 'buena'." },
+    { term: "Sitter / Acompañante", def: "Persona SOBRIA que te acompaña durante experiencia psicodélica. Funciones: tranquilizar si hay pánico, asegurar agua/manta/cubo, llamar emergencias si hay problema físico grave. NO interrumpe la experiencia — solo presencia silenciosa. Imprescindible primera vez con sustancias intensas (DMT, Salvia, Ayahuasca, dosis altas de hongos)." },
+    { term: "Integración", def: "Proceso post-experiencia psicodélica de procesar lo vivido. Reflexión, journaling, hablar con sitter o terapeuta especializado. Días-semanas después. CRÍTICO para que la experiencia tenga valor terapéutico/insight duradero. Sin integración los insights se desvanecen rápido." },
+    { term: "Microdosis", def: "Dosis sub-perceptual (10-20% de dosis recreativa) tomada de forma regular. NO da experiencia psicodélica notable, pero según reportes mejora estado de ánimo, creatividad, foco. Protocolos típicos: Fadiman (1 día sí, 2 no), Stamets (4 días sí, 3 no). Investigación científica aún limitada — evidencia mayoritariamente anecdótica." },
+    { term: "Tolerancia", def: "Reducción de efectos por uso repetido. Psicodélicos clásicos (LSD, setas, mescalina) tienen tolerancia CRUZADA — usar uno reduce efecto del otro durante 1-2 semanas. DMT no genera tolerancia (puedes hacer breakthrough varias veces el mismo día). Cannabis sí (días-semanas). Recomendación: espaciar 1-4 semanas entre experiencias significativas." },
+    { term: "Psicoactivo", def: "Sustancia que altera función cerebral — percepción, ánimo, conciencia, comportamiento. Engloba: psicodélicos (LSD, setas), disociativos (ketamina, salvia), estimulantes (cafeína), depresores (alcohol), entactógenos (MDMA). NO necesariamente alucinógenos — el café también es psicoactivo." },
+    { term: "Alcaloide", def: "Familia química de compuestos de plantas que contienen nitrógeno. Muchos psicoactivos son alcaloides: nicotina, cafeína, morfina, mescalina, DMT, harmina. También en plantas no psicoactivas (atropina, quinina). El medio ácido extrae alcaloides eficientemente — de ahí el limón en preparaciones tradicionales." },
+    { term: "Tintura", def: "Extracción de planta en alcohol (40-95%). Alcohol disuelve los activos, conserva indefinidamente. Macerar 4-6 semanas, filtrar. Dosis típica: 1-3ml sublingual (bajo lengua = absorción rápida sin pasar por estómago). Forma de conservación a largo plazo más eficiente para muchas plantas." },
+    { term: "Macerar", def: "Sumergir material vegetal en líquido (alcohol, agua, vinagre, aceite) durante días-semanas para extraer activos. Tradicional en herboristería. Diferente a infusión (rápida, con calor) — la maceración es lenta y en frío." },
+    { term: "Sublingual", def: "Vía de administración: poner sustancia bajo la lengua. La mucosa absorbe directamente al torrente sanguíneo, evitando el primer paso hepático del estómago. Inicio rápido (5-15 min). Usado para tinturas, microdosis, Kanna." },
+    { term: "Mescalina", def: "Alcaloide visionario presente en cactus columnares (San Pedro, Bolivian Torch, Peyote). Estructuralmente similar a anfetamina. Experiencia 8-12h, visiones, introspección, euforia. La psicodélica natural más usada por chamanes mexicanos durante milenios. Ilegal aislada; cactus legales como ornamentales." },
+    { term: "Muscimol", def: "Activo principal de Amanita muscaria. Agonista GABA-A (deprime sistema nervioso central). Causa estado disociativo/onírico, euforia ligera, distorsiones de tamaño. SE PRODUCE SECANDO el hongo (decarboxilación de ácido iboténico → muscimol). NO es psilocibina ni serotonérgico." },
+    { term: "Ácido iboténico", def: "Compuesto presente en Amanita muscaria FRESCA. CAUSA NÁUSEAS y vómitos. Se convierte en muscimol (psicoactivo deseado) durante secado prolongado o cocción con limón. Por eso jamás consumir Amanita fresca." },
+    { term: "Psilocibina", def: "Profármaco presente en setas Psilocybe. Tu cuerpo la convierte en psilocina (la verdaderamente activa). Estructuralmente similar a serotonina. Experiencia 4-6h. Estudios clínicos recientes en depresión resistente, ansiedad terminal, adicciones. Ilegal en España (Lista I) pero cultivo casero tolerado." },
+    { term: "Psilocina", def: "Forma activa de la psilocibina (la psilocibina es profármaco — tu cuerpo la convierte). Agonista de receptores serotonérgicos 5-HT2A en cerebro. Es lo que produce la experiencia alterada con setas." },
+    { term: "Harmina / Harmalina", def: "Alcaloides IMAO presentes en Banisteriopsis caapi (vid del ayahuasca). Bloquean enzima MAO en estómago/intestino, permitiendo que el DMT oral sea activo (sin IMAO el estómago lo destruye). También causan náuseas/purga característica de ayahuasca." },
+    { term: "Salvinorina A", def: "Activo de Salvia divinorum. EL psicoactivo natural más POTENTE conocido (efectivo en mcg). Estructura única: kappa-opioide agonista (no serotonérgico como otros psicodélicos). Experiencia 5-15 min disociativa intensa. Se destruye con calor del agua — por eso infusión NO funciona." },
+    { term: "Mesembrina", def: "Alcaloide principal de Kanna (Sceletium tortuosum). Inhibidor de recaptación de serotonina (SSRI natural) + ligero PDE4 inhibitor. Antidepresivo, ansiolítico. Por eso NO mezclar Kanna con SSRI/IMAO/MDMA = riesgo síndrome serotonérgico." },
+    { term: "Kavalactona", def: "Familia de compuestos de Kava. ~18 kavalactonas distintas, las 6 principales (kavain, methysticin, etc) responsables del efecto. Activan GABA, dopamina, serotonina. Liposolubles — por eso preparación tradicional necesita masaje + emulsión, no se disuelven en agua sola." },
+    { term: "L-DOPA", def: "Precursor natural de dopamina presente en semillas de Mucuna pruriens (4-7%). El cuerpo lo convierte en dopamina. Eufórica sutil, mejora motivación/libido. Usado clínicamente para Parkinson (Levodopa). NO mezclar con MAOI/SSRI." },
+    { term: "5-MeO-DMT", def: "DMT modificado, presente en sapo Bufo alvarius y algunas plantas (Diplopterys cabrerana, Yopo). Diferente experiencia a N,N-DMT clásico: más 'unión cósmica' / disolución del ego, menos visuales geométricos. MUCHO más intenso. Riesgo cardiovascular real. NO recomendado." },
+    { term: "Bufotenina (5-HO-DMT)", def: "Alcaloide presente en Yopo (Anadenanthera peregrina). Snortado tradicional indígena. Efectos similares a DMT pero con más componente físico (sudor, taquicardia)." },
+    { term: "HPPD", def: "Hallucinogen Persisting Perception Disorder. Trastorno raro pero posible: alteraciones visuales persistentes después de uso de psicodélicos (motas, halos, geometría leve durante semanas-meses). Más común con uso muy frecuente. Sin tratamiento específico — suele desaparecer con el tiempo." },
+    { term: "Adaptógeno", def: "Sustancia (planta o hongo) que ayuda al cuerpo a adaptarse al estrés. Ej: Reishi, Cordyceps, Ashwagandha, Rhodiola. NO psicoactivos pero modulan respuesta hormonal/inmune. Uso popular en biohacking moderno." },
+    { term: "Etiolación", def: "Crecimiento débil y alargado de plantas por falta de luz. Tallos finos buscando luz, hojas pálidas/pequeñas. Problema común en cactus + cannabis interior con poca luz. Solución: aumentar exposición lumínica." },
+    { term: "Callusing", def: "Cicatrización del corte en esquejes/cactus. Dejar el corte secar al aire 2-3 días (cactus) o 2 semanas (cactus columnares grandes) ANTES de plantar. Sin callusing = pudrición del corte al contactar con tierra húmeda." },
+    { term: "Micorriza", def: "Simbiosis raíz de planta + hongo subterráneo. Hongo da minerales del suelo a la planta, planta da azúcares al hongo. Amanita muscaria es micorrícica obligatoria (necesita árboles compatibles — abedul, pino, abeto). Por eso NO se cultiva en casa." },
+    { term: "Forrajeo", def: "Recolección de plantas/hongos silvestres para uso humano. Para Amanita: bosques de abedules/pinos en otoño tras lluvia. Requiere identificación experta — confusión con especies tóxicas puede ser MORTAL. Sociedad micológica local = mejor recurso." },
+    { term: "Decarboxilación / Decarbox", def: "Reacción química que convierte una forma de molécula en otra activa. Cannabis: THCA → THC con calor (105°C+). Amanita: ácido iboténico → muscimol con secado prolongado. La decarboxilación es lo que activa el efecto psicoactivo en muchas sustancias." },
   ];
 
   const [search, setSearch] = React.useState('');
@@ -197,29 +226,50 @@ function CONCEPTOS_SETAS() {
 }
 
 function FAQ_SETAS() {
+  const [query, setQuery] = React.useState("");
+  const faqs = [
+    { q: "¿Cuánto tiempo tarda todo el ciclo?", a: "Kit: 2-3 semanas desde que sacas el pan hasta la 1ª cosecha. Friendly: 6-13 semanas. Avanzado: 12-16 semanas (1-2 sem esterilización + inoculación, 2-3 sem incubación, 1-2 sem fructificación)." },
+    { q: "¿Por qué se contamina?", a: "Bacterias o moho entran durante la inoculación. Una jeringa de esporas contaminada o una técnica SAB deficiente son causas. Avanzado requiere mucha más asepsia que kit." },
+    { q: "¿Cuándo cosechar?", a: "Antes de que se rompa el velo (membrana bajo el sombrero). Justo antes o justo después es óptimo. Si esperas demasiado, suelta esporas negras en el sustrato (afecta próximos flushes)." },
+    { q: "¿Qué hacer entre flushes?", a: "Cold shock: 24h en nevera. Luego sacas, dejas en SGFC, nebulizas y esperas a que salgan nuevos primordi (3-7 días). Puedes hacer 3-6 flushes totales." },
+    { q: "¿Puedo secar los hongos en horno?", a: "NO a temperatura alta — degrada los compuestos activos. Usa presecado en bandeja (2-3h a temperatura ambiente) + desecador con silica gel (24h) = cracker dry sin calor." },
+    { q: "¿Duran mucho tiempo almacenados?", a: "Cracker dry en bolsa hermética en lugar frío/oscuro dura años. Lo ideal: bolsa hermética + sílica gel + congelador = 2+ años sin perder potencia." },
+    { q: "¿Kit, Friendly o Avanzado? ¿Cuál para empezar?", a: "Kit si quieres rápido y fácil (2-3 sem). Friendly si quieres más rendimiento sin equipo de laboratorio (sin olla a presión, sin SAB). Avanzado si eres paciente y quieres aprender microbiología completa (mucho mayor rendimiento)." },
+    { q: "¿Qué temperatura exacta para incubación?", a: "Idealmente 24-28°C. Menos de 20°C = muy lento. Más de 30°C = Trichoderma aprovecha. Manta térmica es tu aliada si en tu casa hace frío." },
+    { q: "¿Está legal cultivar setas?", a: "España: cultivo casero tolerado (gris legal). Psilocybe está en Lista I pero uso personal NO se persigue activamente. Comercializar = ilegal. Otros países UE varían." },
+    { q: "¿Cuánto miligramo por hongo?", a: "Varía mucho (50-500mg dependiendo especie, tamaño, condiciones crecimiento). Empieza bajo (0.5-1g de seca) y titula. No hay dosis segura — educación es clave." },
+    { q: "¿Se pone molido en algo o entero?", a: "Entero si es posible (absorción lenta, viaje prolongado). Molido en té (lemon tek) = efecto más rápido. Molido en chocolate = enmascarar sabor." },
+    { q: "¿Pertenezco a algún grupo/comunidad?", a: "r/shrooms, Shroomery, Erowid son comunidades. Pero cultivo casero = responsabilidad personal. No hay garantías de seguridad." },
+    { q: "¿Qué es 'lemon tek'?", a: "Macerar setas molidas en zumo de limón 15-20 min antes de tomar. El ácido convierte psilocibina → psilocina (la forma activa) más rápido. Resultado: efecto en 15 min vs 30-60 min, viaje más intenso pero más corto (2-3h vs 4-6h)." },
+    { q: "¿Microdosis es seguro?", a: "0.1-0.3g de seta seca cada 3-4 días = protocolo Stamets/Fadiman. Reportes anecdóticos: mejora ánimo, creatividad, foco. Investigación científica aún limitada. Bajo riesgo si se respetan los descansos." },
+    { q: "¿Se pueden combinar con otras psicodélicas?", a: "TÉCNICAMENTE sí, pero MUY arriesgado para principiantes. Tolerancia cruzada con LSD/mescalina (1-2 semanas). NUNCA mezclar con SSRI (síndrome serotonérgico). Investigar siempre antes." },
+    { q: "¿Qué es Trichoderma?", a: "El hongo contaminante #1 en cultivo casero. Aparece como manchas verde brillante o blanco peludo. Crece más rápido que el micelio Psilocybe y lo mata. Solo se puede prevenir (asepsia), no se cura. Lote contaminado = tirar todo el sustrato." },
+  ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div>
       <InfoBoxM>
         Preguntas comunes sobre cultivo de setas. Situaciones reales que encuentran principiantes.
       </InfoBoxM>
 
-      {[
-        { q: "¿Cuánto tiempo tarda todo el ciclo?", r: "Kit: 2-3 semanas desde que sacas el pan hasta la 1ª cosecha. Manual: 4-6 semanas (1-2 de esterilización + inoculación, 2-3 de incubación, 1-2 fructificación)." },
-        { q: "¿Por qué se contamina?", r: "Bacterias o moho entran durante la inoculación. Una jeringa de esporas contaminada o una técnica SAB deficiente son causas. Manual requiere mucha más asepsia que kit." },
-        { q: "¿Cuándo cosechar?", r: "Antes de que se rompa el velo (membrana bajo el sombrero). Justo antes o justo después es óptimo. Si esperas demasiado, suelta esporas negras en el sustrato (afecta próximos flushes)." },
-        { q: "¿Qué hacer entre flushes?", r: "Cold shock: 24h en nevera. Luego sacas, dejas en SGFC, nebulizas y esperas a que salgan nuevos primordi (3-7 días). Puedes hacer 3-6 flushes totales." },
-        { q: "¿Puedo secar los hongos en horno?", r: "NO a temperatura alta — degrada los compuestos activos. Usa presecado en bandeja (2-3h a temperatura ambiente) + desecador con silica gel (24h) = cracker dry sin calor." },
-        { q: "¿Duran mucho tiempo almacenados?", r: "Cracker dry en bolsa hermética en lugar frío/oscuro dura años. Lo ideal: bolsa hermética + sílica gel + congelador = 2+ años sin perder potencia." },
-        { q: "¿Kit o Manual? ¿Cuál para empezar?", r: "Kit si quieres rápido y fácil (2 semanas). Manual si eres paciente y quieres aprender microbiología (4-6 semanas, mucho mayor rendimiento). Kit es 80% autónomo. Manual requiere precisión." },
-        { q: "¿Qué temperatura exacta para incubación?", r: "Idealmente 24-28°C. Menos de 20°C = muy lento. Más de 30°C = Trichoderma aprovecha. Manta térmica es tu aliada si en tu casa hace frío." },
-        { q: "¿Está legal cultivar setas?", r: "Varía por país. Psilocybe es Schedule I en muchos lugares. Este contenido es puramente educativo. Verifica leyes locales." },
-        { q: "¿Cuánto miligramo por hongo?", r: "Varía mucho (50-500mg dependiendo especie, tamaño, condiciones crecimiento). Empieza bajo (0.5-1g) y titula. No hay dosis segura — educación es clave." },
-        { q: "¿Se pone molido en algo o entero?", r: "Entero si es posible (absorción lenta, viaje prolongado). Molido en té (lemon tek) = efecto más rápido. Molido en chocolate = enmascarar sabor." },
-        { q: "¿Pertenezco a algún grupo/comunidad?", r: "r/shrooms, Shroomery, Erowid son comunidades. Pero cultivo casero = responsabilidad personal. No hay garantías de seguridad." },
-      ].map((item, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: MUSHROOM_COLORS.bg2, color: MUSHROOM_COLORS.textBright, border: `1px solid ${MUSHROOM_COLORS.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
-          <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright, marginBottom: "8px" }}>❓ {item.q}</div>
-          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.6" }}>{item.r}</div>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright, marginBottom: "8px" }}>❓ {f.q}</div>
+          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.6" }}>{f.a}</div>
         </div>
       ))}
     </div>

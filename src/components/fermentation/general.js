@@ -90,6 +90,7 @@ function HIGIENE_FERMENT() {
 
 function FAQ_FERMENT() {
   const c = FERMENT_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Cuánto alcohol tendrá mi bebida?", a: "Depende del azúcar inicial y la levadura. Hidromiel: 10-14% típico. Cerveza: 4-7%. Sidra: 5-8%. Hay calculadoras online (busca 'ABV calculator brewing') que te dan el % exacto si mides densidad inicial y final con un hidrómetro (10-15€ herramienta básica)." },
     { q: "¿Es legal fermentar bebidas en casa?", a: "Sí en España y casi toda la UE — siempre que sea para CONSUMO PROPIO y no comercializado. La destilación SÍ es ilegal sin licencia (whisky, ron casero = ILEGAL). Fermentar = legal. Destilar = ilegal." },
@@ -99,7 +100,17 @@ function FAQ_FERMENT() {
     { q: "¿Por qué mi fermento no burbujea?", a: "Causas posibles: (1) levadura muerta (mosto demasiado caliente al añadirla, máx 25°C), (2) tapón mal sellado (CO₂ se escapa), (3) ya terminó (después de 2-4 semanas la actividad para). Verifica densidad con hidrómetro: si bajó del valor inicial = funcionó aunque no veas burbujas." },
     { q: "¿Necesito hervir todo o puedo usar agua del grifo?", a: "Hidromiel: SÍ, pasteurizar el mosto (calentar 60-65°C 15min) elimina bacterias. Cerveza: SÍ, hervor obligatorio (extrae lúpulo + esteriliza). Sidra/vino con frutas: opcional (la fruta tiene levaduras naturales). Agua del grifo: clorada, mata levadura — déjala reposar 24h en jarra abierta o usa agua mineral." },
     { q: "¿Conviene comprar kit o ir comprando piezas?", a: "Para empezar: KIT. Cubre lo básico, no te falta nada, viene probado. Después de 2-3 lotes y entiendes qué necesitas, puedes comprar piezas mejores individualmente (mejor garrafa de vidrio, sondas digitales de temperatura, etc.)." },
+    { q: "¿Diferencia entre Ale y Lager?", a: "Tipo de levadura. ALE: fermenta a 18-22°C, rápida (1-2 sem), sabores afrutados/intensos. Cerveza típica artesanal. LAGER: fermenta a 8-12°C, lenta (3-6 sem), limpia y crujiente. Cerveza estilo industrial (pilsner, etc). Ale = más fácil para empezar." },
+    { q: "¿Qué es un SCOBY?", a: "Symbiotic Culture Of Bacteria and Yeast. Disco gelatinoso que se forma en kombucha — combinación de bacterias acéticas + levaduras viviendo juntas. Cada lote produce un SCOBY nuevo. Se reutilizan o regalan." },
+    { q: "¿Cómo limpiar el equipo correctamente?", a: "2 fases: (1) LIMPIEZA con agua + jabón — quita suciedad visible. (2) SANITIZACIÓN con Star San o metabisulfito — mata microorganismos. Las dos son distintas. Sanitizar sin limpiar antes = inútil." },
+    { q: "¿Puedo fermentar fruta directamente sin levadura añadida?", a: "Sí — la piel de las frutas trae levaduras silvestres (de ahí 'fermentación espontánea'). Funciona pero MENOS PREDECIBLE. Resultado variable, riesgo de bacterias salvajes. Recomendado para principiantes: añadir levadura comercial." },
+    { q: "¿Cuánto tiempo aguantan las botellas?", a: "Hidromiel/cerveza/sidra naturales (sin pasteurizar): 1-3 años en frasco frío oscuro. Pasteurizadas (calor 60°C 15min antes de embotellar): 5+ años. Con tiempo: el sabor evoluciona — algunas mejoran (hidromiel), otras se oxidan (cerveza IPA pierde lúpulo)." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -107,7 +118,16 @@ function FAQ_FERMENT() {
         Preguntas comunes sobre fermentación casera. Si tienes dudas más específicas: foros como HomeBrewTalk, r/homebrewing, o el subreddit /r/mead son recursos excelentes.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>

@@ -281,6 +281,7 @@ function PREPARACION_CACTUS() {
 
 function FAQ_CACTUS() {
   const c = CACTUS_COLORS;
+  const [query, setQuery] = React.useState("");
   const faqs = [
     { q: "¿Es legal en España?", a: "Cultivar el cactus como ornamental: SÍ, 100% legal. Poseer cactus seco/triturado: zona gris (no se persigue). Extracción química de mescalina: ILEGAL (sustancia controlada). Esta guía NO da recetas de extracción." },
     { q: "¿Cuándo florece?", a: "Trichocereus florecen alrededor de los 4-6 años desde esqueje, normalmente en verano. Flores blancas grandes y fragantes que se abren de noche. Después puedes hacer polinización cruzada para semillas." },
@@ -290,7 +291,17 @@ function FAQ_CACTUS() {
     { q: "¿Qué hago si hiela?", a: "Bajo riesgo: Trichocereus aguantan algo de frío si están secos. Si hace -5°C húmedo = mueren. Si hace -2°C secos = sobreviven. Cubrir con plástico o meter dentro si pronostica hielo. NUNCA regar antes de hielo." },
     { q: "¿Diferencia visual entre Trichocereus reales?", a: "MUY difícil sin experiencia — varias especies parecen idénticas. Compra siempre de vendedor reputado que garantice especie. Aspecto general: San Pedro tiene 6-9 costillas con espinas pequeñas, Bolivian Torch suele tener 4-7 costillas con espinas más largas y amarillas." },
     { q: "¿Puedo cultivar peyote?", a: "Técnicamente legal en España (no está específicamente prohibido el cactus). Pero: planta extremadamente lenta (1cm/año), CITES protegida (compra ética complicada), sagrada para pueblos huicholes. Recomendación: NO. Si quieres mescalina, San Pedro/Bolivian Torch son sostenibles, rápidos y abundantes." },
+    { q: "¿Diferencia mescalina vs LSD/setas?", a: "Mescalina: experiencia más LARGA (8-12h vs 4-6h de setas), más CORPORAL, más enérgica/eufórica menos visual. Reportes: experiencia 'más amigable' que setas si te llevas bien con ella. Náuseas iniciales primera hora son comunes." },
+    { q: "¿Puedo combinar San Pedro con otras psicodélicas?", a: "Tradicionalmente NO. La experiencia ya es larga e intensa. Combinar = imprevisible y no recomendado. Investigado tan poco que sería irresponsable mezclar." },
+    { q: "¿Riesgos de salud reales?", a: "Náusea/vómito frecuente. Hipertensión leve durante el peak. Posible diarrea. Sin riesgos serios documentados en personas sanas. Contraindicaciones: cardiopatía, problemas psiquiátricos." },
+    { q: "¿Cuánto crece un San Pedro al año?", a: "30-50cm en condiciones óptimas (sol pleno, mediterráneo, riego adecuado). Más lento en interior o clima frío. Año 1: lento. Años 2+: explosivo." },
+    { q: "¿Puede florecer y dar semillas?", a: "Sí, a partir de 4-6 años. Flores blancas grandes que se abren de noche (aroma fuerte). Polinización manual (pincel entre flores) → frutos con miles de semillas. Permite multiplicar." },
   ];
+
+  const filtered = faqs.filter(f =>
+    f.q.toLowerCase().includes(query.toLowerCase()) ||
+    f.a.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <div>
@@ -298,7 +309,16 @@ function FAQ_CACTUS() {
         Preguntas comunes sobre cultivo y aspectos legales/prácticos del cactus mescalina.
       </InfoBoxX>
 
-      {faqs.map((f, i) => (
+      <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{faqs.length} preguntas {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((f, i) => (
         <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
           <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>❓ {f.q}</div>
           <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{f.a}</div>
