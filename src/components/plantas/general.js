@@ -165,6 +165,19 @@ function SALVIA() {
         ⚠️ <strong>Sobre la experiencia:</strong> Salvia produce experiencia DISOCIATIVA — sensación de salir del cuerpo, geometría imposible, "convertirse en objeto", risa incontrolable o pánico. NO es recreativo en sentido fiestero. NO conducir, no estar de pie, SIEMPRE con sitter sobrio. Algunas personas tienen mal viaje. Investigar Erowid antes.
       </WarningBoxX>
 
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-26°C constante" />
+        <StatBoxX c={c} label="Humedad" value="60-80% (alta)" />
+        <StatBoxX c={c} label="Luz" value="Indirecta (sombra)" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, ácido (pH 5.5-6.5)" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Esqueje enraizado: <strong>15-30€</strong> · 🍃 Hojas secas: <strong>10-25€/10g</strong> (semillas casi imposibles de conseguir). Inversión total inicio: ~50-80€ con maceta+sustrato+humidificador.
+      </InfoBoxX>
+
       <SectionTitleX c={c}>CULTIVO</SectionTitleX>
       <StepX c={c} num={1} text="Comprar esqueje (semillas casi imposibles): vendedores online europeos, 15-30€ por esqueje enraizado. Variedades: Bunk, Hofmann, Wasson — diferencias mínimas." />
       <StepX c={c} num={2} text="Sustrato: tierra de jardín + perlita + turba (1:1:1). Maceta drenada. NO usa cactus (necesita más humedad)." />
@@ -188,6 +201,19 @@ function SALVIA() {
         Hojas secas en infusión NO funciona bien — la salvinorina se destruye con el calor del agua. Mascar hojas secas tampoco — duras y poco efectivas. Para hojas secas, opción tradicional es extracto (consumo concentrado, NO recomendado para principiantes — requiere harm reduction extrema).
       </InfoBoxX>
 
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30 segundos (fumado) o 5-10 min (quid). Duración: 5-15 min (fumado), 45-60 min (quid). Sensaciones: disociación TOTAL (salir del cuerpo), geometría imposible, sensación de ser "tirado" hacia otra dimensión, posible pánico. NO es agradable como otros psicodélicos — es alienante y a veces aterrador.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> frasco hermético OPACO (la luz UV degrada salvinorina), lugar fresco y seco. Dura 2-3 años manteniendo potencia.<br/>
+        🌱 <strong>Plantas vivas:</strong> con cuidados correctos viven indefinidamente. Una planta = recurso para décadas si replantas esquejes.<br/>
+        🍶 <strong>Tintura sublingual:</strong> hojas secas en alcohol 95% durante 4-6 semanas. Potencia concentrada. Conservar en frasco oscuro — años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
       <ErrorCardX c={c}
         error="Probar primera vez sin sitter"
         consecuencia="Caídas, golpes, salir corriendo. Personas han hecho cosas peligrosas durante la disociación."
@@ -208,6 +234,19 @@ function DAMIANA() {
     <div>
       <InfoBoxX c={c}>
         <strong>Damiana (Turnera diffusa)</strong> — arbusto aromático mexicano. Efecto: relajación + ligera euforia + afrodisíaco suave. La planta más "amigable" de esta lista. Sabor agradable, efectos suaves, buena para principiantes en plantas psicoactivas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-32°C" />
+        <StatBoxX c={c} label="Humedad" value="30-50% (baja)" />
+        <StatBoxX c={c} label="Luz" value="Sol directo / semi-sombra" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado tipo suculenta" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> · 🌿 Hojas secas (herboristería): <strong>5-12€/50g</strong>. Inversión total inicio: ~20-40€. La opción MÁS BARATA y fácil de las plantas suaves.
       </InfoBoxX>
 
       <SectionTitleX c={c}>CULTIVO</SectionTitleX>
@@ -232,6 +271,18 @@ function DAMIANA() {
       <InfoBoxX c={c}>
         Comienzo: 15-30 min. Duración: 2-4h. Sensaciones: relajación corporal, ligero "buzz" mental similar a kava o cannabis muy suave, calidez. Reportada como ayuda en ansiedad social. Sin "viaje" — solo bienestar.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> frasco hermético, lugar fresco. Dura 1-2 años.<br/>
+        🍷 <strong>Licor casero:</strong> dura años, mejora con el tiempo (macerado).<br/>
+        🌱 <strong>Plantas vivas:</strong> en clima cálido viven indefinidamente.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Damiana es de las MÁS SEGURAS de la lista. Sin contraindicaciones graves conocidas. Precaución: embarazo (estimulante uterino), medicación antidiabética (puede bajar glucosa), no mezclar con alcohol en exceso.
+      </InfoBoxX>
     </div>
   );
 }
@@ -242,6 +293,19 @@ function BLUE_LOTUS() {
     <div>
       <InfoBoxX c={c}>
         <strong>Blue Lotus (Nymphaea caerulea)</strong> — flor sagrada del antiguo Egipto. Sedante suave, leve euforia, sueños vívidos. Aspecto hermoso (flor azul). Cultivable solo si tienes estanque o maceta acuática.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura agua" value="22-28°C tropical" />
+        <StatBoxX c={c} label="Profundidad" value="30cm sobre maceta" />
+        <StatBoxX c={c} label="Luz" value="Pleno sol 6h+" />
+        <StatBoxX c={c} label="Sustrato" value="Arcillosa pesada acuática" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Tubérculo: <strong>10-25€</strong> · 🪷 Flores secas: <strong>10-20€/10g</strong>. Estanque/barreño 50L+: <strong>20-50€</strong>. Inversión total inicio: ~50-100€ (necesitas espacio acuático).
       </InfoBoxX>
 
       <SectionTitleX c={c}>CULTIVO ACUÁTICO</SectionTitleX>
@@ -268,6 +332,18 @@ function BLUE_LOTUS() {
       <InfoBoxX c={c}>
         Comienzo: 30 min - 1h. Duración: 2-4h. Sensaciones: relajación profunda corporal y mental, sueños vívidos si se toma antes de dormir, ligera euforia. NO es alucinógeno. Comparable a una copa de vino con efecto sedante extra.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🪷 <strong>Flores secas enteras:</strong> frasco hermético oscuro. Dura 2-3 años.<br/>
+        🍷 <strong>Vino macerado (egipcio):</strong> 2-4 años en botella oscura corchada.<br/>
+        🌱 <strong>Tubérculo en hibernación:</strong> sacar del agua en invierno, mantener húmedo en bolsa plástica nevera. Replantar primavera.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Sedante suave — NO mezclar con alcohol/depresores. Embarazo y lactancia: contraindicado. Sin antecedentes adversos significativos en uso tradicional milenario egipcio.
+      </InfoBoxX>
     </div>
   );
 }
@@ -278,6 +354,19 @@ function WILD_LETTUCE() {
     <div>
       <InfoBoxX c={c}>
         <strong>Lechuga silvestre (Lactuca virosa)</strong> — pariente de la lechuga común, pero con látex blanco que tiene propiedades analgésicas y sedantes. Conocida como "opio del pobre". NO contiene opiáceos reales — solo es sedante suave.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-30°C tolerante" />
+        <StatBoxX c={c} label="Humedad" value="40-70% (normal)" />
+        <StatBoxX c={c} label="Luz" value="Sol directo 4-6h" />
+        <StatBoxX c={c} label="Sustrato" value="Cualquier suelo común" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>1-3€/sobre</strong> (cientos de semillas) · 🥬 Lactucario seco: <strong>10-20€/10g</strong>. Inversión total inicio: ~10-20€. La planta MÁS BARATA y crece como mala hierba.
       </InfoBoxX>
 
       <SectionTitleX c={c}>CULTIVO — CASI INVASIVA</SectionTitleX>
@@ -304,6 +393,18 @@ function WILD_LETTUCE() {
       <InfoBoxX c={c}>
         Comienzo: 30 min - 1h. Duración: 3-6h. Sensaciones: somnolencia, alivio de dolor leve-moderado, relajación muscular. No euforia. Útil para insomnio o dolor de cabeza. NO es adictivo, NO contiene opiáceos.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> frasco hermético, lugar fresco. Dura 1-2 años.<br/>
+        🥄 <strong>Lactucario (látex seco):</strong> frasco oscuro hermético. Dura 3-5 años. La forma más concentrada y duradera.<br/>
+        💊 <strong>Cápsulas:</strong> rellenar y guardar en frasco con sílica gel.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Sedante suave — NO mezclar con alcohol/depresores SNC. Embarazo y lactancia: contraindicado. NO conducir tras dosis altas.
+      </InfoBoxX>
     </div>
   );
 }
@@ -314,6 +415,19 @@ function CALEA() {
     <div>
       <InfoBoxX c={c}>
         <strong>Calea zacatechichi</strong> — "hierba de los sueños" Maya. Oneirogenic = produce sueños VÍVIDOS, intensos, muchas veces lúcidos. Sabor MUY amargo. Para gente interesada en exploración onírica.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-30°C" />
+        <StatBoxX c={c} label="Humedad" value="40-60%" />
+        <StatBoxX c={c} label="Luz" value="Pleno sol / semi-sombra" />
+        <StatBoxX c={c} label="Sustrato" value="Universal + perlita drenado" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Esqueje: <strong>10-20€</strong> · 💭 Hojas secas: <strong>8-18€/25g</strong>. Inversión total inicio: ~25-50€.
       </InfoBoxX>
 
       <SectionTitleX c={c}>CULTIVO</SectionTitleX>
@@ -337,6 +451,13 @@ function CALEA() {
         Al despertar: recuerdo VÍVIDO de sueños — más detalles que sin Calea. La sensación dura horas.<br/>
         <br/>
         <strong>NO es psicoactivo en estado de vigilia.</strong> Solo afecta al sueño. Lo más cercano a "soñar a propósito".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> frasco hermético oscuro. Dura 1-2 años.<br/>
+        🌱 <strong>Plantas vivas:</strong> en clima cálido viven indefinidamente.<br/>
+        🍶 <strong>Tintura alcohólica:</strong> 50g hojas secas en 250ml vodka 4 semanas. Filtra. Dura años.
       </InfoBoxX>
 
       <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
