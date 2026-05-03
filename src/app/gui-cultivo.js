@@ -225,6 +225,9 @@ function GuiaCultivo() {
         case "calea": return <CALEA />;
         case "kava": return <KAVA />;
         case "kanna": return <KANNA />;
+        case "sinicuichi": return <SINICUICHI />;
+        case "mucuna": return <MUCUNA />;
+        case "lupulo": return <LUPULO />;
         case "faq_plantas": return <FAQ_PLANTAS />;
         default: return <INTRO_PLANTAS />;
       }
@@ -260,6 +263,8 @@ function GuiaCultivo() {
         case "fuentes_dmt": return <FUENTES_DMT />;
         case "compra_dmt": return <COMPRA_DMT />;
         case "cultivo_mimosa": return <CULTIVO_MIMOSA />;
+        case "cultivo_chaliponga": return <CULTIVO_CHALIPONGA />;
+        case "cultivo_acacia": return <CULTIVO_ACACIA />;
         case "extraccion_dmt": return <EXTRACCION_DMT />;
         case "consumo_dmt": return <CONSUMO_DMT />;
         case "experiencia_dmt": return <EXPERIENCIA_DMT />;

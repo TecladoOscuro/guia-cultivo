@@ -707,6 +707,277 @@ function KANNA() {
   );
 }
 
+function SINICUICHI() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Sinicuichi (Heimia salicifolia)</strong> — arbusto mexicano sagrado, único conocido en producir <strong>alucinaciones AUDITIVAS</strong> (sonidos amarillos, voces lejanas suaves). Activos: alcaloides quinolizidínicos (criogenina, lyofolina). Suave, muy peculiar.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ SINICUICHI</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✨ Único alucinógeno principalmente AUDITIVO (no visual)<br/>
+        ✨ Reportes: oír música distante, voces inaudibles, sonidos como "tintineos amarillos"<br/>
+        ✨ Sutil — no hay distorsión visual significativa, solo audición y memoria<br/>
+        ✨ Reduce frecuencia cardíaca y bajada de temperatura corporal (cuidado)<br/>
+        ⚠️ Tradicional fermentación previa (similar a Kanna)
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-30°C" />
+        <StatBoxX c={c} label="Humedad" value="40-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno o filtrado" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, ligeramente ácido" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> · 🌱 Esqueje: <strong>10-25€</strong> · 🍃 Hojas secas: <strong>10-25€/25g</strong>. Inversión total inicio: ~25-50€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas o esquejes. Las semillas requieren estratificación fría (1 mes en nevera) antes de germinar a 22-25°C." />
+      <StepX c={c} num={2} text="Sustrato: tierra de jardín + perlita (3:1). Maceta drenada o exterior directamente." />
+      <StepX c={c} num={3} text="Sol pleno o sombra parcial. Adapta bien a ambos." />
+      <StepX c={c} num={4} text="Riego moderado: cuando el sustrato esté seco a 2cm de profundidad. Tolerante a sequía." />
+      <StepX c={c} num={5} text="Temperatura: tolerante. Sobrevive heladas suaves (-3°C). En zonas cálidas exterior todo el año." />
+      <StepX c={c} num={6} text="Crecimiento: arbusto de 1-3m. Hojas alargadas finas. Flores amarillas en verano." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Cosecha hojas en verano cuando esté en plena floración (concentración máxima de alcaloides)." />
+      <StepX c={c} num={2} text="Cortar ramitas con hojas + flores. La planta sigue produciendo." />
+      <StepX c={c} num={3} text="Una planta madura (2 años) da 50-150g de hojas frescas por temporada." />
+
+      <SectionTitleX c={c}>PREPARACIÓN TRADICIONAL — FERMENTACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tradicional Mexicano: hojas frescas se machacan + se ponen en agua al sol durante 24-72h hasta que el agua se vuelve amarilla (de ahí "sonidos amarillos"). El agua fermentada es lo que se bebe.
+      </InfoBoxX>
+
+      <StepX c={c} num={1} text="Cosechar 50-100g de hojas frescas." />
+      <StepX c={c} num={2} text="Machacar las hojas con mortero. Poner en frasco vidrio." />
+      <StepX c={c} num={3} text="Cubrir con 500ml de agua templada. Tapar parcialmente (no hermético — para fermentar)." />
+      <StepX c={c} num={4} text="Dejar al SOL durante 1-3 días. El agua se vuelve amarillenta." why="La fermentación + sol activa los alcaloides. Sin esto el efecto es muy débil." />
+      <StepX c={c} num={5} text="Colar el líquido amarillo. Beber 100-250ml." />
+
+      <SectionTitleX c={c}>MÉTODO RÁPIDO (SIN FERMENTACIÓN)</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Té:</strong> 5-10g hojas secas en infusión 15 min. Efecto más débil pero más rápido de preparar.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 2-4h.<br/>
+        Sensaciones reportadas: estado meditativo, somnolencia, distorsiones AUDITIVAS sutiles (sonidos lejanos, "amarillos"), distorsión del tiempo, posible bajada ligera de temperatura corporal y ritmo cardíaco. Sin efectos visuales notables. Único entre psicodélicos.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> frasco hermético. Dura 1-2 años.<br/>
+        🍶 <strong>Líquido fermentado:</strong> consumir en el día, máximo 24h en nevera.<br/>
+        🌱 <strong>Plantas vivas:</strong> rebrota cada primavera en climas templados.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Dosis altas con cardiopatía"
+        consecuencia="Sinicuichi baja ritmo cardíaco y temperatura. Con problemas cardiacos = riesgo."
+        fix="Si tienes problemas cardiovasculares: NO tomar. Sano: dosis moderada. Empieza siempre bajo."
+      />
+      <ErrorCardX c={c}
+        error="Mezclar con depresores SNC"
+        consecuencia="Sinicuichi ya deprime ligeramente sistema nervioso. Sumar alcohol/benzos = sedación excesiva."
+        fix="Sobrio. Solo Sinicuichi."
+      />
+    </div>
+  );
+}
+
+function MUCUNA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Mucuna pruriens</strong> — leguminosa trepadora tropical. Semillas con 4-7% de <strong>L-DOPA natural</strong> (precursor de dopamina). Eufórica sutil, mejora ánimo, libido, recuperación muscular. Suplemento popular en biohacking.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ MUCUNA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✨ Mejora estado de ánimo, motivación, energía mental<br/>
+        ✨ Aumenta libido y función sexual<br/>
+        ✨ Estudiada para Parkinson (precursor natural de dopamina)<br/>
+        ✨ NO es alucinógeno — solo eleva ánimo y motivación<br/>
+        ⚠️ Pelusa de las vainas IRRITA piel violentamente (de ahí "pruriens" = picar)<br/>
+        ⚠️ NO mezclar con MAOI o antidepresivos
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="22-32°C tropical" />
+        <StatBoxX c={c} label="Humedad" value="60-80%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno + tutor 2-3m" />
+        <StatBoxX c={c} label="Sustrato" value="Rico en materia orgánica" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-10€/sobre</strong> (germinación 70-90%) · 💊 Polvo Mucuna ya extraído: <strong>15-30€/200g</strong> (atajo). Inversión total cultivo: ~30-60€ con tutor + maceta grande.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Hidratar semillas en agua templada 24h. Plantar a 2cm profundidad en sustrato rico." />
+      <StepX c={c} num={2} text="Germina en 5-14 días a 25-28°C. Plántula crece rápido si tiene calor." />
+      <StepX c={c} num={3} text="Trasplante a maceta GRANDE (40L+) o jardín. Es trepadora vigorosa — necesita tutor de 2-3m mínimo." why="Mucuna trepa y se enrolla en cualquier soporte. Sin tutor crece como mata baja con poco rendimiento." />
+      <StepX c={c} num={4} text="Sol pleno. En España: exterior mediterráneo de mayo a octubre. Resto del año interior con luz directa." />
+      <StepX c={c} num={5} text="Riego abundante en verano. Reducir en invierno." />
+      <StepX c={c} num={6} text="Mes 4-6: aparecen flores (racimos colgantes púrpura). Después vainas con pelusa irritante." warning />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Cosechar vainas cuando están secas (marrón oscuro, secas al tacto). Mes 6-8 desde plantar." />
+      <StepX c={c} num={2} text="USAR GUANTES + MASCARILLA + GAFAS. La pelusa de las vainas causa picor brutal en piel y mucosas." warning />
+      <StepX c={c} num={3} text="Recoger vainas. Quemarlas brevemente con mechero (la pelusa se va al instante) O congelar 24h y aplastar (pelusa se desactiva con frío)." />
+      <StepX c={c} num={4} text="Abrir vainas con cuchillo. Sacar las semillas (3-7 por vaina, color marrón-negro)." />
+      <StepX c={c} num={5} text="Una planta produce 50-200g de semillas secas en una temporada." />
+
+      <SectionTitleX c={c}>PREPARACIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tostar semillas en sartén seca 5-10 min hasta que crujen (mejora sabor + reduce antinutrientes)." />
+      <StepX c={c} num={2} text="Triturar a polvo en molinillo de café/especias." />
+      <StepX c={c} num={3} text="Conservar en frasco hermético oscuro. Dura 1-2 años manteniendo potencia." />
+
+      <SectionTitleX c={c}>CONSUMO</SectionTitleX>
+      <InfoBoxX c={c}>
+        💊 <strong>Cápsulas:</strong> 200-500mg de polvo. Vacías cápsulas tamaño 00 rellenas. 1-2 cápsulas/día.<br/>
+        🥛 <strong>Smoothie:</strong> 2-5g de polvo en batido (sabor a café tostado).<br/>
+        🍵 <strong>Té:</strong> 3-5g en infusión 15 min.<br/>
+        ⏰ Mejor por la mañana — eleva motivación y energía.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 4-6h.<br/>
+        Sensaciones: motivación, claridad mental, ligero aumento de energía, mejor estado de ánimo, aumento libido. NO euforia intensa. NO alucinaciones. Sutil pero notable. Comparable a una taza de café + ansiolítico ligero.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Polvo seco:</strong> frasco hermético oscuro + sílica gel. Dura 1-2 años.<br/>
+        🌰 <strong>Semillas enteras:</strong> 3-5 años en lugar fresco y seco.<br/>
+        🌱 <strong>Plantas:</strong> en clima cálido viven varios años. En frío anuales.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Combinar con MAOI / SSRI / Levodopa"
+        consecuencia="Mucuna eleva dopamina. Combinar con medicación dopaminérgica/serotonérgica = riesgo síndrome serotonérgico o crisis hipertensiva."
+        fix="Off-meds 4-6 semanas si tomas SSRI/MAOI antes de probar Mucuna."
+      />
+      <ErrorCardX c={c}
+        error="Uso diario continuo durante meses"
+        consecuencia="Posible disminución de dopamina endógena (downregulation). Tolerancia."
+        fix="Ciclos: 5 días tomando, 2 días sin. O 3-4 días/semana. Descansos de 1+ semana cada mes."
+      />
+      <ErrorCardX c={c}
+        error="No usar protección al cosechar"
+        consecuencia="La pelusa de las vainas causa picor extremo, ardor en ojos, problemas respiratorios."
+        fix="SIEMPRE: gafas + mascarilla FFP2 + guantes + manga larga. Quemar pelusa antes de manipular."
+      />
+    </div>
+  );
+}
+
+function LUPULO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Lúpulo (Humulus lupulus)</strong> — trepadora vivaz. Conocida por la cerveza, pero la flor (cono) es <strong>sedante natural y ansiolítico</strong>. Activos: humulonas, lupulonas + 8-prenilnaringenina (fitoestrogénico). Tradicional para insomnio.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ LÚPULO</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✨ Sedante suave — ayuda a dormir<br/>
+        ✨ Ansiolítico — reduce ansiedad social y general<br/>
+        ✨ Fitoestrogénico (mujeres en menopausia, equilibrio hormonal)<br/>
+        ✨ TREPADORA fácil — cubre paredes/pérgolas, decorativa<br/>
+        ✨ Misma planta que cerveza (ver guía Fermentar > Cerveza)<br/>
+        ⚠️ Efecto fitoestrogénico — hombres con uso muy intenso pueden ver reducción libido (raro)
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="-15 a +35°C (resistente)" />
+        <StatBoxX c={c} label="Humedad" value="40-70% (tolerante)" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno 6h+" />
+        <StatBoxX c={c} label="Sustrato" value="Cualquier suelo profundo" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Rizoma: <strong>5-15€</strong> · 🌾 Conos secos (herboristería): <strong>3-10€/50g</strong> · 🌿 Variedades: Cascade, Saaz, Hallertau, Magnum (todas válidas, las cerveceras suelen tener más amargor). Inversión total cultivo: ~30€ con tutor + maceta.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO — TREPADORA VIGOROSA</SectionTitleX>
+      <StepX c={c} num={1} text="Plantar rizomas en primavera (marzo-abril). Enterrar 5cm en suelo profundo y suelto." why="Lúpulo desarrolla raíces profundas. Suelo compactado limita crecimiento." />
+      <StepX c={c} num={2} text="Tutor obligatorio: alambre, cuerda, pérgola — 3-5m de altura. Lúpulo trepa rápido (10cm/día en pleno crecimiento)." />
+      <StepX c={c} num={3} text="Sol pleno. Mínimo 6h directas/día. Sin sol = poca producción de conos." />
+      <StepX c={c} num={4} text="Riego abundante en primavera-verano. Tolera sequía pero la producción baja." />
+      <StepX c={c} num={5} text="Año 1: crecimiento moderado. Quizás algunos conos al final del verano." />
+      <StepX c={c} num={6} text="Año 2-3+: planta madura. Crecimiento explosivo cada primavera. Cosechas grandes desde año 2." />
+      <StepX c={c} num={7} text="Vivaz: la parte aérea muere en invierno, brota de nuevo cada primavera durante 20-30 años." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Conos listos en agosto-septiembre. Maduros: papel-textura, color verde claro a amarillento, aroma a lúpulo intenso al apretar." />
+      <StepX c={c} num={2} text="Cosechar manualmente conos individuales. La planta sigue produciendo más." />
+      <StepX c={c} num={3} text="Una planta madura: 0.5-2kg de conos secos por temporada." />
+
+      <SectionTitleX c={c}>SECADO</SectionTitleX>
+      <StepX c={c} num={1} text="Extender conos en bandeja con rejilla. Sombra ventilada. NO sol directo (degrada aceites)." />
+      <StepX c={c} num={2} text="Secar 1-3 semanas hasta que crujan al apretar." />
+      <StepX c={c} num={3} text="Conservar en bolsas vacío en congelador (mantiene aroma + alfa-ácidos para cerveza). O frasco hermético oscuro a temperatura ambiente." />
+
+      <SectionTitleX c={c}>PREPARACIÓN PARA USO SEDANTE</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 1-2g de conos secos en agua hirviendo, reposo 10 min. Sabor amargo. Mejor con miel + manzanilla. 1 taza 30 min antes de dormir.<br/>
+        💊 <strong>Cápsulas:</strong> 200-400mg de polvo de lúpulo. 1-2 cápsulas antes de dormir.<br/>
+        🛏️ <strong>Almohada de lúpulo:</strong> rellenar bolsita pequeña con 50g de conos secos. Aroma sedante durante toda la noche. Tradicional anglosajón.<br/>
+        🍷 <strong>Tintura:</strong> 50g de conos en 250ml vodka, 4 semanas. Filtrar. Dosis: 1-3ml sublingual antes de dormir.<br/>
+        🍺 <strong>Cerveza:</strong> ya cubierto en guía Fermentar.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 3-6h.<br/>
+        Sensaciones: relajación corporal, somnolencia gradual, reducción de ansiedad, calma mental. Sin "viaje" — solo sedante natural. Comparable a una valeriana suave o un té de manzanilla potenciado.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Conos secos:</strong> bolsa al vacío en congelador = 2-3 años manteniendo potencia. Frasco hermético = 6-12 meses.<br/>
+        🍶 <strong>Tintura:</strong> dura años en frasco oscuro.<br/>
+        🌱 <strong>Plantas vivas:</strong> 20-30 años productivas. Una vez plantadas, recurso para décadas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c}
+        error="Mezclar con alcohol/benzos"
+        consecuencia="Sumar depresores SNC = sedación excesiva."
+        fix="No mezclar para uso terapéutico. La cerveza con lúpulo ya combina ambos en dosis suaves — moderación."
+      />
+      <ErrorCardX c={c}
+        error="Hombres con uso muy intenso (>10g/día durante meses)"
+        consecuencia="El 8-prenilnaringenina del lúpulo es uno de los fitoestrógenos más potentes conocidos. Uso extremo puede afectar libido masculina."
+        fix="Uso normal (1-3g/día puntual) sin problema. Para uso diario continuo: ciclar (5 días sí, 2 no). Mujeres: efecto fitoestrogénico puede ser beneficioso (menopausia)."
+      />
+      <ErrorCardX c={c}
+        error="Embarazo / lactancia"
+        consecuencia="Efectos hormonales sin estudiar. Riesgo desconocido."
+        fix="Evitar uso terapéutico. La cerveza ocasional es OK pero alcohol embarazo NO."
+      />
+    </div>
+  );
+}
+
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
   const faqs = [

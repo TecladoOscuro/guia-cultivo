@@ -252,6 +252,127 @@ function CULTIVO_MIMOSA() {
   );
 }
 
+function CULTIVO_CHALIPONGA() {
+  const c = DMT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Diplopterys cabrerana (Chaliponga / Chacropanga / Yagé)</strong> — vid amazónica usada como sustituto de Chacruna en ayahuasca. Hojas con DMT (0.4-1.7%) <strong>+ pequeñas cantidades de 5-MeO-DMT</strong>. Más fácil de cultivar que Chacruna.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ CHALIPONGA EN VEZ DE CHACRUNA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ MÁS FÁCIL de cultivar (humedad 60-80% vs 80-95% de Chacruna)<br/>
+        ✅ Crecimiento más rápido (vid trepadora vs arbusto)<br/>
+        ✅ Concentración DMT mayor por gramo<br/>
+        ⚠️ Contiene 5-MeO-DMT — más intenso, posible giro distinto en ayahuasca<br/>
+        🌿 En la tradición ecuatoriana se usa para una variante de ayahuasca llamada "yagé"
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="22-30°C" />
+        <StatBoxX c={c} label="Humedad" value="60-80% (aceptable)" />
+        <StatBoxX c={c} label="Luz" value="Indirecta brillante" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, ácido (pH 5-6)" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Esqueje enraizado: <strong>30-60€</strong> · 🍃 Hojas secas: <strong>20-40€/25g</strong>. Semillas casi imposibles. Inversión cultivo: ~50-80€ con tutor + maceta.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Comprar esqueje enraizado de vendedor etnobotánico UE. Hidratar 24h en agua templada al recibir." />
+      <StepX c={c} num={2} text="Maceta 30L+, sustrato similar a Caapi: 50% turba + 30% perlita + 20% mantillo." />
+      <StepX c={c} num={3} text="Tutor obligatorio: vid trepadora, necesita 1-2m de soporte vertical." />
+      <StepX c={c} num={4} text="Luz indirecta brillante. NO sol directo intenso (le quema)." why="En selva crece bajo dosel — luz filtrada. Sol directo = hojas amarillas." />
+      <StepX c={c} num={5} text="Humedad 60-80% (más tolerante que Chacruna). Pulverizar hojas 1x/día." />
+      <StepX c={c} num={6} text="Temperatura 22-28°C. Por debajo de 15°C = ralentización. Bajo 10°C = muerte." />
+      <StepX c={c} num={7} text="En España: SOLO interior junto a ventana sur o invernadero climatizado. Mediterráneo costero: posible verano exterior (mayo-octubre)." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Esperar 1-2 años desde plantar. Vid madura tiene 3-5m de tallo." />
+      <StepX c={c} num={2} text="Cosechar hojas grandes y maduras (8cm+). Dejar 50% de la planta intacta." />
+      <StepX c={c} num={3} text="Una planta de 2 años: 30-80g de hojas secas/año. Suficiente para 2-4 brebajes." />
+      <StepX c={c} num={4} text="Secar al aire en sombra 7-10 días. Conservar en frasco hermético oscuro." />
+
+      <SectionTitleX c={c}>USO EN AYAHUASCA</SectionTitleX>
+      <InfoBoxX c={c}>
+        Sustituye o se mezcla con Chacruna en el brebaje. Misma proporción aproximada: 15-25g de hojas Chaliponga por sesión. Ver guía Ayahuasca > Preparación brebaje. La presencia de 5-MeO-DMT puede dar experiencias distintas — más intensas en algunas reportes, más rápidas en peak.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function CULTIVO_ACACIA() {
+  const c = DMT_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Acacia confusa</strong> — árbol taiwanés/vietnamita. Su corteza de raíz (ACRB) tiene <strong>1-2% DMT + harmalina trazas</strong>. Concentración mayor que Mimosa. Alternativa cuando no se consigue Mimosa.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>POR QUÉ ACACIA CONFUSA</SectionTitleX>
+      <InfoBoxX c={c}>
+        ✅ Concentración DMT más alta que Mimosa (1-2% vs 0.5-1.5%)<br/>
+        ✅ Crece más alto y robusto en clima templado<br/>
+        ❌ Menos común — más difícil encontrar semillas/esquejes<br/>
+        ❌ ACRB seca no tan disponible como MHRB<br/>
+        🌿 También presente en algunas variantes asiáticas de ayahuasca
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-35°C tolerante" />
+        <StatBoxX c={c} label="Humedad" value="40-70% (flexible)" />
+        <StatBoxX c={c} label="Luz" value="Pleno sol" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, tolerante" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>5-15€/sobre</strong> (germinación 50-70%) · 🪵 ACRB seca importada: <strong>30-60€/100g</strong> (más cara que MHRB). Inversión cultivo: ~40-80€ con maceta grande.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO — DESDE SEMILLA</SectionTitleX>
+      <StepX c={c} num={1} text="Escarificación: lijar suavemente la cubierta dura de la semilla con papel de lija. Sin escarificar puede tardar meses." />
+      <StepX c={c} num={2} text="Hidratar 24h en agua a 40-45°C (calor activa la germinación). Las viables se hinchan." />
+      <StepX c={c} num={3} text="Plantar a 1cm de profundidad en mezcla 50% turba + 30% perlita + 20% mantillo." />
+      <StepX c={c} num={4} text="Germinación: 5-21 días a 25-28°C. Plántulas crecen rápido." />
+
+      <SectionTitleX c={c}>CRECIMIENTO</SectionTitleX>
+      <StepX c={c} num={1} text="Mes 1-6: plántulas en macetas pequeñas. Crecimiento moderado." />
+      <StepX c={c} num={2} text="Año 1: 1-2m altura. Trasplante a maceta grande (40-50L) o jardín." />
+      <StepX c={c} num={3} text="Año 2-3: árbol joven 2-4m. Resistente al frío hasta -2°C (mejor que Mimosa)." />
+      <StepX c={c} num={4} text="Año 3-5: cosecha de corteza de raíz posible. Menos rendimiento por planta que Mimosa pero más concentrada." />
+
+      <SectionTitleX c={c}>EN ESPAÑA POR ZONAS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌞 <strong>Mediterráneo costero:</strong> exterior posible. Tolera mejor el frío que Mimosa.<br/>
+        🍃 <strong>Centro/Norte España:</strong> interior obligatorio en invierno, exterior verano.<br/>
+        ❄️ <strong>Galicia/Cantábrico:</strong> demasiado húmedo. Solo invernadero.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Esperar 4+ años para cosecha significativa. Antes = raíces muy pequeñas." />
+      <StepX c={c} num={2} text="Excavar parcialmente alrededor del árbol. Cortar raíces secundarias (no la principal)." />
+      <StepX c={c} num={3} text="Lavar, pelar la corteza rojiza externa con cuchillo. Esa es la parte activa." />
+      <StepX c={c} num={4} text="Secar 2-4 semanas en sombra. Conservar en frasco oscuro hermético — años." />
+
+      <SectionTitleX c={c}>RENDIMIENTO</SectionTitleX>
+      <InfoBoxX c={c}>
+        Árbol de 5 años: 80-200g de ACRB seca por cosecha sostenible. Mayor concentración por gramo que MHRB compensa el rendimiento menor.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>USO</SectionTitleX>
+      <InfoBoxX c={c}>
+        Mismo método que Mimosa hostilis: extracción A/B (ilegal en España), o uso oral combinado con IMAO en variante de ayahuasca. Ver sección Extracción para info educativa.
+      </InfoBoxX>
+    </div>
+  );
+}
+
 function EXTRACCION_DMT() {
   const c = DMT_COLORS;
   return (

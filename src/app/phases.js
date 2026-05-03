@@ -126,6 +126,9 @@ const plantasPhases = [
   { id: "calea", emoji: "💭", title: "Calea zacatechichi", subtitle: "Sueños lúcidos" },
   { id: "kava", emoji: "🌴", title: "Kava", subtitle: "Relajante muscular" },
   { id: "kanna", emoji: "🌵", title: "Kanna", subtitle: "Antidepresivo + euforia" },
+  { id: "sinicuichi", emoji: "🎵", title: "Sinicuichi", subtitle: "Alucinógeno auditivo" },
+  { id: "mucuna", emoji: "🫘", title: "Mucuna pruriens", subtitle: "L-DOPA natural" },
+  { id: "lupulo", emoji: "🌾", title: "Lúpulo", subtitle: "Sedante natural" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
 ];
 
@@ -161,6 +164,8 @@ const dmtPhases = [
   { id: "fuentes_dmt", emoji: "🌳", title: "Fuentes", subtitle: "Mimosa, Acacia, etc" },
   { id: "compra_dmt", emoji: "🛒", title: "Compra", subtitle: "Semillas + equipo" },
   { id: "cultivo_mimosa", emoji: "🌱", title: "Mimosa", subtitle: "Cultivo árbol" },
+  { id: "cultivo_chaliponga", emoji: "🍃", title: "Chaliponga", subtitle: "Diplopterys cabrerana" },
+  { id: "cultivo_acacia", emoji: "🌳", title: "Acacia confusa", subtitle: "Alternativa Mimosa" },
   { id: "extraccion_dmt", emoji: "🧪", title: "Extracción", subtitle: "Vista general A/B" },
   { id: "consumo_dmt", emoji: "💨", title: "Consumo", subtitle: "Vapor / changa" },
   { id: "experiencia_dmt", emoji: "👁️", title: "Experiencia", subtitle: "Qué esperar" },
