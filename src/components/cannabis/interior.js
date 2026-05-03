@@ -542,7 +542,7 @@ function GERMINACION() {
       <Step num={4} text="Saca la semilla del agua con unas pinzas (nunca con los dedos). Ponla en el centro del papel." why="Los aceites naturales de la piel pueden contaminar la semilla y ralentizar la germinación." />
       <Step num={5} text="Dobla el papel sobre la semilla y mételo dentro de un tupper con tapa. Ciérralo." why="El tupper mantiene la humedad constante sin que tengas que estar rehidratando el papel cada pocas horas." />
       <Step num={6} text="Guarda el tupper en un lugar oscuro a ~22°C. Encima de un router WiFi funciona perfecto." why="El calor constante acelera la germinación. La oscuridad imita el estado natural de una semilla bajo tierra." />
-      <Step num={7} text="Revisa cada 12 horas sin mover demasiado. En 2–5 días verás salir una raíz blanca (radícula)." />
+      <Step num={7} text={<>Revisa cada 12 horas sin mover demasiado. En 2–5 días verás salir una raíz blanca (<GlossaryLink guide="cannabis" term="Radícula">radícula</GlossaryLink>).</>} />
       <Step num={8} text="Cuando la raíz mida entre 1 y 2 cm, está lista. No esperes más." why="Si la dejas crecer más de 3cm se dobla al enterrarla y queda mal orientada. 1–2cm es el momento ideal." />
       <Step num={9} text="Prepara una maceta pequeña (0,5L o un vaso con agujeros) con sustrato ligeramente húmedo. No empapado." />
       <Step num={10} text="Haz un agujero de 1cm con un lápiz. Mete la semilla con la raíz hacia abajo. Cubre suavemente sin apretar." why="Las raíces crecen hacia abajo por gravedad. Si la raíz queda mirando arriba, la planta tiene que hacer un giro extra bajo tierra, lo que la retrasa." />
@@ -567,7 +567,7 @@ function VEGETATIVA() {
         <StatBox label="Duración" value="3–4 semanas" />
       </div>
       <InfoBox>
-        En esta fase la planta solo crece en tamaño — raíces, tallo, hojas. No florece todavía. Tu único trabajo es no matar la planta. Menos intervención = mejor resultado.
+        En esta fase (<GlossaryLink guide="cannabis" term="Vegetativa (fase)">Vegetativa</GlossaryLink>) la planta solo crece en tamaño — raíces, tallo, hojas. No florece todavía. Tu único trabajo es no matar la planta. Menos intervención = mejor resultado.
       </InfoBox>
 
       <SectionTitle>EL RIEGO — LO MÁS IMPORTANTE DE TODA LA GUÍA</SectionTitle>
@@ -653,8 +653,8 @@ function FLORACION() {
       <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px" }}>DOS TIPOS DE SEMILLA — DOS FORMAS DE FLORECER</div>
         {[
-          { tipo: "🌱 Autofloreciente", como: "Florece sola a los 30-35 días sin que hagas nada. No cambies el temporizador.", accion: "Solo observa — verás aparecer pelos blancos (pistilos) en los nudos." },
-          { tipo: "🌿 Fotoperiodo (ej. Critical King)", como: "NO florece sola. Necesitas cambiar el temporizador a 12h luz / 12h oscuridad.", accion: "Cuando la planta llegue a 40-55cm (según tu armario), cambia el temporizador a 12/12h." },
+          { tipo: <>🌱 <GlossaryLink guide="cannabis" term="Autofloreciente">Autofloreciente</GlossaryLink></>, como: <>Florece sola a los 30-35 días sin que hagas nada. No cambies el temporizador.</>, accion: <>Solo observa — verás aparecer pelos blancos (<GlossaryLink guide="cannabis" term="Pistilo">pistilos</GlossaryLink>) en los <GlossaryLink guide="cannabis" term="Nudo">nudos</GlossaryLink>.</> },
+          { tipo: <>🌿 <GlossaryLink guide="cannabis" term="Fotoperiodo">Fotoperiodo</GlossaryLink> (ej. Critical King)</>, como: <>NO florece sola. Necesitas cambiar el temporizador a 12h luz / 12h oscuridad (<GlossaryLink guide="cannabis" term="Ciclo 12/12">ciclo 12/12</GlossaryLink>).</>, accion: <>Cuando la planta llegue a 40-55cm (según tu armario), cambia el temporizador a 12/12h.</> },
         ].map((item, i) => (
           <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "8px", padding: "12px", marginBottom: i === 0 ? "8px" : "0" }}>
             <div style={{ fontSize: "13px", color: "#d8f3dc", fontWeight: "bold", marginBottom: "6px" }}>{item.tipo}</div>

@@ -43,7 +43,7 @@ function SETUP_SETAS_KIT() {
   return (
     <div>
       <InfoBoxM>
-        Montaje de la cámara SGFC. Setup correcto = 90% del éxito. Temperatura, humedad, FAE (intercambio aire). Todo paso a paso.
+        Montaje de la cámara <GlossaryLink term="SGFC (Still Air Fruit Chamber)">SGFC</GlossaryLink>. Setup correcto = 90% del éxito. Temperatura, <GlossaryLink term="Humedad">humedad</GlossaryLink>, <GlossaryLink term="FAE (Fresh Air Exchange)">FAE</GlossaryLink> (intercambio aire). Todo paso a paso.
       </InfoBoxM>
 
       <SectionTitleM>MONTAR LA CÁMARA SGFC</SectionTitleM>
@@ -80,7 +80,7 @@ function INCUBACION_SETAS_KIT() {
   return (
     <div>
       <InfoBoxM>
-        Primeros 7-10 días desde que sacas el pan del frigorífico. El span espera en la SGFC a que salgan los primeros "pinheads" (primordi). Rutina simple.
+        Primeros 7-10 días desde que sacas el pan del frigorífico. El span espera en la <GlossaryLink term="SGFC (Still Air Fruit Chamber)">SGFC</GlossaryLink> a que salgan los primeros <GlossaryLink term="Primordio / Pinhead">pinheads (primordios)</GlossaryLink>. Rutina simple.
       </InfoBoxM>
 
       <SectionTitleM>DÍA 1-2: POST-SETUP</SectionTitleM>
@@ -117,7 +117,7 @@ function FRUCTIFICACION_SETAS_KIT() {
   return (
     <div>
       <InfoBoxM>
-        Los primeros "pinheads" aparecen (días 7-12). Ahora cambia todo — más nebulización, FAE frecuente, espectador. Toma 5-7 días hasta cosecha.
+        Los primeros <GlossaryLink term="Primordio / Pinhead">pinheads</GlossaryLink> aparecen (días 7-12). Ahora cambia todo — más nebulización, <GlossaryLink term="FAE (Fresh Air Exchange)">FAE</GlossaryLink> frecuente, espectador. Toma 5-7 días hasta cosecha.
       </InfoBoxM>
 
       <SectionTitleM>PRIMEROS PINHEADS — CAMBIO DE FASE</SectionTitleM>
@@ -161,7 +161,7 @@ function COSECHA_SETAS_KIT() {
   return (
     <div>
       <InfoBoxM>
-        Técnica giro-tirón. Es brutalmente simple. El hongo se separa del sustrato limpiamente si lo haces bien. Multiples flushes después = cold shock.
+        Técnica giro-tirón. Es brutalmente simple. El hongo se separa del <GlossaryLink term="Sustrato">sustrato</GlossaryLink> limpiamente si lo haces bien. Múltiples <GlossaryLink term="Flush">flushes</GlossaryLink> después = <GlossaryLink term="Cold shock">cold shock</GlossaryLink>.
       </InfoBoxM>
 
       <SectionTitleM>TÉCNICA GIRO-TIRÓN</SectionTitleM>
@@ -202,7 +202,7 @@ function SECADO_SETAS_KIT() {
   return (
     <div>
       <InfoBoxM>
-        Secado correcto = conservación larga. "Cracker dry" es el estándar. Los hongos deben quebrarse como galleta sin dejar huella digital.
+        Secado correcto = conservación larga. <GlossaryLink term="Cracker dry">Cracker dry</GlossaryLink> es el estándar. Los hongos deben quebrarse como galleta sin dejar huella digital. Empieza con <GlossaryLink term="Presecado">presecado</GlossaryLink>.
       </InfoBoxM>
 
       <SectionTitleM>PRESECADO — PRIMERAS 2-3 HORAS</SectionTitleM>

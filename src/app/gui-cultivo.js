@@ -27,10 +27,16 @@ function GuiaCultivo() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const navigateToGlossary = (term) => {
-    setGuide("mushroom");
-    setMushroomMode("general");
-    setActiveMushroomGen("conceptos_setas");
+  const navigateToGlossary = (term, targetGuide = "mushroom") => {
+    if (targetGuide === "cannabis") {
+      setGuide("cannabis");
+      setMode("general");
+      setActivePhaseGen("conceptos");
+    } else {
+      setGuide("mushroom");
+      setMushroomMode("general");
+      setActiveMushroomGen("conceptos_setas");
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
       const searchInput = document.querySelector('input[placeholder*="Buscar"]');

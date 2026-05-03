@@ -204,6 +204,10 @@ function COSECHA() {
         <StatBox label="Curado mínimo" value="2–4 semanas" />
       </div>
 
+      <InfoBox>
+        Cosechar = cortar la planta cuando los <GlossaryLink guide="cannabis" term="Tricoma">tricomas</GlossaryLink> están en su punto óptimo. Antes de cortar haz <GlossaryLink guide="cannabis" term="Lavado de raíces">lavado de raíces</GlossaryLink> los últimos 10-14 días. Después: <GlossaryLink guide="cannabis" term="Secado">secado</GlossaryLink> + <GlossaryLink guide="cannabis" term="Curado">curado</GlossaryLink> + <GlossaryLink guide="cannabis" term="Manicura / Trim">manicura</GlossaryLink>.
+      </InfoBox>
+
       <SectionTitle>EL DÍA DE LA COSECHA</SectionTitle>
       <Step num={1} text="48h antes de cortar: apaga la luz y déjala en oscuridad total." why="Muchos growers lo hacen creyendo que dispara la producción de resina en las últimas horas. No está 100% demostrado, pero no cuesta nada y muchos ven mejoras. Es el último empujón antes de cosechar." />
       <Step num={2} text="Ponte guantes de nitrilo antes de tocar los cogollos." why="La resina es muy pegajosa y difícil de quitar de la piel. Además, el calor de las manos puede degradarla." />
@@ -578,7 +582,7 @@ function PODA() {
           ⚠️ Regla de oro para autoflorecientes: menos es más.
         </p>
         <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
-          Las autoflorecientes tienen un ciclo de vida fijo — no pueden "recuperar tiempo perdido" como las de fotoperiodo. Cualquier estrés (cortes, daños) come días de su vida útil. La poda agresiva en autos puede reducir el rendimiento final. Con esto en mente, hay técnicas seguras y técnicas a evitar.
+          Las <GlossaryLink guide="cannabis" term="Autofloreciente">autoflorecientes</GlossaryLink> tienen un ciclo de vida fijo — no pueden "recuperar tiempo perdido" como las de <GlossaryLink guide="cannabis" term="Fotoperiodo">fotoperiodo</GlossaryLink>. Cualquier estrés (cortes, daños) come días de su vida útil. La poda agresiva en autos puede reducir el rendimiento final. Técnicas seguras: <GlossaryLink guide="cannabis" term="LST (Low Stress Training)">LST</GlossaryLink>, <GlossaryLink guide="cannabis" term="Defoliación">defoliación</GlossaryLink> ligera. A evitar: <GlossaryLink guide="cannabis" term="Topping">topping</GlossaryLink>, <GlossaryLink guide="cannabis" term="FIM">FIM</GlossaryLink>.
         </p>
       </div>
 

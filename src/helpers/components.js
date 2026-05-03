@@ -107,9 +107,9 @@ const StepM = ({ num, text, why, warning }) => (
   </div>
 );
 
-const GlossaryLink = ({ term, children }) => (
+const GlossaryLink = ({ term, children, guide = "mushroom" }) => (
   <button
-    onClick={() => window.navigateToGlossary && window.navigateToGlossary(term)}
+    onClick={() => window.navigateToGlossary && window.navigateToGlossary(term, guide)}
     onMouseEnter={(e) => { e.currentTarget.style.color = "#93c5fd"; }}
     onMouseLeave={(e) => { e.currentTarget.style.color = "#60a5fa"; }}
     style={{
