@@ -2,31 +2,86 @@
 // Componentes para cultivo desde cero (Advanced Mode - 4-8 semanas)
 
 function COMPRA_SETAS_ADVANCED() {
+  const items = [
+    { item: "🔥 Olla a presión (6-10L)", precio: "40-80€", donde: "Amazon / Electro", nota: "Imprescindible para esterilización. 15 PSI, 2+ horas. Marcas: Beltran, Magefesa.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🫙 Frascos de vidrio (500ml/1L)", precio: "15-30€", donde: "Ikea / Carrefour", nota: "12-15 frascos totales. Serán contenedores para grano inoculado. Reutilizable años.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌾 Granos de cereal (kg)", precio: "5-15€", donde: "Tiendas agrícolas", nota: "Cebada, centeno, avena. Seco. Base del sustrato. Requiere cocción + esterilización.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧫 Jeringa de esporas Psilocybe", precio: "20-40€", donde: "Spore vendors (Europa)", nota: "Contiene esporas en solución estéril. Crítico: compra de fuente fiable.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🪜 SAB (Still Air Box)", precio: "20-40€", donde: "DIY o Amazon", nota: "Caja hermética para inocular sin contaminación. DIY: caja + guantes de látex.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🔬 Alcohol isopropílico 70%", precio: "8-15€", donde: "Farmacia", nota: "Desinfectar SAB, herramientas, manos. 1L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧪 Aguja 0.5mm x 25mm", precio: "3-8€", donde: "Farmacia", nota: "Inyectar esporas. Compra 2-3 (pueden romperse).", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "💧 Coco coir / Vermiculita", precio: "8-15€", donde: "Grow shops / Amazon", nota: "Sustrato para bulk tek. 5L coco coir + 5L perlita + 5L agua.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 Cajas/contenedores plástico", precio: "10-20€", donde: "Ikea / Carrefour", nota: "Para monotub. Aprox 40L. Necesitarás 1-2.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🌡️ Termómetro digital", precio: "5-10€", donde: "Amazon", nota: "Monitorear 24-28°C durante incubación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Bolsas de granos esterilizables", precio: "5-10€", donde: "Grow shops", nota: "Alternativa a frascos. Spawn bags reutilizables.", prioridad: "ÚTIL", tipo: "Consumible" },
+    { item: "⚖️ Báscula digital", precio: "10-20€", donde: "Amazon", nota: "Pesar grano seco, sustrato. Precisión: ±1g.", prioridad: "IMPORTANTE", tipo: "Equipo" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
+  const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+
   return (
     <div>
       <InfoBoxM>
         Todo lo necesario para cultivar desde cero: esterilizar grano, inocular, colonizar, fructificar. Máximo control, mayor rendimiento, pero requiere precisión microbiológica.
       </InfoBoxM>
 
-      <SectionTitleM>LISTA DE COMPRA — MANUAL COMPLETO</SectionTitleM>
-      {[
-        { item: "🔥 Olla a presión (6-10L)", precio: "40-80€", donde: "Amazon / Electro", nota: "Imprescindible para esterilización. 15 PSI, 2+ horas. Marcas: Beltran, Magefesa." },
-        { item: "🫙 Frascos de vidrio (500ml/1L)", precio: "15-30€", donde: "Ikea / Carrefour", nota: "12-15 frascos totales. Serán contenedores para grano inoculado. Reutilizable años." },
-        { item: "🌾 Granos de cereal (kg)", precio: "5-15€", donde: "Tiendas agrícolas", nota: "Cebada, centeno, avena. Seco. Base del sustrato. Requiere cocción + esterilización." },
-        { item: "🧫 Jeringa de esporas Psilocybe", precio: "20-40€", donde: "Spore vendors (Europa)", nota: "Contiene esporas en solución estéril. Crítico: compra de fuente fiable." },
-        { item: "🪜 SAB (Still Air Box)", precio: "20-40€", donde: "DIY o Amazon", nota: "Caja hermética para inocular sin contaminación. DIY: caja + guantes de látex." },
-        { item: "🔬 Alcohol isopropílico 70%", precio: "8-15€", donde: "Farmacia", nota: "Desinfectar SAB, herramientas, manos. 1L es suficiente." },
-        { item: "🧪 Aguja 0.5mm x 25mm", precio: "3-8€", donde: "Farmacia", nota: "Inyectar esporas. Compra 2-3 (pueden romperse)." },
-        { item: "💧 Coco coir / Vermiculita", precio: "8-15€", donde: "Grow shops / Amazon", nota: "Sustrato para bulk tek. 5L coco coir + 5L perlita + 5L agua." },
-        { item: "📦 Cajas/contenedores plástico", precio: "10-20€", donde: "Ikea / Carrefour", nota: "Para monotub. Aprox 40L. Necesitarás 1-2." },
-        { item: "🌡️ Termómetro digital", precio: "5-10€", donde: "Amazon", nota: "Monitorear 24-28°C durante incubación." },
-        { item: "🪥 Bolsas de granos esterilizables", precio: "5-10€", donde: "Grow shops", nota: "Alternativa a frascos. Spawn bags reutilizables." },
-        { item: "⚖️ Báscula digital", precio: "10-20€", donde: "Amazon", nota: "Pesar grano seco, sustrato. Precisión: ±1g." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+      <SectionTitleM>FILTRAR POR PRIORIDAD</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleM>FILTRAR POR TIPO</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleM>LISTA DE COMPRA — MANUAL AVANZADO ({filtered.length}/{items.length})</SectionTitleM>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
             <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{item.item}</div>
             <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: MUSHROOM_COLORS.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
           </div>
           <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
           <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3 }}>{item.nota}</div>

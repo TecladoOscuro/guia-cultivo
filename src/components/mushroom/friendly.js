@@ -3,29 +3,84 @@
 // Tiempo: 4-6 semanas. Dificultad: media. Ideal novatos que quieren más control que el kit pero no quieren microbiología.
 
 function COMPRA_SETAS_FRIENDLY() {
+  const items = [
+    { item: "🌾 Spawn bag pre-esterilizado (1-2kg grano)", precio: "20-35€", donde: "Grow shops UE / Amazon (busca 'sterilized rye spawn bag' o 'centeno esterilizado')", nota: "Bolsa con grano de centeno ya cocido, esterilizado y sellado. Tiene puerto de inyección (filtro micropore). Es el reemplazo de la olla a presión + frascos. Compra 1 para empezar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "💉 Cultura líquida Psilocybe cubensis", precio: "20-35€", donde: "Vendors UE (busca 'liquid culture syringe')", nota: "Más fácil y FIABLE que la jeringa de esporas. Contiene micelio ya activo en líquido nutritivo — coloniza más rápido (10-14 días vs 21) y resiste mejor la contaminación. Cepas recomendadas para novatos: Golden Teacher, B+, Mazatapec.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🪣 Bulk substrate CVG hidratado (5L)", precio: "15-25€", donde: "Grow shops UE", nota: "Coco coir + vermiculita + yeso ya mezclado, hidratado y pasteurizado. Listo para usar. NO confundir con el coco coir seco — busca 'manure-based bulk substrate' o 'CVG hydrated'.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 Monotub (caja plástica 40-65L con tapa)", precio: "12-25€", donde: "Ikea / Carrefour / Amazon", nota: "Caja transparente con tapa. Tú haces 4-6 agujeros de 2.5cm en los lados (a 10cm del fondo) para FAE pasivo. Tape los agujeros con filtro micropore (incluido en algunos kits) o algodón.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💨 Cinta micropore (tipo médica)", precio: "3-6€", donde: "Farmacia / Amazon", nota: "Para tapar agujeros del monotub. Deja pasar aire pero no contaminantes. 1 rollo basta para 5+ ciclos.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧴 Alcohol isopropílico 70% (1L)", precio: "8-12€", donde: "Farmacia", nota: "Desinfectar superficies, guantes, herramientas. Imprescindible.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧤 Guantes de nitrilo + mascarilla FFP2", precio: "5-10€", donde: "Farmacia", nota: "Reduces 90% del riesgo de contaminación. Mascarilla evita que tu aliento contamine. NO toques nada con manos desnudas durante inoculación.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear 24-26°C en incubación, 22-24°C en fructificación. Higrómetro para verificar 90%+ HR.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💧 Spray de agua destilada", precio: "3-8€", donde: "Farmacia / supermercado", nota: "Para nebulizar dentro del monotub durante fructificación.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🪥 Vermiculita seca (2L) — opcional", precio: "5-10€", donde: "Grow shops / Amazon", nota: "Para 'casing layer' (capa de remate sobre el sustrato). Mejora rendimiento pero no es estrictamente necesario en monotub.", prioridad: "ÚTIL", tipo: "Consumible" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
+  const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+
   return (
     <div>
       <InfoBoxM>
         Versión friendly: NO necesitas olla a presión, NO necesitas <GlossaryLink term="SAB (Still Air Box)">SAB</GlossaryLink>, NO necesitas microscopio. Compras todo pre-esterilizado y solo inyectas. Más rendimiento que el kit, menos hardcore que el manual avanzado clásico.
       </InfoBoxM>
 
-      <SectionTitleM>LISTA DE COMPRA — MANUAL FRIENDLY</SectionTitleM>
-      {[
-        { item: "🌾 Spawn bag pre-esterilizado (1-2kg grano)", precio: "20-35€", donde: "Grow shops UE / Amazon (busca 'sterilized rye spawn bag' o 'centeno esterilizado')", nota: "Bolsa con grano de centeno ya cocido, esterilizado y sellado. Tiene puerto de inyección (filtro micropore). Es el reemplazo de la olla a presión + frascos. Compra 1 para empezar." },
-        { item: "💉 Cultura líquida Psilocybe cubensis", precio: "20-35€", donde: "Vendors UE (busca 'liquid culture syringe')", nota: "Más fácil y FIABLE que la jeringa de esporas. Contiene micelio ya activo en líquido nutritivo — coloniza más rápido (10-14 días vs 21) y resiste mejor la contaminación. Cepas recomendadas para novatos: Golden Teacher, B+, Mazatapec." },
-        { item: "🪣 Bulk substrate CVG hidratado (5L)", precio: "15-25€", donde: "Grow shops UE", nota: "Coco coir + vermiculita + yeso ya mezclado, hidratado y pasteurizado. Listo para usar. NO confundir con el coco coir seco — busca 'manure-based bulk substrate' o 'CVG hydrated'." },
-        { item: "📦 Monotub (caja plástica 40-65L con tapa)", precio: "12-25€", donde: "Ikea / Carrefour / Amazon", nota: "Caja transparente con tapa. Tú haces 4-6 agujeros de 2.5cm en los lados (a 10cm del fondo) para FAE pasivo. Tape los agujeros con filtro micropore (incluido en algunos kits) o algodón." },
-        { item: "💨 Cinta micropore (tipo médica)", precio: "3-6€", donde: "Farmacia / Amazon", nota: "Para tapar agujeros del monotub. Deja pasar aire pero no contaminantes. 1 rollo basta para 5+ ciclos." },
-        { item: "🧴 Alcohol isopropílico 70% (1L)", precio: "8-12€", donde: "Farmacia", nota: "Desinfectar superficies, guantes, herramientas. Imprescindible." },
-        { item: "🧤 Guantes de nitrilo + mascarilla FFP2", precio: "5-10€", donde: "Farmacia", nota: "Reduces 90% del riesgo de contaminación. Mascarilla evita que tu aliento contamine. NO toques nada con manos desnudas durante inoculación." },
-        { item: "🌡️ Termómetro/higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear 24-26°C en incubación, 22-24°C en fructificación. Higrómetro para verificar 90%+ HR." },
-        { item: "💧 Spray de agua destilada", precio: "3-8€", donde: "Farmacia / supermercado", nota: "Para nebulizar dentro del monotub durante fructificación." },
-        { item: "🪥 Vermiculita seca (2L) — opcional", precio: "5-10€", donde: "Grow shops / Amazon", nota: "Para 'casing layer' (capa de remate sobre el sustrato). Mejora rendimiento pero no es estrictamente necesario en monotub." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+      <SectionTitleM>FILTRAR POR PRIORIDAD</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleM>FILTRAR POR TIPO</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleM>LISTA DE COMPRA — MANUAL FRIENDLY ({filtered.length}/{items.length})</SectionTitleM>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
             <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{item.item}</div>
             <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: MUSHROOM_COLORS.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
           </div>
           <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
           <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3 }}>{item.nota}</div>
