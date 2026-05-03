@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Cultivo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a1a0f; font-family: Georgia, serif; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0d1f14; }
+    ::-webkit-scrollbar-thumb { background: #2d6a4f; border-radius: 3px; }
+    button { cursor: pointer; font-family: Georgia, serif; }
+
+    /* Desktop layout */
+    @media (min-width: 900px) {
+      .app-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        min-height: 100vh;
+      }
+      .app-header {
+        grid-column: 1 / -1;
+        padding: 32px 40px 24px !important;
+      }
+      .app-header h1 {
+        font-size: 32px !important;
+      }
+      .mode-switcher {
+        max-width: 340px !important;
+      }
+      .mode-switcher button div:first-child {
+        font-size: 15px !important;
+      }
+      .tabs-nav {
+        grid-column: 1;
+        grid-row: 2 / 4;
+        flex-direction: column !important;
+        overflow-x: visible !important;
+        overflow-y: auto;
+        border-bottom: none !important;
+        border-right: 1px solid #1b4332 !important;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        max-height: 100vh;
+        align-self: start;
+      }
+      .tabs-nav button {
+        flex: none !important;
+        min-width: unset !important;
+        width: 100%;
+        padding: 14px 16px !important;
+        text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        border-bottom: none !important;
+        border-left: 3px solid transparent !important;
+        font-size: 13px !important;
+      }
+      .tabs-nav button.active {
+        border-left: 3px solid #52b788 !important;
+        border-bottom: none !important;
+      }
+      .tabs-nav button .tab-emoji {
+        font-size: 18px !important;
+        margin-bottom: 0 !important;
+      }
+      .tabs-nav button .tab-title {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+      }
+      .tabs-nav button .tab-sub {
+        font-size: 10px !important;
+        margin-top: 1px !important;
+      }
+      .main-content {
+        grid-column: 2;
+        grid-row: 2 / 4;
+        padding: 32px 48px !important;
+        max-width: 860px !important;
+      }
+      .footer-calendar {
+        grid-column: 1 / -1;
+        padding: 24px 40px !important;
+      }
+      /* Wider cards on desktop */
+      .main-content .step-card,
+      .main-content .error-card,
+      .main-content .info-box {
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .app-layout {
+        grid-template-columns: 240px 1fr;
+      }
+      .main-content {
+        max-width: 960px !important;
+        padding: 36px 64px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+{/*INSERT_CONTENT_HERE*/}
+  </script>
+</body>
+</html>
