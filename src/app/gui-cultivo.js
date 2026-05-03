@@ -5,7 +5,7 @@ function GuiaCultivo() {
   const [mushroomMode, setMushroomMode] = useState("kit"); // "kit" | "manual" | "general"
   const [activeMushroomKit, setActiveMushroomKit] = useState("compra_kit");
   const [activeMushroomManual, setActiveMushroomManual] = useState("compra_manual");
-  const [activeMushroomGen, setActiveMushroomGen] = useState("conceptos_setas");
+  const [activeMushroomGen, setActiveMushroomGen] = useState("timeline_setas");
   const [activePhase, setActivePhase] = useState("compra");
   const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
   const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
@@ -15,6 +15,15 @@ function GuiaCultivo() {
     if (targetMode === "interior") setActivePhase(targetPhase);
     else if (targetMode === "exterior") setActivePhaseExt(targetPhase);
     else setActivePhaseGen(targetPhase);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const navigateMushroom = (targetMode, targetPhase) => {
+    setGuide("mushroom");
+    setMushroomMode(targetMode);
+    if (targetMode === "kit") setActiveMushroomKit(targetPhase);
+    else if (targetMode === "manual") setActiveMushroomManual(targetPhase);
+    else setActiveMushroomGen(targetPhase);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -105,9 +114,10 @@ function GuiaCultivo() {
         }
       } else {
         switch (activeMushroomGen) {
+          case "timeline_setas": return <TIMELINE_SETAS navigate={navigateMushroom} />;
           case "conceptos_setas": return <CONCEPTOS_SETAS />;
           case "faq_setas": return <FAQ_SETAS />;
-          default: return null;
+          default: return <TIMELINE_SETAS navigate={navigateMushroom} />;
         }
       }
     }

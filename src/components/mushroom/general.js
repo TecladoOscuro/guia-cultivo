@@ -1,5 +1,95 @@
 // GUÍA SETAS - CONTENIDO GENERAL
-// Glosario, FAQ y términos aplicables a ambos modos (Kit + Manual)
+// Timeline, glosario y FAQ. Aplica a ambos modos (Kit + Manual).
+
+function TIMELINE_SETAS({ navigate }) {
+  const [tab, setTab] = React.useState("kit");
+
+  const kitNodes = [
+    { dia: "Día 0", titulo: "Compra kit", emoji: "🛒", desc: "Pan de micelio + cámara SGFC + perlita + spray + termómetro. 150-250€ total. Llega en 3-7 días.", mode: "kit", phase: "compra_kit", color: "#8a6240" },
+    { dia: "Día 1", titulo: "Setup cámara SGFC", emoji: "📦", desc: "Hidratar perlita en el fondo (5cm). Colocar pan de micelio sobre rejilla. Desinfectar interior con alcohol. Sellar.", mode: "kit", phase: "setup_kit", color: "#aa7c52" },
+    { dia: "Días 1-14", titulo: "Incubación", emoji: "🔮", desc: "El span coloniza completamente. Mantener 24-26°C, oscuridad. Verificar humedad 90%+. NO abrir hasta ver primordios.", mode: "kit", phase: "incubacion_kit", color: "#c49a6c" },
+    { dia: "Días 14-21", titulo: "Fructificación / Pinheads", emoji: "🍄", desc: "Aparecen primordios (puntos blancos). Nebulizar 3-4x/día. FAE cada 6-12h abriendo cámara. Crecimiento rápido.", mode: "kit", phase: "fructificacion_kit", color: "#dbb98c", highlight: true },
+    { dia: "Días 21-25", titulo: "Primera cosecha", emoji: "✂️", desc: "Cosecha cuando velo a punto de romperse. Técnica giro-tirón. Rendimiento 70-150g fresco. Limpia bien la base.", mode: "kit", phase: "cosecha_kit", color: "#eed8b4" },
+    { dia: "Días 25-50", titulo: "Flushes 2-4", emoji: "🔄", desc: "Cold shock (24h nevera) + rehidratar. Siguiente flush en 5-10 días. Cada flush 50-70% del anterior. Total 4-6 flushes.", mode: "kit", phase: "fructificacion_kit", color: "#f5e6d0" },
+    { dia: "Días 50-55", titulo: "Secado final", emoji: "🌬️", desc: "Presecado + sílica gel hasta cracker dry. Total seco: 30-60g. Almacenamiento 6m-5años según método.", mode: "general", phase: "conceptos_setas", color: "#fdf5ea" },
+  ];
+
+  const manualNodes = [
+    { dia: "Día 0", titulo: "Compra friendly", emoji: "🛒", desc: "Spawn bag pre-esterilizado + cultura líquida + bulk substrate CVG + monotub. 100-180€. NO olla a presión, NO SAB.", mode: "manual", phase: "compra_manual", color: "#8a6240" },
+    { dia: "Día 1", titulo: "Prep limpio + Inoculación", emoji: "💉", desc: "Ducha vapor, alcohol, mascarilla FFP2. Flameo aguja, inyección 2-3ml cultura líquida en spawn bag. 5 min.", mode: "manual", phase: "inoculacion", color: "#aa7c52" },
+    { dia: "Días 1-18", titulo: "Incubación spawn bag", emoji: "🔮", desc: "El micelio coloniza el grano. 24-26°C oscuro. Inspección visual diaria SIN abrir. Día 14-18 → 100% blanco.", mode: "manual", phase: "incubacion_manual", color: "#c49a6c" },
+    { dia: "Día 18", titulo: "Mezcla S2B en monotub", emoji: "📦", desc: "En espacio limpio: romper spawn, mezclar 1:2 con bulk CVG en monotub (con 4-6 agujeros micropore). Casing layer opcional.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c" },
+    { dia: "Días 18-25", titulo: "Colonización bulk", emoji: "⚪", desc: "Micelio se extiende por bulk. FAE cada 2 días. Día 25: superficie 95-100% blanca. NO nebulizar todavía.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c" },
+    { dia: "Días 25-35", titulo: "Fructificación / Pinning", emoji: "🍄", desc: "Iniciar nebulización paredes 2x/día + FAE 2x/día. Luz 12/12. Pinheads aparecen día 28-30. Crecimiento rápido.", mode: "manual", phase: "fructificacion_manual", color: "#dbb98c", highlight: true },
+    { dia: "Días 35-40", titulo: "Primera cosecha", emoji: "✂️", desc: "Cosechar antes de que el velo se rompa. Giro-tirón. Rendimiento 200-500g fresco. Retira pinheads abortados.", mode: "manual", phase: "cosecha_manual", color: "#eed8b4" },
+    { dia: "Días 40-90", titulo: "Flushes 2-6 (dunk)", emoji: "🔄", desc: "Dunk: cubrir sustrato con agua fría 6-12h en nevera entre flushes. Vaciar, volver a rutina. 4-6 flushes totales.", mode: "manual", phase: "cosecha_manual", color: "#f5e6d0" },
+    { dia: "Días 90-95", titulo: "Secado final", emoji: "🌬️", desc: "Total seco: 60-150g. Cracker dry obligatorio antes de almacenar. Frasco hermético + sílica gel.", mode: "manual", phase: "secado_manual", color: "#fdf5ea" },
+  ];
+
+  const nodes = tab === "kit" ? kitNodes : manualNodes;
+
+  return (
+    <div>
+      <InfoBoxM>
+        Cronograma completo desde compra hasta secado final. Click en cualquier nodo para ir a su sección. Tiempos aproximados — variables ±20% según temperatura, cepa y manejo.
+      </InfoBoxM>
+
+      <div style={{ display: "flex", background: MUSHROOM_COLORS.bg2, borderRadius: "10px", padding: "4px", gap: "4px", marginBottom: "24px" }}>
+        {[{ id: "kit", label: "📦 Kit (3-4 sem)" }, { id: "manual", label: "🧪 Manual friendly (6-13 sem)" }].map(t => (
+          <button key={t.id} onClick={() => setTab(t.id)} style={{
+            flex: 1, padding: "10px", border: "none", borderRadius: "8px",
+            background: tab === t.id ? MUSHROOM_COLORS.border2 : "transparent",
+            color: tab === t.id ? MUSHROOM_COLORS.textBright : MUSHROOM_COLORS.accent1,
+            cursor: "pointer", fontSize: "13px", fontWeight: "bold",
+            fontFamily: "Georgia, serif",
+          }}>{t.label}</button>
+        ))}
+      </div>
+
+      <div style={{ position: "relative", paddingLeft: "20px" }}>
+        <div style={{
+          position: "absolute", left: "5px", top: "10px", bottom: "10px",
+          width: "2px", background: `linear-gradient(180deg, ${MUSHROOM_COLORS.accent1} 0%, ${MUSHROOM_COLORS.accent3} 100%)`,
+        }} />
+        {nodes.map((n, i) => (
+          <div key={i} onClick={() => navigate && navigate(n.mode, n.phase)} style={{
+            position: "relative", marginBottom: "16px", cursor: "pointer",
+            background: MUSHROOM_COLORS.bg2,
+            border: `1px solid ${n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1}`,
+            borderRadius: "10px", padding: "12px 14px",
+            transition: "all 0.2s",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = MUSHROOM_COLORS.accent1; e.currentTarget.style.transform = "translateX(4px)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = n.highlight ? MUSHROOM_COLORS.accent2 : MUSHROOM_COLORS.border1; e.currentTarget.style.transform = "translateX(0)"; }}
+          >
+            <div style={{
+              position: "absolute", left: "-25px", top: "12px",
+              width: "16px", height: "16px", borderRadius: "50%",
+              background: n.color, border: `2px solid ${MUSHROOM_COLORS.bg}`,
+            }} />
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+              <span style={{ fontSize: "20px" }}>{n.emoji}</span>
+              <div>
+                <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "2px" }}>{n.dia.toUpperCase()}</div>
+                <div style={{ fontSize: "14px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{n.titulo}</div>
+              </div>
+            </div>
+            <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5", marginTop: "6px" }}>{n.desc}</div>
+            <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, marginTop: "6px", textTransform: "uppercase", letterSpacing: "1px" }}>→ Click para abrir sección</div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ background: MUSHROOM_COLORS.bg3, borderRadius: "10px", padding: "14px", marginTop: "20px" }}>
+        <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.textBright, lineHeight: "1.6" }}>
+          <strong>Diferencias clave Kit vs Manual:</strong><br/>
+          📦 <strong>Kit:</strong> 3-4 semanas, 30-60g secos finales, 150-250€, fácil. Para empezar.<br/>
+          🧪 <strong>Manual:</strong> 6-13 semanas, 60-150g secos finales, 100-180€, dificultad media. Más rendimiento, control de cepa.
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function CONCEPTOS_SETAS() {
   const terms = [

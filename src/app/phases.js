@@ -56,6 +56,7 @@ const mushroomManualPhases = [
 ];
 
 const mushroomGeneral = [
+  { id: "timeline_setas", emoji: "📅", title: "Timeline", subtitle: "Cronograma" },
   { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
 ];
