@@ -4,16 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guía de Cultivo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #0a1a0f; font-family: Georgia, serif; }
+    body { background: #0a1a0f; font-family: 'Inter', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: -0.005em; }
+    h1, h2, h3, .heading-serif { font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.015em; }
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #0d1f14; }
     ::-webkit-scrollbar-thumb { background: #2d6a4f; border-radius: 3px; }
-    button { cursor: pointer; font-family: Georgia, serif; }
+    button { cursor: pointer; font-family: inherit; }
+    /* Override inline Georgia, serif fontFamily across all components */
+    [style*="Georgia"] { font-family: 'Inter', system-ui, sans-serif !important; }
 
     /* Desktop layout */
     @media (min-width: 900px) {
@@ -382,6 +388,13 @@ const ErrorCardM = ({ error, consecuencia, fix }) => (
 
 function COMPRA() {
   const priorityColor = { "ESENCIAL": "#e63946", "IMPORTANTE": "#f4a261", "ÚTIL": "#52b788" };
+  const [filterPriority, setFilterPriority] = React.useState([]);
+  const [filterDonde, setFilterDonde] = React.useState([]);
+  const togglePriority = (p) => setFilterPriority(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleDonde = (d) => setFilterDonde(s => s.includes(d) ? s.filter(x => x !== d) : [...s, d]);
+  const matchesFilter = (item) =>
+    (filterPriority.length === 0 || filterPriority.includes(item.priority)) &&
+    (filterDonde.length === 0 || filterDonde.includes(item.donde));
   const dondeColor = {
     "Zamnesia": "#1a6b8a",
     "Amazon": "#8a5a1a",
@@ -631,49 +644,92 @@ function COMPRA() {
         </div>
       </div>
 
-      {/* Prioridad leyenda */}
-      <div style={{ display: "flex", gap: "12px", marginBottom: "20px" }}>
-        {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => (
-          <div key={label} style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: color }} />
-            <span style={{ fontSize: "10px", color: "#74c69d" }}>{label}</span>
-          </div>
-        ))}
+      {/* Filtros clickables */}
+      <div style={{ marginBottom: "20px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR PRIORIDAD</div>
+        <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+          {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => {
+            const active = filterPriority.includes(label);
+            return (
+              <button key={label} onClick={() => togglePriority(label)} style={{
+                background: active ? color : "transparent",
+                color: active ? "#0a1a0f" : color,
+                border: `1.5px solid ${color}`,
+                borderRadius: "16px",
+                padding: "5px 12px",
+                fontSize: "11px",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+                transition: "all 0.15s",
+              }}>{label}</button>
+            );
+          })}
+        </div>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR DÓNDE COMPRAR</div>
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          {Object.entries(dondeColors).map(([label, c]) => {
+            const active = filterDonde.includes(label);
+            return (
+              <button key={label} onClick={() => toggleDonde(label)} style={{
+                background: active ? c.text : "transparent",
+                color: active ? c.bg : c.text,
+                border: `1.5px solid ${c.text}`,
+                borderRadius: "16px",
+                padding: "5px 12px",
+                fontSize: "11px",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+                transition: "all 0.15s",
+              }}>{label}</button>
+            );
+          })}
+        </div>
+        {(filterPriority.length > 0 || filterDonde.length > 0) && (
+          <button onClick={() => { setFilterPriority([]); setFilterDonde([]); }} style={{
+            background: "transparent", color: "#74c69d", border: "none",
+            fontSize: "11px", marginTop: "10px", textDecoration: "underline", padding: 0,
+          }}>✕ Limpiar filtros</button>
+        )}
       </div>
 
-      {sections.map((section, si) => (
-        <div key={si} style={{ marginBottom: "24px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
-            {section.title}
-          </div>
-          {section.items.map((item, ii) => (
-            <div key={ii} style={{
-              background: "#0d1f14", border: "1px solid #1b4332",
-              borderRadius: "10px", padding: "14px", marginBottom: "10px",
-              borderLeft: `3px solid ${priorityColor[item.priority]}`,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-                <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
-                <div style={{ textAlign: "right", flexShrink: 0 }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
-                  <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
-                </div>
-              </div>
-              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "8px" }}>
-                {item.detail}
-              </div>
-              {item.cuando && (
-                <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>
-                  🕐 <span style={{ color: "#40916c" }}>Cuándo: </span>{item.cuando}
-                </div>
-              )}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
-                <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
-              </div>
+      {sections.map((section, si) => {
+        const filteredItems = section.items.filter(matchesFilter);
+        if (filteredItems.length === 0) return null;
+        return (
+          <div key={si} style={{ marginBottom: "24px" }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
+              {section.title}
             </div>
-          ))}
-        </div>
-      ))}
+            {filteredItems.map((item, ii) => (
+              <div key={ii} style={{
+                background: "#0d1f14", border: "1px solid #1b4332",
+                borderRadius: "10px", padding: "14px", marginBottom: "10px",
+                borderLeft: `3px solid ${priorityColor[item.priority]}`,
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+                  <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
+                  <div style={{ textAlign: "right", flexShrink: 0 }}>
+                    <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
+                    <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
+                  </div>
+                </div>
+                <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "8px" }}>
+                  {item.detail}
+                </div>
+                {item.cuando && (
+                  <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>
+                    🕐 <span style={{ color: "#40916c" }}>Cuándo: </span>{item.cuando}
+                  </div>
+                )}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
+                  <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
+                  {item.donde && <div style={{ fontSize: "10px", padding: "2px 8px", borderRadius: "10px", background: dondeColors[item.donde]?.bg, color: dondeColors[item.donde]?.text, border: `1px solid ${dondeColors[item.donde]?.border}` }}>📍 {item.donde}</div>}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -1214,6 +1270,9 @@ function GOTEO() {
 
 function COMPRA_EXT() {
   const priorityColor = { "ESENCIAL": "#e63946", "IMPORTANTE": "#f4a261", "ÚTIL": "#52b788" };
+  const [filterPriority, setFilterPriority] = React.useState([]);
+  const togglePriority = (p) => setFilterPriority(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const matchesFilter = (item) => filterPriority.length === 0 || filterPriority.includes(item.priority);
   const sections = [
     {
       title: "SEMILLAS",
@@ -1297,38 +1356,58 @@ function COMPRA_EXT() {
           </div>
         ))}
       </div>
-      <div style={{ display: "flex", gap: "12px", marginBottom: "20px" }}>
-        {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => (
-          <div key={label} style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: color }} />
-            <span style={{ fontSize: "10px", color: "#74c69d" }}>{label}</span>
-          </div>
-        ))}
-      </div>
-      {sections.map((section, si) => (
-        <div key={si} style={{ marginBottom: "24px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
-            {section.title}
-          </div>
-          {section.items.map((item, ii) => (
-            <div key={ii} style={{
-              background: "#0d1f14", border: "1px solid #1b4332",
-              borderLeft: `3px solid ${priorityColor[item.priority]}`,
-              borderRadius: "10px", padding: "14px", marginBottom: "10px",
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-                <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
-                <div style={{ textAlign: "right", flexShrink: 0 }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
-                  <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
-                </div>
-              </div>
-              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "4px" }}>{item.detail}</div>
-              <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
-            </div>
-          ))}
+      <div style={{ marginBottom: "20px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR PRIORIDAD</div>
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => {
+            const active = filterPriority.includes(label);
+            return (
+              <button key={label} onClick={() => togglePriority(label)} style={{
+                background: active ? color : "transparent",
+                color: active ? "#0a1a0f" : color,
+                border: `1.5px solid ${color}`,
+                borderRadius: "16px", padding: "5px 12px",
+                fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+                transition: "all 0.15s",
+              }}>{label}</button>
+            );
+          })}
         </div>
-      ))}
+        {filterPriority.length > 0 && (
+          <button onClick={() => setFilterPriority([])} style={{
+            background: "transparent", color: "#74c69d", border: "none",
+            fontSize: "11px", marginTop: "10px", textDecoration: "underline", padding: 0,
+          }}>✕ Limpiar filtros</button>
+        )}
+      </div>
+      {sections.map((section, si) => {
+        const filteredItems = section.items.filter(matchesFilter);
+        if (filteredItems.length === 0) return null;
+        return (
+          <div key={si} style={{ marginBottom: "24px" }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
+              {section.title}
+            </div>
+            {filteredItems.map((item, ii) => (
+              <div key={ii} style={{
+                background: "#0d1f14", border: "1px solid #1b4332",
+                borderLeft: `3px solid ${priorityColor[item.priority]}`,
+                borderRadius: "10px", padding: "14px", marginBottom: "10px",
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
+                  <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
+                  <div style={{ textAlign: "right", flexShrink: 0 }}>
+                    <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
+                    <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
+                  </div>
+                </div>
+                <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "4px" }}>{item.detail}</div>
+                <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -2938,28 +3017,83 @@ function TIMELINE({ navigate }) {
 // Componentes para cultivo con kit SGFC (Easy Mode - 2-3 semanas)
 
 function COMPRA_SETAS_KIT() {
+  const items = [
+    { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato).", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo.", prioridad: "ÚTIL", tipo: "Consumible" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
+  const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+
   return (
     <div>
       <InfoBoxM>
         Kit Psilocybe cubensis. Todo incluido para empezar. La opción más autónoma y fácil para principiantes — no requiere equipo de esterilización ni conocimientos microbiológicos avanzados.
       </InfoBoxM>
 
-      <SectionTitleM>LISTA DE COMPRA — KIT BÁSICO</SectionTitleM>
-      {[
-        { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar." },
-        { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato)." },
-        { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente." },
-        { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%." },
-        { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean." },
-        { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias." },
-        { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante." },
-        { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado." },
-        { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+      <SectionTitleM>FILTRAR POR PRIORIDAD</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleM>FILTRAR POR TIPO</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleM>LISTA DE COMPRA — KIT BÁSICO ({filtered.length}/{items.length})</SectionTitleM>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
             <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{item.item}</div>
             <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: MUSHROOM_COLORS.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
           </div>
           <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
           <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3 }}>{item.nota}</div>

@@ -2,28 +2,83 @@
 // Componentes para cultivo con kit SGFC (Easy Mode - 2-3 semanas)
 
 function COMPRA_SETAS_KIT() {
+  const items = [
+    { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato).", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean.", prioridad: "ESENCIAL", tipo: "Equipo" },
+    { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias.", prioridad: "ESENCIAL", tipo: "Consumible" },
+    { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado.", prioridad: "IMPORTANTE", tipo: "Consumible" },
+    { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo.", prioridad: "ÚTIL", tipo: "Consumible" },
+  ];
+  const [filterPrio, setFilterPrio] = React.useState([]);
+  const [filterTipo, setFilterTipo] = React.useState([]);
+  const togglePrio = (p) => setFilterPrio(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleTipo = (t) => setFilterTipo(s => s.includes(t) ? s.filter(x => x !== t) : [...s, t]);
+  const filtered = items.filter(i =>
+    (filterPrio.length === 0 || filterPrio.includes(i.prioridad)) &&
+    (filterTipo.length === 0 || filterTipo.includes(i.tipo))
+  );
+  const prioColor = { "ESENCIAL": "#d4755b", "IMPORTANTE": "#dbb98c", "ÚTIL": "#c49a6c" };
+  const tipoColor = { "Equipo": "#aa7c52", "Consumible": "#8a6240" };
+
   return (
     <div>
       <InfoBoxM>
         Kit Psilocybe cubensis. Todo incluido para empezar. La opción más autónoma y fácil para principiantes — no requiere equipo de esterilización ni conocimientos microbiológicos avanzados.
       </InfoBoxM>
 
-      <SectionTitleM>LISTA DE COMPRA — KIT BÁSICO</SectionTitleM>
-      {[
-        { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar." },
-        { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato)." },
-        { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente." },
-        { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%." },
-        { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean." },
-        { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias." },
-        { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante." },
-        { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado." },
-        { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo." },
-      ].map((item, i) => (
-        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+      <SectionTitleM>FILTRAR POR PRIORIDAD</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["ESENCIAL", "IMPORTANTE", "ÚTIL"].map(p => {
+          const active = filterPrio.includes(p);
+          return (
+            <button key={p} onClick={() => togglePrio(p)} style={{
+              background: active ? prioColor[p] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : prioColor[p],
+              border: `1.5px solid ${prioColor[p]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+      <SectionTitleM>FILTRAR POR TIPO</SectionTitleM>
+      <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+        {["Equipo", "Consumible"].map(t => {
+          const active = filterTipo.includes(t);
+          return (
+            <button key={t} onClick={() => toggleTipo(t)} style={{
+              background: active ? tipoColor[t] : "transparent",
+              color: active ? MUSHROOM_COLORS.bg : tipoColor[t],
+              border: `1.5px solid ${tipoColor[t]}`,
+              borderRadius: "16px", padding: "5px 12px",
+              fontSize: "11px", fontWeight: "bold", letterSpacing: "0.5px",
+              transition: "all 0.15s",
+            }}>{t}</button>
+          );
+        })}
+      </div>
+      {(filterPrio.length > 0 || filterTipo.length > 0) && (
+        <button onClick={() => { setFilterPrio([]); setFilterTipo([]); }} style={{
+          background: "transparent", color: MUSHROOM_COLORS.accent2, border: "none",
+          fontSize: "11px", marginBottom: "16px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleM>LISTA DE COMPRA — KIT BÁSICO ({filtered.length}/{items.length})</SectionTitleM>
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderLeft: `3px solid ${prioColor[item.prioridad]}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
             <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{item.item}</div>
             <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ display: "flex", gap: "6px", marginBottom: "6px", flexWrap: "wrap" }}>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: prioColor[item.prioridad], color: MUSHROOM_COLORS.bg, fontWeight: "bold", letterSpacing: "0.5px" }}>{item.prioridad}</span>
+            <span style={{ fontSize: "9px", padding: "2px 8px", borderRadius: "10px", background: "transparent", color: tipoColor[item.tipo], border: `1px solid ${tipoColor[item.tipo]}`, fontWeight: "bold" }}>{item.tipo}</span>
           </div>
           <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
           <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3 }}>{item.nota}</div>

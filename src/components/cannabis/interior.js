@@ -2,6 +2,13 @@
 
 function COMPRA() {
   const priorityColor = { "ESENCIAL": "#e63946", "IMPORTANTE": "#f4a261", "ÚTIL": "#52b788" };
+  const [filterPriority, setFilterPriority] = React.useState([]);
+  const [filterDonde, setFilterDonde] = React.useState([]);
+  const togglePriority = (p) => setFilterPriority(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleDonde = (d) => setFilterDonde(s => s.includes(d) ? s.filter(x => x !== d) : [...s, d]);
+  const matchesFilter = (item) =>
+    (filterPriority.length === 0 || filterPriority.includes(item.priority)) &&
+    (filterDonde.length === 0 || filterDonde.includes(item.donde));
   const dondeColor = {
     "Zamnesia": "#1a6b8a",
     "Amazon": "#8a5a1a",
@@ -251,49 +258,92 @@ function COMPRA() {
         </div>
       </div>
 
-      {/* Prioridad leyenda */}
-      <div style={{ display: "flex", gap: "12px", marginBottom: "20px" }}>
-        {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => (
-          <div key={label} style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-            <div style={{ width: "8px", height: "8px", borderRadius: "50%", background: color }} />
-            <span style={{ fontSize: "10px", color: "#74c69d" }}>{label}</span>
-          </div>
-        ))}
+      {/* Filtros clickables */}
+      <div style={{ marginBottom: "20px" }}>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR PRIORIDAD</div>
+        <div style={{ display: "flex", gap: "6px", marginBottom: "12px", flexWrap: "wrap" }}>
+          {[["ESENCIAL", "#e63946"], ["IMPORTANTE", "#f4a261"], ["ÚTIL", "#52b788"]].map(([label, color]) => {
+            const active = filterPriority.includes(label);
+            return (
+              <button key={label} onClick={() => togglePriority(label)} style={{
+                background: active ? color : "transparent",
+                color: active ? "#0a1a0f" : color,
+                border: `1.5px solid ${color}`,
+                borderRadius: "16px",
+                padding: "5px 12px",
+                fontSize: "11px",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+                transition: "all 0.15s",
+              }}>{label}</button>
+            );
+          })}
+        </div>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>FILTRAR POR DÓNDE COMPRAR</div>
+        <div style={{ display: "flex", gap: "6px", flexWrap: "wrap" }}>
+          {Object.entries(dondeColors).map(([label, c]) => {
+            const active = filterDonde.includes(label);
+            return (
+              <button key={label} onClick={() => toggleDonde(label)} style={{
+                background: active ? c.text : "transparent",
+                color: active ? c.bg : c.text,
+                border: `1.5px solid ${c.text}`,
+                borderRadius: "16px",
+                padding: "5px 12px",
+                fontSize: "11px",
+                fontWeight: "bold",
+                letterSpacing: "0.5px",
+                transition: "all 0.15s",
+              }}>{label}</button>
+            );
+          })}
+        </div>
+        {(filterPriority.length > 0 || filterDonde.length > 0) && (
+          <button onClick={() => { setFilterPriority([]); setFilterDonde([]); }} style={{
+            background: "transparent", color: "#74c69d", border: "none",
+            fontSize: "11px", marginTop: "10px", textDecoration: "underline", padding: 0,
+          }}>✕ Limpiar filtros</button>
+        )}
       </div>
 
-      {sections.map((section, si) => (
-        <div key={si} style={{ marginBottom: "24px" }}>
-          <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
-            {section.title}
-          </div>
-          {section.items.map((item, ii) => (
-            <div key={ii} style={{
-              background: "#0d1f14", border: "1px solid #1b4332",
-              borderRadius: "10px", padding: "14px", marginBottom: "10px",
-              borderLeft: `3px solid ${priorityColor[item.priority]}`,
-            }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-                <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
-                <div style={{ textAlign: "right", flexShrink: 0 }}>
-                  <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
-                  <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
-                </div>
-              </div>
-              <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "8px" }}>
-                {item.detail}
-              </div>
-              {item.cuando && (
-                <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>
-                  🕐 <span style={{ color: "#40916c" }}>Cuándo: </span>{item.cuando}
-                </div>
-              )}
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
-                <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
-              </div>
+      {sections.map((section, si) => {
+        const filteredItems = section.items.filter(matchesFilter);
+        if (filteredItems.length === 0) return null;
+        return (
+          <div key={si} style={{ marginBottom: "24px" }}>
+            <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "10px", paddingBottom: "6px", borderBottom: "1px solid #1b4332" }}>
+              {section.title}
             </div>
-          ))}
-        </div>
-      ))}
+            {filteredItems.map((item, ii) => (
+              <div key={ii} style={{
+                background: "#0d1f14", border: "1px solid #1b4332",
+                borderRadius: "10px", padding: "14px", marginBottom: "10px",
+                borderLeft: `3px solid ${priorityColor[item.priority]}`,
+              }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
+                  <div style={{ fontSize: "14px", color: "#d8f3dc", flex: 1, paddingRight: "10px" }}>{item.name}</div>
+                  <div style={{ textAlign: "right", flexShrink: 0 }}>
+                    <div style={{ fontSize: "13px", fontWeight: "bold", color: "#95d5b2" }}>{item.price}</div>
+                    <div style={{ fontSize: "9px", color: priorityColor[item.priority], marginTop: "2px" }}>{item.priority}</div>
+                  </div>
+                </div>
+                <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "8px" }}>
+                  {item.detail}
+                </div>
+                {item.cuando && (
+                  <div style={{ fontSize: "11px", color: "#52b788", marginBottom: "6px" }}>
+                    🕐 <span style={{ color: "#40916c" }}>Cuándo: </span>{item.cuando}
+                  </div>
+                )}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "4px" }}>
+                  <div style={{ fontSize: "11px", color: "#40916c" }}>⏳ {item.duracion}</div>
+                  {item.donde && <div style={{ fontSize: "10px", padding: "2px 8px", borderRadius: "10px", background: dondeColors[item.donde]?.bg, color: dondeColors[item.donde]?.text, border: `1px solid ${dondeColors[item.donde]?.border}` }}>📍 {item.donde}</div>}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
 }
