@@ -113,6 +113,25 @@
   <script type="text/babel">
     const { useState } = React;
 
+// PALETA CANNABIS (verde)
+const CANNABIS_COLORS = {
+  bg: "#0a1a0f", bg2: "#0d1f14", bg3: "#1a2a10", bg4: "#0d2a14",
+  border1: "#1b4332", border2: "#2d6a4f", borderAccent: "#40916c",
+  accent1: "#52b788", accent2: "#74c69d", accent3: "#95d5b2", accent4: "#b7e4c7", accent5: "#d8f3dc",
+  text: "#e8f5e9", textBright: "#d8f3dc",
+  gradient: "linear-gradient(135deg, #1b4332 0%, #2d6a4f 50%, #1b4332 100%)",
+  error: "#ff6b6b", errorBg: "#1a0a0a", errorBorder: "#4a1010",
+};
+
+// PALETA SETAS (marrón cálido)
+const MUSHROOM_COLORS = {
+  bg: "#0f0c08", bg2: "#1c1510", bg3: "#261c12", bg4: "#3d2810",
+  border1: "#4a3520", border2: "#6b4f30", borderAccent: "#8a6240",
+  accent1: "#8a6240", accent2: "#aa7c52", accent3: "#c49a6c", accent4: "#dbb98c", accent5: "#eed8b4",
+  text: "#f5e6d0", textBright: "#fdf5ea",
+  gradient: "linear-gradient(135deg, #3d2810 0%, #6b4520 50%, #3d2810 100%)",
+  error: "#d4755b", errorBg: "#1a0c08", errorBorder: "#5a3a20",
+};
 
 const phases = [
   { id: "compra", emoji: "🛒", title: "Compra", subtitle: "Lista completa" },
@@ -124,6 +143,7 @@ const phases = [
   { id: "poda", emoji: "✂️", title: "Poda & LST", subtitle: "Opcional" },
   { id: "floracion", emoji: "🌸", title: "Floración", subtitle: "Días 35–80" },
   { id: "cosecha", emoji: "🪴", title: "Cosecha", subtitle: "Día ~80" },
+  { id: "plagas_int", emoji: "🐛", title: "Plagas", subtitle: "Interior" },
 ];
 
 const Step = ({ num, text, why, warning }) => (
@@ -976,6 +996,7 @@ function VEGETATIVA() {
       <Step num={9} text="Cómo ajustar el pH: llena la regadera, añade unas gotas de pH Down, mide con el pHmetro. Añade más gotas si hace falta hasta llegar a 6.2–6.5. Haz esto en cada riego." why="El pH es la acidez del agua. Las plantas solo pueden absorber nutrientes en un rango concreto de pH. Si el pH está mal, los nutrientes están ahí pero la planta no puede tomarlos. Es como tener comida en un bote con tapa. El pHmetro no es opcional." />
       <Step num={10} text="Semana 3: añade BioBizz Grow a 1ml por litro de agua. Solo eso." />
       <Step num={11} text="Semana 4: sube a 2ml/L si la planta se ve verde oscuro y sana. Si las hojas están amarillentas, quédate en 1ml." />
+      <Step num={12} text="Técnica avanzada (opcional): mide el pH del agua de escorrentía (runoff). Cuando riegues, coloca un plato bajo la maceta y recoge el agua que drena. Mide su pH con tu pHmetro." why="Si el pH del runoff difiere más de 0.5 puntos del agua que entró, hay acumulación de sales (nutrientes) que no el sustrato no absorbe. Esto causa bloqueo de nutrientes (lockout). Solución: flush con agua a pH 6.3 sin nutrientes durante 2-3 días." />
 
       <SectionTitle>LEER LA PLANTA (no necesitas experiencia, solo observación)</SectionTitle>
       <Step num={12} text="Hojas verde oscuro, firmes y turgentes = planta feliz. No cambies nada." />
@@ -1214,6 +1235,69 @@ function COSECHA() {
           Con 3 cosechas de interior al año (80-150g cada una) el consumo y producción suelen equilibrarse. Los botes de cristal bien curados son más que suficientes. Usa el vacío solo si acumulas más de lo que consumes, y la congelación solo para el excedente de una gran cosecha exterior.
         </div>
       </div>
+    </div>
+  );
+}
+
+function PLAGAS_INT() {
+  return (
+    <div>
+      <InfoBox>
+        En interior, las plagas menos comunes que en exterior pero pueden aparecer, especialmente con sustratos orgánicos. La buena noticia: son fáciles de detectar y eliminar con rapidez. Prevención desde el inicio es la mejor estrategia.
+      </InfoBox>
+
+      <SectionTitle>CHECKLIST DE INSPECCIÓN SEMANAL</SectionTitle>
+      {[
+        "Mira el envés de todas las hojas jóvenes — fungus gnats y ácaros se esconden ahí.",
+        "Comprueba la base del tallo y el sustrato — busca mosquitos pequeños volando.",
+        "Inspecciona las puntas de las hojas — rayones plateados = trips.",
+        "Agujeros irregulares en hojas = ya hay problema, actúa inmediatamente.",
+        "Pon trampas amarillas pegajosas cerca de la planta — detectan plagas antes de que se propaguen.",
+      ].map((item, i) => (
+        <div key={i} style={{ display: "flex", gap: "10px", background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "8px", padding: "10px 12px", marginBottom: "6px" }}>
+          <div style={{ color: "#52b788", flexShrink: 0 }}>☐</div>
+          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{item}</div>
+        </div>
+      ))}
+
+      <SectionTitle>LAS 3 PLAGAS PRINCIPALES EN INTERIOR</SectionTitle>
+      {[
+        {
+          nombre: "🪰 Fungus gnats (mosquitos del sustrato)", nivel: "ALTO", color: "#e63946",
+          descripcion: "Mosquitos pequeños (2-3mm) que viven en sustratos orgánicos húmedos. Las larvas se comen las raíces, debilitando la planta. Los adultos no hacen daño directo pero indican un problema.",
+          deteccion: "Mosquitos pequeños volando alrededor de la planta. Larvas blancas con cabeza negra en el sustrato (saca un poco y mira). Planta débil sin razón aparente.",
+          prevencion: "Sustrato ligeramente seco entre riegos. No riegues excesivamente. Trampas amarillas pegajosas — los adultos se quedan pegados y no ponen huevos nuevos.",
+          tratamiento: "Bacillus israelensis (Bti) rociado sobre el sustrato. Mata las larvas sin afectar la planta. 2-3 aplicaciones cada 5 días. Mantén el sustrato más seco mientras hay infestación. Los nematodos Steinernema feltiae también funcionan bien pero son más caros.",
+        },
+        {
+          nombre: "🕷️ Spider mites (araña roja)", nivel: "ALTO", color: "#e63946",
+          descripcion: "Ácaros microscópicos (0.5mm) que viven en el envés de las hojas. Chupan la savia dejando puntos amarillos. Con infestación fuerte pueden defoliar una planta en una semana.",
+          deteccion: "Puntos amarillos/blancos en hojas. Telarañas finas en el envés (úsalos con lupa). Planta amarillea rápidamente sin razón clara.",
+          prevencion: "Humedad relativa 50–70%. Buen flujo de aire. Evita temperaturas por encima de 28°C. Inspección semanal del envés de hojas.",
+          tratamiento: "Jabón potásico 5ml/L en spray, cubriendo bien el envés. Aplica al atardecer cuando la luz está apagada. Repite cada 3 días durante 2 semanas. Si no mejora, añade aceite de neem 2ml/L. En último extremo, Spinosad.",
+        },
+        {
+          nombre: "🐛 Trips", nivel: "MEDIO", color: "#f4a261",
+          descripcion: "Insectos diminutos (1-2mm) que dejan rayones plateados en las hojas mientras chupan el contenido celular. No son tan destructivos como los ácaros pero se propagan rápido.",
+          deteccion: "Rayones o puntos plateados en el envés de hojas. Pequeños insectos negros o marrones visibles si miras con lupa. Hojas moteadas y punteadas.",
+          prevencion: "Buena circulación de aire. Humedad controlada. Trampas azules pegajosas (los trips prefieren el azul).",
+          tratamiento: "Spinosad en spray. Es un insecticida natural muy efectivo contra trips. 2-3 aplicaciones cada 3-4 días. Alternativamente, jabón potásico primero, luego Spinosad si no baja.",
+        },
+      ].map((plaga, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: `1px solid ${plaga.color}44`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+            <div style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc" }}>{plaga.nombre}</div>
+            <div style={{ fontSize: "9px", color: plaga.color, letterSpacing: "1px", fontWeight: "bold" }}>{plaga.nivel}</div>
+          </div>
+          <div style={{ fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginBottom: "10px" }}>{plaga.descripcion}</div>
+          {[["🔍 Cómo detectar", plaga.deteccion], ["🛡️ Prevención", plaga.prevencion], ["💊 Tratamiento", plaga.tratamiento]].map(([titulo, texto]) => (
+            <div key={titulo} style={{ marginBottom: "8px" }}>
+              <div style={{ fontSize: "10px", color: "#52b788", letterSpacing: "1px", marginBottom: "3px" }}>{titulo}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{texto}</div>
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
@@ -1557,6 +1641,22 @@ function PODA() {
       </div>
 
       <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>ScrOG — Screen of Green (para fotoperiodo)</div>
+        <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
+          Red de cultivo horizontal que mantiene la altura bajo control y maximiza los puntos de floración bajo una luz. Solo viable para fotoperiodo — tienes tiempo para entrenar. No para autoflorecientes.
+        </div>
+        <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CÓMO HACERLO</div>
+        <Step num={1} text="Fotoperiodo: cuando la planta llegue a semana 3–4 de vegetativa (20–30cm de altura), instala la red a 20–25cm por encima de la planta." why="Necesitas espacio bajo la red para que crezca. Demasiado alta = desperdicio de la zona; demasiado baja = la planta no cabe." />
+        <Step num={2} text="Red: malla elástica 5×5cm o hilo de jardinería formando una rejilla. Cuesta ~20-30€ o hazla tú con cuerda." />
+        <Step num={3} text="Cuando las ramas crecen hacia la luz, pasa cada rama que sale de la red por debajo de ella, horizontalmente. El objetivo es llenar toda la red de puntas de crecimiento a la misma altura." />
+        <Step num={4} text="A medida que las ramas nuevas crecen hacia arriba, mételas bajo la red también. Al final tendrás una planta plana como una sábana." />
+        <Step num={5} text="Cuando el 80% de la red está llena de puntas verdes, cambia a 12/12h." why="Ahora todos los puntos están a la misma distancia de la luz y florecerán uniformemente. El rendimiento es 30-40% mayor que sin ScrOG." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Material: </span>Red de ScrOG (20-30€) o cuerda de jardinería y dos soportes, o simplemente clips fijando hilo a los lados del armario. No es complicado.
+        </div>
+      </div>
+
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
         <div style={{ fontSize: "14px", fontWeight: "bold", color: "#74c69d", marginBottom: "8px" }}>Defoliación leve (quitar hojas que bloquean luz)</div>
         <div style={{ fontSize: "13px", color: "#b7e4c7", lineHeight: "1.6", marginBottom: "10px" }}>
           Consiste en quitar hojas grandes que hacen sombra a los cogollos que están creciendo debajo. No es cortar ramas — solo quitar hojas individualmente.
@@ -1806,6 +1906,36 @@ function SEMILLAS_EXT() {
       <Step num={1} text="Primera temporada: 2–3 plantas máximo." why="Con más plantas tienes más trabajo de riego, más tratamientos, más visitas. Para aprender el proceso 2-3 plantas es suficiente y manejable. Con experiencia puedes escalar." />
       <Step num={2} text="Germina siempre 1-2 semillas extra de reserva." why="La tasa de germinación incluso con buenas semillas es del 80-90%. Tener reservas evita quedarte sin plantas si alguna falla en la germinación o en las primeras semanas." />
       <Step num={3} text="Guarda las semillas sobrantes en bote de cristal hermético con sílica gel en la nevera. Aguantan 2-5 años perfectamente." />
+
+      <SectionTitle color="#e63946">⚠️ HERMAFRODITAS — QUÉ SON Y QUÉ HACER</SectionTitle>
+      <div style={{ background: "#1a0a0a", border: "1px solid #4a1010", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>Definición</div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", marginBottom: "12px", lineHeight: "1.5" }}>
+          Una planta hermafrodita desarrolla tanto pistilos (órgano sexual femenino) como sacos de polen (órgano sexual masculino) en la misma planta. Aunque las semillas sean feminizadas, bajo estrés pueden hermafroditar. Cuando hermafroditan, polinizan sus propios cogollos y generan semillas — arruinando la cosecha.
+        </div>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>Causas del hermafroditismo</div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", marginBottom: "12px", lineHeight: "1.5" }}>
+          <strong>Genética débil:</strong> algunas variedades tendentes a hermafroditar bajo estrés (es raro pero pasa).<br/>
+          <strong>Calor extremo:</strong> temperaturas {'>'}30°C sostenidas en floración pueden disparar el estrés.<br/>
+          <strong>Falta de agua:</strong> sequía extrema en plena floración causa estrés severo.<br/>
+          <strong>Luz nocturna:</strong> si la planta recibe ráfagas de luz durante la noche en floración, interpreta que el ciclo se rompió y puede hermafroditar como reacción evolutiva (crear semillas antes de morir).
+        </div>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>Cómo detectarlos</div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", marginBottom: "12px", lineHeight: "1.5" }}>
+          Observa el cogollo durante la floración. Los sacos de polen parecen <strong>pequeños plátanos o conos</strong> entre los pistilos blancos y normales. Están en las axilas y nudos. Si ves estas estructuras, la planta es hermafrodita.
+        </div>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>Qué hacer si encuentras uno</div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", marginBottom: "8px", lineHeight: "1.5" }}>
+          <strong>Opción 1 — Eliminar la planta (más seguro):</strong> si es temprano (semana 2–4 de floración), elimina toda la planta inmediatamente. Un solo saco que suelte polen puede polinizar todas tus plantas y todo el bosque cercano. No merece la pena.
+        </div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", marginBottom: "12px", lineHeight: "1.5" }}>
+          <strong>Opción 2 — Remover sacos manualmente (alto riesgo):</strong> si está muy avanzada la floración (semana 8+) y los sacos son pocos, puedes intentar retirarlos manualmente cada día con unas pinzas, con guantes gruesos, en las visitas. El riesgo es que se rompa un saco sin verlo y hagas más daño. Solo si tienes mucha experiencia.
+        </div>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>Consecuencia de no actuar</div>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", lineHeight: "1.5" }}>
+          Si no actúas y los sacos liberan polen, toda tu cosecha estará llena de semillas. Los cogollos serán inutilizables — cada bocado tiene una semilla. Meses de trabajo por nada. Es la peor forma de perder una cosecha.
+        </div>
+      </div>
     </div>
   );
 }
@@ -2090,6 +2220,7 @@ function RIEGO_EXT() {
       <Step num={2} text="Vierte lentamente alrededor de la base de la planta — nunca encima de las hojas ni del tallo." why="El agua en las hojas con sol directo actúa como lupa y puede quemarlas. El agua en el tallo puede causar podredumbre en la base. Siempre al suelo, alrededor de la planta." />
       <Step num={3} text="Riega hasta que el suelo no absorba más y quede agua en la superficie. Para, espera que se absorba. Si sigue seco, añade más." why="Una riega profunda y completa es mejor que varias superficiales. El agua debe llegar a las raíces más profundas, no solo mojar los primeros centímetros." />
       <Step num={4} text="Nunca riegues entre las 12h y las 16h en verano." why="El agua se evapora antes de llegar a las raíces y las gotas en las hojas pueden quemar con el sol de mediodía." />
+      <Step num={5} text="En exterior con macetas (vs tierra): observa el agua de drenaje que sale por los agujeros de abajo si riegas con abundancia. Si es turbia o tiene olor, puede haber acumulación de sales — significa que el pH interior está bloqueando nutrientes." why="Menos crítico que interior porque el agua de lluvia lava el sustrato naturalmente. Pero si los síntomas no claaran (amarilleo sin razón), la raíz puede estar en bloqueo de nutrientes acumulados." />
 
       <SectionTitle>FRECUENCIA DE VISITAS SIN RIEGO AUTOMÁTICO</SectionTitle>
       <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
@@ -2203,6 +2334,13 @@ function PLAGAS() {
           prevencion: "No uses insecticidas de amplio espectro — matas también a las mariquitas y otros predadores que te ayudan a controlarlos. El ecosistema del bosque se autorregula.",
           tratamiento: "Jabón potásico 5ml/L en spray al atardecer cubriendo bien el envés. 2-3 aplicaciones cada 3 días. Si no mejora, añade aceite de neem 2ml/L.",
         },
+        {
+          nombre: "🍯 Oídio — moho blanco", nivel: "ALTO (sept-oct)", color: "#f4a261",
+          descripcion: "Hongo muy común en clima mediterráneo en otoño. Florece cuando hay noches frías (10-15°C) y días cálidos (20-25°C). Se ve como polvo blanco harinoso en hojas y cogollos.",
+          deteccion: "Polvo blanco harinoso en el envés de hojas y en las sugar leaves alrededor de los cogollos. Empieza en hojas bajas y sube. Puede cubrir el cogollo entero si no actúas.",
+          prevencion: "Elige variedades resistentes desde la compra. Buena circulación de aire entre las ramas. Evita regar las hojas por la noche. Visitas semanales en septiembre para detectarlo temprano.",
+          tratamiento: "Bicarbonato sódico 5g/L + jabón potásico 5ml/L en spray aplicado al atardecer. Cubre todas las hojas bien. Aplica cada 5-7 días hasta desaparecer. Elimina hojas muy afectadas manualmente. En último recurso, azufre en polvo (solo antes de floración avanzada, no al final).",
+        },
       ].map((plaga, i) => (
         <div key={i} style={{ background: "#0d1f14", border: `1px solid ${plaga.color}44`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
@@ -2301,6 +2439,228 @@ function COSECHA_EXT() {
   );
 }
 
+function DIAGNOSTICO() {
+  return (
+    <div>
+      <InfoBox>
+        Cuando tu planta empieza a mostrar síntomas (hojas amarillas, manchas, puntas quemadas), el primer paso es diagnosticar correctamente. Estos síntomas pueden venir de 5 fuentes: pH incorrecto, deficiencia de nutrientes, exceso de nutrientes, riego, o luz. Esta guía te ayuda a identificar cuál es el problema real.
+      </InfoBox>
+
+      <SectionTitle color="#52b788">🔑 REGLA DE ORO</SectionTitle>
+      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.7" }}>
+          Antes de añadir o restar nutrientes, <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>mide el pH del agua que entra y el runoff (agua que sale)</span>. Muchos problemas que parecen "falta de nutrientes" son en realidad pH incorrecto que bloquea los nutrientes. Si el pH está mal, añadir más nutrientes empeora el problema.
+        </p>
+      </div>
+
+      <SectionTitle>DEFICIENCIAS DE NUTRIENTES — GUÍA VISUAL</SectionTitle>
+      {[
+        { elemento: "🔴 Nitrógeno (N)", zona: "Hojas bajas/viejas", sintoma: "Amarilleo progresivo, empezando por las hojas más viejas. El tallo puede ponerse rojo/morado.", causa: "Dosis de nutrientes insuficiente o pH fuera del rango 6.0-7.0 (bloquea N).", solucion: "Aumenta Bio Grow a 1ml/L más. Mide pH — si está >7.0, bájalo con pH Down. Espera 3-5 días para ver mejora." },
+        { elemento: "🟠 Fósforo (P)", zona: "Toda la planta", sintoma: "Hojas moradas, rojas o rojizas. Pecíolos (tallos de hojas) muy rojos. Crecimiento ralentizado.", causa: "Baja temperatura (<15°C) o pH incorrecto (mejor a 6.5). Exterior en otoño temprano.", solucion: "Mide pH ajusta a 6.2-6.5. Si ya estás en floración y es otoño, es normal — espera a que suba temperatura. Si es interior, sube temp a 22°C mínimo." },
+        { elemento: "🟡 Potasio (K)", zona: "Hojas viejas", sintoma: "Bordes de hojas viejas se vuelven marrones y se tuercen hacia arriba. Parece quemadura desde los bordes.", causa: "Deficiencia de K o pH bloqueado (mejor 6.2-6.5). Común al final de floración.", solucion: "Aumenta Bio Bloom a 1ml/L más. Mide pH. Si está al final de floración, es normal — el plant está terminando. Reduce dosis agua sola las 2 últimas semanas." },
+        { elemento: "💚 Magnesio (Mg)", zona: "Hojas medias", sintoma: "Clorosis intervenal: venas verdes pero el espacio entre las venas se vuelve amarillo. Las venas siguen siendo verdes oscuro.", causa: "Deficiencia de Mg o pH incorrecto. Puede ocurrir si cambias el nivel de EC (concentración de sales) demasiado rápido.", solucion: "Solución rápida: 1ml/L sulfato de magnesio (MgSO4) en el riego. O aumenta dosis de Bio Grow/Bloom que ya llevan Mg. En 3-7 días debería mejorar." },
+        { elemento: "⚪ Calcio (Ca)", zona: "Hojas nuevas/ápice", sintoma: "Manchitas marrones o negras en hojas nuevas. Los nuevos brotes pueden deformarse. Aspecto de 'quemadura leve' en el ápice.", causa: "Deficiencia de Ca (raro si usas agua grifo decente) o pH demasiado bajo (<6.0).", solucion: "Sube pH a 6.2-6.5. Si sigue así 1 semana, añade cal agrícola (0.5g/L) al agua. Raramente necesario con BioBizz." },
+        { elemento: "🔸 Hierro (Fe)", zona: "Hojas nuevas", sintoma: "Amarilleo entre venas en hojas nuevas (opuesto a Mg). Las venas nuevas siguen verdes pero el resto amarilla.", causa: "pH demasiado alto (>7.0) — bloquea la absorción de Fe aunque esté presente.", solucion: "Baja pH a 6.2-6.5 con pH Down. El Fe debería desbloquearse en 3-5 días. Rara vez necesitas añadir Fe extras si el pH es correcto." },
+      ].map((def, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>{def.elemento}</div>
+          {[["Dónde aparece", def.zona], ["Síntoma", def.sintoma], ["Causa probable", def.causa], ["Solución", def.solucion]].map(([k, v]) => (
+            <div key={k} style={{ marginBottom: "8px" }}>
+              <div style={{ fontSize: "10px", color: "#52b788", letterSpacing: "1px", marginBottom: "2px" }}>{k.toUpperCase()}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{v}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <SectionTitle>TOXICIDAD — EXCESO DE NUTRIENTES</SectionTitle>
+      {[
+        { problema: "🔥 Quemadura de nutrientes (Nutrient burn)", sintoma: "Puntas de hojas marrones y crujientes. Empieza en hojas viejas, sube hacia las nuevas. Bordes quemados como si tocara fuego.", causa: "Dosis de nutrientes demasiado alta. Acumulación de sales en el sustrato (EC muy alto).", solucion: "FLUSH INMEDIATAMENTE: riega con agua sola a pH 6.3 sin nutrientes durante 2-3 riegos consecutivos. Reduce la dosis de nutrientes 30-50%. Espera 7 días para volver a nutrientes normales." },
+        { problema: "🚫 Bloqueo de nutrientes (Nutrient lockout)", sintoma: "Múltiples síntomas a la vez: hojas amarillas, moradas, puntas quemadas. Aspecto general de 'algo anda mal' pero sin patrón claro.", causa: "pH completamente incorrecto (fuera del rango 5.8-7.0). Aunque los nutrientes estén ahí, la planta no puede tomarlos.", solucion: "MIDE INMEDIATAMENTE el pH del agua que entra y el runoff. Ajusta a 6.2-6.5. Flush con agua a pH 6.3 durante 2-3 riegos. En 5-10 días debería recuperarse si el pH era el problema." },
+      ].map((tox, i) => (
+        <div key={i} style={{ background: "#1a0a0a", border: "1px solid #4a1010", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "14px", fontWeight: "bold", color: "#ff6b6b", marginBottom: "8px" }}>{tox.problema}</div>
+          {[["Síntoma", tox.sintoma], ["Causa", tox.causa], ["Solución", tox.solucion]].map(([k, v]) => (
+            <div key={k} style={{ marginBottom: "8px" }}>
+              <div style={{ fontSize: "10px", color: "#e63946", letterSpacing: "1px", marginBottom: "2px" }}>{k.toUpperCase()}</div>
+              <div style={{ fontSize: "12px", color: "#c9a0a0", lineHeight: "1.5" }}>{v}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <SectionTitle>PROBLEMAS DE RIEGO</SectionTitle>
+      {[
+        { problema: "💧 Overwatering (exceso de agua)", sintoma: "Hojas caídas y mustias aunque el sustrato esté mojado. Olor desagradable en maceta/sustrato. Crecimiento lento.", causa: "Riego demasiado frecuente. Las raíces se ahogan sin oxígeno.", solucion: "Deja de regar. Espera 3-5 días a que el sustrato se seque completamente. Exterior: asegúrate de que hay buen drenaje en el hoyo. Interior: airea el sustrato si es posible (abre ventilador). La planta se recupera en 5-7 días." },
+        { problema: "💀 Underwatering (falta de agua)", sintoma: "Hojas caídas pero el sustrato está SECO. Bordes de hojas secas y crujientes. Crecimiento lentísimo.", causa: "No riegas lo suficiente. La planta no llega a agua.", solucion: "Riega abundantemente hasta que salga agua por los agujeros. Espera a que el sustrato se seque un poco (superficie seca, 2-3cm dentro húmedo) antes de regar de nuevo. Interior: aumenta frecuencia. Exterior: julio puede ser cada 1-2 días." },
+      ].map((prob, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>{prob.problema}</div>
+          {[["Síntoma", prob.sintoma], ["Causa", prob.causa], ["Solución", prob.solucion]].map(([k, v]) => (
+            <div key={k} style={{ marginBottom: "8px" }}>
+              <div style={{ fontSize: "10px", color: "#52b788", letterSpacing: "1px", marginBottom: "2px" }}>{k.toUpperCase()}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{v}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+
+      <SectionTitle>PROBLEMAS DE LUZ</SectionTitle>
+      {[
+        { problema: "📏 Luz demasiado cerca", sintoma: "Quemadura de hojas: manchas blancas/grises en el centro de las hojas altas. Hojas crujientes.", causa: "LED/HPS a menos de 20-25cm. El calor quema el tejido.", solucion: "Sube la luz inmediatamente. Prueba con la mano: si quema tu mano, quema la planta. Distancia mínima 25-30cm para LED. Espera 7 días a que se recupere." },
+        { problema: "🌱 Luz demasiado lejos", sintoma: "Planta muy alta y delgada. Tallos largos y débiles. Entrenudos grandes (distancia entre nudos).", causa: "LED/HPS a más de 70cm. La planta se estira buscando luz.", solucion: "Baja la luz a 50-60cm. La planta se recupera en 1-2 semanas y los nuevos brotes crecen más compactos. Mejor control de altura." },
+      ].map((luz, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>{luz.problema}</div>
+          {[["Síntoma", luz.sintoma], ["Causa", luz.causa], ["Solución", luz.solucion]].map(([k, v]) => (
+            <div key={k} style={{ marginBottom: "8px" }}>
+              <div style={{ fontSize: "10px", color: "#52b788", letterSpacing: "1px", marginBottom: "2px" }}>{k.toUpperCase()}</div>
+              <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.5" }}>{v}</div>
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function EXTRACCIONES() {
+  return (
+    <div>
+      <InfoBox>
+        El trim (recortes de sugar leaves sin resina) no es basura — es material de valor que puedes transformar en hash, mantequilla, aceite u otros productos. Esta guía cubre los métodos más prácticos y seguros para aprovechar tu trim.
+      </InfoBox>
+
+      <SectionTitle>ANTES DE EMPEZAR</SectionTitle>
+      <Step num={1} text="Guarda el trim en bolsas herméticas en el congelador desde el momento que lo separas." why="El frío conserva los cannabinoides intactos. El trim a temperatura ambiente pierde potencia rápidamente." />
+      <Step num={2} text="Solo usa métodos sin solventes químicos (seguridad)." />
+      <Step num={3} text="Todas estas técnicas requieren decarboxilación si vas a hacer edibles (mantequilla, aceite)." />
+
+      <SectionTitle>MÉTODO 1: HASH EN SECO (Dry Sift)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>La técnica más simple: tamiz + movimiento + frío</div>
+        <Step num={1} text="Necesitas: tamiz de malla 73–120µm (puedes comprarlo en Amazon, ~10€), bolsa grande, y el trim congelado." />
+        <Step num={2} text="Mete el trim congelado en una bolsa grande. Ciérrala." />
+        <Step num={3} text="Coloca el tamiz sobre una bandeja o plato blanco limpio." />
+        <Step num={4} text="Sobre el tamiz, pon el trim congelado. Haz movimientos circulares suaves con los dedos — frota el trim contra la malla." />
+        <Step num={5} text="Los tricomas (cabezas de resina) caen a través de la malla a la bandeja. El trim se queda arriba." why="El frío mantiene los tricomas quebradizos — se desprenden fácilmente. A temperatura ambiente son pegajosos y se quedan en el trim." />
+        <Step num={6} text="Recoge el polvo blanco que cae (eso es kief casi puro). La proporción es típicamente 1-2g de hash por cada 10g de trim seco." />
+        <Step num={7} text="Prensa el kief ligeramente con una cuchara caliente (dabber) o con una pequeña prensa manual — forme una bola o pastilla compacta." />
+        <Step num={8} text="Cura en bote hermético a oscuridad durante 1-2 semanas. El hash seco se vuelve más potente con el tiempo." why="Durante el curado ocurren conversiones químicas que suavizan el sabor y estabilizan la estructura." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Resultado: </span>Hash en seco color marrón claro, sabor fuerte, se puede fumar o vaporizar. Muy fácil de hacer.
+        </div>
+      </div>
+
+      <SectionTitle>MÉTODO 2: HASH DE AGUA (Bubble Hash)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>Más trabajo pero resultado más limpio y potente</div>
+        <Step num={1} text="Necesitas: dos baldes (5-10L), hielo, agua, bolsas de burbujas (bubble bags, ~30€ un set), colador de tela." />
+        <Step num={2} text="Llena un balde con agua fría (2L) y hielo (mucho hielo). Pon el trim congelado dentro." />
+        <Step num={3} text="Agita vigorosamente durante 15-20 minutos. El hielo y el movimiento hacen que los tricomas se desprendan y caigan al agua." />
+        <Step num={4} text="Mete las bubble bags en orden de micrones (empezando por la más gruesa) dentro del segundo balde vacío. Vierte lentamente el agua con trim en las bolsas." why="Las bolsas retienen diferentes tamaños de partículas. Cada bolsa recoge hash de diferente calidad (pureza)." />
+        <Step num={5} text="El material más fino y puro queda en las bolsas más finas (última bolsa). Eso es el hash." />
+        <Step num={6} text="Recoge el hash de cada bolsa con una espátula. Aprieta suavemente para eliminar agua." />
+        <Step num={7} text="Deja secar en una bandeja en lugar oscuro y con airflow durante 2-3 semanas. Remueve cada 2-3 días para secar uniformemente." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Resultado: </span>Hash de agua color marrón oscuro/negro, muy puro y potente, sabor limpio. Se fuma, vaporiza o derrite (rosin).
+        </div>
+      </div>
+
+      <SectionTitle>MÉTODO 3: MANTEQUILLA CANNÁBICA (Edibles)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>Convierte trim en mantequilla para brownies, galletas, etc.</div>
+        <Step num={1} text="PASO IMPRESCINDIBLE - Decarboxilación: calienta el trim en el horno a 110°C durante 45 minutos en una bandeja forrada con papel." why="Sin decarboxilación los cannabinoides THCA y CBDA no se activan — no tendrías efecto. La decarb convierte THCA → THC." />
+        <Step num={2} text="Necesitas: mantequilla (200g por cada 30g de trim), una olla, un termómetro (importante), colador de tela fina." />
+        <Step num={3} text="Derrite la mantequilla a fuego bajo (máximo 90°C, no debe humear)." />
+        <Step num={4} text="Añade el trim decarboxilado a la mantequilla derretida. Mezcla bien." />
+        <Step num={5} text="Mantén a 75-85°C durante 2-4 horas (lento y bajo = mejor). Remueve cada 15-20 minutos." why="La infusión a baja temperatura es clave — el calor alto degrada los cannabinoides. Un termómetro es vital." />
+        <Step num={6} text="Cuela con la tela fina en un recipiente limpio. Exprime bien el trim para extraer toda la mantequilla." />
+        <Step num={7} text="Deja reposar en la nevera hasta que la mantequilla se solidifique. La sustancia oscura que cae al fondo es agua + impurezas — descártala." />
+        <Step num={8} text="La mantequilla clara de arriba es tu 'cannabutter' lista. Úsala en cualquier receta de repostería (chocolate, brownies, galletas)." why="Funciona mejor en recetas con grasa (mantequilla, chocolate). En bebidas calientes (té) funciona pero el sabor es fuerte." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Resultado: </span>Mantequilla infusionada lista para edibles. Sabor más suave que fumar. Efecto más duradero (4-6h vs 2-3h al fumar).
+        </div>
+      </div>
+
+      <SectionTitle color="#e63946">⚠️ PRECAUCIONES DE SEGURIDAD</SectionTitle>
+      <div style={{ background: "#1a0a0a", border: "1px solid #4a1010", borderRadius: "10px", padding: "14px" }}>
+        <div style={{ fontSize: "12px", color: "#c9a0a0", lineHeight: "1.6" }}>
+          <strong>NO uses solventes:</strong> butano, hexano, acetona — son tóxicos, explosivos y dejan residuos peligrosos.<br/>
+          <strong>Ventilación:</strong> si decarboxilas, pon el horno en ventilación buena — tendrá olor fuerte.<br/>
+          <strong>Temperatura:</strong> nunca expongas cannabis a más de 110°C sin estar en agua/grasa (riesgo de quemar cannabinoides).<br/>
+          <strong>Almacenaje:</strong> guarda edibles y extracciones fuera del alcance de niños y mascotas.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FAQ() {
+  return (
+    <div>
+      <InfoBox>
+        Preguntas comunes de cultivadores principiantes. Si tu situación no está aquí, navega al Diagnóstico para síntomas más específicos.
+      </InfoBox>
+
+      <SectionTitle>PROBLEMAS DE CRECIMIENTO</SectionTitle>
+      {[
+        { q: "Mi planta está amarilla. ¿Qué hago?", r: "Tres causas principales: 1) Deficiencia de N (hojas bajas amarillas) — aumenta Bio Grow. 2) pH incorrecto — mide pH, ajusta a 6.2-6.5. 3) Edad (últimas semanas floración) — es normal. Primero mide pH, luego añade nutrientes si hace falta." },
+        { q: "La planta no crece nada. Está parada hace 2 semanas.", r: "Causa #1: Overwatering — deja secar completamente 3-5 días. Causa #2: Luz demasiado lejos — bájala a 50-60cm. Causa #3: Temperatura <18°C — sube a 22°C mínimo. Causa #4: Suelo encharcado/sin drenaje — en exterior verifica que el hoyo drena bien." },
+        { q: "¿Cuándo cosechar? ¿Cómo sé que está lista?", r: "Interior: mira los tricomas con lupa de aumento. 60-70% lechosos (blancos) = primer punto de cosecha, efecto energético. 80-90% lechosos = punto ideal. Algunos ámbar = más sedante. Exterior: espera a 70-80% lechosos, o cosecha antes si lluvia inminente." },
+        { q: "Las hojas están rizadas hacia arriba. ¿Qué es?", r: "Calor o falta de agua. Mide temperatura — si está >28°C, sube extractor. Si el sustrato está seco, riega. Si es exterior, es normal en días muy calurosos — se recupera por la noche." },
+        { q: "Las hojas están colgando/droopy. Acababa de regar.", r: "Overwatering. El sustrato está muy mojado y las raíces sin oxígeno. Deja de regar 5 días. Abre ventilador si es interior. La planta se recupera." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+        </div>
+      ))}
+
+      <SectionTitle>PROBLEMAS DE NUTRIENTES Y pH</SectionTitle>
+      {[
+        { q: "¿Debo medir el pH? ¿Es realmente necesario?", r: "SÍ. Es la causa raíz de 50% de los problemas. Si el pH está mal, los nutrientes están ahí pero bloqueados. El pHmetro cuesta 20€ y vale cada céntimo. Interior: 6.2-6.5. Exterior: 6.0-7.0. Sin medidor estarás disparando a ciegas." },
+        { q: "¿Qué es el runoff? ¿Debo medirlo?", r: "Agua que drena por los agujeros de abajo cuando riegas. Mide su pH con tu pHmetro. Si difiere >0.5 puntos del agua que entraste, hay bloqueo de nutrientes (acumulación de sales). Solución: flush 2-3 días con agua sola a pH 6.3." },
+        { q: "Añadí nutrientes y empeó todo. ¿Qué hago?", r: "Probablemente nutrient burn. PARA de añadir nutrientes inmediatamente. Haz un flush: riega con agua sola a pH 6.3 durante 2-3 riegos consecutivos. Luego vuelve a nutrientes con dosis 50% menor." },
+        { q: "En exterior el pH sube solo en el depósito. ¿Qué es?", r: "Algas. El agua llena en un depósito abierto y expuesto a luz crece algas — cambiar pH. Solución: cubre el depósito con tapa opaca o bolsa negra. Las algas mueren sin luz. O: cambia el agua cada 2-3 días." },
+        { q: "¿Qué hago si no tengo acceso a pH Down en exterior?", r: "Urgencia: usa zumo de limón (ácido cítrico) — baja pH naturalmente. 2-3 gotas por litro. No es exacto pero funciona. Para la próxima: lleva pH Down de casa en una botella pequeña (cuesta 5€)." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+        </div>
+      ))}
+
+      <SectionTitle>PROBLEMAS DE SETUP Y CLIMA</SectionTitle>
+      {[
+        { q: "El extractor no crea presión negativa. ¿Por qué?", r: "Causas: 1) Tubo no sellado bien — revisa que no haya fugas de aire. 2) Filtro de carbón saturado — cámbialo. 3) Extractor muy débil — actualiza a uno más potente. 4) Entrada de aire obstruida — asegúrate que entra aire (rejilla abierta en la puerta o pared)." },
+        { q: "La humedad es demasiado baja (30%). ¿Qué hago?", r: "Interior: cuelga toallas mojadas en las esquinas (se evaporan). O: apaga el extractor 1-2 horas. O: moja el suelo y las paredes. Exterior: es normal en julio — no hay mucho que hacer. Asegúrate de riego frecuente." },
+        { q: "Llueve mucho (exterior). ¿Protejo la planta?", r: "Un poco de lluvia es bueno (agua gratis). Demasiada lluvia = Botrytis en floración. Si llueve días seguidos en septiembre-octubre: abre cogollos para ver si hay moho. Toldo temporal sobre la planta si puedes sin bloquear luz/aire." },
+        { q: "¿Luz 24h o 18/6 en interior para autos?", r: "Autos florecen solas, no dependen del fotoperiodo. 20/4 es estándar (20h luz, 4h oscuridad) — menos gasto eléctrico que 24h. 18/6 también funciona. La mayoría usa 20/4." },
+        { q: "¿Puedo cultivar con luz natural exterior en febrero?", r: "No. Los días en febrero son demasiado cortos (<12h). Las plantas fotoperiodo florecen sola sin querer. Espera a marzo-mayo para germinar. Si quieres en invierno: cultiva autos o usa luz artificial interior." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+        </div>
+      ))}
+
+      <SectionTitle>PROBLEMAS MENOS COMUNES</SectionTitle>
+      {[
+        { q: "¿Puedo reutilizar el sustrato del año pasado?", r: "No recomendado. El sustrato se compacta y agota sus nutrientes. Para una nueva temporada compra sustrato fresco (BioBizz Light Mix). Si quieres reutilizar: mezcla 50% sustrato viejo + 50% nuevo y añade bacteria benéfica (Mycorrhizae)." },
+        { q: "Me olvidé de regar 5 días. ¿Está muerta?", r: "Probablemente no. Aunque parecer marchita, las raíces pueden estar vivas. Riega abundantemente y espera 2-3 días. Si recupera turgencia (hojas firmes) está salvada. Si sigue marchita tras 5 días, está muerta." },
+        { q: "¿Puedo dejar las plantas solas 2 semanas en julio?", r: "NO en julio (pico de calor). Las plantas mueren sin agua en 2-3 días. Con riego automático a goteros: sí, funciona. Sin automático: pide a alguien que visite cada 1-2 días, o escurza las plantas." },
+        { q: "¿Qué hago con las plantas después de cosechar?", r: "Interior: limpia el armario (vacía, deja 24h con luz + extractor para secar). Sustrato viejo desecha o reutiliza mezclado 50/50. Exterior: limpia completamente el spot — no dejes trazas." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "8px" }}>❓ {item.q}</div>
+          <div style={{ fontSize: "12px", color: "#b7e4c7", lineHeight: "1.6" }}>{item.r}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 
 const generalPhases = [
   { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
@@ -2308,6 +2668,9 @@ const generalPhases = [
   { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
   { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },
   { id: "conservacion", emoji: "🫙", title: "Conservación", subtitle: "Guardar producto" },
+  { id: "diagnostico", emoji: "🔬", title: "Diagnóstico", subtitle: "Qué falla" },
+  { id: "extracciones", emoji: "🧪", title: "Extracciones", subtitle: "Usar el trim" },
+  { id: "faq", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
   { id: "conceptos", emoji: "📖", title: "Glosario", subtitle: "Términos explicados" },
 ];
 
@@ -2411,9 +2774,245 @@ function TIMELINE({ navigate }) {
   );
 }
 
+// TABS Y COMPONENTES PARA GUÍA DE SETAS PSILOCYBE CUBENSIS
+
+const mushroomKitPhases = [
+  { id: "compra_kit", emoji: "🛒", title: "Compra", subtitle: "Kit completo" },
+  { id: "setup_kit", emoji: "📦", title: "Preparación", subtitle: "Montar SGFC" },
+  { id: "incubacion_kit", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
+  { id: "fructificacion_kit", emoji: "🍄", title: "Fructificación", subtitle: "Crecimiento" },
+  { id: "cosecha_kit", emoji: "✂️", title: "Cosecha", subtitle: "Giro-tirón" },
+  { id: "secado_kit", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
+];
+
+const mushroomManualPhases = [
+  { id: "compra_manual", emoji: "🛒", title: "Compra", subtitle: "Desde cero" },
+  { id: "esterilizar", emoji: "🧫", title: "Esterilizar", subtitle: "Olla a presión" },
+  { id: "inoculacion", emoji: "💉", title: "Inoculación", subtitle: "SAB aséptico" },
+  { id: "incubacion_manual", emoji: "🔮", title: "Incubación", subtitle: "Colonización" },
+  { id: "fructificacion_manual", emoji: "🍄", title: "Fructificación", subtitle: "Monotub" },
+  { id: "cosecha_manual", emoji: "✂️", title: "Cosecha", subtitle: "Múltiples flush" },
+  { id: "secado_manual", emoji: "🌬️", title: "Secado", subtitle: "Cracker dry" },
+];
+
+const mushroomGeneral = [
+  { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
+  { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
+];
+
+// Helper components para setas con paleta mushroom
+const StepM = ({ num, text, why, warning }) => (
+  <div style={{
+    background: MUSHROOM_COLORS.bg2,
+    border: `1px solid ${warning ? MUSHROOM_COLORS.errorBorder : MUSHROOM_COLORS.border1}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
+      <div style={{
+        width: "26px", height: "26px", borderRadius: "50%",
+        background: warning ? MUSHROOM_COLORS.errorBorder : MUSHROOM_COLORS.border1,
+        color: warning ? MUSHROOM_COLORS.error : MUSHROOM_COLORS.accent1,
+        fontSize: "12px", fontWeight: "bold",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        flexShrink: 0, marginTop: "1px",
+      }}>{warning ? "!" : num}</div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: "14px", color: MUSHROOM_COLORS.textBright, lineHeight: "1.5", marginBottom: why ? "8px" : "0" }}>
+          {text}
+        </div>
+        {why && (
+          <div style={{
+            background: MUSHROOM_COLORS.bg3, borderLeft: `3px solid ${MUSHROOM_COLORS.accent1}`,
+            padding: "8px 10px", borderRadius: "0 6px 6px 0",
+            fontSize: "12px", color: MUSHROOM_COLORS.accent2, lineHeight: "1.5",
+          }}>
+            <span style={{ color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>¿Por qué? </span>{why}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+);
+
+const SectionTitleM = ({ children, color = MUSHROOM_COLORS.accent1 }) => (
+  <div style={{
+    fontSize: "10px", letterSpacing: "3px", color,
+    margin: "24px 0 12px", paddingBottom: "6px",
+    borderBottom: `1px solid ${color}33`,
+  }}>{children}</div>
+);
+
+const StatBoxM = ({ label, value }) => (
+  <div style={{
+    background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`,
+    borderRadius: "8px", padding: "12px",
+  }}>
+    <div style={{ fontSize: "10px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "4px" }}>{label.toUpperCase()}</div>
+    <div style={{ fontSize: "13px", color: MUSHROOM_COLORS.textBright, fontWeight: "bold" }}>{value}</div>
+  </div>
+);
+
+const InfoBoxM = ({ children }) => (
+  <div style={{ background: MUSHROOM_COLORS.bg3, border: `1px solid ${MUSHROOM_COLORS.border2}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+    <p style={{ margin: 0, fontSize: "13px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.7" }}>{children}</p>
+  </div>
+);
+
+const ErrorCardM = ({ error, consecuencia, fix }) => (
+  <div style={{
+    background: MUSHROOM_COLORS.errorBg, border: `1px solid ${MUSHROOM_COLORS.errorBorder}`,
+    borderRadius: "10px", padding: "14px", marginBottom: "10px",
+  }}>
+    <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.error, marginBottom: "6px" }}>✗ {error}</div>
+    <div style={{ fontSize: "12px", color: "#cba89a", marginBottom: "8px", lineHeight: "1.4" }}>{consecuencia}</div>
+    <div style={{
+      background: MUSHROOM_COLORS.bg3, border: `1px solid ${MUSHROOM_COLORS.accent1}`,
+      borderRadius: "6px", padding: "8px 10px",
+      fontSize: "12px", color: MUSHROOM_COLORS.accent2, lineHeight: "1.4",
+    }}>✓ {fix}</div>
+  </div>
+);
+
+// COMPONENTES PRINCIPALES SETAS
+
+function COMPRA_SETAS_KIT() {
+  return (
+    <div>
+      <InfoBoxM>
+        Kit Psilocybe cubensis. Todo incluido para empezar. La opción más autónoma y fácil para principiantes — no requiere equipo de esterilización ni conocimientos microbiológicos avanzados.
+      </InfoBoxM>
+
+      <SectionTitleM>LISTA DE COMPRA — KIT BÁSICO</SectionTitleM>
+      {[
+        { item: "🍄 Pan de micelio (Psilocybe cubensis)", precio: "35-60€", donde: "Zamnesia / Grow shops", nota: "Span totalmente colonizado. Listo para fructificar." },
+        { item: "📦 SGFC (Still Air Fruit Chamber) - KIT", precio: "45-80€", donde: "Amazon / eBay", nota: "Cámara de plástico 55L, perlita, rejilla, spray. O compra cada pieza por separado (más barato)." },
+        { item: "💧 Perlita", precio: "8-12€", donde: "Amazon / Grow shops", nota: "Sostrato para mantener humedad en la cámara. 5L es suficiente." },
+        { item: "🌡️ Termómetro/Higrómetro digital", precio: "8-15€", donde: "Amazon", nota: "Monitorear temperatura 20-25°C y humedad 90-95%." },
+        { item: "💨 Spray de agua destilada", precio: "3-8€", donde: "Cualquier farmacia", nota: "Usar agua destilada para nebulizar. El grifo tiene minerales que bloquean." },
+        { item: "🧴 Agua destilada (10L)", precio: "4-8€", donde: "Cualquier supermercado", nota: "Para nebulizar el span 2-3 veces diarias." },
+        { item: "🧤 Guantes de nitrilo", precio: "3-5€", donde: "Amazon / farmacia", nota: "Evitar contaminar con bacterias de la piel. 100 uds bastante." },
+        { item: "📍 Alcohol isopropílico 70%", precio: "5-10€", donde: "Farmacia", nota: "Desinfectar superficies. Opcional pero recomendado." },
+        { item: "📦 Bolsas herméticas", precio: "2-4€", donde: "Cualquier tienda", nota: "Para almacenar setas secas a largo plazo." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{item.precio}</div>
+          </div>
+          <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent2, marginBottom: "4px" }}>📍 {item.donde}</div>
+          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3 }}>{item.nota}</div>
+        </div>
+      ))}
+
+      <div style={{ background: MUSHROOM_COLORS.bg3, borderRadius: "10px", padding: "14px", marginTop: "20px" }}>
+        <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.textBright, lineHeight: "1.6" }}>
+          <span style={{ fontWeight: "bold" }}>Costo total estimado: 150-250€ (reutilizable para múltiples flushes)</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CONCEPTOS_SETAS() {
+  const terms = [
+    { term: "Micelio", def: "La 'raíz' del hongo. Red blanca de filamentos que colonizan el sustrato. El pan de micelio ya está completamente colonizado." },
+    { term: "Primordio / Pinhead", def: "El brote más pequeño del hongo, casi invisible. Es el primer estadio visible del crecimiento de los frutos." },
+    { term: "Flush", def: "Una cosecha de hongos de una misma oleada. Un span puede dar 3-6 flushes si se mantiene bien. Cada flush necesita 'cold shock' (24h en nevera) entre uno y otro." },
+    { term: "FAE (Fresh Air Exchange)", def: "Intercambio de aire fresco. Los hongos necesitan O2. En SGFC se hace cada 6-12h abriendo la cámara. En monotub con ventilaciones pasivas ocurre automáticamente." },
+    { term: "Humedad", def: "Los hongos necesitan 90-95% HR. Sin suficiente humedad los frutos se marchitan antes de madurar. De ahí la importancia de nebulizar frecuentemente." },
+    { term: "SGFC (Still Air Fruit Chamber)", def: "Cámara de plástico estática usada para fructificación. Sin movimiento de aire (aún). Se usa perlita en el fondo para mantener humedad." },
+    { term: "Monotub / Bulk tek", def: "Técnica donde se inocula un sustrato voluminoso en una caja de plástico, esperando a que colonice completamente (bulk), luego se frucciona en la misma caja. Más rendimiento que SGFC pero requiere más precisión." },
+    { term: "Colonización", def: "El proceso de 7-21 días donde el micelio crece a través del sustrato/grano. Está completa cuando todo es blanco y rígido." },
+    { term: "Contaminación", def: "Crecimiento de moho verdoso (Trichoderma) o bacterias. Ruina el proyecto. Se evita con asepsia durante inoculación." },
+    { term: "Trichoderma", def: "Hongo contaminante verde. Es el enemigo #1. Crece rápido y mata el micelio de Psilocybe." },
+    { term: "Cold shock", def: "Exponer el span a temperaturas 4-10°C durante 24h para inducir fructificación. Simula lluvias de otoño en la naturaleza." },
+    { term: "Velo", def: "La membrana que conecta el sombrero (vela) al pie del hongo. Cuando se rompe es el pico de potencia máxima. Ideal cosechar justo antes o justo después." },
+    { term: "Cracker dry", def: "Estado final de secado donde los hongos son tan secos que se quiebran al doblarse (como galleta). No deben dejar huella digital." },
+  ];
+
+  const [search, setSearch] = React.useState('');
+  const filtered = search.length > 1 ? terms.filter(t => t.term.toLowerCase().includes(search.toLowerCase()) || t.def.toLowerCase().includes(search.toLowerCase())) : null;
+
+  return (
+    <div>
+      <InfoBoxM>
+        Términos técnicos específicos de la guía de setas. Búsqueda para encontrar rápido cualquier palabra.
+      </InfoBoxM>
+
+      <div style={{ marginBottom: "20px" }}>
+        <input
+          type="text"
+          placeholder="🔍 Buscar término..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{
+            width: "100%", padding: "12px 16px", fontSize: "14px",
+            background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`,
+            borderRadius: "8px", color: MUSHROOM_COLORS.textBright, outline: "none",
+          }}
+        />
+      </div>
+
+      {filtered ? (
+        <>
+          <div style={{ fontSize: "10px", letterSpacing: "2px", color: MUSHROOM_COLORS.accent1, marginBottom: "10px" }}>
+            {filtered.length} RESULTADO{filtered.length !== 1 ? 'S' : ''}
+          </div>
+          {filtered.length === 0 ? (
+            <div style={{ fontSize: "13px", color: MUSHROOM_COLORS.accent2, padding: "12px" }}>No encontrado.</div>
+          ) : (
+            filtered.map((item, i) => (
+              <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
+                <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.accent1, marginBottom: "4px" }}>{item.term}</div>
+                <div style={{ fontSize: "13px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5" }}>{item.def}</div>
+              </div>
+            ))
+          )}
+        </>
+      ) : (
+        terms.map((item, i) => (
+          <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "8px", padding: "12px 14px", marginBottom: "8px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.accent1, marginBottom: "4px" }}>{item.term}</div>
+            <div style={{ fontSize: "13px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5" }}>{item.def}</div>
+          </div>
+        ))
+      )}
+    </div>
+  );
+}
+
+function FAQ_SETAS() {
+  return (
+    <div>
+      <InfoBoxM>
+        Preguntas comunes sobre cultivo de setas. Situaciones reales que encuentran principiantes.
+      </InfoBoxM>
+
+      {[
+        { q: "¿Cuánto tiempo tarda todo el ciclo?", r: "Kit: 2-3 semanas desde que sacas el pan hasta la 1ª cosecha. Manual: 4-6 semanas (1-2 de esterilización + inoculación, 2-3 de incubación, 1-2 fructificación)." },
+        { q: "¿Por qué se contamina?", r: "Bacterias o moho entran durante la inoculación. Una jeringa de esporas contaminada o una técnica SAB deficiente son causas. Manual requiere mucha más asepsia que kit." },
+        { q: "¿Cuándo cosechar?", r: "Antes de que se rompa el velo (membrana bajo el sombrero). Justo antes o justo después es óptimo. Si esperas demasiado, suelta esporas negras en el sustrato (afecta próximos flushes)." },
+        { q: "¿Qué hacer entre flushes?", r: "Cold shock: 24h en nevera. Luego sacas, dejas en SGFC, nebulizas y esperas a que salgan nuevos primordi (3-7 días). Puedes hacer 3-6 flushes totales." },
+        { q: "¿Puedo secar los hongos en horno?", r: "NO a temperatura alta — degrada los compuestos activos. Usa presecado en bandeja (2-3h a temperatura ambiente) + desecador con silica gel (24h) = cracker dry sin calor." },
+        { q: "¿Duran mucho tiempo almacenados?", r: "Cracker dry en bolsa hermética en lugar frío/oscuro dura años. Lo ideal: bolsa hermética + sílica gel + congelador = 2+ años sin perder potencia." },
+      ].map((item, i) => (
+        <div key={i} style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright, marginBottom: "8px" }}>❓ {item.q}</div>
+          <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.6" }}>{item.r}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function GuiaCultivo() {
 
   const [mode, setMode] = useState("interior");
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom"
+  const [mushroomMode, setMushroomMode] = useState("kit"); // "kit" | "manual" | "general"
+  const [activeMushroomKit, setActiveMushroomKit] = useState("compra_kit");
+  const [activeMushroomManual, setActiveMushroomManual] = useState("compra_manual");
+  const [activeMushroomGen, setActiveMushroomGen] = useState("conceptos_setas");
   const [activePhase, setActivePhase] = useState("compra");
   const [activePhaseExt, setActivePhaseExt] = useState("compra_ext");
   const [activePhaseGen, setActivePhaseGen] = useState("mis_semillas");
@@ -2438,6 +3037,7 @@ function GuiaCultivo() {
         case "poda": return <PODA />;
         case "floracion": return <FLORACION />;
         case "cosecha": return <COSECHA />;
+        case "plagas_int": return <PLAGAS_INT />;
         default: return null;
       }
     } else if (mode === "exterior") {
@@ -2459,6 +3059,9 @@ function GuiaCultivo() {
         case "poda_gen": return <PODA />;
         case "cosecha_gen": return <COSECHA />;
         case "conservacion": return <CONSERVACION />;
+        case "diagnostico": return <DIAGNOSTICO />;
+        case "extracciones": return <EXTRACCIONES />;
+        case "faq": return <FAQ />;
         case "conceptos": return <CONCEPTOS />;
         default: return null;
       }
