@@ -63,7 +63,10 @@ function INTRO_TRUFAS() {
           { tiempo: "Días 90-110", evento: "✂️ Primera cosecha" },
           { tiempo: "Día 110+", evento: "🍯 Conservar / consumir" },
         ].map((t, i) => (
-          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px" }}>
+          <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px", transition: "all 0.2s", cursor: "default" }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = c.accent1; e.currentTarget.style.transform = "translateX(4px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = c.border1; e.currentTarget.style.transform = "translateX(0)"; }}
+          >
             <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "3px" }}>{t.tiempo.toUpperCase()}</div>
             <div style={{ fontSize: "12px", color: c.accent3 }}>{t.evento}</div>
           </div>
