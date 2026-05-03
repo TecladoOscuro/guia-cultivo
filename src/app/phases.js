@@ -1,4 +1,4 @@
-// Definiciones de fases/pestañas para todas las guías
+// Tab definitions for all guides
 
 const phases = [
   { id: "compra", emoji: "🛒", title: "Compra", subtitle: "Lista completa" },
@@ -14,25 +14,26 @@ const phases = [
 ];
 
 const extPhases = [
-  { id: "compra_ext", emoji: "🛒", title: "Compra", subtitle: "Exterior lista" },
-  { id: "ubicacion", emoji: "📍", title: "Ubicación", subtitle: "Seguridad" },
-  { id: "germinacion_ext", emoji: "🥚", title: "Germinación", subtitle: "Primavera" },
-  { id: "semillas_ext", emoji: "🌱", title: "Semillas", subtitle: "Fotoperiodo" },
-  { id: "fases_ext", emoji: "📅", title: "Calendario", subtitle: "Mar-Oct" },
-  { id: "riego_ext", emoji: "💧", title: "Riego", subtitle: "Frecuencia" },
-  { id: "plagas", emoji: "🐛", title: "Plagas", subtitle: "Exterior" },
-  { id: "cosecha_ext", emoji: "🪴", title: "Cosecha", subtitle: "Octubre" },
+  { id: "compra_ext", emoji: "🛒", title: "Compra", subtitle: "Lista completa" },
+  { id: "semillas_ext", emoji: "🌱", title: "Semillas", subtitle: "Qué elegir" },
+  { id: "ubicacion", emoji: "🌲", title: "Ubicación", subtitle: "Elegir el spot" },
+  { id: "germinacion_ext", emoji: "🥚", title: "Germinar", subtitle: "En casa primero" },
+  { id: "fases_ext", emoji: "🌿", title: "Fases", subtitle: "Mes a mes" },
+  { id: "riego_ext", emoji: "💧", title: "Riego", subtitle: "A mano o auto" },
+  { id: "plagas", emoji: "🐛", title: "Plagas", subtitle: "Prevención" },
+  { id: "cosecha_ext", emoji: "✂️", title: "Cosecha", subtitle: "Secado y curado" },
 ];
 
 const generalPhases = [
-  { id: "mis_semillas", emoji: "🗂️", title: "Mis Semillas", subtitle: "Perfil" },
-  { id: "poda_gen", emoji: "✂️", title: "Poda General", subtitle: "Referencia" },
-  { id: "cosecha_gen", emoji: "🪴", title: "Cosecha General", subtitle: "Referencia" },
-  { id: "conservacion", emoji: "🏺", title: "Conservación", subtitle: "Almacenaje" },
-  { id: "diagnostico", emoji: "🔬", title: "Diagnóstico", subtitle: "Deficiencias" },
-  { id: "extracciones", emoji: "🧄", title: "Extracciones", subtitle: "Hash, mantequilla" },
-  { id: "faq", emoji: "❓", title: "FAQ", subtitle: "Preguntas" },
-  { id: "conceptos", emoji: "📖", title: "Glosario", subtitle: "Términos" },
+  { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
+  { id: "mis_semillas", emoji: "🫘", title: "Mis Semillas", subtitle: "Las que tengo" },
+  { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
+  { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },
+  { id: "conservacion", emoji: "🫙", title: "Conservación", subtitle: "Guardar producto" },
+  { id: "diagnostico", emoji: "🔬", title: "Diagnóstico", subtitle: "Qué falla" },
+  { id: "extracciones", emoji: "🧪", title: "Extracciones", subtitle: "Usar el trim" },
+  { id: "faq", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
+  { id: "conceptos", emoji: "📖", title: "Glosario", subtitle: "Términos explicados" },
 ];
 
 const mushroomKitPhases = [
