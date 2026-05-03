@@ -34,7 +34,7 @@ function COMPRA_SETAS_MANUAL() {
       ))}
 
       <div style={{ background: MUSHROOM_COLORS.bg3, borderRadius: "10px", padding: "14px", marginTop: "20px" }}>
-        <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.textBright", lineHeight: "1.6" }}>
+        <div style={{ fontSize: "12px", color: MUSHROOM_COLORS.textBright, lineHeight: "1.6" }}>
           <span style={{ fontWeight: "bold" }}>Costo total estimado: 200-350€ (reutilizable años, múltiples ciclos)</span>
         </div>
       </div>
