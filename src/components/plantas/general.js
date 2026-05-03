@@ -42,6 +42,12 @@ function INTRO_PLANTAS() {
         <br/>
         Las 5 incluidas son: <strong>seguras (en dosis razonables), legales y no adictivas</strong>.
       </InfoBoxX>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ Las 8 plantas (Salvia, Damiana, Blue Lotus, Wild Lettuce, Calea, Kava, Kanna): 100% LEGALES en España.<br/>✅ Cultivo + posesión + uso personal: legal.<br/>❌ Calea prohibida en Polonia (excepción rara). Salvia ilegal en USA/Australia.<br/>Verifica si viajas.</>}
+        salud={<>Salvia disociativa intensa — sitter obligatorio. Kanna/Mucuna actúan en serotonina/dopamina — NO mezclar SSRI/IMAO. Kava posible toxicidad hepática con uso excesivo. Lúpulo fitoestrogénico (dosis altas hombres). NINGUNA es adictiva físicamente.</>}
+        contraindicaciones={<>SSRI/IMAO/MDMA (Kanna, Mucuna especialmente) · Embarazo/lactancia (TODAS) · Cardiopatía · Alcohol/depresores con Kava/Wild lettuce · Conducir tras dosis</>}
+      />
     </div>
   );
 }

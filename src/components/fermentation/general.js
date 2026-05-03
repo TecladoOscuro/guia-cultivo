@@ -34,6 +34,13 @@ function INTRO_FERMENT() {
       <InfoBoxX c={c}>
         Si nunca has fermentado nada: empieza con <strong>hidromiel</strong>. Es el "hello world" de la fermentación. Pocos ingredientes, poco que aprender, error tolerante, resultado bebible y rico. Una vez domines hidromiel (1-2 lotes), salta a cerveza si quieres más complejidad.
       </InfoBoxX>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ Fermentación de bebidas alcohólicas para consumo PROPIO: 100% LEGAL España + UE.<br/>❌ Destilación (whisky, ron, ginebra casero): ILEGAL sin licencia.<br/>❌ Comercializar/vender: requiere licencia + impuestos especiales.<br/>El límite legal es entre fermentación (legal) y destilación (ilegal).</>}
+        salud="Producto final = ALCOHOL. Consumo responsable: máx 1-2 vasos/día con día de descanso. Riesgos: dependencia, daño hepático con uso crónico, accidentes con conducción. Embarazo/lactancia: 0 alcohol. Sanitización deficiente = posibles bacterias acéticas (vinagre) o moho — pero no mortales, solo arruinan el lote."
+        contraindicaciones="Embarazo/lactancia · Hepatopatía · Antecedentes alcoholismo · Medicación incompatible con alcohol (consultar prospecto) · Conducir/operar maquinaria"
+        recursos="HomeBrewTalk · r/homebrewing · r/mead · r/cider · BeerSmith · Tutoriales YouTube CraftBeer · Foros UE"
+      />
     </div>
   );
 }
@@ -84,6 +91,64 @@ function HIGIENE_FERMENT() {
         consecuencia="Re-contaminas. Bacterias de la piel = una de las fuentes principales de contaminación."
         fix="Después de sanitizar, no tocar la zona interior con manos. Si tienes que tocar: lava manos + jabón + agua caliente."
       />
+    </div>
+  );
+}
+
+function GLOSARIO_FERMENT() {
+  const c = FERMENT_COLORS;
+  const [query, setQuery] = React.useState("");
+  const terms = [
+    { term: "ABV (Alcohol By Volume)", def: "% de alcohol en bebida fermentada. Calculado con hidrómetro: (densidad inicial - densidad final) × 131.25. Hidromiel: 10-14% típico. Cerveza: 4-7%. Sidra: 5-8%. Vino: 11-14%." },
+    { term: "Krausen", def: "Espuma blanca-cremosa que aparece en superficie del mosto durante fermentación primaria (días 2-7). Levadura activa formando burbujas. NORMAL — no confundir con moho contaminante." },
+    { term: "Hidrómetro", def: "Aparato de vidrio que flota en el líquido para medir densidad específica. Mide cuánto azúcar queda. Comparas densidad inicial (DI) vs final (DF) para calcular ABV. Imprescindible para principiantes (10-15€)." },
+    { term: "Densidad específica (SG)", def: "Specific Gravity. Cuán denso es el líquido comparado con agua (1.000). Mosto inicial: 1.040-1.080 (azúcar disuelto). Mosto fermentado: 0.990-1.010 (alcohol menos denso que agua)." },
+    { term: "SCOBY", def: "Symbiotic Culture Of Bacteria and Yeast. Disco gelatinoso de kombucha — colonia de bacterias acéticas + levaduras que conviven. Cada lote produce un SCOBY nuevo encima. Se reutilizan o regalan." },
+    { term: "Mash / Macerado", def: "Primer paso en cerveza all-grain. Sumergir malta machacada en agua a 66°C durante 60-90 min. Las enzimas convierten almidón en azúcares fermentables. El líquido resultante = mosto." },
+    { term: "Sparge / Aclarado", def: "Tras macerar, enjuagar el grano con agua a 75°C para extraer azúcares restantes. Mejora eficiencia de extracción. El total de líquido recogido va al hervor." },
+    { term: "Mosto / Wort", def: "Líquido azucarado obtenido tras macerado/prensado de fruta/disolver miel. Es lo que la levadura va a fermentar. Antes del hervor + lúpulo (en cerveza) o antes de inocular (en hidromiel/sidra)." },
+    { term: "Star San", def: "Sanitizante 'no-rinse' (no necesita aclarar). 1.5ml/L de agua. Espuma queda food-safe. Mata bacterias y levaduras salvajes. Recomendado para principiantes (10-15€/250ml dura años)." },
+    { term: "Trasiego (siphoning)", def: "Trasvasar el líquido fermentado a otro recipiente, dejando el sedimento del fondo (lías). Se hace con sifón aprovechando gravedad. Limpia el lote antes de embotellar." },
+    { term: "Priming sugar", def: "Azúcar añadida al embotellar para producir CO₂ natural en la botella (carbonatación). 5-7g/L. La levadura residual la come y produce burbujas selladas. Demasiado priming = botellas explotan." },
+    { term: "IBU (International Bitterness Units)", def: "Unidades de amargor en cerveza. Lager 8-15 IBU (suave). Pale ale 30-45. IPA 50-70. Imperial IPA 70-100+. Depende del tipo y cantidad de lúpulo + tiempo de hervor." },
+    { term: "Ale vs Lager", def: "Tipo de levadura. Ale: fermenta a 18-22°C, rápida (1-2 sem), sabores afrutados. Lager: fermenta a 8-12°C, lenta (3-6 sem), limpia. Ale más fácil para empezar (no necesitas controlar temp baja)." },
+    { term: "Lautering", def: "Proceso de separar el mosto del grano agotado tras macerar. Implica filtrado + sparge. Bolsa BIAB (Brew In A Bag) simplifica esto para principiantes." },
+    { term: "Mead (hidromiel)", def: "Bebida fermentada de miel + agua + levadura. La bebida alcohólica más antigua del mundo (8000+ años). Variantes: melomel (con frutas), metheglin (con especias), pyment (con uvas), bochet (miel caramelizada)." },
+    { term: "Metabisulfito potásico", def: "Compuesto que libera SO₂. Mata bacterias y levaduras salvajes. Tradicional en vinificación. 1g/10L. Sulfitar 24h antes de inocular = más control sobre fermentación." },
+    { term: "Yeast washing", def: "Reutilizar levadura de un lote anterior. Recoger sedimento (trub) tras embotellar, lavar con agua hervida fría, guardar en frasco en nevera (2-4 semanas). Ahorra dinero — cada generación se adapta mejor a tu proceso." },
+    { term: "Acetobacter (vinagre)", def: "Bacteria que convierte alcohol en ácido acético. Si entra a tu fermento (oxígeno + tiempo) → vinagre en lugar de bebida alcohólica. Por eso airlock + sello hermético son críticos." },
+    { term: "Lías / Trub", def: "Sedimento que cae al fondo del fermentador: levadura muerta, proteínas, restos de fruta. Beberlo no es peligroso pero da sabor amargo y turbidez. Por eso el trasiego antes de embotellar." },
+    { term: "Pasteurización", def: "Calentar el mosto a 60-65°C durante 15 min para matar bacterias salvajes sin destruir azúcares ni aromas. NO confundir con esterilización (mucho más agresiva). Tradicional en hidromiel." },
+    { term: "Carbonatación", def: "CO₂ disuelto en la bebida. Natural (priming sugar) o forzada (con CO₂ y barril). En sidra/cerveza casera: priming. Resultado tarda 2-3 semanas tras embotellar a temperatura ambiente." },
+    { term: "Glucosa vs sacarosa vs miel", def: "Diferentes azúcares. Sacarosa (azúcar blanca) es la más simple para fermentar. Miel = glucosa + fructosa (hidromiel). Malta de cerveza = maltosa. Cada una da perfiles distintos." },
+  ];
+
+  const filtered = terms.filter(t =>
+    t.term.toLowerCase().includes(query.toLowerCase()) ||
+    t.def.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Términos comunes en fermentación casera. Si encuentras un concepto raro en cualquier modo (Hidromiel, Cerveza, Sidra), buscalo aquí.
+      </InfoBoxX>
+
+      <input type="text" placeholder="🔍 Buscar término..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{terms.length} términos {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((t, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${c.accent1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "6px" }}>📖 {t.term}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{t.def}</div>
+        </div>
+      ))}
     </div>
   );
 }

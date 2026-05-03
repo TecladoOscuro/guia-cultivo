@@ -36,6 +36,12 @@ function INTRO_AMANITA() {
       <InfoBoxX c={c}>
         En España: 100% legal recolectar, poseer, consumir Amanita muscaria. NO está en listas de sustancias controladas. La psilocibina sí, pero el muscimol no. Curiosamente más legal que las otras Amanitas peligrosas.
       </InfoBoxX>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ España: 100% LEGAL recolectar, poseer, consumir, secar, tincturar.<br/>✅ Venta legal en tiendas etnobotánicas UE (15-40€/100g).<br/>❌ Reino Unido: ilegal desde 2005.<br/>🇳🇱 Holanda: regulado como 'planta tóxica'.<br/>🇦🇺 Australia: ilegal.<br/>Verifica si viajas con ellas.</>}
+        salud={<><strong>IDENTIFICACIÓN ERRÓNEA = MUERTE</strong> — confusión con A. phalloides/virosa es MORTAL. <strong>DECARBOXILACIÓN OBLIGATORIA</strong> (secar 5-15 días) — fresca causa náuseas/vómitos severos. Muscimol agonista GABA-A: NO mezclar con depresores SNC (alcohol, benzos, opiáceos).</>}
+        contraindicaciones={<>Embarazo/lactancia · Medicación con depresores SNC (benzos, opiáceos, antiepilépticos) · Esquizofrenia/bipolar · Alcohol u otras drogas mismo día · Cardiopatía · NO conducir 24h tras consumo</>}
+      />
     </div>
   );
 }

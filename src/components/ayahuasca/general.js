@@ -61,6 +61,13 @@ function INTRO_AYA() {
           </div>
         ))}
       </div>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ Cultivo de Caapi y Chacruna como ornamentales: 100% LEGAL.<br/>✅ Posesión de plantas secas: LEGAL.<br/>🟡 Brebaje preparado uso personal: zona gris (DMT en Lista I pero uso ritual no se persigue activamente).<br/>❌ Comercializar/distribuir: ILEGAL.<br/>🇪🇺 Sentencias favorables Santo Daime + UDV en algunos países UE.</>}
+        salud={<><strong>SÍNDROME SEROTONÉRGICO POTENCIALMENTE MORTAL</strong> si combinas IMAO con SSRI/MDMA/triptanes. <strong>DIETA SIN TIRAMINA</strong> obligatoria 1 semana antes (sin queso curado, vino tinto, embutidos, soja fermentada, plátanos muy maduros). Vómito durante experiencia (purga) NORMAL.</>}
+        contraindicaciones={<>SSRI/IMAO/SNRI/triptanes (off-meds 4-6 SEMANAS) · Esquizofrenia/bipolar · Embarazo/lactancia · Hipertensión grave/cardiopatía · Diabetes con tiramina sensible · Otras drogas/alcohol mismo día</>}
+        recursos="Erowid (sección Ayahuasca) · 'La Serpiente Cósmica' (Jeremy Narby) · Santo Daime · UDV · Anti-tóxicos: 915 620 420 · Emergencias: 112"
+      />
     </div>
   );
 }

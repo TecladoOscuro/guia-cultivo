@@ -104,6 +104,7 @@ const fermentCervezaPhases = [
 const fermentGeneralPhases = [
   { id: "intro_ferment", emoji: "🌟", title: "Intro", subtitle: "Qué fermentar" },
   { id: "higiene_ferment", emoji: "🧼", title: "Higiene", subtitle: "Sanitización" },
+  { id: "glosario_ferment", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
 ];
 

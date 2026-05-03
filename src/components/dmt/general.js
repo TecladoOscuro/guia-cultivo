@@ -57,6 +57,13 @@ function INTRO_DMT() {
           </div>
         ))}
       </div>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ Cultivo de Mimosa hostilis, Acacia confusa: 100% LEGAL como ornamentales.<br/>✅ Posesión de plantas/corteza secas: LEGAL (MHRB se vende como tinte natural).<br/>🟡 Brebaje ayahuasca uso personal: zona gris.<br/>❌ Extracción química DMT puro: ILEGAL (Lista I).<br/>❌ Posesión cristal DMT: ILEGAL.<br/>❌ Comercializar: ILEGAL.</>}
+        salud={<>Experiencia 5-15 min fumado, intensidad EXTREMA. Posible <GlossaryLink term="Breakthrough">breakthrough</GlossaryLink> abrumador. Bad trips/pánico real si no preparado. <GlossaryLink term="HPPD">HPPD</GlossaryLink> raro con uso frecuente. Físicamente seguro (no daña órganos) pero PSICOLÓGICAMENTE DEMANDANTE.</>}
+        contraindicaciones={<>SSRI/IMAO/antidepresivos · Esquizofrenia/bipolar/paranoia (riesgo episodios psicóticos) · Embarazo/lactancia · Estado mental inestable · Otras drogas mismo día · Mezclar con cannabis si propenso a paranoia</>}
+        recursos="Erowid (DMT) · 'DMT: The Spirit Molecule' (Strassman) · Hamilton's Pharmacopeia · MAPS · Anti-tóxicos: 915 620 420"
+      />
     </div>
   );
 }

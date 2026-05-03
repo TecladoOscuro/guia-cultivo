@@ -69,6 +69,12 @@ function INTRO_TRUFAS() {
           </div>
         ))}
       </div>
+
+      <LegalHealthBox c={c}
+        legal={<>🇳🇱 Holanda: 100% LEGAL — venta abierta en smartshops desde 2008.<br/>🇪🇸 España: zona gris (mismo estado que setas Psilocybe). Cultivo casero TOLERADO uso personal.<br/>❌ Comercializar/vender: ILEGAL.<br/>🇪🇺 Resto UE varía — verificar país antes de viajar.</>}
+        salud={<>Mismo activo que setas (psilocibina/psilocina). Náuseas iniciales 1ª hora frecuentes. Experiencia 4-6h. NO mezclar con SSRI/IMAO/MDMA = riesgo síndrome serotonérgico. <GlossaryLink term="HPPD">HPPD</GlossaryLink> raro pero posible con uso muy frecuente.</>}
+        contraindicaciones="SSRI/IMAO/antidepresivos serotonérgicos (off-meds 4-6 sem) · Esquizofrenia/bipolar/paranoia · Embarazo/lactancia · Cardiopatía grave · Otras drogas mismo día"
+      />
     </div>
   );
 }

@@ -33,8 +33,14 @@ function INTRO_CACTUS() {
       </InfoBoxX>
 
       <WarningBoxX c={c}>
-        ⚠️ <strong>Harm reduction obligatorio.</strong> La mescalina causa experiencia visionaria de 8-12h. Dosis inadecuadas, contexto erróneo, problemas mentales preexistentes = riesgos serios. Investiga DOSIFICACIÓN RESPONSABLE, SET & SETTING, y considera tener un sitter (acompañante sobrio) la primera vez. Esta guía cubre cultivo, no protocolos de consumo.
+        ⚠️ <strong>Harm reduction obligatorio.</strong> La <GlossaryLink term="Mescalina">mescalina</GlossaryLink> causa experiencia visionaria de 8-12h. Dosis inadecuadas, contexto erróneo, problemas mentales preexistentes = riesgos serios. Investiga DOSIFICACIÓN RESPONSABLE, <GlossaryLink term="Set & Setting">SET & SETTING</GlossaryLink>, y considera tener un <GlossaryLink term="Sitter / Acompañante">sitter</GlossaryLink> la primera vez. Esta guía cubre cultivo, no protocolos de consumo.
       </WarningBoxX>
+
+      <LegalHealthBox c={c}
+        legal={<>✅ Cultivo de cactus columnares como ornamentales: 100% LEGAL. CITES no controla Trichocereus.<br/>🟡 Posesión de cactus seco/triturado: zona gris (no se persigue uso personal).<br/>❌ Extracción química de mescalina: ILEGAL (sustancia Lista I controlada).<br/>❌ Comercializar polvo/extracto: ILEGAL.</>}
+        salud="Mescalina causa náuseas iniciales (1ª hora), hipertensión leve, taquicardia. Experiencia 8-12h muy larga. Riesgo: HPPD raro con uso frecuente. Sin riesgos físicos serios documentados en personas sanas."
+        contraindicaciones="Cardiopatía / hipertensión grave · Esquizofrenia / bipolar / paranoia · Embarazo / lactancia · SSRI/IMAO/antidepresivos (off-meds 4-6 sem) · MDMA/cocaína mismo día"
+      />
     </div>
   );
 }

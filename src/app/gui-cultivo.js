@@ -213,6 +213,7 @@ function GuiaCultivo() {
         switch (activeFermentGen) {
           case "intro_ferment": return <INTRO_FERMENT />;
           case "higiene_ferment": return <HIGIENE_FERMENT />;
+          case "glosario_ferment": return <GLOSARIO_FERMENT />;
           case "faq_ferment": return <FAQ_FERMENT />;
           default: return <INTRO_FERMENT />;
         }

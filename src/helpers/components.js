@@ -251,3 +251,36 @@ const WarningBoxX = ({ children, c }) => (
     <div style={{ fontSize: "13px", color: c.textBright, lineHeight: "1.6" }}>{children}</div>
   </div>
 );
+
+// Bloque uniforme legalidad + salud + recursos. Usado en INTRO de cada guía.
+const LegalHealthBox = ({ c, legal, salud, contraindicaciones, recursos }) => (
+  <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+    <div style={{ fontSize: "10px", letterSpacing: "3px", color: c.accent1, marginBottom: "12px", paddingBottom: "6px", borderBottom: `1px solid ${c.accent1}33` }}>
+      ⚖️ LEGALIDAD · 🏥 SALUD · 📚 RECURSOS
+    </div>
+    {legal && (
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${c.accent2}`, borderRadius: "8px", padding: "12px", marginBottom: "10px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "6px" }}>⚖️ LEGALIDAD ESPAÑA</div>
+        <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{legal}</div>
+      </div>
+    )}
+    {salud && (
+      <div style={{ background: c.errorBg, border: `1px solid ${c.errorBorder}`, borderLeft: `3px solid ${c.error}`, borderRadius: "8px", padding: "12px", marginBottom: "10px" }}>
+        <div style={{ fontSize: "11px", color: c.error, fontWeight: "bold", letterSpacing: "1px", marginBottom: "6px" }}>🏥 AVISOS DE SALUD</div>
+        <div style={{ fontSize: "12px", color: c.textBright, lineHeight: "1.6" }}>{salud}</div>
+      </div>
+    )}
+    {contraindicaciones && (
+      <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderRadius: "8px", padding: "12px", marginBottom: "10px" }}>
+        <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "6px" }}>🚫 CONTRAINDICACIONES PRINCIPALES</div>
+        <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{contraindicaciones}</div>
+      </div>
+    )}
+    <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "12px" }}>
+      <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "6px" }}>📚 RECURSOS</div>
+      <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>
+        {recursos || "Educación: Erowid · TripSit · Energy Control (testing). Emergencias: 112 · Anti-tóxicos España: 915 620 420 (24h)."}
+      </div>
+    </div>
+  </div>
+);
