@@ -38,6 +38,16 @@ const FERMENT_COLORS = {
   error: "#e8755a", errorBg: "#1a0a05", errorBorder: "#5a2a15",
 };
 
+// Plantas tóxicas / venenos botánicos — carmesí oscuro
+const TOXICAS_COLORS = {
+  bg: "#0a0005", bg2: "#16000d", bg3: "#200014", bg4: "#2c001c",
+  border1: "#500028", border2: "#7a003c", borderAccent: "#a80050",
+  accent1: "#c82050", accent2: "#d84060", accent3: "#e06878", accent4: "#eb9a9a", accent5: "#f5c8c8",
+  text: "#f5d8dd", textBright: "#fce8ec",
+  gradient: "linear-gradient(135deg, #500028 0%, #a80050 50%, #500028 100%)",
+  error: "#ff8080", errorBg: "#1a0808", errorBorder: "#5a1a1a",
+};
+
 // Plantas psicoactivas suaves — púrpura-malva botánico
 const PLANTAS_COLORS = {
   bg: "#100818", bg2: "#1a0f24", bg3: "#231533", bg4: "#2e1b42",

@@ -1,6 +1,6 @@
 function GuiaCultivo() {
 
-  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita"
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita" | "toxicas"
 
   // Cannabis state
   const [mode, setMode] = useState("interior");
@@ -27,6 +27,9 @@ function GuiaCultivo() {
 
   // Plantas state (single mode)
   const [activePlantas, setActivePlantas] = useState("intro_plantas");
+
+  // Toxicas state (single mode)
+  const [activeToxicas, setActiveToxicas] = useState("intro_toxicas");
 
   // Amanita state (single mode)
   const [activeAmanita, setActiveAmanita] = useState("intro_amanita");
@@ -93,7 +96,7 @@ function GuiaCultivo() {
     const p = params.get("phase");
     if (!g) return;
 
-    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas"];
+    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas", "toxicas"];
     if (!validGuides.includes(g)) return;
     setGuide(g);
 
@@ -117,6 +120,7 @@ function GuiaCultivo() {
     else if (g === "dmt" && p) setActiveDmt(p);
     else if (g === "amanita" && p) setActiveAmanita(p);
     else if (g === "trufas" && p) setActiveTrufas(p);
+    else if (g === "toxicas" && p) setActiveToxicas(p);
     else if (g === "plantas" && p) setActivePlantas(p);
     else if (g === "ferment") {
       if (m && ["hidromiel", "cerveza", "sidra", "general"].includes(m)) setFermentMode(m);
@@ -305,6 +309,21 @@ function GuiaCultivo() {
         case "biblio_plantas": return <BIBLIO_PLANTAS />;
         default: return <INTRO_PLANTAS />;
       }
+    } else if (guide === "toxicas") {
+      switch (activeToxicas) {
+        case "intro_toxicas": return <INTRO_TOXICAS />;
+        case "brugmansia": return <BRUGMANSIA />;
+        case "adelfa": return <ADELFA />;
+        case "dedalera": return <DEDALERA />;
+        case "aconito": return <ACONITO />;
+        case "cicuta": return <CICUTA />;
+        case "ricino": return <RICINO />;
+        case "colchico": return <COLCHICO />;
+        case "tejo": return <TEJO />;
+        case "faq_toxicas": return <FAQ_TOXICAS />;
+        case "biblio_toxicas": return <BIBLIO_TOXICAS />;
+        default: return <INTRO_TOXICAS />;
+      }
     } else if (guide === "amanita") {
       switch (activeAmanita) {
         case "intro_amanita": return <INTRO_AMANITA setPhase={setActiveAmanita} />;
@@ -431,6 +450,14 @@ function GuiaCultivo() {
     title = "🌿 Plantas Psicoactivas Suaves";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
+  } else if (guide === "toxicas") {
+    currentPhases = toxicasPhases;
+    currentActive = activeToxicas;
+    setCurrentActive = setActiveToxicas;
+    colors = TOXICAS_COLORS;
+    title = "☠️ Plantas Tóxicas & Venenos";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
   } else if (guide === "amanita") {
     currentPhases = amanitaPhases;
     currentActive = activeAmanita;
@@ -474,6 +501,7 @@ function GuiaCultivo() {
     { id: "ayahuasca", emoji: "🌿", label: "Ayahuasca", grupo: "🌱 Cultivar plantas", accent: AYAHUASCA_COLORS.accent1 },
     { id: "dmt", emoji: "🌌", label: "DMT", grupo: "🌱 Cultivar plantas", accent: DMT_COLORS.accent1 },
     { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "🌱 Cultivar plantas", accent: PLANTAS_COLORS.accent1 },
+    { id: "toxicas", emoji: "☠️", label: "Plantas tóxicas", grupo: "🌱 Cultivar plantas", accent: TOXICAS_COLORS.accent1 },
     // 🍄 CULTIVAR/FORRAJEAR HONGOS
     { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "🍄 Cultivar / forrajear hongos", accent: MUSHROOM_COLORS.accent1 },
     { id: "trufas", emoji: "🍯", label: "Trufas mágicas", grupo: "🍄 Cultivar / forrajear hongos", accent: TRUFAS_COLORS.accent1 },

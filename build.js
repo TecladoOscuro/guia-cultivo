@@ -23,6 +23,7 @@ const sourceFiles = [
   'src/components/fermentation/cerveza.js',
   'src/components/fermentation/sidra.js',
   'src/components/plantas/general.js',
+  'src/components/toxicas/general.js',
   'src/components/amanita/general.js',
   'src/components/trufas/general.js',
   'src/components/ayahuasca/general.js',

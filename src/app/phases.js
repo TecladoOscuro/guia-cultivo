@@ -201,6 +201,21 @@ const ayahuascaPhases = [
   { id: "biblio_aya", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
+// Plantas tóxicas / venenos botánicos
+const toxicasPhases = [
+  { id: "intro_toxicas", emoji: "☠️", title: "Intro", subtitle: "Toxinas vegetales" },
+  { id: "brugmansia", emoji: "🎺", title: "Brugmansia", subtitle: "Floripondio tropano" },
+  { id: "adelfa", emoji: "🌺", title: "Adelfa", subtitle: "Glucósido cardiaco" },
+  { id: "dedalera", emoji: "💜", title: "Dedalera", subtitle: "Fuente digoxina" },
+  { id: "aconito", emoji: "💙", title: "Acónito", subtitle: "Alcaloide más tóxico EU" },
+  { id: "cicuta", emoji: "💀", title: "Cicuta", subtitle: "Sócrates · Coniina" },
+  { id: "ricino", emoji: "🔴", title: "Ricino", subtitle: "Ricina max toxicidad" },
+  { id: "colchico", emoji: "🌸", title: "Cólquico", subtitle: "Colchicina antimitótica" },
+  { id: "tejo", emoji: "🌲", title: "Tejo", subtitle: "Taxina · árbol ancestral" },
+  { id: "faq_toxicas", emoji: "❓", title: "FAQ", subtitle: "Primeros auxilios" },
+  { id: "biblio_toxicas", emoji: "📚", title: "Bibliografía", subtitle: "Toxicología botánica" },
+];
+
 // DMT — Mimosa hostilis + química + uso
 const dmtPhases = [
   { id: "intro_dmt", emoji: "🌟", title: "Intro", subtitle: "Qué es DMT" },
