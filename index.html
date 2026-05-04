@@ -310,6 +310,27 @@ const plantasPhases = [
   { id: "sinicuichi", emoji: "🎵", title: "Sinicuichi", subtitle: "Alucinógeno auditivo" },
   { id: "mucuna", emoji: "🫘", title: "Mucuna pruriens", subtitle: "L-DOPA natural" },
   { id: "lupulo", emoji: "🌾", title: "Lúpulo", subtitle: "Sedante natural" },
+  { id: "pasiflora", emoji: "🌸", title: "Pasiflora", subtitle: "Ansiolítico clásico" },
+  { id: "valeriana", emoji: "💤", title: "Valeriana", subtitle: "Sedante potente" },
+  { id: "adormidera_cal", emoji: "🌼", title: "Adormidera California", subtitle: "Sedante leve no-opio" },
+  { id: "catnip", emoji: "🐈", title: "Catnip", subtitle: "Hierba gatera" },
+  { id: "wild_dagga", emoji: "🦁", title: "Wild Dagga", subtitle: "Cannabis-like africano" },
+  { id: "ruda_siria", emoji: "🌌", title: "Ruda siria", subtitle: "IMAO ayahuasca analog" },
+  { id: "calamo", emoji: "🪴", title: "Cálamo", subtitle: "Rizoma estimulante leve" },
+  { id: "tabaco_rustico", emoji: "🌬️", title: "Tabaco rústico", subtitle: "Mapacho ceremonial" },
+  { id: "lobelia", emoji: "🌿", title: "Lobelia", subtitle: "Indian tobacco" },
+  { id: "coleus", emoji: "🍂", title: "Coleus", subtitle: "Salvia-like débil" },
+  { id: "sasafras", emoji: "🌳", title: "Sasafrás", subtitle: "Té tradicional safrol" },
+  { id: "mormon_tea", emoji: "🍵", title: "Mormon tea", subtitle: "Ephedra americana" },
+  { id: "escoba_canaria", emoji: "🌾", title: "Escoba canaria", subtitle: "Citisina Yaqui" },
+  { id: "chicalote", emoji: "🌻", title: "Chicalote", subtitle: "Amapola mexicana" },
+  { id: "woodrose", emoji: "🌹", title: "Hawaiian Woodrose", subtitle: "Semillas LSA" },
+  { id: "morning_glory", emoji: "🌅", title: "Morning Glory", subtitle: "Ololiuhqui LSA" },
+  { id: "beleno", emoji: "💀", title: "Beleño", subtitle: "Tropano brujería" },
+  { id: "belladona", emoji: "🖤", title: "Belladona", subtitle: "Tropano clásico" },
+  { id: "mandragora", emoji: "🪬", title: "Mandrágora", subtitle: "Raíz mítica" },
+  { id: "datura_inoxia", emoji: "🎺", title: "Datura inoxia", subtitle: "Toloache mexicano" },
+  { id: "estramonio", emoji: "⚠️", title: "Estramonio", subtitle: "Datura común ES" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
   { id: "biblio_plantas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
@@ -7754,6 +7775,1287 @@ function LUPULO() {
   );
 }
 
+function PASIFLORA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Pasiflora (Passiflora incarnata)</strong> — trepadora perenne nativa del sureste de EEUU. Ansiolítico clásico, sedante suave. Una de las plantas medicinales más usadas en herboristería europea. Cultivo MUY fácil en Barcelona — robusta hasta -10°C. Compuestos: harmano, harmolol, crisina (modulador GABA).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="10-30°C (rústica)" />
+        <StatBoxX c={c} label="Humedad" value="40-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno o parcial" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, fértil" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>2-5€/sobre</strong> · 🌱 Esqueje enraizado: <strong>8-15€</strong> · 🌿 Hojas/flores secas (herboristería): <strong>3-8€/50g</strong>. Inversión total: ~15-30€. De las MÁS BARATAS y robustas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: estratificar 1-2 semanas en nevera + remojo 24h. Germinan en 2-4 semanas a 20-25°C. Tasa germinación irregular (20-50%)." />
+      <StepX c={c} num={2} text="Esquejes en primavera: trozo 15cm con 2-3 nudos, enraíza en agua o sustrato húmedo en 3-4 semanas." />
+      <StepX c={c} num={3} text="Trepadora: necesita soporte (tutor, pérgola, valla). Crece 3-6m por temporada en Barcelona." />
+      <StepX c={c} num={4} text="Suelo: drenado, neutro a ligeramente alcalino. No le gustan suelos encharcados." />
+      <StepX c={c} num={5} text="Riego: regular en primavera/verano (cuando seque sustrato superior). Tolera sequía moderada en plantas establecidas." />
+      <StepX c={c} num={6} text="Invierno: en Barcelona resiste fuera. Pierde hojas pero rebrota en primavera. En zonas muy frías (sierra) cubrir base con mulch." />
+      <StepX c={c} num={7} text="Frutos comestibles (passifruta) — bonus alimentario. Aparecen 1-2 años tras siembra." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y partes aéreas con flores: cosechar al inicio de floración (junio-agosto). Cortar puntas con tijera, dejando plantas con suficiente foliage." />
+      <StepX c={c} num={2} text="Secar a sombra ventilada 5-10 días hasta que crujan. Conservar en frasco hermético oscuro." />
+      <StepX c={c} num={3} text="Frutos: madurar en planta hasta arrugarse y ablandarse. Comestibles directamente." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 1-2 cucharaditas (2-4g) hojas/flores secas por taza. Hervir 5-10 min. Hasta 3 tazas/día. Sabor herbal ligero.<br/>
+        💊 <strong>Tintura:</strong> 50g hojas secas en 250ml alcohol 40-60°. Macerar 3 semanas. 20-40 gotas en agua, hasta 3x/día.<br/>
+        😴 <strong>Antes de dormir:</strong> taza 30-60 min antes de cama. Combina muy bien con lúpulo, valeriana, melisa.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 2-4h. Sensaciones: ansiolisis suave, calma mental, somnolencia ligera, relajación muscular. Sin "viaje". Comparable (pero más suave) a benzodiacepina herbal. Ayuda en insomnio leve, ansiedad, taquicardia nerviosa.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas/flores secas:</strong> frasco hermético oscuro. Dura 1-2 años con buena potencia.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años en botella oscura.<br/>
+        🌱 <strong>Planta viva:</strong> perenne en Barcelona, indefinida con cuidado mínimo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        De las MÁS SEGURAS. Sin contraindicaciones graves. Precaución: embarazo (estimulante uterino leve), interacción con sedantes/ansiolíticos farmacéuticos (suma efecto), conducción tras dosis altas. NO mezclar con alcohol en exceso.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function BELENO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Beleño negro (Hyoscyamus niger)</strong> — solanácea bienal de la herbolaria europea medieval. Una de las plantas brujería del "ungüento de las brujas". Tropanos: hiosciamina, escopolamina, atropina. ⚠️ <strong>POTENCIALMENTE LETAL</strong> — dosis activa muy cercana a tóxica. Material aquí es educativo histórico/etnobotánico.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-25°C" />
+        <StatBoxX c={c} label="Humedad" value="40-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Pobre, calizo, seco" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> (sobres etnobotánicos). Sustrato + maceta: 10-20€. Inversión total: ~15-30€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: longevidad alta (años). Sembrar mayo en Barcelona, superficie fina o muy ligeramente cubiertas. Germinan 1-3 semanas a 18-25°C." />
+      <StepX c={c} num={2} text="Sustrato: pobre, drenante, calizo. Suelo de jardín seco o mezcla con arena. NO fertilizar en exceso (concentra alcaloides en suelo pobre)." />
+      <StepX c={c} num={3} text="Espaciar 50cm entre plantas. Crece a 80-150cm en segunda temporada." />
+      <StepX c={c} num={4} text="Riego escaso. Tolera sequía. Encharcamiento la mata." />
+      <StepX c={c} num={5} text="Bienal: año 1 roseta basal de hojas. Año 2 tallo floral, semillas, muere tras." />
+      <StepX c={c} num={6} text="Manejo: USAR GUANTES siempre. Olor fétido al romper hojas. No frotarse ojos tras tocar." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas: año 1 al final del verano, antes de helada. Año 2: durante floración (junio-agosto)." />
+      <StepX c={c} num={2} text="Secado RÁPIDO al sol o estufa baja (40°C max) — pierde 80% peso. Almacenar en frasco etiquetado VENENO con calavera." />
+      <StepX c={c} num={3} text="Semillas: 10x más potentes que hojas. Cosechar cápsulas casi maduras, secar al sol." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>USO HISTÓRICO/EDUCATIVO:</strong><br/>
+        🌿 <strong>Ungüento brujería medieval:</strong> grasa animal + hojas secas trituradas, aplicado en mucosas (NO ingerir). Absorción transdérmica más controlable que oral. Relatos siglo XV-XVII de "vuelo astral".<br/>
+        🍵 <strong>Té tradicional para asma (siglo XIX):</strong> 0.1g hojas secas (NO MÁS) en infusión. Broncodilatador por escopolamina. Hoy obsoleto, sustituido por farma.<br/>
+        🚬 <strong>Mezcla fumada antiasmática:</strong> hojas secas en pipa, alivio respiratorio rápido (uso médico hasta 1950).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ A dosis bajas (uso terapéutico antiguo): broncodilatación, midriasis (pupilas dilatadas), boca seca, sedación. A dosis "psicoactivas": delirio verdadero (NO euforia ni "viaje" como triptaminas), alucinaciones realistas indistinguibles de realidad, amnesia parcial post-experiencia, taquicardia, hipertermia, riesgo cardíaco. Duración 8-24h. Antídoto en hospitales: fisostigmina.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas/semillas secas:</strong> frasco hermético etiquetado, lugar seguro lejos de niños y mascotas. Potencia 2-3 años.<br/>
+        🌱 <strong>Planta viva:</strong> bienal, autoresiembra. En jardín bardará año tras año si se le permite.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ROJO — alta toxicidad.</strong> Ventana terapéutica MUY estrecha. Variabilidad alcaloides según planta/temporada/cultivo (=imposible dosificar a ojo). Contraindicaciones absolutas: cardiopatía, glaucoma, hipertensión, embarazo, lactancia, niños, ancianos. Combinación con alcohol/depresores = letal. NUNCA solo. Material educativo histórico — herbalismo serio recomienda derivados farmacéuticos titulados (atropina hospitalaria) en lugar de la planta cruda.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function BELLADONA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Belladona (Atropa belladonna)</strong> — herbácea perenne europea. Junto a beleño y mandrágora forma el "trío brujería medieval". Tropanos: atropina, escopolamina, hiosciamina. Bayas negras brillantes muy atractivas (=peligro niños). ⚠️ <strong>VENENOSA TODA LA PLANTA</strong>. Material educativo histórico-medicinal.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="12-22°C" />
+        <StatBoxX c={c} label="Humedad" value="50-70%" />
+        <StatBoxX c={c} label="Luz" value="Sombra parcial" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, calizo, fértil" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>4-10€/sobre</strong> · 🌱 Plantón: <strong>8-15€</strong>. Inversión: ~20-40€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: estratificar 4 semanas frío (nevera). Sembrar marzo en flat. Germinación lenta: 4-6 semanas a 18-22°C." />
+      <StepX c={c} num={2} text="Trasplantar a 18cm cuando plántulas 5-10cm. Espaciar 70-80cm definitivos." />
+      <StepX c={c} num={3} text="Sustrato: drenado, ligeramente alcalino. Bien con cal añadida. Le gusta semisombra (bajo árboles caducifolios ideal)." />
+      <StepX c={c} num={4} text="Riego moderado. Suelo siempre algo húmedo, nunca encharcado. Mulch en verano para conservar humedad." />
+      <StepX c={c} num={5} text="Año 1: 50cm altura, sin floración. Año 2+: 1-1.5m, flores marrón-violeta verano, bayas negras otoño." />
+      <StepX c={c} num={6} text="Plantar en zona segura: lejos de niños, mascotas, huerto comestible. Etiquetar siempre. USAR GUANTES." />
+      <StepX c={c} num={7} text="Perenne en Barcelona. Rebrota cada primavera de raíces persistentes. Vive 5-10 años." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y tops: cosechar plenamente en flor (junio-agosto). Cortar partes aéreas a 5cm del suelo." />
+      <StepX c={c} num={2} text="Secar rápido sombra ventilada 5-10 días. Almacenar frasco etiquetado." />
+      <StepX c={c} num={3} text="Raíces: año 4 en otoño. Concentración alcaloides máxima. Lavar, cortar, secar al aire o estufa baja." />
+      <StepX c={c} num={4} text="NO comer bayas — atractivas pero potencialmente letales (incluso 2-3 bayas niños = hospital). Compostar o desechar." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>USO HISTÓRICO/MEDICINAL:</strong><br/>
+        💧 <strong>Tintura herbal (siglos XVIII-XIX):</strong> hojas en alcohol 60°. 1-3 gotas dilución. Antiespasmódico, midriático ocular (dilatar pupilas — origen del nombre "bella donna" en damas Renacimiento).<br/>
+        🌿 <strong>Ungüento brujería medieval:</strong> grasa + extracto hojas. Aplicación tópica/mucosas para "vuelo".<br/>
+        💊 <strong>Farma moderna:</strong> atropina pura titulada en hospitales (preanestesia, bradicardia, antídoto envenenamiento organofosforados). Belladona cruda obsoleta.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Mismos efectos que beleño/datura — son misma familia tropano. Dosis baja: midriasis, sequedad, taquicardia. Dosis alta: delirio realista (no "viaje" psicodélico), confusión, alucinaciones táctiles ("arañas"), amnesia post-experiencia, hipertermia. Duración 8-24h. Riesgo letal por arritmia o hipertermia maligna.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> 2-3 años en frasco oscuro etiquetado.<br/>
+        💧 <strong>Tintura:</strong> 5+ años.<br/>
+        🌱 <strong>Planta viva:</strong> perenne, raíces gruesas año tras año.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ROJO.</strong> Mismas precauciones que beleño. Bayas atrayentes a niños/mascotas — ARRANCAR las que aparezcan si hay riesgo en hogar. Antídoto hospitalario fisostigmina. NO experimentar dosis psicoactivas — uso histórico documenta muertes frecuentes incluso entre brujos experimentados. Material aquí estrictamente educativo etnobotánico/farmacognosia.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function MANDRAGORA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Mandrágora (Mandragora officinarum / autumnalis)</strong> — perenne mediterránea con raíz tuberosa antropomorfa. Solanácea con tropanos similares a belladona. Mítica en folclore europeo: "grita al ser arrancada". Cultivo viable en Barcelona — clima mediterráneo. ⚠️ Tóxica, uso histórico mágico-medicinal.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="5-25°C (mediterránea)" />
+        <StatBoxX c={c} label="Humedad" value="40-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol parcial / sombra" />
+        <StatBoxX c={c} label="Sustrato" value="Profundo, drenado, calcáreo" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>5-15€/sobre</strong> (raras, etnobotánica especializada) · 🌱 Plantón pequeño: <strong>20-40€</strong>. Inversión: 30-60€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: estratificar 6-8 semanas frío húmedo (nevera con peat). Germinación irregular y lenta: 1-3 meses." />
+      <StepX c={c} num={2} text="Sustrato MUY profundo (50cm+) — la raíz baja recta y larga. Maceta: tipo airpot 10-15L, profunda. Mejor en suelo definitivo." />
+      <StepX c={c} num={3} text="Mezcla: 60% jardín calcáreo + 30% arena gruesa + 10% compost. Drenaje crítico — encharcamiento pudre raíz." />
+      <StepX c={c} num={4} text="Localización: lugar definitivo desde plántula. Trasplante difícil (raíz pivotante)." />
+      <StepX c={c} num={5} text="Riego: parco. En invierno casi nada (mediterráneo, tiene reposo invernal). Verano: cuando seque sustrato." />
+      <StepX c={c} num={6} text="Año 1-2: roseta basal de hojas grandes. Año 2-3: floración invernal (M. autumnalis flores morado claro), frutos amarillo aromáticos." />
+      <StepX c={c} num={7} text="Hibernación: hojas mueren en verano seco extremo o invierno frío fuerte. Raíz persiste indefinida (40+ años posibles)." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Raíz: año 3-5 mínimo (plantas más viejas más alcaloides). Otoño tras hibernación de hojas. Excavar con cuidado — la raíz es FRÁGIL y antropomorfa (forma humanoide)." />
+      <StepX c={c} num={2} text="USAR GUANTES Y MASCARILLA al manejar — partículas pueden absorberse." />
+      <StepX c={c} num={3} text="Limpiar con cepillo seco. Cortar en rodajas finas. Secar al sol o estufa baja 1-2 semanas." />
+      <StepX c={c} num={4} text="Frutos: comestibles tradicionalmente en pequeñas cantidades (manzanitas amarillas) — Génesis bíblico mencione 'mandrágoras' como afrodisíaco. Pero efectos psicoactivos vienen de raíz, no fruto." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>USO HISTÓRICO/MÁGICO:</strong><br/>
+        💧 <strong>Vino mandragórico (antigüedad clásica):</strong> raíz seca macerada en vino. Anestésico quirúrgico antes de éter (Dioscórides, Plinio). Dosis: gramaje incierto = peligroso.<br/>
+        🌿 <strong>Ungüento brujería:</strong> mismo concepto que belladona/beleño. Aplicación tópica/mucosas.<br/>
+        🪬 <strong>Folclore:</strong> raíz antropomorfa como amuleto (Harry Potter no es invento). Dormir con raíz bajo cama → "sueños proféticos" según tradición.<br/>
+        💊 <strong>Farma:</strong> escopolamina aislada usada en parches (cinetosis, premedicación quirúrgica). Mandrágora cruda obsoleta.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Tropanos = mismos efectos belladona/beleño. Histórico: anestesia + amnesia (perfecto para cirugía sin éter), sopor profundo. Sobredosis: delirio, alucinaciones, paro cardíaco. Duración 8-24h.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Raíz seca rodajas:</strong> 3-5 años en frasco hermético etiquetado.<br/>
+        💧 <strong>Vino mandragórico:</strong> botella oscura corchada, indefinido.<br/>
+        🌱 <strong>Planta viva:</strong> perenne longeva. Raíz crece 1-2cm/año en grosor — plantas centenarias documentadas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ROJO.</strong> Misma toxicidad belladona/beleño + raíz vieja = imprevisible. Cultivar es legal (planta ornamental etnobotánica), uso psicoactivo NO recomendable sin química analítica para titulación. Material educativo etnohistórico. La planta ornamental + raíz como pieza decorativa folclórica es uso totalmente válido y seguro.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function DATURA_INOXIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Datura inoxia (Toloache, Yerba del diablo)</strong> — solanácea anual/perenne nativa SW USA y México. Flores trompeta blancas espectaculares (origen "trompeta del diablo"). Tropanos a tope: escopolamina dominante. ⚠️ <strong>EXTREMA TOXICIDAD</strong>. Uso shamánico mexicano antiguo, pero muertes documentadas frecuentes en uso recreativo moderno occidental (=desinformados).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="20-32°C" />
+        <StatBoxX c={c} label="Humedad" value="40-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Suelto, arenoso, seco" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>2-6€/sobre</strong> (a veces se autoresiembra en jardines). Inversión: 10-20€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: germinación lenta (3-5 semanas a 25°C). Pre-remojo 24h facilita. Sembrar mayo en Barcelona, directo en suelo definitivo o flats con bottom heat." />
+      <StepX c={c} num={2} text="Sustrato seco, drenado, alcalino. Tolera suelos pobres. Sol pleno." />
+      <StepX c={c} num={3} text="Espaciar 80-100cm — planta voluminosa, llega a 1-1.5m altura." />
+      <StepX c={c} num={4} text="Riego: parco una vez establecida. Tolera sequía. Encharcamiento la pudre." />
+      <StepX c={c} num={5} text="Floración: julio-octubre. Flores blancas trompeta 15-20cm largo, fragancia nocturna. Polinizadas por esfingidos." />
+      <StepX c={c} num={6} text="Cápsulas espinosas con muchas semillas marrones. Autoresiembra agresiva — quitar cápsulas si no quieres jardín invadido." />
+      <StepX c={c} num={7} text="En Barcelona: anual o perenne corta vida (raíz tubular puede sobrevivir invierno suave). USAR GUANTES siempre." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y tops: durante floración (julio-septiembre). Olor fétido al manipular." />
+      <StepX c={c} num={2} text="Secar rápido sombra ventilada. Almacenar frasco etiquetado VENENO." />
+      <StepX c={c} num={3} text="Semillas: 10x más concentradas que hojas. Cosechar cápsulas verde-marrón antes de abrir. Secar al sol." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>USO ETNOBOTÁNICO/EDUCATIVO:</strong><br/>
+        🌿 <strong>Toloache mexicano (yerba del diablo):</strong> shamanes Yaqui, Huichol, Tarahumara. Hojas en bebida ritual o tabaco fumado. Iniciaciones masculinas — uso adulto guiado por curandero.<br/>
+        🚬 <strong>Hojas fumadas (siglo XIX, asma):</strong> mismo broncodilatador que beleño. Obsoleto.<br/>
+        🌸 <strong>Ornamental:</strong> flores espectaculares — uso jardín como ornamental tóxica está bien (con cartel y aviso a niños/mascotas).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Delirio tropano clásico, pero MÁS intenso que beleño/belladona. 24-72h duración. Alucinaciones realistas total inmersión (no "ver lo virtual" — VER fantasmas/animales reales tocables). Hipertermia, taquicardia, midriasis severa, retención urinaria, amnesia 90%. Mortalidad documentada por arritmia o hipertermia. Antídoto: fisostigmina. Hospitalización siempre necesaria por sobredosis.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Material seco:</strong> 2-3 años etiquetado.<br/>
+        🌰 <strong>Semillas:</strong> longevidad 5-10 años germinables.<br/>
+        🌱 <strong>Planta viva:</strong> ornamental espectacular en patio.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ROJO MÁX.</strong> De TODAS las plantas brujería europeas/mexicanas, datura es la MÁS asociada a muertes y hospitalizaciones recreativas modernas. NO es psicodélica recreativa — es deliriante peligrosa. Uso shamánico tradicional implica años de aprendizaje, dieta previa, contexto ritual, dosaje memorizado generaciones. NUNCA solo, NUNCA experimentación naive. Ornamental espectacular en jardín = uso seguro y legal.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function ESTRAMONIO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Estramonio (Datura stramonium, Jimson weed)</strong> — anual cosmopolita. Naturalizada en España — crece silvestre en cunetas, descampados. Misma familia que datura inoxia, mismos tropanos pero perfil ligeramente distinto (hiosciamina dominante). Llamada "yerba de los hechizos" en herbarios castellanos. ⚠️ Mismas precauciones que datura inoxia.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-32°C" />
+        <StatBoxX c={c} label="Humedad" value="40-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Cualquiera (rústica)" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>1-4€/sobre</strong> (la más barata de las daturas) · gratis si recolectas en descampados Barcelona donde abunda. Inversión: 5-15€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: viables en suelo años. Sembrar mayo directo en suelo definitivo. 4 semillas por hoyuelo, separar 50cm. Germinan 2-4 semanas." />
+      <StepX c={c} num={2} text="Sustrato: lo que sea — crece en suelos pobres, ruderal por excelencia." />
+      <StepX c={c} num={3} text="Riego: poco. Tolera sequía. Sol pleno." />
+      <StepX c={c} num={4} text="Crecimiento rápido: 60-150cm en una temporada. Ramificación abierta." />
+      <StepX c={c} num={5} text="Flores blancas (raramente violetas en var. tatula) trompeta 8cm. Cápsulas espinosas con cientos de semillas negras." />
+      <StepX c={c} num={6} text="Anual estricta — muere en primer hielo. Autoresiembra. USAR GUANTES." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y tops: durante floración (julio-septiembre)." />
+      <StepX c={c} num={2} text="Secado sombra. Almacenar etiquetado." />
+      <StepX c={c} num={3} text="Semillas: cosechar cápsulas casi maduras (verde-marrón) antes de abrir y dispersar. Secar al sol." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>USO ETNOBOTÁNICO/EDUCATIVO:</strong><br/>
+        🌿 <strong>"Hierba de Jimson" (origen colonial USA):</strong> Soldados ingleses Jamestown 1676 envenenados accidentalmente con ensalada de hojas — origen del nombre "Jimson" (Jamestown weed). Documentación delirio masivo.<br/>
+        🚬 <strong>Cigarrillos antiasmáticos victorianos:</strong> mismo broncodilatador. Obsoleto.<br/>
+        🪴 <strong>Ornamental ruderal:</strong> flor bonita, pero no en jardín familiar — autoresiembra invasiva.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Mismo perfil deliriante datura inoxia. Variabilidad alcaloides altísima incluso entre plantas mismo arriate (=imposible dosificar reproducible). Mortalidad recreativa documentada en USA año tras año.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Material seco:</strong> 2-3 años etiquetado.<br/>
+        🌰 <strong>Semillas:</strong> banco semillas longevo años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ROJO.</strong> Mismas advertencias datura inoxia. Estramonio es objeto de muchos casos clínicos en hospitales españoles cada verano (jóvenes desinformados). Uso recreativo NO recomendado bajo ninguna circunstancia. Material educativo y ornamental ruderal histórico.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function ADORMIDERA_CALIFORNIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Adormidera de California (Eschscholzia californica)</strong> — papaverácea anual nativa de California (flor estatal). Sedante leve, ansiolítico. NO contiene opio (no es Papaver somniferum) — alcaloides distintos: californidina, eschscholtzina. Cultivo MUY fácil en Barcelona. Tier verde — tradición europea como "sustituto seguro de adormidera de opio".
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="10-28°C" />
+        <StatBoxX c={c} label="Humedad" value="30-50%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Pobre, drenado, seco" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>1-3€/sobre</strong> (semillerías ornamentales) · 🌿 Hojas/flores secas (herboristería): <strong>5-10€/100g</strong>. Inversión: 5-15€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: sembrar directo octubre o febrero/marzo. NO trasplantan bien (raíz pivotante). 1cm profundidad, separar 15-20cm." />
+      <StepX c={c} num={2} text="Germinan 7-14 días a 12-18°C. Crecimiento rápido — floración mayo-julio (hasta heladas)." />
+      <StepX c={c} num={3} text="Sustrato pobre y seco — NO le gusta riego ni fertilizante. Suelo arenoso/pedregoso = más alcaloides." />
+      <StepX c={c} num={4} text="Sol pleno crítico. Sombra = no flora bien." />
+      <StepX c={c} num={5} text="Riego escaso. En Barcelona invierno con lluvia natural basta." />
+      <StepX c={c} num={6} text="Anual fácil pero autoresiembra — vuelve año a año si dejas cápsulas madurar." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Partes aéreas (hojas + flores + cápsulas verdes) durante floración. Cortar al ras del suelo, otoño antes de helada." />
+      <StepX c={c} num={2} text="Secar sombra ventilada 5-7 días. Manejar cuidadoso (estructura frágil)." />
+      <StepX c={c} num={3} text="Almacenar frasco hermético oscuro." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 2-4g hojas/flores secas por taza. Hervir 5-10 min. 1-3 tazas/día. Sabor herbal suave.<br/>
+        💧 <strong>Tintura:</strong> 50g en 250ml alcohol 50°. Macerar 3 semanas. 30-60 gotas hasta 3x/día.<br/>
+        😴 <strong>Antes de dormir:</strong> taza 30 min antes de cama. Combina muy bien con pasiflora, lúpulo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 2-4h. Sensaciones: relajación corporal, sedación leve, somnolencia, calma mental. Sin alucinaciones ni "viaje". Comparable a manzanilla/melisa pero más potente. Útil insomnio leve y ansiedad.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas/flores secas:</strong> 1-2 años frasco hermético.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde. Sin contraindicaciones graves. Precaución embarazo/lactancia, suma con sedantes farmacéuticos. Nota: en California la planta silvestre está protegida (multas por arrancarla en parques). En España y privadamente: cultivo libre.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function WOODROSE() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Hawaiian Baby Woodrose (Argyreia nervosa)</strong> — convolvulácea trepadora vivaz, naturalizada en Hawái. Semillas con LSA (amida ácido lisérgico) — psicodélico ergolínico natural emparentado con LSD pero más sedante/somatic. Tradicionalmente usada en India/Hawai. Cultivo viable Barcelona indoor con macetón grande, outdoor sur ES.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-30°C" />
+        <StatBoxX c={c} label="Humedad" value="50-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno o parcial" />
+        <StatBoxX c={c} label="Sustrato" value="Fértil, drenado" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-10€/10ud</strong> (etnobotánica especializada — variedades "Ghana" más potentes). Maceta 30L+: 15-25€. Inversión: 25-50€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: nick (cortar pequeño en seedcoat opuesto al ojo germinal con cutter). Remojo 24-48h en agua tibia hasta hinchen." />
+      <StepX c={c} num={2} text="Sembrar en peat/vermiculita. NO usar bottom heat (rota raíz). Germinan 4-10 días a 22-28°C." />
+      <StepX c={c} num={3} text="Trasplantar a maceta 30L+ cuando tenga 4-6 hojas. Trepadora vigorosa — necesita pérgola/tutor 3-4m." />
+      <StepX c={c} num={4} text="Sustrato rico, drenado. Riego moderado. Año 1: arbusto pequeño sin flor. Año 2+: vine masivo, flores rosadas, vainas con 1-4 semillas peludas marrones." />
+      <StepX c={c} num={5} text="Barcelona: indoor invierno (no tolera <5°C), outdoor primavera-otoño. Macetón rodante facilita movimiento." />
+      <StepX c={c} num={6} text="Polinizada por abejas grandes/colibríes — en BCN posible polinización manual con pincel para asegurar semillas." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Vainas: dejar madurar en planta hasta secas y marrones (otoño año 2+). Recoger antes de que se abran solas." />
+      <StepX c={c} num={2} text="Abrir cápsulas, extraer semillas. Almacenar en frasco hermético oscuro fresco." />
+      <StepX c={c} num={3} text="Potencia disminuye 6-12 meses tras cosecha — usar fresca." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 <strong>Semillas:</strong> dosis típica 4-8 semillas (variabilidad ALTA según procedencia/temporada). Empezar con 3 semillas test. Quitar la pelusa marrón externa (irritante GI) raspando con cuchillo.<br/>
+        🥒 <strong>Cold water extract (CWE):</strong> triturar semillas, dejar en agua fría 1-2h, filtrar tela fina, beber agua. Reduce náusea típica de masticar semillas crudas.<br/>
+        🍵 <strong>Infusión Lemon-Tek:</strong> triturar + zumo limón 30 min + agua tibia. Acelera onset.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 1-2h (lento). Duración: 6-10h. Sensaciones: psicodélico ergolínico — cerebración, visuales sutiles ojos cerrados, introspección, melancolía+melocura, sedación corporal pesada (más somatic que LSD), náusea inicial común. Útil para introspección lenta y sueño profundo final con sueños vívidos.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 <strong>Semillas secas:</strong> frasco oscuro frío. Potencia decae a partir 6-9 meses. Frigorífico extiende a 1-2 años.<br/>
+        🌱 <strong>Planta viva:</strong> perenne tropical. En BCN macetón indoor invierno, outdoor verano. Larga vida (10+ años posibles).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde-amarillo. Vasoconstricción ergolínica — contraindicado: cardiopatía, hipertensión, historial migraña hemiplégica, embarazo, lactancia. Interacción ISRS/IMAO: NO mezclar (síndrome serotoninérgico). Set/setting clásico psicodélico. Náusea: empezar con dosis baja, ayuno previo 4h. Algunos suplidores tratan semillas con fungicidas — comprar en etnobotánicas serias.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function MORNING_GLORY() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Morning Glory (Ipomoea tricolor / I. violacea)</strong> — convolvulácea anual trepadora ornamental común. Variedades "Heavenly Blue" y "Pearly Gates" tradicionalmente más activas. Mismos alcaloides LSA que woodrose pero más diluidos — necesitas más semillas. Sagrada azteca ("ololiuhqui"). Cultivo TRIVIAL en Barcelona — flor de jardín común.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-30°C" />
+        <StatBoxX c={c} label="Humedad" value="40-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Fértil drenado" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>1-3€/sobre</strong> (jardinería común — mejores variedades "Heavenly Blue" o "Pearly Gates"). Inversión: 5-10€. La más barata de la lista.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: nick + remojo 2h en agua tibia. Sembrar abril-mayo directo en suelo definitivo. 1cm profundidad, separar 15-20cm." />
+      <StepX c={c} num={2} text="Trepadora vigorosa: 3-5m por temporada. Necesita malla, valla, tutor." />
+      <StepX c={c} num={3} text="Sol pleno. Sustrato cualquiera. Riego moderado." />
+      <StepX c={c} num={4} text="Floración julio-octubre. Flores azul intenso/morado mañana, marchitan tarde. Polinizadas por abejas." />
+      <StepX c={c} num={5} text="Cápsulas marrones con 4-6 semillas negras (algunas 'piel pelusilla blanca'). Cosechar al secar." />
+      <StepX c={c} num={6} text="Anual en Barcelona — muere en primera helada. Autoresiembra abundante." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Cápsulas: dejar madurar en planta hasta marrones secas. Cosechar antes de abrir solas (esparcen semillas)." />
+      <StepX c={c} num={2} text="Extraer y secar al sol 1-2 días. Almacenar frasco hermético oscuro." />
+      <StepX c={c} num={3} text="Una pérgola con vid morning glory puede dar 100-300 semillas/temporada." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 <strong>Semillas:</strong> dosis típica 100-300 semillas (mucho más que woodrose porque LSA más diluido). Variedad "Heavenly Blue" referencia clásica.<br/>
+        🥒 <strong>Cold water extract:</strong> triturar semillas finas, agua fría 1-2h, filtrar tela. Reduce náusea.<br/>
+        🍷 <strong>Vino azteca tradicional (ololiuhqui):</strong> uso ritual centroamericano — Rivea corymbosa estrictamente, pero Ipomoea variantes sirven.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Similar a Woodrose pero más sutil/efímero. Comienzo 45-90 min. Duración 4-8h. Onírico, introspectivo, leve visualidad. Cuidado con suplidores que tratan semillas con fungicidas (síntomas: vómito severo) — comprar paquetes que no especifiquen tratamiento, o de fuentes de confianza orgánicas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 <strong>Semillas:</strong> 2-3 años frasco oscuro fresco. Frigorífico extiende.<br/>
+        🌸 <strong>Flores:</strong> ornamentales solamente, sin valor psicoactivo en flor.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde-amarillo. Mismas precauciones LSA que woodrose: vasoconstricción, no mezclar ISRS/IMAO, set/setting. Semillas comerciales modernas a veces tratadas con metiltiofano — preferir orgánicas. NO ingerir hojas/raíces (toxicidad GI sin LSA).
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function RUDA_SIRIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Ruda siria (Peganum harmala)</strong> — zigofilácea perenne mediterráneo-asiática. Naturalizada en sur de España. Semillas + raíz contienen β-carbolinas (harmina, harmalina, tetrahidroharmina) — IMAO reversible (RIMA). Crítica para "ayahuasca analógica" vegetal: combinada con DMT-planta (mimosa, acacia, phalaris) hace ayahuasca casera funcional.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="10-35°C (rústica)" />
+        <StatBoxX c={c} label="Humedad" value="20-50%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Pobre seco arenoso" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> (legales en ES, libre venta) · 🌿 Semillas secas (importadas Irán/Turquía): <strong>5-15€/100g</strong>. Inversión: 10-25€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: sembrar abril-mayo en peat moss superficial. Germinan 2-3 semanas a 22-28°C. Susceptible a damping-off — NO sobreregar." />
+      <StepX c={c} num={2} text="Sustrato seco, arenoso, alcalino. Crece en suelos ásperos pobres. Maceta o suelo definitivo (raíz pivotante profunda)." />
+      <StepX c={c} num={3} text="Año 1: planta pot tier, brought indoor invierno. Año 2: plantar fuera definitivo." />
+      <StepX c={c} num={4} text="Riego escaso. Tolera sequía extrema una vez establecida." />
+      <StepX c={c} num={5} text="Año 2-3: floración primavera-verano. Flores blancas pequeñas, cápsulas redondas marrones con muchas semillas oscuras." />
+      <StepX c={c} num={6} text="Perenne en Barcelona. En invierno frío fuerte hojas mueren, raíz persiste indefinida." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: cápsulas marrón-negro maduras (final verano-otoño). Recolectar antes de que se abran." />
+      <StepX c={c} num={2} text="Secar al sol 3-5 días. Almacenar frasco hermético oscuro." />
+      <StepX c={c} num={3} text="Raíz: año 3+ otoño. Mayor concentración harmina. Lavar, cortar, secar al aire." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌿 <strong>Tradicional iranio/turco:</strong> semillas quemadas en brasero como humo aromático apotropaico (espantar mal de ojo).<br/>
+        ⚗️ <strong>Ayahuasca analógica vegetal:</strong> 2-4g semillas trituradas + extracto DMT-planta (mimosa, acacia confusa, phalaris arundinacea). β-carbolinas inhiben MAO, permiten DMT activo oral. Construye un combo IMAO+DMT ritual.<br/>
+        💊 <strong>RIMA experimental:</strong> microdosis 0.5g semillas para efecto antidepresivo IMAO-reversible (similar moclobemida). NO sustituye psiquiatra.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Solo (sin DMT-planta): náusea, sedación, ligera disociación, visiones cerradas a dosis altas (3-5g semillas). Con DMT: ayahuasca clásica — purga, visiones intensas oculares cerradas, contacto entidad, 4-8h. Combo más potente y más prolongado que DMT puro inhalado.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 <strong>Semillas:</strong> 5-10 años frasco hermético oscuro fresco.<br/>
+        🌱 <strong>Planta viva:</strong> perenne longeva. Reservorio constante.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ <strong>TIER ESPECIAL — INTERACCIONES IMAO CRÍTICAS.</strong> NO mezclar con: tiramina (queso curado, vino tinto, chucrut, embutido, soja fermentada, plátano maduro, atún latas viejas), ISRS, IMAOs farmacéuticos, MDMA/anfetaminas, dextrometorfano (jarabes tos), tramadol, meperidina. Síndrome serotoninérgico = potencialmente letal. Reposo dietético 24h antes y 24h después. Embarazo/lactancia contraindicado. Contraindicación cardíaca/hipertensión. Empezar dosis baja. NO conducir.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function CATNIP() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Catnip / Hierba gatera (Nepeta cataria)</strong> — labiada perenne aromática. Famosa por efecto eufórico en gatos (nepetalactona via olfato). En humanos: sedante leve, ligeramente psicoactivo en dosis altas (té concentrado o fumada). Cultivo trivial Barcelona — invasiva si descuidas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="5-30°C (rústica)" />
+        <StatBoxX c={c} label="Humedad" value="30-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol o semisombra" />
+        <StatBoxX c={c} label="Sustrato" value="Cualquiera" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>1-3€/sobre</strong> · 🌱 Planta: <strong>3-6€</strong>. Inversión: 5-10€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: directo en suelo abril-mayo. Germinan 1-2 semanas. Espaciar 50cm (planta crece 60-80cm)." />
+      <StepX c={c} num={2} text="Suelo cualquiera. Tolera sequía y suelo pobre. Sol pleno o semisombra." />
+      <StepX c={c} num={3} text="Riego ocasional. Una vez establecida es independiente." />
+      <StepX c={c} num={4} text="Floración mayo-octubre. Flores blanco-rosa pequeñas en espiga. Atrae polinizadores." />
+      <StepX c={c} num={5} text="⚠️ Gatos vecinos te van a destrozar la planta. Proteger con jaula o cultivar interior." />
+      <StepX c={c} num={6} text="Perenne hardy en Barcelona. Multiplicación por división rizoma o semilla autoresembrada." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y tops florales: durante floración. 2-3 cosechas por temporada (planta rebrota)." />
+      <StepX c={c} num={2} text="Secar sombra ventilada 5-7 días. Conservar frasco hermético." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión humana:</strong> 1-3 cucharaditas hojas secas por taza. Hervir 5-10 min. Sabor herbal mentolado. Sedante leve antes de dormir.<br/>
+        🚬 <strong>Fumada (poco común):</strong> mezclada con tabaco/cannabis. Efecto cannabis-like débil reportado siglo XIX.<br/>
+        🐈 <strong>Para gatos:</strong> hojas frescas o secas en juguetes. 30 min después se calman (efecto inverso al inicio).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Humanos: sedación leve, somnolencia, calma digestiva (carminativa), antiespasmódico menstrual. Sin alucinaciones. Comparable a melisa o manzanilla algo más potente. Gatos: euforia, juego, rolling — efecto vía nepetalactona en órgano vomeronasal.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas secas:</strong> 1-2 años aroma intenso.<br/>
+        🌱 <strong>Planta viva:</strong> perenne, autorenovación constante.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde. Sin contraindicaciones graves. Precaución embarazo (estimulante uterino leve), interacción con sedantes farmacéuticos. Para gatos: 30% no responden genéticamente, 70% sí — no problema en exceso (auto-regulan).
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function WILD_DAGGA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Wild Dagga / Lion's Tail (Leonotis leonurus)</strong> — labiada arbustiva africana. "Wild dagga" = "cannabis salvaje" en sudafricano (Khoikhoi). Compuestos: leonurina, marrubina. Efecto cannabis-like suave. Hermosa flor naranja tubular. Cultivable Barcelona — robusta hasta -5°C, en macetón mejor por movilidad.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="10-35°C" />
+        <StatBoxX c={c} label="Humedad" value="30-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado fértil" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> · 🌱 Esqueje enraizado: <strong>10-20€</strong>. Inversión: 20-40€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: sembrar primavera, germinan 1-2 semanas a 22-28°C. Esquejes enraízan rápido en agua o sustrato húmedo (3-4 semanas)." />
+      <StepX c={c} num={2} text="Sustrato bien drenado, ligeramente fértil. Sol pleno crítico (no flora en sombra)." />
+      <StepX c={c} num={3} text="Maceta 20L+ recomendado en BCN para movilidad. Crece a 1-2m altura." />
+      <StepX c={c} num={4} text="Riego moderado. Tolerar sequía moderada. Pinzar puntas para forzar ramificación." />
+      <StepX c={c} num={5} text="Floración finales verano-otoño. Espigas con flores naranja vivo en verticilos — ESPECTACULAR." />
+      <StepX c={c} num={6} text="Invierno BCN: si maceta, mover a cobijo (porche, garaje, ventana sur). Si suelo, mulch grueso. Aguanta hasta -5°C." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas y flores tubulares: durante floración (septiembre-noviembre BCN)." />
+      <StepX c={c} num={2} text="Secar sombra 7-10 días. Conservar frasco hermético." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🚬 <strong>Fumada (uso tradicional sudafricano):</strong> hojas/flores secas en pipa o joint, sola o mezclada con tabaco/cannabis. Efecto cannabis-like suave, sin "buzz" intenso.<br/>
+        🍵 <strong>Infusión:</strong> 2-4g hojas secas por taza. Sabor amargo. Sedante leve.<br/>
+        💧 <strong>Tintura:</strong> 50g en 250ml alcohol 50°. Macerar 3 semanas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 5-15 min (fumada) / 30-60 min (infusión). Duración: 1-3h. Sensaciones: relajación corporal, leve euforia, "buzz" suave cannabis-like, calma mental. NO alucinógeno.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas/flores secas:</strong> 1-2 años frasco hermético.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.<br/>
+        🌱 <strong>Planta viva:</strong> perenne con cobijo invierno BCN. 5-10 años de vida.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde. Sin contraindicaciones graves documentadas. Precaución embarazo. Interacción potencial con anticoagulantes (marrubina ligera anticoagulante). Sin riesgo adictivo.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function TABACO_RUSTICO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Tabaco rústico (Nicotiana rustica)</strong> — solanácea anual con concentración de nicotina ×9 vs N. tabacum común (4-9% vs 0.5-1.5%). Tabaco shamánico amazónico ("mapacho") y ceremonial Plains americano (Crow Tobacco Society). NO para fumar casual — concentración tóxica fácil. Uso ritual con sopladores, ungüentos, rapé.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-32°C" />
+        <StatBoxX c={c} label="Humedad" value="50-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Fértil drenado" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>2-5€/sobre</strong> (rústica más rara que tabacum, etnobotánica). Inversión: 10-20€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas DIMINUTAS — sembrar superficial mezcladas con arena fina. Germinan 1-2 semanas a 22-25°C en flat." />
+      <StepX c={c} num={2} text="Trasplantar a maceta 5L cuando 4-5 hojas. Plantar definitivo a 70cm separación." />
+      <StepX c={c} num={3} text="Sustrato rico en N pero drenado. Sol pleno. Riego abundante en crecimiento." />
+      <StepX c={c} num={4} text="Crece 1-1.5m altura. Hojas 30-40cm grandes. Flores amarillo-verdoso." />
+      <StepX c={c} num={5} text="Pinzar yema floral para concentrar nicotina en hojas (igual técnica que tabacum)." />
+      <StepX c={c} num={6} text="USAR GUANTES al manejar — absorción transdérmica nicotina (envenenamiento del 'Green Tobacco Sickness' documentado en jornaleros)." />
+      <StepX c={c} num={7} text="Anual en BCN. Suelo se agota — no replantar mismo lugar 2 años seguidos." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas inferiores madurando primero (color amarillento). Cosechar de abajo arriba progresivo." />
+      <StepX c={c} num={2} text="Curado: colgar hojas en granero/garage seco ventilado. 3-6 semanas hasta secar y oscurecerse a marrón. Procesado tradicional incluye fermentación posterior — opcional." />
+      <StepX c={c} num={3} text="Conservar hojas curadas en bolsa kraft seca. Use con moderación EXTREMA." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌬️ <strong>Sopladores ceremoniales (uso amazónico):</strong> chamán sopla humo concentrado en pacientes — limpieza energética. Nunca el chamán traga humo profundo (=intoxicación).<br/>
+        🌿 <strong>Rapé / Hapé:</strong> tabaco rústico molido + cenizas (Theobroma, etc.) — soplado en fosas nasales con kuripé/tepi. Efectos: claridad, purga emocional, conexión espiritual. 0.1-0.3g por dosis.<br/>
+        🚬 <strong>Sahumerios apotropaicos:</strong> bouquet hojas secas como humo aromático.<br/>
+        🪶 <strong>Tabaco ceremonial Plains (Crow Nation):</strong> mezclas con sweetgrass, sage, cedar para pipas ceremoniales.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Nicotina concentrada — onset segundos vía inhalación, 2-3 min vía nasal. Estimulante intenso, lucidez focalizada, vértigo, náusea posible primera vez. Dosis altas: vómito, sudor, taquicardia. Sin alucinaciones. Tolerancia rápida pero NO usar para fumar diario — riesgo cardíaco e intoxicación letal nicotina (LD50 humano: ~30-60mg, tabaco rústico ~1g hojas secas). Adictivo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas curadas:</strong> 5-10 años en lugar seco fresco.<br/>
+        🌰 <strong>Semillas:</strong> 10+ años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Nicotina concentración tóxica fácil. NO mascar hojas frescas. NO dosis altas inhaladas (intoxicación). Adictivo — usar SOLO ritual ocasional. Cardiopatía/hipertensión: contraindicado. Embarazo/lactancia: NO. Niños/mascotas: lejos absoluto. La belleza del tabaco rústico es su poder + uso ceremonial controlado, no como cigarrillo cotidiano.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function CALAMO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Cálamo aromático (Acorus calamus)</strong> — acoraceae perenne acuática semi-emergente. Rizoma aromático con β-asarona. Uso milenario: amerindios algonquinos (raíz para "andar largas distancias"), védico, europeo medieval. Efectos: estimulante leve, ansiolítico, ligero psicoactivo en dosis altas. Cultivo viable BCN en estanque o macetón con sustrato siempre húmedo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="10-30°C" />
+        <StatBoxX c={c} label="Humedad" value="80-100% sustrato" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno o parcial" />
+        <StatBoxX c={c} label="Sustrato" value="Encharcado o pantanoso" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Rizoma: <strong>5-15€</strong> (centros plantas acuáticas) · 🌿 Raíz seca herboristería: <strong>5-15€/100g</strong>. Estanque/cubo 50L: 20-50€. Inversión: 30-80€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Propagación por división rizoma — más fácil que semilla. Comprar trozo rizoma con 2-3 yemas." />
+      <StepX c={c} num={2} text="Plantar horizontal en sustrato pesado (arcilla + barro), cubrir 2-3cm." />
+      <StepX c={c} num={3} text="Mantener inundado o semi-inundado: borde de estanque, macetón con bandeja agua, kiddie pool 30L+. Agua 5-15cm sobre sustrato." />
+      <StepX c={c} num={4} text="Sol pleno o parcial. Crece 60-100cm hojas largas tipo iris. Olor cítrico al frotar hojas." />
+      <StepX c={c} num={5} text="Perenne en BCN. Hojas mueren invierno, rizoma persiste indefinido. Crece extensivo por rizoma — multiplicar cada 2-3 años." />
+      <StepX c={c} num={6} text="Sin floración real en cultivo (espádice raro). Multiplica solo por rizoma." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Rizoma año 2-3+. Otoño: extraer 50% del rizoma (replantar 50% para regeneración)." />
+      <StepX c={c} num={2} text="Lavar bien (agua barrosa adherida). Pelar capa externa. Cortar trozos 1-2cm." />
+      <StepX c={c} num={3} text="Secar al sol o estufa baja (40°C max) 2-3 semanas. Pierde 70% peso." />
+      <StepX c={c} num={4} text="Conservar frasco hermético oscuro. Calidad disminuye con tiempo y humedad." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 2-5g rizoma seco machacado por taza. Hervir 10 min. 1 taza/día max. Sabor cítrico-amargo intenso.<br/>
+        🌿 <strong>Mascado raíz fresca:</strong> tradición algonquina "para correr largas distancias sin cansar". 1cm trozo, mascar 5 min, escupir o tragar.<br/>
+        💧 <strong>Tintura:</strong> 50g rizoma seco en 250ml alcohol 60°. Macerar 4 semanas.<br/>
+        🪔 <strong>Aceite esencial / sahumerio:</strong> aromaterapia tradicional india (vacha en ayurveda).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 2-4h. Sensaciones: estimulante leve cuerpo, claridad mental, ansiolítico, supresor apetito. Dosis altas (5-10g): leve psicoactivo, ligera disociación, sueños vívidos. NO alucinógeno fuerte.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Rizoma seco:</strong> 1-2 años (decae más rápido que otras hierbas). Frasco oscuro fresco.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.<br/>
+        🌱 <strong>Planta viva:</strong> perenne acuática 10+ años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ β-asarona considerada potencial carcinógena/genotóxica en estudios in vitro (FDA prohibe en alimentos USA, EU permite en pequeñas dosis). Variedad triploide europea (más usada herbario tradicional) tiene MENOS β-asarona que diploide asiática (uso ayurvédico). Comprar rizoma de variedades europeas/americanas. Embarazo: contraindicado. NO uso crónico — dosis ocasionales rituales.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function VALERIANA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Valeriana (Valeriana officinalis)</strong> — valerianácea perenne europeo-asiática. Sedante clásico de la herbolaria europea — más potente que pasiflora. Compuestos: ácidos valerénicos, valepotriatos, GABAérgicos. Cultivo MUY fácil en Barcelona — robusta hasta -20°C. Tier verde.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="0-30°C (rústica)" />
+        <StatBoxX c={c} label="Humedad" value="50-80%" />
+        <StatBoxX c={c} label="Luz" value="Sol o semisombra" />
+        <StatBoxX c={c} label="Sustrato" value="Húmedo, fértil" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>2-5€/sobre</strong> · 🌱 Plantón: <strong>4-8€</strong> · 🌿 Raíz seca herboristería: <strong>5-15€/100g</strong>. Inversión: 10-20€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: sembrar primavera u otoño. Germinan 2-3 semanas. Tasa irregular. Mejor por división rizoma o plantón." />
+      <StepX c={c} num={2} text="Sustrato fértil, húmedo. NO le importa encharque ocasional (planta de pradera húmeda)." />
+      <StepX c={c} num={3} text="Sol o semisombra. En BCN mejor semisombra para evitar marchitez verano." />
+      <StepX c={c} num={4} text="Crece 1-1.5m altura. Flores rosadas-blancas grandes umbelas, fragancia dulce intenso (pero raíz huele a calcetines viejos)." />
+      <StepX c={c} num={5} text="Riego regular. No tolera sequía prolongada." />
+      <StepX c={c} num={6} text="Perenne. Multiplicación por división de mata cada 3 años." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Raíz: año 2 otoño. Excavar mata, separar 70% rizoma para uso, replantar 30%." />
+      <StepX c={c} num={2} text="Lavar muy bien (sustrato adherido entre raíces). Cortar en trozos." />
+      <StepX c={c} num={3} text="Secar al aire ventilado 2-3 semanas — proceso fétido (olor calcetines), idealmente en garaje/exterior." />
+      <StepX c={c} num={4} text="Almacenar frasco oscuro hermético." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión:</strong> 1-3g raíz seca por taza. Hervir 10-15 min. 1-3 tazas/día. Sabor amargo-tierra desagradable (mejorar con menta o miel).<br/>
+        💧 <strong>Tintura:</strong> 50g raíz seca en 250ml alcohol 60°. Macerar 3 semanas. 30-60 gotas hasta 3x/día.<br/>
+        💊 <strong>Cápsulas:</strong> 300-600mg extracto antes de dormir. Disponible en farmacia.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 4-6h. Sensaciones: sedación notable, somnolencia, ansiolisis, relajación muscular. Algunas personas (5-10%) experimentan efecto paradójico estimulante — testear pequeña dosis primero. Sin alucinaciones. Útil insomnio crónico, ansiedad.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Raíz seca:</strong> 1-2 años frasco hermético oscuro.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.<br/>
+        🌱 <strong>Planta viva:</strong> perenne 10+ años con divisiones periódicas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde. Sin contraindicaciones graves. Precaución: embarazo, conducción tras dosis altas, suma con sedantes farmacéuticos (benzo, opiáceos, alcohol). 5-10% efecto paradójico — empezar dosis baja test. NO usar crónico permanente — descansos periódicos.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function LOBELIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Lobelia inflata (Indian Tobacco)</strong> — campanulácea anual norteamericana. Compuestos: lobelina, lobelinina (alkaloides nicotina-like — agonistas parciales receptores nicotínicos). Tradicional Cherokee y Iroquois para fumar y emética. Hierba "cesación tabaquismo" siglo XIX. Cultivo BCN viable. ⚠️ Margen estrecho activo/tóxico.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-25°C" />
+        <StatBoxX c={c} label="Humedad" value="50-70%" />
+        <StatBoxX c={c} label="Luz" value="Semisombra" />
+        <StatBoxX c={c} label="Sustrato" value="Húmedo, fértil" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> · 🌿 Hierba seca herboristería: <strong>5-15€/100g</strong>. Inversión: 10-20€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas DIMINUTAS — sembrar superficial mezcladas con arena, humedecer con spray. Germinan 2-3 semanas a 18-22°C." />
+      <StepX c={c} num={2} text="Trasplantar a maceta cuando 4-5 hojas. Plantar definitivo a 30cm separación." />
+      <StepX c={c} num={3} text="Sustrato húmedo fértil. Semisombra preferible (BCN sol fuerte verano la quema)." />
+      <StepX c={c} num={4} text="Anual: crece 60-90cm altura. Flores azul-violeta tubulares, cápsulas hinchadas con muchas semillas." />
+      <StepX c={c} num={5} text="Riego frecuente. No tolera sequía." />
+      <StepX c={c} num={6} text="Cosechar antes de helada otoño. Autoresiembra ocasional." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Partes aéreas: durante floración pleno (julio-septiembre)." />
+      <StepX c={c} num={2} text="Secar sombra ventilada 5-10 días. Almacenar frasco hermético." />
+      <StepX c={c} num={3} text="Semillas: 10x más concentradas. Cosechar cápsulas casi maduras." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🚬 <strong>Fumada (uso Cherokee):</strong> hojas secas en pipa o mezcla. Efecto nicotina-like sin nicotina pura.<br/>
+        🍵 <strong>Infusión emética/expectorante:</strong> 0.5-1g hierba seca (NO MÁS). Hervir 5 min. Tradicional siglo XIX para asma y tos productiva. Náusea común — emética a dosis altas.<br/>
+        💧 <strong>Tintura:</strong> 30g hierba en 250ml alcohol 50°. Macerar 3 semanas. 5-15 gotas máximo (ojo dosis estrecha).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Dosis baja (fumada/microdosis): estimulante leve nicotina-like sin nicotina, dilata bronquios, leve elevación mental. Dosis media: náusea, vómito (origen "vomitwort"). Dosis alta: depresión respiratoria, parálisis, riesgo letal — proximidad alcaloide a curare/cicuta peligroso. Margen muy estrecho.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hierba seca:</strong> 1-2 años frasco oscuro.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Tier rojo-ámbar — margen estrecho. Empezar SIEMPRE microdosis (1-2 gotas tintura, no más). Evitar uso oral en cantidades >1g. Cardiopatía, hipertensión, embarazo: contraindicado. Náusea = señal parar. NO mezclar con nicotina (suma efectos receptor nicotínico). Históricamente usada para "vomitar enfermedad" — ese era su uso principal, no recreativo.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function COLEUS() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Coleus blumei / Plectranthus scutellarioides</strong> — labiada perenne tropical, ornamental común (hojas multicolores). Reportes de uso entre Mazatecos (México) como sustituto de Salvia divinorum. Salvinorin A no presente, pero compuestos similares (forskolin, etc.) reportan psicoactividad muy débil. Cultivo trivial — house plant común. Tier verde, efecto leve discutido.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="18-28°C (>10°C)" />
+        <StatBoxX c={c} label="Humedad" value="50-70%" />
+        <StatBoxX c={c} label="Luz" value="Indirecta brillante" />
+        <StatBoxX c={c} label="Sustrato" value="Universal drenado" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 Planta: <strong>5-12€</strong> (cualquier garden center) · 🌰 Semillas mix: <strong>2-4€</strong>. Inversión: 5-15€. La más barata.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Esquejes ENRAÍZAN EN AGUA en 1-2 semanas — facilísimo. Cortar 10cm con 2-3 nudos, sumergir base en agua." />
+      <StepX c={c} num={2} text="Trasplantar cuando raíces 3-5cm a maceta sustrato universal con perlita." />
+      <StepX c={c} num={3} text="Indoor BCN preferible (no tolera <10°C). Ventana este/oeste con luz indirecta. Sol pleno quema hojas." />
+      <StepX c={c} num={4} text="Riego cuando seca capa superior — no encharcar." />
+      <StepX c={c} num={5} text="Pinzar yemas florales para mantener foliage colorido y compacto." />
+      <StepX c={c} num={6} text="Outdoor primavera-verano BCN OK (sombra parcial). Indoor invierno." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas de cualquier estado planta. Quitar inferiores y puntas." />
+      <StepX c={c} num={2} text="Frescas mejor que secas (compuestos volátiles). Si necesitas almacenar: secar rápido sombra." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌿 <strong>Hojas frescas masticadas:</strong> 30-50 hojas (tradición mazateca como sustituto Salvia). Mascar 10-15 min, no tragar saliva, finalmente escupir.<br/>
+        🍵 <strong>Infusión:</strong> 10-20g hojas frescas. Sabor herbal suave.<br/>
+        🌟 <strong>Decorativo:</strong> hojas hermosísimas multicolor (rojos, verdes, púrpuras, amarillos) — uso ornamental válido por sí solo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Reportes muy variables y subjetivos. Algunos: ligera sensación euforia + visuales sutiles, similar a Salvia muy diluida. Otros: nada. Comienzo 5-15 min, duración 30-60 min. Sin riesgo significativo a dosis usadas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌱 <strong>Planta viva:</strong> perenne tropical indoor BCN. Multiplicación esquejes infinita.<br/>
+        🍃 <strong>Hojas:</strong> usar frescas. Sin valor seco apreciable.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde. Sin riesgos documentados. Embarazo precaución por desconocimiento. Algunas variedades cultivar comerciales (foliage selection extrema) pueden tener menos compuestos activos.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function SASAFRAS() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Sasafrás (Sassafras albidum)</strong> — laurácea árbol mediano nativo este USA. Aceite raíz contiene safrol (~80%) — precursor para síntesis MDMA (fiscalizado UE). PLANTA legal cultivar y uso herbal/té tradicional. Aceite concentrado y safrol puro fiscalizados. Té de raíz tradicional Cherokee/colonial USA, base original "root beer". Cultivable BCN.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="-15 a 30°C (hardy)" />
+        <StatBoxX c={c} label="Humedad" value="40-70%" />
+        <StatBoxX c={c} label="Luz" value="Sol o semisombra" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, neutro/ácido" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>5-15€/10ud</strong> · 🌳 Plantón: <strong>20-50€</strong> · 🌿 Corteza raíz seca: <strong>10-25€/100g</strong>. Inversión: 30-80€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: estratificación 4 meses frío húmedo. Sembrar otoño en lugar definitivo o flat. Germinación lenta primavera." />
+      <StepX c={c} num={2} text="Plantón comercial es MUCHO más fácil — establecer en suelo definitivo otoño/primavera." />
+      <StepX c={c} num={3} text="Suelo drenado, ligeramente ácido, fértil. Tolera muchos suelos. Sol o semisombra." />
+      <StepX c={c} num={4} text="Crece 5-15m altura adulto. En BCN suelo: árbol mediano. Maceta grande: enano." />
+      <StepX c={c} num={5} text="Hojas características 3-lobuladas (forma 'mitona'), color verde brillante, otoño espectacular naranja-rojo." />
+      <StepX c={c} num={6} text="Cosechable a partir año 5+ para corteza raíz. Crecimiento lento." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Corteza raíz: árbol bien establecido (5+ años). Excavar lateralmente para exponer raíces secundarias. Pelar corteza con cuchillo, dejar mayoría de raíz para regeneración." />
+      <StepX c={c} num={2} text="Secar al aire 1-2 semanas. Cortar trozos pequeños. Almacenar frasco oscuro." />
+      <StepX c={c} num={3} text="Hojas: secar también para mucílago tradicional gumbo creole." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Té raíz tradicional Cherokee/colonial:</strong> 5-10g corteza seca por taza. Hervir 10 min. Sabor anís+canela+cítrico distintivo. Uso medicinal: depurativo primaveral, sangre, reumatismo.<br/>
+        🍻 <strong>"Root beer" original:</strong> raíz sasafrás + zarzaparrilla + jengibre + miel + agua = bebida fermentada colonial USA. Predecesor refrescos modernos.<br/>
+        🌿 <strong>Hojas (filé):</strong> deshidratadas trituradas para espesar gumbo cocina criolla Louisiana.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Té tradicional: tonificante leve, ligero efecto eufórico, calidez digestiva. Sin "viaje" psicodélico (safrol vía oral en planta es muy diluido y metabolizado). Aceite esencial concentrado: hepatotóxico (carcinogénico en estudios FDA — restringido USA en alimentos). MDMA derivado de safrol no es psicoactividad de planta.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Corteza raíz seca:</strong> 2-3 años frasco hermético oscuro.<br/>
+        🌳 <strong>Árbol vivo:</strong> 50+ años. Inversión generacional.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Tier ámbar. Té tradicional ocasional: seguro y legal. Aceite esencial concentrado: NO usar internamente. NO destilar safrol — síntesis MDMA es delito grave UE (precursor fiscalizado). Embarazo/lactancia contraindicado (safrol cruza placenta). Niños: no recomendado uso prolongado. Uso ornamental y té tradicional ocasional = totalmente válido.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function MORMON_TEA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Mormon tea / Té de los mormones (Ephedra nevadensis)</strong> — efedrácea arbusto desértico SW USA. Especie americana SIN efedrina propiamente (al contrario de E. sinica china, "ma huang"). Té tradicional pioneros mormones, indígenas SW. Pseudoefedrina trazas, polifenoles, taninos. Estimulante leve no como E. sinica. BCN sur seco viable.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="-10 a 40°C (hardy)" />
+        <StatBoxX c={c} label="Humedad" value="10-40% (desierto)" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Pobre arenoso seco" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>5-12€/sobre</strong> · 🌱 Plantón: <strong>15-30€</strong>. Inversión: 25-50€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: estratificación 1-2 meses frío. Sembrar en arena gruesa primavera. Germinan 2-4 semanas." />
+      <StepX c={c} num={2} text="Sustrato extremadamente drenado: arena + grava + 10% sustrato pobre. Encharcamiento la mata." />
+      <StepX c={c} num={3} text="Sol pleno crítico. Tolera 40°C. Hardy hasta -10°C." />
+      <StepX c={c} num={4} text="Riego MUY parco. En BCN basta lluvia natural. En verano seco: 1 riego al mes max." />
+      <StepX c={c} num={5} text="Crece lento — arbusto 60-100cm altura tras 3-5 años. Tallos verdes articulados sin hojas verdaderas (fotosíntesis en tallos). Conos sexuales pequeños rojizos." />
+      <StepX c={c} num={6} text="Perenne longeva. 30+ años fácil." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Tallos verdes: durante toda temporada. Cortar puntas 10-15cm con tijera, dejar mata principal." />
+      <StepX c={c} num={2} text="Secar sombra ventilada 1 semana. Almacenar frasco hermético." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Té tradicional pionero mormón:</strong> 3-5g tallos secos por taza. Hervir 10-15 min. Sabor herbal-amargo, color amarillento. 1-2 tazas/día.<br/>
+        🌿 <strong>Indígenas SW (Hopi, Navajo):</strong> remedio para resfriado, alergias, congestión. Estimulante leve no abusivo.<br/>
+        💧 <strong>Tintura:</strong> 50g tallos secos en 250ml alcohol 50°. Macerar 3 semanas.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-45 min. Duración: 2-4h. Sensaciones: estimulante muy leve, descongestionante nasal, ligera elevación. NO comparable a efedrina pura ni a E. sinica china. Pseudoefedrina trazas. Adecuado para té digestivo o resfriado.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Tallos secos:</strong> 2-3 años frasco oscuro.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.<br/>
+        🌱 <strong>Planta viva:</strong> longeva 30+ años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier ámbar (planta legal, derivado farmacéutico fiscalizado). E. nevadensis americana es relativamente segura. NO confundir con E. sinica china — esa SÍ tiene efedrina pura (controlada UE en concentración alta). Cardiopatía, hipertensión, embarazo: precaución. Suma con cafeína (té+café = nervios). NO destilar/concentrar (precursor anfetaminas).
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function ESCOBA_CANARIA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Escoba canaria (Cytisus canariensis, antes Genista canariensis)</strong> — leguminosa arbustiva endémica Canarias. Flores amarillo brillante con citisina + esparteína (alcaloides quinolizidínicos). Uso etnobotánico: shamanes Yaqui (México) reportan flores fumadas — efecto "más pleasant and effective" según paper original. Citisina = parecido nicotina pero menos adictivo (usado farmacológicamente para cesación tabaco).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="-5 a 35°C" />
+        <StatBoxX c={c} label="Humedad" value="30-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Drenado, ácido-neutro, pobre" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>3-8€/sobre</strong> · 🌱 Arbusto: <strong>12-25€</strong>. Inversión: 15-35€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: nick + escaldar agua hirviendo (legumbre, semilla muy dura). Remojo 24h hasta hinchar. Germinan 2-4 semanas." />
+      <StepX c={c} num={2} text="Sustrato drenado, no fértil (leguminosa fija N propio). Sol pleno." />
+      <StepX c={c} num={3} text="Crece 2-3m altura. Floración primavera (mayo-junio) abundante amarillo brillante. Aroma dulce." />
+      <StepX c={c} num={4} text="Riego ocasional una vez establecida. Tolera sequía." />
+      <StepX c={c} num={5} text="BCN: outdoor permanente con cobijo invierno. Vive bien sur España." />
+      <StepX c={c} num={6} text="Perenne. 10-20 años de vida. Pinzar primer año para forma." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Flores frescas: durante floración (mayo-junio). Recoger amaneceres soleados (alcaloides máximos)." />
+      <StepX c={c} num={2} text="Secar en frasco sellado 10 días para fermentación leve (reduce 'hardness' del humo según paper Gridelli 1969)." />
+      <StepX c={c} num={3} text="Pasar luego a secado completo aire ventilado 1 semana. Almacenar frasco oscuro." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🚬 <strong>Flores fumadas (uso Yaqui):</strong> 1-3g flores secas en pipa o joint. Mejor solas (mezcla con tabaco enmascara efecto).<br/>
+        🍵 <strong>Infusión:</strong> 1-2g flores secas (NO MÁS — citisina tóxica dosis alta). Sabor floral amargo.<br/>
+        🌸 <strong>Ornamental:</strong> arbusto espectacular en floración — uso jardín por sí solo válido.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 5-10 min (fumada). Duración: 30-90 min. Sensaciones: estimulante leve, ligero buzz, claridad mental, posible visualidad sutil a dosis altas. Reportada como "más placentera" que escocesa o española. Náusea posible primera vez.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Flores secas:</strong> 1-2 años frasco hermético.<br/>
+        🌱 <strong>Arbusto vivo:</strong> 10-20 años, floración anual abundante.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Citisina TÓXICA dosis alta — NO ingerir más de 2g flores secas en infusión. Letalidad reportada en niños que comieron muchas semillas/vainas (=mantener lejos). Embarazo contraindicado (esparteína contractil uterina). Cardiopatía: precaución. Fumada moderada = más segura por dosis baja absorbida. NO mezclar con nicotina/cafeína altas.
+      </InfoBoxX>
+    </div>
+  );
+}
+
+function CHICALOTE() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Chicalote / Argemone mexicana</strong> — papaverácea anual mexicana. "Amapola espinosa" / "prickly poppy". Alcaloides isoquinolínicos: berberina, sanguinaria, alocriptopina. Sucedáneo opio MUY SUAVE en herbolaria mexicana popular (NO contiene opio pero efectos sedantes débiles). Cultivo trivial BCN. Útil para té sedante o ornamental.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-35°C" />
+        <StatBoxX c={c} label="Humedad" value="30-60%" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Pobre, drenado, seco" />
+      </div>
+
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🌰 Semillas: <strong>2-5€/sobre</strong> · gratis recolección descampados sur ES (a veces naturalizada). Inversión: 5-10€.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Semillas: directo en suelo definitivo abril-mayo. NO trasplanta bien (raíz pivotante)." />
+      <StepX c={c} num={2} text="Sustrato pobre y seco. Sol pleno." />
+      <StepX c={c} num={3} text="Crece 60-100cm altura. Tallos y hojas espinosas glauco-blancuzcas (cuidado al manejar)." />
+      <StepX c={c} num={4} text="Riego escaso. Tolera sequía extrema." />
+      <StepX c={c} num={5} text="Floración julio-octubre. Flores amarillo-naranja vivo, similares amapola. Cápsulas espinosas con muchas semillas negras (parecidas al opio pero NO son)." />
+      <StepX c={c} num={6} text="Anual. Autoresiembra. USAR GUANTES por espinas." />
+
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <StepX c={c} num={1} text="Hojas/flores: durante floración. Cortar partes aéreas en plenitud." />
+      <StepX c={c} num={2} text="Secar sombra 5-7 días. Almacenar frasco." />
+      <StepX c={c} num={3} text="Cápsulas: cosechar antes que abran, secar al sol. Semillas para resiembra o uso." />
+
+      <SectionTitleX c={c}>USOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        🍵 <strong>Infusión tradicional:</strong> 2-4g hojas/flores secas por taza. Hervir 10 min. 1 taza/día max. Sabor amargo.<br/>
+        💧 <strong>Tintura:</strong> 50g hierba seca en 250ml alcohol 60°. Macerar 3 semanas.<br/>
+        🌿 <strong>Latex amarillo (savia):</strong> aplicación tópica heridas (antiséptico tradicional).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Comienzo: 30-60 min. Duración: 2-4h. Sensaciones: sedación leve, ligera relajación, somnolencia. NO opiáceo, NO euforia. Comparable a manzanilla algo más fuerte. Útil tos seca, insomnio leve.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        🥄 <strong>Hojas/flores secas:</strong> 1-2 años frasco oscuro.<br/>
+        💧 <strong>Tintura:</strong> 4-5 años.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tier verde-amarillo. Berberina y sanguinaria a dosis altas son hepatotóxicas — NO uso prolongado. Embarazo contraindicado (uterotónico). Niños: no. Confundible con Papaver somniferum (opio real) por novatos — el chicalote tiene espinas obvias, opio NO.
+      </InfoBoxX>
+    </div>
+  );
+}
+
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
   const [query, setQuery] = React.useState("");
@@ -10742,6 +12044,27 @@ function GuiaCultivo() {
         case "sinicuichi": return <SINICUICHI />;
         case "mucuna": return <MUCUNA />;
         case "lupulo": return <LUPULO />;
+        case "pasiflora": return <PASIFLORA />;
+        case "valeriana": return <VALERIANA />;
+        case "adormidera_cal": return <ADORMIDERA_CALIFORNIA />;
+        case "catnip": return <CATNIP />;
+        case "wild_dagga": return <WILD_DAGGA />;
+        case "ruda_siria": return <RUDA_SIRIA />;
+        case "calamo": return <CALAMO />;
+        case "tabaco_rustico": return <TABACO_RUSTICO />;
+        case "lobelia": return <LOBELIA />;
+        case "coleus": return <COLEUS />;
+        case "sasafras": return <SASAFRAS />;
+        case "mormon_tea": return <MORMON_TEA />;
+        case "escoba_canaria": return <ESCOBA_CANARIA />;
+        case "chicalote": return <CHICALOTE />;
+        case "woodrose": return <WOODROSE />;
+        case "morning_glory": return <MORNING_GLORY />;
+        case "beleno": return <BELENO />;
+        case "belladona": return <BELLADONA />;
+        case "mandragora": return <MANDRAGORA />;
+        case "datura_inoxia": return <DATURA_INOXIA />;
+        case "estramonio": return <ESTRAMONIO />;
         case "faq_plantas": return <FAQ_PLANTAS />;
         case "biblio_plantas": return <BIBLIO_PLANTAS />;
         default: return <INTRO_PLANTAS />;
