@@ -120,6 +120,41 @@ function MIS_SEMILLAS() {
         "Mismas consideraciones que la Zkittlez OG en exterior.",
       ],
     },
+    {
+      nombre: "Critical Feminizada",
+      marca: "Royal Queen Seeds",
+      tipo: "Fotoperiodo feminizada",
+      cantidad: "2 packs (3 semillas cada uno = 6 semillas total)",
+      genetica: "60% indica / 40% sativa (Afghani × Skunk)",
+      thc: "18%",
+      cbd: "<1%",
+      altura_indoor: "80–110cm",
+      altura_outdoor: "150–200cm",
+      ciclo: "7–8 semanas de floración (la más rápida)",
+      rendimiento_indoor: "550–600g/m²",
+      rendimiento_outdoor: "550–650g/planta",
+      efecto: "Equilibrado tirando a indica. Relajante físico marcado, mente calmada. Sabor terroso/skunk con toques cítricos. Cup Winner — multi-premiada en Cannabis Cups.",
+      color: "#e85a9c",
+      donde: "🏠 Interior (excelente) · 🌲 Exterior (muy productiva)",
+      notas_indoor: [
+        "TIENES 6 SEMILLAS (2 packs × 3) — la mayor cantidad de tu colección. Margen para 2-3 cosechas seguidas.",
+        "Floración más rápida de tu colección: 7-8 semanas. Ciclo total más corto = más cosechas/año.",
+        "Rendimiento alto interior: 550-600g/m² es de los mejores entre tus genéticas.",
+        "Tamaño compacto (80-110cm) — perfecta para 120×120, caben 4 plantas con holgura.",
+        "Resistente y forgiving — buena alternativa a White Widow para principiantes. RQS es banco europeo top.",
+        "Cogollos compactos y resinosos. Vigilar humedad última semanas (densos = riesgo moho si humedad alta).",
+        "Aroma intenso skunk — filtro carbón imprescindible. Critical es famosa por olor potente.",
+        "Cup Winner: gana fácilmente competiciones por equilibrio rendimiento/calidad. Usar primera o segunda cosecha.",
+      ],
+      notas_outdoor: [
+        "EXCELENTE para exterior mediterráneo. RQS la diseñó para clima cálido. Hasta 200cm + 650g/planta.",
+        "Cosecha temprana en exterior: floración rápida = lista finales septiembre. Evita lluvias octubre.",
+        "Tienes 6 semillas — opción para guerrilla farm: planta 3-4 en spot exterior + reserva 2 en interior.",
+        "Resistencia alta a hongos + plagas. La más robusta de tu colección outdoor junto con White Widow.",
+        "Estructura tipo arbol sólida — pocas necesidad tutores incluso con cogollos pesados.",
+        "Mejor opción si quieres CANTIDAD: rendimiento exterior 650g/planta es excepcional.",
+      ],
+    },
   ];
 
   return (
@@ -131,11 +166,12 @@ function MIS_SEMILLAS() {
       <div style={{ background: "#1a2a10", border: "1px solid #4a7a20", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
         <div style={{ fontSize: "10px", letterSpacing: "2px", color: "#74c69d", marginBottom: "10px" }}>ORDEN RECOMENDADO DE USO</div>
         {[
-          { num: "1ª", semilla: "White Widow (fotoperiodo)", cuando: "Cuando tengas el armario listo. Tienes 3 semillas — margen para aprender.", porq: "La más robusta y que más perdona errores. Ideal para primera cosecha." },
-          { num: "2ª", semilla: "Strawberry Banana Auto (FastBuds)", cuando: "Segunda o tercera cosecha.", porq: "Autofloreciente de alta calidad. Más sencilla pero algo más exigente que la White Widow." },
-          { num: "3ª", semilla: "Zkittlez OG Auto o Watermelon Zkittlez (Barney's Farm)", cuando: "Cuando ya controles el proceso.", porq: "Son muestras exclusivas — pocas semillas sin segunda oportunidad. Aprovéchalas con experiencia." },
+          { num: "1ª", semilla: "Critical Feminizada (Royal Queen Seeds)", cuando: "PRIMERA cosecha. Tienes 6 semillas — margen amplísimo.", porq: "Cup Winner. Floración 7-8 sem (la más rápida), rendimiento alto, robusta. Perfecta para empezar y aprender. Si fallas hay 5 más." },
+          { num: "2ª", semilla: "White Widow (3 semillas)", cuando: "Cuando ya tengas 1 cosecha hecha.", porq: "Robusta clásica. Buena segunda opción. Aprende variedad antes de tocar las premium." },
+          { num: "3ª", semilla: "Strawberry Banana Auto (FastBuds)", cuando: "Tercera o cuarta cosecha.", porq: "Auto de alta calidad — distinto manejo (sin cambio fotoperiodo). Aprende con auto cuando ya domines fotoperiodo." },
+          { num: "4ª", semilla: "Zkittlez OG / Watermelon Zkittlez (Barney's Farm)", cuando: "Cuando controles bien el proceso.", porq: "Muestras exclusivas — pocas semillas, sin segunda oportunidad. Aprovéchalas con experiencia." },
         ].map((r, i) => (
-          <div key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", borderBottom: i < 2 ? "1px solid #1b4332" : "none" }}>
+          <div key={i} style={{ display: "flex", gap: "12px", padding: "8px 0", borderBottom: i < 3 ? "1px solid #1b4332" : "none" }}>
             <div style={{ fontSize: "14px", fontWeight: "bold", color: "#52b788", flexShrink: 0, width: "28px" }}>{r.num}</div>
             <div>
               <div style={{ fontSize: "13px", color: "#d8f3dc", marginBottom: "3px" }}>{r.semilla}</div>
