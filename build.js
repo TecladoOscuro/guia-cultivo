@@ -22,12 +22,16 @@ const sourceFiles = [
   'src/components/fermentation/hidromiel.js',
   'src/components/fermentation/cerveza.js',
   'src/components/fermentation/sidra.js',
+  'src/components/fermentation/chicha.js',
+  'src/components/fermentation/pulque.js',
+  'src/components/fermentation/balche.js',
   'src/components/plantas/general.js',
   'src/components/toxicas/general.js',
   'src/components/amanita/general.js',
   'src/components/trufas/general.js',
   'src/components/ayahuasca/general.js',
   'src/components/dmt/general.js',
+  'src/components/hongos/general.js',
   'src/app/gui-cultivo.js',
 ];
 

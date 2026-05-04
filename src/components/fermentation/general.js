@@ -18,6 +18,9 @@ function INTRO_FERMENT() {
           { nombre: "🍇 Vino casero", dif: "FÁCIL-MEDIA", tiempo: "3-6 meses", coste: "30-80€", desc: "Uvas (o frutas: ciruela, fresa, etc.) + levadura. Más tiempo de maduración pero proceso simple." },
           { nombre: "🌾 Kvass", dif: "FÁCIL", tiempo: "3-7 días", coste: "5-10€", desc: "Pan de centeno fermentado. Bebida rusa tradicional, muy bajo alcohol (1-2%). Refrescante y curiosa." },
           { nombre: "🦠 Kombucha", dif: "FÁCIL", tiempo: "1-2 semanas", coste: "10-20€", desc: "Té + azúcar + SCOBY. Bajo alcohol (<0.5%), no recreativo pero funcional (probióticos). Incluida porque comparte equipo." },
+          { nombre: "🌽 Chicha de jora", dif: "FÁCIL", tiempo: "2-5 días", coste: "5-15€/lote", desc: "Cerveza de maíz fermentado andina, 4000+ años de historia. Jora (maíz malteado) + agua + especias. Fermentación rápida (1-4 días), bajo alcohol (1-4%), sabor terroso-afrutado. La bebida ceremonial del Imperio Inca." },
+          { nombre: "🌵 Pulque", dif: "MEDIA", tiempo: "12-48h", coste: "10-20€", desc: "Bebida fermentada del aguamiel de maguey (agave). Textura viscosa característica por glucanos bacterianos. Requiere aguamiel fresco (difícil en España) o concentrado importado. ABV 4-8%. Pre-azteca, sagrada a Mayahuel. Consumir fresco." },
+          { nombre: "🌿 Balché", dif: "FÁCIL-MEDIA", tiempo: "2-4 días", coste: "15-30€", desc: "Bebida ceremonial Maya: corteza de Lonchocarpus + miel + agua. Fermentación natural con levaduras de la miel cruda. ABV 3-6%, sabor amargo-mielado-tanino. Tradición milenaria yucateca." },
         ].map((f, i) => (
           <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "12px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>

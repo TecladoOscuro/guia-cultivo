@@ -1,6 +1,6 @@
 function GuiaCultivo() {
 
-  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita" | "toxicas"
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita" | "toxicas" | "hongos"
 
   // Cannabis state
   const [mode, setMode] = useState("interior");
@@ -18,11 +18,14 @@ function GuiaCultivo() {
   // Cactus state (single mode)
   const [activeCactus, setActiveCactus] = useState("intro_cactus");
 
-  // Ferment state (4 modes: hidromiel, cerveza, sidra, general)
+  // Ferment state (7 modes: hidromiel, cerveza, sidra, chicha, pulque, balche, general)
   const [fermentMode, setFermentMode] = useState("general");
   const [activeFermentHidromiel, setActiveFermentHidromiel] = useState("compra_hidromiel");
   const [activeFermentCerveza, setActiveFermentCerveza] = useState("compra_cerveza");
   const [activeFermentSidra, setActiveFermentSidra] = useState("compra_sidra");
+  const [activeFermentChicha, setActiveFermentChicha] = useState("compra_chicha");
+  const [activeFermentPulque, setActiveFermentPulque] = useState("compra_pulque");
+  const [activeFermentBalche, setActiveFermentBalche] = useState("compra_balche");
   const [activeFermentGen, setActiveFermentGen] = useState("intro_ferment");
 
   // Plantas state (single mode)
@@ -42,6 +45,9 @@ function GuiaCultivo() {
 
   // DMT state (single mode)
   const [activeDmt, setActiveDmt] = useState("intro_dmt");
+
+  // Hongos medicinales state (single mode)
+  const [activeHongos, setActiveHongos] = useState("intro_hongos");
 
   const navigate = (targetMode, targetPhase) => {
     setMode(targetMode);
@@ -96,7 +102,7 @@ function GuiaCultivo() {
     const p = params.get("phase");
     if (!g) return;
 
-    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas", "toxicas"];
+    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas", "toxicas", "hongos"];
     if (!validGuides.includes(g)) return;
     setGuide(g);
 
@@ -123,14 +129,17 @@ function GuiaCultivo() {
     else if (g === "toxicas" && p) setActiveToxicas(p);
     else if (g === "plantas" && p) setActivePlantas(p);
     else if (g === "ferment") {
-      if (m && ["hidromiel", "cerveza", "sidra", "general"].includes(m)) setFermentMode(m);
+      if (m && ["hidromiel", "cerveza", "sidra", "chicha", "pulque", "balche", "general"].includes(m)) setFermentMode(m);
       if (p) {
         if (m === "hidromiel") setActiveFermentHidromiel(p);
         else if (m === "cerveza") setActiveFermentCerveza(p);
         else if (m === "sidra") setActiveFermentSidra(p);
+        else if (m === "chicha") setActiveFermentChicha(p);
+        else if (m === "pulque") setActiveFermentPulque(p);
+        else if (m === "balche") setActiveFermentBalche(p);
         else if (m === "general") setActiveFermentGen(p);
       }
-    }
+    } else if (g === "hongos" && p) setActiveHongos(p);
   }, []);
 
   const renderContent = () => {
@@ -260,6 +269,30 @@ function GuiaCultivo() {
           case "cata_sidra": return <CATA_SIDRA />;
           default: return <COMPRA_SIDRA />;
         }
+      } else if (fermentMode === "chicha") {
+        switch (activeFermentChicha) {
+          case "compra_chicha": return <COMPRA_CHICHA />;
+          case "prep_chicha": return <PREP_CHICHA />;
+          case "fermentacion_chicha": return <FERMENTACION_CHICHA />;
+          case "cata_chicha": return <CATA_CHICHA />;
+          default: return <COMPRA_CHICHA />;
+        }
+      } else if (fermentMode === "pulque") {
+        switch (activeFermentPulque) {
+          case "compra_pulque": return <COMPRA_PULQUE />;
+          case "prep_pulque": return <PREP_PULQUE />;
+          case "fermentacion_pulque": return <FERMENTACION_PULQUE />;
+          case "cata_pulque": return <CATA_PULQUE />;
+          default: return <COMPRA_PULQUE />;
+        }
+      } else if (fermentMode === "balche") {
+        switch (activeFermentBalche) {
+          case "compra_balche": return <COMPRA_BALCHE />;
+          case "preparacion_balche": return <PREPARACION_BALCHE />;
+          case "fermentacion_balche": return <FERMENTACION_BALCHE />;
+          case "cata_balche": return <CATA_BALCHE />;
+          default: return <COMPRA_BALCHE />;
+        }
       } else {
         switch (activeFermentGen) {
           case "intro_ferment": return <INTRO_FERMENT />;
@@ -305,6 +338,9 @@ function GuiaCultivo() {
         case "mandragora": return <MANDRAGORA />;
         case "datura_inoxia": return <DATURA_INOXIA />;
         case "estramonio": return <ESTRAMONIO />;
+        case "kratom": return <KRATOM />;
+        case "iboga": return <IBOGA />;
+        case "yopo": return <YOPO />;
         case "glosario_plantas": return <GLOSARIO_PLANTAS />;
         case "faq_plantas": return <FAQ_PLANTAS />;
         case "biblio_plantas": return <BIBLIO_PLANTAS />;
@@ -392,6 +428,18 @@ function GuiaCultivo() {
         case "biblio_dmt": return <BIBLIO_DMT />;
         default: return <INTRO_DMT />;
       }
+    } else if (guide === "hongos") {
+      switch (activeHongos) {
+        case "intro_hongos": return <INTRO_HONGOS setPhase={setActiveHongos} />;
+        case "lions_mane": return <LIONS_MANE />;
+        case "reishi": return <REISHI />;
+        case "chaga": return <CHAGA />;
+        case "cordyceps": return <CORDYCEPS />;
+        case "glosario_hongos": return <GLOSARIO_HONGOS />;
+        case "faq_hongos": return <FAQ_HONGOS />;
+        case "biblio_hongos": return <BIBLIO_HONGOS />;
+        default: return <INTRO_HONGOS />;
+      }
     }
   };
 
@@ -400,9 +448,9 @@ function GuiaCultivo() {
   const mushroomActiveMap = { kit: activeMushroomKit, friendly: activeMushroomFriendly, advanced: activeMushroomAdvanced, general: activeMushroomGen };
   const mushroomSetterMap = { kit: setActiveMushroomKit, friendly: setActiveMushroomFriendly, advanced: setActiveMushroomAdvanced, general: setActiveMushroomGen };
 
-  const fermentPhasesMap = { hidromiel: fermentHidromielPhases, cerveza: fermentCervezaPhases, sidra: fermentSidraPhases, general: fermentGeneralPhases };
-  const fermentActiveMap = { hidromiel: activeFermentHidromiel, cerveza: activeFermentCerveza, sidra: activeFermentSidra, general: activeFermentGen };
-  const fermentSetterMap = { hidromiel: setActiveFermentHidromiel, cerveza: setActiveFermentCerveza, sidra: setActiveFermentSidra, general: setActiveFermentGen };
+  const fermentPhasesMap = { hidromiel: fermentHidromielPhases, cerveza: fermentCervezaPhases, sidra: fermentSidraPhases, chicha: fermentChichaPhases, pulque: fermentPulquePhases, balche: fermentBalchePhases, general: fermentGeneralPhases };
+  const fermentActiveMap = { hidromiel: activeFermentHidromiel, cerveza: activeFermentCerveza, sidra: activeFermentSidra, chicha: activeFermentChicha, pulque: activeFermentPulque, balche: activeFermentBalche, general: activeFermentGen };
+  const fermentSetterMap = { hidromiel: setActiveFermentHidromiel, cerveza: setActiveFermentCerveza, sidra: setActiveFermentSidra, chicha: setActiveFermentChicha, pulque: setActiveFermentPulque, balche: setActiveFermentBalche, general: setActiveFermentGen };
 
   let currentPhases, currentActive, setCurrentActive, colors, title, modeOptions, currentMode, setCurrentMode;
 
@@ -450,6 +498,9 @@ function GuiaCultivo() {
       { id: "hidromiel", label: "🍯 Hidromiel", sub: "Miel + agua" },
       { id: "cerveza", label: "🍺 Cerveza", sub: "Malta + lúpulo" },
       { id: "sidra", label: "🍎 Sidra", sub: "Manzana otoño" },
+      { id: "chicha", label: "🌽 Chicha", sub: "Maíz andino" },
+      { id: "pulque", label: "🌵 Pulque", sub: "Agave mexicano" },
+      { id: "balche", label: "🌿 Balché", sub: "Corteza maya" },
     ];
     currentMode = fermentMode; setCurrentMode = setFermentMode;
   } else if (guide === "plantas") {
@@ -492,6 +543,14 @@ function GuiaCultivo() {
     title = "🌿 Ayahuasca";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
+  } else if (guide === "hongos") {
+    currentPhases = hongosMedicinalesPhases;
+    currentActive = activeHongos;
+    setCurrentActive = setActiveHongos;
+    colors = HONGOS_COLORS;
+    title = "🌿 Hongos Medicinales";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
   } else { // dmt
     currentPhases = dmtPhases;
     currentActive = activeDmt;
@@ -516,6 +575,7 @@ function GuiaCultivo() {
     { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "🍄 Cultivar / forrajear hongos", accent: MUSHROOM_COLORS.accent1 },
     { id: "trufas", emoji: "🍯", label: "Trufas mágicas", grupo: "🍄 Cultivar / forrajear hongos", accent: TRUFAS_COLORS.accent1 },
     { id: "amanita", emoji: "🟥", label: "Amanita", grupo: "🍄 Cultivar / forrajear hongos", accent: AMANITA_COLORS.accent1 },
+    { id: "hongos", emoji: "🌿", label: "Hongos medicinales", grupo: "🍄 Cultivar / forrajear hongos", accent: HONGOS_COLORS.accent1 },
     // 🫙 FERMENTAR
     { id: "ferment", emoji: "🍯", label: "Fermentar", grupo: "🫙 Fermentar", accent: FERMENT_COLORS.accent1 },
   ];

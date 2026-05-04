@@ -120,6 +120,27 @@ const fermentSidraPhases = [
   { id: "cata_sidra", emoji: "🥂", title: "Cata", subtitle: "Maduración" },
 ];
 
+const fermentChichaPhases = [
+  { id: "compra_chicha", emoji: "🛒", title: "Compra", subtitle: "Jora + equipo" },
+  { id: "prep_chicha", emoji: "🌽", title: "Preparación", subtitle: "Cocción jora" },
+  { id: "fermentacion_chicha", emoji: "🫧", title: "Fermentación", subtitle: "2-5 días" },
+  { id: "cata_chicha", emoji: "🥂", title: "Degustación", subtitle: "Fresco y frío" },
+];
+
+const fermentPulquePhases = [
+  { id: "compra_pulque", emoji: "🛒", title: "Compra", subtitle: "Aguamiel + starter" },
+  { id: "prep_pulque", emoji: "🌵", title: "Aguamiel", subtitle: "Preparar base" },
+  { id: "fermentacion_pulque", emoji: "🫧", title: "Fermentación", subtitle: "12-48h" },
+  { id: "cata_pulque", emoji: "🥛", title: "Consumo fresco", subtitle: "Curados + variedades" },
+];
+
+const fermentBalchePhases = [
+  { id: "compra_balche", emoji: "🛒", title: "Compra", subtitle: "Corteza + miel" },
+  { id: "preparacion_balche", emoji: "🌿", title: "Preparación", subtitle: "Macerar corteza" },
+  { id: "fermentacion_balche", emoji: "🫧", title: "Fermentación", subtitle: "2-4 días" },
+  { id: "cata_balche", emoji: "🍵", title: "Ceremonial", subtitle: "Sabor + contexto" },
+];
+
 // Plantas psicoactivas suaves — un solo modo, cada planta = phase
 const plantasPhases = [
   { id: "intro_plantas", emoji: "🌟", title: "Intro", subtitle: "Plantas suaves" },
@@ -155,6 +176,9 @@ const plantasPhases = [
   { id: "mandragora", emoji: "🪬", title: "Mandrágora", subtitle: "Raíz mítica" },
   { id: "datura_inoxia", emoji: "🎺", title: "Datura inoxia", subtitle: "Toloache mexicano" },
   { id: "estramonio", emoji: "⚠️", title: "Estramonio", subtitle: "Datura común ES" },
+  { id: "kratom", emoji: "🌿", title: "Kratom", subtitle: "Mitragyna speciosa" },
+  { id: "iboga", emoji: "🌿", title: "Iboga", subtitle: "Tabernanthe iboga" },
+  { id: "yopo", emoji: "🌳", title: "Yopo", subtitle: "Anadenanthera peregrina" },
   { id: "glosario_plantas", emoji: "📖", title: "Glosario", subtitle: "Términos etnobotánica" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
   { id: "biblio_plantas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
@@ -224,6 +248,18 @@ const toxicasPhases = [
   { id: "glosario_toxicas", emoji: "📖", title: "Glosario", subtitle: "Términos toxicología" },
   { id: "faq_toxicas", emoji: "❓", title: "FAQ", subtitle: "Primeros auxilios" },
   { id: "biblio_toxicas", emoji: "📚", title: "Bibliografía", subtitle: "Toxicología botánica" },
+];
+
+// Hongos medicinales funcionales (no psicoactivos)
+const hongosMedicinalesPhases = [
+  { id: "intro_hongos", emoji: "🌟", title: "Intro", subtitle: "Hongos medicinales" },
+  { id: "lions_mane", emoji: "🦁", title: "Lion's Mane", subtitle: "Hericium erinaceus" },
+  { id: "reishi", emoji: "🍄", title: "Reishi", subtitle: "Ganoderma lucidum" },
+  { id: "chaga", emoji: "🪨", title: "Chaga", subtitle: "Inonotus obliquus" },
+  { id: "cordyceps", emoji: "🧡", title: "Cordyceps", subtitle: "Cordyceps militaris" },
+  { id: "glosario_hongos", emoji: "📖", title: "Glosario", subtitle: "Términos micología" },
+  { id: "faq_hongos", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_hongos", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // DMT — Mimosa hostilis + química + uso

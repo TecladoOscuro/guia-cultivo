@@ -88,6 +88,16 @@ const TRUFAS_COLORS = {
   error: "#d4755b", errorBg: "#1a0c08", errorBorder: "#5a3020",
 };
 
+// Hongos medicinales funcionales — verde bosque profundo
+const HONGOS_COLORS = {
+  bg: "#071209", bg2: "#0d1c0f", bg3: "#152618", bg4: "#1d3020",
+  border1: "#234028", border2: "#345c3a", borderAccent: "#4a7e53",
+  accent1: "#5fa86b", accent2: "#7ec28a", accent3: "#9dd3a7", accent4: "#bee3c4", accent5: "#daf0de",
+  text: "#e3f1e6", textBright: "#f0faf3",
+  gradient: "linear-gradient(135deg, #234028 0%, #4a7e53 50%, #234028 100%)",
+  error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
+};
+
 // DMT — amarillo-dorado cristal psicodélico
 const DMT_COLORS = {
   bg: "#0a0a14", bg2: "#10101e", bg3: "#181828", bg4: "#222236",

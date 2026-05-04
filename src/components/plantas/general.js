@@ -2442,6 +2442,184 @@ function CHICALOTE() {
   );
 }
 
+function KRATOM() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Kratom (Mitragyna speciosa)</strong> — árbol tropical de la familia del café (Rubiaceae), originario de Tailandia, Malasia, Indonesia y Papúa Nueva Guinea. Sus hojas contienen mitragynina (alcaloide μ-opioide parcial) y 7-hidroximitragynina (metabolito 10-13x más potente). Efecto bifásico único: dosis bajas son estimulantes, dosis altas son opiáceas. Legal en España (no está en la lista de sustancias controladas). En la práctica, la mayoría de personas compran el polvo seco online en lugar de cultivarlo.
+      </InfoBoxX>
+      <SectionTitleX c={c}>POR QUÉ KRATOM</SectionTitleX>
+      <InfoBoxX c={c}>
+        • Efecto bifásico único: 1-5g = estimulante (energía, foco, sociabilidad, reducción fatiga) / 5-15g = opioide-like (analgesia potente, euforia, sedación){"  "}
+        • Usado tradicionalmente por trabajadores del SE Asiático para aliviar fatiga en trabajo manual duro{"  "}
+        • Investigado para reducción de daños en adicción a opioides (como sustituto autogestionado){"  "}
+        • Legal en España: SÍ — pero la AESAN ha advertido sobre ventas como alimento{"  "}
+        • Precio polvo online: €10-20 por 100g (práctico y accesible sin cultivar)
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="25-35°C constante" />
+        <StatBoxX c={c} label="Humedad" value="70-90%" />
+        <StatBoxX c={c} label="Luz" value="Sol indirecto intenso" />
+        <StatBoxX c={c} label="Sustrato" value="Turboso, pH 5-6, drenado" />
+        <StatBoxX c={c} label="Riego" value="Frecuente, sin encharcamiento" />
+        <StatBoxX c={c} label="Tamaño adulto" value="3-7m en maceta grande" />
+      </div>
+      <SectionTitleX c={c}>VIABILIDAD EN ESPAÑA</SectionTitleX>
+      <InfoBoxX c={c}>
+        <strong>MUY DIFÍCIL.</strong> El Kratom es un árbol tropical grande que necesita condiciones constantes imposibles de mantener en exterior español salvo en invernadero climatizado dedicado. Las semillas son viables solo pocos días tras la cosecha (rarísimas en el mercado). Las esquejes son más fiables pero difíciles de encontrar. Para la gran mayoría: comprar el polvo seco en tiendas etnobotánicas online (Azarius, Shayanashop, Avalon) es enormemente más práctico que cultivar. Si decides cultivar: invernadero tropical mínimo, sustrato ácido (pH 5-6, turba + perlita), humedad alta constante, temperatura mínima nocturna 20°C.
+      </InfoBoxX>
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Polvo seco (uso más común): €10-20 por 100g / €25-50 por 250g. Cápsulas (dosis pre-pesadas): €15-30 por 50g equivalente. Semillas (muy raras): €5-15 por sobre, con germinación muy baja. Esquejes: €15-40 en tiendas especializadas. Extractos concentrados: €15-30 por 10g (equivale a ~50-100g polvo, usar con precaución extrema).
+      </InfoBoxX>
+      <SectionTitleX c={c}>CULTIVO (SI DECIDES INTENTARLO)</SectionTitleX>
+      <StepX c={c} num={1} text="Conseguir esquejes de planta establecida (semillas no son viables si tienen más de pocos días)" why="Las semillas de Kratom pierden viabilidad germinativa en días tras la cosecha — raramente llegan viables por correo. El esqueje de planta sana es la única opción fiable para obtener planta." />
+      <StepX c={c} num={2} text="Preparar sustrato: turba + perlita (60/40), pH ajustado a 5.5-6.0, maceta con buen drenaje" why="Kratom necesita sustrato ácido. pH fuera de rango reduce absorción de nutrientes. El drenaje previene la podredumbre radical, el mayor asesino de plántulas en casa." />
+      <StepX c={c} num={3} text="Ambiente: invernadero climatizado a 25-32°C, humedad relativa >70% constante, luz indirecta brillante 12h+" why="Sin calor y humedad tropicales constantes el árbol detendrá el crecimiento, perderá hojas y morirá en invierno. No es viable en exterior español la mayor parte del año." />
+      <StepX c={c} num={4} text="Riego frecuente pero sin encharcamiento — el substrato debe estar húmedo siempre, nunca seco" why="Árbol ripario (vive junto a ríos en su hábitat). Necesita humedad constante en raíces pero drenaje activo. El encharcamiento = hongos de raíz." />
+      <StepX c={c} num={5} text="Fertilización con abono ligeramente ácido cada 2-3 semanas en temporada de crecimiento" why="Suelo ácido + tropical requiere nutrientes específicos. Abonos generales pueden elevar el pH y bloquear micronutrientes." />
+      <SectionTitleX c={c}>COSECHA</SectionTitleX>
+      <InfoBoxX c={c}>
+        Hojas maduras: las más oscuras (verde intenso) tienen mayor contenido alcaloide. Cosechar individualmente tirando hacia abajo. Secar en sombra (no sol directo — degrada alcaloides) con buena ventilación, 3-5 días. Una vez secas y crujientes: pulverizar en molinillo de café. El polvo resultante se conserva en frasco hermético oscuro. Las hojas blancas, rojas o verdes (nomenclatura comercial) se refieren al color de la vena central y corresponden a efectos ligeramente distintos por proporción de alcaloides.
+      </InfoBoxX>
+      <SectionTitleX c={c}>PREPARACIÓN Y DOSIS</SectionTitleX>
+      <InfoBoxX c={c}>
+        <strong>Toss-and-wash:</strong> coger cucharadita de polvo en boca, tragar con agua. Rápido pero desagradable (sabor muy amargo). <strong>Té:</strong> calentar agua a 80°C (no hervir), añadir polvo, remover 15 min, colar. El limón ayuda a extraer alcaloides. <strong>Cápsulas:</strong> lo más cómodo, dosis exactas, sin sabor. <strong>Dosis:</strong> Umbral 1-2g. Estimulante 2-5g. Opioide-like 5-10g. Máximo recomendado 15g (más = náuseas y vómitos. Los extractos concentrados tienen equivalencias muy distintas — leer etiqueta con cuidado.
+      </InfoBoxX>
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        <strong>1-5g (estimulante):</strong> energía mental y física aumentada, sociabilidad, foco, reducción de fatiga. Similar a cafeína fuerte pero con componente eufórico suave. Inicio 15-30 min, duración 2-4h. <strong>5-15g (opioide-like):</strong> analgesia intensa (válida para dolor crónico o agudo), euforia calida, sedación, relajación muscular profunda. Inicio 20-40 min, duración 4-6h. <strong>Efectos no deseados frecuentes:</strong> náuseas (especialmente sobre 7-8g, peor con estómago vacío), sudoración, estreñimiento con uso regular, mareo. El kratom "wobble" (visión oscilante, mareo) indica sobredosis — esperar sentado.
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Polvo en frasco hermético oscuro, lugar fresco y seco: 1-2 años con potencia conservada. Luz y humedad degradan los alcaloides. No refrigerar (condensación). Hojas secas enteras: hasta 2-3 años. Evitar plástico fino — usar vidrio o bolsa mylar con cierre. Etiquetar con fecha y cepa (variedad).
+      </InfoBoxX>
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c} error="Mezcla con opioides, benzodiacepinas o alcohol" consecuencia="Depresión respiratoria potencialmente fatal. El kratom actúa en los mismos receptores que la morfina y la heroína — la combinación puede detener la respiración durante el sueño sin que el usuario despierte." fix="NO combinar NUNCA con opioides (codeína, tramadol, morfina, heroína), benzodiacepinas (diazepam, alprazolam) ni alcohol. Esperar 24h tras cualquier opioide antes de tomar kratom." />
+      <ErrorCardX c={c} error="Uso diario → dependencia física" consecuencia="Con uso diario durante semanas se desarrolla tolerancia y dependencia física. El síndrome de abstinencia (3-7 días) incluye insomnio, irritabilidad intensa, ansiedad, dolores musculares, moqueo, sudoración — similar a abstinencia de opioides leve." fix="Máximo 2-3 veces por semana. Usar dosis mínima efectiva. Hacer semanas de descanso cada mes. Si ya hay dependencia: reducción gradual de dosis (10-20% cada semana) en lugar de parada abrupta." />
+      <ErrorCardX c={c} error="Hepatotoxicidad con uso crónico elevado" consecuencia="Casos documentados de daño hepático con uso diario de dosis altas durante meses. Síntomas: ictericia (piel amarilla), orina oscura, fatiga extrema, dolor abdominal derecho." fix="No superar 15g/día. Uso ocasional sin riesgo hepático documentado en personas sanas. Si hepatopatía previa: no usar. Contraindicado en embarazo." />
+    </div>
+  );
+}
+
+function IBOGA() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Iboga (Tabernanthe iboga)</strong> — arbusto del sotobosque de la selva ecuatorial de África Central (Gabón, Camerún, RDC). Familia Apocynaceae. Su corteza de raíz contiene ibogaína (alcaloide tetracíclico de farmacología extremadamente compleja y multidiana) y otros alcaloides relacionados. Uso ancestral: ceremonia Bwiti (rito de paso, contacto con ancestros). Uso moderno investigado: tratamiento de adicción a opioides y estimulantes — una o dos sesiones pueden reducir drásticamente el craving. Riesgo crítico: prolongación del intervalo QT cardíaco → arritmia → muerte. Solo bajo supervisión médica en clínica certificada.
+      </InfoBoxX>
+      <SectionTitleX c={c}>POR QUÉ IBOGA</SectionTitleX>
+      <InfoBoxX c={c}>
+        • Tradición Bwiti (Gabón): rito de iniciación de 18-36h — contacto con ancestros, visión del propio nacimiento y muerte, sanación{"  "}
+        • Uso experimental anti-adictivo: una sesión puede eliminar el síndrome de abstinencia de opioides y reducir el craving semanas o meses{"  "}
+        • Farmacología única: antagonista NMDA (disociativo) + modulador opioide + inhibidor recaptación serotonina/dopamina{"  "}
+        • Experiencia de 18-36h que usuarios describen como "10 años de terapia en una noche"{"  "}
+        • Legalidad en España: la planta es legal como ornamental; la ibogaína per se no está en la lista nacional de sustancias controladas (2024) pero está sujeta a regulación sanitaria{"  "}
+        • Para coleccionistas: especimen único de lento crecimiento, rarísimo en España
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="20-28°C constante" />
+        <StatBoxX c={c} label="Humedad" value="75-85%" />
+        <StatBoxX c={c} label="Luz" value="Sombra parcial 20-30%" />
+        <StatBoxX c={c} label="Sustrato" value="Turboso ácido, pH 5.5-6.5" />
+        <StatBoxX c={c} label="Riego" value="Moderado, drenaje excelente" />
+        <StatBoxX c={c} label="Crecimiento" value="Extremadamente lento" />
+      </div>
+      <SectionTitleX c={c}>VIABILIDAD EN ESPAÑA</SectionTitleX>
+      <InfoBoxX c={c}>
+        <strong>DIFÍCIL — y el crecimiento es extremadamente lento.</strong> Arbusto del sotobosque tropical: necesita temperatura constante (sin bajar de 15°C nunca), humedad alta, luz filtrada. En España: solo viable en invernadero tropical o interior con iluminación artificial. El reto principal no es que muera — es que crece muy despacio: 3-5 años para alcanzar 30-50cm. La corteza de raíz (donde están los alcaloides) tarda una década+ en acumular cantidades significativas. Para la mayoría: cultivar como especimen coleccionista, no con fines de extracción. Las semillas pierden viabilidad en 1-2 semanas — casi imposible encontrarlas viables. Mejor opción: esqueje de planta establecida de coleccionista o tienda especializada.
+      </InfoBoxX>
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Semillas (rarísimas, baja germinación): €8-20 por sobre. Planta pequeña (5-15cm): €25-60 en tiendas etnobotánicas especializadas. Corteza de raíz seca (para colección, NO para uso sin supervisión médica): €15-40 por 10g en tiendas especializadas. Tratamiento con ibogaína en clínica certificada: €1.500-4.000 por sesión (España, Países Bajos, Portugal).
+      </InfoBoxX>
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Conseguir esqueje de 10-15cm de planta sana, o semilla fresca (máximo 2 semanas tras cosecha)" why="Las semillas de Iboga pierden viabilidad muy rápido — si no germinan en 2 semanas, no germinarán. El esqueje es la opción más fiable para obtener planta viva." />
+      <StepX c={c} num={2} text="Sustrato: turba de Sphagnum + perlita (70/30), pH 5.5-6.0, maceta pequeña con drenaje excelente" why="Iboga es arbusto del sotobosque tropical, acostumbrado a suelos forestales ácidos y ricos en materia orgánica. Sensible a encharcamiento — las raíces se pudren fácilmente." />
+      <StepX c={c} num={3} text="Luz: sombra parcial. Nunca sol directo de mediodía. 4-6h de luz suave o luz artificial de espectro completo" why="Planta del sotobosque — en su hábitat crece bajo el dosel forestal. El sol directo intenso quema las hojas y estresa la planta." />
+      <StepX c={c} num={4} text="Temperatura: 22-26°C día, mínimo 18°C noche. Nunca exponer a temperaturas bajo 15°C" why="Planta ecuatorial sin adaptación al frío. Una noche a 10°C puede dañar irreversiblemente una planta que tardó años en crecer." />
+      <StepX c={c} num={5} text="Riego moderado: dejar secar ligeramente la capa superior entre riegos. Humidificador si humedad <60%" why="El error más común con Iboga es regar en exceso. El suelo húmedo constante pero no empapado es el objetivo. La humedad ambiental alta es esencial." />
+      <StepX c={c} num={6} text="Paciencia total: crecimiento de milímetros por semana, especialmente al principio. No re-trasplantar frecuentemente" why="Iboga crece extremadamente despacio. Re-trasplantar demasiado frecuente daña las raíces frágiles y retrasa aún más el desarrollo." />
+      <SectionTitleX c={c}>EFECTOS (SOLO CONTEXTO ETNOBOTÁNICO Y CLÍNICO)</SectionTitleX>
+      <InfoBoxX c={c}>
+        La experiencia con ibogaína dura 18-36 horas. Fase onírica (primeras 4-8h): visiones intensas, memorias de infancia y ancestrales, imágenes geométricas y escénicas con ojos cerrados. Fase introspectiva (horas 8-20): procesamiento emocional profundo, "conversaciones" con partes de uno mismo o figuras significativas. Fase de integración (últimas horas): agotamiento pero claridad mental. Los usuarios describen una lucidez sobre patrones vitales que pueden persistir semanas. Para adicción a opioides: reduce o elimina el síndrome de abstinencia físico y puede reducir drásticamente el craving durante semanas-meses. No es la cura definitiva — requiere trabajo de integración posterior.
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONSERVACIÓN (ESPECIMEN COLECCIONISTA)</SectionTitleX>
+      <InfoBoxX c={c}>
+        Hojas y corteza de raíz secas en frasco hermético oscuro: 2-3 años. Secar a baja temperatura (40-50°C máximo) para preservar alcaloides. La planta viva no requiere más "conservación" que los cuidados descritos — es de muy larga vida si bien cuidada.
+      </InfoBoxX>
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c} error="Autoadministración de ibogaína" consecuencia="La ibogaína produce arritmias cardíacas potencialmente fatales al prolongar el intervalo QT del electrocardiograma. Casos de muerte documentados en autoadministraciones sin supervisión médica. El riesgo es real incluso en personas sin cardiopatía previa conocida." fix="La ibogaína SOLO debe administrarse en clínica certificada con: ECG previo, cardiólogo disponible, monitorización cardíaca continua durante las 24-36h, personal médico presente. Clínicas en España, Países Bajos (Awakn, ICEERS-validadas), Portugal." />
+      <ErrorCardX c={c} error="Cardiopatía + ibogaína" consecuencia="Contraindicación ABSOLUTA. Personas con QTc >450ms, arritmias previas, insuficiencia cardíaca, o que toman medicamentos que alargan el QT (algunos antidepresivos, antibióticos, antiarrítmicos) tienen riesgo muy elevado de muerte súbita." fix="ECG obligatorio previo a cualquier sesión. Lista completa de medicamentos al médico. Si QTc >450ms: no candidato a ibogaína bajo ninguna circunstancia." />
+      <ErrorCardX c={c} error="Ibogaína + opioides activos en sangre" consecuencia="Combinación peligrosa. Aunque la ibogaína se usa para tratar la adicción a opioides, la administración simultánea es de alto riesgo. La ibogaína modula los receptores opioides de forma compleja." fix="Protocolo estándar de clínicas: 12-24h de abstinencia de opioides antes de la sesión. El médico gestiona el síndrome de abstinencia puente si es necesario." />
+    </div>
+  );
+}
+
+function YOPO() {
+  const c = PLANTAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <strong>Yopo (Anadenanthera peregrina) / Cebil (A. colubrina)</strong> — árbol leguminoso (familia Fabaceae) de América del Sur. A. peregrina: cuenca del Orinoco (Venezuela, Colombia), Caribe. A. colubrina: Andes bolivianos y argentinos. Sus semillas contienen bufotenina (5-OH-DMT, 5-10% del peso seco), trazas de DMT y 5-MeO-DMT, y beta-carbolinas. Uso tradicional: semillas tostadas y molidas, mezcladas con cal (calcio hidróxido) o cenizas, insufladas nasalmente en rituales chamánicos. Experiencia: 10-30 minutos, muy física e intensa. <strong>FÁCIL DE CULTIVAR</strong> comparado con Kratom o Iboga.
+      </InfoBoxX>
+      <SectionTitleX c={c}>POR QUÉ YOPO</SectionTitleX>
+      <InfoBoxX c={c}>
+        • Árbol leguminoso rústico y de crecimiento rápido — tolerante al clima mediterráneo (Canarias, SE España, interior cálido){"  "}
+        • Semillas fácilmente disponibles en tiendas etnobotánicas (€10-25 por sobre){"  "}
+        • Germinación muy fácil y rápida (5-14 días con escarificación mínima){"  "}
+        • Un árbol adulto produce cientos de semillas por temporada{"  "}
+        • Valor etnobotánico enorme: una de las plantas enteogénicas más antiguas documentadas en Suramérica (petroglifos y artefactos de inhalación de 4.000+ años){"  "}
+        • Legalidad: la planta es completamente legal en España; la bufotenina es sustancia controlada en varios países (no en España per se como planta/semilla)
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONDICIONES IDEALES</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="Temperatura" value="15-35°C (frost-sensible)" />
+        <StatBoxX c={c} label="Humedad" value="30-70% (tolerante)" />
+        <StatBoxX c={c} label="Luz" value="Sol pleno" />
+        <StatBoxX c={c} label="Sustrato" value="Cualquiera bien drenado" />
+        <StatBoxX c={c} label="Riego" value="Moderado, tolera sequía" />
+        <StatBoxX c={c} label="Tamaño adulto" value="5-15m (en maceta: 2-4m)" />
+      </div>
+      <SectionTitleX c={c}>PRECIOS ORIENTATIVOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Semillas (sobre de 10-20 semillas): €10-25 en tiendas etnobotánicas. Planta pequeña (20-40cm): €15-35. Las semillas germinan con tasa muy alta — un sobre suele dar 8-15 plántulas vigorosas. No hay razón para comprar planta si tienes semillas.
+      </InfoBoxX>
+      <SectionTitleX c={c}>CULTIVO</SectionTitleX>
+      <StepX c={c} num={1} text="Escarificación suave: frotar la semilla con papel de lija fino por ambas caras (5-10 seg) para rayar la testa dura" why="Las semillas de leguminosas tienen testa (cáscara exterior) muy dura que impide la absorción de agua. La escarificación leve permite que el agua entre y active la germinación. Sin esto, muchas semillas no germinan o tardan semanas." />
+      <StepX c={c} num={2} text="Remojo en agua tibia 24h tras escarificación. Las semillas que floten desecharlas." why="El remojo hidrata el embrión y acelera la germinación. Las semillas que flotan suelen estar vacías o dañadas — tienen menor densidad que las sanas." />
+      <StepX c={c} num={3} text="Plantar directamente a 1-2cm de profundidad en sustrato bien drenado (tierra + perlita 60/40), maceta pequeña, temperatura 22-28°C" why="Sustrato con buen drenaje evita la podredumbre radical en plántulas jóvenes. La temperatura cálida es crucial para la germinación — bajo 18°C el proceso se ralentiza mucho." />
+      <StepX c={c} num={4} text="Germinación: 5-14 días. Mantener sustrato húmedo pero no encharcado hasta que aparezcan los primeros pares de hojas compuestas" why="Las plántulas de Anadenanthera son muy sensibles al encharcamiento en los primeros días. Una vez establecidas (15-20cm) son mucho más robustas." />
+      <StepX c={c} num={5} text="Trasplantar a maceta más grande (20-30L) o al exterior cuando la planta tenga 30-40cm y sea temporada sin heladas" why="El Yopo crece rápido una vez establecido. Al exterior con pleno sol se desarrolla mucho más rápido que en interior. Sensible a las heladas — entrar a cubierto si <5°C previstos." />
+      <StepX c={c} num={6} text="Fertilizar con abono general durante la temporada de crecimiento. Tolera periodos de sequía una vez establecido." why="Leguminosa fijadora de nitrógeno — menos dependiente de abonos nitrogenados que otras plantas. El abono potencia el crecimiento rápido inicial." />
+      <SectionTitleX c={c}>COSECHA DE SEMILLAS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Las vainas (pods) maduran a final de temporada — se vuelven marrones y se abren solas o se recogen antes de que se abran. Dentro: semillas planas y redondas de 1-2cm de diámetro, color marrón oscuro. Un árbol adulto puede producir decenas a cientos de vainas. Secar las semillas 1-2 semanas en lugar ventilado antes de almacenarlas. Almacenamiento en frasco hermético oscuro: 2-3 años manteniendo capacidad germinativa.
+      </InfoBoxX>
+      <SectionTitleX c={c}>USO TRADICIONAL (SOLO DOCUMENTACIÓN ETNOBOTÁNICA)</SectionTitleX>
+      <InfoBoxX c={c}>
+        El uso del Yopo es estrictamente chamánico en su contexto original. La preparación tradicional documentada por etnobotánicos: (1) Tostar las semillas en sartén seca a fuego medio hasta que se vuelvan marrones y empiecen a expandirse. (2) Moler en mortero hasta polvo muy fino. (3) Mezclar 50/50 en peso con cal viva (calcio hidróxido — venta en ferreterías como "cal apagada") o cenizas de corteza alcalina. La cal aumenta el pH de la mezcla, convirtiendo las sales de bufotenina en base libre más biodisponible. (4) La preparación resultante se insufla en pequeñísimas cantidades (0.3-0.5g total) mediante tubo de hueso o caña. En contexto tradicional: siempre administrado por el chamán, nunca autoadministrado.
+      </InfoBoxX>
+      <SectionTitleX c={c}>EFECTOS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Muy distintos a psicodélicos "cómodos": los primeros 2-5 minutos son extremadamente físicos — taquicardia intensa, vasoconstricción, sensación de presión torácica, rubor, tensión muscular. Luego: visuals muy intensos (geométricos y de color), sensación de movimiento o vuelo, 10-30 minutos en total. No es una experiencia suave en ningún caso. En contexto tradicional: el malestar físico inicial es considerado parte del proceso de "purga" y limpieza. Usuarios contemporáneos lo describen invariablemente como intenso y difícil, incluso con dosis mínimas.
+      </InfoBoxX>
+      <SectionTitleX c={c}>CONSERVACIÓN</SectionTitleX>
+      <InfoBoxX c={c}>
+        Semillas secas en frasco hermético oscuro: 2-3 años. Para uso en preparación (tostadas y molidas): usar en el momento o conservar el polvo tostado en frasco hermético máximo 6 meses (el tostado degrada alcaloides con el tiempo).
+      </InfoBoxX>
+      <SectionTitleX c={c}>HARM REDUCTION</SectionTitleX>
+      <ErrorCardX c={c} error="Cardiopatía o hipertensión + Yopo" consecuencia="La bufotenina produce vasoconstricción EXTREMA y taquicardia severa en los primeros minutos. Personas con cardiopatía, hipertensión, arritmias previas o ansiedad severa tienen riesgo real de evento cardiovascular." fix="CONTRAINDICACIÓN ABSOLUTA en cardiopatía, hipertensión no controlada, arritmias. No usar si tomas medicación cardiovascular. ECG recomendado antes del primer uso incluso en personas aparentemente sanas." />
+      <ErrorCardX c={c} error="Expectativa de experiencia suave o recreativa" consecuencia="El Yopo NO tiene una versión suave. La intensidad cardiovascular y física es inevitable incluso con dosis muy bajas. Prepararse mentalmente para 5-10 minutos de incomodidad física intensa antes de la fase visual." fix="Set y setting chamánico: posición recostada, sitter presente, entorno silencioso y seguro. Nunca en solitario. Primera experiencia siempre con la dosis mínima posible (0.1-0.2g total polvo preparado)." />
+      <ErrorCardX c={c} error="Dosis altas o metabolismo lento" consecuencia="Con dosis altas (>1g polvo preparado) los efectos cardiovasculares son peligrosos. Individuos con metabolismo lento de la bufotenina (variante genética CYP2D6 slow metabolizer) acumulan más bufotenina → efectos más intensos y prolongados." fix="Empezar siempre con la dosis más baja. No re-dosificar si el efecto tarda en llegar. El mecanismo es insuflado nasal — absorción rápida pero variable." />
+    </div>
+  );
+}
+
 function GLOSARIO_PLANTAS() {
   const c = PLANTAS_COLORS;
   const [query, setQuery] = React.useState("");
@@ -2485,6 +2663,12 @@ function GLOSARIO_PLANTAS() {
     { t: "Solvente apolar", d: "Líquido orgánico no miscible con agua que extrae compuestos no polares (alcaloides en base libre, grasas, ceras). Ejemplos: naphtha (nafta ligera), éter dietílico, DCM (diclorometano), acetato de etilo. En extracción A/B: añadir al final cuando la fase acuosa está alcalinizada (base libre del alcaloide) para extraer el alcaloide a la fase orgánica. Evaporar el solvente deja el alcaloide base libre. Seguridad: inflamables (excepto DCM), usar con ventilación." },
     { t: "Dosis umbral", d: "Dosis mínima a la que un efecto es perceptible, también llamada 'dosis de umbral' o threshold dose. Varía enormemente entre personas (metabolismo, tolerancia, sensibilidad genética) y entre lotes de planta (variabilidad de contenido). Regla de harm reduction: empezar con dosis umbral o menor en primera experiencia. Para LSA: 2-3 semillas de woodrose. Para Salvia: 50-100mg hojas. Para Kava: 5g raíz." },
     { t: "Vía de administración", d: "Ruta de entrada de una sustancia al organismo. Afecta onset (inicio), duración, intensidad y biodisponibilidad. Oral (ingerida): onset 30-90 min, duración máxima, metabolismo hepático primer paso. Sublingual: onset 5-15 min, evita primer paso. Fumada/inhalada: onset segundos-minutos, duración corta. Insufladda (snortada): onset 5-10 min, irritación nasal. Transdérmica (piel, mucosas): variable, uso histórico tropanos. Rectal: absorción rápida, omite primer paso." },
+    { t: "Mitragynina", d: "Activo principal de Kratom (Mitragyna speciosa). Alcaloide oxindólico. A dosis bajas actúa como estimulante adrenérgico; a dosis altas como agonista parcial del receptor μ-opioide (mismo receptor de morfina y heroína). Potencia opiácea baja-media (aproximadamente 20 veces menos potente que morfina). 7-hidroximitragynina (metabolito menor presente en las hojas) es ~13x más potente que la mitragynina misma. La biphasicidad de efectos (estimulante a dosis bajas vs. opiáceo a dosis altas) es única entre plantas psicoactivas." },
+    { t: "Ibogaína", d: "Alcaloide principal de Tabernanthe iboga. Estructura química única: indolalcaloide tetracíclico. Farmacología compleja multidiana: antagonista NMDA (produce disociación similar a ketamina), agonista sigma-2, modula receptores opioides μ y κ, inhibe recaptación de serotonina y dopamina. Efectos durante 18-36 horas. Actividad anti-adictiva documentada: una sola sesión supervisada puede reducir drásticamente el craving de opioides, cocaína y alcohol. Riesgo crítico: prolongación del intervalo QT → arritmia ventricular (torsades de pointes) → muerte súbita. Contraindicada en personas con cardiopatía. Solo bajo supervisión médica en clínica certificada con monitorización cardíaca continua." },
+    { t: "Bufotenina (5-OH-DMT)", d: "Alcaloide triptamínico presente en semillas de Anadenanthera peregrina (Yopo) y A. colubrina (Cebil). Estructuralmente similar al DMT pero con grupo hidroxilo en posición 5 que la hace más polar y con mayor afinidad por ciertos receptores (especialmente 5-HT2A y receptores sigma). Efectos muy físicos: vasoconstricción severa y taquicardia intensa en los primeros minutos. Clasificada como sustancia controlada en varios países (no en España per se como planta/semilla). Históricamente confundida con DMT puro en reportes tempranos. En semillas de Yopo: 5-10% del peso seco de las semillas." },
+    { t: "Dependencia física vs psicológica", d: "La dependencia física implica adaptaciones neurológicas que producen síntomas físicos mensurables al cesar el consumo (sudoración, temblores, taquicardia, dolor muscular, diarrea — síndrome de abstinencia). La psicológica implica craving/deseo intenso sin síntomas físicos objetivos. Kratom puede producir dependencia física con uso diario durante semanas. Psicodélicos clásicos (setas, LSD, mescalina): no producen dependencia física y la psicológica es mínima. Cannabis: dependencia psicológica moderada, físicamente muy leve. Alcohol y opiáceos farmacéuticos: dependencia física severa con abstinencia potencialmente peligrosa (el alcohol puede producir convulsiones fatales al retirar bruscamente)." },
+    { t: "Síndrome de abstinencia a kratom", d: "Síntomas que aparecen al cesar el uso diario de kratom después de haber establecido dependencia física. Similares a abstinencia de opiáceos leve: insomnio intenso (el más persistente), irritabilidad extrema y ansiedad, dolores musculares difusos, rhinorrea (moqueo nasal), sudoración, bostezos frecuentes. Duración típica: 3-7 días, con pico en días 2-3 y resolución gradual. Menos grave que abstinencia de heroína/morfina farmacéutica pero incómodo. Prevención: no usar kratom más de 3-4 veces por semana; usar la dosis mínima efectiva; hacer ciclos de uso con semanas enteras de descanso; si hay dependencia establecida, reducir dosis gradualmente (10-20% por semana) en lugar de parar bruscamente." },
+    { t: "Prolongación QT", d: "Alargamiento del intervalo QT en el electrocardiograma. El intervalo QT representa el período de despolarización y repolarización ventricular cardíaca. Cuando se alarga anormalmente (QTc >450ms en hombres, >460ms en mujeres), el corazón es vulnerable a arritmias ventriculares. Ibogaína y ciertos alcaloides de plantas lo alargan, igual que algunos antibióticos (eritromicina, azitromicina), antidepresivos (citalopram), antiarrítmicos y antipsicóticos. Riesgo: torsades de pointes (arritmia en espiral) → fibrilación ventricular → paro cardíaco → muerte súbita. Por eso la ibogaína requiere ECG previo para medir el QTc basal, monitorización cardíaca continua durante toda la sesión (18-36h) y personal médico presente. Contraindicada en personas con QTc basal >450ms, cardiopatía estructural o que toman medicamentos que alargan el QT." },
   ];
 
   const filtered = terminos.filter(t =>
@@ -2495,7 +2679,7 @@ function GLOSARIO_PLANTAS() {
   return (
     <div>
       <InfoBoxX c={c}>
-        Glosario de etnobotánica y farmacología de plantas psicoactivas — 18 términos clave con definiciones precisas. Desde conceptos generales (enteógeno, psicodélico) hasta compuestos específicos (salvinorina, mesembrina, kavalactonas, LSA). Buscar por palabra o navegar completo.
+        Glosario de etnobotánica y farmacología de plantas psicoactivas — 24 términos clave con definiciones precisas. Desde conceptos generales (enteógeno, psicodélico) hasta compuestos específicos (salvinorina, mesembrina, kavalactonas, LSA, mitragynina, ibogaína, bufotenina). Buscar por palabra o navegar completo.
       </InfoBoxX>
 
       <input type="text" placeholder="🔍 Buscar término..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
@@ -2559,6 +2743,11 @@ function FAQ_PLANTAS() {
     { q: "¿El Kava es adictivo?", a: "No produce dependencia física. El Kava no activa el sistema de recompensa dopaminérgico de forma significativa — no hay craving físico al parar. Dependencia psicológica leve posible con uso diario prolongado (igual que el café o el té). Hepatotoxicidad: el riesgo real documentado no es la adicción sino el daño hepático con uso excesivo o variedades inadecuadas. Las variedades 'tudei' (Piper wichmanii) contienen flavocavainas A y B hepatotóxicas — verificar siempre que sea 'kava noble' (Piper methysticum varietat noble). Los extractos con solventes orgánicos concentran las toxinas — solo raíz molida tradicional. Uso ocasional (1-3 veces/semana) de kava noble: sin riesgo hepático documentado en personas sanas." },
     { q: "¿El Coleus blumei realmente es psicoactivo?", a: "Debate abierto. La evidencia es muy débil. Los reportes originales de Schultes y Hofmann (años 60) describieron uso mazateco del Coleus como sustituto de Salvia divinorum. Sin embargo: los estudios farmacológicos posteriores no han identificado un compuesto activo claro de potencia significativa. El forskolín (diterpeno presente) tiene efectos cardiovasculares y en AMPc pero no psicoactivos directos conocidos. La mayoría de reportes son muy subjetivos y dosis-dependientes. Conclusión honesta: puede haber un efecto sutil real en algunas personas, pero es casi imposible distinguirlo de efecto placebo en la práctica. No esperar experiencia tipo Salvia-level. Valor principal: ornamental y curiosidad etnobotánica." },
     { q: "¿Cómo identifico si mis semillas de Woodrose o Morning Glory están tratadas?", a: "Señales de semillas tratadas: packaging de vivero convencional con mención a fungicida, insecticida o 'treated for planting'. Color inusual en la superficie (recubrimiento naranja, rosa, verde o azul visible). Olor químico intenso diferente al herbal. Bote de semillas ornamentales de tienda de jardinería convencional. Semillas sin tratar (untreated): comprar en tiendas etnobotánicas especializadas (Azarius, Shayanashop, Avalon) que especifican explícitamente 'untreated', 'no coating', 'for botanical use'. Verificar descripción del producto: mencionar Argyreia nervosa var. Ghana (woodrose) o Ipomoea tricolor 'Heavenly Blue' de fuente etnobotánica. Cosecha propia de planta cultivada en casa = la opción más segura. Semillas de vivero convencional de centros de jardinería como Leroy Merlin o similares: NO usar — casi siempre tratadas." },
+    { q: "¿El Kratom es seguro?", a: "El Kratom tiene un perfil de riesgo real que hay que entender antes de usarlo. EFECTOS BIFÁSICOS: dosis bajas (1-5g polvo) son estimulantes como cafeína fuerte; dosis altas (5-15g) producen efectos opioides reales (analgesia, euforia, sedación). No es una hierba 'suave'. DEPENDENCIA FÍSICA: con uso diario durante semanas se desarrolla dependencia física. El síndrome de abstinencia al parar (insomnio, irritabilidad, dolores musculares, moqueo, sudoración) dura 3-7 días — incómodo pero no peligroso. Prevención: máximo 2-3 veces por semana, ciclos con semanas de descanso. HEPATOTOXICIDAD: casos documentados de daño hepático con uso diario de dosis altas durante meses. Uso ocasional en personas sanas: sin riesgo hepático conocido. MEZCLA PELIGROSA — RIESGO MUERTE: NO combinar con opioides (tramadol, codeína, morfina, heroína), benzodiacepinas (diazepam, alprazolam) ni alcohol. La combinación puede producir depresión respiratoria fatal durante el sueño. CONTRAINDICACIONES: embarazo, hepatopatía previa, uso concomitante de opiáceos o benzodiacepinas. DOSIS MÁXIMA: 15g en una toma — más produce náuseas y vómitos garantizados. Conclusión: kratom usado ocasionalmente, con moderación y sin mezclas, es manejable para adultos sanos. Uso diario = escalada de riesgo." },
+    { q: "¿Puedo cultivar Kratom en España?", a: "Honestamente: es extremadamente difícil y la mayoría de personas no debería intentarlo. El Kratom es un árbol tropical grande (puede llegar a 30m en naturaleza) que necesita temperatura constante de 25-35°C, humedad superior al 70% todo el año, y luz brillante. En España eso significa invernadero climatizado dedicado, con calefacción en invierno y sistema de humidificación activo. Además: las semillas pierden viabilidad en pocos días tras cosecha (rarísimas y casi siempre inviables al llegar por correo). Los esquejes son más fiables pero difíciles de encontrar. Si decides intentarlo: sustrato ácido (turba + perlita, pH 5.5-6.0), maceta grande, temperatura mínima nocturna 20°C, riego frecuente sin encharcamiento. La ALTERNATIVA PRÁCTICA que usa la mayoría: comprar polvo de kratom seco en tiendas etnobotánicas online (Azarius, Shayanashop, Avalon Magic Plants). El precio es €10-20 por 100g con múltiples variedades (White Maeng Da, Green Borneo, Red Bali, etc.) con distintos perfiles de efecto. Sin invernadero: no cultivar." },
+    { q: "¿Qué es la Ibogaína y dónde se hace el tratamiento?", a: "La ibogaína es el alcaloide principal de la corteza de raíz de Tabernanthe iboga, árbol de África Central. Es un compuesto de farmacología extremadamente compleja: actúa sobre múltiples receptores simultáneamente (NMDA, opioides, serotonina, dopamina). La experiencia dura 18-36 horas — larga e intensa. Se investiga seriamente para el tratamiento de adicción a opioides (heroína, metadona), estimulantes (cocaína) y alcohol: una o dos sesiones supervisadas pueden reducir drásticamente el craving y el síndrome de abstinencia durante semanas o meses. RIESGO CARDÍACO REAL: la ibogaína prolonga el intervalo QT del corazón, lo que puede causar arritmias fatales. Varios casos de muerte documentados en autoadministraciones sin supervisión médica. CÓMO HACERLO CORRECTAMENTE — SOLO EN CLÍNICA CERTIFICADA: el proceso requiere ECG previo, cardiólogo, monitorización cardíaca continua las 36h, y personal médico presente. Clínicas con protocolo validado: en España (varias clínicas de adicciones que trabajan con ibogaína), Países Bajos (ICEERS-validadas, Awakn), Portugal. Buscar clínicas reconocidas por MAPS o ICEERS. Precio: €1.500-4.000 por sesión. La autoadministración es peligrosa y no recomendada bajo ningún concepto." },
+    { q: "¿El Yopo es peligroso?", a: "Sí, el Yopo tiene un perfil de riesgo real que lo distingue claramente de hierbas suaves como Damiana o Pasiflora. EFECTOS MUY FÍSICOS: los primeros 2-5 minutos tras la insuflación producen taquicardia intensa y vasoconstricción severa. No existe una 'experiencia suave de Yopo' — la intensidad cardiovascular inicial es siempre pronunciada, incluso con dosis mínimas. Incluso usuarios experimentados lo describen como brusco e incómodo. USO TRADICIONAL NO RECREATIVO: en las culturas originarias (Yanomami, Piaroa, otros pueblos del Orinoco) el Yopo nunca es recreativo — es estrictamente chamánico, siempre con contexto ritual y siempre administrado por el chamán, no autoadministrado. CONTRAINDICACIONES ABSOLUTAS: cardiopatía de cualquier tipo, hipertensión arterial no controlada, arritmias previas, ansiedad severa, trastorno de pánico, embarazo. NO usar con medicación cardiovascular, IMAO, ni estimulantes. SEGURIDAD MÍNIMA: nunca en solitario, siempre con sitter presente, posición recostada, entorno tranquilo. Primera dosis siempre la más baja posible. El Yopo como planta para cultivar es fácil y seguro — el riesgo es con el uso de las semillas preparadas." },
+    { q: "¿Cuáles son las plantas más difíciles de cultivar de esta guía?", a: "Ranking de dificultad de cultivo (de más a menos difícil): 1. IBOGA (Tabernanthe iboga): crecimiento extremadamente lento (años para 30cm), necesita temperatura tropical constante, humedad alta, sombra parcial, sustrato ácido muy específico. Una planta que tardó 3 años en crecer puede morir en una noche fría. Sin invernadero tropical dedicado: imposible. 2. KRATOM (Mitragyna speciosa): árbol grande tropical, necesita 25-35°C constante y humedad >70%, semillas inviables por correo. Requiere invernadero climatizado. 3. KAVA (Piper methysticum): condiciones tropicales exactas, muy sensible a cambios de temperatura y sustrato. Solo crece bien en zonas muy cálidas y húmedas o invernadero. 4. WOODROSE / MORNING GLORY: fáciles de cultivar, pero la dificultad es encontrar semillas sin tratar (untreated) de fuente fiable. PLANTAS FÁCILES (al contrario): Catnip, Wild Dagga, Pasiflora, Damiana, Valeriana, Lúpulo, Coleus, Adormidera de California, Ruda siria — todas crecen bien en exterior español con cuidados mínimos. YOPO: sorprendentemente fácil — leguminosa rústica con germinación alta, tolera clima mediterráneo." },
   ];
 
   const filtered = faqs.filter(f =>
