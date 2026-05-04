@@ -1005,3 +1005,43 @@ function TIMELINE({ navigate }) {
   );
 }
 
+
+function BIBLIO_CANNABIS() {
+  const c = CANNABIS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para la guía de cannabis. Mezcla de literatura clásica de cultivo + recursos web actualizados (foros con histórico de décadas) + investigación reciente sobre cannabinoides y harm reduction."
+    libros={[
+      { titulo: "Marijuana Horticulture: The Indoor/Outdoor Medical Grower's Bible", autor: "Jorge Cervantes", año: "5ª ed. 2006", nota: "Manual estándar absoluto para cultivo indoor y outdoor. Capítulos por fase, troubleshooting, plagas. La referencia." },
+      { titulo: "The Cannabis Grow Bible", autor: "Greg Green", año: "3ª ed. 2017", nota: "Alternativa a Cervantes. Más actualizado en LED, hidroponía moderna, genética." },
+      { titulo: "Marijuana Grower's Handbook", autor: "Ed Rosenthal", año: "2010", nota: "Enfocado a producción, técnicas pro. Bueno para quien ya tiene base." },
+      { titulo: "True Living Organics", autor: "The Rev (Jeff Lowenfels base)", año: "2012", nota: "Cultivo orgánico/super-soil sin nutrientes líquidos. Filosofía no-till." },
+      { titulo: "Teaming with Microbes", autor: "Jeff Lowenfels & Wayne Lewis", año: "2010", nota: "No es de cannabis, es de microbiología del suelo. Indispensable para entender suelo vivo." },
+    ]}
+    web={[
+      { nombre: "GrowDiaries", url: "https://growdiaries.com", nota: "Diarios reales de miles de cultivadores. Genética + setup + problemas + cosecha. Filtra por strain." },
+      { nombre: "GrowWeedEasy", url: "https://growweedeasy.com", nota: "Tutoriales con foto-diagnóstico. Sección de identificación de problemas hojas excelente." },
+      { nombre: "Royal Queen Seeds Blog", url: "https://www.royalqueenseeds.es/blog-cat", nota: "Blog del banco con guías técnicas detalladas en español. Strain reviews." },
+      { nombre: "Cannabis.es / Cáñamo Magazine", url: "https://www.revistacanamo.com", nota: "Revista española de referencia. Cultivo + cultura + legalidad ES." },
+      { nombre: "Leafly Cultivation", url: "https://www.leafly.com/news/growing", nota: "Artículos cortos didácticos. Bueno para conceptos puntuales." },
+      { nombre: "Spannabis publicaciones", url: "https://www.spannabis.com", nota: "Feria española anual. Newsletter + ponencias técnicas." },
+    ]}
+    comunidad={[
+      { nombre: "r/microgrowery (Reddit)", nota: "Comunidad principal en inglés. Wiki muy completa. Diarios + troubleshooting en tiempo real." },
+      { nombre: "r/Autoflowers (Reddit)", nota: "Específico autoflores. Diferente filosofía a fotodependientes." },
+      { nombre: "ICMag Forums", nota: "Foro veterano. Genética profunda, breeders, strain hunters." },
+      { nombre: "GrassCity Forums", nota: "Foro generalista. Bueno para problemas comunes." },
+      { nombre: "La Marihuana (foro español)", nota: "Comunidad española. Conocimiento sobre clima mediterráneo, autocultivo legal." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Fundación española. Investigación etnobotánica y derechos. Reportes legales y científicos." },
+      { nombre: "Project CBD", url: "https://www.projectcbd.org", nota: "Investigación sobre cannabinoides terapéuticos." },
+      { nombre: "NIDA Cannabis Research", url: "https://nida.nih.gov/research-topics/cannabis-marijuana", nota: "Posición oficial USA. Útil para contraste con investigación independiente." },
+      { nombre: "Cannabis and Cannabinoid Research (Mary Ann Liebert)", url: "https://www.liebertpub.com/journal/can", nota: "Journal científico peer-review específico." },
+    ]}
+    harm={[
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Servicio análisis sustancias en España. Drug-checking + información objetiva." },
+      { nombre: "Erowid Cannabis Vault", url: "https://erowid.org/plants/cannabis/", nota: "Reportes de experiencias + pharmacology + legalidad histórica." },
+      { nombre: "DanceSafe", url: "https://dancesafe.org", nota: "Harm reduction en EEUU. Recursos educativos generales." },
+    ]}
+  />;
+}

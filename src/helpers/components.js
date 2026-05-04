@@ -347,3 +347,91 @@ const LegalHealthBox = ({ c, legal, salud, contraindicaciones, recursos }) => (
     </div>
   </div>
 );
+
+const BibliografiaBlock = ({ c, intro, libros, web, comunidad, ciencia, harm }) => (
+  <div>
+    <InfoBoxX c={c}>
+      {intro || "Bibliografía consultada para esta guía. Combinación de literatura clásica + recursos web actualizados + comunidades activas. Verifica siempre fuentes primarias para temas de seguridad."}
+    </InfoBoxX>
+    {libros && libros.length > 0 && (
+      <>
+        <SectionTitleX c={c}>📚 LIBROS DE REFERENCIA</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {libros.map((b, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>{b.titulo}</div>
+              <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>✍️ {b.autor}{b.año ? ` · ${b.año}` : ""}</div>
+              {b.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{b.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {web && web.length > 0 && (
+      <>
+        <SectionTitleX c={c}>🌐 RECURSOS WEB</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {web.map((w, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>
+                {w.url ? <a href={w.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{w.nombre}</a> : w.nombre}
+              </div>
+              {w.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{w.url.replace(/^https?:\/\//, "")}</div>}
+              {w.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{w.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {comunidad && comunidad.length > 0 && (
+      <>
+        <SectionTitleX c={c}>💬 COMUNIDADES Y FOROS</SectionTitleX>
+        <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "12px", marginBottom: "16px" }}>
+          {comunidad.map((co, i) => (
+            <div key={i} style={{ borderBottom: i < comunidad.length - 1 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{co.nombre}</div>
+              {co.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{co.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {ciencia && ciencia.length > 0 && (
+      <>
+        <SectionTitleX c={c}>🔬 INVESTIGACIÓN CIENTÍFICA</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {ciencia.map((s, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>
+                {s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{s.nombre}</a> : s.nombre}
+              </div>
+              {s.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{s.url.replace(/^https?:\/\//, "")}</div>}
+              {s.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{s.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {harm && harm.length > 0 && (
+      <>
+        <SectionTitleX c={c}>⚠️ HARM REDUCTION</SectionTitleX>
+        <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "12px", marginBottom: "16px" }}>
+          {harm.map((h, i) => (
+            <div key={i} style={{ borderBottom: i < harm.length - 1 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>
+                {h.url ? <a href={h.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{h.nombre}</a> : h.nombre}
+              </div>
+              {h.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{h.url.replace(/^https?:\/\//, "")}</div>}
+              {h.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{h.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderLeft: `3px solid ${c.accent1}`, borderRadius: "8px", padding: "10px 12px", marginTop: "16px" }}>
+      <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.6" }}>
+        💡 Esta lista NO sustituye a la consulta directa de las fuentes. Cada cultivador/usuario tiene contextos diferentes. Cruzar siempre 2-3 fuentes antes de decisiones críticas (dosis, identificación, contraindicaciones).
+      </div>
+    </div>
+  </div>
+);

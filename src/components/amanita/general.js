@@ -499,3 +499,44 @@ function FAQ_AMANITA() {
     </div>
   );
 }
+
+function BIBLIO_AMANITA() {
+  const c = AMANITA_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para Amanita muscaria (matamoscas). Combina trabajo histórico (Wasson, Heinrich) + identificación micológica + investigación química sobre muscimol/ácido iboténico + harm reduction (planta legal pero requiere preparación técnica correcta)."
+    libros={[
+      { titulo: "Soma: Divine Mushroom of Immortality", autor: "R. Gordon Wasson", año: "1968", nota: "Hipótesis Wasson de Amanita muscaria como Soma védico. Histórico definitivo." },
+      { titulo: "Mushrooms, Myth and Mithras", autor: "Carl A.P. Ruck, Mark Hoffman, José Alfredo González Celdrán", año: "2011", nota: "Conexiones rituales europeas + uso ritual histórico." },
+      { titulo: "A Search for Soma: Pharmacy of the Gods", autor: "Clark Heinrich", año: "1995", nota: "Teoría Soma + interpretación de mitos cristianos como referencias a Amanita." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Entrada extensa sobre Amanita muscaria y pantherina." },
+      { titulo: "Pharmacotheon", autor: "Jonathan Ott", año: "1996", nota: "Capítulo sobre muscimol y química. Dosis y preparación correcta." },
+      { titulo: "Mushrooms Demystified", autor: "David Arora", año: "1986", nota: "Identificación micológica general. Capítulo sobre Amanita con cuidado por las venenosas." },
+      { titulo: "Amanita muscaria: Herb of Immortality", autor: "Donald Pfister & varios", año: "varios", nota: "Compilaciones científicas." },
+    ]}
+    web={[
+      { nombre: "Erowid Amanita muscaria Vault", url: "https://erowid.org/plants/amanitas/", nota: "Reportes + química + farmacología + identificación." },
+      { nombre: "Shroomery — Amanita section", url: "https://www.shroomery.org", nota: "Threads sobre forrajeo, secado/decarboxilación, dosificación." },
+      { nombre: "Mycotopia — Amanita forum", url: "https://mycotopia.net", nota: "Foro técnico sobre Amanita." },
+      { nombre: "AmanitaDreamer (Amanita.shop / educación)", nota: "Páginas de educación sobre uso responsable de muscaria." },
+      { nombre: "AmanitaSchool / AmanitaSensei", nota: "Recursos comunitarios sobre dosificación y preparación segura." },
+      { nombre: "First Nature — Amanita muscaria", url: "https://www.first-nature.com/fungi/amanita-muscaria.php", nota: "Identificación micológica europea." },
+    ]}
+    comunidad={[
+      { nombre: "r/AmanitaMuscaria (Reddit)", nota: "Comunidad principal. Identificación + preparación + experiencias." },
+      { nombre: "r/Mushroom_ID (Reddit)", nota: "Para verificación de identificación con foto." },
+      { nombre: "Mycotopia Amanita section", nota: "Foro veterano con threads históricos." },
+    ]}
+    ciencia={[
+      { nombre: "Michelot & Melendez-Howell — 'Amanita muscaria: chemistry, biology, toxicology, and ethnomycology' (Mycological Research, 2003)", nota: "Paper de referencia sobre química y toxicología. Buscar PDF." },
+      { nombre: "Tsujikawa et al. (papers sobre muscimol/iboténico extraction)", nota: "Estudios japoneses sobre química Amanita." },
+      { nombre: "Catalfomo & Eugster (1970): primera caracterización de muscimol", nota: "Histórico fundamental." },
+      { nombre: "PubMed: 'muscimol GABA' / 'ibotenic acid neurotoxicity'", url: "https://pubmed.ncbi.nlm.nih.gov", nota: "Background neurociencia para entender por qué decarboxilar es crítico." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Muscimol / Amanita muscaria", url: "https://psychonautwiki.org/wiki/Muscimol", nota: "Documento técnico — dosis, decarboxilación, contraindicaciones." },
+      { nombre: "TripSit Amanita", url: "https://drugs.tripsit.me/amanita", nota: "Resumen harm reduction." },
+      { nombre: "Erowid Amanita Reports", url: "https://erowid.org/plants/amanitas/amanitas_experience.shtml", nota: "Reportes con dosis exactas y método de preparación." },
+      { nombre: "ICEERS / Centros antitóxicos", nota: "Para emergencias por confusión con Amanita venenosas (phalloides, virosa). Anti-tóxicos España: 915 620 420." },
+    ]}
+  />;
+}

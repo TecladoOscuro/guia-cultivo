@@ -442,3 +442,42 @@ function FAQ_CACTUS() {
     </div>
   );
 }
+
+function BIBLIO_CACTUS() {
+  const c = CACTUS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía de cactus mescalínicos (San Pedro/Bolivian Torch/Peyote). Combina obra clásica de Trout/Anderson + foros especializados + literatura etnobotánica."
+    libros={[
+      { titulo: "Sacred Cacti: Botany, Chemistry, Cultivation & Utilization", autor: "Keeper Trout & friends", año: "3ª ed. 2013", nota: "Obra de referencia absoluta sobre Trichocereus. Botánica + química + cultivo + uso histórico. Indispensable." },
+      { titulo: "Peyote: The Divine Cactus", autor: "Edward F. Anderson", año: "2ª ed. 1996", nota: "Específico Lophophora williamsii. Antropología, botánica, conservación. Definitorio." },
+      { titulo: "The Cactus Family", autor: "Edward F. Anderson", año: "2001", nota: "Taxonomía completa de cactáceas. Identificación de especies." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs, Their Plant Sources and History", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo sobre fenethilaminas + mescalina. Profundo y técnico." },
+      { titulo: "Plants of the Gods", autor: "Richard Evans Schultes & Albert Hofmann", año: "1979", nota: "Clásico etnobotánico. Capítulos sobre San Pedro y Peyote en cultura." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Compendio enciclopédico. Entradas detalladas por especie." },
+    ]}
+    web={[
+      { nombre: "Trout's Notes (sacred-cacti.com)", url: "https://sacred-cacti.com", nota: "Página de Keeper Trout. PDFs, botánica, fotos de identificación. Recurso #1 online." },
+      { nombre: "DMT-Nexus Mescaline section", url: "https://wiki.dmt-nexus.me", nota: "Wiki técnica con info sobre mescalina, especies y química básica." },
+      { nombre: "Erowid Mescaline Vault", url: "https://erowid.org/chemicals/mescaline/", nota: "Reportes + farmacología + legalidad histórica." },
+      { nombre: "San Pedro Trichocereus Australia", url: "https://www.sanpedro.com.au", nota: "Vendedor con info técnica de cultivo. Útil aunque sea AU." },
+      { nombre: "Cactus and Succulent Society of America", url: "https://cactusandsucculentsociety.org", nota: "No psicoactivo-específico pero referencia para cultivo en general." },
+    ]}
+    comunidad={[
+      { nombre: "r/sanpedrocactus (Reddit)", nota: "Comunidad principal en inglés. Identificación, cultivo, time-lapses." },
+      { nombre: "r/Mescaline (Reddit)", nota: "Más enfocado a uso/química/dosis. Discusiones técnicas." },
+      { nombre: "Nook (Mistery)", nota: "Foro veterano sobre Trichocereus. Histórico de breeders y clones nombrados (Bridgesii Penis Plant, etc.)." },
+      { nombre: "The Corroboree", nota: "Foro AU sobre etnobotánica. Mucho contenido de Trichocereus." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS Mescaline Working Group", url: "https://www.iceers.org", nota: "Investigación etnobotánica y advocacy. Posiciones legales sobre San Pedro/Peyote." },
+      { nombre: "Council on Spiritual Practices", url: "https://csp.org", nota: "Recursos sobre uso sacramental." },
+      { nombre: "MAPS Peyote/Mescaline papers", url: "https://maps.org", nota: "Estudios clínicos modernos en agenda." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Mescaline", url: "https://psychonautwiki.org/wiki/Mescaline", nota: "Dosificación detallada, interacciones, duración, efectos subjetivos." },
+      { nombre: "TripSit Mescaline factsheet", url: "https://drugs.tripsit.me/mescaline", nota: "Resumen harm reduction." },
+      { nombre: "Erowid Mescaline Reports", url: "https://erowid.org/chemicals/mescaline/mescaline_experiences.shtml", nota: "Reportes categorizados por dosis y planta fuente." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España (no aplica a cactus íntegro pero sí a polvo)." },
+    ]}
+  />;
+}

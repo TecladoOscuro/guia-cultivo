@@ -279,3 +279,45 @@ function FAQ_SETAS() {
     </div>
   );
 }
+
+function BIBLIO_SETAS() {
+  const c = MUSHROOM_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para la guía de Psilocybe cubensis. Incluye literatura clásica de cultivo + estudios clínicos recientes (renacimiento psicodélico 2020+) + foros con décadas de conocimiento empírico."
+    libros={[
+      { titulo: "The Mushroom Cultivator: A Practical Guide to Growing Mushrooms at Home", autor: "Paul Stamets & J.S. Chilton", año: "1983", nota: "Biblia técnica de cultivo de hongos en general. Capítulos sobre Psilocybe específicos. Manual de laboratorio." },
+      { titulo: "Psilocybin Mushrooms of the World", autor: "Paul Stamets", año: "1996", nota: "Identificación de especies psilocibínicas con foto. Útil también para forrajeo." },
+      { titulo: "Psilocybin: Magic Mushroom Grower's Guide", autor: "O.T. Oss & O.N. Oeric (Terence & Dennis McKenna pseudónimos)", año: "1976", nota: "El clásico — primera guía pública para cultivar Psilocybe en casa con frascos de PF Tek primitiva." },
+      { titulo: "Growing Gourmet and Medicinal Mushrooms", autor: "Paul Stamets", año: "2000", nota: "Más amplio (incluye no-psicoactivos). Profundo en sustratos y biología." },
+      { titulo: "Cultivation of Mushrooms (Spanish: 'Cultivo de hongos psilocibios')", autor: "varios autores", año: "2000s", nota: "Compilaciones técnicas. Buscar en bibliotecas universitarias." },
+      { titulo: "How to Change Your Mind", autor: "Michael Pollan", año: "2018", nota: "Divulgación del renacimiento psicodélico. Contexto histórico + experiencias guiadas. Buena introducción." },
+    ]}
+    web={[
+      { nombre: "Shroomery", url: "https://www.shroomery.org", nota: "Foro veterano (1997+). Wiki técnica + grow logs masivos + identificación. La fuente más completa." },
+      { nombre: "Mycotopia", url: "https://mycotopia.net", nota: "Foro alternativo a Shroomery. Más técnico para advanced grow." },
+      { nombre: "DoubleBlind Magazine", url: "https://doubleblindmag.com", nota: "Periodismo sobre psicodélicos (cultivo + cultura + ciencia). Artículos modernos." },
+      { nombre: "Erowid Psilocybin Vault", url: "https://erowid.org/plants/mushrooms/", nota: "Reportes de experiencias + farmacología + legalidad. Estándar." },
+      { nombre: "Microdose.buzz / Microdosing Institute", url: "https://microdosinginstitute.com", nota: "Protocolo Stamets, Fadiman. Investigación reciente sobre microdosis." },
+    ]}
+    comunidad={[
+      { nombre: "r/MushroomGrowers (Reddit)", nota: "Comunidad principal en inglés. Newbies bienvenidos. Diarios cubensis + troubleshoot." },
+      { nombre: "r/unclebens (Reddit)", nota: "Específico sobre Uncle Ben's tek (bolsas arroz precocido). Método más fácil para empezar." },
+      { nombre: "r/PsilocybinMushrooms (Reddit)", nota: "Más sobre cultura + experiencias que cultivo." },
+      { nombre: "r/Psychonaut (Reddit)", nota: "General psicodélico. Discusiones sobre dosificación, set/setting." },
+    ]}
+    ciencia={[
+      { nombre: "Johns Hopkins Center for Psychedelic & Consciousness Research", url: "https://hopkinspsychedelic.org", nota: "Líder mundial en investigación clínica con psilocibina (depresión, ansiedad terminal, adicciones)." },
+      { nombre: "MAPS (Multidisciplinary Association for Psychedelic Studies)", url: "https://maps.org", nota: "Investigación + advocacy + ensayos clínicos. Repository de estudios." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Fundación española sobre etnobotánica psicoactiva." },
+      { nombre: "Compass Pathways", url: "https://compasspathways.com", nota: "Empresa biotech con psilocibina sintética en fase III. Publica resultados clínicos." },
+      { nombre: "Imperial College Centre for Psychedelic Research", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Liderado por Robin Carhart-Harris. Estudios neuroimagen + depresión." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Psilocybin", url: "https://psychonautwiki.org/wiki/Psilocybin", nota: "Documento técnico estilo wiki. Dosificación, interacciones, subjective effects." },
+      { nombre: "TripSit Factsheets", url: "https://drugs.tripsit.me/psilocybin", nota: "Resumen práctico harm reduction. Combinaciones y duración." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias España. Información objetiva." },
+      { nombre: "Erowid Psilocybin Reports", url: "https://erowid.org/experiences/subs/exp_Psilocybin_Mushrooms.shtml", nota: "Miles de reportes de experiencias categorizados por dosis y context." },
+      { nombre: "ICEERS Hongos info", url: "https://www.iceers.org/es/hongos-info/", nota: "Información en castellano sobre psilocibina y harm reduction." },
+    ]}
+  />;
+}

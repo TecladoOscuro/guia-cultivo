@@ -34,6 +34,7 @@ const generalPhases = [
   { id: "extracciones", emoji: "🧪", title: "Extracciones", subtitle: "Usar el trim" },
   { id: "faq", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
   { id: "conceptos", emoji: "📖", title: "Glosario", subtitle: "Términos explicados" },
+  { id: "biblio_cannabis", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 const mushroomKitPhases = [
@@ -69,6 +70,7 @@ const mushroomGeneral = [
   { id: "timeline_setas", emoji: "📅", title: "Timeline", subtitle: "Cronograma" },
   { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
+  { id: "biblio_setas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Cactus mescalina (San Pedro / Bolivian Torch / Peyote)
@@ -81,6 +83,7 @@ const cactusPhases = [
   { id: "cosecha_cactus", emoji: "✂️", title: "Cosecha", subtitle: "Cuándo y cuánto" },
   { id: "preparacion_cactus", emoji: "🪵", title: "Preparación", subtitle: "Limpiar y secar" },
   { id: "faq_cactus", emoji: "❓", title: "FAQ", subtitle: "Glosario+dudas" },
+  { id: "biblio_cactus", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Fermentaciones — modos
@@ -106,6 +109,7 @@ const fermentGeneralPhases = [
   { id: "higiene_ferment", emoji: "🧼", title: "Higiene", subtitle: "Sanitización" },
   { id: "glosario_ferment", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
+  { id: "biblio_ferment", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 const fermentSidraPhases = [
@@ -131,6 +135,7 @@ const plantasPhases = [
   { id: "mucuna", emoji: "🫘", title: "Mucuna pruriens", subtitle: "L-DOPA natural" },
   { id: "lupulo", emoji: "🌾", title: "Lúpulo", subtitle: "Sedante natural" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
+  { id: "biblio_plantas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Amanita muscaria — forrajeo + preparación (no se cultiva)
@@ -144,6 +149,7 @@ const amanitaPhases = [
   { id: "conservacion_amanita", emoji: "🫙", title: "Conservación", subtitle: "Largo plazo" },
   { id: "harm_reduction_amanita", emoji: "⚠️", title: "Seguridad", subtitle: "Dosis y riesgos" },
   { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_amanita", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Trufas mágicas (esclerocios Psilocybe tampanensis/mexicana/atlantis)
@@ -157,6 +163,7 @@ const trufasPhases = [
   { id: "conservacion_trufas", emoji: "🫙", title: "Conservación", subtitle: "Frescas/secas/miel" },
   { id: "harm_reduction_trufas", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
   { id: "faq_trufas", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_trufas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Ayahuasca — vid + arbusto + brebaje
@@ -170,6 +177,7 @@ const ayahuascaPhases = [
   { id: "ceremonia_aya", emoji: "🕯️", title: "Ceremonia", subtitle: "Set/setting/dieta" },
   { id: "harm_reduction_aya", emoji: "⚠️", title: "Seguridad", subtitle: "MAOI peligros" },
   { id: "faq_aya", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_aya", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // DMT — Mimosa hostilis + química + uso
@@ -185,5 +193,6 @@ const dmtPhases = [
   { id: "experiencia_dmt", emoji: "👁️", title: "Experiencia", subtitle: "Qué esperar" },
   { id: "harm_reduction_dmt", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
   { id: "faq_dmt", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_dmt", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 

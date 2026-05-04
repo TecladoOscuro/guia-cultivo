@@ -677,3 +677,46 @@ function FAQ_AYA() {
     </div>
   );
 }
+
+function BIBLIO_AYA() {
+  const c = AYAHUASCA_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía de ayahuasca. Combina trabajo etnográfico clásico (Schultes, Narby, Shanon) + investigación clínica reciente (ICEERS, hospitales brasileños) + recursos prácticos sobre cultivo de Banisteriopsis y Psychotria."
+    libros={[
+      { titulo: "The Antipodes of the Mind: Charting the Phenomenology of the Ayahuasca Experience", autor: "Benny Shanon", año: "2002", nota: "Estudio fenomenológico riguroso de cientos de experiencias propias del autor + entrevistas. Referencia académica." },
+      { titulo: "Ayahuasca: Soul Medicine of the Amazon Jungle", autor: "Javier Regueiro", año: "2014", nota: "Perspectiva del facilitador moderno. Práctico para entender ceremonias contemporáneas." },
+      { titulo: "The Cosmic Serpent: DNA and the Origins of Knowledge", autor: "Jeremy Narby", año: "1998", nota: "Teoría sobre conocimiento botánico chamánico. Clásico controvertido pero estimulante." },
+      { titulo: "Ayahuasca Visions: The Religious Iconography of a Peruvian Shaman", autor: "Pablo Amaringo & Luis Eduardo Luna", año: "1999", nota: "Pinturas + interpretación cultural shipibo. Visualmente impactante." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo extensivo sobre análogos de ayahuasca y química DMT/MAOI." },
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Capítulo sobre Banisteriopsis. Etnobotánica clásica." },
+      { titulo: "The Ayahuasca Reader", autor: "varios eds. (Luna & White)", año: "2000", nota: "Antología de ensayos antropológicos y experiencias." },
+    ]}
+    web={[
+      { nombre: "ICEERS Ayahuasca Info", url: "https://www.iceers.org/es/ayahuasca-info/", nota: "Fundación española. Información en castellano sobre ayahuasca, legalidad y harm reduction. Recurso #1 ES." },
+      { nombre: "Ayahuasca.com", url: "https://www.ayahuasca.com", nota: "Portal histórico con artículos, reportes y comunidad." },
+      { nombre: "Centro Takiwasi", url: "https://www.takiwasi.com", nota: "Centro peruano de tratamiento adicciones con ayahuasca. Investigación + retiros." },
+      { nombre: "Ayahuasca-info.com", url: "https://www.ayahuasca-info.com", nota: "Información práctica sobre cocción y plantas alternativas." },
+      { nombre: "Erowid Ayahuasca Vault", url: "https://erowid.org/chemicals/ayahuasca/", nota: "Reportes + química + farmacología." },
+      { nombre: "DMT-Nexus", url: "https://www.dmt-nexus.me", nota: "Foro técnico sobre DMT/MAOI. Análogos de ayahuasca y harmalas." },
+    ]}
+    comunidad={[
+      { nombre: "r/Ayahuasca (Reddit)", nota: "Comunidad principal. Cultivo + retiros + experiencias. Activa." },
+      { nombre: "DMT-Nexus Forum", nota: "Técnico — más enfocado a análogos pharmahuasca y química, pero útil para entender activos." },
+      { nombre: "ICEERS forum (asistencia)", nota: "Línea directa para dudas sobre ayahuasca y harm reduction." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS Research", url: "https://www.iceers.org/research/", nota: "Estudios clínicos sobre seguridad y aplicación terapéutica de ayahuasca." },
+      { nombre: "Hospital São Paulo (Jordi Riba publications)", nota: "Estudios farmacocinéticos clásicos sobre ayahuasca. Buscar 'Riba ayahuasca pharmacokinetics'." },
+      { nombre: "Beckley Foundation", url: "https://www.beckleyfoundation.org", nota: "Investigación psicodélica + advocacy." },
+      { nombre: "MAPS Ayahuasca papers", url: "https://maps.org", nota: "Repositorio de papers." },
+      { nombre: "Centro de Investigación Sanitaria de la Fundación La Caixa (estudios brasileños sobre depresión)", nota: "Buscar 'Palhano-Fontes ayahuasca depression' — estudio clínico landmark 2019." },
+    ]}
+    harm={[
+      { nombre: "ICEERS Ayahuasca Harm Reduction", url: "https://www.iceers.org/es/ayahuasca-harm-reduction/", nota: "Guía completa en español. Cribado médico, contraindicaciones, dieta previa." },
+      { nombre: "PsychonautWiki — Ayahuasca", url: "https://psychonautwiki.org/wiki/Ayahuasca", nota: "Documento técnico. Dosis, interacciones MAOI, set/setting." },
+      { nombre: "TripSit Ayahuasca", url: "https://drugs.tripsit.me/ayahuasca", nota: "Resumen práctico." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis preparados ayahuasca en España (sí lo hacen — confirman ratio harmalina/DMT)." },
+      { nombre: "Erowid Ayahuasca Reports", url: "https://erowid.org/chemicals/ayahuasca/ayahuasca_experience.shtml", nota: "Cientos de reportes categorizados." },
+    ]}
+  />;
+}

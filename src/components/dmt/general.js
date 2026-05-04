@@ -678,3 +678,45 @@ function FAQ_DMT() {
     </div>
   );
 }
+
+function BIBLIO_DMT() {
+  const c = DMT_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía DMT (Mimosa hostilis, Acacia, Chaliponga + extracción + uso). Mezcla literatura clásica (Strassman, Ott) + comunidad técnica DMT-Nexus + investigación neurociencia reciente."
+    libros={[
+      { titulo: "DMT: The Spirit Molecule", autor: "Rick Strassman", año: "2001", nota: "Único estudio clínico moderno con DMT IV. Entrevistas + farmacología + filosofía. Lectura obligada." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs, Their Plant Sources and History", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo profundo sobre triptaminas y plantas-DMT. Química, dosificación, fuentes." },
+      { titulo: "DMT and the Soul of Prophecy", autor: "Rick Strassman", año: "2014", nota: "Continuación con marco teológico-judaico. Más especulativo que el primero." },
+      { titulo: "TIHKAL: Tryptamines I Have Known and Loved", autor: "Alexander & Ann Shulgin", año: "1997", nota: "Química y experiencias con triptaminas. DMT y análogos." },
+      { titulo: "Ayahuasca Analogues: Pangean Entheogens", autor: "Jonathan Ott", año: "1994", nota: "Específico sobre pharmahuasca (DMT + MAOI fuera de Banisteriopsis tradicional)." },
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Capítulo sobre yopo, vilca, otras fuentes amerindias de DMT." },
+    ]}
+    web={[
+      { nombre: "DMT-Nexus Wiki", url: "https://wiki.dmt-nexus.me", nota: "Recurso técnico #1 mundial. Extracciones (STB, A/B), química, plantas, harmalas. Base imprescindible." },
+      { nombre: "DMT-Nexus Forum", url: "https://www.dmt-nexus.me", nota: "Foro activo. Reportes, troubleshoot extracciones, identificación de plantas." },
+      { nombre: "Erowid DMT Vault", url: "https://erowid.org/chemicals/dmt/", nota: "Reportes + farmacología + history + legalidad." },
+      { nombre: "The Nexian (revista PDF descargable)", nota: "Revista de la comunidad DMT-Nexus. PDFs gratuitos con artículos profundos." },
+      { nombre: "Ott's Pharmacotheon (online supplements)", nota: "Material complementario online del libro." },
+    ]}
+    comunidad={[
+      { nombre: "r/DMT (Reddit)", nota: "Comunidad grande de experiencias y dosificación. Cuidado: muchos posts no técnicos." },
+      { nombre: "DMT-Nexus", nota: "Foro técnico de referencia. Threads sobre extracciones STB, A/B, freebase, NN-DMT vs 5-MeO-DMT." },
+      { nombre: "r/AyahuascaCircle / r/Ayahuasca", nota: "Para análogos pharmahuasca y MAOIs (harmalas)." },
+      { nombre: "Mulga Nation Forums", nota: "Foco en Acacia spp. de Australia (alternativas Mimosa)." },
+    ]}
+    ciencia={[
+      { nombre: "Strassman Lab publications", url: "https://www.rickstrassman.com", nota: "Página personal de Rick Strassman. Papers descargables." },
+      { nombre: "Cogent Society", url: "https://cottagesociety.org", nota: "Investigación independiente sobre psicodélicos." },
+      { nombre: "MAPS DMT papers", url: "https://maps.org", nota: "Repositorio + actualizaciones de research." },
+      { nombre: "Imperial College Psychedelic Research (extended-state DMT)", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Estudios recientes con infusión continua DMT." },
+      { nombre: "Algernon Pharmaceuticals (DMT for stroke trials)", nota: "Aplicación médica DMT — fase clínica." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — DMT", url: "https://psychonautwiki.org/wiki/N,N-DMT", nota: "Documento técnico. Dosis vape vs IV, interacciones, duración." },
+      { nombre: "TripSit DMT", url: "https://drugs.tripsit.me/dmt", nota: "Resumen harm reduction." },
+      { nombre: "Erowid DMT Reports", url: "https://erowid.org/chemicals/dmt/dmt_experience.shtml", nota: "Reportes de experiencias por dosis y método." },
+      { nombre: "DMT-Nexus Welcome / Newcomers Guide", url: "https://wiki.dmt-nexus.me/Newcomer", nota: "Guía completa para principiantes — set/setting, dosis, qué esperar." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España. Confirman pureza de extractos." },
+    ]}
+  />;
+}

@@ -124,6 +124,7 @@ function GuiaCultivo() {
           case "extracciones": return <EXTRACCIONES />;
           case "faq": return <FAQ />;
           case "conceptos": return <CONCEPTOS />;
+          case "biblio_cannabis": return <BIBLIO_CANNABIS />;
           default: return null;
         }
       }
@@ -165,6 +166,7 @@ function GuiaCultivo() {
           case "timeline_setas": return <TIMELINE_SETAS navigate={navigateMushroom} />;
           case "conceptos_setas": return <CONCEPTOS_SETAS />;
           case "faq_setas": return <FAQ_SETAS />;
+          case "biblio_setas": return <BIBLIO_SETAS />;
           default: return <TIMELINE_SETAS navigate={navigateMushroom} />;
         }
       }
@@ -178,6 +180,7 @@ function GuiaCultivo() {
         case "cosecha_cactus": return <COSECHA_CACTUS />;
         case "preparacion_cactus": return <PREPARACION_CACTUS />;
         case "faq_cactus": return <FAQ_CACTUS />;
+        case "biblio_cactus": return <BIBLIO_CACTUS />;
         default: return <INTRO_CACTUS />;
       }
     } else if (guide === "ferment") {
@@ -215,6 +218,7 @@ function GuiaCultivo() {
           case "higiene_ferment": return <HIGIENE_FERMENT />;
           case "glosario_ferment": return <GLOSARIO_FERMENT />;
           case "faq_ferment": return <FAQ_FERMENT />;
+          case "biblio_ferment": return <BIBLIO_FERMENT />;
           default: return <INTRO_FERMENT />;
         }
       }
@@ -233,6 +237,7 @@ function GuiaCultivo() {
         case "mucuna": return <MUCUNA />;
         case "lupulo": return <LUPULO />;
         case "faq_plantas": return <FAQ_PLANTAS />;
+        case "biblio_plantas": return <BIBLIO_PLANTAS />;
         default: return <INTRO_PLANTAS />;
       }
     } else if (guide === "amanita") {
@@ -246,6 +251,7 @@ function GuiaCultivo() {
         case "conservacion_amanita": return <CONSERVACION_AMANITA />;
         case "harm_reduction_amanita": return <HARM_REDUCTION_AMANITA />;
         case "faq_amanita": return <FAQ_AMANITA />;
+        case "biblio_amanita": return <BIBLIO_AMANITA />;
         default: return <INTRO_AMANITA />;
       }
     } else if (guide === "trufas") {
@@ -259,6 +265,7 @@ function GuiaCultivo() {
         case "conservacion_trufas": return <CONSERVACION_TRUFAS />;
         case "harm_reduction_trufas": return <HARM_REDUCTION_TRUFAS />;
         case "faq_trufas": return <FAQ_TRUFAS />;
+        case "biblio_trufas": return <BIBLIO_TRUFAS />;
         default: return <INTRO_TRUFAS />;
       }
     } else if (guide === "ayahuasca") {
@@ -272,6 +279,7 @@ function GuiaCultivo() {
         case "ceremonia_aya": return <CEREMONIA_AYA />;
         case "harm_reduction_aya": return <HARM_REDUCTION_AYA />;
         case "faq_aya": return <FAQ_AYA />;
+        case "biblio_aya": return <BIBLIO_AYA />;
         default: return <INTRO_AYA />;
       }
     } else if (guide === "dmt") {
@@ -287,6 +295,7 @@ function GuiaCultivo() {
         case "experiencia_dmt": return <EXPERIENCIA_DMT />;
         case "harm_reduction_dmt": return <HARM_REDUCTION_DMT />;
         case "faq_dmt": return <FAQ_DMT />;
+        case "biblio_dmt": return <BIBLIO_DMT />;
         default: return <INTRO_DMT />;
       }
     }

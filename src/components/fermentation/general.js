@@ -234,3 +234,49 @@ function FAQ_FERMENT() {
     </div>
   );
 }
+
+function BIBLIO_FERMENT() {
+  const c = FERMENT_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía para guía de fermentaciones (hidromiel, cerveza, sidra). Combina manuales clásicos modernos + recursos online actualizados + comunidad activa de homebrewers."
+    libros={[
+      { titulo: "The Compleat Meadmaker", autor: "Ken Schramm", año: "2003", nota: "Manual definitivo de hidromiel casero. Recetas, ciencia, troubleshoot. Indispensable para mead." },
+      { titulo: "How to Brew", autor: "John Palmer", año: "4ª ed. 2017", nota: "Manual de cerveza casera más usado en mundo. Versión online completa GRATUITA en howtobrew.com (1ª edición)." },
+      { titulo: "Brewing Classic Styles", autor: "Jamil Zainasheff & John Palmer", año: "2007", nota: "80+ recetas de cerveza por estilo BJCP. Para cuando quieres replicar estilos clásicos." },
+      { titulo: "The New Cider Maker's Handbook", autor: "Claude Jolicoeur", año: "2013", nota: "Definitivo para sidra. Variedades manzana, prensado, fermentación, embotellado." },
+      { titulo: "Wild Fermentation", autor: "Sandor Katz", año: "2003", nota: "Filosofía + recetas de fermentaciones salvajes. Inspirador para meterse en el tema." },
+      { titulo: "The Art of Fermentation", autor: "Sandor Katz", año: "2012", nota: "Continuación enciclopédica. 500+ páginas sobre todo tipo de fermentaciones." },
+      { titulo: "Yeast: The Practical Guide to Beer Fermentation", autor: "Chris White & Jamil Zainasheff", año: "2010", nota: "Profundo sobre levaduras — selección, propagación, salud." },
+      { titulo: "Designing Great Beers", autor: "Ray Daniels", año: "2000", nota: "Para diseñar tus propias recetas. Análisis estilo por estilo." },
+    ]}
+    web={[
+      { nombre: "How to Brew (Palmer online)", url: "http://howtobrew.com", nota: "Primera edición gratuita online. Excelente referencia para empezar cerveza." },
+      { nombre: "HomeBrewTalk", url: "https://www.homebrewtalk.com", nota: "Foro de homebrew más grande del mundo. Recetas, troubleshoot, calculadoras." },
+      { nombre: "BeerSmith Blog & Software", url: "https://beersmith.com", nota: "Software de recetas + blog técnico. Cálculos automáticos ABV, IBU, color." },
+      { nombre: "Brulosophy", url: "https://brulosophy.com", nota: "Experimentos cervezeros — comparativas A/B con resultados estadísticos. Mata mitos." },
+      { nombre: "BJCP Style Guidelines", url: "https://www.bjcp.org/style", nota: "Guía oficial de estilos cerveza. Imprescindible para entender qué estás haciendo." },
+      { nombre: "Got Mead?", url: "https://www.gotmead.com", nota: "Sitio dedicado a hidromiel. Recetas + foro." },
+      { nombre: "Cider Workshop", url: "https://www.ciderworkshop.com", nota: "Recurso británico sobre sidra artesanal." },
+      { nombre: "Brewer's Friend Calculators", url: "https://www.brewersfriend.com", nota: "Calculadoras de ABV, atenuación, IBU, mash, agua, etc." },
+      { nombre: "ACE / Asociación de Cerveceros Caseros (España)", url: "https://www.cervecerosaficionados.es", nota: "Comunidad española. Foros + ferias + cursos." },
+    ]}
+    comunidad={[
+      { nombre: "r/Homebrewing (Reddit)", nota: "Comunidad principal. Wiki muy completa. Activa para preguntas." },
+      { nombre: "r/mead (Reddit)", nota: "Específico hidromiel. Recetas + troubleshooting." },
+      { nombre: "r/cider (Reddit)", nota: "Específico sidra. Variedades manzana + métodos." },
+      { nombre: "r/firstbrew (Reddit)", nota: "Para principiantes. Buenos hilos sobre primer lote." },
+      { nombre: "Homebrewers Association forums", url: "https://www.homebrewersassociation.org", nota: "Foro de la asociación USA. Acceso a competiciones." },
+    ]}
+    ciencia={[
+      { nombre: "Master Brewers Association (MBAA)", url: "https://www.mbaa.com", nota: "Industria cerveza profesional. Papers técnicos sobre química/microbiología." },
+      { nombre: "Journal of the Institute of Brewing", url: "https://onlinelibrary.wiley.com/journal/20500416", nota: "Journal científico peer-review sobre cerveza/malta." },
+      { nombre: "American Society of Brewing Chemists (ASBC)", url: "https://www.asbcnet.org", nota: "Estándares de análisis cerveza/levaduras/malta." },
+    ]}
+    harm={[
+      { nombre: "Asociación Española de Cerveceros Caseros — guía higiene", nota: "Recursos en castellano sobre sanitización." },
+      { nombre: "BeerSmith podcast (Brad Smith)", url: "https://beersmith.com/podcast/", nota: "Episodios sobre seguridad alimentaria, contaminaciones." },
+      { nombre: "Brulosophy 'exBEERiments' on contamination", nota: "Datos reales sobre cómo y cuándo se contaminan los lotes." },
+      { nombre: "Wild Fermentation FAQ (Sandor Katz)", url: "https://www.wildfermentation.com", nota: "Para fermentaciones espontáneas — qué es seguro y qué no." },
+    ]}
+  />;
+}

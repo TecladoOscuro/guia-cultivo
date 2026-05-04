@@ -550,3 +550,40 @@ function FAQ_TRUFAS() {
     </div>
   );
 }
+
+function BIBLIO_TRUFAS() {
+  const c = TRUFAS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Las trufas mágicas (esclerocios de Psilocybe tampanensis/mexicana/atlantis) tienen el mismo principio activo que las setas Psilocybe — psilocibina. La bibliografía solapa fuertemente con la guía de setas pero hay especificidades sobre esclerocios y mercado holandés legal."
+    libros={[
+      { titulo: "The Mushroom Cultivator", autor: "Paul Stamets & J.S. Chilton", año: "1983", nota: "Manual técnico aplica también a Psilocybe que producen esclerocios." },
+      { titulo: "Psilocybin Mushrooms of the World", autor: "Paul Stamets", año: "1996", nota: "Identificación de especies. Capítulos sobre P. tampanensis y P. mexicana." },
+      { titulo: "How to Change Your Mind", autor: "Michael Pollan", año: "2018", nota: "Contexto del renacimiento psicodélico. Holanda como referencia legal." },
+      { titulo: "The Psilocybin Solution", autor: "Simon G. Powell", año: "2011", nota: "Filosofía/farmacología psilocibina. Útil para entender conceptos." },
+    ]}
+    web={[
+      { nombre: "Truffle Magic", url: "https://www.trufflemagic.com", nota: "Vendedor holandés. Blog con info técnica sobre esclerocios y dosificación." },
+      { nombre: "Magic Truffles Holland", url: "https://www.magic-truffles.com", nota: "Otro vendedor holandés. Buenas guías de consumo." },
+      { nombre: "Shroomery (sección Psilocybe atlantis/tampanensis)", url: "https://www.shroomery.org", nota: "Foro con threads específicos sobre cultivo de esclerocios." },
+      { nombre: "Erowid Psilocybin Vault", url: "https://erowid.org/plants/mushrooms/", nota: "Aplica también a trufas (mismo activo)." },
+      { nombre: "DoubleBlind Magazine", url: "https://doubleblindmag.com", nota: "Periodismo psicodélico moderno." },
+    ]}
+    comunidad={[
+      { nombre: "r/MagicTruffles (Reddit)", nota: "Comunidad específica de trufas. Reportes de potencia por strain." },
+      { nombre: "r/MushroomGrowers (Reddit)", nota: "Threads sobre cultivo de tampanensis/atlantis (truffle producers)." },
+      { nombre: "Mycotopia", nota: "Foro técnico con info sobre cultivo de esclerocios." },
+    ]}
+    ciencia={[
+      { nombre: "Open Foundation (Universidad Maastricht)", url: "https://www.open-foundation.org", nota: "Investigación sobre psilocibina en Holanda. Conferencias ICPR." },
+      { nombre: "MAPS", url: "https://maps.org", nota: "Repositorio de estudios clínicos." },
+      { nombre: "Johns Hopkins Psychedelic Research", url: "https://hopkinspsychedelic.org", nota: "Estudios líderes con psilocibina (aplicable al activo de trufas)." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Etnobotánica + recursos legales." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Psilocybin", url: "https://psychonautwiki.org/wiki/Psilocybin", nota: "Aplica también a trufas. Dosificación ajustada por contenido seco/fresco." },
+      { nombre: "TripSit Psilocybin", url: "https://drugs.tripsit.me/psilocybin", nota: "Resumen harm reduction." },
+      { nombre: "Truffles.nl (Magic Truffles official Dutch info)", url: "https://www.truffles.nl", nota: "Recursos oficiales holandeses sobre uso responsable." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis de sustancias en España." },
+    ]}
+  />;
+}

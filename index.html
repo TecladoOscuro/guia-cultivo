@@ -210,6 +210,7 @@ const generalPhases = [
   { id: "extracciones", emoji: "🧪", title: "Extracciones", subtitle: "Usar el trim" },
   { id: "faq", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
   { id: "conceptos", emoji: "📖", title: "Glosario", subtitle: "Términos explicados" },
+  { id: "biblio_cannabis", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 const mushroomKitPhases = [
@@ -245,6 +246,7 @@ const mushroomGeneral = [
   { id: "timeline_setas", emoji: "📅", title: "Timeline", subtitle: "Cronograma" },
   { id: "conceptos_setas", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_setas", emoji: "❓", title: "FAQ", subtitle: "Problemas" },
+  { id: "biblio_setas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Cactus mescalina (San Pedro / Bolivian Torch / Peyote)
@@ -257,6 +259,7 @@ const cactusPhases = [
   { id: "cosecha_cactus", emoji: "✂️", title: "Cosecha", subtitle: "Cuándo y cuánto" },
   { id: "preparacion_cactus", emoji: "🪵", title: "Preparación", subtitle: "Limpiar y secar" },
   { id: "faq_cactus", emoji: "❓", title: "FAQ", subtitle: "Glosario+dudas" },
+  { id: "biblio_cactus", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Fermentaciones — modos
@@ -282,6 +285,7 @@ const fermentGeneralPhases = [
   { id: "higiene_ferment", emoji: "🧼", title: "Higiene", subtitle: "Sanitización" },
   { id: "glosario_ferment", emoji: "📖", title: "Glosario", subtitle: "Términos" },
   { id: "faq_ferment", emoji: "❓", title: "FAQ", subtitle: "Problemas comunes" },
+  { id: "biblio_ferment", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 const fermentSidraPhases = [
@@ -307,6 +311,7 @@ const plantasPhases = [
   { id: "mucuna", emoji: "🫘", title: "Mucuna pruriens", subtitle: "L-DOPA natural" },
   { id: "lupulo", emoji: "🌾", title: "Lúpulo", subtitle: "Sedante natural" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
+  { id: "biblio_plantas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Amanita muscaria — forrajeo + preparación (no se cultiva)
@@ -320,6 +325,7 @@ const amanitaPhases = [
   { id: "conservacion_amanita", emoji: "🫙", title: "Conservación", subtitle: "Largo plazo" },
   { id: "harm_reduction_amanita", emoji: "⚠️", title: "Seguridad", subtitle: "Dosis y riesgos" },
   { id: "faq_amanita", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_amanita", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Trufas mágicas (esclerocios Psilocybe tampanensis/mexicana/atlantis)
@@ -333,6 +339,7 @@ const trufasPhases = [
   { id: "conservacion_trufas", emoji: "🫙", title: "Conservación", subtitle: "Frescas/secas/miel" },
   { id: "harm_reduction_trufas", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
   { id: "faq_trufas", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_trufas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // Ayahuasca — vid + arbusto + brebaje
@@ -346,6 +353,7 @@ const ayahuascaPhases = [
   { id: "ceremonia_aya", emoji: "🕯️", title: "Ceremonia", subtitle: "Set/setting/dieta" },
   { id: "harm_reduction_aya", emoji: "⚠️", title: "Seguridad", subtitle: "MAOI peligros" },
   { id: "faq_aya", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_aya", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 // DMT — Mimosa hostilis + química + uso
@@ -361,6 +369,7 @@ const dmtPhases = [
   { id: "experiencia_dmt", emoji: "👁️", title: "Experiencia", subtitle: "Qué esperar" },
   { id: "harm_reduction_dmt", emoji: "⚠️", title: "Seguridad", subtitle: "Set/setting" },
   { id: "faq_dmt", emoji: "❓", title: "FAQ", subtitle: "Dudas comunes" },
+  { id: "biblio_dmt", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
 
 
@@ -710,6 +719,94 @@ const LegalHealthBox = ({ c, legal, salud, contraindicaciones, recursos }) => (
       <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", letterSpacing: "1px", marginBottom: "6px" }}>📚 RECURSOS</div>
       <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>
         {recursos || "Educación: Erowid · TripSit · Energy Control (testing). Emergencias: 112 · Anti-tóxicos España: 915 620 420 (24h)."}
+      </div>
+    </div>
+  </div>
+);
+
+const BibliografiaBlock = ({ c, intro, libros, web, comunidad, ciencia, harm }) => (
+  <div>
+    <InfoBoxX c={c}>
+      {intro || "Bibliografía consultada para esta guía. Combinación de literatura clásica + recursos web actualizados + comunidades activas. Verifica siempre fuentes primarias para temas de seguridad."}
+    </InfoBoxX>
+    {libros && libros.length > 0 && (
+      <>
+        <SectionTitleX c={c}>📚 LIBROS DE REFERENCIA</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {libros.map((b, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>{b.titulo}</div>
+              <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "3px" }}>✍️ {b.autor}{b.año ? ` · ${b.año}` : ""}</div>
+              {b.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{b.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {web && web.length > 0 && (
+      <>
+        <SectionTitleX c={c}>🌐 RECURSOS WEB</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {web.map((w, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>
+                {w.url ? <a href={w.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{w.nombre}</a> : w.nombre}
+              </div>
+              {w.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{w.url.replace(/^https?:\/\//, "")}</div>}
+              {w.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{w.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {comunidad && comunidad.length > 0 && (
+      <>
+        <SectionTitleX c={c}>💬 COMUNIDADES Y FOROS</SectionTitleX>
+        <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "12px", marginBottom: "16px" }}>
+          {comunidad.map((co, i) => (
+            <div key={i} style={{ borderBottom: i < comunidad.length - 1 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{co.nombre}</div>
+              {co.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{co.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {ciencia && ciencia.length > 0 && (
+      <>
+        <SectionTitleX c={c}>🔬 INVESTIGACIÓN CIENTÍFICA</SectionTitleX>
+        <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+          {ciencia.map((s, i) => (
+            <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "10px 12px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "2px" }}>
+                {s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{s.nombre}</a> : s.nombre}
+              </div>
+              {s.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{s.url.replace(/^https?:\/\//, "")}</div>}
+              {s.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{s.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    {harm && harm.length > 0 && (
+      <>
+        <SectionTitleX c={c}>⚠️ HARM REDUCTION</SectionTitleX>
+        <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "8px", padding: "12px", marginBottom: "16px" }}>
+          {harm.map((h, i) => (
+            <div key={i} style={{ borderBottom: i < harm.length - 1 ? `1px solid ${c.border1}` : "none", padding: "6px 0" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>
+                {h.url ? <a href={h.url} target="_blank" rel="noopener noreferrer" style={{ color: c.textBright, textDecoration: "underline" }}>{h.nombre}</a> : h.nombre}
+              </div>
+              {h.url && <div style={{ fontSize: "10px", color: c.accent2, marginBottom: "3px", fontFamily: "monospace" }}>{h.url.replace(/^https?:\/\//, "")}</div>}
+              {h.nota && <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{h.nota}</div>}
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+    <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderLeft: `3px solid ${c.accent1}`, borderRadius: "8px", padding: "10px 12px", marginTop: "16px" }}>
+      <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.6" }}>
+        💡 Esta lista NO sustituye a la consulta directa de las fuentes. Cada cultivador/usuario tiene contextos diferentes. Cruzar siempre 2-3 fuentes antes de decisiones críticas (dosis, identificación, contraindicaciones).
       </div>
     </div>
   </div>
@@ -3531,6 +3628,46 @@ function TIMELINE({ navigate }) {
 }
 
 
+function BIBLIO_CANNABIS() {
+  const c = CANNABIS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para la guía de cannabis. Mezcla de literatura clásica de cultivo + recursos web actualizados (foros con histórico de décadas) + investigación reciente sobre cannabinoides y harm reduction."
+    libros={[
+      { titulo: "Marijuana Horticulture: The Indoor/Outdoor Medical Grower's Bible", autor: "Jorge Cervantes", año: "5ª ed. 2006", nota: "Manual estándar absoluto para cultivo indoor y outdoor. Capítulos por fase, troubleshooting, plagas. La referencia." },
+      { titulo: "The Cannabis Grow Bible", autor: "Greg Green", año: "3ª ed. 2017", nota: "Alternativa a Cervantes. Más actualizado en LED, hidroponía moderna, genética." },
+      { titulo: "Marijuana Grower's Handbook", autor: "Ed Rosenthal", año: "2010", nota: "Enfocado a producción, técnicas pro. Bueno para quien ya tiene base." },
+      { titulo: "True Living Organics", autor: "The Rev (Jeff Lowenfels base)", año: "2012", nota: "Cultivo orgánico/super-soil sin nutrientes líquidos. Filosofía no-till." },
+      { titulo: "Teaming with Microbes", autor: "Jeff Lowenfels & Wayne Lewis", año: "2010", nota: "No es de cannabis, es de microbiología del suelo. Indispensable para entender suelo vivo." },
+    ]}
+    web={[
+      { nombre: "GrowDiaries", url: "https://growdiaries.com", nota: "Diarios reales de miles de cultivadores. Genética + setup + problemas + cosecha. Filtra por strain." },
+      { nombre: "GrowWeedEasy", url: "https://growweedeasy.com", nota: "Tutoriales con foto-diagnóstico. Sección de identificación de problemas hojas excelente." },
+      { nombre: "Royal Queen Seeds Blog", url: "https://www.royalqueenseeds.es/blog-cat", nota: "Blog del banco con guías técnicas detalladas en español. Strain reviews." },
+      { nombre: "Cannabis.es / Cáñamo Magazine", url: "https://www.revistacanamo.com", nota: "Revista española de referencia. Cultivo + cultura + legalidad ES." },
+      { nombre: "Leafly Cultivation", url: "https://www.leafly.com/news/growing", nota: "Artículos cortos didácticos. Bueno para conceptos puntuales." },
+      { nombre: "Spannabis publicaciones", url: "https://www.spannabis.com", nota: "Feria española anual. Newsletter + ponencias técnicas." },
+    ]}
+    comunidad={[
+      { nombre: "r/microgrowery (Reddit)", nota: "Comunidad principal en inglés. Wiki muy completa. Diarios + troubleshooting en tiempo real." },
+      { nombre: "r/Autoflowers (Reddit)", nota: "Específico autoflores. Diferente filosofía a fotodependientes." },
+      { nombre: "ICMag Forums", nota: "Foro veterano. Genética profunda, breeders, strain hunters." },
+      { nombre: "GrassCity Forums", nota: "Foro generalista. Bueno para problemas comunes." },
+      { nombre: "La Marihuana (foro español)", nota: "Comunidad española. Conocimiento sobre clima mediterráneo, autocultivo legal." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Fundación española. Investigación etnobotánica y derechos. Reportes legales y científicos." },
+      { nombre: "Project CBD", url: "https://www.projectcbd.org", nota: "Investigación sobre cannabinoides terapéuticos." },
+      { nombre: "NIDA Cannabis Research", url: "https://nida.nih.gov/research-topics/cannabis-marijuana", nota: "Posición oficial USA. Útil para contraste con investigación independiente." },
+      { nombre: "Cannabis and Cannabinoid Research (Mary Ann Liebert)", url: "https://www.liebertpub.com/journal/can", nota: "Journal científico peer-review específico." },
+    ]}
+    harm={[
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Servicio análisis sustancias en España. Drug-checking + información objetiva." },
+      { nombre: "Erowid Cannabis Vault", url: "https://erowid.org/plants/cannabis/", nota: "Reportes de experiencias + pharmacology + legalidad histórica." },
+      { nombre: "DanceSafe", url: "https://dancesafe.org", nota: "Harm reduction en EEUU. Recursos educativos generales." },
+    ]}
+  />;
+}
+
 
 // GUÍA SETAS - MODO KIT
 // Componentes para cultivo con kit SGFC (Easy Mode - 2-3 semanas)
@@ -4950,6 +5087,48 @@ function FAQ_SETAS() {
   );
 }
 
+function BIBLIO_SETAS() {
+  const c = MUSHROOM_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para la guía de Psilocybe cubensis. Incluye literatura clásica de cultivo + estudios clínicos recientes (renacimiento psicodélico 2020+) + foros con décadas de conocimiento empírico."
+    libros={[
+      { titulo: "The Mushroom Cultivator: A Practical Guide to Growing Mushrooms at Home", autor: "Paul Stamets & J.S. Chilton", año: "1983", nota: "Biblia técnica de cultivo de hongos en general. Capítulos sobre Psilocybe específicos. Manual de laboratorio." },
+      { titulo: "Psilocybin Mushrooms of the World", autor: "Paul Stamets", año: "1996", nota: "Identificación de especies psilocibínicas con foto. Útil también para forrajeo." },
+      { titulo: "Psilocybin: Magic Mushroom Grower's Guide", autor: "O.T. Oss & O.N. Oeric (Terence & Dennis McKenna pseudónimos)", año: "1976", nota: "El clásico — primera guía pública para cultivar Psilocybe en casa con frascos de PF Tek primitiva." },
+      { titulo: "Growing Gourmet and Medicinal Mushrooms", autor: "Paul Stamets", año: "2000", nota: "Más amplio (incluye no-psicoactivos). Profundo en sustratos y biología." },
+      { titulo: "Cultivation of Mushrooms (Spanish: 'Cultivo de hongos psilocibios')", autor: "varios autores", año: "2000s", nota: "Compilaciones técnicas. Buscar en bibliotecas universitarias." },
+      { titulo: "How to Change Your Mind", autor: "Michael Pollan", año: "2018", nota: "Divulgación del renacimiento psicodélico. Contexto histórico + experiencias guiadas. Buena introducción." },
+    ]}
+    web={[
+      { nombre: "Shroomery", url: "https://www.shroomery.org", nota: "Foro veterano (1997+). Wiki técnica + grow logs masivos + identificación. La fuente más completa." },
+      { nombre: "Mycotopia", url: "https://mycotopia.net", nota: "Foro alternativo a Shroomery. Más técnico para advanced grow." },
+      { nombre: "DoubleBlind Magazine", url: "https://doubleblindmag.com", nota: "Periodismo sobre psicodélicos (cultivo + cultura + ciencia). Artículos modernos." },
+      { nombre: "Erowid Psilocybin Vault", url: "https://erowid.org/plants/mushrooms/", nota: "Reportes de experiencias + farmacología + legalidad. Estándar." },
+      { nombre: "Microdose.buzz / Microdosing Institute", url: "https://microdosinginstitute.com", nota: "Protocolo Stamets, Fadiman. Investigación reciente sobre microdosis." },
+    ]}
+    comunidad={[
+      { nombre: "r/MushroomGrowers (Reddit)", nota: "Comunidad principal en inglés. Newbies bienvenidos. Diarios cubensis + troubleshoot." },
+      { nombre: "r/unclebens (Reddit)", nota: "Específico sobre Uncle Ben's tek (bolsas arroz precocido). Método más fácil para empezar." },
+      { nombre: "r/PsilocybinMushrooms (Reddit)", nota: "Más sobre cultura + experiencias que cultivo." },
+      { nombre: "r/Psychonaut (Reddit)", nota: "General psicodélico. Discusiones sobre dosificación, set/setting." },
+    ]}
+    ciencia={[
+      { nombre: "Johns Hopkins Center for Psychedelic & Consciousness Research", url: "https://hopkinspsychedelic.org", nota: "Líder mundial en investigación clínica con psilocibina (depresión, ansiedad terminal, adicciones)." },
+      { nombre: "MAPS (Multidisciplinary Association for Psychedelic Studies)", url: "https://maps.org", nota: "Investigación + advocacy + ensayos clínicos. Repository de estudios." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Fundación española sobre etnobotánica psicoactiva." },
+      { nombre: "Compass Pathways", url: "https://compasspathways.com", nota: "Empresa biotech con psilocibina sintética en fase III. Publica resultados clínicos." },
+      { nombre: "Imperial College Centre for Psychedelic Research", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Liderado por Robin Carhart-Harris. Estudios neuroimagen + depresión." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Psilocybin", url: "https://psychonautwiki.org/wiki/Psilocybin", nota: "Documento técnico estilo wiki. Dosificación, interacciones, subjective effects." },
+      { nombre: "TripSit Factsheets", url: "https://drugs.tripsit.me/psilocybin", nota: "Resumen práctico harm reduction. Combinaciones y duración." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias España. Información objetiva." },
+      { nombre: "Erowid Psilocybin Reports", url: "https://erowid.org/experiences/subs/exp_Psilocybin_Mushrooms.shtml", nota: "Miles de reportes de experiencias categorizados por dosis y context." },
+      { nombre: "ICEERS Hongos info", url: "https://www.iceers.org/es/hongos-info/", nota: "Información en castellano sobre psilocibina y harm reduction." },
+    ]}
+  />;
+}
+
 
 // CACTUS MESCALINA — San Pedro / Bolivian Torch / Peyote
 // Cultivo casero. Cactus ornamentales legales en España; consumo = zona gris.
@@ -5396,6 +5575,45 @@ function FAQ_CACTUS() {
   );
 }
 
+function BIBLIO_CACTUS() {
+  const c = CACTUS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía de cactus mescalínicos (San Pedro/Bolivian Torch/Peyote). Combina obra clásica de Trout/Anderson + foros especializados + literatura etnobotánica."
+    libros={[
+      { titulo: "Sacred Cacti: Botany, Chemistry, Cultivation & Utilization", autor: "Keeper Trout & friends", año: "3ª ed. 2013", nota: "Obra de referencia absoluta sobre Trichocereus. Botánica + química + cultivo + uso histórico. Indispensable." },
+      { titulo: "Peyote: The Divine Cactus", autor: "Edward F. Anderson", año: "2ª ed. 1996", nota: "Específico Lophophora williamsii. Antropología, botánica, conservación. Definitorio." },
+      { titulo: "The Cactus Family", autor: "Edward F. Anderson", año: "2001", nota: "Taxonomía completa de cactáceas. Identificación de especies." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs, Their Plant Sources and History", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo sobre fenethilaminas + mescalina. Profundo y técnico." },
+      { titulo: "Plants of the Gods", autor: "Richard Evans Schultes & Albert Hofmann", año: "1979", nota: "Clásico etnobotánico. Capítulos sobre San Pedro y Peyote en cultura." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Compendio enciclopédico. Entradas detalladas por especie." },
+    ]}
+    web={[
+      { nombre: "Trout's Notes (sacred-cacti.com)", url: "https://sacred-cacti.com", nota: "Página de Keeper Trout. PDFs, botánica, fotos de identificación. Recurso #1 online." },
+      { nombre: "DMT-Nexus Mescaline section", url: "https://wiki.dmt-nexus.me", nota: "Wiki técnica con info sobre mescalina, especies y química básica." },
+      { nombre: "Erowid Mescaline Vault", url: "https://erowid.org/chemicals/mescaline/", nota: "Reportes + farmacología + legalidad histórica." },
+      { nombre: "San Pedro Trichocereus Australia", url: "https://www.sanpedro.com.au", nota: "Vendedor con info técnica de cultivo. Útil aunque sea AU." },
+      { nombre: "Cactus and Succulent Society of America", url: "https://cactusandsucculentsociety.org", nota: "No psicoactivo-específico pero referencia para cultivo en general." },
+    ]}
+    comunidad={[
+      { nombre: "r/sanpedrocactus (Reddit)", nota: "Comunidad principal en inglés. Identificación, cultivo, time-lapses." },
+      { nombre: "r/Mescaline (Reddit)", nota: "Más enfocado a uso/química/dosis. Discusiones técnicas." },
+      { nombre: "Nook (Mistery)", nota: "Foro veterano sobre Trichocereus. Histórico de breeders y clones nombrados (Bridgesii Penis Plant, etc.)." },
+      { nombre: "The Corroboree", nota: "Foro AU sobre etnobotánica. Mucho contenido de Trichocereus." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS Mescaline Working Group", url: "https://www.iceers.org", nota: "Investigación etnobotánica y advocacy. Posiciones legales sobre San Pedro/Peyote." },
+      { nombre: "Council on Spiritual Practices", url: "https://csp.org", nota: "Recursos sobre uso sacramental." },
+      { nombre: "MAPS Peyote/Mescaline papers", url: "https://maps.org", nota: "Estudios clínicos modernos en agenda." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Mescaline", url: "https://psychonautwiki.org/wiki/Mescaline", nota: "Dosificación detallada, interacciones, duración, efectos subjetivos." },
+      { nombre: "TripSit Mescaline factsheet", url: "https://drugs.tripsit.me/mescaline", nota: "Resumen harm reduction." },
+      { nombre: "Erowid Mescaline Reports", url: "https://erowid.org/chemicals/mescaline/mescaline_experiences.shtml", nota: "Reportes categorizados por dosis y planta fuente." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España (no aplica a cactus íntegro pero sí a polvo)." },
+    ]}
+  />;
+}
+
 
 // FERMENTACIONES — contenido general (intro, higiene, FAQ)
 // Aplica a hidromiel + cerveza + cualquier futura fermentación.
@@ -5632,6 +5850,52 @@ function FAQ_FERMENT() {
       ))}
     </div>
   );
+}
+
+function BIBLIO_FERMENT() {
+  const c = FERMENT_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía para guía de fermentaciones (hidromiel, cerveza, sidra). Combina manuales clásicos modernos + recursos online actualizados + comunidad activa de homebrewers."
+    libros={[
+      { titulo: "The Compleat Meadmaker", autor: "Ken Schramm", año: "2003", nota: "Manual definitivo de hidromiel casero. Recetas, ciencia, troubleshoot. Indispensable para mead." },
+      { titulo: "How to Brew", autor: "John Palmer", año: "4ª ed. 2017", nota: "Manual de cerveza casera más usado en mundo. Versión online completa GRATUITA en howtobrew.com (1ª edición)." },
+      { titulo: "Brewing Classic Styles", autor: "Jamil Zainasheff & John Palmer", año: "2007", nota: "80+ recetas de cerveza por estilo BJCP. Para cuando quieres replicar estilos clásicos." },
+      { titulo: "The New Cider Maker's Handbook", autor: "Claude Jolicoeur", año: "2013", nota: "Definitivo para sidra. Variedades manzana, prensado, fermentación, embotellado." },
+      { titulo: "Wild Fermentation", autor: "Sandor Katz", año: "2003", nota: "Filosofía + recetas de fermentaciones salvajes. Inspirador para meterse en el tema." },
+      { titulo: "The Art of Fermentation", autor: "Sandor Katz", año: "2012", nota: "Continuación enciclopédica. 500+ páginas sobre todo tipo de fermentaciones." },
+      { titulo: "Yeast: The Practical Guide to Beer Fermentation", autor: "Chris White & Jamil Zainasheff", año: "2010", nota: "Profundo sobre levaduras — selección, propagación, salud." },
+      { titulo: "Designing Great Beers", autor: "Ray Daniels", año: "2000", nota: "Para diseñar tus propias recetas. Análisis estilo por estilo." },
+    ]}
+    web={[
+      { nombre: "How to Brew (Palmer online)", url: "http://howtobrew.com", nota: "Primera edición gratuita online. Excelente referencia para empezar cerveza." },
+      { nombre: "HomeBrewTalk", url: "https://www.homebrewtalk.com", nota: "Foro de homebrew más grande del mundo. Recetas, troubleshoot, calculadoras." },
+      { nombre: "BeerSmith Blog & Software", url: "https://beersmith.com", nota: "Software de recetas + blog técnico. Cálculos automáticos ABV, IBU, color." },
+      { nombre: "Brulosophy", url: "https://brulosophy.com", nota: "Experimentos cervezeros — comparativas A/B con resultados estadísticos. Mata mitos." },
+      { nombre: "BJCP Style Guidelines", url: "https://www.bjcp.org/style", nota: "Guía oficial de estilos cerveza. Imprescindible para entender qué estás haciendo." },
+      { nombre: "Got Mead?", url: "https://www.gotmead.com", nota: "Sitio dedicado a hidromiel. Recetas + foro." },
+      { nombre: "Cider Workshop", url: "https://www.ciderworkshop.com", nota: "Recurso británico sobre sidra artesanal." },
+      { nombre: "Brewer's Friend Calculators", url: "https://www.brewersfriend.com", nota: "Calculadoras de ABV, atenuación, IBU, mash, agua, etc." },
+      { nombre: "ACE / Asociación de Cerveceros Caseros (España)", url: "https://www.cervecerosaficionados.es", nota: "Comunidad española. Foros + ferias + cursos." },
+    ]}
+    comunidad={[
+      { nombre: "r/Homebrewing (Reddit)", nota: "Comunidad principal. Wiki muy completa. Activa para preguntas." },
+      { nombre: "r/mead (Reddit)", nota: "Específico hidromiel. Recetas + troubleshooting." },
+      { nombre: "r/cider (Reddit)", nota: "Específico sidra. Variedades manzana + métodos." },
+      { nombre: "r/firstbrew (Reddit)", nota: "Para principiantes. Buenos hilos sobre primer lote." },
+      { nombre: "Homebrewers Association forums", url: "https://www.homebrewersassociation.org", nota: "Foro de la asociación USA. Acceso a competiciones." },
+    ]}
+    ciencia={[
+      { nombre: "Master Brewers Association (MBAA)", url: "https://www.mbaa.com", nota: "Industria cerveza profesional. Papers técnicos sobre química/microbiología." },
+      { nombre: "Journal of the Institute of Brewing", url: "https://onlinelibrary.wiley.com/journal/20500416", nota: "Journal científico peer-review sobre cerveza/malta." },
+      { nombre: "American Society of Brewing Chemists (ASBC)", url: "https://www.asbcnet.org", nota: "Estándares de análisis cerveza/levaduras/malta." },
+    ]}
+    harm={[
+      { nombre: "Asociación Española de Cerveceros Caseros — guía higiene", nota: "Recursos en castellano sobre sanitización." },
+      { nombre: "BeerSmith podcast (Brad Smith)", url: "https://beersmith.com/podcast/", nota: "Episodios sobre seguridad alimentaria, contaminaciones." },
+      { nombre: "Brulosophy 'exBEERiments' on contamination", nota: "Datos reales sobre cómo y cuándo se contaminan los lotes." },
+      { nombre: "Wild Fermentation FAQ (Sandor Katz)", url: "https://www.wildfermentation.com", nota: "Para fermentaciones espontáneas — qué es seguro y qué no." },
+    ]}
+  />;
 }
 
 
@@ -7477,6 +7741,54 @@ function FAQ_PLANTAS() {
   );
 }
 
+function BIBLIO_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía para guía de plantas psicoactivas suaves (Salvia, Damiana, Blue Lotus, Wild Lettuce, Calea, Kava, Kanna, etc.). Cubre etnobotánica clásica + recursos específicos por planta + harm reduction de cada compuesto."
+    libros={[
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Clásico etnobotánico. Capítulos sobre la mayoría de plantas de esta guía." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Compendio enciclopédico — una entrada por planta con química, dosis, historia. La biblia." },
+      { titulo: "Pharmacotheon", autor: "Jonathan Ott", año: "1996", nota: "Capítulos por familia química + plantas asociadas." },
+      { titulo: "Salvinorin: The Psychedelic Essence of Salvia divinorum", autor: "Daniel Siebert", año: "varios", nota: "PDFs descargables. Siebert es el redescubridor moderno de Salvia. Indispensable para esta planta." },
+      { titulo: "Kava: The Pacific Drug", autor: "Vincent Lebot, Mark Merlin & Lamont Lindstrom", año: "1992", nota: "Etnobotánica + farmacología + cultura del kava. Definitorio." },
+      { titulo: "Sceletium tortuosum (Kanna): A Compendium", autor: "varios", nota: "Compilaciones online sobre Kanna y mesembrina." },
+      { titulo: "Wild Lettuce: Lactuca virosa as Medicine", autor: "varios herbalistas", nota: "Tradición herborista occidental — Cazin, Maud Grieve 'A Modern Herbal'." },
+    ]}
+    web={[
+      { nombre: "Erowid Plants Vault", url: "https://erowid.org/plants/", nota: "Vault por planta — Salvia, Kava, Kanna, Calea, Damiana, Wild Lettuce, etc. Estándar." },
+      { nombre: "Sage Wisdom (Daniel Siebert)", url: "https://www.sagewisdom.org", nota: "Recurso #1 sobre Salvia divinorum. Cultivo + uso + harm reduction." },
+      { nombre: "Kava Library / Kavasociety", url: "https://kavalibrary.com", nota: "Información sobre kava noble vs tudei, variedades, riesgos hepatotóxicos." },
+      { nombre: "Kava.com / Kalm with Kava", url: "https://kavaforums.com", nota: "Foro y vendedores reputados de kava." },
+      { nombre: "EthnoPlants / Avalon Magic Plants", nota: "Vendedores etnobotánicos UE con descripciones técnicas." },
+      { nombre: "Trout's Notes Sceletium", url: "https://sacred-cacti.com", nota: "Sección sobre Kanna." },
+      { nombre: "PsychonautWiki — entradas por planta", url: "https://psychonautwiki.org", nota: "Cada planta tiene su entrada con dosis, duración, interacciones." },
+    ]}
+    comunidad={[
+      { nombre: "r/Salvia (Reddit)", nota: "Comunidad para Salvia divinorum. Cultivo + experiencias." },
+      { nombre: "r/kava (Reddit)", nota: "Activa. Reviews de variedades, preparación tradicional." },
+      { nombre: "r/Kanna (Reddit)", nota: "Sceletium tortuosum. Cultivo + dosificación." },
+      { nombre: "r/Nootropics (Reddit)", nota: "Discusiones sobre Mucuna, Kava, Kanna como nootrópicos." },
+      { nombre: "r/herbalism (Reddit)", nota: "General — Wild Lettuce, Damiana, Lúpulo." },
+      { nombre: "Bluelight Drug Forums", url: "https://bluelight.org", nota: "Foro multicampo. Threads históricos sobre cada planta." },
+    ]}
+    ciencia={[
+      { nombre: "Roth et al. — 'Salvinorin A: A potent naturally occurring nonnitrogenous κ opioid selective agonist' (PNAS 2002)", nota: "Paper landmark sobre mecanismo único de Salvia." },
+      { nombre: "Schultes — 'Plant Hallucinogens' papers", nota: "Trabajos académicos sobre etnobotánica." },
+      { nombre: "Kava case study reviews — 'Kava hepatotoxicity'", nota: "Buscar PubMed. Riesgos + variedad noble vs tudei." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Investigación etnobotánica europea." },
+      { nombre: "Sceletium / mesembrine pharmacology papers (Gericke et al.)", nota: "Investigación sobre Kanna como SSRI natural." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Salvia divinorum", url: "https://psychonautwiki.org/wiki/Salvia_divinorum", nota: "Disociativo intenso — sitter obligado primera vez." },
+      { nombre: "PsychonautWiki — Kava", url: "https://psychonautwiki.org/wiki/Kava", nota: "Riesgo hepatotóxico — usar variedad noble + no excesos." },
+      { nombre: "PsychonautWiki — Kanna", url: "https://psychonautwiki.org/wiki/Kanna", nota: "NO mezclar con SSRI/IMAO (mesembrina actúa en serotonina)." },
+      { nombre: "TripSit Factsheets (varios)", url: "https://drugs.tripsit.me", nota: "Buscar por planta." },
+      { nombre: "Erowid Plant Reports (cada planta)", nota: "Reportes específicos por planta y dosis." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España (no aplica a planta seca pero sí a extractos)." },
+    ]}
+  />;
+}
+
 
 // AMANITA MUSCARIA — forrajeo + preparación
 // NO se cultiva (micorriza con árboles). Solo se recoge en bosque + procesa.
@@ -7978,6 +8290,47 @@ function FAQ_AMANITA() {
       ))}
     </div>
   );
+}
+
+function BIBLIO_AMANITA() {
+  const c = AMANITA_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para Amanita muscaria (matamoscas). Combina trabajo histórico (Wasson, Heinrich) + identificación micológica + investigación química sobre muscimol/ácido iboténico + harm reduction (planta legal pero requiere preparación técnica correcta)."
+    libros={[
+      { titulo: "Soma: Divine Mushroom of Immortality", autor: "R. Gordon Wasson", año: "1968", nota: "Hipótesis Wasson de Amanita muscaria como Soma védico. Histórico definitivo." },
+      { titulo: "Mushrooms, Myth and Mithras", autor: "Carl A.P. Ruck, Mark Hoffman, José Alfredo González Celdrán", año: "2011", nota: "Conexiones rituales europeas + uso ritual histórico." },
+      { titulo: "A Search for Soma: Pharmacy of the Gods", autor: "Clark Heinrich", año: "1995", nota: "Teoría Soma + interpretación de mitos cristianos como referencias a Amanita." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Entrada extensa sobre Amanita muscaria y pantherina." },
+      { titulo: "Pharmacotheon", autor: "Jonathan Ott", año: "1996", nota: "Capítulo sobre muscimol y química. Dosis y preparación correcta." },
+      { titulo: "Mushrooms Demystified", autor: "David Arora", año: "1986", nota: "Identificación micológica general. Capítulo sobre Amanita con cuidado por las venenosas." },
+      { titulo: "Amanita muscaria: Herb of Immortality", autor: "Donald Pfister & varios", año: "varios", nota: "Compilaciones científicas." },
+    ]}
+    web={[
+      { nombre: "Erowid Amanita muscaria Vault", url: "https://erowid.org/plants/amanitas/", nota: "Reportes + química + farmacología + identificación." },
+      { nombre: "Shroomery — Amanita section", url: "https://www.shroomery.org", nota: "Threads sobre forrajeo, secado/decarboxilación, dosificación." },
+      { nombre: "Mycotopia — Amanita forum", url: "https://mycotopia.net", nota: "Foro técnico sobre Amanita." },
+      { nombre: "AmanitaDreamer (Amanita.shop / educación)", nota: "Páginas de educación sobre uso responsable de muscaria." },
+      { nombre: "AmanitaSchool / AmanitaSensei", nota: "Recursos comunitarios sobre dosificación y preparación segura." },
+      { nombre: "First Nature — Amanita muscaria", url: "https://www.first-nature.com/fungi/amanita-muscaria.php", nota: "Identificación micológica europea." },
+    ]}
+    comunidad={[
+      { nombre: "r/AmanitaMuscaria (Reddit)", nota: "Comunidad principal. Identificación + preparación + experiencias." },
+      { nombre: "r/Mushroom_ID (Reddit)", nota: "Para verificación de identificación con foto." },
+      { nombre: "Mycotopia Amanita section", nota: "Foro veterano con threads históricos." },
+    ]}
+    ciencia={[
+      { nombre: "Michelot & Melendez-Howell — 'Amanita muscaria: chemistry, biology, toxicology, and ethnomycology' (Mycological Research, 2003)", nota: "Paper de referencia sobre química y toxicología. Buscar PDF." },
+      { nombre: "Tsujikawa et al. (papers sobre muscimol/iboténico extraction)", nota: "Estudios japoneses sobre química Amanita." },
+      { nombre: "Catalfomo & Eugster (1970): primera caracterización de muscimol", nota: "Histórico fundamental." },
+      { nombre: "PubMed: 'muscimol GABA' / 'ibotenic acid neurotoxicity'", url: "https://pubmed.ncbi.nlm.nih.gov", nota: "Background neurociencia para entender por qué decarboxilar es crítico." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Muscimol / Amanita muscaria", url: "https://psychonautwiki.org/wiki/Muscimol", nota: "Documento técnico — dosis, decarboxilación, contraindicaciones." },
+      { nombre: "TripSit Amanita", url: "https://drugs.tripsit.me/amanita", nota: "Resumen harm reduction." },
+      { nombre: "Erowid Amanita Reports", url: "https://erowid.org/plants/amanitas/amanitas_experience.shtml", nota: "Reportes con dosis exactas y método de preparación." },
+      { nombre: "ICEERS / Centros antitóxicos", nota: "Para emergencias por confusión con Amanita venenosas (phalloides, virosa). Anti-tóxicos España: 915 620 420." },
+    ]}
+  />;
 }
 
 
@@ -8532,6 +8885,43 @@ function FAQ_TRUFAS() {
       ))}
     </div>
   );
+}
+
+function BIBLIO_TRUFAS() {
+  const c = TRUFAS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Las trufas mágicas (esclerocios de Psilocybe tampanensis/mexicana/atlantis) tienen el mismo principio activo que las setas Psilocybe — psilocibina. La bibliografía solapa fuertemente con la guía de setas pero hay especificidades sobre esclerocios y mercado holandés legal."
+    libros={[
+      { titulo: "The Mushroom Cultivator", autor: "Paul Stamets & J.S. Chilton", año: "1983", nota: "Manual técnico aplica también a Psilocybe que producen esclerocios." },
+      { titulo: "Psilocybin Mushrooms of the World", autor: "Paul Stamets", año: "1996", nota: "Identificación de especies. Capítulos sobre P. tampanensis y P. mexicana." },
+      { titulo: "How to Change Your Mind", autor: "Michael Pollan", año: "2018", nota: "Contexto del renacimiento psicodélico. Holanda como referencia legal." },
+      { titulo: "The Psilocybin Solution", autor: "Simon G. Powell", año: "2011", nota: "Filosofía/farmacología psilocibina. Útil para entender conceptos." },
+    ]}
+    web={[
+      { nombre: "Truffle Magic", url: "https://www.trufflemagic.com", nota: "Vendedor holandés. Blog con info técnica sobre esclerocios y dosificación." },
+      { nombre: "Magic Truffles Holland", url: "https://www.magic-truffles.com", nota: "Otro vendedor holandés. Buenas guías de consumo." },
+      { nombre: "Shroomery (sección Psilocybe atlantis/tampanensis)", url: "https://www.shroomery.org", nota: "Foro con threads específicos sobre cultivo de esclerocios." },
+      { nombre: "Erowid Psilocybin Vault", url: "https://erowid.org/plants/mushrooms/", nota: "Aplica también a trufas (mismo activo)." },
+      { nombre: "DoubleBlind Magazine", url: "https://doubleblindmag.com", nota: "Periodismo psicodélico moderno." },
+    ]}
+    comunidad={[
+      { nombre: "r/MagicTruffles (Reddit)", nota: "Comunidad específica de trufas. Reportes de potencia por strain." },
+      { nombre: "r/MushroomGrowers (Reddit)", nota: "Threads sobre cultivo de tampanensis/atlantis (truffle producers)." },
+      { nombre: "Mycotopia", nota: "Foro técnico con info sobre cultivo de esclerocios." },
+    ]}
+    ciencia={[
+      { nombre: "Open Foundation (Universidad Maastricht)", url: "https://www.open-foundation.org", nota: "Investigación sobre psilocibina en Holanda. Conferencias ICPR." },
+      { nombre: "MAPS", url: "https://maps.org", nota: "Repositorio de estudios clínicos." },
+      { nombre: "Johns Hopkins Psychedelic Research", url: "https://hopkinspsychedelic.org", nota: "Estudios líderes con psilocibina (aplicable al activo de trufas)." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Etnobotánica + recursos legales." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Psilocybin", url: "https://psychonautwiki.org/wiki/Psilocybin", nota: "Aplica también a trufas. Dosificación ajustada por contenido seco/fresco." },
+      { nombre: "TripSit Psilocybin", url: "https://drugs.tripsit.me/psilocybin", nota: "Resumen harm reduction." },
+      { nombre: "Truffles.nl (Magic Truffles official Dutch info)", url: "https://www.truffles.nl", nota: "Recursos oficiales holandeses sobre uso responsable." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis de sustancias en España." },
+    ]}
+  />;
 }
 
 
@@ -9213,6 +9603,49 @@ function FAQ_AYA() {
       ))}
     </div>
   );
+}
+
+function BIBLIO_AYA() {
+  const c = AYAHUASCA_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía de ayahuasca. Combina trabajo etnográfico clásico (Schultes, Narby, Shanon) + investigación clínica reciente (ICEERS, hospitales brasileños) + recursos prácticos sobre cultivo de Banisteriopsis y Psychotria."
+    libros={[
+      { titulo: "The Antipodes of the Mind: Charting the Phenomenology of the Ayahuasca Experience", autor: "Benny Shanon", año: "2002", nota: "Estudio fenomenológico riguroso de cientos de experiencias propias del autor + entrevistas. Referencia académica." },
+      { titulo: "Ayahuasca: Soul Medicine of the Amazon Jungle", autor: "Javier Regueiro", año: "2014", nota: "Perspectiva del facilitador moderno. Práctico para entender ceremonias contemporáneas." },
+      { titulo: "The Cosmic Serpent: DNA and the Origins of Knowledge", autor: "Jeremy Narby", año: "1998", nota: "Teoría sobre conocimiento botánico chamánico. Clásico controvertido pero estimulante." },
+      { titulo: "Ayahuasca Visions: The Religious Iconography of a Peruvian Shaman", autor: "Pablo Amaringo & Luis Eduardo Luna", año: "1999", nota: "Pinturas + interpretación cultural shipibo. Visualmente impactante." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo extensivo sobre análogos de ayahuasca y química DMT/MAOI." },
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Capítulo sobre Banisteriopsis. Etnobotánica clásica." },
+      { titulo: "The Ayahuasca Reader", autor: "varios eds. (Luna & White)", año: "2000", nota: "Antología de ensayos antropológicos y experiencias." },
+    ]}
+    web={[
+      { nombre: "ICEERS Ayahuasca Info", url: "https://www.iceers.org/es/ayahuasca-info/", nota: "Fundación española. Información en castellano sobre ayahuasca, legalidad y harm reduction. Recurso #1 ES." },
+      { nombre: "Ayahuasca.com", url: "https://www.ayahuasca.com", nota: "Portal histórico con artículos, reportes y comunidad." },
+      { nombre: "Centro Takiwasi", url: "https://www.takiwasi.com", nota: "Centro peruano de tratamiento adicciones con ayahuasca. Investigación + retiros." },
+      { nombre: "Ayahuasca-info.com", url: "https://www.ayahuasca-info.com", nota: "Información práctica sobre cocción y plantas alternativas." },
+      { nombre: "Erowid Ayahuasca Vault", url: "https://erowid.org/chemicals/ayahuasca/", nota: "Reportes + química + farmacología." },
+      { nombre: "DMT-Nexus", url: "https://www.dmt-nexus.me", nota: "Foro técnico sobre DMT/MAOI. Análogos de ayahuasca y harmalas." },
+    ]}
+    comunidad={[
+      { nombre: "r/Ayahuasca (Reddit)", nota: "Comunidad principal. Cultivo + retiros + experiencias. Activa." },
+      { nombre: "DMT-Nexus Forum", nota: "Técnico — más enfocado a análogos pharmahuasca y química, pero útil para entender activos." },
+      { nombre: "ICEERS forum (asistencia)", nota: "Línea directa para dudas sobre ayahuasca y harm reduction." },
+    ]}
+    ciencia={[
+      { nombre: "ICEERS Research", url: "https://www.iceers.org/research/", nota: "Estudios clínicos sobre seguridad y aplicación terapéutica de ayahuasca." },
+      { nombre: "Hospital São Paulo (Jordi Riba publications)", nota: "Estudios farmacocinéticos clásicos sobre ayahuasca. Buscar 'Riba ayahuasca pharmacokinetics'." },
+      { nombre: "Beckley Foundation", url: "https://www.beckleyfoundation.org", nota: "Investigación psicodélica + advocacy." },
+      { nombre: "MAPS Ayahuasca papers", url: "https://maps.org", nota: "Repositorio de papers." },
+      { nombre: "Centro de Investigación Sanitaria de la Fundación La Caixa (estudios brasileños sobre depresión)", nota: "Buscar 'Palhano-Fontes ayahuasca depression' — estudio clínico landmark 2019." },
+    ]}
+    harm={[
+      { nombre: "ICEERS Ayahuasca Harm Reduction", url: "https://www.iceers.org/es/ayahuasca-harm-reduction/", nota: "Guía completa en español. Cribado médico, contraindicaciones, dieta previa." },
+      { nombre: "PsychonautWiki — Ayahuasca", url: "https://psychonautwiki.org/wiki/Ayahuasca", nota: "Documento técnico. Dosis, interacciones MAOI, set/setting." },
+      { nombre: "TripSit Ayahuasca", url: "https://drugs.tripsit.me/ayahuasca", nota: "Resumen práctico." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis preparados ayahuasca en España (sí lo hacen — confirman ratio harmalina/DMT)." },
+      { nombre: "Erowid Ayahuasca Reports", url: "https://erowid.org/chemicals/ayahuasca/ayahuasca_experience.shtml", nota: "Cientos de reportes categorizados." },
+    ]}
+  />;
 }
 
 
@@ -9897,6 +10330,48 @@ function FAQ_DMT() {
   );
 }
 
+function BIBLIO_DMT() {
+  const c = DMT_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía consultada para guía DMT (Mimosa hostilis, Acacia, Chaliponga + extracción + uso). Mezcla literatura clásica (Strassman, Ott) + comunidad técnica DMT-Nexus + investigación neurociencia reciente."
+    libros={[
+      { titulo: "DMT: The Spirit Molecule", autor: "Rick Strassman", año: "2001", nota: "Único estudio clínico moderno con DMT IV. Entrevistas + farmacología + filosofía. Lectura obligada." },
+      { titulo: "Pharmacotheon: Entheogenic Drugs, Their Plant Sources and History", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo profundo sobre triptaminas y plantas-DMT. Química, dosificación, fuentes." },
+      { titulo: "DMT and the Soul of Prophecy", autor: "Rick Strassman", año: "2014", nota: "Continuación con marco teológico-judaico. Más especulativo que el primero." },
+      { titulo: "TIHKAL: Tryptamines I Have Known and Loved", autor: "Alexander & Ann Shulgin", año: "1997", nota: "Química y experiencias con triptaminas. DMT y análogos." },
+      { titulo: "Ayahuasca Analogues: Pangean Entheogens", autor: "Jonathan Ott", año: "1994", nota: "Específico sobre pharmahuasca (DMT + MAOI fuera de Banisteriopsis tradicional)." },
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Capítulo sobre yopo, vilca, otras fuentes amerindias de DMT." },
+    ]}
+    web={[
+      { nombre: "DMT-Nexus Wiki", url: "https://wiki.dmt-nexus.me", nota: "Recurso técnico #1 mundial. Extracciones (STB, A/B), química, plantas, harmalas. Base imprescindible." },
+      { nombre: "DMT-Nexus Forum", url: "https://www.dmt-nexus.me", nota: "Foro activo. Reportes, troubleshoot extracciones, identificación de plantas." },
+      { nombre: "Erowid DMT Vault", url: "https://erowid.org/chemicals/dmt/", nota: "Reportes + farmacología + history + legalidad." },
+      { nombre: "The Nexian (revista PDF descargable)", nota: "Revista de la comunidad DMT-Nexus. PDFs gratuitos con artículos profundos." },
+      { nombre: "Ott's Pharmacotheon (online supplements)", nota: "Material complementario online del libro." },
+    ]}
+    comunidad={[
+      { nombre: "r/DMT (Reddit)", nota: "Comunidad grande de experiencias y dosificación. Cuidado: muchos posts no técnicos." },
+      { nombre: "DMT-Nexus", nota: "Foro técnico de referencia. Threads sobre extracciones STB, A/B, freebase, NN-DMT vs 5-MeO-DMT." },
+      { nombre: "r/AyahuascaCircle / r/Ayahuasca", nota: "Para análogos pharmahuasca y MAOIs (harmalas)." },
+      { nombre: "Mulga Nation Forums", nota: "Foco en Acacia spp. de Australia (alternativas Mimosa)." },
+    ]}
+    ciencia={[
+      { nombre: "Strassman Lab publications", url: "https://www.rickstrassman.com", nota: "Página personal de Rick Strassman. Papers descargables." },
+      { nombre: "Cogent Society", url: "https://cottagesociety.org", nota: "Investigación independiente sobre psicodélicos." },
+      { nombre: "MAPS DMT papers", url: "https://maps.org", nota: "Repositorio + actualizaciones de research." },
+      { nombre: "Imperial College Psychedelic Research (extended-state DMT)", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Estudios recientes con infusión continua DMT." },
+      { nombre: "Algernon Pharmaceuticals (DMT for stroke trials)", nota: "Aplicación médica DMT — fase clínica." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — DMT", url: "https://psychonautwiki.org/wiki/N,N-DMT", nota: "Documento técnico. Dosis vape vs IV, interacciones, duración." },
+      { nombre: "TripSit DMT", url: "https://drugs.tripsit.me/dmt", nota: "Resumen harm reduction." },
+      { nombre: "Erowid DMT Reports", url: "https://erowid.org/chemicals/dmt/dmt_experience.shtml", nota: "Reportes de experiencias por dosis y método." },
+      { nombre: "DMT-Nexus Welcome / Newcomers Guide", url: "https://wiki.dmt-nexus.me/Newcomer", nota: "Guía completa para principiantes — set/setting, dosis, qué esperar." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España. Confirman pureza de extractos." },
+    ]}
+  />;
+}
+
 
 function GuiaCultivo() {
 
@@ -10024,6 +10499,7 @@ function GuiaCultivo() {
           case "extracciones": return <EXTRACCIONES />;
           case "faq": return <FAQ />;
           case "conceptos": return <CONCEPTOS />;
+          case "biblio_cannabis": return <BIBLIO_CANNABIS />;
           default: return null;
         }
       }
@@ -10065,6 +10541,7 @@ function GuiaCultivo() {
           case "timeline_setas": return <TIMELINE_SETAS navigate={navigateMushroom} />;
           case "conceptos_setas": return <CONCEPTOS_SETAS />;
           case "faq_setas": return <FAQ_SETAS />;
+          case "biblio_setas": return <BIBLIO_SETAS />;
           default: return <TIMELINE_SETAS navigate={navigateMushroom} />;
         }
       }
@@ -10078,6 +10555,7 @@ function GuiaCultivo() {
         case "cosecha_cactus": return <COSECHA_CACTUS />;
         case "preparacion_cactus": return <PREPARACION_CACTUS />;
         case "faq_cactus": return <FAQ_CACTUS />;
+        case "biblio_cactus": return <BIBLIO_CACTUS />;
         default: return <INTRO_CACTUS />;
       }
     } else if (guide === "ferment") {
@@ -10115,6 +10593,7 @@ function GuiaCultivo() {
           case "higiene_ferment": return <HIGIENE_FERMENT />;
           case "glosario_ferment": return <GLOSARIO_FERMENT />;
           case "faq_ferment": return <FAQ_FERMENT />;
+          case "biblio_ferment": return <BIBLIO_FERMENT />;
           default: return <INTRO_FERMENT />;
         }
       }
@@ -10133,6 +10612,7 @@ function GuiaCultivo() {
         case "mucuna": return <MUCUNA />;
         case "lupulo": return <LUPULO />;
         case "faq_plantas": return <FAQ_PLANTAS />;
+        case "biblio_plantas": return <BIBLIO_PLANTAS />;
         default: return <INTRO_PLANTAS />;
       }
     } else if (guide === "amanita") {
@@ -10146,6 +10626,7 @@ function GuiaCultivo() {
         case "conservacion_amanita": return <CONSERVACION_AMANITA />;
         case "harm_reduction_amanita": return <HARM_REDUCTION_AMANITA />;
         case "faq_amanita": return <FAQ_AMANITA />;
+        case "biblio_amanita": return <BIBLIO_AMANITA />;
         default: return <INTRO_AMANITA />;
       }
     } else if (guide === "trufas") {
@@ -10159,6 +10640,7 @@ function GuiaCultivo() {
         case "conservacion_trufas": return <CONSERVACION_TRUFAS />;
         case "harm_reduction_trufas": return <HARM_REDUCTION_TRUFAS />;
         case "faq_trufas": return <FAQ_TRUFAS />;
+        case "biblio_trufas": return <BIBLIO_TRUFAS />;
         default: return <INTRO_TRUFAS />;
       }
     } else if (guide === "ayahuasca") {
@@ -10172,6 +10654,7 @@ function GuiaCultivo() {
         case "ceremonia_aya": return <CEREMONIA_AYA />;
         case "harm_reduction_aya": return <HARM_REDUCTION_AYA />;
         case "faq_aya": return <FAQ_AYA />;
+        case "biblio_aya": return <BIBLIO_AYA />;
         default: return <INTRO_AYA />;
       }
     } else if (guide === "dmt") {
@@ -10187,6 +10670,7 @@ function GuiaCultivo() {
         case "experiencia_dmt": return <EXPERIENCIA_DMT />;
         case "harm_reduction_dmt": return <HARM_REDUCTION_DMT />;
         case "faq_dmt": return <FAQ_DMT />;
+        case "biblio_dmt": return <BIBLIO_DMT />;
         default: return <INTRO_DMT />;
       }
     }

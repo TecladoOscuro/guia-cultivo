@@ -1061,3 +1061,51 @@ function FAQ_PLANTAS() {
     </div>
   );
 }
+
+function BIBLIO_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  return <BibliografiaBlock c={c}
+    intro="Bibliografía para guía de plantas psicoactivas suaves (Salvia, Damiana, Blue Lotus, Wild Lettuce, Calea, Kava, Kanna, etc.). Cubre etnobotánica clásica + recursos específicos por planta + harm reduction de cada compuesto."
+    libros={[
+      { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Clásico etnobotánico. Capítulos sobre la mayoría de plantas de esta guía." },
+      { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Compendio enciclopédico — una entrada por planta con química, dosis, historia. La biblia." },
+      { titulo: "Pharmacotheon", autor: "Jonathan Ott", año: "1996", nota: "Capítulos por familia química + plantas asociadas." },
+      { titulo: "Salvinorin: The Psychedelic Essence of Salvia divinorum", autor: "Daniel Siebert", año: "varios", nota: "PDFs descargables. Siebert es el redescubridor moderno de Salvia. Indispensable para esta planta." },
+      { titulo: "Kava: The Pacific Drug", autor: "Vincent Lebot, Mark Merlin & Lamont Lindstrom", año: "1992", nota: "Etnobotánica + farmacología + cultura del kava. Definitorio." },
+      { titulo: "Sceletium tortuosum (Kanna): A Compendium", autor: "varios", nota: "Compilaciones online sobre Kanna y mesembrina." },
+      { titulo: "Wild Lettuce: Lactuca virosa as Medicine", autor: "varios herbalistas", nota: "Tradición herborista occidental — Cazin, Maud Grieve 'A Modern Herbal'." },
+    ]}
+    web={[
+      { nombre: "Erowid Plants Vault", url: "https://erowid.org/plants/", nota: "Vault por planta — Salvia, Kava, Kanna, Calea, Damiana, Wild Lettuce, etc. Estándar." },
+      { nombre: "Sage Wisdom (Daniel Siebert)", url: "https://www.sagewisdom.org", nota: "Recurso #1 sobre Salvia divinorum. Cultivo + uso + harm reduction." },
+      { nombre: "Kava Library / Kavasociety", url: "https://kavalibrary.com", nota: "Información sobre kava noble vs tudei, variedades, riesgos hepatotóxicos." },
+      { nombre: "Kava.com / Kalm with Kava", url: "https://kavaforums.com", nota: "Foro y vendedores reputados de kava." },
+      { nombre: "EthnoPlants / Avalon Magic Plants", nota: "Vendedores etnobotánicos UE con descripciones técnicas." },
+      { nombre: "Trout's Notes Sceletium", url: "https://sacred-cacti.com", nota: "Sección sobre Kanna." },
+      { nombre: "PsychonautWiki — entradas por planta", url: "https://psychonautwiki.org", nota: "Cada planta tiene su entrada con dosis, duración, interacciones." },
+    ]}
+    comunidad={[
+      { nombre: "r/Salvia (Reddit)", nota: "Comunidad para Salvia divinorum. Cultivo + experiencias." },
+      { nombre: "r/kava (Reddit)", nota: "Activa. Reviews de variedades, preparación tradicional." },
+      { nombre: "r/Kanna (Reddit)", nota: "Sceletium tortuosum. Cultivo + dosificación." },
+      { nombre: "r/Nootropics (Reddit)", nota: "Discusiones sobre Mucuna, Kava, Kanna como nootrópicos." },
+      { nombre: "r/herbalism (Reddit)", nota: "General — Wild Lettuce, Damiana, Lúpulo." },
+      { nombre: "Bluelight Drug Forums", url: "https://bluelight.org", nota: "Foro multicampo. Threads históricos sobre cada planta." },
+    ]}
+    ciencia={[
+      { nombre: "Roth et al. — 'Salvinorin A: A potent naturally occurring nonnitrogenous κ opioid selective agonist' (PNAS 2002)", nota: "Paper landmark sobre mecanismo único de Salvia." },
+      { nombre: "Schultes — 'Plant Hallucinogens' papers", nota: "Trabajos académicos sobre etnobotánica." },
+      { nombre: "Kava case study reviews — 'Kava hepatotoxicity'", nota: "Buscar PubMed. Riesgos + variedad noble vs tudei." },
+      { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Investigación etnobotánica europea." },
+      { nombre: "Sceletium / mesembrine pharmacology papers (Gericke et al.)", nota: "Investigación sobre Kanna como SSRI natural." },
+    ]}
+    harm={[
+      { nombre: "PsychonautWiki — Salvia divinorum", url: "https://psychonautwiki.org/wiki/Salvia_divinorum", nota: "Disociativo intenso — sitter obligado primera vez." },
+      { nombre: "PsychonautWiki — Kava", url: "https://psychonautwiki.org/wiki/Kava", nota: "Riesgo hepatotóxico — usar variedad noble + no excesos." },
+      { nombre: "PsychonautWiki — Kanna", url: "https://psychonautwiki.org/wiki/Kanna", nota: "NO mezclar con SSRI/IMAO (mesembrina actúa en serotonina)." },
+      { nombre: "TripSit Factsheets (varios)", url: "https://drugs.tripsit.me", nota: "Buscar por planta." },
+      { nombre: "Erowid Plant Reports (cada planta)", nota: "Reportes específicos por planta y dosis." },
+      { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España (no aplica a planta seca pero sí a extractos)." },
+    ]}
+  />;
+}
