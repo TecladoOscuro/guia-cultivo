@@ -811,6 +811,11 @@ function SINICUICHI() {
       <StepX c={c} num={2} text="Cortar ramitas con hojas + flores. La planta sigue produciendo." />
       <StepX c={c} num={3} text="Una planta madura (2 años) da 50-150g de hojas frescas por temporada." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Decocción de corteza y hojas (método tradicional): 10-20g hojas secas o corteza en 500ml agua. Hervir 15-20 min. Colar. El agua amarillenta resultante contiene los alcaloides quinolizidínicos activos." />
+      <StepX c={c} num={2} text="Fermentación documentada (más potente): proceso ya descrito en la sección de preparación. El agua fermentada al sol 24-72h activa mejor los alcaloides que la decocción directa." />
+      <InfoBoxX c={c}>📦 La decocción es la extracción más sencilla. La fermentación tradicional concentra y activa los alcaloides (criogenina, lyofolina). Ambos métodos producen el líquido amarillo característico.</InfoBoxX>
+
       <SectionTitleX c={c}>PREPARACIÓN TRADICIONAL — FERMENTACIÓN</SectionTitleX>
       <InfoBoxX c={c}>
         Tradicional Mexicano: hojas frescas se machacan + se ponen en agua al sol durante 24-72h hasta que el agua se vuelve amarilla (de ahí "sonidos amarillos"). El agua fermentada es lo que se bebe.
@@ -900,6 +905,11 @@ function MUCUNA() {
       <StepX c={c} num={3} text="Recoger vainas. Quemarlas brevemente con mechero (la pelusa se va al instante) O congelar 24h y aplastar (pelusa se desactiva con frío)." />
       <StepX c={c} num={4} text="Abrir vainas con cuchillo. Sacar las semillas (3-7 por vaina, color marrón-negro)." />
       <StepX c={c} num={5} text="Una planta produce 50-200g de semillas secas en una temporada." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Deshidratación y triturado: tostar semillas limpias en sartén seca 5-10 min (reduce antinutrientes + facilita triturado). Dejar enfriar completamente." />
+      <StepX c={c} num={2} text="Triturar en molinillo de café hasta polvo fino. Tamizar si hay trozos grandes. El polvo resultante contiene 4-7% L-DOPA natural biodisponible." />
+      <InfoBoxX c={c}>📦 Resultado: polvo marrón oscuro de aroma a café tostado. Dosis: 2-5g en batido o cápsulas. La L-DOPA es el precursor directo de dopamina — efecto más sutil y sostenido que cafeína.</InfoBoxX>
 
       <SectionTitleX c={c}>PREPARACIÓN</SectionTitleX>
       <StepX c={c} num={1} text="Tostar semillas en sartén seca 5-10 min hasta que crujen (mejora sabor + reduce antinutrientes)." />
@@ -997,6 +1007,11 @@ function LUPULO() {
       <StepX c={c} num={2} text="Secar 1-3 semanas hasta que crujan al apretar." />
       <StepX c={c} num={3} text="Conservar en bolsas vacío en congelador (mantiene aroma + alfa-ácidos para cerveza). O frasco hermético oscuro a temperatura ambiente." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Extracción de lúpulina: la resina glandular amarilla visible en el interior de los conos es la lúpulina. Para extraerla, frotar conos secos con dedos sobre plato de vidrio — los gránulos amarillos se separan fácilmente. Almacenar por separado." />
+      <StepX c={c} num={2} text="Tintura alcohólica: 50g conos secos en 250ml alcohol 60-70°. Macerar en frasco oscuro 3 semanas. Filtrar. El alcohol extrae eficientemente humulonas, lupulonas y el 2-metil-3-buten-2-ol sedante." />
+      <InfoBoxX c={c}>📦 La lúpulina pura es más concentrada para cápsulas o vaporización. La tintura es más práctica para uso diario. Dosis tintura: 1-3ml sublingual antes de dormir.</InfoBoxX>
+
       <SectionTitleX c={c}>PREPARACIÓN PARA USO SEDANTE</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión:</strong> 1-2g de conos secos en agua hirviendo, reposo 10 min. Sabor amargo. Mejor con miel + manzanilla. 1 taza 30 min antes de dormir.<br/>
@@ -1074,6 +1089,11 @@ function PASIFLORA() {
       <StepX c={c} num={2} text="Secar a sombra ventilada 5-10 días hasta que crujan. Conservar en frasco hermético oscuro." />
       <StepX c={c} num={3} text="Frutos: madurar en planta hasta arrugarse y ablandarse. Comestibles directamente." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura alcohólica: 50g hojas/flores secas en 250ml alcohol 40-60°. Macerar en frasco oscuro 4-6 semanas agitando ocasionalmente. Filtrar con gasa." />
+      <StepX c={c} num={2} text="Dosis tintura: 20-40 gotas (1-2ml) en agua, hasta 3x/día. Extracto seco (polvo concentrado) disponible en farmacia y herboristería — cómodo para cápsulas." />
+      <InfoBoxX c={c}>📦 Resultado: tintura ambarino-verdosa con flavonoides (crisina, isovitexina) y harmanoides. Conservar frasco oscuro 4-5 años. Efecto ansiolítico notable con uso regular.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión:</strong> 1-2 cucharaditas (2-4g) hojas/flores secas por taza. Hervir 5-10 min. Hasta 3 tazas/día. Sabor herbal ligero.<br/>
@@ -1134,6 +1154,11 @@ function BELENO() {
       <StepX c={c} num={1} text="Hojas: año 1 al final del verano, antes de helada. Año 2: durante floración (junio-agosto)." />
       <StepX c={c} num={2} text="Secado RÁPIDO al sol o estufa baja (40°C max) — pierde 80% peso. Almacenar en frasco etiquetado VENENO con calavera." />
       <StepX c={c} num={3} text="Semillas: 10x más potentes que hojas. Cosechar cápsulas casi maduras, secar al sol." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. La extracción de tropanos (hiosciamina, escopolamina, atropina) de beleño era realizada en boticas medievales y laboratorios farmacéuticos del siglo XIX para preparar formulaciones magistrales." />
+      <StepX c={c} num={2} text="Hoy los alcaloides tropánicos se obtienen industrialmente de fuentes controladas. La atropina pura se usa en hospitales a dosis tituladas. El extracto casero de beleño NO tiene dosificación fiable — variabilidad de alcaloides entre plantas hace el riesgo imprevisible." />
+      <InfoBoxX c={c}>⚠️ NO intentar extracción doméstica de tropanos de beleño bajo ningún concepto. Material educativo y documental histórico únicamente. Cualquier uso psicoactivo de beleño crudo es extremadamente peligroso.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1197,6 +1222,11 @@ function BELLADONA() {
       <StepX c={c} num={2} text="Secar rápido sombra ventilada 5-10 días. Almacenar frasco etiquetado." />
       <StepX c={c} num={3} text="Raíces: año 4 en otoño. Concentración alcaloides máxima. Lavar, cortar, secar al aire o estufa baja." />
       <StepX c={c} num={4} text="NO comer bayas — atractivas pero potencialmente letales (incluso 2-3 bayas niños = hospital). Compostar o desechar." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. La extracción de atropina de belladona fue la base de la farmacología moderna del siglo XIX. Industrias farmacéuticas extraían atropina de hojas/raíces para preparaciones oculares y antiespasmódicas." />
+      <StepX c={c} num={2} text="La atropina pura se produce hoy industrialmente y es fármaco hospitalario controlado. La extracción casera de belladona no tiene ninguna utilidad práctica y supone riesgo de intoxicación grave incluso durante la manipulación." />
+      <InfoBoxX c={c}>⚠️ NO realizar extracción doméstica de belladona. Referencia etnobotánica e histórica únicamente. La belladona ornamental es legal; el uso psicoactivo no es seguro en ninguna dosis sin titulación química precisa.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1262,6 +1292,11 @@ function MANDRAGORA() {
       <StepX c={c} num={3} text="Limpiar con cepillo seco. Cortar en rodajas finas. Secar al sol o estufa baja 1-2 semanas." />
       <StepX c={c} num={4} text="Frutos: comestibles tradicionalmente en pequeñas cantidades (manzanitas amarillas) — Génesis bíblico mencione 'mandrágoras' como afrodisíaco. Pero efectos psicoactivos vienen de raíz, no fruto." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="REFERENCIA ETNOBOTÁNICA E HISTÓRICA ÚNICAMENTE. La raíz contiene atropina, escopolamina e hiosciamina como belladona. Culturas clásicas (griega, romana, árabe medieval) macerababan la raíz en vino como anestésico y sedante ritual." />
+      <StepX c={c} num={2} text="Extractar alcaloides de mandrágora casero no tiene ninguna utilidad ni justificación en el contexto actual. La variabilidad de concentración entre raíces hace imposible cualquier dosificación segura sin análisis químico." />
+      <InfoBoxX c={c}>⚠️ La raíz de mandrágora como objeto etnobotánico/decorativo y folclórico es el uso legítimo y seguro. Referencia histórica únicamente para extracción.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO HISTÓRICO/MÁGICO:</strong><br/>
@@ -1326,6 +1361,11 @@ function DATURA_INOXIA() {
       <StepX c={c} num={2} text="Secar rápido sombra ventilada. Almacenar frasco etiquetado VENENO." />
       <StepX c={c} num={3} text="Semillas: 10x más concentradas que hojas. Cosechar cápsulas verde-marrón antes de abrir. Secar al sol." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. La extracción de tropanos de Datura inoxia para uso farmacológico era realizada en laboratorios en el siglo XIX para obtener escopolamina (el alcaloide dominante en esta especie frente a belladona y beleño)." />
+      <StepX c={c} num={2} text="Ninguna extracción doméstica tiene sentido con esta planta. La variabilidad de alcaloides entre partes y entre plantas es tan alta que el delirio tropánico es prácticamente imposible de modular sin análisis." />
+      <InfoBoxX c={c}>⚠️ Referencia histórica únicamente. La Datura inoxia como ornamental espectacular es el único uso doméstico seguro. NO extraer, NO usar internamente.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO ETNOBOTÁNICO/EDUCATIVO:</strong><br/>
@@ -1388,6 +1428,11 @@ function ESTRAMONIO() {
       <StepX c={c} num={2} text="Secado sombra. Almacenar etiquetado." />
       <StepX c={c} num={3} text="Semillas: cosechar cápsulas casi maduras (verde-marrón) antes de abrir y dispersar. Secar al sol." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. Igual que Datura inoxia — mismos alcaloides tropánicos (hiosciamina dominante en esta especie), mismas consideraciones de seguridad." />
+      <StepX c={c} num={2} text="El estramonio silvestre en España es responsable de numerosas hospitalizaciones cada verano. No tiene ningún sentido concentrar sus alcaloides. El material histórico es una advertencia, no una instrucción." />
+      <InfoBoxX c={c}>⚠️ Referencia histórica y documental únicamente. El estramonio es planta ruderal silvestre — no cultivar intencionalmente cerca de familias con niños o mascotas.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO ETNOBOTÁNICO/EDUCATIVO:</strong><br/>
@@ -1449,6 +1494,11 @@ function ADORMIDERA_CALIFORNIA() {
       <StepX c={c} num={2} text="Secar sombra ventilada 5-7 días. Manejar cuidadoso (estructura frágil)." />
       <StepX c={c} num={3} text="Almacenar frasco hermético oscuro." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura alcohólica de eschscholtzina: 50g partes aéreas secas en 250ml alcohol 70°. Macerar en frasco oscuro 4 semanas agitando cada 2-3 días." />
+      <StepX c={c} num={2} text="Filtrar con gasa. La eschscholtzina es soluble en alcohol — la tintura es la forma más concentrada de esta planta." />
+      <InfoBoxX c={c}>📦 Resultado: tintura ambarino-verde con eschscholtzina y californidina. Dosis: 30-60 gotas en agua 3x/día o antes de dormir. Sin opiáceos — mecanismo diferente (no activa receptores μ-opioides).</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión:</strong> 2-4g hojas/flores secas por taza. Hervir 5-10 min. 1-3 tazas/día. Sabor herbal suave.<br/>
@@ -1508,6 +1558,11 @@ function WOODROSE() {
       <StepX c={c} num={1} text="Vainas: dejar madurar en planta hasta secas y marrones (otoño año 2+). Recoger antes de que se abran solas." />
       <StepX c={c} num={2} text="Abrir cápsulas, extraer semillas. Almacenar en frasco hermético oscuro fresco." />
       <StepX c={c} num={3} text="Potencia disminuye 6-12 meses tras cosecha — usar fresca." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Extracción A/B básica de LSA: triturar semillas + acidificar con agua y ácido cítrico (pH 4) → filtrar material vegetal → alcalinizar fase acuosa (pH 9-10 con NaOH o cal) → lavar con solvente apolar (naphtha) para extraer base libre → separar fase orgánica → evaporar. Proceso delicado." />
+      <StepX c={c} num={2} text="Alternativa más simple: cold water extract (CWE). Triturar semillas, suspender en agua fría, agitar 1-2h, filtrar con tela fina, beber el agua. Reduce componentes responsables de náusea sin separar el LSA." />
+      <InfoBoxX c={c}>📦 Para la mayoría: semillas directas con pelusa retirada son suficientes. CWE reduce náusea. A/B concentra el LSA pero requiere materiales de laboratorio. La potencia varía mucho entre lotes de semillas.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1569,6 +1624,11 @@ function MORNING_GLORY() {
       <StepX c={c} num={2} text="Extraer y secar al sol 1-2 días. Almacenar frasco hermético oscuro." />
       <StepX c={c} num={3} text="Una pérgola con vid morning glory puede dar 100-300 semillas/temporada." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Similar a Woodrose: cold water extract (CWE) es el método más accesible. Triturar 150-250 semillas, suspender en agua fría 1-2h, filtrar con tela fina, beber el agua filtrada. Reducir náusea: añadir antiemético (jengibre, meclizina) 30-60 min antes." />
+      <StepX c={c} num={2} text="Extracción A/B más compleja (ver Woodrose para descripción completa): aplica igual pero necesitas mayor cantidad de semillas por el menor contenido de LSA por semilla versus Woodrose." />
+      <InfoBoxX c={c}>📦 Las semillas directas o el CWE son los métodos más prácticos para Morning Glory. Variedad "Heavenly Blue" como referencia. Asegurarse de usar semillas untreated (sin fungicidas).</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🌰 <strong>Semillas:</strong> dosis típica 100-300 semillas (mucho más que woodrose porque LSA más diluido). Variedad "Heavenly Blue" referencia clásica.<br/>
@@ -1629,6 +1689,11 @@ function RUDA_SIRIA() {
       <StepX c={c} num={2} text="Secar al sol 3-5 días. Almacenar frasco hermético oscuro." />
       <StepX c={c} num={3} text="Raíz: año 3+ otoño. Mayor concentración harmina. Lavar, cortar, secar al aire." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Extracción A/B de harmala: triturar semillas secas + acidificar con agua y vinagre o ácido cítrico (pH 4-5) → hervir 15 min → filtrar → alcalinizar (pH 9-10 con amoniaco o NaOH diluido) → el precipitado blanquecino son sales de harmala. Filtrar con papel de café o tela fina → secar al aire." />
+      <StepX c={c} num={2} text="Resultado: polvo beige/marrón claro de sales de harmina+harmalina. Dosis equivalente a 3g de semillas. Almacenar frasco oscuro seco." />
+      <InfoBoxX c={c}>📦 Resultado: extracto de harmala concentrado. Eficaz como IMAO para combinar con DMT-plantas (ayahuasca analógica). Las semillas directas son más simples pero producen más náusea. Recordar siempre el ayuno IMAO de 24h antes.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🌿 <strong>Tradicional iranio/turco:</strong> semillas quemadas en brasero como humo aromático apotropaico (espantar mal de ojo).<br/>
@@ -1688,6 +1753,11 @@ function CATNIP() {
       <StepX c={c} num={1} text="Hojas y tops florales: durante floración. 2-3 cosechas por temporada (planta rebrota)." />
       <StepX c={c} num={2} text="Secar sombra ventilada 5-7 días. Conservar frasco hermético." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura alcohólica: 30-50g hojas secas en 200ml de alcohol 60%. Macerar en frasco oscuro 3-4 semanas agitando ocasionalmente." />
+      <StepX c={c} num={2} text="Filtrar con gasa o filtro de café. La tintura de catnip extrae nepetalactona y flavonoides activos." />
+      <InfoBoxX c={c}>📦 Resultado: tintura de aroma mentolado. Dosis humana: 2-4ml en agua. Para gatos: unas gotas en juguete. Conservar frasco oscuro hasta 2 años.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión humana:</strong> 1-3 cucharaditas hojas secas por taza. Hervir 5-10 min. Sabor herbal mentolado. Sedante leve antes de dormir.<br/>
@@ -1746,6 +1816,11 @@ function WILD_DAGGA() {
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Hojas y flores tubulares: durante floración (septiembre-noviembre BCN)." />
       <StepX c={c} num={2} text="Secar sombra 7-10 días. Conservar frasco hermético." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura de leonurina: 50g hojas/flores secas en 250ml de alcohol 50-60°. Macerar en frasco oscuro 3 semanas agitando cada 2-3 días." />
+      <StepX c={c} num={2} text="Filtrar con gasa. Embotellar en frasco oscuro. Dosis orientativa: 2-3ml en agua o sublingual. Dosis pequeña — empezar con 1ml." />
+      <InfoBoxX c={c}>📦 Resultado: tintura de hojas y flores con leonurina. Efecto cannabis-like suave. Conservar frasco oscuro hasta 4-5 años.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1809,6 +1884,11 @@ function TABACO_RUSTICO() {
       <StepX c={c} num={2} text="Curado: colgar hojas en granero/garage seco ventilado. 3-6 semanas hasta secar y oscurecerse a marrón. Procesado tradicional incluye fermentación posterior — opcional." />
       <StepX c={c} num={3} text="Conservar hojas curadas en bolsa kraft seca. Use con moderación EXTREMA." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="NO realizar extracción doméstica de nicotina. La nicotina concentrada es veneno de contacto — LD50 oral humano ~30-60mg (equivalente a muy poco polvo). Accidentes con nicotina líquida concentrada son documentados." />
+      <StepX c={c} num={2} text="Uso externo insecticida (tradicional): decocción suave de hojas secas (10g en 1L agua, hervir 15 min, enfriar, filtrar). Pulverizar sobre plantas del huerto para control de plagas. NO ingerir, NO contacto piel prolongado." />
+      <InfoBoxX c={c}>⚠️ Extracción de nicotina pura en casa es PELIGROSA. La decocción insecticida es el único uso doméstico seguro.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🌬️ <strong>Sopladores ceremoniales (uso amazónico):</strong> chamán sopla humo concentrado en pacientes — limpieza energética. Nunca el chamán traga humo profundo (=intoxicación).<br/>
@@ -1870,6 +1950,12 @@ function CALAMO() {
       <StepX c={c} num={2} text="Lavar bien (agua barrosa adherida). Pelar capa externa. Cortar trozos 1-2cm." />
       <StepX c={c} num={3} text="Secar al sol o estufa baja (40°C max) 2-3 semanas. Pierde 70% peso." />
       <StepX c={c} num={4} text="Conservar frasco hermético oscuro. Calidad disminuye con tiempo y humedad." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura de rizoma: 50g rizoma seco triturado en 250ml alcohol 70°. Macerar en frasco oscuro 3-4 semanas agitando cada 2-3 días." />
+      <StepX c={c} num={2} text="Filtrar con gasa fina. El alcohol extrae los aceites esenciales y β-asarona activa del rizoma." />
+      <StepX c={c} num={3} text="Nota: variedades asiáticas tetraploides contienen más β-asarona que las europeas/americanas triploides. Si usas variedad asiática, reducir dosis." />
+      <InfoBoxX c={c}>📦 Resultado: tintura de color ambarino con aroma cítrico-alcanforado. Dosis: 2-4ml en agua. Conservar frasco oscuro hasta 4-5 años.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1934,6 +2020,12 @@ function VALERIANA() {
       <StepX c={c} num={3} text="Secar al aire ventilado 2-3 semanas — proceso fétido (olor calcetines), idealmente en garaje/exterior." />
       <StepX c={c} num={4} text="Almacenar frasco oscuro hermético." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura de raíz: 50g raíz seca troceada en 250ml alcohol 60°. Macerar en frasco oscuro 4-6 semanas agitando cada 2-3 días. El olor es intensamente fétido — normal." />
+      <StepX c={c} num={2} text="Filtrar con gasa. Embotellar en frasco oscuro. Dosis: 30-60 gotas (1.5-3ml) hasta 3x/día." />
+      <StepX c={c} num={3} text="Decocción (más débil que tintura): 2-3g raíz seca hervida 15 min. Efecto más suave pero sin alcohol. Cápsulas de extracto seco disponibles en farmacia — opción comercial cómoda." />
+      <InfoBoxX c={c}>📦 Resultado: tintura de olor potente con valereno activo. Más concentrada y duradera (4-5 años) que la decocción. Efecto sedante notable en dosis correcta.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión:</strong> 1-3g raíz seca por taza. Hervir 10-15 min. 1-3 tazas/día. Sabor amargo-tierra desagradable (mejorar con menta o miel).<br/>
@@ -1995,6 +2087,11 @@ function LOBELIA() {
       <StepX c={c} num={2} text="Secar sombra ventilada 5-10 días. Almacenar frasco hermético." />
       <StepX c={c} num={3} text="Semillas: 10x más concentradas. Cosechar cápsulas casi maduras." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura: 30g hierba seca en 250ml alcohol 60°. Macerar en frasco oscuro 3-4 semanas. Filtrar con gasa." />
+      <StepX c={c} num={2} text="Dosis MÁXIMA ABSOLUTA de tintura casera: 0.5ml (unas 10 gotas). Comenzar con 1-2 gotas para test de tolerancia. Margen activo/tóxico muy estrecho." />
+      <InfoBoxX c={c}>⚠️ NO realizar extracto concentrado ni aislar lobelina pura en casa. La tintura diluida es la única preparación casera razonable. Dosis por encima de 0.5ml puede causar vómito, depresión respiratoria. Planta con toxicidad notable.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🚬 <strong>Fumada (uso Cherokee):</strong> hojas secas en pipa o mezcla. Efecto nicotina-like sin nicotina pura.<br/>
@@ -2053,6 +2150,11 @@ function COLEUS() {
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Hojas de cualquier estado planta. Quitar inferiores y puntas." />
       <StepX c={c} num={2} text="Frescas mejor que secas (compuestos volátiles). Si necesitas almacenar: secar rápido sombra." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Maceración alcohólica: 30-50g hojas frescas en 200ml alcohol 40-50°. Macerar 2-3 semanas en frasco oscuro." />
+      <StepX c={c} num={2} text="Filtrar y embotellar. Dosis: 2-5ml. Los efectos reportados son muy débiles — más experimental que establecido científicamente. No esperar resultados consistentes." />
+      <InfoBoxX c={c}>📦 Resultado: tintura de aroma herbal suave. La evidencia de psicoactividad de Coleus es débil y debatida — el efecto puede ser placebo parcial. Valor más botánico/cultural que farmacológico.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -2114,6 +2216,11 @@ function SASAFRAS() {
       <StepX c={c} num={2} text="Secar al aire 1-2 semanas. Cortar trozos pequeños. Almacenar frasco oscuro." />
       <StepX c={c} num={3} text="Hojas: secar también para mucílago tradicional gumbo creole." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Históricamente la corteza de raíz se destilaba al vapor para obtener aceite esencial rico en safrol (~80%). Esta práctica tiene relevancia solo documental." />
+      <StepX c={c} num={2} text="Safrol es PRECURSOR REGULADO (DEA List I / UE Reglamento 273/2004). Su posesión concentrada o extracción intencionada para síntesis es un delito grave en España y toda la UE." />
+      <InfoBoxX c={c}>⚠️ No realizar extracción de aceite esencial de sasafrás. El té de corteza es el único uso doméstico legal y seguro. La planta como árbol ornamental o el té ocasional no tienen implicaciones legales.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Té raíz tradicional Cherokee/colonial:</strong> 5-10g corteza seca por taza. Hervir 10 min. Sabor anís+canela+cítrico distintivo. Uso medicinal: depurativo primaveral, sangre, reumatismo.<br/>
@@ -2172,6 +2279,11 @@ function MORMON_TEA() {
       <SectionTitleX c={c}>COSECHA</SectionTitleX>
       <StepX c={c} num={1} text="Tallos verdes: durante toda temporada. Cortar puntas 10-15cm con tijera, dejar mata principal." />
       <StepX c={c} num={2} text="Secar sombra ventilada 1 semana. Almacenar frasco hermético." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Decocción simple: 5-10g tallos secos troceados en 500ml agua. Hervir 15-20 min. Colar. Beber 200-300ml." />
+      <StepX c={c} num={2} text="El contenido de efedrina/pseudoefedrina en E. nevadensis americana es muy bajo (trazas). La decocción aporta polifenoles y taninos con efecto estimulante leve, no efedrina significativa como E. sinica china." />
+      <InfoBoxX c={c}>📦 Resultado: té ambarino con efecto estimulante suave. Para concentrados o extractos de efedrina: regulado como precursor en UE. Usar solo la decocción tradicional.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -2234,6 +2346,11 @@ function ESCOBA_CANARIA() {
       <StepX c={c} num={2} text="Secar en frasco sellado 10 días para fermentación leve (reduce 'hardness' del humo según paper Gridelli 1969)." />
       <StepX c={c} num={3} text="Pasar luego a secado completo aire ventilado 1 semana. Almacenar frasco oscuro." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura de citisina: 30g flores secas en 200ml alcohol 50°. Macerar 3 semanas en frasco oscuro. Filtrar." />
+      <StepX c={c} num={2} text="Dosis EXTREMADAMENTE PEQUEÑA: la citisina es activa a nivel de microgramos-miligramos. Empezar con 0.5ml tintura como dosis de test. Dosis altas son tóxicas." />
+      <InfoBoxX c={c}>⚠️ La citisina tiene margen terapéutico estrecho. No concentrar más allá de tintura estándar. Las flores fumadas administran dosis más controlables que la tintura concentrada.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🚬 <strong>Flores fumadas (uso Yaqui):</strong> 1-3g flores secas en pipa o joint. Mejor solas (mezcla con tabaco enmascara efecto).<br/>
@@ -2294,6 +2411,11 @@ function CHICALOTE() {
       <StepX c={c} num={2} text="Secar sombra 5-7 días. Almacenar frasco." />
       <StepX c={c} num={3} text="Cápsulas: cosechar antes que abran, secar al sol. Semillas para resiembra o uso." />
 
+      <SectionTitleX c={c}>EXTRACCIÓN</SectionTitleX>
+      <StepX c={c} num={1} text="Extracción de látex (savia amarilla): hacer cortes superficiales en cápsulas verdes (como se hace con adormidera de opio). Sale una savia amarilla con sanguinarina y alcaloides isoquinolínicos activos." />
+      <StepX c={c} num={2} text="Recoger la savia en placa de vidrio o cuchara. Dejar secar al aire hasta obtener residuo sólido resinoso de color marrón-naranja." />
+      <InfoBoxX c={c}>📦 El látex seco es la forma más concentrada. Uso tradicional: tópico antiséptico. Para uso interno: precaución — sanguinarina es hepatotóxica en dosis altas. El látex seco se puede disolver en alcohol para tintura tópica.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         🍵 <strong>Infusión tradicional:</strong> 2-4g hojas/flores secas por taza. Hervir 10 min. 1 taza/día max. Sabor amargo.<br/>
@@ -2344,6 +2466,25 @@ function GLOSARIO_PLANTAS() {
     { t: "Poliploidía (en botánica)", d: "Organismo con más de 2 copias de su genoma (diploides). Triploides: 3 copias (sandía sin pepitas). Tetraploides: 4 copias. Inducida con colchicina en mejora vegetal. Las plantas poliploides suelen ser más grandes, vigorosas y pueden tener mayor contenido de metabolitos secundarios (incluyendo alcaloides)." },
     { t: "Extracción ácido-base (A/B)", d: "Técnica básica de laboratorio para alcaloides: (1) Material + base (NaOH) → libera base libre del alcaloide. (2) Extracción con solvente no polar (nafta, DCM, éter). (3) Solvente + ácido → alcaloide pasa a fase acuosa como sal. (4) Base → precipita alcaloide libre. (5) Re-extracción o secado. Usada para DMT, harmina, mescalina." },
     { t: "Kratom (breve)", d: "Mitragyna speciosa — árbol del SE Asiático (familia del café). Activo: mitragynina (agonista μ-opioide parcial a dosis altas). Dosis bajas: estimulante. Dosis altas: opioide-like (analgesia, euforia, sedación). No está en esta guía actualmente — legal en España. Dependencia física posible con uso regular." },
+    { t: "Nepetalactona", d: "Iridoide terpénico de Catnip (Nepeta cataria). Activa el órgano vomeronasal (de Jacobson) en gatos — respuesta eufórica intensa. En humanos: efecto sedante y ligeramente psicoactivo vía infusión. La nepetalactona se evapora rápidamente — las hojas secas frescas son más potentes para gatos que las añejas." },
+    { t: "Leonurina", d: "Alcaloide de Wild Dagga (Leonotis leonurus). Produce efecto cannabis-like suave mediante mecanismo diferente al THC — actúa parcialmente en receptores opioides y sobre el sistema GABAérgico. Sin potencia del cannabis ni dependencia. Las flores concentran más leonurina que las hojas." },
+    { t: "Harmina / Harmalina", d: "β-carbolinas de Ruda siria (Peganum harmala) — nota: distinto de la entrada general 'β-carbolinas'. La harmina es el IMAO reversible más potente de las dos, fluorescente bajo UV (azul). La harmalina es más sedante y produce más náusea. Tetrahidroharmina (THH) tiene acción más suave. Las tres juntas inhiben MAO-A con duración 4-6h — la ventana de riesgo de interacciones." },
+    { t: "Eschscholtzina", d: "Alcaloide isoquinolínico de Adormidera de California (Eschscholzia californica). Ansiolítico suave con mecanismo GABAérgico. A diferencia de los alcaloides del opio real (morfina, codeína), la eschscholtzina NO activa receptores μ-opioides — no adictiva, no produce depresión respiratoria. Junto con californidina explica el efecto sedante leve sin riesgo opioide." },
+    { t: "Citisina", d: "Alcaloide quinolizidínico de Escoba canaria (Cytisus canariensis) y otras leguminosas. Agonista parcial de los receptores nicotínicos de acetilcolina (nAChR), con mayor afinidad que la nicotina pero menor actividad intrínseca. Menos adictiva que nicotina. Base farmacológica del fármaco Champix (vareniclina) para cesación tabáquica — la citisina natural fue el modelo. Tóxica en dosis altas." },
+    { t: "Safrol", d: "Fenilpropanoide de aceite esencial de corteza raíz de Sassafras albidum (~80% del aceite). Precursor clave para síntesis de MDMA y otros feniletilaminas. Clasificado en List I DEA (USA) y Reglamento 273/2004 (UE) como precursor de drogas. La planta y el té de raíz son legales; el aceite esencial concentrado y el safrol puro son productos regulados. En la planta viva está muy diluido y se metaboliza en hepatocitos." },
+    { t: "Efedra / Efedrina", d: "Alcaloide simpaticomimético de Ephedra spp. (Mormon Tea y especialmente Ephedra sinica china 'Ma Huang'). Agonista indirecto de receptores adrenérgicos — libera norepinefrina y dopamina. Estimulante cardiovascular, broncodilatador, supresor apetito. E. nevadensis americana tiene trazas mínimas; E. sinica china tiene 0.5-3% efedrina. Regulada en UE como precursor de anfetaminas en concentraciones altas." },
+    { t: "Lactucarium", d: "Resina seca de Lactuca virosa (Wild Lettuce / Lechuga silvestre). Alias 'opio lechuga' por su aspecto y uso histórico como sustituto del opio en el siglo XIX. Contiene lactucina, lactucopicrina y flavonoides sedantes — NO contiene alcaloides opiáceos. Acción: analgésica y sedante leve vía receptores no opioides. Forma: látex blanco-amarillento que se seca en resina marrón oscura." },
+    { t: "L-DOPA natural", d: "Precursor directo de dopamina presente en semillas de Mucuna pruriens (4-7% del peso seco). La L-DOPA cruza la barrera hematoencefálica y se convierte en dopamina en el cerebro. Antiparkinsoniano natural — estudiado en ensayos clínicos para Parkinson no tratado en Africa subsahariana. En personas sanas: mejora motivación, libido, función motora, estado de ánimo. Efecto más suave que los medicamentos de L-DOPA farmacéuticos pero con matriz natural." },
+    { t: "Sanguinarina", d: "Alcaloide benzofenantridínico de Chicalote (Argemone mexicana) y otras papaveráceas. Antimicrobiano y antiinflamatorio a dosis bajas — usado en pastas dentales y colutorios comerciales. En dosis altas: bloqueante de la ATP-sintasa, hepatotóxico, citotóxico. Tier Ámbar — uso tópico ocasional seguro, uso interno en dosis altas NO recomendado. Solucionario en alcohol para uso externo antiséptico." },
+    { t: "Pasiflora flavonoides", d: "Crisina, orientina e isovitexina — los flavonoides activos de Passiflora incarnata. Mecanismo: moduladores positivos alostéricos del receptor GABA-A (mismo receptor que benzodiacepinas, pero con menor potencia y sin dependencia). La crisina también inhibe la aromatasa (enzima de conversión testosterona-estrógeno). Los flavonoides explican el efecto ansiolítico de pasiflora sin necesitar alcaloides." },
+    { t: "Valereno", d: "Sesquiterpeno principal de la raíz de Valeriana officinalis. Principal responsable del efecto sedante — modula el receptor GABA-A directamente e inhibe la degradación del GABA. El ácido valerénico (derivado oxidado) potencia adicionalmente la acción GABAérgica. El olor característico a 'calcetines' de la raíz seca viene principalmente de los ácidos isovaléricos, no del valereno." },
+    { t: "Lúpulina", d: "Resina glandular amarilla del interior de los conos de lúpulo (Humulus lupulus). Contiene ácidos alfa (humulonas) y beta (lupulonas) + 2-metil-3-buten-2-ol (sedante metabólico del ácido 2-metilbutírico). El 2-metil-3-buten-2-ol se forma por degradación de los ácidos alfas durante el procesado/almacenamiento — explica por qué el lúpulo añejo tiene más efecto sedante. La lúpulina se separa fácilmente frotando conos secos." },
+    { t: "Ácido gamma-aminobutírico (GABA)", d: "Principal neurotransmisor inhibitorio del sistema nervioso central. Actúa sobre receptores GABA-A (ionotrópico, canal cloro) y GABA-B (metabotrópico). Muchos sedantes vegetales actúan en el receptor GABA-A: kava (kavalactonas), pasiflora (flavonoides), valeriana (valereno), lúpulo (2-metil-3-buten-2-ol), adormidera California (eschscholtzina). Las benzodiacepinas farmacéuticas también actúan en GABA-A, con mayor potencia y riesgo de dependencia." },
+    { t: "Sitter", d: "Persona sobria presente durante una experiencia psicoactiva intensa para garantizar seguridad física y emocional. Rol: no participar, no interrumpir salvo necesidad, mantener entorno seguro, orientar si la persona se angustia, llamar servicios de emergencia si hay problema médico. Imprescindible con Salvia divinorum primera vez, dosis altas de psicodélicos, cualquier deliriante. Tradición chamánica universal — el curandero es el sitter en rituales tradicionales." },
+    { t: "Extracción ácida", d: "Primera fase de una extracción ácido-base (A/B) de alcaloides. El material vegetal se suspende en agua acidificada (pH 4-5 con ácido cítrico, acético o HCl diluido). A pH ácido los alcaloides están en forma protonada (salt form = soluble en agua). La fase acuosa ácida retiene los alcaloides mientras las grasas, clorofilas y compuestos no básicos quedan en el material vegetal o en el solvente apolar." },
+    { t: "Solvente apolar", d: "Líquido orgánico no miscible con agua que extrae compuestos no polares (alcaloides en base libre, grasas, ceras). Ejemplos: naphtha (nafta ligera), éter dietílico, DCM (diclorometano), acetato de etilo. En extracción A/B: añadir al final cuando la fase acuosa está alcalinizada (base libre del alcaloide) para extraer el alcaloide a la fase orgánica. Evaporar el solvente deja el alcaloide base libre. Seguridad: inflamables (excepto DCM), usar con ventilación." },
+    { t: "Dosis umbral", d: "Dosis mínima a la que un efecto es perceptible, también llamada 'dosis de umbral' o threshold dose. Varía enormemente entre personas (metabolismo, tolerancia, sensibilidad genética) y entre lotes de planta (variabilidad de contenido). Regla de harm reduction: empezar con dosis umbral o menor en primera experiencia. Para LSA: 2-3 semillas de woodrose. Para Salvia: 50-100mg hojas. Para Kava: 5g raíz." },
+    { t: "Vía de administración", d: "Ruta de entrada de una sustancia al organismo. Afecta onset (inicio), duración, intensidad y biodisponibilidad. Oral (ingerida): onset 30-90 min, duración máxima, metabolismo hepático primer paso. Sublingual: onset 5-15 min, evita primer paso. Fumada/inhalada: onset segundos-minutos, duración corta. Insufladda (snortada): onset 5-10 min, irritación nasal. Transdérmica (piel, mucosas): variable, uso histórico tropanos. Rectal: absorción rápida, omite primer paso." },
   ];
 
   const filtered = terminos.filter(t =>
@@ -2406,6 +2547,18 @@ function FAQ_PLANTAS() {
     { q: "¿Tincturas vs infusión vs fumar: cuál es mejor?", a: "Infusión: más rápida (5-10 min prep), efectos suaves-moderados, dura horas, social. Tintura alcohólica: maceración 4-6 sem, dura años, más concentrada, dosis 1-3ml sublingual (absorción rápida). Fumar (Wild Dagga, Tabaco rústico, Coleus): efecto inmediato, más corto, mayor concentración de humo. Para uso regular: tintura más práctica. Para primerizo: infusión (fácil ajustar dosis)." },
     { q: "¿Cuál es mejor para meditación/espiritualidad?", a: "Sinicuichi (distorsión auditiva suave, sonidos aumentados), Blue Lotus (sedante onírico, conexión), Damiana (relajación + claridad mental), Calea (sueños proféticos — uso chamánico mazateco), Salvia (disociativa intensa, no para principiantes). En tradición: Mapacho (Tabaco rústico) y Ruda siria tienen usos ceremoniales profundos pero requieren conocimiento." },
     { q: "¿Puedo regalar plantas/semillas/extractos?", a: "Sí, todas las de esta guía son legales. Compartir semillas = legal. Regalar plantas = legal. Vender = requiere registro como producto herbal (Sanidad Pública). Mejor: compartir con amigos sin transacción comercial. Para solanáceas: regalar semillas con etiqueta VENENO + instrucciones de seguridad." },
+    { q: "¿Cómo hago una tintura correctamente?", a: "Proporciones estándar: 1 parte de planta seca en peso por 5 partes de alcohol en volumen (1:5). Alcohol: 60-70% para la mayoría (plantas con alcaloides + aceites esenciales). 40% (vodka) para plantas con compuestos más polares como flavonoides. Proceso: llenar frasco hermético oscuro con hierba seca troceada, cubrir completamente con alcohol de la graduación indicada, cerrar, agitar y guardar en lugar oscuro y fresco. Maceración: 3-4 semanas mínimo (4-6 semanas para raíces duras como Valeriana). Agitar cada 2-3 días. Filtrado: colar con gasa o filtro de café, exprimir bien el material. Almacenamiento: frasco oscuro etiquetado con fecha, especie y graduación alcohólica. Etiqueta incluir dosis recomendada. Vida útil: 3-5 años conservando potencia." },
+    { q: "¿Cuál es la diferencia entre infusión, decocción y tintura?", a: "Infusión: agua caliente (<90°C, sin hervir) sobre material vegetal delicado (flores, hojas). Reposo 5-15 min tapado. Para plantas como pasiflora, catnip, menta, calea, damiana. Ventaja: rápida. Inconveniente: poco concentrada, caduca en pocas horas. Decocción: hervir material vegetal duro en agua (raíces, cortezas, semillas, tallos lignificados) durante 10-20 min. Para valeriana, kava, calamo, mormon tea, sinicuichi. Más concentrada que infusión pero aún acuosa. Tintura alcohólica: extracción en alcohol durante 3-6 semanas. Más concentrada que los dos métodos anteriores, extrae mayor variedad de compuestos, dura años. Dosis en gotas o mililitros. La forma más práctica para uso regular." },
+    { q: "¿Qué hacer si tengo una experiencia difícil?", a: "Grounding inmediato: tumbarse en el suelo (contacto físico con superficie sólida), respirar lento y profundo (4 seg inhalar, 4 sostener, 4 exhalar). Cambiar entorno: salir al exterior, cambiar de habitación, temperatura diferente. Tripkiller opciones: benzodiacepinas de acción rápida (diazepam 5-10mg si disponible) reducen intensidad de psicodélicos y Salvia. Para tropanos: NO hay tripkiller fácil doméstico — ir a urgencias si hay confusión/taquicardia. Acompañamiento: pedir a alguien que esté presente, hablar es fundamental. Recordar: 'esto acabará, tengo sustancia en sangre, no es permanente'. Cuándo llamar emergencias: pérdida de conciencia, convulsiones, temperatura alta, desorientación total que no mejora, dolor torácico, dificultad para respirar. Integración posterior: escribir lo ocurrido, identificar triggers de angustia para evitarlos en próximas sesiones." },
+    { q: "¿Son seguras las plantas con LSA (Woodrose, Morning Glory)?", a: "Sí con precauciones. Semillas: comprar siempre untreated (sin fungicidas ni pesticidas comerciales). Verificar que el proveedor específica 'no tratadas' o 'for botanical use'. Semillas de vivero convencional tienen tratamiento tóxico. Dosis conservadora primera vez: 3 semillas de woodrose o 50-80 de morning glory. Náuseas: normales en primeras 1-2h por vasoconstricción ergolínica. Gestionar con jengibre o meclizina 30 min antes. Vasoconstricción: contraindicado en cardiopatía, hipertensión, historial de migraña hemiplégica, Raynaud, embarazo. No combinar con triptanos, ergotaminas, ni otros vasoconstrictores. Set/setting clásico psicodélico. Duración 6-10h (woodrose) o 4-8h (morning glory) — planificar día libre." },
+    { q: "¿Cómo funciona el método A/B de extracción?", a: "A/B (ácido-base) es la técnica estándar para aislar alcaloides de material vegetal. Principio: los alcaloides existen en dos formas según el pH. Forma sal (pH ácido): cargada positivamente, soluble en agua, NO soluble en solventes orgánicos. Forma base libre (pH básico): neutra, NO soluble en agua, SÍ soluble en solventes apolares (nafta, éter, DCM). Proceso básico: (1) Material vegetal + agua ácida pH 4-5 → alcaloides pasan a agua como sales. (2) Filtrar sólidos vegetales. (3) Añadir base (NaOH, NH3) hasta pH 9-10 → alcaloides se convierten en base libre. (4) Añadir solvente apolar → alcaloides base libre migran al solvente orgánico. (5) Separar fase orgánica. (6) Evaporar solvente → queda alcaloide concentrado. Aplicaciones en esta guía: LSA (woodrose/morning glory), harmala (ruda siria), DMT de plantas." },
+    { q: "¿Cuál tiene mejor perfil para sueños lúcidos?", a: "Calea zacatechichi es la más documentada etnobotánicamente y con mayor número de reportes consistentes. Método: té concentrado (5-15g) + cigarrillo de hojas antes de dormir. Produce sueños muy vívidos con mayor recall. También reportados: Sinicuichi (alucinaciones auditivas durante sueño), Blue Lotus (sedante onírico suave, uso egipcio), Salvia divinorum en dosis muy bajas justo al dormirse (experimental, no establecido). Mención occidental: Mugwort (Artemisia vulgaris) en tradición de sueños lúcidos anglosajona, aunque menos potente que Calea. Para potenciar: técnica WBTB (Wake Back To Bed) + Calea + diario de sueños es la combinación más efectiva reportada." },
+    { q: "¿Qué es el set y setting y por qué importa?", a: "Concepto de Timothy Leary (1960s), pero basado en observación universal chamánica milenaria. Set (mindset): el estado mental del usuario — expectativas, intenciones, miedo o apertura, experiencias previas, salud mental ese día. Setting: el entorno físico (lugar seguro vs desconocido, interior vs exterior, música o silencio) y social (sitter de confianza vs extraños, privacidad). Por qué importa: el cerebro bajo psicoactivos amplifica el estado emocional actual. Set negativo + setting caótico = alto riesgo de experiencia difícil. Ejemplos prácticos: primera vez con Salvia → habitación familiar, sitter conocido, sin música perturbadora, sin teléfono a mano. Primera vez con kava → entorno relajado, personas conocidas, sin expectativas de euforia intensa. Para plantas oníricas (Calea) → intención clara antes de dormir, libreta junto a la cama, apagar pantallas 1h antes." },
+    { q: "¿La Mandrágora es realidad o mito?", a: "Mezcla de ambos. REALIDAD: la raíz contiene alcaloides tropánicos reales (atropina, escopolamina, hiosciamina) — la misma familia que belladona y beleño. Los efectos psicoactivos/deliriantes son reales a dosis correctas. Historia médica real: usada como anestésico en cirugía de la Antigüedad (Dioscórides, siglo I d.C.), bebida con vino antes de operaciones. MITO MEDIEVAL EXAGERADO: 'grita al ser arrancada y mata al que la oye' — folclore. La raíz no grita. La forma antropomorfa es real (la raíz se bifurca naturalmente) pero no mágica. Uso moderno: ornamental, etnobotánico, coleccionismo. El valor real está en entender la historia de la farmacología europea y el origen de la 'magia' botánica medieval — que era básicamente intoxicación controlada con conocimiento empírico." },
+    { q: "¿Puedo fumar Wild Dagga mezclado con cannabis?", a: "Sí, la combinación es reportada como sinérgica leve. Wild Dagga (Leonotis leonurus) actúa por mecanismo diferente al THC — no hay interacción conocida peligrosa. El efecto combinado es una relajación algo más pronunciada que cada planta sola. Proporción típica en mezclas: 30-50% wild dagga + 50-70% cannabis. El wild dagga aporta sabor herbal y suaviza el humo. No hay potenciación psicoactiva significativa — simplemente complemento herbal. Sin contraindicaciones conocidas para la combinación. El wild dagga solo es mucho más suave que el cannabis — las personas que no quieren efectos intensos lo usan como sustituto parcial." },
+    { q: "¿El Kava es adictivo?", a: "No produce dependencia física. El Kava no activa el sistema de recompensa dopaminérgico de forma significativa — no hay craving físico al parar. Dependencia psicológica leve posible con uso diario prolongado (igual que el café o el té). Hepatotoxicidad: el riesgo real documentado no es la adicción sino el daño hepático con uso excesivo o variedades inadecuadas. Las variedades 'tudei' (Piper wichmanii) contienen flavocavainas A y B hepatotóxicas — verificar siempre que sea 'kava noble' (Piper methysticum varietat noble). Los extractos con solventes orgánicos concentran las toxinas — solo raíz molida tradicional. Uso ocasional (1-3 veces/semana) de kava noble: sin riesgo hepático documentado en personas sanas." },
+    { q: "¿El Coleus blumei realmente es psicoactivo?", a: "Debate abierto. La evidencia es muy débil. Los reportes originales de Schultes y Hofmann (años 60) describieron uso mazateco del Coleus como sustituto de Salvia divinorum. Sin embargo: los estudios farmacológicos posteriores no han identificado un compuesto activo claro de potencia significativa. El forskolín (diterpeno presente) tiene efectos cardiovasculares y en AMPc pero no psicoactivos directos conocidos. La mayoría de reportes son muy subjetivos y dosis-dependientes. Conclusión honesta: puede haber un efecto sutil real en algunas personas, pero es casi imposible distinguirlo de efecto placebo en la práctica. No esperar experiencia tipo Salvia-level. Valor principal: ornamental y curiosidad etnobotánica." },
+    { q: "¿Cómo identifico si mis semillas de Woodrose o Morning Glory están tratadas?", a: "Señales de semillas tratadas: packaging de vivero convencional con mención a fungicida, insecticida o 'treated for planting'. Color inusual en la superficie (recubrimiento naranja, rosa, verde o azul visible). Olor químico intenso diferente al herbal. Bote de semillas ornamentales de tienda de jardinería convencional. Semillas sin tratar (untreated): comprar en tiendas etnobotánicas especializadas (Azarius, Shayanashop, Avalon) que especifican explícitamente 'untreated', 'no coating', 'for botanical use'. Verificar descripción del producto: mencionar Argyreia nervosa var. Ghana (woodrose) o Ipomoea tricolor 'Heavenly Blue' de fuente etnobotánica. Cosecha propia de planta cultivada en casa = la opción más segura. Semillas de vivero convencional de centros de jardinería como Leroy Merlin o similares: NO usar — casi siempre tratadas." },
   ];
 
   const filtered = faqs.filter(f =>
