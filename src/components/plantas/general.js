@@ -2289,6 +2289,62 @@ function CHICALOTE() {
   );
 }
 
+function GLOSARIO_PLANTAS() {
+  const c = PLANTAS_COLORS;
+  const [query, setQuery] = React.useState("");
+  const terminos = [
+    { t: "Enteógeno", d: "Del griego: 'el dios adentro' (éntheos = divino + génos = generado). Término propuesto por Wasson, Hofmann y Schultes en 1978 para plantas/hongos usados en contexto espiritual o ritual: peyote, ayahuasca, Salvia, hongos. Preferido por etnobotánicos a 'alucinógeno' (que tiene connotación clínica negativa)." },
+    { t: "Alucinógeno", d: "Sustancia que produce alucinaciones: percepciones sin estímulo externo. Término clínico/farmacológico genérico. Subgrupos: psicodélicos (LSD, psilocibina), disociativos (ketamina, Salvia), deliriantes (tropanos). Los psicodélicos producen distorsiones perceptuales que el sujeto sabe que no son reales; los deliriantes producen alucinaciones que el sujeto cree reales." },
+    { t: "Psicodélico", d: "Del griego 'manifestador de la mente' (psyché + delos = manifiesto). Grupo específico dentro de alucinógenos: LSD, psilocibina, mescalina, DMT, LSA. Actúan principalmente en receptor de serotonina 5-HT2A. A diferencia de deliriantes, el usuario sabe que está bajo efecto. No producen amnesia." },
+    { t: "IMAO / MAO", d: "MAO = Monoaminooxidasa: enzima que degrada monoaminas en el cuerpo (serotonina, dopamina, norepinefrina, DMT endógeno). IMAO = Inhibidor MAO: bloquea esta enzima → las monoaminas se acumulan. Ejemplo natural: Ruda siria (harmina, harmalina). CRÍTICO: combinación IMAO + SSRI = síndrome serotoninérgico (potencialmente letal). También potencia drasticamente cualquier triptamina oral (DMT, psilocibina)." },
+    { t: "β-carbolinas / harmala", d: "Familia de alcaloides indólicos con acción IMAO reversible (RIMA). Las más conocidas: harmina y harmalina de Peganum harmala (Ruda siria) y tetrahydroharmina. También presentes en Passiflora en cantidades menores. Son los alcaloides que hacen activo el DMT oral en la ayahuasca." },
+    { t: "Triptaminas", d: "Familia química basada en el núcleo indol con cadena etilenamino. Incluye serotonina (neurotransmisor), DMT (dimetiltriptamina), psilocina, bufotenina, 5-MeO-DMT. Las psicoactivas actúan en receptores 5-HT2A. El DMT endógeno presente en el cuerpo humano se degrada rápidamente por la MAO — por eso el DMT oral sin IMAO no produce efecto." },
+    { t: "LSA (ergina)", d: "Ácido d-lisérgico amida — alcaloide ergolínico presente en semillas de Hawaiian Woodrose (Argyreia nervosa) y Morning Glory (Ipomoea violacea). Primo del LSD (ácido d-lisérgico dietilamida). Efectos similares a LSD pero más sedante y menos visual. 4-8h duración. Riesgo: náuseas intensas en primeras 1-2h + vasoconstricción. Semillas deben ser untreated (sin fungicidas comerciales)." },
+    { t: "Kavalactonas", d: "Principios activos del Kava (Piper methysticum). 6 kavalactonas principales: kavaina, dihidrokavaina, metisticina, dihidrometisticina, yangonina, desmetoxiyangonina. Actúan en receptores GABA-A, bloquean canales de sodio y calcio. Producen relajación muscular, ansiolisis, euforia suave sin sedación central. Hepatotóxicas con variedades tudei o uso excesivo." },
+    { t: "Mesembrina", d: "Alcaloide activo principal de Kanna (Sceletium tortuosum). Inhibidor de la PDE4 (fosfodiesterasa 4) + inhibidor de la recaptación de serotonina (SSRI suave). PDE4: enzima que degrada AMPc (segundo mensajero del bienestar). La inhibición PDE4 produce efecto antidepresivo + ansiolítico + mejora cognitiva. NO combinar con SSRI farmacológicos (riesgo síndrome serotoninérgico)." },
+    { t: "Salvinorina A", d: "Terpenoide (no alcaloide) de Salvia divinorum. Primer κ-opioide no nitrogenado natural potente descubierto. Actúa en receptor kappa-opioide (κ-OR) — distinto del μ-OR del opio. Produce disociación intensa, 5-15 min. Anti-adictivo paradójico (κ-OR da propiedades anti-recompensa). Sin potencial de dependencia conocido." },
+    { t: "Receptor κ-opioide (κ-OR)", d: "Receptor opioide kappa. Diferente del μ-OR (que media analgesia y euforia del opio). κ-OR: produce disforia, sedación, alucinaciones, miosis. Salvinorina A es agonista κ selectivo. Algunos antidepresivos investigados como antagonistas κ. Explica por qué Salvia es tan diferente de otras sustancias psicoactivas." },
+    { t: "Alcaloide", d: "Compuesto orgánico nitrogenado de origen vegetal (o fúngico). Mayoría de psicoactivos vegetales son alcaloides: cafeína, nicotina, morfina, cocaína, coniina (cicuta), atropina, harmina, etc. Las plantas los producen como defensa contra herbívoros. Suelen tener sabor amargo." },
+    { t: "Lobelina", d: "Alcaloide de Lobelia inflata. Agonista parcial de receptores nicotínicos de acetilcolina (nAChR) — mismo receptor que la nicotina pero con menor afinidad. Produce efectos similares a nicotina en dosis bajas (estimulante suave), eméticos y tóxicos en dosis altas. Investigada como sustituto para deshabituación tabáquica. Tier Rojo en dosis altas." },
+    { t: "Asarona (β-asarona)", d: "Fenilpropanoide de Acorus calamus (Cálamo) — especialmente variedades asiáticas tetraploides. Posiblemente genotóxica/carcinogénica en estudios animales crónicos. Las variedades americanas triploides contienen apenas trazas. UE: nivel máximo de β-asarona en alimentos regulado a 0.1mg/kg (Reglamento 1334/2008)." },
+    { t: "Set y Setting", d: "Concepto popularizado por Timothy Leary. 'Set' = mindset (estado mental, expectativas, intenciones, experiencias previas) del usuario. 'Setting' = entorno físico y social. Determinan en gran medida la experiencia con cualquier psicoactivo. Misma dosis de psilocibina: set/setting positivo = experiencia sanadora; set/setting negativo = psicosis transitoria." },
+    { t: "Margen terapéutico", d: "Diferencia entre dosis efectiva mínima y dosis tóxica mínima. Amplio (aspirina): bastante segura. Estrecho (digoxina, colchicina, acónito): peligroso. Para plantas, el margen cambia por variabilidad entre plantas, partes, estaciones y preparaciones. Por eso los médicos usan formas purificadas y dosificadas, no extractos crudos." },
+    { t: "Tintura madre", d: "Extracción alcohólica de planta fresca o seca en proporción 1:5 o 1:10 (planta:alcohol). Alcohol al 60-70% para mayoría de plantas. Maceración 4-6 semanas. Se filtra y embotella. Más concentrada que infusión, más estable (años). Dosis habitual: 1-3ml sublingual 3x/día o según planta." },
+    { t: "Poliploidía (en botánica)", d: "Organismo con más de 2 copias de su genoma (diploides). Triploides: 3 copias (sandía sin pepitas). Tetraploides: 4 copias. Inducida con colchicina en mejora vegetal. Las plantas poliploides suelen ser más grandes, vigorosas y pueden tener mayor contenido de metabolitos secundarios (incluyendo alcaloides)." },
+    { t: "Extracción ácido-base (A/B)", d: "Técnica básica de laboratorio para alcaloides: (1) Material + base (NaOH) → libera base libre del alcaloide. (2) Extracción con solvente no polar (nafta, DCM, éter). (3) Solvente + ácido → alcaloide pasa a fase acuosa como sal. (4) Base → precipita alcaloide libre. (5) Re-extracción o secado. Usada para DMT, harmina, mescalina." },
+    { t: "Kratom (breve)", d: "Mitragyna speciosa — árbol del SE Asiático (familia del café). Activo: mitragynina (agonista μ-opioide parcial a dosis altas). Dosis bajas: estimulante. Dosis altas: opioide-like (analgesia, euforia, sedación). No está en esta guía actualmente — legal en España. Dependencia física posible con uso regular." },
+  ];
+
+  const filtered = terminos.filter(t =>
+    t.t.toLowerCase().includes(query.toLowerCase()) ||
+    t.d.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Glosario de etnobotánica y farmacología de plantas psicoactivas — 18 términos clave con definiciones precisas. Desde conceptos generales (enteógeno, psicodélico) hasta compuestos específicos (salvinorina, mesembrina, kavalactonas, LSA). Buscar por palabra o navegar completo.
+      </InfoBoxX>
+
+      <input type="text" placeholder="🔍 Buscar término..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{terminos.length} términos {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((term, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.accent1, marginBottom: "6px" }}>{term.t}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{term.d}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function FAQ_PLANTAS() {
   const c = PLANTAS_COLORS;
   const [query, setQuery] = React.useState("");

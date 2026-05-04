@@ -380,3 +380,175 @@ function BIBLIO_TOXICAS() {
     ]}
   />;
 }
+
+function LIRIO_VALLE() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Convallaria majalis — Lirio del Valle, Muguet. Planta ornamental de primavera, fragancia exquisita, símbolo de la buena suerte en Francia (1 de mayo). Completamente tóxica: flores, hojas, bayas, incluso el agua del jarrón. Glucósidos cardiacos similares a la digoxina. Muy común en jardines de Europa.
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="TIER ROJO — convalatoxina, convalósido. Toda la planta incl. agua" />
+        <StatBoxX c={c} label="🌸 Apariencia" value="Bulbosa 15-25cm. Flores blancas campanuladas colgantes, perfume intenso. Bayas rojas otoño" />
+        <StatBoxX c={c} label="📍 España" value="Montaña húmeda (Pirineos, Cantábrico). Cultivada como ornamental en toda España" />
+        <StatBoxX c={c} label="⚡ Mecanismo" value="Glucósidos cardiacos: inhibe Na+/K+-ATPasa → arritmia. Similar a digoxina" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Toxicología" />
+      <StepX c={c} n="1" title="Convalatoxina — todo es tóxico" desc="Convalatoxina, convalósido, convallotoxol: glucósidos cardiacos similares a digitálicos pero más potentes por kg. Inhiben Na+/K+-ATPasa cardiaca → acumulación Ca2+ intracelular → arritmias. Concentración alta en flores y frutos rojos. El agua del jarrón donde se han puesto flores: tóxica. Intoxicaciones infantiles frecuentes (flores bonitas + bayas rojas atractivas)." />
+      <StepX c={c} n="2" title="Síntomas" desc="Náuseas, vómitos, dolor abdominal, diarrea. Bradiarritmias. Hipotensión. Confusión. Similar a intoxicación por digoxina. Sin antídoto específico — Digifab puede usarse en casos graves (misma diana molecular). UCI con monitorización cardiaca." />
+      <StepX c={c} n="3" title="No confundir con ajo de oso" desc="Allium ursinum (ajo de oso, comestible, delicioso) también tiene hojas similares en bosques húmedos de primavera. Diferencia: ajo de oso huele intensamente a ajo al frotar. Lirio del Valle: fragancia floral dulce, sin olor a ajo. Vital no confundir al recolectar ajo silvestre." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental" />
+      <StepX c={c} n="1" title="Rizoma en sombra húmeda" desc="Planta de bosque templado. Necesita sombra o semisombra, suelo húmedo rico en humus, pH ligeramente ácido. Se propaga por rizomas horizontales — crea colonias densas. En BCN: zona norte de jardín, humedad alta, dificultosa en clima cálido." />
+      <StepX c={c} n="2" title="Floración y perfume" desc="Florece en abril-mayo. Perfume icónico usado en perfumería (Dior Poison original). Después bayas rojas en verano. Hojas amarillean y desaparecen en verano." />
+      <StepX c={c} n="3" title="Seguridad" desc="GUANTES al manipular. ETIQUETAR. Especialmente peligrosa para niños y mascotas (bayas rojas atractivas). No compostar. Mantener separada de zonas de paso frecuente." />
+
+      <SectionTitleX c={c} title="📜 Historia y cultura" />
+      <StepX c={c} n="1" title="1 de mayo en Francia" desc="Regalar lirios del valle el 1 de mayo es tradición francesa (día de la suerte). El 1 de mayo de 1561, el rey Carlos IX recibió un ramo y desde entonces regaló muguet cada año a las damas de la corte. Hoy: millones de manojos vendidos ese día." />
+      <StepX c={c} n="2" title="Convalatoxina en investigación" desc="Investigación reciente sugiere que la convalatoxina tiene actividad antitumoral (inhibición topoisomerasa) y antiviral. También se ha explorado como alternativa a la digoxina en insuficiencia cardiaca. No hay preparado farmacológico aprobado actualmente." />
+    </div>
+  );
+}
+
+function ELEBORO() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Helleborus niger — Eléboro negro, Rosa de Navidad, Hierba de los locos. Florece en invierno (diciembre-febrero), a menudo bajo la nieve. Ornamental de jardines europeos muy apreciada. Toda la planta tóxica: helleborina, ranunculósidos. Historia médica antigua — usada como purgante violento, emético y "cura de la locura".
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="TIER ROJO — helleborina, ranunculósidos. Toda la planta" />
+        <StatBoxX c={c} label="🌸 Apariencia" value="15-30cm. Flores blancas/rosadas en invierno, sépalos persistentes verdes. Hojas palmeadas persistentes" />
+        <StatBoxX c={c} label="📍 España" value="Pirineos y montaña norte. Cultivada como ornamental de invierno muy extendida" />
+        <StatBoxX c={c} label="⚡ Mecanismo" value="Helleborina: glucósido cardiaco + acción sobre SNC. Saponinas irritantes GI" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Toxicología" />
+      <StepX c={c} n="1" title="Helleborina y bufadienólidos" desc="Compuestos cardioactivos (helleborina, desglucohelleborina) + saponinas triterpénicas (helleborosina). Efectos: cardiotónicos, emenagogos, irritantes GI severos. Históricamente: vómitos, diarrea explosiva, hipotensión, bradicardia, confusión, convulsiones, muerte en dosis altas. Savia fresca: irritante de piel y mucosas — dermatitis de contacto frecuente." />
+      <StepX c={c} n="2" title="Raíz — parte más tóxica" desc="Rizoma y raíces: mayor concentración de toxinas. Histórico: raíz seca en polvo usada como 'purgante heroico' en medicina medieval — evacuaba humores. Dosis purgante = próximo a dosis tóxica. NO usar internamente." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental" />
+      <StepX c={c} n="1" title="Planta de invierno resistente" desc="Uno de los pocos ornamentales que florecen en invierno. Semisombra, suelo calizo bien drenado, tolera frío. Longeva (10-15 años). Floración diciembre-marzo. Varias especies y variedades: H. orientalis (más fácil, flores coloridas), H. foetidus (hojas divididas, olor desagradable)." />
+      <StepX c={c} n="2" title="Seguridad" desc="GUANTES — savia irrita piel especialmente ojos. Lavar manos tras manipular. Flores y hojas atractivas pero tóxicas. Etiquetar en jardines con visitas de niños." />
+
+      <SectionTitleX c={c} title="📜 Eléboro en la historia" />
+      <StepX c={c} n="1" title="Cura de la locura en la antigüedad" desc="El eléboro negro fue el tratamiento estándar de la 'melancolía' (depresión) y 'manía' (psicosis) en Grecia clásica y Roma. Hipócrates lo prescribía. El santuario de Asclepio en Anticira (Grecia) era famoso por sus curas de eléboro — 'ir a Anticira' = ser tratado de locura. La cura consistía en purgas violentas que supuestamente expulsaban los humores malos." />
+      <StepX c={c} n="2" title="Veneno de flechas y guerra química" desc="En la Primera Guerra Sagrada (595 a.C.), los atenienses envenenaron el suministro de agua de Cirra con raíz de eléboro — uno de los primeros usos documentados de guerra química/biológica. Las tropas de Cirra sufrieron diarrea masiva." />
+    </div>
+  );
+}
+
+function VERATRUM() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Veratrum album — Eléboro blanco, Cebadilla. Planta de alta montaña (Pirineos, Alpes) responsable de numerosas intoxicaciones mortales por confusión con Gentiana lutea (genciana amarilla, comestible). Misma zona, misma apariencia en estado vegetativo. Protoveratrina y otros alcaloides de Veratrum — activan masivamente canales de sodio.
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="TIER ROJO MAX — protoveratrina A y B. Dosis letal baja" />
+        <StatBoxX c={c} label="🌿 Apariencia" value="1-1.8m. Hojas ovales acanaladas alternas. Flores verde-blancas en panícula. Rizoma grisáceo" />
+        <StatBoxX c={c} label="📍 España" value="Pirineos, montaña cantábrica. Meadows alpinos 1000-2400m" />
+        <StatBoxX c={c} label="⚠️ CONFUSIÓN" value="Con Gentiana lutea (genciana) — MORTAL. Misma zona, aspecto similar antes de florecer" />
+      </div>
+
+      <SectionTitleX c={c} title="🔍 Identificación vs Gentiana lutea" />
+      <StepX c={c} n="1" title="Diferencias clave" desc="Veratrum album: hojas alternas (en espiral), nervios paralelos muy marcados en hoja, olor desagradable suave al frotar. Gentiana lutea: hojas OPUESTAS (en pares), nervios menos marcados, olor aromático-amargo. Florecidas: completamente distintas. El peligro es en estado vegetativo (mayo-junio) antes de florecer — los recolectores de genciana confunden los rizomas." />
+      <StepX c={c} n="2" title="Rizoma — la confusión letal" desc="Rizoma de Veratrum: similar en tamaño y aspecto al de genciana. Diferencia: Veratrum huele desagradable, corte expone color diferente. Casos mortales: Europa Central y Alpes, principalmente recolectores de hierbas que usan raíz de genciana para aperitivos (Enzian)." />
+
+      <SectionTitleX c={c} title="🧬 Toxicología" />
+      <StepX c={c} n="1" title="Protoveratrina — activación masiva canales Na+" desc="Protoveratrina A y B: activan canales de sodio voltaje-dependientes y los mantienen abiertos → despolarización continua de nervios y músculos. Bradiarritmias profundas, hipotensión severa, náuseas y vómitos explosivos (inicio muy rápido, 30min-1h). Contrariamente a la aconitina (que también activa Na+ pero en músculo cardiaco), Veratrum provoca reflejo de Bezold-Jarisch — bradicardia + vasodilatación paradójica. Sin antídoto. Atropina IV para bradicardia." />
+      <StepX c={c} n="2" title="Alcaloides hipotensores — uso médico histórico" desc="Años 40-50: extractos de Veratrum como antihipertensivos. Protoveratrina utilizada en crisis hipertensivas severas. Abandonada por ventana terapéutica ínfima y náuseas severas. Hoy reemplazada por fármacos con mejor perfil." />
+
+      <SectionTitleX c={c} title="🌱 Hábitat y distribución" />
+      <StepX c={c} n="1" title="Prados alpinos húmedos" desc="Especie de alta montaña: prados subalpinos y alpinos húmedos, laderas norte. Pirineos (500-2400m), Cordillera Cantábrica. No cultivada habitualmente — aparece en jardines alpinos de especialidad. Fotografiar en hábitat natural = OK. Recolectar sin expertise botánico = peligroso." />
+    </div>
+  );
+}
+
+function LAUREOLA() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Daphne laureola / Daphne mezereum — Laureola / Torvisco. Arbustos leñosos de bosques europeos, muy decorativos con sus bayas rojas o negras. Toda la planta extremadamente tóxica: dafnetoxina y mezerein (diterpenos ésteres). Las bayas son especialmente atractivas y peligrosas para niños. La savia produce ampollas severas en piel.
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="TIER ROJO — dafnetoxina, mezerein. Baya: 12 = dosis letal adulto" />
+        <StatBoxX c={c} label="🌸 Apariencia" value="Arbusto 0.5-1.5m. D. mezereum: flores rosas en ramas desnudas (invierno). Bayas rojas/negras" />
+        <StatBoxX c={c} label="📍 España" value="Bosques montaña húmeda. Pirineos, norte peninsular, sierras Sistema Central" />
+        <StatBoxX c={c} label="⚡ Mecanismo" value="Diterpenoides: irritación severa mucosas, nefrotóxico, hepatotóxico. Mezerein: activador PKC tumorigénico" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Toxicología" />
+      <StepX c={c} n="1" title="Dafnetoxina y mezerein" desc="Diterpenoides de tipo tiglano y dafnano. Irritantes de mucosas extremadamente potentes. Ingestión: ardor intenso boca/garganta inmediato, edema, dificultad para tragar, náuseas, vómitos, diarrea hemorrágica, daño renal, hepático. Contacto piel/savia: dermatitis ampollosa severa (vesicante). Mezerein es activador de proteína quinasa C — promotor tumoral en estudios animales." />
+      <StepX c={c} n="2" title="Bayas rojas atractivas" desc="Daphne mezereum: bayas rojas o anaranjadas brillantes en ramas sin hojas → extremadamente atractivas para niños. 12 bayas = dosis letal estimada adulto. 2-3 bayas: hospitalización pediátrica. Ardor inmediato boca suele actuar como disuasor natural, pero no siempre. Urgencias inmediato si ingestión cualquier cantidad." />
+      <StepX c={c} n="3" title="Dermatitis de contacto" desc="Savia de todas las especies Daphne: vesicante potente. Nunca manipular sin guantes. Contacto con piel/ojos: ampollas, edema, potencialmente ceguera si en ojos. Enjuagar con agua abundante y urgencias si oculares." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental" />
+      <StepX c={c} n="1" title="Valor ornamental — peligro oculto" desc="D. mezereum: muy ornamental (flores en invierno, fragrantes, en ramas sin hojas). D. laureola: sombra densa, hojas perennes verde brillante. Vendidas en viveros como ornamentales. Comprador frecuentemente no sabe de la toxicidad. Pedir siempre información al vivero sobre toxicidad de plantas compradas." />
+      <StepX c={c} n="2" title="Condiciones de cultivo" desc="Suelo calizo bien drenado. D. laureola: sombra o semisombra, resistente. D. mezereum: semisombra, más exigente en humedad. Crecimiento lento. GUANTES siempre al podar/trasplantar." />
+    </div>
+  );
+}
+
+function GLOSARIO_TOXICAS() {
+  const c = TOXICAS_COLORS;
+  const [query, setQuery] = React.useState("");
+  const terminos = [
+    { t: "Glucósido cardiaco", d: "Molécula con azúcar unido a un esteroide cardioactivo. Inhibe Na+/K+-ATPasa → aumenta Ca²⁺ intracelular → contracción cardiaca más fuerte. A dosis tóxica: arritmias letales. Ejemplos: digoxina (Dedalera), oleandrina (Adelfa), convalatoxina (Lirio del Valle), taxina (Tejo)." },
+    { t: "Alcaloide tropánico", d: "Familia de alcaloides con núcleo tropano. Antagonistas muscarínicos (bloquean receptor de acetilcolina M1-M5). Producen síndrome anticolinérgico: midriasis, taquicardia, boca seca, retención urinaria, hipertermia, delirio. Ejemplos: atropina, escopolamina, hiosciamina — en Brugmansia, Datura, Belladona, Estramonio, Beleño." },
+    { t: "Síndrome anticolinérgico", d: "Cuadro clínico por bloqueo de receptores muscarínicos. Mnemotecnia inglesa: 'Red as a beet (vasodilatación), Dry as a bone (anhidrosis), Blind as a bat (midriasis), Hot as a hare (hipertermia), Mad as a hatter (delirio, alucinaciones reales, amnesia)'. Tratamiento: fisostigmina IV." },
+    { t: "Na⁺/K⁺-ATPasa", d: "Bomba proteíca de membrana celular que mantiene gradiente de sodio y potasio entre interior y exterior de la célula. Inhibida por glucósidos cardiacos → acumulación Ca²⁺ intracelular → efectos cardiotónicos a dosis terapéutica, arritmias a dosis tóxica." },
+    { t: "Aconitina", d: "Alcaloide diterpénico de Aconitum (acónito). Activa canales de sodio voltaje-dependientes y los mantiene abiertos → despolarización continua → parálisis, arritmias. DL50 humana estimada ~2-3mg. Se absorbe transdérmicamente. Sin antídoto. Una de las toxinas vegetales más potentes de Europa." },
+    { t: "Coniina", d: "Alcaloide simple de Conium maculatum (cicuta). Agonista parcial/antagonista de receptores nicotínicos de acetilcolina (nAChR) en placa neuromuscular → parálisis flácida ascendente. Mecanismo que describió Platón en la muerte de Sócrates. Sin antídoto — soporte ventilatorio." },
+    { t: "Ricina", d: "Lectina tipo II (ribosoma-inactivating protein, RIP) de semillas de Ricinus communis. Cadena A inactiva irreversiblemente los ribosomas → la célula no puede sintetizar proteínas → muerte celular. DL50 humana ~1-10μg/kg IV. Sin antídoto. El aceite de ricino (extracción en frío) NO contiene ricina." },
+    { t: "Colchicina", d: "Alcaloide de Colchicum autumnale. Se une a tubulina libre impidiendo formación del huso mitótico → las células no pueden dividirse. Toxicidad lenta (fallo multiorgánico diferido 2-7 días). Uso médico: gota, fiebre mediterránea. Uso científico: inducción de poliploidía en mejora vegetal." },
+    { t: "Taxina", d: "Alcaloides diterpénicos (taxina A, B) de Taxus baccata (tejo). Bloquean canales Na⁺ y Ca²⁺ cardiacos → bradiarritmias y paro cardiaco. Precursor del paclitaxel (taxol): principio activo antitumoral obtenido de la corteza. Toda la planta tóxica excepto el arilo rojo (carne de la baya)." },
+    { t: "Paclitaxel (Taxol)", d: "Agente quimioterápico obtenido de Taxus brevifolia y semisintéticamente desde T. baccata. Mecanismo único: estabiliza microtúbulos (opuesto a la colchicina) → impide despolimerización → célula no puede completar mitosis → apoptosis. Aprobado FDA 1992. Uno de los fármacos anticancerígenos más usados (cáncer ovario, mama, pulmón)." },
+    { t: "Digifab", d: "Fragmentos de anticuerpo antidigitálico (Fab). Antídoto para intoxicación grave por glucósidos cardiacos (digoxina, digitoxina, oleandrina, convalatoxina). Se une a la toxina circulante → complejo inactivo excretado por riñón. Disponible en UCI." },
+    { t: "Fisostigmina", d: "Inhibidor reversible de la acetilcolinesterasa. Antídoto para síndrome anticolinérgico severo (tropanos). Aumenta acetilcolina disponible → contrarresta el bloqueo muscarínico. Administrado IV en urgencias bajo monitorización. Contraindicado en asma, cardiopatías graves." },
+    { t: "DL50", d: "Dosis Letal 50: concentración de una sustancia que mata al 50% de la población de prueba (generalmente ratas). Medida estándar de toxicidad aguda. Ejemplo: aconitina DL50 rata oral ~0.7mg/kg; ricina DL50 rata IP ~0.1mg/kg. Solo comparativa — no aplicar directamente a humanos." },
+    { t: "Vesicante", d: "Sustancia que causa ampollas al contacto con piel/mucosas. Ejemplos vegetales: savia de Daphne (laureola), Euphorbia, ranunculáceas frescas. Diferente de irritante simple — el vesicante produce destrucción real del tejido epidérmico." },
+    { t: "Ranunculáceas", d: "Familia botánica que incluye acónito, eléboro, ranúnculos (botones de oro). Muchas especies productoras de alcaloides y glucósidos tóxicos. Nombre: Ranunculus (ranita pequeña) por preferencia de hábitats húmedos." },
+    { t: "Solanáceas", d: "Familia botánica: tomates, patatas, pimientos (comestibles) + Datura, Belladona, Mandrágora, Brugmansia, Estramonio (tóxicas). Las comestibles también contienen solanina (hojas verdes de tomate/patata = leve toxicidad)." },
+    { t: "Alkaloid screening (rápido)", d: "Teste de Dragendorff: ácido tartárico + bismuto + yoduro potásico — presencia de alcaloides = precipitado naranja-rojo. Disponible como kit en laboratorios de química. Útil para identificación rápida de presencia alcaloidea en planta desconocida." },
+    { t: "Identificación botánica segura", d: "Proceso de 4 pasos: (1) Foto planta completa (hábitat, tamaño). (2) Foto hoja (haz, envés, base, ápice, bordes). (3) Foto flor o fruto. (4) Foto tallo (sólido/hueco, manchas, sección). Subir a Flora Vascular España, iNaturalist, o r/whatsthisplant para identificación experta. NUNCA consumir planta no identificada 100%." },
+  ];
+
+  const filtered = terminos.filter(t =>
+    t.t.toLowerCase().includes(query.toLowerCase()) ||
+    t.d.toLowerCase().includes(query.toLowerCase())
+  );
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Glosario de toxicología botánica — términos técnicos, mecanismos de acción, familias químicas y conceptos clave para entender las plantas tóxicas documentadas en esta guía.
+      </InfoBoxX>
+
+      <input type="text" placeholder="🔍 Buscar término..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
+        width: "100%", padding: "10px 14px", fontSize: "13px",
+        background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,
+        borderRadius: "8px", marginBottom: "12px", fontFamily: "inherit", outline: "none",
+      }} />
+      <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "12px" }}>
+        {filtered.length}/{terminos.length} términos {query && `· "${query}"`}
+      </div>
+
+      {filtered.map((term, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "10px" }}>
+          <div style={{ fontSize: "13px", fontWeight: "bold", color: c.accent1, marginBottom: "6px" }}>{term.t}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>{term.d}</div>
+        </div>
+      ))}
+    </div>
+  );
+}

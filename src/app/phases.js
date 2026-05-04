@@ -155,6 +155,7 @@ const plantasPhases = [
   { id: "mandragora", emoji: "🪬", title: "Mandrágora", subtitle: "Raíz mítica" },
   { id: "datura_inoxia", emoji: "🎺", title: "Datura inoxia", subtitle: "Toloache mexicano" },
   { id: "estramonio", emoji: "⚠️", title: "Estramonio", subtitle: "Datura común ES" },
+  { id: "glosario_plantas", emoji: "📖", title: "Glosario", subtitle: "Términos etnobotánica" },
   { id: "faq_plantas", emoji: "❓", title: "FAQ", subtitle: "Dudas + harm reduction" },
   { id: "biblio_plantas", emoji: "📚", title: "Bibliografía", subtitle: "Fuentes" },
 ];
@@ -212,6 +213,11 @@ const toxicasPhases = [
   { id: "ricino", emoji: "🔴", title: "Ricino", subtitle: "Ricina max toxicidad" },
   { id: "colchico", emoji: "🌸", title: "Cólquico", subtitle: "Colchicina antimitótica" },
   { id: "tejo", emoji: "🌲", title: "Tejo", subtitle: "Taxina · árbol ancestral" },
+  { id: "lirio_valle", emoji: "🤍", title: "Lirio del Valle", subtitle: "Convalatoxina cardiaca" },
+  { id: "eleboro", emoji: "❄️", title: "Eléboro", subtitle: "Rosa de Navidad" },
+  { id: "veratrum", emoji: "⛰️", title: "Veratrum", subtitle: "Confusión fatal genciana" },
+  { id: "laureola", emoji: "🫐", title: "Laureola", subtitle: "Dafnetoxina vesicante" },
+  { id: "glosario_toxicas", emoji: "📖", title: "Glosario", subtitle: "Términos toxicología" },
   { id: "faq_toxicas", emoji: "❓", title: "FAQ", subtitle: "Primeros auxilios" },
   { id: "biblio_toxicas", emoji: "📚", title: "Bibliografía", subtitle: "Toxicología botánica" },
 ];

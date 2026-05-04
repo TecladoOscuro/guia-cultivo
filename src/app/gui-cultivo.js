@@ -305,6 +305,7 @@ function GuiaCultivo() {
         case "mandragora": return <MANDRAGORA />;
         case "datura_inoxia": return <DATURA_INOXIA />;
         case "estramonio": return <ESTRAMONIO />;
+        case "glosario_plantas": return <GLOSARIO_PLANTAS />;
         case "faq_plantas": return <FAQ_PLANTAS />;
         case "biblio_plantas": return <BIBLIO_PLANTAS />;
         default: return <INTRO_PLANTAS />;
@@ -320,6 +321,11 @@ function GuiaCultivo() {
         case "ricino": return <RICINO />;
         case "colchico": return <COLCHICO />;
         case "tejo": return <TEJO />;
+        case "lirio_valle": return <LIRIO_VALLE />;
+        case "eleboro": return <ELEBORO />;
+        case "veratrum": return <VERATRUM />;
+        case "laureola": return <LAUREOLA />;
+        case "glosario_toxicas": return <GLOSARIO_TOXICAS />;
         case "faq_toxicas": return <FAQ_TOXICAS />;
         case "biblio_toxicas": return <BIBLIO_TOXICAS />;
         default: return <INTRO_TOXICAS />;
