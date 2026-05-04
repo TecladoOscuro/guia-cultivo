@@ -817,13 +817,63 @@ function EXTRACCIONES() {
         </div>
       </div>
 
+      <SectionTitle>MÉTODO 4: CÁPSULAS DECARBOXILADAS (vía oral más simple)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>La forma MÁS LIMPIA de consumir oral — sin sabor, dosis exacta</div>
+        <Step num={1} text="Precalienta el horno a 110°C." />
+        <Step num={2} text="Trocea la hierba seca y espárcela uniformemente sobre una bandeja con papel vegetal (protege la hierba del calor directo y facilita moverla)." why="Papel vegetal evita contacto directo con metal caliente y permite remover sin perder material." />
+        <Step num={3} text="Hornear a 110°C durante 45 min. La hierba toma tono marrón claro = decarboxilada (THCA → THC activo)." why="Por debajo de 105°C no se decarboxila. Por encima de 120°C se queman terpenos. 110°C × 45 min es el sweet spot." warning />
+        <Step num={4} text="Compra cápsulas vacías tamaño 00 (Amazon, herboristerías — ~5€/100 uds) y un rellenador manual de cápsulas (~5-10€ opcional, también vale a mano con paciencia)." />
+        <Step num={5} text={<>Rellena cada cápsula con la cantidad exacta. Dosis típica para <GlossaryLink term="Microdosis">microdosis</GlossaryLink>/principiante: 0.05-0.10g por cápsula. Consumidor habitual: 0.20g. Una cápsula 00 contiene ~0.5-0.7g de hierba molida.</>} />
+        <Step num={6} text="Coste por cápsula: ~1€ material (hierba + cápsula vacía). Conserva en frasco hermético oscuro — duran 1-2 años manteniendo potencia." />
+        <Step num={7} text="Tomar con comida grasa (queso, aceite, frutos secos) — los cannabinoides son liposolubles, mejora absorción intestinal." why="Sin grasa: ~10% biodisponibilidad. Con grasa: hasta 35%. Mismo gramo, 3x más efecto." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Resultado: </span>Cápsulas listas, dosis exacta, sin sabor a hierba, sin combustión. Inicio efecto: 60-90 min. Duración: 4-8h. Recomendación novato: empezar con 0.05-0.10g, esperar 2h antes de tomar otra.
+        </div>
+      </div>
+
+      <SectionTitle>MÉTODO 5: TINTURA ALCOHÓLICA (sublingual)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: "#74c69d", marginBottom: "10px" }}>Líquido concentrado — sublingual rápido, conservación años</div>
+        <Step num={1} text="Decarboxila 10-20g de cogollos/trim (110°C × 45 min, mismo paso que cápsulas)." />
+        <Step num={2} text="Mete el material decarbiado en frasco con tapa hermética. Cubre con alcohol de cereales 95% (Everclear) o vodka 40% si no consigues 95% (250-500ml)." />
+        <Step num={3} text="Cierra el frasco. Agita bien. Guarda en lugar OSCURO 4-6 semanas. Agita 1x día." why="Maceración larga = extracción óptima de cannabinoides y terpenos. La luz degrada el resultado." />
+        <Step num={4} text="Tras 4-6 semanas: filtra con tela fina (gasa de cocina/muselina) en frasco oscuro con cuentagotas." />
+        <Step num={5} text="Conservar en frasco oscuro, lugar fresco. Dura AÑOS sin perder potencia." />
+        <Step num={6} text="Dosis: 1-3 gotas SUBLINGUAL (debajo lengua, mantener 1 min sin tragar). Inicio: 15-30 min. Más rápido que cápsulas porque salta primer paso hepático." />
+        <div style={{ background: "#162a1e", borderLeft: "3px solid #40916c", padding: "8px 10px", borderRadius: "0 6px 6px 0", fontSize: "12px", color: "#74c69d", lineHeight: "1.5", marginTop: "8px" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Resultado: </span>Tintura concentrada. Dosificación gota a gota. Conservación años. Dosis micro o estándar según gotas. Sabor amargo intenso — tomar con poco agua después.
+        </div>
+      </div>
+
+      <SectionTitle>DOSIS CONSUMO — TABLA COMPARATIVA</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "11px", color: "#52b788", letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💊 DOSIS POR MÉTODO + INICIO + DURACIÓN</div>
+        {[
+          { metodo: "🚬 Fumado/vapeado (cogollo)", dosis: "0.1-0.5g (1-3 caladas)", inicio: "Inmediato", duracion: "2-3h", nota: "Más control de dosis (titular calada a calada). Combustión = pérdida 30%." },
+          { metodo: "💨 Vaporizador hierba (Volcano, etc)", dosis: "0.1-0.3g", inicio: "Inmediato", duracion: "2-3h", nota: "Sin combustión, más limpio. Efecto similar pero más claro." },
+          { metodo: "💊 Cápsulas decarboxiladas", dosis: "0.05-0.20g hierba (novato → habitual)", inicio: "60-90 min", duracion: "4-8h", nota: "Recomendado novato: 0.05-0.10g. Tomar con comida grasa = +biodisponibilidad. Esperar 2h antes de doblar." },
+          { metodo: "🍪 Edibles (mantequilla/aceite)", dosis: "5-15mg THC", inicio: "60-90 min", duracion: "4-8h", nota: "MÁS POTENTE que cápsulas porque la cocción larga aumenta extracción. Empezar con 5mg." },
+          { metodo: "💧 Tintura sublingual", dosis: "1-3 gotas", inicio: "15-30 min", duracion: "3-5h", nota: "Salta digestión, más rápido. Mantener bajo lengua 1 min." },
+          { metodo: "🧊 Hash fumado/vape", dosis: "0.05-0.15g (mucho más potente que cogollo)", inicio: "Inmediato", duracion: "2-3h", nota: "Hash agua/seco fumado. Pequeñas cantidades, mucho efecto." },
+        ].map((row, i) => (
+          <div key={i} style={{ borderBottom: i < 5 ? "1px solid #1b4332" : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: "#d8f3dc", marginBottom: "3px" }}>{row.metodo}</div>
+            <div style={{ fontSize: "11px", color: "#95d5b2", marginBottom: "3px" }}>💊 <strong>{row.dosis}</strong> · ⏱️ inicio {row.inicio} · ⏳ dura {row.duracion}</div>
+            <div style={{ fontSize: "11px", color: "#74c69d", lineHeight: "1.5" }}>{row.nota}</div>
+          </div>
+        ))}
+      </div>
+
       <SectionTitle color="#e63946">⚠️ PRECAUCIONES DE SEGURIDAD</SectionTitle>
       <div style={{ background: "#1a0a0a", border: "1px solid #4a1010", borderRadius: "10px", padding: "14px" }}>
         <div style={{ fontSize: "12px", color: "#c9a0a0", lineHeight: "1.6" }}>
-          <strong>NO uses solventes:</strong> butano, hexano, acetona — son tóxicos, explosivos y dejan residuos peligrosos.<br/>
-          <strong>Ventilación:</strong> si decarboxilas, pon el horno en ventilación buena — tendrá olor fuerte.<br/>
-          <strong>Temperatura:</strong> nunca expongas cannabis a más de 110°C sin estar en agua/grasa (riesgo de quemar cannabinoides).<br/>
-          <strong>Almacenaje:</strong> guarda edibles y extracciones fuera del alcance de niños y mascotas.
+          <strong>NO uses solventes peligrosos:</strong> butano, hexano, acetona — son tóxicos, explosivos y dejan residuos peligrosos. Sí: alcohol de cereales 95% para tinturas (food-grade).<br/>
+          <strong>Edibles:</strong> efectos tardan 1-2h. NO doblar dosis pensando que "no funciona". Esperar mínimo 2h antes de tomar más. Sobredosis = ansiedad fuerte 4-6h (no peligroso pero desagradable).<br/>
+          <strong>Ventilación:</strong> si decarboxilas, ventilación buena — olor fuerte 30-45 min en toda la casa.<br/>
+          <strong>Temperatura decarbox:</strong> 110°C × 45 min. Por debajo no se activa, por encima se quema.<br/>
+          <strong>Almacenaje:</strong> guarda edibles + cápsulas + tinturas fuera del alcance de niños y mascotas. Etiquetar con potencia + fecha.<br/>
+          <strong>Conducir:</strong> NO durante efectos (4-8h con edibles). Multa + delito en España.
         </div>
       </div>
     </div>
