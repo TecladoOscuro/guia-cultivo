@@ -85,6 +85,50 @@ function GuiaCultivo() {
     return () => { delete window.navigateToGlossary; };
   }, []);
 
+  // Deep linking via URL params: ?guide=X&mode=Y&phase=Z
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const g = params.get("guide");
+    const m = params.get("mode");
+    const p = params.get("phase");
+    if (!g) return;
+
+    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas"];
+    if (!validGuides.includes(g)) return;
+    setGuide(g);
+
+    if (g === "cannabis") {
+      if (m && ["interior", "exterior", "general"].includes(m)) setMode(m);
+      if (p) {
+        if (m === "interior" || (!m && p && !p.includes("ext") && !p.includes("gen"))) setActivePhase(p);
+        else if (m === "exterior") setActivePhaseExt(p);
+        else if (m === "general") setActivePhaseGen(p);
+      }
+    } else if (g === "mushroom") {
+      if (m && ["kit", "friendly", "advanced", "general"].includes(m)) setMushroomMode(m);
+      if (p) {
+        if (m === "kit") setActiveMushroomKit(p);
+        else if (m === "friendly") setActiveMushroomFriendly(p);
+        else if (m === "advanced") setActiveMushroomAdvanced(p);
+        else if (m === "general") setActiveMushroomGen(p);
+      }
+    } else if (g === "cactus" && p) setActiveCactus(p);
+    else if (g === "ayahuasca" && p) setActiveAyahuasca(p);
+    else if (g === "dmt" && p) setActiveDmt(p);
+    else if (g === "amanita" && p) setActiveAmanita(p);
+    else if (g === "trufas" && p) setActiveTrufas(p);
+    else if (g === "plantas" && p) setActivePlantas(p);
+    else if (g === "ferment") {
+      if (m && ["hidromiel", "cerveza", "sidra", "general"].includes(m)) setFermentMode(m);
+      if (p) {
+        if (m === "hidromiel") setActiveFermentHidromiel(p);
+        else if (m === "cerveza") setActiveFermentCerveza(p);
+        else if (m === "sidra") setActiveFermentSidra(p);
+        else if (m === "general") setActiveFermentGen(p);
+      }
+    }
+  }, []);
+
   const renderContent = () => {
     if (guide === "cannabis") {
       if (mode === "interior") {
