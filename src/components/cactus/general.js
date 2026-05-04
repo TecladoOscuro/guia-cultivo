@@ -342,6 +342,44 @@ function PREPARACION_CACTUS() {
         💊 <strong>Cápsulas:</strong> rellenar cápsulas vacías con polvo. Más fácil de tragar, evita el sabor.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>DOSIS — REFERENCIA ORIENTATIVA (POLVO SECO)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.6", marginBottom: "10px" }}>
+          ⚠️ Mescalina muy variable según especie/edad/cultivo. Estas cifras son ORIENTATIVAS para San Pedro/Bolivian Torch promedio (~0.3-1.2% mescalina seca). Empieza siempre por debajo del rango mínimo. Espera 6 semanas entre experiencias significativas.
+        </div>
+        {[
+          { nivel: "💊 Microdosis", peso: "1-3g polvo", efecto: "Sub-perceptual. Foco/ánimo. Sin experiencia psicodélica visible." },
+          { nivel: "🌱 Dosis baja (test)", peso: "10-20g polvo", efecto: "Efectos sutiles. Test inicial de tolerancia. 4-8h." },
+          { nivel: "🌵 Dosis media", peso: "20-50g polvo", efecto: "Experiencia psicodélica clásica. 8-12h. Pico h3-h5." },
+          { nivel: "🌌 Dosis fuerte", peso: "50-100g polvo", efecto: "Muy intensa. Solo experimentados. Sitter recomendado." },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{d.nivel}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{d.peso}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{d.efecto}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>RECETAS DE CONSUMO</SectionTitleX>
+
+      <SectionTitleX c={c}>💊 CÁPSULAS (esconde sabor amargo)</SectionTitleX>
+      <StepX c={c} num={1} text="Polvo seco fino tamizado (sin trozos grandes — atascan cápsulas)." />
+      <StepX c={c} num={2} text="Cápsulas vegetales 00 vacías (Amazon/herboristería ~5€/100uds). Opcional rellenador manual ~5-10€." />
+      <StepX c={c} num={3} text="1 cápsula 00 ≈ 0.5-0.7g polvo. Para 30g de dosis necesitas 45-60 cápsulas. ES MUCHO." why="Por eso muchos prefieren té/decocción para dosis altas." />
+      <StepX c={c} num={4} text="Tomar con estómago vacío + un poco de zumo de limón (potencia absorción)." />
+      <StepX c={c} num={5} text="Náusea es común primera hora. Tomar despacio repartido en 30-60 min ayuda." />
+
+      <SectionTitleX c={c}>🍵 DECOCCIÓN TRADICIONAL (modo Wachuma)</SectionTitleX>
+      <StepX c={c} num={1} text="Pesar dosis exacta de polvo. Añadir a olla con agua (1L por cada 30g)." />
+      <StepX c={c} num={2} text="Añadir el zumo de 1-2 limones (acidifica → mejor extracción de mescalina)." />
+      <StepX c={c} num={3} text="Hervir suave 2-4h con tapa entreabierta. Reponer agua si baja mucho. Remover cada 30 min." />
+      <StepX c={c} num={4} text="Colar con tela fina presionando los restos. Volver a hervir el líquido sin tapa hasta reducir a ~250-400ml." why="Volumen final pequeño = más tragable. Sabor MUY amargo." />
+      <StepX c={c} num={5} text="Beber tibio en 2-3 tomas de 10 min. Ayuna 6h previas. Tener cubo cerca (vómito posible primera hora)." />
+      <StepX c={c} num={6} text="Inicio efecto 45-90 min. Pico 3-5h. Total 8-12h." />
+
       <WarningBoxX c={c}>
         ⚠️ <strong>Sobre dosificación:</strong> ESTA GUÍA NO DA DOSIS porque varía mucho según especie, edad, condiciones de cultivo y persona. Investiga DOSIFICACIÓN RESPONSABLE por tu cuenta — sitios de harm reduction como Energy Control, DanceSafe, Erowid. Mescalina es muy variable; "dosis estándar" no existe sin análisis. Empieza siempre con dosis MUY baja (test de tolerancia personal) y espera 6 semanas entre experiencias significativas.
       </WarningBoxX>

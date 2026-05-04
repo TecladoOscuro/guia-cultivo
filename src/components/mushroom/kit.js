@@ -321,6 +321,62 @@ function SECADO_SETAS_KIT() {
       <ErrorCardM error="Secar con calor (horno, secador)" consecuencia="Degrada psilocina. Menor potencia, posible degradación." fix="Nunca >50°C. Silica gel a temp ambiente es mejor." />
       <ErrorCardM error="No es cracker dry pero lo guardas" consecuencia="Moho en la bolsa hermética en 1-2 semanas." fix="Espera a quiebre total sin flexión." />
       <ErrorCardM error="Guardar sin silica en bolsa cerrada" consecuencia="Pequeña humedad residual no tiene dónde ir. Moho." fix="Siempre silica dentro, aunque sea poco." />
+
+      <SectionTitleM>DOSIS CONSUMO — TABLA NOVATO (PSILOCYBE CUBENSIS SECA)</SectionTitleM>
+      <div style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💊 DOSIS POR NIVEL — INICIO + DURACIÓN</div>
+        {[
+          { nivel: "💊 Microdosis (sub-perceptual)", peso: "0.1-0.3g", efecto: "Sin experiencia psicodélica visible. Mejora ánimo, foco, creatividad. Protocolos: Stamets 4 días sí, 3 no · Fadiman 1 sí, 2 no." },
+          { nivel: "🌱 Dosis baja (test inicial)", peso: "0.5-1g", efecto: "Efectos sutiles: ligera elevación, distorsión visual mínima, risas. Buena primera vez para evaluar tolerancia." },
+          { nivel: "🍄 Dosis media (estándar)", peso: "1-2.5g", efecto: "Experiencia psicodélica clara: visuales, alteración del tiempo, introspección. Inicio 30-60 min, pico 2-3h, total 4-6h." },
+          { nivel: "🌌 Dosis fuerte", peso: "2.5-5g", efecto: "Experiencia profunda. Visuales intensos, posible ego dissolution. Solo experimentados con sitter." },
+          { nivel: "⚠️ Dosis heroica (Terence McKenna)", peso: "5g+", efecto: "MUY intensa. Posible breakthrough completo. Solo experimentados, sitter obligatorio, oscuridad silenciosa." },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 4 ? `1px solid ${MUSHROOM_COLORS.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{d.nivel}</div>
+              <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{d.peso}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5" }}>{d.efecto}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleM>RECETAS DE CONSUMO</SectionTitleM>
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍋 LEMON TEK (potencia + reduce náuseas)</SectionTitleM>
+      <StepM num={1} text="Pesar dosis exacta de seta seca (1-3g típico). Triturar a polvo fino con molinillo." />
+      <StepM num={2} text="En vaso pequeño: añadir polvo + zumo de 1-2 limones (suficiente para cubrir el polvo)." />
+      <StepM num={3} text="Reposar 15-20 min. Remover ocasionalmente. El líquido se vuelve marrón-amarillento." why="Ácido cítrico convierte psilocibina → psilocina (la forma activa). Inicio efecto 15 min vs 30-60 min normal. Más intenso pero más corto (2-3h vs 4-6h)." />
+      <StepM num={4} text="Beber TODO el líquido + sólidos. Sabor agrio amargo intenso." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍵 TÉ DE SETAS (suaviza efecto + sin restos sólidos)</SectionTitleM>
+      <StepM num={1} text="Trocear setas secas (no triturar a polvo). Pesar dosis." />
+      <StepM num={2} text="Calentar agua a 70-75°C (NO hervir — destruye psilocibina). Verter sobre setas troceadas." warning />
+      <StepM num={3} text="Añadir ZUMO DE LIMÓN (1 cucharada) + jengibre fresco (reduce náuseas) + miel a gusto." />
+      <StepM num={4} text="Reposar 15-20 min. Colar con tela fina." />
+      <StepM num={5} text="Beber tibio. Inicio 20-30 min. Más limpio y rápido que masticar setas enteras." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍫 SHROOM CHOCOLATE (esconde sabor, dosificación exacta)</SectionTitleM>
+      <StepM num={1} text="Triturar setas secas a polvo fino (báscula precisión, dosis exacta por bombón)." />
+      <StepM num={2} text="Derretir 100g de chocolate negro (>70% cacao) a baño maría. Temperatura MAX 50°C." why="Calor &gt;50°C destruye psilocibina. Por encima = chocolate sin efecto." warning />
+      <StepM num={3} text="Cuando chocolate esté líquido pero TIBIO (no caliente al tacto), añadir el polvo de seta. Mezclar bien." />
+      <StepM num={4} text="Verter en moldes de bombones (silicona). Cada bombón = 1 dosis exacta (calcular según moldes)." />
+      <StepM num={5} text="Refrigerar 2-3h hasta solidificar. Conservar en frasco hermético en nevera." />
+      <StepM num={6} text="Cada bombón con dosis controlada. Sabor: chocolate normal, casi sin gusto a setas." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>💊 CÁPSULAS (sin sabor, dosis exacta)</SectionTitleM>
+      <StepM num={1} text="Triturar setas secas a polvo fino con molinillo de café/especias." />
+      <StepM num={2} text="Comprar cápsulas vacías 00 (Amazon, herboristería ~5€/100uds) + opcional rellenador manual (~5-10€)." />
+      <StepM num={3} text="Pesar cantidad exacta por cápsula con báscula precisión. 1 cápsula 00 ≈ 0.5-0.7g de polvo." />
+      <StepM num={4} text="Para microdosis: 0.1-0.3g por cápsula. Dosis baja: 1 cápsula con 0.5g. Dosis media: 2-4 cápsulas (1-2g)." />
+      <StepM num={5} text="Tragar con agua + algo de comida ligera (puede causar náusea inicial)." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍯 HONEY-SHROOMS (conservación 6-12 meses)</SectionTitleM>
+      <StepM num={1} text="Setas secas trituradas en polvo grueso. 30-50g de polvo en 250ml de miel cruda (sin pasteurizar)." />
+      <StepM num={2} text="Frasco hermético de cristal. Mezclar bien. Reposar oscuro 1-2 semanas." />
+      <StepM num={3} text="Conservar en nevera. Dura 6-12 meses con potencia mantenida (la miel es preservante natural)." />
+      <StepM num={4} text="Dosis: cucharadita = ~5g de mezcla = ~0.5-1g de seta seca dentro. Calcular según tu receta." />
     </div>
   );
 }

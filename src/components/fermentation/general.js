@@ -189,6 +189,33 @@ function FAQ_FERMENT() {
         Preguntas comunes sobre fermentación casera. Si tienes dudas más específicas: foros como HomeBrewTalk, r/homebrewing, o el subreddit /r/mead son recursos excelentes.
       </InfoBoxX>
 
+      <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "8px", letterSpacing: "1px" }}>📊 TABLA ABV — RANGOS POR BEBIDA</div>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "10px", lineHeight: "1.5" }}>
+          ABV depende de azúcar inicial + levadura + tiempo. Estos rangos son típicos en lotes caseros bien hechos. Calcular exacto: (DI - DF) × 131.25 con hidrómetro.
+        </div>
+        {[
+          { b: "🍯 Hidromiel seco", abv: "10-12%", dens: "DI 1.080-1.090 → DF 0.995-1.000", notas: "Levadura champagne EC-1118. Azúcar fermentado todo. Sabor seco como vino blanco." },
+          { b: "🍯 Hidromiel semi-seco", abv: "11-13%", dens: "DI 1.090-1.100 → DF 1.005-1.010", notas: "Levadura D47/71B. Azúcar residual ligero. Equilibrado, más fácil de empezar." },
+          { b: "🍯 Hidromiel dulce", abv: "12-14%", dens: "DI 1.110-1.130 → DF 1.020-1.030", notas: "Más miel inicial. Detener fermentación con frío + sulfitos para preservar dulzor." },
+          { b: "🍺 Cerveza tipo Pale Ale", abv: "4-6%", dens: "DI 1.045-1.055 → DF 1.010-1.015", notas: "ALE a 18-22°C. Lúpulo notable. Buen estilo para empezar." },
+          { b: "🍺 Cerveza IPA", abv: "5-7%", dens: "DI 1.055-1.070 → DF 1.010-1.015", notas: "Más malta + lúpulo en dry hop. Amargor alto." },
+          { b: "🍺 Cerveza Stout", abv: "4-6%", dens: "DI 1.045-1.060 → DF 1.012-1.018", notas: "Maltas tostadas. Cuerpo denso. Color negro." },
+          { b: "🍺 Lager (pilsner)", abv: "4-5%", dens: "DI 1.045-1.052 → DF 1.008-1.012", notas: "Levadura lager 8-12°C (necesita nevera dedicada). 6-8 sem total." },
+          { b: "🍎 Sidra seca", abv: "5-7%", dens: "DI 1.045-1.055 → DF 0.995-1.005", notas: "Manzanas variedad sidra (no postre). Levadura champagne o silvestre." },
+          { b: "🍎 Sidra semi-dulce", abv: "4-6%", dens: "DI 1.050-1.060 → DF 1.010-1.015", notas: "Detener fermentación con frío + sulfitos cuando alcance dulzor deseado." },
+        ].map((r, i) => (
+          <div key={i} style={{ borderBottom: i < 8 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{r.b}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{r.abv}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.5", marginBottom: "2px" }}>{r.dens}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{r.notas}</div>
+          </div>
+        ))}
+      </div>
+
       <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
         width: "100%", padding: "10px 14px", fontSize: "13px",
         background: c.bg2, color: c.textBright, border: `1px solid ${c.border1}`,

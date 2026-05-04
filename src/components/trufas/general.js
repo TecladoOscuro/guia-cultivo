@@ -360,6 +360,29 @@ function PREPARACION_TRUFAS() {
         ⚠️ Conversión: trufas frescas tienen ~80% agua. <strong>1g seco ≈ 5g fresco</strong>. Si tu báscula y receta dan en seco, multiplica por 5 para fresco.
       </WarningBoxX>
 
+      <SectionTitleX c={c}>RECETAS DETALLADAS</SectionTitleX>
+
+      <SectionTitleX c={c}>🍯 HONEY-TRUFAS (tradicional holandés, 6-12 meses)</SectionTitleX>
+      <StepX c={c} num={1} text="Trufas frescas troceadas en cubos de 5-10mm. Pesar dosis total (50-100g típico)." />
+      <StepX c={c} num={2} text="Frasco de cristal hermético esterilizado (hervido 10 min). Llenar con miel cruda sin pasteurizar (250-400ml por cada 50g de trufas)." why="Miel cruda mantiene enzimas y propiedades preservantes. Pasteurizada solo da dulzor — peor preservación." />
+      <StepX c={c} num={3} text="Mezclar bien para que cada trozo quede cubierto de miel. Sin burbujas de aire grandes." />
+      <StepX c={c} num={4} text="Reposo 1-2 semanas en oscuridad y temperatura ambiente. La miel extrae jugos → se vuelve más líquida + adquiere color marrón." />
+      <StepX c={c} num={5} text="Pasadas 2 semanas: guardar en frigorífico. Dura 6-12 meses sin pérdida significativa de potencia." />
+      <StepX c={c} num={6} text="Dosificación: cucharadita rasa = ~5g mezcla = ~1g de trufa fresca. Verificar pesando trufa al inicio + miel para calcular ratio exacto." />
+
+      <SectionTitleX c={c}>🍋 LEMON TEK (con trufa seca, inicio rápido)</SectionTitleX>
+      <StepX c={c} num={1} text="Convertir dosis a seco: 10g fresco → 2g seco. Pulverizar trufa seca con molinillo." />
+      <StepX c={c} num={2} text="Vaso pequeño + polvo + zumo de 1-2 limones (cubrir el polvo). Reposar 15-20 min removiendo." why="Ácido cítrico convierte psilocibina → psilocina (forma activa)." />
+      <StepX c={c} num={3} text="Beber TODO (líquido + sólidos). Sabor agrio amargo intenso." />
+      <StepX c={c} num={4} text="Inicio 15 min vs 30-60 min normal. Más intenso pero más corto (2-3h vs 4-6h)." />
+
+      <SectionTitleX c={c}>🍵 TÉ DE TRUFAS (suaviza efecto)</SectionTitleX>
+      <StepX c={c} num={1} text="Trocear trufas FRESCAS (no triturar a polvo)." />
+      <StepX c={c} num={2} text="Calentar agua a 70-75°C (NO hervir — destruye psilocibina). Verter sobre trufas." warning />
+      <StepX c={c} num={3} text="Añadir zumo de limón (1 cda) + jengibre fresco (anti-náusea) + miel a gusto." />
+      <StepX c={c} num={4} text="Reposo 15-20 min. Colar con tela fina. Beber tibio." />
+      <StepX c={c} num={5} text="Inicio 20-30 min. Más limpio que masticar trufas enteras." />
+
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
         Comienzo: 30-60 min (frescas) o 15-30 min (té). Pico: 2-3h. Total: 4-6h.<br/>

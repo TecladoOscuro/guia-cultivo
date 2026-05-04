@@ -3855,6 +3855,62 @@ function SECADO_SETAS_KIT() {
       <ErrorCardM error="Secar con calor (horno, secador)" consecuencia="Degrada psilocina. Menor potencia, posible degradación." fix="Nunca >50°C. Silica gel a temp ambiente es mejor." />
       <ErrorCardM error="No es cracker dry pero lo guardas" consecuencia="Moho en la bolsa hermética en 1-2 semanas." fix="Espera a quiebre total sin flexión." />
       <ErrorCardM error="Guardar sin silica en bolsa cerrada" consecuencia="Pequeña humedad residual no tiene dónde ir. Moho." fix="Siempre silica dentro, aunque sea poco." />
+
+      <SectionTitleM>DOSIS CONSUMO — TABLA NOVATO (PSILOCYBE CUBENSIS SECA)</SectionTitleM>
+      <div style={{ background: MUSHROOM_COLORS.bg2, border: `1px solid ${MUSHROOM_COLORS.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, letterSpacing: "1px", marginBottom: "10px", fontWeight: "bold" }}>💊 DOSIS POR NIVEL — INICIO + DURACIÓN</div>
+        {[
+          { nivel: "💊 Microdosis (sub-perceptual)", peso: "0.1-0.3g", efecto: "Sin experiencia psicodélica visible. Mejora ánimo, foco, creatividad. Protocolos: Stamets 4 días sí, 3 no · Fadiman 1 sí, 2 no." },
+          { nivel: "🌱 Dosis baja (test inicial)", peso: "0.5-1g", efecto: "Efectos sutiles: ligera elevación, distorsión visual mínima, risas. Buena primera vez para evaluar tolerancia." },
+          { nivel: "🍄 Dosis media (estándar)", peso: "1-2.5g", efecto: "Experiencia psicodélica clara: visuales, alteración del tiempo, introspección. Inicio 30-60 min, pico 2-3h, total 4-6h." },
+          { nivel: "🌌 Dosis fuerte", peso: "2.5-5g", efecto: "Experiencia profunda. Visuales intensos, posible ego dissolution. Solo experimentados con sitter." },
+          { nivel: "⚠️ Dosis heroica (Terence McKenna)", peso: "5g+", efecto: "MUY intensa. Posible breakthrough completo. Solo experimentados, sitter obligatorio, oscuridad silenciosa." },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 4 ? `1px solid ${MUSHROOM_COLORS.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: MUSHROOM_COLORS.textBright }}>{d.nivel}</div>
+              <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent1, fontWeight: "bold" }}>{d.peso}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: MUSHROOM_COLORS.accent3, lineHeight: "1.5" }}>{d.efecto}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleM>RECETAS DE CONSUMO</SectionTitleM>
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍋 LEMON TEK (potencia + reduce náuseas)</SectionTitleM>
+      <StepM num={1} text="Pesar dosis exacta de seta seca (1-3g típico). Triturar a polvo fino con molinillo." />
+      <StepM num={2} text="En vaso pequeño: añadir polvo + zumo de 1-2 limones (suficiente para cubrir el polvo)." />
+      <StepM num={3} text="Reposar 15-20 min. Remover ocasionalmente. El líquido se vuelve marrón-amarillento." why="Ácido cítrico convierte psilocibina → psilocina (la forma activa). Inicio efecto 15 min vs 30-60 min normal. Más intenso pero más corto (2-3h vs 4-6h)." />
+      <StepM num={4} text="Beber TODO el líquido + sólidos. Sabor agrio amargo intenso." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍵 TÉ DE SETAS (suaviza efecto + sin restos sólidos)</SectionTitleM>
+      <StepM num={1} text="Trocear setas secas (no triturar a polvo). Pesar dosis." />
+      <StepM num={2} text="Calentar agua a 70-75°C (NO hervir — destruye psilocibina). Verter sobre setas troceadas." warning />
+      <StepM num={3} text="Añadir ZUMO DE LIMÓN (1 cucharada) + jengibre fresco (reduce náuseas) + miel a gusto." />
+      <StepM num={4} text="Reposar 15-20 min. Colar con tela fina." />
+      <StepM num={5} text="Beber tibio. Inicio 20-30 min. Más limpio y rápido que masticar setas enteras." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍫 SHROOM CHOCOLATE (esconde sabor, dosificación exacta)</SectionTitleM>
+      <StepM num={1} text="Triturar setas secas a polvo fino (báscula precisión, dosis exacta por bombón)." />
+      <StepM num={2} text="Derretir 100g de chocolate negro (>70% cacao) a baño maría. Temperatura MAX 50°C." why="Calor &gt;50°C destruye psilocibina. Por encima = chocolate sin efecto." warning />
+      <StepM num={3} text="Cuando chocolate esté líquido pero TIBIO (no caliente al tacto), añadir el polvo de seta. Mezclar bien." />
+      <StepM num={4} text="Verter en moldes de bombones (silicona). Cada bombón = 1 dosis exacta (calcular según moldes)." />
+      <StepM num={5} text="Refrigerar 2-3h hasta solidificar. Conservar en frasco hermético en nevera." />
+      <StepM num={6} text="Cada bombón con dosis controlada. Sabor: chocolate normal, casi sin gusto a setas." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>💊 CÁPSULAS (sin sabor, dosis exacta)</SectionTitleM>
+      <StepM num={1} text="Triturar setas secas a polvo fino con molinillo de café/especias." />
+      <StepM num={2} text="Comprar cápsulas vacías 00 (Amazon, herboristería ~5€/100uds) + opcional rellenador manual (~5-10€)." />
+      <StepM num={3} text="Pesar cantidad exacta por cápsula con báscula precisión. 1 cápsula 00 ≈ 0.5-0.7g de polvo." />
+      <StepM num={4} text="Para microdosis: 0.1-0.3g por cápsula. Dosis baja: 1 cápsula con 0.5g. Dosis media: 2-4 cápsulas (1-2g)." />
+      <StepM num={5} text="Tragar con agua + algo de comida ligera (puede causar náusea inicial)." />
+
+      <SectionTitleM color={MUSHROOM_COLORS.accent2}>🍯 HONEY-SHROOMS (conservación 6-12 meses)</SectionTitleM>
+      <StepM num={1} text="Setas secas trituradas en polvo grueso. 30-50g de polvo en 250ml de miel cruda (sin pasteurizar)." />
+      <StepM num={2} text="Frasco hermético de cristal. Mezclar bien. Reposar oscuro 1-2 semanas." />
+      <StepM num={3} text="Conservar en nevera. Dura 6-12 meses con potencia mantenida (la miel es preservante natural)." />
+      <StepM num={4} text="Dosis: cucharadita = ~5g de mezcla = ~0.5-1g de seta seca dentro. Calcular según tu receta." />
     </div>
   );
 }
@@ -5239,6 +5295,44 @@ function PREPARACION_CACTUS() {
         💊 <strong>Cápsulas:</strong> rellenar cápsulas vacías con polvo. Más fácil de tragar, evita el sabor.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>DOSIS — REFERENCIA ORIENTATIVA (POLVO SECO)</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "12px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.6", marginBottom: "10px" }}>
+          ⚠️ Mescalina muy variable según especie/edad/cultivo. Estas cifras son ORIENTATIVAS para San Pedro/Bolivian Torch promedio (~0.3-1.2% mescalina seca). Empieza siempre por debajo del rango mínimo. Espera 6 semanas entre experiencias significativas.
+        </div>
+        {[
+          { nivel: "💊 Microdosis", peso: "1-3g polvo", efecto: "Sub-perceptual. Foco/ánimo. Sin experiencia psicodélica visible." },
+          { nivel: "🌱 Dosis baja (test)", peso: "10-20g polvo", efecto: "Efectos sutiles. Test inicial de tolerancia. 4-8h." },
+          { nivel: "🌵 Dosis media", peso: "20-50g polvo", efecto: "Experiencia psicodélica clásica. 8-12h. Pico h3-h5." },
+          { nivel: "🌌 Dosis fuerte", peso: "50-100g polvo", efecto: "Muy intensa. Solo experimentados. Sitter recomendado." },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 3 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{d.nivel}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{d.peso}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{d.efecto}</div>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitleX c={c}>RECETAS DE CONSUMO</SectionTitleX>
+
+      <SectionTitleX c={c}>💊 CÁPSULAS (esconde sabor amargo)</SectionTitleX>
+      <StepX c={c} num={1} text="Polvo seco fino tamizado (sin trozos grandes — atascan cápsulas)." />
+      <StepX c={c} num={2} text="Cápsulas vegetales 00 vacías (Amazon/herboristería ~5€/100uds). Opcional rellenador manual ~5-10€." />
+      <StepX c={c} num={3} text="1 cápsula 00 ≈ 0.5-0.7g polvo. Para 30g de dosis necesitas 45-60 cápsulas. ES MUCHO." why="Por eso muchos prefieren té/decocción para dosis altas." />
+      <StepX c={c} num={4} text="Tomar con estómago vacío + un poco de zumo de limón (potencia absorción)." />
+      <StepX c={c} num={5} text="Náusea es común primera hora. Tomar despacio repartido en 30-60 min ayuda." />
+
+      <SectionTitleX c={c}>🍵 DECOCCIÓN TRADICIONAL (modo Wachuma)</SectionTitleX>
+      <StepX c={c} num={1} text="Pesar dosis exacta de polvo. Añadir a olla con agua (1L por cada 30g)." />
+      <StepX c={c} num={2} text="Añadir el zumo de 1-2 limones (acidifica → mejor extracción de mescalina)." />
+      <StepX c={c} num={3} text="Hervir suave 2-4h con tapa entreabierta. Reponer agua si baja mucho. Remover cada 30 min." />
+      <StepX c={c} num={4} text="Colar con tela fina presionando los restos. Volver a hervir el líquido sin tapa hasta reducir a ~250-400ml." why="Volumen final pequeño = más tragable. Sabor MUY amargo." />
+      <StepX c={c} num={5} text="Beber tibio en 2-3 tomas de 10 min. Ayuna 6h previas. Tener cubo cerca (vómito posible primera hora)." />
+      <StepX c={c} num={6} text="Inicio efecto 45-90 min. Pico 3-5h. Total 8-12h." />
+
       <WarningBoxX c={c}>
         ⚠️ <strong>Sobre dosificación:</strong> ESTA GUÍA NO DA DOSIS porque varía mucho según especie, edad, condiciones de cultivo y persona. Investiga DOSIFICACIÓN RESPONSABLE por tu cuenta — sitios de harm reduction como Energy Control, DanceSafe, Erowid. Mescalina es muy variable; "dosis estándar" no existe sin análisis. Empieza siempre con dosis MUY baja (test de tolerancia personal) y espera 6 semanas entre experiencias significativas.
       </WarningBoxX>
@@ -5493,6 +5587,33 @@ function FAQ_FERMENT() {
       <InfoBoxX c={c}>
         Preguntas comunes sobre fermentación casera. Si tienes dudas más específicas: foros como HomeBrewTalk, r/homebrewing, o el subreddit /r/mead son recursos excelentes.
       </InfoBoxX>
+
+      <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright, marginBottom: "8px", letterSpacing: "1px" }}>📊 TABLA ABV — RANGOS POR BEBIDA</div>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "10px", lineHeight: "1.5" }}>
+          ABV depende de azúcar inicial + levadura + tiempo. Estos rangos son típicos en lotes caseros bien hechos. Calcular exacto: (DI - DF) × 131.25 con hidrómetro.
+        </div>
+        {[
+          { b: "🍯 Hidromiel seco", abv: "10-12%", dens: "DI 1.080-1.090 → DF 0.995-1.000", notas: "Levadura champagne EC-1118. Azúcar fermentado todo. Sabor seco como vino blanco." },
+          { b: "🍯 Hidromiel semi-seco", abv: "11-13%", dens: "DI 1.090-1.100 → DF 1.005-1.010", notas: "Levadura D47/71B. Azúcar residual ligero. Equilibrado, más fácil de empezar." },
+          { b: "🍯 Hidromiel dulce", abv: "12-14%", dens: "DI 1.110-1.130 → DF 1.020-1.030", notas: "Más miel inicial. Detener fermentación con frío + sulfitos para preservar dulzor." },
+          { b: "🍺 Cerveza tipo Pale Ale", abv: "4-6%", dens: "DI 1.045-1.055 → DF 1.010-1.015", notas: "ALE a 18-22°C. Lúpulo notable. Buen estilo para empezar." },
+          { b: "🍺 Cerveza IPA", abv: "5-7%", dens: "DI 1.055-1.070 → DF 1.010-1.015", notas: "Más malta + lúpulo en dry hop. Amargor alto." },
+          { b: "🍺 Cerveza Stout", abv: "4-6%", dens: "DI 1.045-1.060 → DF 1.012-1.018", notas: "Maltas tostadas. Cuerpo denso. Color negro." },
+          { b: "🍺 Lager (pilsner)", abv: "4-5%", dens: "DI 1.045-1.052 → DF 1.008-1.012", notas: "Levadura lager 8-12°C (necesita nevera dedicada). 6-8 sem total." },
+          { b: "🍎 Sidra seca", abv: "5-7%", dens: "DI 1.045-1.055 → DF 0.995-1.005", notas: "Manzanas variedad sidra (no postre). Levadura champagne o silvestre." },
+          { b: "🍎 Sidra semi-dulce", abv: "4-6%", dens: "DI 1.050-1.060 → DF 1.010-1.015", notas: "Detener fermentación con frío + sulfitos cuando alcance dulzor deseado." },
+        ].map((r, i) => (
+          <div key={i} style={{ borderBottom: i < 8 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "3px" }}>
+              <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright }}>{r.b}</div>
+              <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold" }}>{r.abv}</div>
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.5", marginBottom: "2px" }}>{r.dens}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5" }}>{r.notas}</div>
+          </div>
+        ))}
+      </div>
 
       <input type="text" placeholder="🔍 Buscar pregunta o palabra clave..." value={query} onChange={(e) => setQuery(e.target.value)} style={{
         width: "100%", padding: "10px 14px", fontSize: "13px",
@@ -6336,6 +6457,30 @@ function INTRO_PLANTAS() {
         <br/>
         Las 5 incluidas son: <strong>seguras (en dosis razonables), legales y no adictivas</strong>.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>TABLA COMPARATIVA DE DOSIS Y MÉTODOS</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "10px", lineHeight: "1.5" }}>
+          Resumen rápido. Cada planta tiene su tab con detalle completo de cultivo, dosis y harm reduction. Empieza siempre por el rango bajo.
+        </div>
+        {[
+          { p: "🍃 Salvia divinorum", baja: "200-300mg hoja", media: "300-500mg hoja", metodo: "Vaporizar/fumar (vía masticada x10 dosis). Sitter obligado primera vez.", dur: "5-15 min" },
+          { p: "🌿 Damiana", baja: "2-4g hoja", media: "5-10g hoja", metodo: "Infusión (1 cda en taza, 5 min) o fumada en mezcla.", dur: "1-2h" },
+          { p: "🪷 Blue Lotus", baja: "3-5g flor", media: "5-10g flor", metodo: "Té (5 min en agua 70°C) o vino macerado 2 sem (extracción mejor).", dur: "1-2h" },
+          { p: "🥬 Wild Lettuce", baja: "1-2g lactucario", media: "3-5g lactucario", metodo: "Lactucario (látex seco) en cápsulas/té. Hojas frescas tienen poco efecto.", dur: "2-4h" },
+          { p: "💭 Calea zacatechichi", baja: "5-10g hoja", media: "10-15g hoja", metodo: "Té amargo + cigarrillo de hoja seca antes de dormir. Para sueños vívidos.", dur: "Toda la noche" },
+          { p: "🌴 Kava", baja: "2-4 cdas raíz", media: "4-8 cdas raíz", metodo: "Macerar raíz molida en agua tibia 10 min, exprimir con bolsa. Beber 1-3 tazas.", dur: "2-4h" },
+          { p: "🌵 Kanna (fermentado)", baja: "100-200mg", media: "200-500mg", metodo: "Sublingual (debajo lengua 5 min) o snuff. Mascado tradicional sudafricano.", dur: "1-3h" },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 6 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{d.p}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5", marginBottom: "2px" }}>
+              <strong>Baja:</strong> {d.baja} · <strong>Media:</strong> {d.media} · <strong>Duración:</strong> {d.dur}
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.5" }}>{d.metodo}</div>
+          </div>
+        ))}
+      </div>
 
       <LegalHealthBox c={c}
         legal={<>✅ Las 8 plantas (Salvia, Damiana, Blue Lotus, Wild Lettuce, Calea, Kava, Kanna): 100% LEGALES en España.<br/>✅ Cultivo + posesión + uso personal: legal.<br/>❌ Calea prohibida en Polonia (excepción rara). Salvia ilegal en USA/Australia.<br/>Verifica si viajas.</>}
@@ -8197,6 +8342,29 @@ function PREPARACION_TRUFAS() {
       <WarningBoxX c={c}>
         ⚠️ Conversión: trufas frescas tienen ~80% agua. <strong>1g seco ≈ 5g fresco</strong>. Si tu báscula y receta dan en seco, multiplica por 5 para fresco.
       </WarningBoxX>
+
+      <SectionTitleX c={c}>RECETAS DETALLADAS</SectionTitleX>
+
+      <SectionTitleX c={c}>🍯 HONEY-TRUFAS (tradicional holandés, 6-12 meses)</SectionTitleX>
+      <StepX c={c} num={1} text="Trufas frescas troceadas en cubos de 5-10mm. Pesar dosis total (50-100g típico)." />
+      <StepX c={c} num={2} text="Frasco de cristal hermético esterilizado (hervido 10 min). Llenar con miel cruda sin pasteurizar (250-400ml por cada 50g de trufas)." why="Miel cruda mantiene enzimas y propiedades preservantes. Pasteurizada solo da dulzor — peor preservación." />
+      <StepX c={c} num={3} text="Mezclar bien para que cada trozo quede cubierto de miel. Sin burbujas de aire grandes." />
+      <StepX c={c} num={4} text="Reposo 1-2 semanas en oscuridad y temperatura ambiente. La miel extrae jugos → se vuelve más líquida + adquiere color marrón." />
+      <StepX c={c} num={5} text="Pasadas 2 semanas: guardar en frigorífico. Dura 6-12 meses sin pérdida significativa de potencia." />
+      <StepX c={c} num={6} text="Dosificación: cucharadita rasa = ~5g mezcla = ~1g de trufa fresca. Verificar pesando trufa al inicio + miel para calcular ratio exacto." />
+
+      <SectionTitleX c={c}>🍋 LEMON TEK (con trufa seca, inicio rápido)</SectionTitleX>
+      <StepX c={c} num={1} text="Convertir dosis a seco: 10g fresco → 2g seco. Pulverizar trufa seca con molinillo." />
+      <StepX c={c} num={2} text="Vaso pequeño + polvo + zumo de 1-2 limones (cubrir el polvo). Reposar 15-20 min removiendo." why="Ácido cítrico convierte psilocibina → psilocina (forma activa)." />
+      <StepX c={c} num={3} text="Beber TODO (líquido + sólidos). Sabor agrio amargo intenso." />
+      <StepX c={c} num={4} text="Inicio 15 min vs 30-60 min normal. Más intenso pero más corto (2-3h vs 4-6h)." />
+
+      <SectionTitleX c={c}>🍵 TÉ DE TRUFAS (suaviza efecto)</SectionTitleX>
+      <StepX c={c} num={1} text="Trocear trufas FRESCAS (no triturar a polvo)." />
+      <StepX c={c} num={2} text="Calentar agua a 70-75°C (NO hervir — destruye psilocibina). Verter sobre trufas." warning />
+      <StepX c={c} num={3} text="Añadir zumo de limón (1 cda) + jengibre fresco (anti-náusea) + miel a gusto." />
+      <StepX c={c} num={4} text="Reposo 15-20 min. Colar con tela fina. Beber tibio." />
+      <StepX c={c} num={5} text="Inicio 20-30 min. Más limpio que masticar trufas enteras." />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>

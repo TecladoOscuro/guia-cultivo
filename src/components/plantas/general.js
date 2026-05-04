@@ -43,6 +43,30 @@ function INTRO_PLANTAS() {
         Las 5 incluidas son: <strong>seguras (en dosis razonables), legales y no adictivas</strong>.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>TABLA COMPARATIVA DE DOSIS Y MÉTODOS</SectionTitleX>
+      <div style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <div style={{ fontSize: "11px", color: c.accent2, marginBottom: "10px", lineHeight: "1.5" }}>
+          Resumen rápido. Cada planta tiene su tab con detalle completo de cultivo, dosis y harm reduction. Empieza siempre por el rango bajo.
+        </div>
+        {[
+          { p: "🍃 Salvia divinorum", baja: "200-300mg hoja", media: "300-500mg hoja", metodo: "Vaporizar/fumar (vía masticada x10 dosis). Sitter obligado primera vez.", dur: "5-15 min" },
+          { p: "🌿 Damiana", baja: "2-4g hoja", media: "5-10g hoja", metodo: "Infusión (1 cda en taza, 5 min) o fumada en mezcla.", dur: "1-2h" },
+          { p: "🪷 Blue Lotus", baja: "3-5g flor", media: "5-10g flor", metodo: "Té (5 min en agua 70°C) o vino macerado 2 sem (extracción mejor).", dur: "1-2h" },
+          { p: "🥬 Wild Lettuce", baja: "1-2g lactucario", media: "3-5g lactucario", metodo: "Lactucario (látex seco) en cápsulas/té. Hojas frescas tienen poco efecto.", dur: "2-4h" },
+          { p: "💭 Calea zacatechichi", baja: "5-10g hoja", media: "10-15g hoja", metodo: "Té amargo + cigarrillo de hoja seca antes de dormir. Para sueños vívidos.", dur: "Toda la noche" },
+          { p: "🌴 Kava", baja: "2-4 cdas raíz", media: "4-8 cdas raíz", metodo: "Macerar raíz molida en agua tibia 10 min, exprimir con bolsa. Beber 1-3 tazas.", dur: "2-4h" },
+          { p: "🌵 Kanna (fermentado)", baja: "100-200mg", media: "200-500mg", metodo: "Sublingual (debajo lengua 5 min) o snuff. Mascado tradicional sudafricano.", dur: "1-3h" },
+        ].map((d, i) => (
+          <div key={i} style={{ borderBottom: i < 6 ? `1px solid ${c.border1}` : "none", padding: "8px 0" }}>
+            <div style={{ fontSize: "12px", fontWeight: "bold", color: c.textBright, marginBottom: "3px" }}>{d.p}</div>
+            <div style={{ fontSize: "11px", color: c.accent3, lineHeight: "1.5", marginBottom: "2px" }}>
+              <strong>Baja:</strong> {d.baja} · <strong>Media:</strong> {d.media} · <strong>Duración:</strong> {d.dur}
+            </div>
+            <div style={{ fontSize: "11px", color: c.accent2, lineHeight: "1.5" }}>{d.metodo}</div>
+          </div>
+        ))}
+      </div>
+
       <LegalHealthBox c={c}
         legal={<>✅ Las 8 plantas (Salvia, Damiana, Blue Lotus, Wild Lettuce, Calea, Kava, Kanna): 100% LEGALES en España.<br/>✅ Cultivo + posesión + uso personal: legal.<br/>❌ Calea prohibida en Polonia (excepción rara). Salvia ilegal en USA/Australia.<br/>Verifica si viajas.</>}
         salud={<>Salvia disociativa intensa — sitter obligatorio. Kanna/Mucuna actúan en serotonina/dopamina — NO mezclar SSRI/IMAO. Kava posible toxicidad hepática con uso excesivo. Lúpulo fitoestrogénico (dosis altas hombres). NINGUNA es adictiva físicamente.</>}
