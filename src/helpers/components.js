@@ -171,7 +171,10 @@ const ErrorCardM = ({ error, consecuencia, fix }) => (
 // Generic helper components — accept colors prop (c). Used by new guides
 // (cactus, ferment, plantas, amanita) so we don't duplicate per-palette helpers.
 
-const StepX = ({ num, text, why, warning, c }) => (
+const StepX = ({ num, n, text, title, desc, why, warning, c }) => {
+  const displayNum = num !== undefined ? num : n;
+  const displayText = text !== undefined ? text : (title && desc ? `${title} — ${desc}` : title || desc);
+  return (
   <div style={{
     background: c.bg2,
     border: `1px solid ${warning ? c.errorBorder : c.border1}`,
@@ -185,10 +188,10 @@ const StepX = ({ num, text, why, warning, c }) => (
         fontSize: "12px", fontWeight: "bold",
         display: "flex", alignItems: "center", justifyContent: "center",
         flexShrink: 0, marginTop: "1px",
-      }}>{warning ? "!" : num}</div>
+      }}>{warning ? "!" : displayNum}</div>
       <div style={{ flex: 1 }}>
         <div style={{ fontSize: "14px", color: c.textBright, lineHeight: "1.5", marginBottom: why ? "8px" : "0" }}>
-          {text}
+          {displayText}
         </div>
         {why && (
           <div style={{
@@ -202,7 +205,8 @@ const StepX = ({ num, text, why, warning, c }) => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 const InfoBoxX = ({ children, c }) => (
   <div style={{ background: c.bg3, border: `1px solid ${c.border2}`, borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
@@ -210,12 +214,12 @@ const InfoBoxX = ({ children, c }) => (
   </div>
 );
 
-const SectionTitleX = ({ children, c }) => (
+const SectionTitleX = ({ children, title, c }) => (
   <div style={{
     fontSize: "10px", letterSpacing: "3px", color: c.accent1,
     margin: "24px 0 12px", paddingBottom: "6px",
     borderBottom: `1px solid ${c.accent1}33`,
-  }}>{children}</div>
+  }}>{children || title}</div>
 );
 
 const StatBoxX = ({ label, value, c }) => (
