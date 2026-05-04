@@ -531,12 +531,18 @@ function BIBLIO_AMANITA() {
       { nombre: "Tsujikawa et al. (papers sobre muscimol/iboténico extraction)", nota: "Estudios japoneses sobre química Amanita." },
       { nombre: "Catalfomo & Eugster (1970): primera caracterización de muscimol", nota: "Histórico fundamental." },
       { nombre: "PubMed: 'muscimol GABA' / 'ibotenic acid neurotoxicity'", url: "https://pubmed.ncbi.nlm.nih.gov", nota: "Background neurociencia para entender por qué decarboxilar es crítico." },
+      { nombre: "'Classics in Chemical Neuroscience: Muscimol' — ACS Chem Neurosci 15(18), 2024", url: "https://pubs.acs.org/doi/10.1021/acschemneuro.4c00304", nota: "Revisión moderna de la farmacología del muscimol." },
+      { nombre: "Frontiers Neurosci (2025) — Estudio time-correlation de iboténico en neurotransmisores", url: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1561291/full", nota: "Investigación reciente sobre por qué la decarboxilación correcta es crítica." },
+      { nombre: "Hidalgo-Báez — 'Need for a Public Health Response to Unregulated Sales of Amanita muscaria' (Am J Prev Med, 2024)", url: "https://www.ajpmonline.org/article/S0749-3797(24)00163-6/fulltext", nota: "Análisis del boom comercial 2023-2025 ($2.25B mercado 2024) y riesgos de venta no regulada." },
     ]}
     harm={[
       { nombre: "PsychonautWiki — Muscimol / Amanita muscaria", url: "https://psychonautwiki.org/wiki/Muscimol", nota: "Documento técnico — dosis, decarboxilación, contraindicaciones." },
       { nombre: "TripSit Amanita", url: "https://drugs.tripsit.me/amanita", nota: "Resumen harm reduction." },
       { nombre: "Erowid Amanita Reports", url: "https://erowid.org/plants/amanitas/amanitas_experience.shtml", nota: "Reportes con dosis exactas y método de preparación." },
       { nombre: "ICEERS / Centros antitóxicos", nota: "Para emergencias por confusión con Amanita venenosas (phalloides, virosa). Anti-tóxicos España: 915 620 420." },
+      { nombre: "EFSA Risk Assessment — 'Risk increase consumption Amanita muscaria' (enero 2024)", url: "https://www.efsa.europa.eu/sites/default/files/2024-01/4.3-risk-increase-consumption-amanita-muscaria.pdf", nota: "Evaluación oficial EU sobre el aumento de consumo. Importante para contexto regulatorio europeo." },
+      { nombre: "FDA Scientific Memorandum — Amanita muscaria (sept 2024)", url: "https://www.fda.gov/media/184512/download", nota: "FDA declara Amanita como aditivo alimentario no autorizado, no GRAS. Cita seizures/hospitalizations." },
+      { nombre: "Legislative Analysis Center — 'Fly Agaric Fact Sheet' (marzo 2026)", url: "https://legislativeanalysis.org/wp-content/uploads/2026/03/Fly-Agaric-Fact-Sheet.pdf", nota: "Estado regulatorio actualizado USA. Louisiana = único estado con prohibición total (Act 159)." },
     ]}
   />;
 }

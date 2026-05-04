@@ -446,7 +446,7 @@ function FAQ_CACTUS() {
 function BIBLIO_CACTUS() {
   const c = CACTUS_COLORS;
   return <BibliografiaBlock c={c}
-    intro="Bibliografía consultada para guía de cactus mescalínicos (San Pedro/Bolivian Torch/Peyote). Combina obra clásica de Trout/Anderson + foros especializados + literatura etnobotánica."
+    intro="Bibliografía consultada para guía de cactus mescalínicos (San Pedro/Bolivian Torch/Peyote). Combina obra clásica de Trout/Anderson + foros especializados + literatura etnobotánica. ⚠️ Nota taxonómica nov 2025: Plants of the World Online (Kew) trata Trichocereus como sinónimo de Echinopsis — Echinopsis pachanoi reinstaurado como nombre aceptado. La revisión Lodé 2024 prefiere 'Trichocereus macrogonus subsp. pachanoi'. Disputa viva."
     libros={[
       { titulo: "Sacred Cacti: Botany, Chemistry, Cultivation & Utilization", autor: "Keeper Trout & friends", año: "3ª ed. 2013", nota: "Obra de referencia absoluta sobre Trichocereus. Botánica + química + cultivo + uso histórico. Indispensable." },
       { titulo: "Peyote: The Divine Cactus", autor: "Edward F. Anderson", año: "2ª ed. 1996", nota: "Específico Lophophora williamsii. Antropología, botánica, conservación. Definitorio." },
@@ -454,6 +454,7 @@ function BIBLIO_CACTUS() {
       { titulo: "Pharmacotheon: Entheogenic Drugs, Their Plant Sources and History", autor: "Jonathan Ott", año: "2ª ed. 1996", nota: "Capítulo sobre fenethilaminas + mescalina. Profundo y técnico." },
       { titulo: "Plants of the Gods", autor: "Richard Evans Schultes & Albert Hofmann", año: "1979", nota: "Clásico etnobotánico. Capítulos sobre San Pedro y Peyote en cultura." },
       { titulo: "The Encyclopedia of Psychoactive Plants", autor: "Christian Rätsch", año: "1998", nota: "Compendio enciclopédico. Entradas detalladas por especie." },
+      { titulo: "Trichocereus revision (Lodé)", autor: "Joël Lodé", año: "2024", nota: "Revisión taxonómica que establece 'Trichocereus macrogonus subsp. pachanoi' como designación favorita de breeders especialistas." },
     ]}
     web={[
       { nombre: "Trout's Notes (sacred-cacti.com)", url: "https://sacred-cacti.com", nota: "Página de Keeper Trout. PDFs, botánica, fotos de identificación. Recurso #1 online." },
@@ -461,6 +462,10 @@ function BIBLIO_CACTUS() {
       { nombre: "Erowid Mescaline Vault", url: "https://erowid.org/chemicals/mescaline/", nota: "Reportes + farmacología + legalidad histórica." },
       { nombre: "San Pedro Trichocereus Australia", url: "https://www.sanpedro.com.au", nota: "Vendedor con info técnica de cultivo. Útil aunque sea AU." },
       { nombre: "Cactus and Succulent Society of America", url: "https://cactusandsucculentsociety.org", nota: "No psicoactivo-específico pero referencia para cultivo en general." },
+      { nombre: "POWO (Plants of the World Online — Kew) — entrada Trichocereus pachanoi", url: "https://powo.science.kew.org/taxon/77125731-1", nota: "Referencia taxonómica autoritativa. Desde nov 2025 trata Trichocereus como sinónimo de Echinopsis." },
+      { nombre: "WFO Plant List 2025 — Trichocereus", url: "https://wfoplantlist.org/taxon/wfo-4000038963-2025-06", nota: "World Flora Online — sinonimia oficial actualizada." },
+      { nombre: "Trichocereus.net", url: "https://trichocereus.net/trichocereus-pachanoi-echinopsis-pachanoi/", nota: "Breeder/vendedor activo. Buena fuente para genética y clones nombrados." },
+      { nombre: "Cactus Conservation Institute — Lophophora", url: "https://cactusconservation.org/cci-research/lophophora/", nota: "Recurso principal de conservación de Peyote. Investigación + advocacy." },
     ]}
     comunidad={[
       { nombre: "r/sanpedrocactus (Reddit)", nota: "Comunidad principal en inglés. Identificación, cultivo, time-lapses." },
@@ -472,6 +477,7 @@ function BIBLIO_CACTUS() {
       { nombre: "ICEERS Mescaline Working Group", url: "https://www.iceers.org", nota: "Investigación etnobotánica y advocacy. Posiciones legales sobre San Pedro/Peyote." },
       { nombre: "Council on Spiritual Practices", url: "https://csp.org", nota: "Recursos sobre uso sacramental." },
       { nombre: "MAPS Peyote/Mescaline papers", url: "https://maps.org", nota: "Estudios clínicos modernos en agenda." },
+      { nombre: "IUCN Red List — Lophophora williamsii", url: "https://www.iucnredlist.org/species/151962/121515326", nota: "Estado oficial: Vulnerable (Terry 2017 amended). Justifica recomendación ética de NO cultivar peyote." },
     ]}
     harm={[
       { nombre: "PsychonautWiki — Mescaline", url: "https://psychonautwiki.org/wiki/Mescaline", nota: "Dosificación detallada, interacciones, duración, efectos subjetivos." },

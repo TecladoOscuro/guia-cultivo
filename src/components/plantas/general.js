@@ -1098,6 +1098,9 @@ function BIBLIO_PLANTAS() {
       { nombre: "Kava case study reviews — 'Kava hepatotoxicity'", nota: "Buscar PubMed. Riesgos + variedad noble vs tudei." },
       { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Investigación etnobotánica europea." },
       { nombre: "Sceletium / mesembrine pharmacology papers (Gericke et al.)", nota: "Investigación sobre Kanna como SSRI natural." },
+      { nombre: "'Skeletons in the closet: bibliometric lens on Sceletium' — Frontiers Plant Sci (2024)", url: "https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2024.1268101/full", nota: "Análisis bibliométrico moderno de la investigación de Sceletium tortuosum." },
+      { nombre: "Cilia et al. — Mucuna pruriens 12-month RCT en Parkinson no tratado (sub-Sahara, 2026)", url: "https://journals.sagepub.com/doi/10.1177/1877718X251383721", nota: "Ensayo clínico moderno con Mucuna como L-DOPA natural en pacientes Parkinson." },
+      { nombre: "'Mucuna pruriens, a Possible Treatment for Depressive Disorders' — MDPI Neurol Int (2024)", url: "https://www.mdpi.com/2035-8377/16/6/112", nota: "Revisión 2024 sobre potencial antidepresivo de Mucuna." },
     ]}
     harm={[
       { nombre: "PsychonautWiki — Salvia divinorum", url: "https://psychonautwiki.org/wiki/Salvia_divinorum", nota: "Disociativo intenso — sitter obligado primera vez." },
@@ -1106,6 +1109,8 @@ function BIBLIO_PLANTAS() {
       { nombre: "TripSit Factsheets (varios)", url: "https://drugs.tripsit.me", nota: "Buscar por planta." },
       { nombre: "Erowid Plant Reports (cada planta)", nota: "Reportes específicos por planta y dosis." },
       { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España (no aplica a planta seca pero sí a extractos)." },
+      { nombre: "Salvia divinorum — Mapa legal USA (Wikipedia, actualizado)", url: "https://en.wikipedia.org/wiki/Legal_status_of_Salvia_divinorum_in_the_United_States", nota: "Salvia ahora prohibida/restringida en ~29 estados USA. Útil para viajeros." },
+      { nombre: "FDA — Kratom 7-OH scheduling action (julio 2025)", url: "https://www.foodsafetynews.com/2025/07/the-fda-recommends-scheduling-kratoms-7-oh-under-the-controlled-substances-act/", nota: "Patrón regulatorio: cuando se aíslan derivados concentrados, llegan controles. Aplicable como precedente para futuros movimientos sobre otros activos vegetales." },
     ]}
   />;
 }

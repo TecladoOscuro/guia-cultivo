@@ -693,6 +693,9 @@ function BIBLIO_AYA() {
     ]}
     web={[
       { nombre: "ICEERS Ayahuasca Info", url: "https://www.iceers.org/es/ayahuasca-info/", nota: "Fundación española. Información en castellano sobre ayahuasca, legalidad y harm reduction. Recurso #1 ES." },
+      { nombre: "ICEERS Ayahuasca Technical Report (nueva ed.)", url: "https://www.iceers.org/en/articles/new-edition-of-the-ayahuasca-technical-report/", nota: "Reemplaza ed. 2021. Firmado por 10 investigadores líderes: historia, legalidad, farmacología, efectos terapéuticos y adversos." },
+      { nombre: "ICEERS — Ten Years of Legal Support (2025)", url: "https://www.iceers.org/en/news/ten-years-legal-support/", nota: "59 casos manejados en 2025, 448 totales en 49 países. Mejor fuente del landscape legal global." },
+      { nombre: "ICEERS Academy — Increasing the Safety of Ayahuasca Sessions", url: "https://www.iceers.org/en/how-we-help/prevention-and-harm-reduction-services/", nota: "Curso 6 meses para facilitadores. Formularios de salud + protocolos emergencia." },
       { nombre: "Ayahuasca.com", url: "https://www.ayahuasca.com", nota: "Portal histórico con artículos, reportes y comunidad." },
       { nombre: "Centro Takiwasi", url: "https://www.takiwasi.com", nota: "Centro peruano de tratamiento adicciones con ayahuasca. Investigación + retiros." },
       { nombre: "Ayahuasca-info.com", url: "https://www.ayahuasca-info.com", nota: "Información práctica sobre cocción y plantas alternativas." },
@@ -710,6 +713,7 @@ function BIBLIO_AYA() {
       { nombre: "Beckley Foundation", url: "https://www.beckleyfoundation.org", nota: "Investigación psicodélica + advocacy." },
       { nombre: "MAPS Ayahuasca papers", url: "https://maps.org", nota: "Repositorio de papers." },
       { nombre: "Centro de Investigación Sanitaria de la Fundación La Caixa (estudios brasileños sobre depresión)", nota: "Buscar 'Palhano-Fontes ayahuasca depression' — estudio clínico landmark 2019." },
+      { nombre: "White, Kennedy, Ruffell, Perkins, Sarris — Systematic review on ayahuasca/DMT adverse events (2024)", url: "https://journals.sagepub.com/doi/10.1177/10915818241230916", nota: "Revisión sistemática de 78 artículos. Concluye que ayahuasca/DMT son generalmente seguros con eventos adversos documentados." },
     ]}
     harm={[
       { nombre: "ICEERS Ayahuasca Harm Reduction", url: "https://www.iceers.org/es/ayahuasca-harm-reduction/", nota: "Guía completa en español. Cribado médico, contraindicaciones, dieta previa." },

@@ -248,17 +248,22 @@ function BIBLIO_FERMENT() {
       { titulo: "The Art of Fermentation", autor: "Sandor Katz", año: "2012", nota: "Continuación enciclopédica. 500+ páginas sobre todo tipo de fermentaciones." },
       { titulo: "Yeast: The Practical Guide to Beer Fermentation", autor: "Chris White & Jamil Zainasheff", año: "2010", nota: "Profundo sobre levaduras — selección, propagación, salud." },
       { titulo: "Designing Great Beers", autor: "Ray Daniels", año: "2000", nota: "Para diseñar tus propias recetas. Análisis estilo por estilo." },
+      { titulo: "Mead Science", autor: "B. Moriarty", año: "actual", nota: "Referencia científica moderna sobre hidromiel. Complemento técnico al Schramm." },
+      { titulo: "Libro de Hidromiel 2024 (en español)", autor: "varios", año: "2024", nota: "Recurso PDF circulante en español sobre hidromiel. Disponible en Scribd y comunidad ACE." },
     ]}
     web={[
       { nombre: "How to Brew (Palmer online)", url: "http://howtobrew.com", nota: "Primera edición gratuita online. Excelente referencia para empezar cerveza." },
       { nombre: "HomeBrewTalk", url: "https://www.homebrewtalk.com", nota: "Foro de homebrew más grande del mundo. Recetas, troubleshoot, calculadoras." },
       { nombre: "BeerSmith Blog & Software", url: "https://beersmith.com", nota: "Software de recetas + blog técnico. Cálculos automáticos ABV, IBU, color." },
       { nombre: "Brulosophy", url: "https://brulosophy.com", nota: "Experimentos cervezeros — comparativas A/B con resultados estadísticos. Mata mitos." },
-      { nombre: "BJCP Style Guidelines", url: "https://www.bjcp.org/style", nota: "Guía oficial de estilos cerveza. Imprescindible para entender qué estás haciendo." },
+      { nombre: "BJCP Style Guidelines (página oficial)", url: "https://www.bjcp.org/style", nota: "Guía oficial estilos cerveza/mead/sidra. Imprescindible. Cerveza/mead = ed. 2021. Sidra = ed. 2025 (rewrite mayor)." },
+      { nombre: "BJCP 2025 Cider Style Guidelines (PDF)", url: "https://www.bjcp.org/wp-content/uploads/2025/01/2025_Guidelines_Cider.pdf", nota: "Rewrite mayor de la guía de sidra (reemplaza 2015). 4 categorías: Traditional/Strong/Specialty/Perry. Reemplaza referencias a la edición 2015." },
+      { nombre: "BJCP downloads (auto-actualizado)", url: "https://www.bjcp.org/download/", nota: "Página de descargas oficial — versión más reciente disponible siempre." },
       { nombre: "Got Mead?", url: "https://www.gotmead.com", nota: "Sitio dedicado a hidromiel. Recetas + foro." },
       { nombre: "Cider Workshop", url: "https://www.ciderworkshop.com", nota: "Recurso británico sobre sidra artesanal." },
       { nombre: "Brewer's Friend Calculators", url: "https://www.brewersfriend.com", nota: "Calculadoras de ABV, atenuación, IBU, mash, agua, etc." },
       { nombre: "ACE / Asociación de Cerveceros Caseros (España)", url: "https://www.cervecerosaficionados.es", nota: "Comunidad española. Foros + ferias + cursos." },
+      { nombre: "Asociación de Cerveceros Caseros Españoles — Hidromiel docs técnicos (ES)", url: "https://www.cerveceros-caseros.com/documentos-tecnicos/hidromiel-i-fermentacion-y-nutrientes/", nota: "Documentación en castellano sobre hidromiel (fermentación + nutrientes)." },
     ]}
     comunidad={[
       { nombre: "r/Homebrewing (Reddit)", nota: "Comunidad principal. Wiki muy completa. Activa para preguntas." },
@@ -271,6 +276,7 @@ function BIBLIO_FERMENT() {
       { nombre: "Master Brewers Association (MBAA)", url: "https://www.mbaa.com", nota: "Industria cerveza profesional. Papers técnicos sobre química/microbiología." },
       { nombre: "Journal of the Institute of Brewing", url: "https://onlinelibrary.wiley.com/journal/20500416", nota: "Journal científico peer-review sobre cerveza/malta." },
       { nombre: "American Society of Brewing Chemists (ASBC)", url: "https://www.asbcnet.org", nota: "Estándares de análisis cerveza/levaduras/malta." },
+      { nombre: "'Quantitative Analysis of Stress Tolerance in Kveik Yeast' (JASBC 2025)", url: "https://brewingscience.com/kveik-yeast-versatile-for-brewing/", nota: "Estudio reciente sobre kveik. Co-pitch con Lactobacillus alcanza pH 3.3-3.5 + 70-80% atenuación en 48h (técnica low-ABV sour rápida)." },
     ]}
     harm={[
       { nombre: "Asociación Española de Cerveceros Caseros — guía higiene", nota: "Recursos en castellano sobre sanitización." },

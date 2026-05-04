@@ -291,6 +291,7 @@ function BIBLIO_SETAS() {
       { titulo: "Growing Gourmet and Medicinal Mushrooms", autor: "Paul Stamets", año: "2000", nota: "Más amplio (incluye no-psicoactivos). Profundo en sustratos y biología." },
       { titulo: "Cultivation of Mushrooms (Spanish: 'Cultivo de hongos psilocibios')", autor: "varios autores", año: "2000s", nota: "Compilaciones técnicas. Buscar en bibliotecas universitarias." },
       { titulo: "How to Change Your Mind", autor: "Michael Pollan", año: "2018", nota: "Divulgación del renacimiento psicodélico. Contexto histórico + experiencias guiadas. Buena introducción." },
+      { titulo: "The Psilocybin Mushroom Bible (updated ed.)", autor: "Mandrake & Haze", año: "2024", nota: "Edición actualizada 2024. Guía completa moderna de cultivo, dosificación y harm reduction." },
     ]}
     web={[
       { nombre: "Shroomery", url: "https://www.shroomery.org", nota: "Foro veterano (1997+). Wiki técnica + grow logs masivos + identificación. La fuente más completa." },
@@ -298,6 +299,11 @@ function BIBLIO_SETAS() {
       { nombre: "DoubleBlind Magazine", url: "https://doubleblindmag.com", nota: "Periodismo sobre psicodélicos (cultivo + cultura + ciencia). Artículos modernos." },
       { nombre: "Erowid Psilocybin Vault", url: "https://erowid.org/plants/mushrooms/", nota: "Reportes de experiencias + farmacología + legalidad. Estándar." },
       { nombre: "Microdose.buzz / Microdosing Institute", url: "https://microdosinginstitute.com", nota: "Protocolo Stamets, Fadiman. Investigación reciente sobre microdosis." },
+      { nombre: "Psychedelic Alpha", url: "https://psychedelicalpha.com", nota: "Tracker de datos + Oregon Psilocybin Services Tracker + bibliografía anual + cobertura Compass Pathways. Recurso #1 para policy." },
+      { nombre: "Lucid News", url: "https://lucid.news", nota: "Periodismo policy + cobertura PS2025." },
+      { nombre: "Tripsitter newsletter", url: "https://tripsitter.com", nota: "Boletín activo con harm reduction y noticias." },
+      { nombre: "Ecstatic Integration / Tricycle Day newsletters", nota: "Newsletters culturales sobre integración y comunidad." },
+      { nombre: "Oregon Psilocybin Services tracker (Psychedelic Alpha)", url: "https://psychedelicalpha.com/data/the-oregon-psilocybin-services-tracker", nota: "Datos en vivo del programa Oregon M109 — número de servicios, costes, evento adversos." },
     ]}
     comunidad={[
       { nombre: "r/MushroomGrowers (Reddit)", nota: "Comunidad principal en inglés. Newbies bienvenidos. Diarios cubensis + troubleshoot." },
@@ -310,7 +316,12 @@ function BIBLIO_SETAS() {
       { nombre: "MAPS (Multidisciplinary Association for Psychedelic Studies)", url: "https://maps.org", nota: "Investigación + advocacy + ensayos clínicos. Repository de estudios." },
       { nombre: "ICEERS", url: "https://www.iceers.org", nota: "Fundación española sobre etnobotánica psicoactiva." },
       { nombre: "Compass Pathways", url: "https://compasspathways.com", nota: "Empresa biotech con psilocibina sintética en fase III. Publica resultados clínicos." },
-      { nombre: "Imperial College Centre for Psychedelic Research", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Liderado por Robin Carhart-Harris. Estudios neuroimagen + depresión." },
+      { nombre: "Imperial College Centre for Psychedelic Research", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Liderado por Robin Carhart-Harris (ahora UCSF). Estudios neuroimagen + depresión." },
+      { nombre: "Compass Pathways COMP005 Phase 3 (junio 2025)", url: "https://ir.compasspathways.com/News--Events-/news/news-details/2025/Compass-Pathways-Successfully-Achieves-Primary-Endpoint-in-First-Phase-3-Trial-Evaluating-COMP360-Psilocybin-for-Treatment-Resistant-Depression/default.aspx", nota: "Primer Phase 3 positivo COMP360 25mg vs placebo en TRD (depresión resistente). MADRS −3.6, p<0.001, n=258. FDA rolling submission iniciado." },
+      { nombre: "Dutton et al. — 'Psilocybin in the real world: regulatory, ethical, and operational challenges in Australia' (ANZJP 2026)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12831811/", nota: "Análisis del programa Authorized Prescriber australiano (vigente desde julio 2023)." },
+      { nombre: "'Safety of supported psilocybin use in Oregon' (PMC 2025)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12278778/", nota: "Datos seguridad reales programa Oregon. Solo 6 eventos adversos de 1,509 clientes Q1 2025." },
+      { nombre: "US National Network of Depression Centers — Consensus statement on integrating psilocybin into clinical care (2025)", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12495261/", nota: "Posicionamiento profesional sobre integración clínica." },
+      { nombre: "Nutt — 'The Australia story' (Br J Pharmacol 2024)", url: "https://bpspubs.onlinelibrary.wiley.com/doi/10.1111/bph.17398", nota: "Historia y análisis del programa australiano de psilocibina." },
     ]}
     harm={[
       { nombre: "PsychonautWiki — Psilocybin", url: "https://psychonautwiki.org/wiki/Psilocybin", nota: "Documento técnico estilo wiki. Dosificación, interacciones, subjective effects." },

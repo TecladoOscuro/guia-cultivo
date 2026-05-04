@@ -1016,14 +1016,18 @@ function BIBLIO_CANNABIS() {
       { titulo: "Marijuana Grower's Handbook", autor: "Ed Rosenthal", año: "2010", nota: "Enfocado a producción, técnicas pro. Bueno para quien ya tiene base." },
       { titulo: "True Living Organics", autor: "The Rev (Jeff Lowenfels base)", año: "2012", nota: "Cultivo orgánico/super-soil sin nutrientes líquidos. Filosofía no-till." },
       { titulo: "Teaming with Microbes", autor: "Jeff Lowenfels & Wayne Lewis", año: "2010", nota: "No es de cannabis, es de microbiología del suelo. Indispensable para entender suelo vivo." },
+      { titulo: "Cannabis Medical (13ª ed.)", autor: "Michka", año: "2023", nota: "Estándar moderno francófono/europeo sobre cannabis terapéutico." },
     ]}
     web={[
       { nombre: "GrowDiaries", url: "https://growdiaries.com", nota: "Diarios reales de miles de cultivadores. Genética + setup + problemas + cosecha. Filtra por strain." },
       { nombre: "GrowWeedEasy", url: "https://growweedeasy.com", nota: "Tutoriales con foto-diagnóstico. Sección de identificación de problemas hojas excelente." },
       { nombre: "Royal Queen Seeds Blog", url: "https://www.royalqueenseeds.es/blog-cat", nota: "Blog del banco con guías técnicas detalladas en español. Strain reviews." },
       { nombre: "Cannabis.es / Cáñamo Magazine", url: "https://www.revistacanamo.com", nota: "Revista española de referencia. Cultivo + cultura + legalidad ES." },
+      { nombre: "Soft Secrets España", url: "https://softsecrets.com/es/", nota: "Revista mensual española activa. Noticias legales + cultivo." },
+      { nombre: "Kannabia Blog", url: "https://www.kannabia.com/es/blog", nota: "Banco español con blog técnico actualizado. Buena cobertura legalidad ES." },
       { nombre: "Leafly Cultivation", url: "https://www.leafly.com/news/growing", nota: "Artículos cortos didácticos. Bueno para conceptos puntuales." },
       { nombre: "Spannabis publicaciones", url: "https://www.spannabis.com", nota: "Feria española anual. Newsletter + ponencias técnicas." },
+      { nombre: "ConFac (Confederación Federaciones Asociaciones Cannábicas)", url: "https://confac.org", nota: "Referencia para clubes y CSC en España. Tracking variación autonómica post-anulación leyes Cataluña/Navarra/Euskadi." },
     ]}
     comunidad={[
       { nombre: "r/microgrowery (Reddit)", nota: "Comunidad principal en inglés. Wiki muy completa. Diarios + troubleshooting en tiempo real." },
@@ -1037,6 +1041,10 @@ function BIBLIO_CANNABIS() {
       { nombre: "Project CBD", url: "https://www.projectcbd.org", nota: "Investigación sobre cannabinoides terapéuticos." },
       { nombre: "NIDA Cannabis Research", url: "https://nida.nih.gov/research-topics/cannabis-marijuana", nota: "Posición oficial USA. Útil para contraste con investigación independiente." },
       { nombre: "Cannabis and Cannabinoid Research (Mary Ann Liebert)", url: "https://www.liebertpub.com/journal/can", nota: "Journal científico peer-review específico." },
+      { nombre: "MDPI Agronomy 14(11):2565 (2024) — 'Harvesting Light: Spectrum, Plant Density, Secondary Metabolites and Cannabis sativa L. Yield'", url: "https://www.mdpi.com/2073-4395/14/11/2565", nota: "Peer-review aplicable directo a cultivos LED caseros: ~12% pérdida rendimiento por cada aumento blue %, R:FR bajo en últimos 10d flora = +16% peso seco." },
+      { nombre: "PMC 11013261 (2024) — Drying for terpene retention by cultivar", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11013261/", nota: "Estudio sobre secado y preservación de terpenos por variedad." },
+      { nombre: "Real Decreto 903/2025 (cannabis medicinal España)", url: "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-20077", nota: "BOE 9 oct 2025. Primera regulación española de cannabis medicinal: fórmulas magistrales en farmacia hospitalaria para EM, epilepsia refractaria, náusea por quimio, dolor crónico refractario. THC ≥0.2% = psicotrópico." },
+      { nombre: "STS 583/2024 (12 jun 2024) — Tribunal Supremo asociaciones cannábicas", url: "https://vlex.es/vid/1042106677", nota: "Última jurisprudencia sobre clubes cannábicos. Marca parámetros restrictivos: status adicción de socios, registro consumo individual, dosis solo en local." },
     ]}
     harm={[
       { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Servicio análisis sustancias en España. Drug-checking + información objetiva." },

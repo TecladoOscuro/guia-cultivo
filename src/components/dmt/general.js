@@ -690,6 +690,7 @@ function BIBLIO_DMT() {
       { titulo: "TIHKAL: Tryptamines I Have Known and Loved", autor: "Alexander & Ann Shulgin", año: "1997", nota: "Química y experiencias con triptaminas. DMT y análogos." },
       { titulo: "Ayahuasca Analogues: Pangean Entheogens", autor: "Jonathan Ott", año: "1994", nota: "Específico sobre pharmahuasca (DMT + MAOI fuera de Banisteriopsis tradicional)." },
       { titulo: "Plants of the Gods", autor: "Schultes & Hofmann", año: "1979", nota: "Capítulo sobre yopo, vilca, otras fuentes amerindias de DMT." },
+      { titulo: "My Altered States", autor: "Rick Strassman", año: "2024", nota: "Narrativa personal ilustrada del autor de 'DMT: The Spirit Molecule'. Reflexión madura sobre la investigación temprana." },
     ]}
     web={[
       { nombre: "DMT-Nexus Wiki", url: "https://wiki.dmt-nexus.me", nota: "Recurso técnico #1 mundial. Extracciones (STB, A/B), química, plantas, harmalas. Base imprescindible." },
@@ -710,6 +711,9 @@ function BIBLIO_DMT() {
       { nombre: "MAPS DMT papers", url: "https://maps.org", nota: "Repositorio + actualizaciones de research." },
       { nombre: "Imperial College Psychedelic Research (extended-state DMT)", url: "https://www.imperial.ac.uk/psychedelic-research-centre/", nota: "Estudios recientes con infusión continua DMT." },
       { nombre: "Algernon Pharmaceuticals (DMT for stroke trials)", nota: "Aplicación médica DMT — fase clínica." },
+      { nombre: "Luan et al. (2024) — 'Psychological and physiological effects of extended DMT' (J. Psychopharmacology)", url: "https://journals.sagepub.com/doi/10.1177/02698811231196877", nota: "Estudio piloto Imperial College con infusión IV continua de DMT. Seguro y bien tolerado. Cita fundamental para extended-state." },
+      { nombre: "Imperial — 'Bendy X-rays and DMT infusions' (2024)", url: "https://www.imperial.ac.uk/news/249434/bendy-x-rays-dmt-infusions-news-from/", nota: "Update sobre el programa de infusión continua. Disclosure: Algernon advisory + consultoría Nutt." },
+      { nombre: "Imperial — DMT Brain Imaging (2025)", url: "https://www.imperial.ac.uk/news/243893/advanced-brain-imaging-study-hints-dmt/", nota: "Imaging avanzado sobre cómo DMT altera percepción." },
     ]}
     harm={[
       { nombre: "PsychonautWiki — DMT", url: "https://psychonautwiki.org/wiki/N,N-DMT", nota: "Documento técnico. Dosis vape vs IV, interacciones, duración." },
@@ -717,6 +721,7 @@ function BIBLIO_DMT() {
       { nombre: "Erowid DMT Reports", url: "https://erowid.org/chemicals/dmt/dmt_experience.shtml", nota: "Reportes de experiencias por dosis y método." },
       { nombre: "DMT-Nexus Welcome / Newcomers Guide", url: "https://wiki.dmt-nexus.me/Newcomer", nota: "Guía completa para principiantes — set/setting, dosis, qué esperar." },
       { nombre: "Energy Control", url: "https://energycontrol.org", nota: "Análisis sustancias en España. Confirman pureza de extractos." },
+      { nombre: "'Best practices for first psychedelic experiences' — Harm Reduction Journal (2025)", url: "https://link.springer.com/article/10.1186/s12954-025-01337-2", nota: "Estudio comunitario (n=581) que advierte explícitamente: ayahuasca/DMT NO recomendados para principiantes. Citable directo." },
     ]}
   />;
 }
