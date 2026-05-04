@@ -391,6 +391,7 @@ const ayahuascaPhases = [
 // Plantas tóxicas / venenos botánicos
 const toxicasPhases = [
   { id: "intro_toxicas", emoji: "☠️", title: "Intro", subtitle: "Toxinas vegetales" },
+  { id: "compra_toxicas", emoji: "🛒", title: "Compra", subtitle: "Viveros + seguridad" },
   { id: "brugmansia", emoji: "🎺", title: "Brugmansia", subtitle: "Floripondio tropano" },
   { id: "adelfa", emoji: "🌺", title: "Adelfa", subtitle: "Glucósido cardiaco" },
   { id: "dedalera", emoji: "💜", title: "Dedalera", subtitle: "Fuente digoxina" },
@@ -403,6 +404,9 @@ const toxicasPhases = [
   { id: "eleboro", emoji: "❄️", title: "Eléboro", subtitle: "Rosa de Navidad" },
   { id: "veratrum", emoji: "⛰️", title: "Veratrum", subtitle: "Confusión fatal genciana" },
   { id: "laureola", emoji: "🫐", title: "Laureola", subtitle: "Dafnetoxina vesicante" },
+  { id: "curare", emoji: "🏹", title: "Curare", subtitle: "Parálisis flácida · flechas" },
+  { id: "nuez_vomica", emoji: "⚡", title: "Nuez Vómica", subtitle: "Estricnina · tetania" },
+  { id: "calabar_bean", emoji: "🫘", title: "Calabar Bean", subtitle: "Fisostigmina · ordalia" },
   { id: "glosario_toxicas", emoji: "📖", title: "Glosario", subtitle: "Términos toxicología" },
   { id: "faq_toxicas", emoji: "❓", title: "FAQ", subtitle: "Primeros auxilios" },
   { id: "biblio_toxicas", emoji: "📚", title: "Bibliografía", subtitle: "Toxicología botánica" },
@@ -6975,7 +6979,15 @@ function COMPRA_PLANTAS() {
       ))}
 
       <InfoBoxX c={c}>
-        💡 <strong>Vendedores recomendados (etnobotánica EU):</strong> Avalon Magic Plants (Holanda), World Seed Supply (USA pero envía a EU), Tatanka (Holanda), Herbalistics (UK), Magic Mushrooms Shop. Comparar precios + leer reviews antes de comprar.
+        💡 <strong>Vendedores recomendados (etnobotánica EU):</strong><br/>
+        🇳🇱 <strong>Avalon Magic Plants</strong> (avalon-magicplants.com) — referencia EU, stock amplio, precios medios<br/>
+        🇳🇱 <strong>Tatanka</strong> (tatanka.nl) — Salvia, Kanna, Calea, Blue Lotus. Envío ES<br/>
+        🇳🇱 <strong>Zamnesia</strong> (zamnesia.com) — raíces Kava, semillas, esquejes<br/>
+        🇩🇪 <strong>Sirius</strong> (sirius.nl) — amplio catálogo etnobotánica<br/>
+        🇬🇧 <strong>Herbalistics</strong> (herbalistics.com.au) — UK, buen stock Kava y plantas difíciles<br/>
+        🇪🇸 <strong>Herboristería online España</strong> — damiana, calea seca en polvo más barata que etnobotánica<br/>
+        🇺🇸 <strong>Kava Dot Com / Nakamal at Home</strong> — kava noble certificada, mejor calidad, envío a ES posible<br/><br/>
+        ⚠️ <strong>Siempre:</strong> leer reviews recientes (stock y calidad cambia). Comparar precios. Pedir siempre la hoja de datos de la planta para verificar especie.
       </InfoBoxX>
     </div>
   );
@@ -7028,6 +7040,13 @@ function SALVIA() {
       <InfoBoxX c={c}>
         Hojas secas en infusión NO funciona bien — la salvinorina se destruye con el calor del agua. Mascar hojas secas tampoco — duras y poco efectivas. Para hojas secas, opción tradicional es extracto (consumo concentrado, NO recomendado para principiantes — requiere harm reduction extrema).
       </InfoBoxX>
+
+      <SectionTitleX c={c}>EXTRACCIÓN — HOJA POTENCIADA (ENHANCED LEAF)</SectionTitleX>
+      <StepX c={c} num={1} text="Preparar extracto: pesar 5g de hojas secas. Cubrir con 50ml de acetona (o alcohol isopropílico 99%) en vaso. Agitar 5 min. Filtrar la solución con papel de filtro o trapo fino." why="La salvinorina A es soluble en acetona y alcohol de alta graduación. El agua no funciona." />
+      <StepX c={c} num={2} text="Calcular cantidad de hoja base: decide potencia (5x, 10x, 20x). Ejemplo: 1g de extracto de 5g de hojas + 4g de hojas limpias = enhanced leaf 5x." />
+      <StepX c={c} num={3} text="Evaporar el solvente: verter el extracto filtrado sobre la hoja base en plato. Extender bien. Dejar evaporar en lugar ventilado (exterior o ventana abierta). El solvente se evapora en 30-60 min." warning />
+      <StepX c={c} num={4} text="La hoja queda ligeramente húmeda/pegajosa al principio. Dejar secar completamente (1-2h). El extracto queda depositado uniformemente sobre las hojas." />
+      <StepX c={c} num={5} text="Conservar en frasco hermético opaco. Enhanced leaf 5x = mucho más potente. EMPEZAR con dosis MUY pequeñas (50-100mg). La potencia puede sorprender incluso a usuarios experimentados." warning />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -7095,6 +7114,12 @@ function DAMIANA() {
         🍷 <strong>Licor:</strong> macerar 50g en 500ml de vodka 2 semanas. Filtrar. Licor afrodisíaco tradicional mexicano.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA ALCOHÓLICA</SectionTitleX>
+      <StepX c={c} num={1} text="Método más fácil: llenar un tarro de cristal con hojas secas de damiana (50-100g). Cubrir completamente con alcohol 40-50° (vodka) o para más potencia con alcohol 96° de farmacia diluido al 70% con agua." />
+      <StepX c={c} num={2} text="Cerrar hermético. Guardar en lugar oscuro y fresco 2-4 semanas. Agitar una vez al día si puedes." why="El tiempo y la agitación extraen los flavonoides, terpenos y alcaloides activos de la damiana. Más tiempo = tintura más concentrada." />
+      <StepX c={c} num={3} text="Filtrar con gasa o filtro de café. Exprimir bien el material vegetal. La tintura resultante tiene color marrón-verdoso." />
+      <StepX c={c} num={4} text="Dosis: 2-5ml (1 cucharadita) sublingüal o en vaso de agua. Inicio 20-30 min. Conservar en frasco oscuro — dura 2-3 años." />
+
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
         Comienzo: 15-30 min. Duración: 2-4h. Sensaciones: relajación corporal, ligero "buzz" mental similar a kava o cannabis muy suave, calidez. Reportada como ayuda en ansiedad social. Sin "viaje" — solo bienestar.
@@ -7155,6 +7180,11 @@ function BLUE_LOTUS() {
         🍷 <strong>Vino macerado (uso egipcio antiguo):</strong> 30g de flores secas en 750ml de vino tinto seco. Macerar 2 semanas. Filtrar. Beber en copas pequeñas.<br/>
         🚬 <strong>Fumada:</strong> mezclada con tabaco, efecto sutil.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA Y VINO EGIPCIO</SectionTitleX>
+      <StepX c={c} num={1} text="Método egipcio (vino): 20-30g de flores secas en 750ml de vino tinto seco. Cerrar con corcho/tapa. Macerar en oscuro 2 semanas agitando cada 2-3 días. Filtrar. Consumir en copas pequeñas (100-150ml)." why="El alcohol del vino extrae los alcaloides (nuciferina, aporfina) y flavonoides. El vino actúa de menstruo y es el método tradicional documentado." />
+      <StepX c={c} num={2} text="Tintura concentrada: 15g flores + 150ml vodka 40°, macerar 3-4 semanas en oscuro. Filtrar. Dosis: 5-10ml en agua o sola. Efecto más consistente que el té." />
+      <StepX c={c} num={3} text="Extracción de aporfinas (avanzado): el compuesto activo nuciferina es soluble en alcohol. No se han documentado extracciones caseras tipo A/B — no necesario para efectos normales. La tintura en vodka es suficiente para apreciarse el efecto." />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -7271,6 +7301,11 @@ function CALEA() {
       <StepX c={c} num={2} text="Beber 30 min antes de irse a la cama." />
       <StepX c={c} num={3} text="Adicional (potencia el efecto): fumar pipa pequeña con hojas secas justo antes de acostarse." />
       <StepX c={c} num={4} text="Tener libreta y bolígrafo en la mesilla — al despertar anotar sueños inmediatamente o se olvidan." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA AMARGA</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura en vodka: 20g de hojas secas en 200ml de vodka 40°. Macerar 4 semanas en oscuro. Filtrar. Resultante: tintura muy amarga concentrada." />
+      <StepX c={c} num={2} text="Dosis tintura: 2-4ml (½-1 cucharadita) sublingual 30 min antes de dormir. Efecto más consistente que el té y más fácil de dosificar." />
+      <StepX c={c} num={3} text="Aceite esencial (avanzado): los principios activos de Calea incluyen germacranólidos (sesquiterpenos amargos) y flavonoides. El aceite esencial por destilación al vapor concentra los terpenos aromáticos pero no necesariamente los activos para el sueño. La tintura alcohólica sigue siendo la preparación más documentada." />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -9329,6 +9364,119 @@ function INTRO_TOXICAS() {
   );
 }
 
+function COMPRA_TOXICAS() {
+  const c = TOXICAS_COLORS;
+  const items = [
+    // Comunes en viveros
+    { item: "🌺 Adelfa (Nerium oleander) — planta", precio: "3-15€", donde: "Vivero / Leroy Merlin", nota: "La más fácil de encontrar. Cualquier vivero la tiene. Colores: rosa, blanco, rojo, salmón. NO siempre etiquetan la toxicidad — pregunta al encargado.", planta: "Adelfa", fuente: "Vivero físico" },
+    { item: "🌲 Tejo (Taxus baccata) — arbolito topiaria", precio: "8-25€", donde: "Vivero / Leroy Merlin", nota: "Muy usado para setos y bolas topiaria. Viveros lo tienen habitualmente. Crecimiento lento — el de 40cm tiene ya 3-5 años.", planta: "Tejo", fuente: "Vivero físico" },
+    { item: "🤍 Lirio del Valle (Convallaria majalis) — rizoma o maceta", precio: "3-10€", donde: "Vivero / Floristería", nota: "Disponible en primavera (marzo-mayo) en floristerías y viveros. Rizomas en bolsas (5-10 unidades) en grandes superficies. Fuera de temporada: buscar online.", planta: "Lirio del Valle", fuente: "Vivero físico" },
+    { item: "❄️ Eléboro (Helleborus niger / orientalis) — maceta", precio: "5-18€", donde: "Vivero especializado", nota: "Disponible otoño-invierno (su temporada de floración). H. orientalis tiene más variedades de color. H. niger (rosa de Navidad) florece en diciembre.", planta: "Eléboro", fuente: "Vivero físico" },
+    { item: "🫐 Laureola / Torvisco (Daphne) — arbolito", precio: "8-22€", donde: "Vivero especializado", nota: "D. mezereum y D. laureola en viveros de planta forestal y jardinería. A veces bajo 'Dafne'. Floración invernal muy ornamental.", planta: "Laureola", fuente: "Vivero físico" },
+    // Online semillas
+    { item: "🔴 Ricino (Ricinus communis) — semillas", precio: "1-3€ / sobre", donde: "Tienda online semillas", nota: "Buscar en Seeds Gallery, Kiepenkerl, Sativa. Variedades decorativas: 'Carmencita Red' (hojas rojas), 'Impala' (compacta), 'Zanzibar' (gigante). Germinación muy fácil.", planta: "Ricino", fuente: "Online semillas" },
+    { item: "💜 Dedalera (Digitalis purpurea) — semillas", precio: "2-5€ / sobre", donde: "Tienda online semillas", nota: "Muy fácil de germinar, bienal. Sembrar julio-agosto para florecer siguiente año. También en tiendas de flores silvestres (wildflower seeds). Variedades: blanca, rosa, púrpura moteada.", planta: "Dedalera", fuente: "Online semillas" },
+    { item: "💙 Acónito (Aconitum napellus) — semillas", precio: "3-8€ / sobre", donde: "Tienda online semillas", nota: "Seeds Gallery, Plant World Seeds. Necesita estratificación fría: humedecer + nevera 4 semanas antes de germinar. Germinación lenta (3-6 semanas).", planta: "Acónito", fuente: "Online semillas" },
+    { item: "🌸 Cólquico (Colchicum autumnale) — cormos", precio: "4-10€ / 5 cormos", donde: "Tienda online bulbos", nota: "Comprar agosto-septiembre para floración otoñal. Bakker, Van Meuwen, DutchGrown (envío a España). También DeBollen.com. Plantar rápido — florece solo semanas después.", planta: "Cólquico", fuente: "Online bulbos" },
+    { item: "🎺 Brugmansia — esqueje enraizado", precio: "15-40€", donde: "Online tropicales / eBay", nota: "Viveros de plantas tropicales y bonsai. eBay jardín. Variedades: B. suaveolens (blanca/amarilla, más común), B. arborea (blanca), B. sanguinea (naranja-roja). Esqueje enraizado preferible a semilla.", planta: "Brugmansia", fuente: "Online tropical" },
+    // Seguridad
+    { item: "🧤 Guantes nitrilo — caja 100ud (talla L/M)", precio: "12-20€", donde: "Farmacia / Amazon", nota: "IMPRESCINDIBLE antes de comprar ninguna planta. Nitrilo (no látex — puede ser permeable a aconitina). Usar siempre al manipular, regar, podar o trasplantar cualquier planta de esta guía.", planta: "Seguridad", fuente: "Farmacia / Amazon" },
+    { item: "🏷️ Etiquetas 'VENENO - NO TOCAR' adhesivas", precio: "3-6€", donde: "Papelería / Amazon", nota: "Etiquetar cada maceta visible. Especialmente importante si hay visitas con niños o mascotas. No asumir que la gente sabe de la toxicidad por el aspecto.", planta: "Seguridad", fuente: "Papelería" },
+    { item: "📱 App iNaturalist", precio: "Gratis", donde: "App Store / Google Play", nota: "Para identificación botánica con foto. Antes de comprar una planta desconocida online — verificar que recibes lo que pediste. Foto de la planta recibida + iNaturalist = confirmación.", planta: "Seguridad", fuente: "App" },
+  ];
+
+  const plantas = ["Adelfa", "Tejo", "Lirio del Valle", "Eléboro", "Laureola", "Ricino", "Dedalera", "Acónito", "Cólquico", "Brugmansia", "Seguridad"];
+  const [filterPlanta, setFilterPlanta] = React.useState([]);
+  const [filterFuente, setFilterFuente] = React.useState([]);
+  const fuentes = ["Vivero físico", "Online semillas", "Online bulbos", "Online tropical", "Farmacia / Amazon", "Papelería", "App"];
+
+  const togglePlanta = (p) => setFilterPlanta(s => s.includes(p) ? s.filter(x => x !== p) : [...s, p]);
+  const toggleFuente = (f) => setFilterFuente(s => s.includes(f) ? s.filter(x => x !== f) : [...s, f]);
+
+  const filtered = items.filter(i =>
+    (filterPlanta.length === 0 || filterPlanta.includes(i.planta)) &&
+    (filterFuente.length === 0 || filterFuente.includes(i.fuente))
+  );
+
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Lista completa de compra para las plantas tóxicas documentadas en esta guía: dónde comprar plantas ornamentales, semillas, bulbos y equipo de seguridad imprescindible.
+      </InfoBoxX>
+
+      <div style={{ background: c.bg2, border: `2px solid ${c.accent1}`, borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <div style={{ fontSize: "13px", fontWeight: "bold", color: c.accent1, marginBottom: "8px" }}>🧤 ANTES DE COMPRAR: seguridad primero</div>
+        <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.6" }}>
+          1. <strong>Guantes nitrilo</strong> — tener antes de que llegue cualquier planta<br/>
+          2. <strong>Etiquetas VENENO</strong> — poner el día que plantas/trasplantas<br/>
+          3. <strong>Avisar a convivientes</strong> — explicar el riesgo<br/>
+          4. <strong>Teléfono guardado:</strong> Toxicología 91 562 04 20 · Urgencias 112
+        </div>
+      </div>
+
+      <SectionTitleX c={c} title="FILTRAR POR PLANTA" />
+      <div style={{ display: "flex", gap: "6px", marginBottom: "10px", flexWrap: "wrap" }}>
+        {plantas.map(p => {
+          const active = filterPlanta.includes(p);
+          return (
+            <button key={p} onClick={() => togglePlanta(p)} style={{
+              background: active ? c.accent1 : "transparent",
+              color: active ? c.bg : c.accent2,
+              border: `1.5px solid ${c.accent1}`,
+              borderRadius: "16px", padding: "4px 10px",
+              fontSize: "11px", fontWeight: "bold", transition: "all 0.15s",
+            }}>{p}</button>
+          );
+        })}
+      </div>
+
+      <SectionTitleX c={c} title="FILTRAR POR FUENTE" />
+      <div style={{ display: "flex", gap: "6px", marginBottom: "14px", flexWrap: "wrap" }}>
+        {fuentes.map(f => {
+          const active = filterFuente.includes(f);
+          return (
+            <button key={f} onClick={() => toggleFuente(f)} style={{
+              background: active ? c.border2 : "transparent",
+              color: active ? c.textBright : c.accent2,
+              border: `1.5px solid ${c.border2}`,
+              borderRadius: "16px", padding: "4px 10px",
+              fontSize: "11px", transition: "all 0.15s",
+            }}>{f}</button>
+          );
+        })}
+      </div>
+
+      {(filterPlanta.length > 0 || filterFuente.length > 0) && (
+        <button onClick={() => { setFilterPlanta([]); setFilterFuente([]); }} style={{
+          background: "transparent", color: c.accent2, border: "none",
+          fontSize: "11px", marginBottom: "14px", textDecoration: "underline", padding: 0,
+        }}>✕ Limpiar filtros</button>
+      )}
+
+      <SectionTitleX c={c} title={`LISTA COMPRA (${filtered.length}/${items.length})`} />
+      {filtered.map((item, i) => (
+        <div key={i} style={{ background: c.bg2, border: `1px solid ${c.border1}`, borderLeft: `3px solid ${c.accent1}`, borderRadius: "10px", padding: "12px", marginBottom: "8px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+            <div style={{ fontSize: "13px", fontWeight: "bold", color: c.textBright }}>{item.item}</div>
+            <div style={{ fontSize: "11px", color: c.accent1, fontWeight: "bold", whiteSpace: "nowrap", marginLeft: "8px" }}>{item.precio}</div>
+          </div>
+          <div style={{ fontSize: "10px", padding: "2px 8px", borderRadius: "10px", background: c.bg3, color: c.accent2, display: "inline-block", marginBottom: "6px" }}>{item.fuente}</div>
+          <div style={{ fontSize: "12px", color: c.accent3, lineHeight: "1.5" }}>{item.nota}</div>
+        </div>
+      ))}
+
+      <InfoBoxX c={c}>
+        💡 <strong>Vendors online recomendados semillas ornamentales ES/EU:</strong><br/>
+        Seeds Gallery (ES): semillas Digitalis, Aconitum, Ricinus<br/>
+        DutchGrown / Bakker Spalding: bulbos Colchicum, Convallaria<br/>
+        Plant World Seeds (UK): acónito, dedalera variedades raras<br/>
+        eBay Jardín: Brugmansia, plantas tropicales raras<br/>
+        Viveros locales: Adelfa, Tejo, Eléboro — mejor en persona para ver calidad
+      </InfoBoxX>
+    </div>
+  );
+}
+
 function BRUGMANSIA() {
   const c = TOXICAS_COLORS;
   return (
@@ -9358,6 +9506,19 @@ function BRUGMANSIA() {
       <SectionTitleX c={c} title="📜 Historia etnobotánica" />
       <StepX c={c} n="1" title="Uso andino chamánico" desc="Brugmansia ha sido usada durante milenios por chamanes andinos (curanderos) como planta de poder para diagnóstico y adivinación. El ritual requiere años de aprendizaje con guías experimentados. Muerte por uso sin guía = registrado en múltiples comunidades." />
       <StepX c={c} n="2" title="Extracción histórica de escopolamina" desc="Escopolamina aislada de Brugmansia y otras solanáceas. Usada médicamente como antiemético, parche transdérmico para mareo y (controvertidamente) como 'suero de la verdad' en interrogatorios. Extracción: proceso de laboratorio con solventes orgánicos — solo a nivel industrial o laboratorio controlado." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Fisostigmina IV — antídoto específico" desc="Inhibidor reversible de acetilcolinesterasa. Aumenta acetilcolina disponible → contrarresta el bloqueo muscarínico de los tropanos. Dosis: 0.5-2mg IV lento (adultos), bajo monitorización cardiaca. Contraindicado en asma, bradiarritmias, bloqueo AV. Solo en urgencias bajo supervisión médica." />
+      <StepX c={c} n="2" title="Manejo síndrome anticolinérgico" desc="Ambiente fresco (hipertermia = emergencia). Vía IV para hidratación y diazepam si convulsiones. Catéter urinario si retención. Benzodiazepinas para agitación severa (NO antipsicóticos — empeoran). Monitorización cardiaca continua. UCI si síntomas graves." />
+      <StepX c={c} n="3" title="Descontaminación" desc="Carbón activado (50g adultos) si ingestión reciente (<1h) y paciente consciente y sin convulsiones. Piel: lavado con agua y jabón abundante. NO inducir vómito — riesgo de aspiración + broncoespasmo con tropanos." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo detallado — paso a paso completo" />
+      <StepX c={c} n="1" title="Material de propagación" desc="Esqueje semileñoso 15-25cm cortado bajo un nudo. Retirar hojas inferiores, dejar 2-3 pares superiores. Aplicar hormona enraizante (AIB 0.3%) en el corte. Clavar en perlita húmeda o mezcla perlita+turba 1:1. Cubrir con bolsa plástica para mantener humedad (mini-invernadero). Raíces en 3-6 semanas a 22-25°C." />
+      <StepX c={c} n="2" title="Sustrato definitivo" desc="Mezcla: 40% tierra de jardín + 30% perlita + 20% mantillo maduro + 10% fibra de coco. pH 6-7. Macetón mínimo 25L para ejemplar de 1m+ (necesita suelo profundo para las raíces). Drenaje obligatorio." />
+      <StepX c={c} n="3" title="Fertilización y crecimiento" desc="Primavera-verano: NPK 10-10-10 cada 2 semanas + potasio extra (favorece floración). En floración: cambiar a fórmula con alto fósforo (10-30-10). Otoño-invierno: parar fertilización. La planta puede crecer 1-2m en primera temporada en BCN con cuidados óptimos." />
+      <StepX c={c} n="4" title="Floración" desc="Florece en verano, a veces también en otoño. Las trompetas duran 3-5 días individualmente pero se van renovando semanas. Para maximizar floración: poda suave post-floración (cortar justo sobre un par de hojas), fertilizante potásico. La fragancia nocturna puede ser intensa en espacio cerrado — ventilar." />
+      <StepX c={c} n="5" title="Invierno en BCN" desc="Exterior protegido: reducir riego al mínimo (solo para que no se seque la tierra). Puede perder hojas parcialmente — normal. Proteger de heladas con tela anti-helada si se prevén <0°C. Si hace >-2°C continuado: llevar dentro o a zona protegida. Rebrota vigorosamente en primavera." />
+      <StepX c={c} n="6" title="Plagas comunes" desc="Araña roja (típica verano seco): pulverizar con agua o jabón potásico. Pulgones en brotes tiernos: neem o jabón insecticida. Mosca blanca: trampas amarillas + neem. Generalmente resistente a enfermedades fúngicas si hay buen drenaje." />
     </div>
   );
 }
@@ -9390,6 +9551,17 @@ function ADELFA() {
       <SectionTitleX c={c} title="📜 Usos históricos y médicos" />
       <StepX c={c} n="1" title="Insecticida y raticida" desc="Históricamente usada como raticida y para matar pulgas. Extracto acuoso como insecticida de contacto en agricultura tradicional mediterránea." />
       <StepX c={c} n="2" title="Oleandrina en investigación" desc="Investigación oncológica activa: oleandrina muestra actividad antitumoral in vitro (inhibición proliferación) y propiedades antivirales. No hay tratamiento humano aprobado — aún en fase preclínica. El interés científico es real pero no justifica consumo." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Digifab — anticuerpos antidigitálicos" desc="DigiFab (fragmentos Fab antidigitálicos): se une a la oleandrina circulante → complejo inactivo excretado por riñón. Revertir intoxicación grave. Disponible en UCI hospitalaria. Dosis calculada según cantidad estimada ingerida y niveles séricos. También activo contra convalatoxina (Lirio del Valle) y convallótoxol." />
+      <StepX c={c} n="2" title="Soporte cardiaco hasta UCI" desc="Monitorización ECG continua desde llegada a urgencias. Bradicardia severa: atropina 0.5-1mg IV. Arritmias ventriculares: lidocaína o amiodarona (NO cardioversión eléctrica hasta dar Digifab — riesgo de precipitar fibrilación). Hipotensión: fluidos IV, vasopresores si necesario. Corregir hipokaliemia (la hipokaliemia empeora la toxicidad digitálica)." />
+      <StepX c={c} n="3" title="Descontaminación" desc="Carbón activado oral si ingestión reciente (<2h) y sin arritmias. NO inducir vómito — aumenta tono vagal y riesgo arrítmico. Lavado gástrico solo si ingestión masiva reciente (<30min) en urgencias." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="Variedades disponibles" desc="Nerium oleander variedades: flores simples (más rústicas) o dobles (más decorativas). Colores: blanco (Petite Blanc), rosa (Petite Pink), rojo (Cardinal Red), salmón (Luteum), amarillo (Calypso). Dobles: Emile Sahut (salmón), Mrs Roeding (rosa doble). Mismo perfil de toxicidad en todas." />
+      <StepX c={c} n="2" title="Propagación en casa" desc="Esqueje de 20-30cm cortado en verano. Meter el tallo en vaso con agua en ventana soleada. Raíces visibles en 3-5 semanas. Trasplantar cuando raíces tengan 3-5cm. Método más fácil de las plantas de esta guía." />
+      <StepX c={c} n="3" title="Suelo y riego" desc="Extremadamente resistente a suelo pobre, sequía y contaminación urbana. En maceta: sustrato universal con algo de arena. Riego: solo cuando la tierra esté seca (1-2 veces semana en verano, quincenal en invierno). Aguanta mejor la sequía que el encharcamiento." />
+      <StepX c={c} n="4" title="Poda y mantenimiento" desc="Poda en invierno o post-floración (septiembre). Cortar hasta 1/3 de los tallos — rebrota vigorosamente. Poda severa si está muy grande. SIEMPRE guantes y mascarilla (polvo del corte puede irritar). Limpiar tijeras con alcohol tras usar en adelfa." />
     </div>
   );
 }
@@ -9422,6 +9594,16 @@ function DEDALERA() {
       <SectionTitleX c={c} title="📜 Historia médica" />
       <StepX c={c} n="1" title="William Withering — 1785" desc="Médico inglés que sistematizó el uso de la dedalera en insuficiencia cardiaca (dropsy/hidropesía) tras observar remedios populares. Su monografía 'Account of the Foxglove' (1785) establece las bases de la farmacología moderna basada en plantas." />
       <StepX c={c} n="2" title="Extracción industrial" desc="Digoxina se extrae industrialmente de hojas de Digitalis lanata (especie más rica en digoxina). Proceso: extracción con etanol → purificación cromatográfica → cristalización. Los principios básicos son los mismos que se usan en síntesis orgánica — hojas frescas nunca se usan directamente por variabilidad de concentración." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Digifab — mismo antídoto que para adelfa" desc="Fragmentos anticuerpo antidigitálico activos contra digitoxina y digoxina. Cálculo de dosis: número de viales = (peso corporal en kg × concentración sérica estimada) / 100. Disponible en UCI. Revertir completamente si se administra pronto." />
+      <StepX c={c} n="2" title="Manejo urgencias" desc="ECG inmediato. Hipokaliemia frecuente y empeora la toxicidad — corregir con potasio IV lentamente. Bradicardia: atropina. Bloqueo AV: marcapasos externo temporal si refractario. Sin Digifab: evitar cardioversión eléctrica. Carbón activado si ingestión reciente." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="Ciclo bienal — planificación" desc="Año 1 (desde semilla sembrada en julio-agosto): roseta basal de hojas grandes aterciopeladas — sin flores. Año 2: espiga floral espectacular de 1-2m en mayo-julio. La planta muere tras florecer pero se auto-siembra agresivamente. Plantar nuevas semillas cada verano para tener flores cada año." />
+      <StepX c={c} n="2" title="Siembra y sustrato" desc="Semillas muy pequeñas — no cubrir con tierra, solo presionar sobre superficie húmeda de sustrato universal fino. Germinan en 2-3 semanas a 18-22°C. Trasplantar cuando tengan 3-4 hojas. Suelo ácido-neutro (pH 5.5-7), rico en humus, semisombra." />
+      <StepX c={c} n="3" title="Cuidados año 2" desc="Regar regularmente en primavera cuando empieza a subir. Tutor si la espiga se inclina con el viento (puede llegar a 2m). Fertilizar con N-P-K cada 3 semanas durante el crecimiento. Deadheading (cortar flores gastadas): prolonga floración." />
+      <StepX c={c} n="4" title="Auto-siembra" desc="Si se dejan algunas espigas sin cortar, la dedalera se siembra sola. Una planta puede generar 50-200 semillas. Al año siguiente aparecerán plántulas alrededor — elegir las más vigorosas y trasplantar. Método para perpetuar el cultivo sin comprar más semillas." />
     </div>
   );
 }
@@ -9455,6 +9637,17 @@ function ACONITO() {
       <SectionTitleX c={c} title="📜 Historia" />
       <StepX c={c} n="1" title="Wolfsbane — veneno de lobos" desc="Nombre vernáculo inglés 'wolfsbane' por su uso tradicional para envenenar cebos contra lobos y otros depredadores. 'Aconitum' puede derivar de Aconae (ciudad griega de Ponto) o de 'acontia' (dardos). Usado para envenenar flechas en Grecia, Roma y Asia Central." />
       <StepX c={c} n="2" title="Aconitina en medicina" desc="A dosis sub-tóxicas: analgésico tópico (preparaciones de farmacia homeopática — Aconitum 4CH, 9CH, etc.). También investigado como agente antiarrítmico paradójico. Hoy obsoleto en medicina convencional dada la ventana terapéutica ínfima." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Sin antídoto específico — soporte vital" desc="No existe antídoto para la aconitina. UCI con monitorización cardiaca continua. Arritmias ventriculares: amiodarona o flecainida (lidocaína menos efectiva para aconitina). Bradiarritmias severas: atropina IV. Marcapasos externo si bloqueo AV completo. ECMO (membrana extracorpórea) en casos de colapso cardiovascular — casos supervividos en China documentados." />
+      <StepX c={c} n="2" title="Descontaminación urgente" desc="Carbón activado (50g) oral si ingestión reciente (<30 min) — la aconitina se absorbe extremadamente rápido. Lavado gástrico en urgencias si <30min. Piel: lavar con agua y jabón inmediatamente — la absorción transdérmica es real aunque más lenta que la oral." />
+      <StepX c={c} n="3" title="Pronóstico" desc="Las primeras 6 horas son críticas. Si el paciente pasa las 6h en UCI estable: pronóstico generalmente favorable. Las muertes ocurren típicamente en las primeras 4-6h. Intoxicaciones por armas (flechas envenenadas en historia, crímenes documentados) por vía IV o IM son las más graves." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="División de tubérculos" desc="Método preferido para reproducir acónito establecido. En otoño: desenterrar el nabo-tubérculo cuando la planta está en reposo. Separar los tubérculos hijos (se forman lateralmente). Replantear inmediatamente a 20-30cm de profundidad. Cada tubérculo hijo = nueva planta en 2 años." />
+      <StepX c={c} n="2" title="Semillas — estratificación" desc="Semillas requieren estratificación fría: humedecer en papel húmedo + bolsa + nevera 4-8 semanas antes de sembrar. Sembrar en superficie de sustrato húmedo a 15-18°C. Germinación lenta (4-8 semanas). Plántulas delicadas — trasplantar cuando tengan 3+ hojas." />
+      <StepX c={c} n="3" title="Variedades ornamentales" desc="A. napellus (azul clásico). A. carmichaelii (azul intenso, florece en otoño — excelente para BCN). A. lycoctonum (amarillo, 'wolfsbane amarillo'). A. volubile (trepador, atípico). Las variedades de floración otoñal son más tolerantes al calor mediterráneo que las típicas de montaña." />
+      <StepX c={c} n="4" title="Manejo invierno y reposo" desc="Planta herbácea: muere hasta el suelo en otoño. Los tubérculos permanecen vivos bajo tierra. NO desenterrar ni tirar pensando que está muerta. Rebrota en primavera. En clima mediterráneo cálido: el reposo es más corto. Mulching (capa de compost) sobre los tubérculos en invierno." />
     </div>
   );
 }
@@ -9486,6 +9679,11 @@ function CICUTA() {
       <SectionTitleX c={c} title="🌱 Distribución y hábitat" />
       <StepX c={c} n="1" title="Terrenos alterados húmedos" desc="Bordes de caminos, riberas, campos abandonados, cunetas. No necesita cultivo — crece sola en toda España. Bienal: roseta año 1, florece año 2 en primavera-verano. Frutos redondeados costillados cuando madura." />
       <StepX c={c} n="2" title="Seguridad en campo" desc="Nunca recolectar umbelíferas silvestres sin identificación botánica experta. Lavar manos tras contacto (coniina se absorbe por piel en menor medida). Los animales en general la evitan por el olor — si el ganado está muerto cerca de una planta: cicuta." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Sin antídoto — ventilación mecánica" desc="No existe antídoto para coniina. La parálisis ascendente por bloqueo nicotínico puede llegar al diafragma → paro respiratorio manteniendo la conciencia (como describió Platón). Ventilación mecánica en UCI es el tratamiento. La toxina se metaboliza y elimina — con soporte respiratorio, el pronóstico puede ser bueno si no hay hipoxia prolongada." />
+      <StepX c={c} n="2" title="Soporte cardiaco y neurológico" desc="Monitorización ECG. Posible bradicardia por estimulación vagal. NO fisostigmina (ni anticolinesterásicos) — la coniina actúa en receptores nicotínicos, no muscarínicos. Benzodiazepinas si convulsiones. Calentamiento activo si hipotermia por parálisis muscular y falta de actividad." />
+      <StepX c={c} n="3" title="No cultivar — crece silvestre" desc="Conium maculatum crece espontáneamente y no se cultiva ornamentalmente. Esta sección es educativa. Conocerla es importante para NO confundirla con plantas comestibles al recolectar en el campo. La amenaza real es la identificación errónea, no el cultivo intencional." />
     </div>
   );
 }
@@ -9515,6 +9713,17 @@ function RICINO() {
       <StepX c={c} n="1" title="Crecimiento espectacular" desc="Planta tropical de crecimiento muy rápido. En BCN outdoor puede alcanzar 2-3m en una temporada. Hojas rojas o verdes según variedad — muy decorativas. Requiere sol pleno, riego moderado, sustrato bien drenado." />
       <StepX c={c} n="2" title="Semillas — etiquetado crítico" desc="Cuando los frutos maduran, las semillas son una amenaza especialmente para niños. OPCIONES: (a) eliminar frutos antes de madurar; (b) guardar semillas en recipiente etiquetado VENENO bajo llave; (c) no cultivar si hay niños pequeños. Los frutos espinosos son atractivos visualmente para niños." />
       <StepX c={c} n="3" title="Usos naturales no-tóxicos" desc="Aceite de ricino del fruto (siempre cold-pressed, sin calor): cosmético capilar, nutritivo cuero cabelludo. Cultivar para obtener aceite propio es posible pero complejo — prensado en frío requiere equipo específico para extraer sin generar calor." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Sin antídoto para ricina — soporte intensivo" desc="No existe antídoto aprobado para intoxicación por ricina. Investigación activa: anticuerpos monoclonales anti-ricina (en desarrollo militar/CBRN). Tratamiento: carbón activado si ingestión reciente, hidratación agresiva IV, soporte multiorgánico UCI. El daño es irreversible en células afectadas — la clave es evitar la absorción." />
+      <StepX c={c} n="2" title="Carbón activado — ventana estrecha" desc="Carbón activado (50g en 400ml agua) solo si ingestión reciente (<1h) y paciente consciente. La ricina se absorbe rápido — pasada 1h el carbón es menos efectivo. Provoca vómito abundante (puede expulsar parte de la ricina mecánicamente)." />
+      <StepX c={c} n="3" title="Vigilancia multiorgánica" desc="Hospitalización obligatoria 72h mínimo aunque síntomas sean leves al inicio — el daño por ricina se manifiesta con retraso. Análisis periódicos: hemograma, transaminasas, creatinina, coagulación. Hemodiálisis si fallo renal. El periodo 24-72h post-ingestión es el más crítico." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="Variedades decorativas" desc="Carmencita Red / Pink: hojas rojo-bronce intenso, muy ornamental. Impala: compacta (60-80cm), ideal para macetas. Zanzibar: gigante (3-4m en una temporada), verde brillante. New Zealand Purple: hojas morado-oscuro. Mismo perfil de toxicidad en todas." />
+      <StepX c={c} n="2" title="Siembra directa" desc="Semillas grandes — escarificar ligeramente con lija fina y remojar 24h en agua tibia para acelerar germinación. Sembrar directamente en maceta definitiva (no aguanta trasplante bien) a 1-2cm de profundidad. Germina en 7-14 días a 20-25°C. Una semilla por maceta de al menos 20L para ejemplar grande." />
+      <StepX c={c} n="3" title="Crecimiento rápido" desc="Crecimiento explosivo en verano: puede ganar 20-30cm/semana con calor, riego y fertilización. NPK equilibrado cada 2 semanas en temporada activa. Regar cuando la superficie esté seca. En maceta grande + sol + abono = espectacular en agosto." />
+      <StepX c={c} n="4" title="Gestión de semillas" desc="CRÍTICO: Si no quieres reproducción, eliminar cápsulas espinosas ANTES de que maduren y se abran (cuando aún están verdes). Si maduran: las semillas caen solas y germinan en tierra cercana. Semillas recolectadas: guardar en frasco cerrado etiquetado VENENO bajo llave." />
     </div>
   );
 }
@@ -9547,6 +9756,11 @@ function COLCHICO() {
       <SectionTitleX c={c} title="📜 Colchicina en ciencia" />
       <StepX c={c} n="1" title="Inducción de poliploidía" desc="Técnica estándar en mejora vegetal: tratar semillas/ápices con solución de colchicina al 0.1-0.5% bloquea la separación cromosómica durante una división → células con el doble de cromosomas (tetraploides). Así se obtienen variedades más grandes y vigorosas. Muchas variedades comerciales de sandía sin pepitas, fresa y otros son tetraploides inducidos con colchicina." />
       <StepX c={c} n="2" title="Tratamiento de la gota (con precaución)" desc="Colchicina (Colchicine Takeda, 0.5mg comprimido) es fármaco de primera línea para gota aguda. Dosis muy controladas — el margen entre dosis terapéutica y tóxica es estrecho. Jamás usar extractos caseros de cólquico para automedicarse la gota — la variabilidad de concentración haría imposible dosificar correctamente." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Sin antídoto — soporte hematológico" desc="No existe antídoto específico para colchicina. La ventana letal lenta (2-7 días) hace que muchos pacientes subestimen la gravedad inicial. Hospitalización obligatoria incluso si síntomas leves en las primeras horas. G-CSF (factor estimulante colonias granulocíticas) puede reducir la leucopenia severa. Trasplante de médula ósea en casos extremos." />
+      <StepX c={c} n="2" title="Carbón activado y lavado gástrico" desc="Si ingestión <1h: carbón activado oral. La colchicina tiene circulación enterohepática — carbón activado repetido cada 4-6h puede reducir la reabsorción intestinal. Hemoperfusión con carbón activado o hemodiálisis: eficacia limitada pero usados en casos graves." />
+      <StepX c={c} n="3" title="Vigilancia diferida obligatoria" desc="Analítica cada 12-24h los primeros 5 días: hemograma completo (leucocitos, plaquetas), transaminasas, creatinina, coagulación. El nadir de leucopenia ocurre típicamente día 4-7. Sepsis por leucopenia profunda = causa frecuente de muerte. Aislamiento protector en UCI hematológica." />
     </div>
   );
 }
@@ -9579,6 +9793,15 @@ function TEJO() {
       <SectionTitleX c={c} title="📜 Taxol y quimioterapia" />
       <StepX c={c} n="1" title="Descubrimiento del paclitaxel" desc="1960s: programa de screening de plantas del NCI (EEUU). Corteza de Taxus brevifolia (tejo del Pacífico) muestra actividad antitumoral. 1971: Wani et al. aíslan paclitaxel. Mecanismo único: estabiliza microtúbulos (opuesto a la colchicina) → impide división celular. Aprobado FDA 1992 para cáncer ovario." />
       <StepX c={c} n="2" title="Obtención industrial" desc="Inicialmente de corteza (sacrificaba el árbol). Crisis de suministro en 90s → síntesis semisintética desde 10-deacetilbacatina III (hoja de Taxus baccata, no destruye el árbol). Hoy también síntesis total. El tejo europeo (T. baccata) es fuente sostenible de precursores." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Sin antídoto — UCI cardiaca urgente" desc="No hay antídoto para taxinas. La toxicidad cardiaca puede ser rápida — horas desde ingestión. UCI cardiológica. Arritmias: amiodarona, lidocaína. Bloqueo AV: marcapasos externo urgente. ECMO si colapso cardiovascular. Carbón activado si ingestión reciente (<1h)." />
+      <StepX c={c} n="2" title="Semillas vs arilo — urgencias diferenciales" desc="Si niño comió solo el arilo rojo SIN mascar la semilla: bajo riesgo, monitorizar síntomas 4h. Si masticó la semilla: urgencias inmediato independientemente de cantidad. Si ingestión de hojas o ramas: urgencias. Las hojas secas de poda siguen siendo tóxicas — no dejar al alcance de caballos o ganado." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="Topiaria y setos" desc="Taxus baccata es el árbol de topiaria por excelencia en jardinería clásica europea. Aguanta poda intensa sin problema. Para setos: plantar a 50-80cm de separación. Para formas topiaria (bolas, espirales, pirámides): necesita 10+ años para forma definida. Tolera sombra casi completa — único árbol ornamental de hoja perenne que aguanta bajo dosel." />
+      <StepX c={c} n="2" title="Estratificación de semillas" desc="Semillas necesitan doble estratificación: (1) 3 meses cálida-húmeda + (2) 3-4 meses fría. Total ~6 meses antes de germinar. En práctica: sembrar en otoño al exterior en maceta, esperar primavera del año siguiente. Esqueje semileñoso otoño: más rápido, enraíza en 3-6 meses con hormona enraizante." />
+      <StepX c={c} n="3" title="Crecimiento y longevidad" desc="5-10cm/año de altura. Lo que parece un crecimiento lento se convierte en un árbol extraordinario con décadas. Tejo de 20 años: árbol de 2-3m bien formado. De 100 años: árbol imponente. Muy longevo en la propiedad — plantar con intención de perdurar generaciones." />
     </div>
   );
 }
@@ -9599,6 +9822,11 @@ function FAQ_TOXICAS() {
     { q: "¿El tejo es el árbol más longevo de Europa?", a: "Es candidato firme. El Tejo de Fortingall (Escocia) se estima con 2000-5000 años. El Tejo del Valle del Genar (España) también milenario. La longevidad extrema del tejo se relaciona con su metabolismo lento y capacidad de regenerar desde la base tras incendios. Símbolo de inmortalidad en tradición celta." },
     { q: "¿Puedo cultivar colchico si tengo un huerto de cebollas cerca?", a: "Riesgo serio. Los cormos de Colchicum se parecen a cebollas pequeñas. Las hojas en primavera se parecen a Allium silvestre. Separa físicamente (valla, zona diferente del jardín) y etiqueta claramente. Nunca confundas ni coloques donde alguien los pueda cosechar sin saber." },
     { q: "¿Para qué se usan realmente estas plantas hoy?", a: "Dedalera → digoxina (cardiología). Tejo → paclitaxel/taxol (quimioterapia cáncer). Cólquico → colchicina (gota, fiebre mediterránea). Brugmansia/solanáceas → escopolamina (parche antimareo, midriasis oftalmológica). Acónito → preparados homeopáticos (dosis ultra-diluidas). Ricino → aceite medicinal/industrial. Adelfa → investigación antitumoral. La farmacología moderna nació literalmente de estas plantas." },
+    { q: "¿El curare solo funciona con flechas o también por ingestión?", a: "El curare (tubocurarina) NO se absorbe por vía oral — se degrada en el tracto digestivo. Solo es efectivo por vía parenteral (inyección, flecha que penetra la piel). Por eso los cazadores amazónicos podían comer tranquilamente la carne del animal cazado con flecha envenenada. En medicina: los derivados del curare (pancuronio, vecuronio, cisatracurio) se administran por vía intravenosa en quirófano." },
+    { q: "¿Qué diferencia hay entre la parálisis del curare y la de la cicuta?", a: "Curare (tubocurarina): bloquea nAChR postsináptico en placa neuromuscular → parálisis flácida. Conciencia intacta. Sin convulsiones. Coniina (cicuta): bloqueo parcial nAChR también → parálisis ascendente. Ambas matan por insuficiencia respiratoria cuando llega al diafragma. Diferencia clave: el curare actúa rápido (minutos) y solo si entra al torrente sanguíneo. La cicuta actúa por ingestión." },
+    { q: "¿La estricnina produce convulsiones pero no parálisis — por qué?", a: "Mecanismo opuesto al curare. La estricnina bloquea los receptores de glicina (neurotransmisor INHIBITORIO espinal) → hiperexcitabilidad → cada estímulo dispara contracción masiva de todos los músculos. No es parálisis sino tetania convulsiva. El resultado final (muerte por insuficiencia respiratoria) es similar, pero el proceso es radicalmente diferente: el cuerpo se contrae en lugar de relajarse." },
+    { q: "¿La fisostigmina es veneno o antídoto?", a: "Ambas cosas. Como veneno: inhibe acetilcolinesterasa → exceso de acetilcolina → síndrome colinérgico (sudoración, diarrea, broncoespasmo, convulsiones, parálisis). Como antídoto: a dosis médicas precisas, revierte el síndrome anticolinérgico causado por tropanos (Brugmansia, Datura) aumentando la acetilcolina disponible para competir con los alcaloides tropánicos. La misma molécula, dosis opuestas, efectos opuestos." },
+    { q: "¿Qué plantas paralizantes están representadas en esta guía?", a: "Parálisis flácida por bloqueo nAChR: Curare (tubocurarina, acción rápida parenteral) y Cicuta (coniina, oral). Tetania por bloqueo receptor glicina: Nuez vómica (estricnina). Parálisis + efectos muscarínicos por inhibición AChE: Calabar bean (fisostigmina). Otros efectos 'paralizantes' (cardiacos): acónito (bloqueo Na+), dedalera/adelfa/tejo/lirio del valle (glucósidos cardiacos)." },
   ];
 
   const filtered = faqs.filter(f =>
@@ -9705,6 +9933,15 @@ function LIRIO_VALLE() {
       <SectionTitleX c={c} title="📜 Historia y cultura" />
       <StepX c={c} n="1" title="1 de mayo en Francia" desc="Regalar lirios del valle el 1 de mayo es tradición francesa (día de la suerte). El 1 de mayo de 1561, el rey Carlos IX recibió un ramo y desde entonces regaló muguet cada año a las damas de la corte. Hoy: millones de manojos vendidos ese día." />
       <StepX c={c} n="2" title="Convalatoxina en investigación" desc="Investigación reciente sugiere que la convalatoxina tiene actividad antitumoral (inhibición topoisomerasa) y antiviral. También se ha explorado como alternativa a la digoxina en insuficiencia cardiaca. No hay preparado farmacológico aprobado actualmente." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Digifab — anticuerpos antidigitálicos" desc="La convalatoxina comparte mecanismo con la digoxina (inhibición Na+/K+-ATPasa). Digifab (fragmentos Fab) puede neutralizarla en casos graves, aunque la dosificación es menos precisa que para digoxina por falta de inmunoensayo específico. Disponible en UCI. Uso empírico en intoxicaciones graves con arritmias." />
+      <StepX c={c} n="2" title="Urgencias inmediato — incluso agua del jarrón" desc="Si alguien bebió el agua del jarrón donde estaban las flores: urgencias. La concentración puede ser suficiente para síntomas cardiacos. ECG inmediato. Monitorización 12-24h. Carbón activado si ingestión reciente. Especial atención en niños — los frutos rojos de otoño son muy atractivos." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental completo" />
+      <StepX c={c} n="1" title="Rizoma y división" desc="Se propaga por división de rizomas en otoño o post-floración. Desenterrar el rizoma horizontal, separar con cuchillo limpio en secciones con al menos 1 yema cada una. Replantear a 5cm profundidad en zona de sombra con suelo húmedo y rico. Una mata se convierte en colonia densa en 3-5 años." />
+      <StepX c={c} n="2" title="Forzado para flor interior" desc="Los rizomas se pueden 'forzar' para florecer en interior en Navidad: sacar de tierra en noviembre, meter en maceta con sustrato, llevar a interior cálido (18-20°C) con luz indirecta. Florecen en 3-6 semanas. CUIDADO: el agua del plato bajo la maceta también contiene toxinas." />
+      <StepX c={c} n="3" title="BCN — dificultad" desc="Convallaria prefiere climas fríos y húmedos. En BCN: solo viable en zona norte del jardín con sombra + riego frecuente + suelo muy enmendado con compost. El calor estival mediterráneo es el mayor problema. Puede sobrevivir pero no proliferará como en norte de España o climas atlánticos." />
     </div>
   );
 }
@@ -9735,6 +9972,15 @@ function ELEBORO() {
       <SectionTitleX c={c} title="📜 Eléboro en la historia" />
       <StepX c={c} n="1" title="Cura de la locura en la antigüedad" desc="El eléboro negro fue el tratamiento estándar de la 'melancolía' (depresión) y 'manía' (psicosis) en Grecia clásica y Roma. Hipócrates lo prescribía. El santuario de Asclepio en Anticira (Grecia) era famoso por sus curas de eléboro — 'ir a Anticira' = ser tratado de locura. La cura consistía en purgas violentas que supuestamente expulsaban los humores malos." />
       <StepX c={c} n="2" title="Veneno de flechas y guerra química" desc="En la Primera Guerra Sagrada (595 a.C.), los atenienses envenenaron el suministro de agua de Cirra con raíz de eléboro — uno de los primeros usos documentados de guerra química/biológica. Las tropas de Cirra sufrieron diarrea masiva." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Descontaminación digestiva y cutánea" desc="Ingestión: carbón activado si reciente. Piel: lavado abundante con agua (savia vesicante). Ojos: irrigación ocular urgente 15-20 min con suero fisiológico → oftalmólogo. Síntomas GI: antieméticos, hidratación IV. Arritmias: soporte cardiaco. Sin antídoto específico." />
+      <StepX c={c} n="2" title="Dermatitis por savia" desc="La savia irrita mucosas y puede causar ampollas en piel sensible. Si exposición cutánea: lavar inmediatamente con agua y jabón. Si ampollas: NO reventar, cubrir con apósito limpio y urgencias dermatológicas. Contaminación ocular: lavar abundantemente y urgencias oftalmológicas — riesgo de lesión corneal." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental — Helleborus" />
+      <StepX c={c} n="1" title="Variedades más cultivadas" desc="H. orientalis (Helleborus orientalis hybrids): las más fáciles y disponibles. Flores en todos los colores (blanco, rosa, rojo, negro-morado, manchadas). Perenne robusta. H. niger (rosa de Navidad): flores blancas diciembre-enero. H. foetidus: hojas muy divididas, flores verde-amarillas, olor desagradable pero muy resistente." />
+      <StepX c={c} n="2" title="Multiplicación por semillas' propias" desc="H. orientalis hibrida se reproduce fácilmente por semilla, aunque no mantiene características exactas del padre (variedades cruzadas). Sembrar semillas FRESCAS (recién recogidas julio-agosto) directamente en exterior — estratificación natural en invierno, germina en primavera. Si se esperan mucho tiempo, la semilla pierde viabilidad." />
+      <StepX c={c} n="3" title="Cuidados generales" desc="Poca agua en verano (semidormante). Fertilización con abono lento-liberación en primavera. Cortar hojas viejas en enero para que se vean mejor las flores. Proteger de babosas/caracoles (devoran plantas jóvenes). Muy longeva — un eléboro establecido puede vivir 20+ años." />
     </div>
   );
 }
@@ -9764,6 +10010,11 @@ function VERATRUM() {
 
       <SectionTitleX c={c} title="🌱 Hábitat y distribución" />
       <StepX c={c} n="1" title="Prados alpinos húmedos" desc="Especie de alta montaña: prados subalpinos y alpinos húmedos, laderas norte. Pirineos (500-2400m), Cordillera Cantábrica. No cultivada habitualmente — aparece en jardines alpinos de especialidad. Fotografiar en hábitat natural = OK. Recolectar sin expertise botánico = peligroso." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Atropina para bradicardia + soporte" desc="Bradicardia severa por reflejo Bezold-Jarisch: atropina IV 0.5-2mg. Hipotensión: posición Trendelenburg + fluidos IV. Náuseas/vómitos (síntoma más precoz y frecuente): antieméticos IV. Sin antídoto específico para protoveratrina. UCI con monitorización cardiaca continua." />
+      <StepX c={c} n="2" title="Carbón activado urgente" desc="Ingestión reciente (<1h): carbón activado 50g oral. Lavado gástrico si ingestión masiva (<30min). La protoveratrina se absorbe rápidamente — el tiempo importa. Identificación botánica de la planta implicada es esencial para el médico: Veratrum vs Gentiana vs especie desconocida." />
+      <StepX c={c} n="3" title="Confusión genciana → intoxicación accidental" desc="Vigilar en zonas de montaña cuando alguien prepara bebidas con 'genciana silvestre': Enzian (licor austriaco), infusiones digestivas de montaña. Si persona de montaña presenta vómitos + bradicardia tras consumir preparado de 'genciana': sospechar Veratrum. Urgencias con muestra de la planta usada." />
     </div>
   );
 }
@@ -9791,6 +10042,122 @@ function LAUREOLA() {
       <SectionTitleX c={c} title="🌱 Cultivo ornamental" />
       <StepX c={c} n="1" title="Valor ornamental — peligro oculto" desc="D. mezereum: muy ornamental (flores en invierno, fragrantes, en ramas sin hojas). D. laureola: sombra densa, hojas perennes verde brillante. Vendidas en viveros como ornamentales. Comprador frecuentemente no sabe de la toxicidad. Pedir siempre información al vivero sobre toxicidad de plantas compradas." />
       <StepX c={c} n="2" title="Condiciones de cultivo" desc="Suelo calizo bien drenado. D. laureola: sombra o semisombra, resistente. D. mezereum: semisombra, más exigente en humedad. Crecimiento lento. GUANTES siempre al podar/trasplantar." />
+      <StepX c={c} n="3" title="Propagación desde semillas" desc="Daphne mezereum: semillas maduras (bayas) en julio-agosto. Limpiar la pulpa con guantes. Estratificación cálida 3 meses + fría 3 meses antes de germinar. Alternativa: esquejes semileñosos en verano con hormona enraizante. Daphne en general es difícil de enraizar — paciencia." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Lavado gastro-intestinal y soporte" desc="Ingestión: carbón activado si reciente. Lavado gástrico solo si ingestión masiva reciente (<30min). El ardor bucal inmediato suele disuadir la ingestión masiva, pero en niños pequeños puede no ser suficiente. Hidratación IV agresiva. Protección renal y hepática. Sin antídoto específico." />
+      <StepX c={c} n="2" title="Lesiones cutáneas" desc="Contacto con savia: lavado inmediato agua abundante. Ampollas (vesículas): NO reventar, apósitos limpios, urgencias dermatológicas. Ojos: irrigación inmediata 15+ min y urgencias oftalmológicas — la savia puede causar lesión corneal severa." />
+      <StepX c={c} n="3" title="Mezerein en investigación" desc="Mezerein: activador de proteína quinasa C — ha sido estudiado como agente antileucémico (paradójicamente, el promotor tumoral en bajas dosis puede inducir diferenciación en células leucémicas). Solo en contexto de investigación oncológica controlada. No hay aplicación clínica actual." />
+    </div>
+  );
+}
+
+// ============================================================
+//  PLANTAS PARALIZANTES — Curare, Estricnina, Calabar bean
+// ============================================================
+
+function CURARE() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        Curare — veneno de flechas amazónico preparado de múltiples plantas, principalmente <em>Strychnos toxifera</em> y <em>Chondrodendron tomentosum</em>. El compuesto activo tubocurarina bloquea los receptores nicotínicos de acetilcolina en la unión neuromuscular → parálisis flácida total manteniendo la conciencia. Ha salvado millones de vidas: hoy se usan relajantes musculares derivados en cirugía y anestesiología.
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Tipo de parálisis" value="Flácida completa — conciencia preservada. Paro respiratorio" />
+        <StatBoxX c={c} label="🌿 Fuentes" value="Strychnos toxifera, Chondrodendron tomentosum, otras Menispermáceas amazónicas" />
+        <StatBoxX c={c} label="📍 Origen" value="Amazonia (Venezuela, Ecuador, Perú, Colombia). Preparado por chamanes." />
+        <StatBoxX c={c} label="💉 Uso médico" value="Tubocurarina → pancuronio, vecuronio, cisatracurio: relajantes musculares cirugía/anestesia" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Mecanismo — el veneno que salvó vidas" />
+      <StepX c={c} n="1" title="Bloqueo nAChR neuromuscular" desc="Tubocurarina compite con la acetilcolina por los receptores nicotínicos (nAChR) de la placa motora. Sin activación del nAChR: el músculo no se contrae → parálisis flácida. Efecto progresivo: músculos pequeños primero (párpados, dedos), músculos grandes después, diafragma al final → paro respiratorio. La conciencia se MANTIENE completamente — la víctima está consciente pero incapaz de moverse o respirar." />
+      <StepX c={c} n="2" title="Solo por vía parenteral" desc="La tubocurarina NO se absorbe por vía oral — se degrada en el tracto digestivo. El curare solo es tóxico si entra al torrente sanguíneo directamente: flecha (barba de palmera o bambú untada con el preparado), herida, IV. Por eso los cazadores amazónicos podían comer la carne del animal cazado con flechas envenenadas." />
+      <StepX c={c} n="3" title="Preparación tradicional" desc="El 'urari' o 'woorali' es preparado de múltiples plantas — fórmulas secretas de cada grupo étnico (Tucano, Macuna, Waorani). Base: corteza de Strychnos toxifera (contiene toxiferina) y/o rizomas de Chondrodendron tomentosum (contiene d-tubocurarina). Hervido durante horas en ollas de barro hasta obtener pasta pegajosa negra. Conservado en calabazas (curare 'calabash') o tubos de bambú." />
+      <StepX c={c} n="4" title="Potencia específica" desc="El curare de los Waorani de Ecuador (yopo negro) es considerado de los más potentes: 3-5 minutos para parálisis completa en animales de caza medianos (tapir, mono). Caza de animales de dosel arborícola con cerbatana (bodoquera): alcance 30-40m, silencioso, eficaz." />
+
+      <SectionTitleX c={c} title="💊 Revolución médica — relajantes musculares" />
+      <StepX c={c} n="1" title="1942 — Harold Griffith y la anestesia moderna" desc="En 1942, Harold Griffith (Montreal) usa por primera vez tubocurarina purificada en cirugía. El resultado fue revolucionario: cirujanos podían operar con anestesia superficial (menos riesgo), músculos relajados completamente, ventilación controlada. Antes de curare: la anestesia profunda necesaria para relajar músculos era muy peligrosa." />
+      <StepX c={c} n="2" title="De veneno a fármaco" desc="Tubocurarina (Intocostrin, 1942). Pancuronio (1967). Vecuronio (1980). Cisatracurio (1995). Rocuronio (1994, reversible con sugammadex). Todos son bloqueantes neuromusculares no despolarizantes derivados conceptualmente del curare. Hoy se usan en cada intubación endotraqueal, cada operación abdominal mayor, cada UCI con ventilación mecánica. El veneno de flecha amazónico es uno de los fármacos más utilizados en medicina moderna." />
+      <StepX c={c} n="3" title="Sugammadex — antídoto específico" desc="Rocuronio y vecuronio tienen antídoto moderno: sugammadex (Bridion). Molécula cíclica que 'atrapa' el bloqueante neuromuscular → revertir parálisis en 2-3 minutos. Un hito farmacológico — el primer antídoto de encapsulamiento molecular aprobado. Disponible en todos los quirófanos modernos." />
+
+      <SectionTitleX c={c} title="🌱 Plantas fuente — cultivo e identificación" />
+      <StepX c={c} n="1" title="Strychnos toxifera — liana amazónica" desc="Liana de selva tropical amazónica. Hojas opuestas ovales, espinas circinadas (zarcillos en espiral). Fruto baya esférica 5-8cm. Misma familia (Loganiáceas) que Strychnos nux-vomica (nuez vómica). Cultivo: solo viable en invernadero tropical húmedo (no práctico en España). Planta de jardín botánico o colección especializada." />
+      <StepX c={c} n="2" title="Chondrodendron tomentosum — liana menispermácea" desc="Liana de Andes tropicales occidentales (Ecuador, Perú). Hojas grandes ovales con pelusa tomentosa (de ahí 'tomentosum'). Fuente de d-tubocurarina. Cultivo tropical, no viable en condiciones europeas normales. Se puede encontrar en jardines botánicos tropicales y colecciones especializadas de etnobotánica." />
+
+      <SectionTitleX c={c} title="🚨 Antídoto específico" />
+      <StepX c={c} n="1" title="Ventilación mecánica + neostigmina" desc="Para tubocurarina y bloqueantes no despolarizantes similares: neostigmina (inhibidor AChE) revierte parcialmente el bloqueo aumentando la acetilcolina disponible. Para rocuronio/vecuronio: sugammadex es el antídoto de elección (más completo y rápido). Mientras tanto: ventilación manual/mecánica OBLIGATORIA." />
+      <StepX c={c} n="2" title="Parálisis con conciencia — clave psicológica" desc="La víctima de curare está plenamente consciente y puede oír y entender pero no moverse ni pedir ayuda. Esto fue documentado en experimentos voluntarios (pioneros médicos del siglo XIX se dejaron inyectar tubocurarina en hospitales). La muerte por curare sin tratamiento es por asfixia, consciente. El aspecto psicológico es parte del impacto del veneno en contextos de caza ritual." />
+    </div>
+  );
+}
+
+function NUEZ_VOMICA() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <em>Strychnos nux-vomica</em> — Nuez vómica, Falso Ashoka. Árbol tropical asiático. Sus semillas contienen estricnina, uno de los venenos más dramáticos conocidos: produce convulsiones tetánicas espectaculares manteniendo la conciencia. A dosis bajas: estimulante del SNC con efectos curiosos. Ha sido veneno de ratas, adulterate de drogas y tema de novelas policiacas (Agatha Christie, Arthur Conan Doyle).
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="TIER ROJO MAX — estricnina. DL50 ~1-2mg/kg oral. Tetania convulsiva" />
+        <StatBoxX c={c} label="🌳 Planta" value="Árbol 12-15m. Hojas brillantes ovales. Bayas naranja-amarillas con semillas grises" />
+        <StatBoxX c={c} label="📍 Origen" value="Asia tropical (India, Sri Lanka, SE Asia). Cultivado en zonas tropicales" />
+        <StatBoxX c={c} label="⚡ Mecanismo" value="Antagonista glicina (receptor inhibitorio espinal) → hiperexcitabilidad → convulsiones tetánicas" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Toxicología — la tetania convulsiva" />
+      <StepX c={c} n="1" title="Bloqueo de receptores de glicina" desc="Estricnina bloquea los receptores de glicina en la médula espinal y tronco encefálico. La glicina es el neurotransmisor inhibitorio principal de las motoneuronas espinales. Sin inhibición: cualquier estímulo sensorial (luz, sonido, tacto) dispara una descarga motora masiva → contracción simultánea de todos los músculos (agonistas y antagonistas). Resultado: opistótonos (arco hacia atrás), trismus (mandíbula bloqueada), risa sardónica." />
+      <StepX c={c} n="2" title="Conciencia completamente preservada" desc="La estricnina NO afecta centros superiores cerebrales. La víctima está completamente lúcida durante los episodios convulsivos — oye, ve, piensa, recuerda. Las convulsiones duran 30 segundos a 2 minutos cada una, con intervalos de relajación. Muerte por fatiga muscular → insuficiencia respiratoria o hipoxia durante las convulsiones." />
+      <StepX c={c} n="3" title="DL50 y síntomas" desc="DL50 humana estimada: 1-2mg/kg oral. Inicio síntomas: 15-30 minutos post-ingestión. Primer síntoma: hiperreflexia (reflejos hiperactivos), rigidez cervical. Las convulsiones se desencadenan por cualquier estímulo. Entre episodios: cianosis, acidosis metabólica por contracciones masivas. Sin tratamiento: muerte en 2-3h." />
+      <StepX c={c} n="4" title="Historia como veneno clásico" desc="Veneno de ratas (Rattenkonig en alemán): estricnina fue el raticida más común del siglo XIX-XX antes de warfarina. Adulterante de cocaína, heroína y otras drogas (aumenta el efecto estimulante a bajas dosis). Christie y Conan Doyle lo usaron en sus novelas. Nux vomica era también medicamento homeopático (Nux vomica 9CH) — 'para digestión pesada'." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo ornamental (climas tropicales)" />
+      <StepX c={c} n="1" title="Árbol tropical — no para España continental" desc="S. nux-vomica es árbol de bosque tropical caducifolio (India, Sri Lanka). Requiere temperatura >18°C todo el año, sin heladas. Viable solo en Canarias (subtropical) o invernadero climatizado. Árbol grande (12-15m) — no práctico en interiores. Interés principalmente colección botánica o jardín tropical de gran tamaño." />
+      <StepX c={c} n="2" title="Germinar semillas" desc="Semillas de las bayas naranja (limpiar bien la pulpa con guantes). Escarificación mecánica + remojo 24h. Sustrato caliente (25-30°C) + humedad alta. Germinación en 3-6 semanas. Crecimiento lento los primeros años. Las semillas son las más tóxicas — manipular con guantes de nitrilo." />
+
+      <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
+      <StepX c={c} n="1" title="Benzodiacepinas — controlar convulsiones" desc="Diazepam IV o midazolam: primera línea para controlar las convulsiones. Mecanismo: potencian receptores GABA-A → compensan parcialmente la falta de inhibición glicinérgica. Dosis altas pueden ser necesarias. Si refractario: propofol o barbitúricos en UCI." />
+      <StepX c={c} n="2" title="Ambiente silencioso y oscuro" desc="CRÍTICO: minimizar estimulación sensorial para prevenir disparar nuevas convulsiones. Habitación oscura y silenciosa. Manipulación mínima. Evitar luces brillantes, ruidos, tacto no necesario. Antes de llegar al hospital: mantener al paciente tranquilo, minimizar estímulos." />
+      <StepX c={c} n="3" title="Carbón activado y ventilación" desc="Carbón activado si ingestión reciente (<30min). Ventilación mecánica si convulsiones no controladas o hipoxia. Lavado gástrico solo en condiciones controladas con paciente sedado y tubo endotraqueal (riesgo de desencadenar convulsiones con el procedimiento). Acidosis metabólica: bicarbonato IV." />
+    </div>
+  );
+}
+
+function CALABAR_BEAN() {
+  const c = TOXICAS_COLORS;
+  return (
+    <div>
+      <InfoBoxX c={c}>
+        <em>Physostigma venenosum</em> — Calabar bean, Judía de Calabar, Haba del Ordalia. Leguminosa africana usada en el siglo XIX como 'ordalia' (juicio divino) en Nigeria: el acusado bebía extracto y si sobrevivía era inocente. Su compuesto activo, la fisostigmina, es hoy medicamento fundamental en anestesiología, oftalmología y como antídoto para intoxicaciones por anticolinérgicos (tropanos).
+      </InfoBoxX>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="☠️ Toxicidad" value="Alta — fisostigmina. Convulsiones, bradicardia, broncoespasmo, parálisis" />
+        <StatBoxX c={c} label="🌿 Planta" value="Enredadera perenne. Semillas grandes marrón-rojizas. Vaina legumbre 15-17cm" />
+        <StatBoxX c={c} label="📍 Origen" value="Golfo de Guinea, Nigeria. Ecosistemas de manglares tropicales" />
+        <StatBoxX c={c} label="💊 Uso médico" value="Fisostigmina: antídoto tropanos, glaucoma (colirios), Alzheimer leve (investigación)" />
+      </div>
+
+      <SectionTitleX c={c} title="🧬 Mecanismo — inhibición acetilcolinesterasa" />
+      <StepX c={c} n="1" title="Fisostigmina — inhibidor reversible AChE" desc="Inhibe la acetilcolinesterasa (enzima que degrada acetilcolina). Resultado: acumulación de acetilcolina en todas las sinapsis colinérgicas. A dosis bajas: miosis, bradicardia, broncoconstricción, sialorrea, aumento motilidad intestinal (efectos muscarínicos). A dosis tóxicas: fase muscarínica + nicotínica (fasciculaciones musculares, debilidad, parálisis) + SNC (convulsiones, coma). La fisostigmina cruza la barrera hematoencefálica (a diferencia del neostigmina)." />
+      <StepX c={c} n="2" title="La ordalia de Calabar" desc="Práctica judicial en Calabar (Nigeria): el acusado bebía una dosis alta de decocción de la semilla. Si vomitaba o sobrevivía = inocente (el vómito expulsaba la toxina). Si moría = culpable. Paradoja: quien no había cometido el crimen bebía con confianza despacio (absorbiendo más toxina → muerte más probable). Quien sí era culpable bebía rápido con ansiedad → vomitaba más → sobrevivía. La dosis y velocidad de ingesta determinaban el resultado." />
+      <StepX c={c} n="3" title="Fisostigmina vs neostigmina" desc="Fisostigmina: penetra barrera hematoencefálica → efectos SNC (antídoto para síndromes anticolinérgicos centrales). Neostigmina: NO penetra BHE → solo efectos periféricos (reversión relajantes musculares en quirófano, tratamiento miastenia gravis). Esta diferencia es crítica en medicina." />
+
+      <SectionTitleX c={c} title="💊 Fisostigmina en medicina moderna" />
+      <StepX c={c} n="1" title="Antídoto síndrome anticolinérgico" desc="Fisostigmina IV: antídoto de elección para intoxicaciones graves por tropanos (Brugmansia, Datura, Belladona, Estramonio). 1-2mg IV lento → revertir delirio, taquicardia, retención urinaria. La 'haba del ordalia' cura el envenenamiento por 'hierbas de brujas' — poética ironía etnobotánica." />
+      <StepX c={c} n="2" title="Glaucoma — colirios históricos" desc="Primeros colirios para glaucoma en siglo XIX: extracto de Physostigma venenosum. La miosis (constricción pupilar) reduce la presión intraocular. Hoy reemplazado por pilocarpina sintética y análogos de prostaglandinas más seguros, pero abrió el campo de la farmacología oftalmológica." />
+      <StepX c={c} n="3" title="Alzheimer — eserina e inhibidores AChE" desc="La fisostigmina (también llamada eserina) fue el primer inhibidor AChE estudiado para Alzheimer (años 80). Demostró que aumentar acetilcolina mejoraba la cognición. Llevó directamente al desarrollo de donepezilo (Aricept), rivastigmina (Exelon) y galantamina — los medicamentos para Alzheimer leve-moderado actuales." />
+
+      <SectionTitleX c={c} title="🌱 Cultivo — liana tropical" />
+      <StepX c={c} n="1" title="Enredadera tropical húmeda" desc="Physostigma venenosum crece en ecosistemas de manglares y selva tropical húmeda (Golfo de Guinea). Requiere temperatura constante >20°C, humedad alta, mucha lluvia. NO viable en España continental. Posible en invernadero tropical especializado. Semillas germinan bien en condiciones cálidas y húmedas en 2-3 semanas." />
+      <StepX c={c} n="2" title="Identificación semillas" desc="Semillas (habas de Calabar): ovoides, marrón-rojizas, 2-3cm, con una hendidura longitudinal prominente. Las semillas son las más utilizadas en experimentos etnobotánicos documentados. Extractos no deben intentarse — la fisostigmina tiene margen terapéutico estrecho." />
+
+      <SectionTitleX c={c} title="🚨 Antídoto y tratamiento" />
+      <StepX c={c} n="1" title="Atropina — antagonista muscarínico" desc="Atropina IV: contrarresta los efectos muscarínicos (broncoespasmo, bradicardia, secreciones). Dosis: 2-4mg IV iniciales, repetir según síntomas. Para los efectos nicotínicos periféricos (fasiculaciones, parálisis): no hay antídoto específico — ventilación mecánica si necesario." />
+      <StepX c={c} n="2" title="Pralidoxima — regenera AChE si llega a tiempo" desc="Pralidoxima (2-PAM): regenera la acetilcolinesterasa inhibida si se administra en las primeras horas. Estándar en intoxicaciones por organofosforados (pesticidas) y gases nerviosos que tienen mecanismo similar. Útil también en sobredosis grave de fisostigmina u otros inhibidores AChE. Disponible en hospitales referencia." />
     </div>
   );
 }
@@ -9817,6 +10184,13 @@ function GLOSARIO_TOXICAS() {
     { t: "Solanáceas", d: "Familia botánica: tomates, patatas, pimientos (comestibles) + Datura, Belladona, Mandrágora, Brugmansia, Estramonio (tóxicas). Las comestibles también contienen solanina (hojas verdes de tomate/patata = leve toxicidad)." },
     { t: "Alkaloid screening (rápido)", d: "Teste de Dragendorff: ácido tartárico + bismuto + yoduro potásico — presencia de alcaloides = precipitado naranja-rojo. Disponible como kit en laboratorios de química. Útil para identificación rápida de presencia alcaloidea en planta desconocida." },
     { t: "Identificación botánica segura", d: "Proceso de 4 pasos: (1) Foto planta completa (hábitat, tamaño). (2) Foto hoja (haz, envés, base, ápice, bordes). (3) Foto flor o fruto. (4) Foto tallo (sólido/hueco, manchas, sección). Subir a Flora Vascular España, iNaturalist, o r/whatsthisplant para identificación experta. NUNCA consumir planta no identificada 100%." },
+    { t: "Tubocurarina", d: "Alcaloide del curare (Chondrodendron tomentosum). Bloqueante neuromuscular no despolarizante: compite con acetilcolina por receptores nicotínicos (nAChR) en la placa motora → parálisis flácida completa. Conciencia completamente preservada. Solo tóxico por vía parenteral (IV, IM) — se degrada en tracto digestivo. Base de los relajantes musculares quirúrgicos modernos (pancuronio, vecuronio, cisatracurio, rocuronio)." },
+    { t: "Estricnina", d: "Alcaloide de Strychnos nux-vomica. Antagonista competitivo de los receptores de glicina en médula espinal y tronco encefálico. La glicina es el principal neurotransmisor inhibitorio de las motoneuronas espinales. Sin inhibición: hiperexcitabilidad → convulsiones tetánicas (opistótonos, trismus, risa sardónica). Conciencia preservada. DL50 ~1-2mg/kg. Antídoto: benzodiacepinas IV + ambiente oscuro-silencioso." },
+    { t: "Fisostigmina (eserina)", d: "Alcaloide de Physostigma venenosum (Calabar bean). Inhibidor reversible de la acetilcolinesterasa que cruza la barrera hematoencefálica. Usos médicos: antídoto síndrome anticolinérgico (tropanos), históricamente glaucoma. Paradoja etnobotánica: el veneno de la 'haba del ordalia' africana es el antídoto para el veneno de las solanáceas tropánicas." },
+    { t: "Bloqueo neuromuscular", d: "Interrupción de la transmisión entre neurona motora y músculo esquelético. Tipos: (1) Despolarizante: succinilcolina — abre el canal nAChR y lo mantiene abierto. (2) No despolarizante (curariformes): compiten con acetilcolina sin activar el receptor. La parálisis flácida resultante mantiene la conciencia — el SNC no está afectado." },
+    { t: "Opistótonos", d: "Postura de hiperextensión severa del cuerpo en arco, con la cabeza hacia atrás y los talones hacia los glúteos. Causada por contracción simultánea de músculos extensores (más potentes que flexores). Signo clásico de intoxicación por estricnina, tétanos, meningitis severa. También puede ocurrir en encefalopatía hipóxica neonatal." },
+    { t: "Sugammadex", d: "Ciclodextrina modificada que encapsula específicamente rocuronio y vecuronio (bloqueantes neuromusculares no despolarizantes). Primer antídoto de encapsulamiento molecular aprobado en medicina. Revertir parálisis quirúrgica completa en 2-3 minutos. Disponible en todos los quirófanos modernos como parte del estándar de seguridad en anestesia." },
+    { t: "Parálisis flácida vs espástica", d: "Flácida: músculo sin tono, sin reflejos (lesión motoneurona inferior o bloqueo nAChR — curare, coniina). Espástica: músculo rígido con reflejos aumentados (lesión motoneurona superior — ictus, esclerosis múltiple). Los venenos botánicos paralizantes producen preferentemente parálisis flácida. Excepción: estricnina → hipertonía/tetania (ni flácida ni espástica sino hiperexcitable)." },
   ];
 
   const filtered = terminos.filter(t =>
@@ -12763,6 +13137,7 @@ function GuiaCultivo() {
     } else if (guide === "toxicas") {
       switch (activeToxicas) {
         case "intro_toxicas": return <INTRO_TOXICAS />;
+        case "compra_toxicas": return <COMPRA_TOXICAS />;
         case "brugmansia": return <BRUGMANSIA />;
         case "adelfa": return <ADELFA />;
         case "dedalera": return <DEDALERA />;
@@ -12775,6 +13150,9 @@ function GuiaCultivo() {
         case "eleboro": return <ELEBORO />;
         case "veratrum": return <VERATRUM />;
         case "laureola": return <LAUREOLA />;
+        case "curare": return <CURARE />;
+        case "nuez_vomica": return <NUEZ_VOMICA />;
+        case "calabar_bean": return <CALABAR_BEAN />;
         case "glosario_toxicas": return <GLOSARIO_TOXICAS />;
         case "faq_toxicas": return <FAQ_TOXICAS />;
         case "biblio_toxicas": return <BIBLIO_TOXICAS />;

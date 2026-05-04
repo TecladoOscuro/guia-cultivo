@@ -205,6 +205,7 @@ const ayahuascaPhases = [
 // Plantas tóxicas / venenos botánicos
 const toxicasPhases = [
   { id: "intro_toxicas", emoji: "☠️", title: "Intro", subtitle: "Toxinas vegetales" },
+  { id: "compra_toxicas", emoji: "🛒", title: "Compra", subtitle: "Viveros + seguridad" },
   { id: "brugmansia", emoji: "🎺", title: "Brugmansia", subtitle: "Floripondio tropano" },
   { id: "adelfa", emoji: "🌺", title: "Adelfa", subtitle: "Glucósido cardiaco" },
   { id: "dedalera", emoji: "💜", title: "Dedalera", subtitle: "Fuente digoxina" },
@@ -217,6 +218,9 @@ const toxicasPhases = [
   { id: "eleboro", emoji: "❄️", title: "Eléboro", subtitle: "Rosa de Navidad" },
   { id: "veratrum", emoji: "⛰️", title: "Veratrum", subtitle: "Confusión fatal genciana" },
   { id: "laureola", emoji: "🫐", title: "Laureola", subtitle: "Dafnetoxina vesicante" },
+  { id: "curare", emoji: "🏹", title: "Curare", subtitle: "Parálisis flácida · flechas" },
+  { id: "nuez_vomica", emoji: "⚡", title: "Nuez Vómica", subtitle: "Estricnina · tetania" },
+  { id: "calabar_bean", emoji: "🫘", title: "Calabar Bean", subtitle: "Fisostigmina · ordalia" },
   { id: "glosario_toxicas", emoji: "📖", title: "Glosario", subtitle: "Términos toxicología" },
   { id: "faq_toxicas", emoji: "❓", title: "FAQ", subtitle: "Primeros auxilios" },
   { id: "biblio_toxicas", emoji: "📚", title: "Bibliografía", subtitle: "Toxicología botánica" },

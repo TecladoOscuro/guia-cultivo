@@ -177,7 +177,15 @@ function COMPRA_PLANTAS() {
       ))}
 
       <InfoBoxX c={c}>
-        💡 <strong>Vendedores recomendados (etnobotánica EU):</strong> Avalon Magic Plants (Holanda), World Seed Supply (USA pero envía a EU), Tatanka (Holanda), Herbalistics (UK), Magic Mushrooms Shop. Comparar precios + leer reviews antes de comprar.
+        💡 <strong>Vendedores recomendados (etnobotánica EU):</strong><br/>
+        🇳🇱 <strong>Avalon Magic Plants</strong> (avalon-magicplants.com) — referencia EU, stock amplio, precios medios<br/>
+        🇳🇱 <strong>Tatanka</strong> (tatanka.nl) — Salvia, Kanna, Calea, Blue Lotus. Envío ES<br/>
+        🇳🇱 <strong>Zamnesia</strong> (zamnesia.com) — raíces Kava, semillas, esquejes<br/>
+        🇩🇪 <strong>Sirius</strong> (sirius.nl) — amplio catálogo etnobotánica<br/>
+        🇬🇧 <strong>Herbalistics</strong> (herbalistics.com.au) — UK, buen stock Kava y plantas difíciles<br/>
+        🇪🇸 <strong>Herboristería online España</strong> — damiana, calea seca en polvo más barata que etnobotánica<br/>
+        🇺🇸 <strong>Kava Dot Com / Nakamal at Home</strong> — kava noble certificada, mejor calidad, envío a ES posible<br/><br/>
+        ⚠️ <strong>Siempre:</strong> leer reviews recientes (stock y calidad cambia). Comparar precios. Pedir siempre la hoja de datos de la planta para verificar especie.
       </InfoBoxX>
     </div>
   );
@@ -230,6 +238,13 @@ function SALVIA() {
       <InfoBoxX c={c}>
         Hojas secas en infusión NO funciona bien — la salvinorina se destruye con el calor del agua. Mascar hojas secas tampoco — duras y poco efectivas. Para hojas secas, opción tradicional es extracto (consumo concentrado, NO recomendado para principiantes — requiere harm reduction extrema).
       </InfoBoxX>
+
+      <SectionTitleX c={c}>EXTRACCIÓN — HOJA POTENCIADA (ENHANCED LEAF)</SectionTitleX>
+      <StepX c={c} num={1} text="Preparar extracto: pesar 5g de hojas secas. Cubrir con 50ml de acetona (o alcohol isopropílico 99%) en vaso. Agitar 5 min. Filtrar la solución con papel de filtro o trapo fino." why="La salvinorina A es soluble en acetona y alcohol de alta graduación. El agua no funciona." />
+      <StepX c={c} num={2} text="Calcular cantidad de hoja base: decide potencia (5x, 10x, 20x). Ejemplo: 1g de extracto de 5g de hojas + 4g de hojas limpias = enhanced leaf 5x." />
+      <StepX c={c} num={3} text="Evaporar el solvente: verter el extracto filtrado sobre la hoja base en plato. Extender bien. Dejar evaporar en lugar ventilado (exterior o ventana abierta). El solvente se evapora en 30-60 min." warning />
+      <StepX c={c} num={4} text="La hoja queda ligeramente húmeda/pegajosa al principio. Dejar secar completamente (1-2h). El extracto queda depositado uniformemente sobre las hojas." />
+      <StepX c={c} num={5} text="Conservar en frasco hermético opaco. Enhanced leaf 5x = mucho más potente. EMPEZAR con dosis MUY pequeñas (50-100mg). La potencia puede sorprender incluso a usuarios experimentados." warning />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -297,6 +312,12 @@ function DAMIANA() {
         🍷 <strong>Licor:</strong> macerar 50g en 500ml de vodka 2 semanas. Filtrar. Licor afrodisíaco tradicional mexicano.
       </InfoBoxX>
 
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA ALCOHÓLICA</SectionTitleX>
+      <StepX c={c} num={1} text="Método más fácil: llenar un tarro de cristal con hojas secas de damiana (50-100g). Cubrir completamente con alcohol 40-50° (vodka) o para más potencia con alcohol 96° de farmacia diluido al 70% con agua." />
+      <StepX c={c} num={2} text="Cerrar hermético. Guardar en lugar oscuro y fresco 2-4 semanas. Agitar una vez al día si puedes." why="El tiempo y la agitación extraen los flavonoides, terpenos y alcaloides activos de la damiana. Más tiempo = tintura más concentrada." />
+      <StepX c={c} num={3} text="Filtrar con gasa o filtro de café. Exprimir bien el material vegetal. La tintura resultante tiene color marrón-verdoso." />
+      <StepX c={c} num={4} text="Dosis: 2-5ml (1 cucharadita) sublingüal o en vaso de agua. Inicio 20-30 min. Conservar en frasco oscuro — dura 2-3 años." />
+
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
         Comienzo: 15-30 min. Duración: 2-4h. Sensaciones: relajación corporal, ligero "buzz" mental similar a kava o cannabis muy suave, calidez. Reportada como ayuda en ansiedad social. Sin "viaje" — solo bienestar.
@@ -357,6 +378,11 @@ function BLUE_LOTUS() {
         🍷 <strong>Vino macerado (uso egipcio antiguo):</strong> 30g de flores secas en 750ml de vino tinto seco. Macerar 2 semanas. Filtrar. Beber en copas pequeñas.<br/>
         🚬 <strong>Fumada:</strong> mezclada con tabaco, efecto sutil.
       </InfoBoxX>
+
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA Y VINO EGIPCIO</SectionTitleX>
+      <StepX c={c} num={1} text="Método egipcio (vino): 20-30g de flores secas en 750ml de vino tinto seco. Cerrar con corcho/tapa. Macerar en oscuro 2 semanas agitando cada 2-3 días. Filtrar. Consumir en copas pequeñas (100-150ml)." why="El alcohol del vino extrae los alcaloides (nuciferina, aporfina) y flavonoides. El vino actúa de menstruo y es el método tradicional documentado." />
+      <StepX c={c} num={2} text="Tintura concentrada: 15g flores + 150ml vodka 40°, macerar 3-4 semanas en oscuro. Filtrar. Dosis: 5-10ml en agua o sola. Efecto más consistente que el té." />
+      <StepX c={c} num={3} text="Extracción de aporfinas (avanzado): el compuesto activo nuciferina es soluble en alcohol. No se han documentado extracciones caseras tipo A/B — no necesario para efectos normales. La tintura en vodka es suficiente para apreciarse el efecto." />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -473,6 +499,11 @@ function CALEA() {
       <StepX c={c} num={2} text="Beber 30 min antes de irse a la cama." />
       <StepX c={c} num={3} text="Adicional (potencia el efecto): fumar pipa pequeña con hojas secas justo antes de acostarse." />
       <StepX c={c} num={4} text="Tener libreta y bolígrafo en la mesilla — al despertar anotar sueños inmediatamente o se olvidan." />
+
+      <SectionTitleX c={c}>EXTRACCIÓN — TINTURA AMARGA</SectionTitleX>
+      <StepX c={c} num={1} text="Tintura en vodka: 20g de hojas secas en 200ml de vodka 40°. Macerar 4 semanas en oscuro. Filtrar. Resultante: tintura muy amarga concentrada." />
+      <StepX c={c} num={2} text="Dosis tintura: 2-4ml (½-1 cucharadita) sublingual 30 min antes de dormir. Efecto más consistente que el té y más fácil de dosificar." />
+      <StepX c={c} num={3} text="Aceite esencial (avanzado): los principios activos de Calea incluyen germacranólidos (sesquiterpenos amargos) y flavonoides. El aceite esencial por destilación al vapor concentra los terpenos aromáticos pero no necesariamente los activos para el sueño. La tintura alcohólica sigue siendo la preparación más documentada." />
 
       <SectionTitleX c={c}>EFECTOS</SectionTitleX>
       <InfoBoxX c={c}>

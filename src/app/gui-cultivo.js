@@ -313,6 +313,7 @@ function GuiaCultivo() {
     } else if (guide === "toxicas") {
       switch (activeToxicas) {
         case "intro_toxicas": return <INTRO_TOXICAS />;
+        case "compra_toxicas": return <COMPRA_TOXICAS />;
         case "brugmansia": return <BRUGMANSIA />;
         case "adelfa": return <ADELFA />;
         case "dedalera": return <DEDALERA />;
@@ -325,6 +326,9 @@ function GuiaCultivo() {
         case "eleboro": return <ELEBORO />;
         case "veratrum": return <VERATRUM />;
         case "laureola": return <LAUREOLA />;
+        case "curare": return <CURARE />;
+        case "nuez_vomica": return <NUEZ_VOMICA />;
+        case "calabar_bean": return <CALABAR_BEAN />;
         case "glosario_toxicas": return <GLOSARIO_TOXICAS />;
         case "faq_toxicas": return <FAQ_TOXICAS />;
         case "biblio_toxicas": return <BIBLIO_TOXICAS />;
