@@ -15242,7 +15242,7 @@ function GuiaCultivo() {
           {title}
         </h1>
         {modeOptions && (
-          <div className="mode-switcher" style={{ display: "flex", background: colors.bg2, borderRadius: "12px", padding: "4px", gap: "4px", maxWidth: "440px", margin: "0 auto" }}>
+          <div className="mode-switcher" style={{ display: "flex", background: colors.bg2, borderRadius: "12px", padding: "4px", gap: "4px", maxWidth: "440px", margin: "0 auto", overflowX: "auto" }}>
             {modeOptions.map((m) => (
               <button key={m.id} onClick={() => setCurrentMode(m.id)} style={{
                 flex: 1, padding: "10px 6px", border: "none", borderRadius: "8px",
