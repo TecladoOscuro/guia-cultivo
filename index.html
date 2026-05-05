@@ -13683,44 +13683,159 @@ function EXTRACCION_DMT() {
   return (
     <div>
       <InfoBoxX c={c}>
-        ⚠️ <strong>SECCIÓN EDUCATIVA SOLAMENTE.</strong> La extracción casera de DMT es ILEGAL en España. Esta guía explica el proceso a alto nivel para entender la química involucrada, NO da recetas paso-a-paso. Para uso real: ayahuasca tradicional (legal gris) o ceremonia con grupo religioso reconocido.
+        ⚠️ <strong>AVISO LEGAL.</strong> La extracción de DMT es ilegal en España y la mayoría de países. Esta guía tiene fines puramente educativos — entender la química no es delito. El conocimiento salva vidas: saber cómo se hace ayuda a detectar productos mal hechos o peligrosos en el mercado negro. Quien decide actuar lo hace bajo su propia responsabilidad.
       </InfoBoxX>
 
-      <SectionTitleX c={c}>PROCESO BÁSICO — EXTRACCIÓN ÁCIDO/BASE (A/B)</SectionTitleX>
+      <SectionTitleX c={c}>QUÍMICA BÁSICA — POR QUÉ FUNCIONA</SectionTitleX>
       <InfoBoxX c={c}>
-        El método "A/B" es el estándar amateur. Idea: el DMT es soluble en solventes no polares (como heptano, naftas), pero solo en su forma de "base libre". En medio ácido está en forma de sal soluble en agua. En medio básico (NaOH/lejía) se convierte a base libre.<br/><br/>
-        Pasos generales (educativos):<br/>
-        1. <strong>Acidificación:</strong> mezclar polvo de planta con agua + vinagre. Hervir varias horas. Cola → líquido ácido con DMT como sal disuelta.<br/>
-        2. <strong>Basificación:</strong> añadir NaOH (lejía sólida) hasta pH muy alto (13+). El DMT cambia a base libre.<br/>
-        3. <strong>Extracción:</strong> añadir solvente no polar (heptano farmacéutico). Agitar. El DMT migra al solvente.<br/>
-        4. <strong>Separación:</strong> capa solvente arriba (con DMT), capa acuosa abajo (sin DMT). Separar.<br/>
-        5. <strong>Cristalización:</strong> congelar el solvente. El DMT precipita como cristales blancos/amarillos.<br/>
-        6. <strong>Filtrado:</strong> recoger cristales con filtro café. Re-cristalizar para purificar.
+        El DMT en la planta está como <strong>sal</strong> (DMT-tanato en Mimosa, DMT-fosfato en otras). Es soluble en agua pero NO en solventes no-polares (heptano, nafta, xileno, éter de petróleo).<br/><br/>
+        <strong>En medio ácido (pH 2-4):</strong> el DMT se disuelve en agua como sal protonada (DMT-H⁺). Las grasas/aceites de la planta NO se disuelven en agua ácida — se quedan en el material vegetal.<br/><br/>
+        <strong>En medio básico (pH 12-14):</strong> se añade NaOH (hidróxido de sodio) y el DMT se convierte en <strong>base libre</strong> (DMT⌀). La base libre NO es soluble en agua pero SÍ en solventes no-polares. Al añadir heptano/nafta, el DMT migra al solvente — dejando atrás la sopa básica con el resto de la planta.<br/><br/>
+        <strong>Congelación:</strong> el DMT es poco soluble en heptano frío. Al meter el solvente cargado de DMT en el congelador (-18°C), el DMT precipita como cristales. El solvente se separa por decantación y los cristales se secan.
       </InfoBoxX>
 
-      <WarningBoxX c={c}>
-        ⚠️ <strong>RIESGOS REALES (otra razón para no hacer):</strong><br/>
-        🧪 NaOH (sosa cáustica) = quemaduras químicas graves al contacto con piel/ojos<br/>
-        💨 Solventes inflamables = riesgo de incendio/explosión si calor cerca<br/>
-        ⚗️ Sin equipo de laboratorio (campana extractora, gafas, guantes nitrilo) = inhalación tóxica<br/>
-        ⚖️ ILEGAL = problemas con la ley si te detectan<br/>
-        💩 Producto impuro = mucha gente que extrae casero termina con DMT contaminado con yuck (otros alcaloides, restos de planta)
-      </WarningBoxX>
+      <SectionTitleX c={c}>MATERIAL VEGETAL — FUENTES DE DMT</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+        {[
+          { planta: "Mimosa hostilis (MHRB)", dmt: "1-3% corteza raíz", notas: "La fuente más común. 100g MHRB = 1-3g DMT teórico. Rendimiento real: 0.5-2% (pérdidas en proceso). Comprar corteza en polvo o triturar tú.", precio: "25-50€/100g" },
+          { planta: "Acacia confusa (ACRB)", dmt: "1-2% corteza raíz + NMT", notas: "Contiene NMT además de DMT (experiencia ligeramente distinta, más 'suave'). Misma técnica que MHRB.", precio: "30-60€/100g" },
+          { planta: "Diplopterys cabrerana (Chaliponga)", dmt: "0.2-1.7% hojas", notas: "Usada en ayahuasca tradicional. Menor rendimiento que MHRB. Contiene 5-MeO-DMT además de DMT.", precio: "20-40€/25g hojas secas" },
+          { planta: "Psychotria viridis (Chacruna)", dmt: "0.1-0.6% hojas", notas: "La otra mitad de la ayahuasca. Rendimiento muy bajo para extracción. Mejor para brebaje tradicional.", precio: "15-30€/30g hojas secas" },
+          { planta: "Phalaris arundinacea (alpiste)", dmt: "0.1-0.2% (muy variable)", notas: "Gramínea común en España. Contiene gramina (tóxica) además de DMT. NO RECOMENDADA para principiantes. Requiere purificación avanzada.", precio: "Gratis (forrajeo)" },
+        ].map((f, i) => (
+          <div key={i} style={{ background: c.bg2, borderRadius: "8px", padding: "10px", border: `1px solid ${c.border1}` }}>
+            <div style={{ fontWeight: "bold", fontSize: "13px", color: c.accent1, marginBottom: "4px" }}>{f.planta}</div>
+            <div style={{ fontSize: "11px", color: c.text }}>DMT: {f.dmt} · {f.notas}</div>
+            <div style={{ fontSize: "10px", color: c.border1, marginTop: "2px" }}>Precio: {f.precio}</div>
+          </div>
+        ))}
+      </div>
 
-      <SectionTitleX c={c}>ALTERNATIVAS LEGALES</SectionTitleX>
+      <SectionTitleX c={c}>MÉTODO STB (Straight-To-Base) — EL MÁS SIMPLE</SectionTitleX>
       <InfoBoxX c={c}>
-        Si el objetivo es experimentar con DMT, opciones legales/grises:<br/>
-        🍵 <strong>Ayahuasca casera:</strong> brebaje legal gris. Misma molécula activa, experiencia distinta (más larga, oral, contemplativa). Ver guía Ayahuasca.<br/>
-        🕯️ <strong>Ceremonia con grupo religioso:</strong> Santo Daime, UDV. Brebaje preparado por especialistas, contexto seguro.<br/>
-        🌳 <strong>Cultivar Mimosa hostilis sin extraer:</strong> placer botánico de tener un árbol con poder. Algunas tradiciones (Jurema en Brasil) consumen el brebaje de Mimosa sin IMAO (efecto distinto, más sutil).<br/>
-        🚫 <strong>Comprar DMT cristal:</strong> NO hacer. Mercado negro = pureza/contaminación impredecible + ilegalidad.
+        El STB es el método más directo para principiantes. Se salta la etapa ácida (sin hervir, sin reducir volumen). Solo necesitas: polvo de corteza, agua, NaOH y solvente. La desventaja es que extrae más grasas (producto final más amarillo/marrón) y usa más solvente. Pero es el más sencillo y rápido para empezar.<br/><br/>
+        <strong>Material necesario:</strong><br/>
+        • 100g polvo MHRB (finamente molido, como harina)<br/>
+        • 100g NaOH (sosa cáustica en perlas — ferretería, droguería, ~3€/kg)<br/>
+        • 750ml agua destilada/desmineralizada<br/>
+        • 150ml heptano puro (farmacéutico) o nafta ligera (Zippo, Waschbenzin). NUNCA gasolina de coche.<br/>
+        • Recipiente vidrio borosilicato 1L (Erlenmeyer o tarro de conservas grueso)<br/>
+        • 2 bandejas Pyrex (para congelación)<br/>
+        • Pipeta/turkey baster de vidrio (NO plástico — el solvente disuelve el plástico)<br/>
+        • Gafas de seguridad + guantes nitrilo largos (NaOH quema gravemente)<br/>
+        • Ventilación: ventana abierta + ventilador. MEJOR: cocina con campana extractora o exterior (balcón)<br/>
+        • Papel pH o tiras indicadoras (rango 0-14)<br/>
+        • Filtro de café sin blanquear<br/>
+        • Congelador (-18°C o más frío)
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PASO A PASO — EXTRACCIÓN STB</SectionTitleX>
+      <StepX c={c} num={1} text="PREPARAR SOLUCIÓN BÁSICA" why="La base convierte el DMT en su forma extraíble." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          En recipiente de vidrio, añadir 750ml agua destilada. Añadir 100g NaOH LENTAMENTE (nunca al revés — el NaOH al agua, no agua al NaOH). <strong style={{ color: c.error }}>Reacción exotérmica: el tarro se calentará MUCHO.</strong> Remover con varilla de vidrio hasta disolución total. Dejar enfriar a temperatura ambiente (30-40°C máximo). El pH debe estar 13+.
+        </p>
+      </div>
+
+      <StepX c={c} num={2} text="AÑADIR CORTEZA" why="El DMT en la planta necesita contacto con la base para liberarse." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Añadir los 100g de polvo MHRB a la solución básica ya fría. Tapar y agitar vigorosamente 1-2 minutos hasta que todo el polvo esté humedecido (se vuelve una pasta negra/púrpura espesa). Dejar reposar 1 hora. Agitar otra vez. Este paso se llama "lisis celular" — la base rompe las paredes celulares liberando el DMT.
+        </p>
+      </div>
+
+      <StepX c={c} num={3} text="PRIMERA EXTRACCIÓN (PULL)" why="El solvente recoge el DMT de la sopa básica." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Añadir 70-80ml de heptano/nafta al tarro. Tapar. Agitar suavemente (no agitar como coctelera — se forman emulsiones imposibles de separar). Método correcto: girar el tarro boca abajo y arriba, rodar sobre la mesa. Hacer esto durante 30-60 segundos cada 3-5 minutos, durante 30-45 minutos. Entre agitaciones, dejar reposar para que las capas se separen.<br/><br/>
+          <strong>La capa de solvente (heptano/nafta) flota arriba</strong> — es transparente/amarillenta. La capa acuosa básica está abajo — negra/púrpura. Separación tarda 5-15 minutos. Si no se separa (emulsión): añadir más NaOH, añadir sal no yodada (30g), baño maría templado, o simplemente esperar más tiempo.
+        </p>
+      </div>
+
+      <StepX c={c} num={4} text="SEPARAR (DECANTAR) EL SOLVENTE" why="Recuperar el solvente cargado de DMT dejando atrás la sopa básica." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Con pipeta de vidrio o turkey baster, aspirar CUIDADOSAMENTE la capa superior de solvente (sin chupar nada de la capa negra de abajo). Transferir a bandeja Pyrex. Es normal que quede un poco de solvente en el tarro — se recupera en pulls posteriores.<br/><br/>
+          Cerrar la bandeja Pyrex con film transparente (que el film NO toque el solvente). Meter al congelador a -18°C mínimo. Dejar 12-24 horas. Cuanto más frío, mejor (algunos usan -25°C o hielo seco).
+        </p>
+      </div>
+
+      <StepX c={c} num={5} text="PULLS ADICIONALES (×3-5)" why="Un solo pull no extrae todo el DMT. Se necesitan 3-5 pulls para recoger >90%." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Añadir otros 50-70ml de solvente FRESCO al tarro original. Repetir agitación suave 30-45 min. Separar solvente a OTRA bandeja Pyrex (o a la misma si ya has recogido los cristales del primer pull). Repetir hasta 3-5 pulls totales. El pull 1 suele ser el más puro (blanco). Pulls 3-5 son más amarillos (más grasas vegetales, igual de activos pero menos estéticos).
+        </p>
+      </div>
+
+      <StepX c={c} num={6} text="RECOGER CRISTALES" why="El DMT ha precipitado en el frío. Toca recogerlo." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Sacar bandeja del congelador. Trabajar RÁPIDO (el solvente se calienta y el DMT se redisuelve). Verter el solvente a través de un filtro de café colocado sobre un tarro limpio (para reutilizar el solvente en futuros pulls). Los cristales se quedan pegados a la bandeja y en el filtro.<br/><br/>
+          Dejar la bandeja boca abajo inclinada durante 30-60 minutos para que escurra TODO el solvente. Poner un ventilador SUAVE (sin calefacción) apuntando a la bandeja para evaporar restos de solvente. Los cristales deben oler a flores/plástico/zapatilla nueva — NO a gasolina/disolvente (si huelen a solvente, necesitan más secado).
+        </p>
+      </div>
+
+      <StepX c={c} num={7} text="PURIFICACIÓN OPCIONAL — RE-X (RECRISTALIZACIÓN)" why="Para DMT más puro — cristales blancos en lugar de amarillos." />
+      <div style={{ marginLeft: "24px", marginBottom: "12px" }}>
+        <p style={{ fontSize: "12px", color: c.text, lineHeight: "1.6", margin: "0 0 6px" }}>
+          Disolver el DMT en MÍNIMA cantidad de heptano caliente (baño maría, NUNCA fuego directo — solvente inflamable). Dejar enfriar lentamente a temperatura ambiente y luego al congelador 12h. Los cristales que precipitan ahora son más puros — las impurezas/grasas se quedan en el heptano. Repetir si se quiere más pureza (cada re-x pierde un 5-10% de peso).
+        </p>
+      </div>
+
+      <SectionTitleX c={c}>RENDIMIENTO ESPERADO</SectionTitleX>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "16px" }}>
+        <StatBoxX c={c} label="MHRB (1-3% teórico)" value="0.5-2% real" />
+        <StatBoxX c={c} label="Primera extracción" value="0.5-1g de 100g" />
+        <StatBoxX c={c} label="Con práctica" value="1-2g de 100g" />
+        <StatBoxX c={c} label="Color" value="Blanco→amarillo→naranja (pureza vs grasas)" />
+      </div>
+
+      <SectionTitleX c={c}>SEGURIDAD — LO QUE PUEDE SALIR MAL</SectionTitleX>
+      <ErrorCardX c={c}
+        error="NaOH en piel u ojos"
+        consecuencia="Quemadura química grave. En ojos: ceguera permanente posible."
+        fix="GUANTES NITRILO + GAFAS SIEMPRE. Si contacto: lavar con agua abundante 15 minutos. Si ojos: urgencias inmediato."
+      />
+      <ErrorCardX c={c}
+        error="Solvente cerca de llama/fuente de calor"
+        consecuencia="Heptano y nafta son EXTREMADAMENTE inflamables. Vapores pueden viajar metros hasta una llama piloto y explotar."
+        fix="CERO llamas, cigarrillos, cerillas, chispas eléctricas en la habitación. Ventilación máxima. NUNCA al fuego — solo baño maría eléctrico o agua caliente del grifo."
+      />
+      <ErrorCardX c={c}
+        error="Inhalación de vapores de solvente"
+        consecuencia="Mareo, dolor de cabeza, náusea, daño neurológico por exposición crónica."
+        fix="Ventilación: ventana abierta + ventilador. Ideal: campana extractora de cocina o exterior (balcón/terraza). Si sientes mareo: salir a respirar aire fresco inmediatamente."
+      />
+      <ErrorCardX c={c}
+        error="Solvente en plástico"
+        consecuencia="Heptano/nafta disuelven muchos plásticos (PVC, poliestireno, goma). El DMT se contamina con plastificantes y ftalatos — tóxicos al fumar."
+        fix="Solo VIDRIO borosilicato (Pyrex, Erlenmeyer) y tapas de HDPE (polietileno de alta densidad, reciclaje #2) o PTFE. Pipetas de VIDRIO, nunca plástico."
+      />
+      <ErrorCardX c={c}
+        error="No evaporar todo el solvente"
+        consecuencia="Fumar DMT con restos de heptano/nafta = daño pulmonar químico agudo. Sabe a gasolina, quema la garganta."
+        fix="Secar cristales mínimo 2-4 horas con ventilador. Olor debe ser floral/plástico — CERO olor a gasolina. Si huele a solvente: seguir secando. Paciencia."
+      />
+      <ErrorCardX c={c}
+        error="Usar gasolina de coche, aguarrás o disolvente de pinturas"
+        consecuencia="Estos contienen aditivos tóxicos (benceno, tolueno, antidetonantes) que NO se evaporan completamente. Fumar producto contaminado con esto = cáncer y daño neurológico."
+        fix="SOLO usar solventes de grado farmacéutico/reactivo: heptano puro, nafta ligera (Zippo, Waschbenzin — evaporan sin residuos), éter de petróleo 40-60°C. Hacer 'test de evaporación' antes: poner unas gotas del solvente en un espejo limpio. Debe evaporar SIN dejar residuo ni olor."
+      />
+
+      <SectionTitleX c={c}>ALTERNATIVAS LEGALES Y SEGURAS</SectionTitleX>
+      <InfoBoxX c={c}>
+        Si el objetivo es experimentar con DMT, opciones legales/grises:<br/><br/>
+        🍵 <strong>Ayahuasca casera:</strong> brebaje con Mimosa/Chacruna + IMAO (ruda siria, Caapi). Misma molécula, experiencia 4-6h oral. Sin solventes, sin riesgo químico. Ver guía Ayahuasca.<br/>
+        🕯️ <strong>Ceremonia con grupo religioso:</strong> Santo Daime, UDV. Brebaje preparado por especialistas. Contexto seguro, apoyo comunitario.<br/>
+        🌳 <strong>Cultivar tu propia planta:</strong> Mimosa hostilis, Acacia confusa, Chaliponga. Satisfacción botánica + posibilidad de hacer ayahuasca casera con tu propio material. Ver secciones de cultivo en esta guía.<br/>
+        🚫 <strong>Comprar DMT cristal en mercado negro:</strong> NO recomendado. Pureza desconocida, posible contaminación con opioides/fentanilo, riesgo legal alto.
       </InfoBoxX>
 
       <SectionTitleX c={c}>ESTAFAS COMUNES EN MERCADO NEGRO</SectionTitleX>
       <ErrorCardX c={c}
         error="Comprar 'DMT' a desconocido"
-        consecuencia="Polvo blanco vendido como DMT puede ser cualquier cosa: 5-MeO-DMT (mucho más intenso/peligroso), 4-AcO-DMT, 2C-B, anfetamina, fentanilo."
-        fix="No comprar. La única forma de saber qué consumes es: cultivar tú o ceremonia con grupo confiable. Si compras: usar test kit de reactivos (Marquis, Mecke) y/o servicio de testing como Energy Control."
+        consecuencia="Polvo blanco vendido como DMT puede ser cualquier cosa: 5-MeO-DMT (mucho más intenso/peligroso a dosis de NN-DMT), 4-AcO-DMT, 2C-B, anfetamina, fentanilo."
+        fix="Si compras: usar test kit de reactivos (Marquis, Mecke, Ehrlich). Servicio testing anónimo: Energy Control (España). Si no puedes testear, no consumas. La extracción propia desde planta te da control total sobre pureza."
       />
     </div>
   );
@@ -13731,32 +13846,115 @@ function CONSUMO_DMT() {
   return (
     <div>
       <InfoBoxX c={c}>
-        Información sobre cómo se consume DMT en sus diferentes formas. Sólo educativo — la posesión de DMT cristal es ilegal en España.
+        Guía detallada de métodos de consumo de DMT en sus diferentes formas. La posesión de DMT cristal es ilegal en España — esta información es educativa para reducción de daños. Conocer las técnicas y dosis correctas previene accidentes.
       </InfoBoxX>
 
-      <SectionTitleX c={c}>FUMADO — CRISTAL PURO</SectionTitleX>
+      <SectionTitleX c={c}>DOSIS — TABLA ORIENTATIVA</SectionTitleX>
+      <div style={{ display: "grid", gap: "8px", marginBottom: "16px" }}>
+        {[
+          { nivel: "Microdosis", dosis: "3-8mg", efecto: "Sub-perceptual. Cambios leves en percepción, estado de ánimo.", duracion: "— (sin viaje)" },
+          { nivel: "Dosis baja (test)", dosis: "10-15mg", efecto: "Geometría suave ojos cerrados. Euforia corporal. Buen punto de inicio.", duracion: "5-8 min" },
+          { nivel: "Dosis media", dosis: "15-25mg", efecto: "Viaje completo para la mayoría. Geometría intensa, posible contacto entidades. Realidad externa distorsionada.", duracion: "8-12 min" },
+          { nivel: "Dosis breakthrough", dosis: "25-40mg", efecto: "Pérdida total de la realidad consensual. Breakthrough. Esperar lo inesperado.", duracion: "10-20 min" },
+          { nivel: "Dosis alta", dosis: "40-60mg", efecto: "Solo para muy experimentados. Amnesia parcial posible. Puede ser abrumador.", duracion: "15-25 min" },
+        ].map((d, i) => (
+          <div key={i} style={{ background: c.bg2, borderRadius: "8px", padding: "10px", border: `1px solid ${c.border1}` }}>
+            <div style={{ fontWeight: "bold", fontSize: "13px", color: c.accent1, marginBottom: "4px" }}>{d.nivel} — {d.dosis}</div>
+            <div style={{ fontSize: "11px", color: c.text }}>{d.efecto}</div>
+            <div style={{ fontSize: "10px", color: c.border1, marginTop: "2px" }}>Duración: {d.duracion}</div>
+          </div>
+        ))}
+      </div>
       <InfoBoxX c={c}>
-        Forma más intensa. Pipa de vidrio o vaporizador. Dosis (educativo): 25-50mg para experiencia completa. La temperatura es crítica — DMT se vaporiza a 250-300°C, se quema (destruye) a 400°C+. Vaporizadores tipo "TerpPen" o pipa con malla de acero son los métodos comunes.<br/><br/>
-        <strong>Experiencia:</strong> efectos en SEGUNDOS. Pico a los 30-60s. Total 5-15 min. "Breakthrough" = pérdida total de la realidad consensual.
+        <strong>IMPORTANTE:</strong> estas dosis son para NN-DMT en cristal/base libre fumado/vaporizado. Para 5-MeO-DMT las dosis son MUCHO menores (5-15mg para breakthrough). Para ayahuasca oral no aplica (se mide en gramos de planta).<br/><br/>
+        <strong>Regla de oro:</strong> empezar siempre con dosis test (10-15mg) con cada nuevo lote. La pureza varía enormemente. Un DMT amarillo puede ser 60% puro, uno blanco 90%+.
       </InfoBoxX>
 
-      <SectionTitleX c={c}>CHANGA</SectionTitleX>
+      <SectionTitleX c={c}>VAPORIZACIÓN — EL ARTE DE NO QUEMARLO</SectionTitleX>
       <InfoBoxX c={c}>
-        Mezcla DIY: hojas/hierbas (caapi seca, ruda siria, mate, menta, salvia divinorum) + DMT impregnado. Se fuma como mezcla.<br/><br/>
-        Ventaja: la hierba alarga el efecto (20-40 min en lugar de 5-15) gracias al IMAO de las plantas. Más manejable, menos brutal que cristal puro.<br/><br/>
-        Desventaja: requiere DMT cristalizado primero. La preparación es DIY.
+        El DMT se <strong>vaporiza</strong> a ~160-180°C y se <strong>quema/destruye</strong> a partir de ~250-300°C. La diferencia entre un viaje completo y nada es la técnica de calentamiento. El error más común de principiantes es quemar el DMT (aplica demasiado calor directo) — sabe a plástico quemado horrible y no hace efecto.<br/><br/>
+        <strong>Principio general:</strong> calor INDIRECTO. La llama nunca debe tocar el DMT directamente. El calor debe transferirse a través de vidrio/metal para vaporizar, no combustionar.
       </InfoBoxX>
 
-      <SectionTitleX c={c}>RAPÉ YOPO (SNORTADO)</SectionTitleX>
+      <SectionTitleX c={c}>MÉTODO 1 — PIPA DE VIDRIO (OIL BURNER / METH PIPE)</SectionTitleX>
       <InfoBoxX c={c}>
-        Tradicional indígena. Polvo de semillas tostadas y trituradas de Anadenanthera peregrina, soplado por la nariz con un tubo. Contiene DMT + <GlossaryLink term="Bufotenina (5-HO-DMT)">bufotenina (5-HO-DMT)</GlossaryLink> + <GlossaryLink term="5-MeO-DMT">5-MeO-DMT</GlossaryLink>.<br/><br/>
-        Efecto: muy intenso, dura 30-60 min. Picazón nasal extrema, lágrimeo, posibles náuseas. Visión cerrada profunda.<br/><br/>
-        Solo experimentados. Cultivo del árbol posible pero MUY lento.
+        La pipa de vidrio con bombilla es el método clásico. Barata (5-10€ en grow shop), efectiva cuando se domina la técnica.<br/><br/>
+        <strong>Técnica:</strong><br/>
+        1. Cargar dosis (25-35mg) en el bol de la pipa.<br/>
+        2. Sostener la llama de un mechero Bic NORMAL (no soplete — demasiado calor) a 3-5cm DEBAJO del vidrio, SIN tocar.<br/>
+        3. Mover la llama en círculos pequeños. El vidrio se calienta, el DMT se funde en un charco transparente.<br/>
+        4. Cuando empieza a salir vapor blanco del tubo: inhalar LENTA y CONSTANTEMENTE. Mantener la llama moviéndose.<br/>
+        5. Llenar pulmones al 80%. Aguantar la respiración 10-15 segundos (crítico para absorción). Exhalar.<br/>
+        6. Repetir 2-3 caladas si se puede (los efectos empiezan durante la primera calada — la segunda y tercera son difíciles de coordinar).<br/><br/>
+        <strong>Truco:</strong> tener a alguien que te sujete la pipa y el mechero para la tercera calada. En solitario: dejar pipa y mechero en una mesa/bandeja al alcance antes de exhalar la primera.
       </InfoBoxX>
 
-      <SectionTitleX c={c}>VAPORIZADORES MODERNOS</SectionTitleX>
+      <SectionTitleX c={c}>MÉTODO 2 — VAPORIZADOR ELÉCTRICO (E-MESH / YOCAN / APX VOLT)</SectionTitleX>
       <InfoBoxX c={c}>
-        Pens de vape con cartuchos de DMT (e-liquid mezclado con propileno glicol o glicerina vegetal): forma popular reciente en mercado clandestino. Más fácil de dosificar que pipa de vidrio. Pero CALIDAD VARIABLE — muchos cartuchos están adulterados.
+        Los vaporizadores modernos son la mejor opción: control preciso de temperatura, sin llama, sin técnica compleja, eficiencia casi 100%.<br/><br/>
+        <strong>Opciones recomendadas:</strong><br/>
+        • <strong>E-mesh (RDA + mod con TC):</strong> el estándar oro. Malla de acero inoxidable calentada por control de temperatura. 190-200°C. Una calada = breakthrough con 25-30mg. Requiere montaje (RDA + mod con TC + malla SS316L). ~40-60€ total.<br/>
+        • <strong>APX Volt 3.0:</strong> vaporizador de concentrados. Vaso de cuarzo. Setting 3 (2.8V). Cargar dosis en el vaso frío. Pulsar botón, esperar 2-3 segundos a que se funda, inhalar largamente. ~50€.<br/>
+        • <strong>Yocan Evolve Plus con donut de cerámica:</strong> económico. Cargar dosis en la bobina de cerámica. Pulsos cortos (2-3 seg) con inhalación continua. La bobina original de cuarzo doble quema el DMT — comprar la de cerámica aparte. ~25-35€.<br/>
+        • <strong>Divine Tribe v4/v5:</strong> crisol de cuarzo/SiC con control de temperatura. Excelente pero más caro. ~80-100€.<br/><br/>
+        <strong>Ventaja de los vaporizadores:</strong> una sola calada larga = dosis completa. Sin malabares con mechero y pipa mientras el universo se disuelve.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 3 — "THE MACHINE" (BOTELLA CASERA)</SectionTitleX>
+      <InfoBoxX c={c}>
+        El método DIY más popular. Una botella de vidrio pequeña (mini whisky, licor) con un agujero en la base y lana de acero en el cuello.<br/><br/>
+        <strong>Construcción:</strong><br/>
+        1. Botella de vidrio pequeña (50-200ml). Hacer un agujero de ~5-8mm en la base (taladro para vidrio o girar un clavo/tornillo con presión).<br/>
+        2. Meter lana de acero INOXIDABLE (estropajo de acero inox, sin jabón) en el cuello de la botella. Compacta pero que pase aire.<br/>
+        3. Cargar dosis en la lana de acero. Fundirla con mechero suave para que el DMT líquido impregne la lana (esto evita que el polvo se aspire).<br/>
+        4. Tapar agujero de la base con el dedo. Aplicar llama suave al cuello (donde está la lana con DMT) mientras inhalas por el agujero de la base. El aire pasa por la lana caliente → vaporiza el DMT → entra en tus pulmones.<br/><br/>
+        <strong>Cuesta 0€</strong> (materiales caseros). Muy efectiva cuando se pilla la técnica. La lana de acero distribuye el calor uniformemente evitando quemar el DMT.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>CHANGA — DMT + HIERBAS (FUMABLE)</SectionTitleX>
+      <InfoBoxX c={c}>
+        La changa es DMT impregnado en hojas/hierbas que contienen IMAO (inhibidores de la monoamino oxidasa). Al fumar la mezcla, el IMAO alarga y suaviza la experiencia. Duración: 20-40 min (vs 5-15 del DMT puro).<br/><br/>
+        <strong>Hierbas base (portadoras):</strong><br/>
+        • Hojas de Caapi seca (Banisteriopsis caapi) — tradicional, contiene harmina/harmalina (IMAO)<br/>
+        • Ruda siria (Peganum harmala) — contiene harmina/harmalina, más potente que Caapi<br/>
+        • Menta, hierbabuena — suave, sin IMAO, solo para sabor<br/>
+        • Salvia divinorum — añade efecto disociativo (solo experimentados)<br/>
+        • Damiana, pétalos de rosa, lavanda — aromáticas, sinérgicas<br/><br/>
+        <strong>Preparación (método de impregnación):</strong><br/>
+        1. Disolver 500mg-1g de DMT en ~10-20ml de alcohol de alta graduación (etanol 96%, vodka no sirve — demasiada agua) o acetona pura. NUNCA isopropílico (tóxico).<br/>
+        2. Añadir 500mg-1g de mezcla de hierbas secas trituradas (proporción 1:1 DMT:hierba para changa fuerte, 1:2 o 1:3 para más suave).<br/>
+        3. Remover para que todas las hierbas se empapen. Dejar evaporar el alcohol/acetona COMPLETAMENTE (12-24h en plato extendido, ventilación).<br/>
+        4. Cuando esté completamente seco (sin olor a solvente), guardar en frasco hermético.<br/>
+        5. Fumar en pipa normal, bong o liar en cigarrillo (aunque en papel se pierde algo).<br/><br/>
+        <strong>Dosis:</strong> 50-100mg de mezcla (contiene 25-50mg de DMT si la proporción es 1:1). Empezar con 50mg de mezcla como test.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>RAPÉ YOPO (ANADENANTHERA) — TRADICIONAL INDÍGENA</SectionTitleX>
+      <InfoBoxX c={c}>
+        Tradición indígena amazónica y del Caribe. Polvo de semillas tostadas y trituradas de Anadenanthera peregrina (yopo) o Anadenanthera colubrina (vilca/cebil), soplado por la nariz con un tubo (kuripe para auto-administración, tepi para que te sople otra persona).<br/><br/>
+        Las semillas contienen DMT + <GlossaryLink term="Bufotenina (5-HO-DMT)">bufotenina (5-HO-DMT)</GlossaryLink> + <GlossaryLink term="5-MeO-DMT">5-MeO-DMT</GlossaryLink> en proporciones variables.<br/><br/>
+        <strong>Preparación tradicional:</strong> tostar semillas hasta que exploten/crujan. Triturar en mortero hasta polvo fino. Mezclar con cal (ceniza de caracol o cal viva en pequeña cantidad) para basificar y activar los alcaloides.<br/><br/>
+        <strong>Dosis:</strong> 2-5g de polvo por fosa nasal. Efecto: muy intenso, 30-60 min. Picazón nasal extrema, lagrimeo, posibles náuseas/vómito. Visión cerrada profunda con geometría compleja. Solo para experimentados. El dolor nasal es parte de la experiencia tradicional (se considera purga).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>PHARMAHUASCA — DMT ORAL + IMAO SINTÉTICO</SectionTitleX>
+      <InfoBoxX c={c}>
+        Versión "farmacéutica" de la ayahuasca. En lugar de brebaje de plantas, se toma DMT cristalino puro + un IMAO sintético (moclobemida, harmina/harmalina purificada) o IMAO natural (extracto de ruda siria).<br/><br/>
+        <strong>Protocolo típico:</strong><br/>
+        1. Ayunar 6-8h antes.<br/>
+        2. Tomar IMAO: 100-200mg harmina/harmalina o 150-300mg moclobemida. Esperar 30-60 minutos.<br/>
+        3. Tomar DMT: 50-100mg DMT cristal disuelto en zumo/zumo de naranja (la acidez ayuda a disolver).<br/>
+        4. Efectos: onset 30-45 min, pico 1-2h, total 4-6h.<br/><br/>
+        <strong>Ventajas sobre ayahuasca tradicional:</strong> sin náuseas del brebaje, dosis precisas, sin sabor horrible, logística más simple. <strong>Desventajas:</strong> requiere DMT puro extraído (ilegal), se pierde el contexto ceremonial/vegetal.<br/><br/>
+        <strong>⚠️ MISMA DIETA QUE AYAHUASCA:</strong> evitar alimentos ricos en tiramina (quesos curados, embutidos, vino, soja fermentada) 24h antes y después. SSRI/IMAO antidepresivos: 4-6 semanas off-med.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>VAPORIZADORES MODERNOS (CARTRIDGE / E-LIQUID)</SectionTitleX>
+      <InfoBoxX c={c}>
+        Método popular reciente: DMT disuelto en propilenglicol (PG) o mezcla PG/VG (vegetable glycerin) en cartuchos de vape estándar (tipo CCELL).<br/><br/>
+        <strong>Preparación DIY:</strong> disolver 500mg-1g DMT en 1-2ml de PG (calentar suavemente al baño maría para ayudar a disolver). NO usar solo VG (el DMT precipita). Proporción típica: 1:1 (500mg DMT + 0.5ml PG). Cargar en cartucho CCELL de cerámica. Usar batería a 2.8-3.2V (potencia baja).<br/><br/>
+        <strong>Dosis:</strong> cada calada de 3-5 segundos entrega ~3-5mg DMT (variable según concentración y potencia). 5-8 caladas para breakthrough con cartucho 1:1.<br/><br/>
+        <strong>⚠️ PRECAUCIÓN:</strong> los cartuchos de mercado negro a menudo están adulterados (vitamina E, PG contaminado, otros psicodélicos). Si no lo has hecho tú, no sabes qué contiene.
       </InfoBoxX>
     </div>
   );
