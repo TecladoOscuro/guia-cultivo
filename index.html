@@ -5299,7 +5299,7 @@ function INTRO_CACTUS({ setPhase }) {
   return (
     <div>
       <InfoBoxX c={c}>
-        Cactus columnares con <GlossaryLink term="Mescalina">mescalina</GlossaryLink> (<GlossaryLink term="Alcaloide">alcaloide</GlossaryLink> visionario tipo ayahuasca/peyote). Cultivar como ornamental es 100% legal en España; consumo entra en zona gris. Esta guía cubre cultivo + preparación. NO da recetas de extracción química.
+        Cactus columnares con <GlossaryLink term="Mescalina">mescalina</GlossaryLink> (<GlossaryLink term="Alcaloide">alcaloide</GlossaryLink> visionario tipo ayahuasca/peyote). Cultivar como ornamental es 100% legal en España; consumo entra en zona gris. Esta guía cubre cultivo + preparación + información educativa sobre extracción.
       </InfoBoxX>
 
       <SectionTitleX c={c}>VARIEDADES PRINCIPALES</SectionTitleX>
@@ -5615,7 +5615,7 @@ function PREPARACION_CACTUS() {
   return (
     <div>
       <InfoBoxX c={c}>
-        Preparación = limpiar y secar el cactus para conservar y consumir como tradicional. Esta guía cubre PROCESADO BÁSICO casero (sin extracción química — eso es controlado y peligroso). Tradicionalmente se consume el cactus seco molido o en infusión.
+        Preparación = limpiar, secar y procesar el cactus para conservar y consumir. Desde el procesado básico tradicional hasta información educativa sobre métodos de extracción. Tradicionalmente se consume el cactus seco molido, en infusión, o como extracto concentrado.
       </InfoBoxX>
 
       <SectionTitleX c={c}>PASO A PASO — PROCESADO BÁSICO</SectionTitleX>
@@ -5673,6 +5673,74 @@ function PREPARACION_CACTUS() {
       <StepX c={c} num={5} text="Beber tibio en 2-3 tomas de 10 min. Ayuna 6h previas. Tener cubo cerca (vómito posible primera hora)." />
       <StepX c={c} num={6} text="Inicio efecto 45-90 min. Pico 3-5h. Total 8-12h." />
 
+      <SectionTitleX c={c}>⚗️ EXTRACCIÓN DE MESCALINA — GUÍA EDUCATIVA</SectionTitleX>
+      <InfoBoxX c={c}>
+        <strong>Contexto:</strong> el cactus seco contiene 0.3-6% mescalina (el resto es fibra, agua, otros alcaloides). Comer 50g de polvo seco para una dosis media implica ingerir 48g de material vegetal no deseado — de ahí las náuseas. La extracción concentra los alcaloides eliminando la fibra. En España la extracción química es ilegal — esta información es exclusivamente educativa.<br/><br/>
+        <strong>Rendimiento orientativo:</strong> 100g polvo seco San Pedro (~1% mescalina) contiene ~1g de mescalina total. Un A/B bien hecho recupera 60-80% de ese valor teórico (0.6-0.8g de alcaloides). Eso equivale a 6-8 dosis medias.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 1 — EXTRACCIÓN ACUOSA (TÉ CONCENTRADO/RESINA)</SectionTitleX>
+      <InfoBoxX c={c}>
+        El método más simple y tradicional. Sin solventes orgánicos. El producto final es una resina oscura o un líquido concentrado. Menos puro que A/B pero más seguro (sin químicos peligrosos).<br/><br/>
+        <strong>Procedimiento:</strong><br/>
+        1. Hervir 50-100g de polvo seco en 1-2L de agua + zumo de 2 limones (acidificar a pH ~4 ayuda a extraer).<br/>
+        2. Hervir suave 2-3h, reponiendo agua según evapore. Colar con tela fina, guardar el líquido.<br/>
+        3. Repetir la cocción con el material sólido otras 2 veces (3 cocciones totales para extraer >90%).<br/>
+        4. Juntar los 3 líquidos y reducir a fuego lento SIN tapa hasta obtener ~100-200ml de jarabe espeso (consistencia de miel líquida).<br/>
+        5. Opción A — beber el jarabe directamente (sabor extremadamente amargo). Opción B — extender en bandeja antiadherente y secar al aire/ventilador hasta formar una resina sólida (raspar y pesar).<br/><br/>
+        <strong>Ventaja:</strong> cero químicos, producto natural completo (contiene otros alcaloides además de mescalina = "efecto séquito"). <strong>Desventaja:</strong> sabor horrible, difícil dosificar con precisión, resina pegajosa difícil de manipular.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 2 — EXTRACCIÓN A/B (ÁCIDO/BASE)</SectionTitleX>
+      <InfoBoxX c={c}>
+        Similar al A/B del DMT pero adaptado a mescalina (la mescalina es un alcaloide fenetilamínico, no triptamínico como el DMT). Produce un extracto mucho más puro y fácil de dosificar.<br/><br/>
+        <strong>⚠️ SEGURIDAD:</strong> usa guantes nitrilo, gafas, ventilación. NaOH quema. Solventes inflamables. Sin llamas ni chispas cerca.<br/><br/>
+        <strong>Materiales:</strong> 100g polvo cactus seco, 50-100g NaOH, 1-2L agua destilada, 200-300ml xileno o tolueno (mejor para mescalina que heptano/nafta), ácido clorhídrico (HCl) diluido al 5-10% O vinagre blanco, recipientes vidrio borosilicato, pipeta vidrio, embudo separador (ideal, pero no imprescindible), papel pH.
+      </InfoBoxX>
+
+      <StepX c={c} num={1} text="ACIDIFICACIÓN: mezclar 100g polvo con 1L agua + 50ml vinagre blanco (pH ~4). Hervir 2h. Colar y guardar líquido. Repetir 3 veces con el mismo material. Juntar los 3 líquidos ácidos (contienen mescalina como sal acetato disuelta). Reducir volumen a ~500ml." />
+      <StepX c={c} num={2} text="DESENGRASADO OPCIONAL: añadir 50ml xileno al líquido ácido, agitar, separar y DESCARTAR el xileno (se lleva grasas/ceras). Repetir 2-3 veces. Este paso mejora pureza final." />
+      <StepX c={c} num={3} text="BASIFICACIÓN: añadir NaOH lentamente al líquido ácido hasta pH 12+. El líquido se vuelve lechoso/blanquecino (la mescalina precipita como base libre). Dejar reposar 30 min." />
+      <StepX c={c} num={4} text="EXTRACCIÓN CON SOLVENTE: añadir 50-75ml xileno, agitar suavemente (rodar, no batir), dejar separar capas. El xileno (arriba) contiene la mescalina base libre. Separar con pipeta/embudo. Repetir 3-5 pulls." />
+      <StepX c={c} num={5} text="SALIFICACIÓN (convertir de vuelta a sal): al xileno cargado, añadir 50ml de agua acidulada (pH 2-3, con HCl diluido o vinagre). Agitar. La mescalina migra del xileno al agua como sal hidrocloruro (si usaste HCl) o acetato (si vinagre). Separar la capa de agua." />
+      <StepX c={c} num={6} text="EVAPORACIÓN: evaporar el agua acidulada en plato Pyrex con ventilador suave (sin calor excesivo). Quedan cristales de mescalina HCl (blancos/beige) o una resina de mescalina acetato (marrón)." />
+
+      <WarningBoxX c={c}>
+        ⚠️ <strong>Xileno y tolueno:</strong> son solventes más agresivos que heptano. No se evaporan a temperatura ambiente tan fácilmente. El producto final debe secarse MUY bien (días con ventilador). Cualquier resto de xileno en el producto es neurotóxico. Si no puedes garantizar evaporación completa, usa el método acuoso (más seguro) o usa d-limoneno (cítrico, food-grade, más seguro pero más caro y lento).
+      </WarningBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 3 — EXTRACCIÓN CON ALCOHOL (TINTURA MEJORADA)</SectionTitleX>
+      <InfoBoxX c={c}>
+        Método intermedio: más puro que la resina acuosa pero más seguro que el A/B. Usa etanol (alcohol etílico 96% — el de farmacia) como solvente.<br/><br/>
+        <strong>Procedimiento:</strong><br/>
+        1. Mezclar 100g polvo seco con 500ml etanol 96% en tarro de vidrio.<br/>
+        2. Agitar diariamente. Macerar 2-4 semanas en oscuridad.<br/>
+        3. Colar con filtro de café. Guardar el alcohol cargado.<br/>
+        4. Repetir con 300ml de etanol fresco sobre el material (segunda maceración 1-2 semanas).<br/>
+        5. Juntar los alcoholes y evaporar COMPLETAMENTE en plato Pyrex con ventilador (sin llama — etanol inflamable).<br/>
+        6. El residuo es una resina alcohólica que contiene mescalina + otros alcaloides + algo de clorofila/grasas.<br/><br/>
+        <strong>Rendimiento:</strong> 100g polvo San Pedro ~1% → 1-2g de resina (contiene ~0.5-0.8g mescalina, el resto son otros extractos). Dosificar con balanza de precisión empezando muy bajo.
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>MÉTODO 4 — EXTRACCIÓN CON D-LIMONENO (CÍTRICO, FOOD-GRADE)</SectionTitleX>
+      <InfoBoxX c={c}>
+        El d-limoneno es un solvente derivado de cítricos. Ventaja: food-grade, olor a naranja, biodegradable, más seguro que xileno/tolueno. Desventaja: más caro, más lento, peor separación de fases (emulsiones frecuentes). Es el preferido por la comunidad "green chemistry".<br/><br/>
+        Mismo proceso A/B pero sustituyendo xileno por d-limoneno. La salificación final se hace con vinagre (ácido acético) para obtener acetato de mescalina. El producto final es una resina/pasta naranja-marrón. Dosificación: empezar con 100-200mg de resina como test (muy variable según pureza).
+      </InfoBoxX>
+
+      <SectionTitleX c={c}>DOSIS CON EXTRACTOS (ORIENTATIVO)</SectionTitleX>
+      <InfoBoxX c={c}>
+        ⚠️ Estas dosis asumen pureza del 60-90%. Cada extracción y cada cactus son distintos. EMPEZAR SIEMPRE CON DOSIS TEST (1/4 de la dosis baja).<br/><br/>
+        <strong>Mescalina HCl (cristales):</strong><br/>
+        • Microdosis: 10-30mg<br/>
+        • Dosis baja: 100-200mg<br/>
+        • Dosis media: 200-400mg<br/>
+        • Dosis alta: 400-600mg<br/>
+        • Duración: 8-14h (más larga que con cactus entero porque no hay fibra que ralentice absorción)<br/><br/>
+        <strong>Resina acuosa/alcohólica:</strong><br/>
+        • Muy variable. 1g de resina puede contener 100-500mg de mescalina. Empezar con 200-500mg de resina como test. Subir gradualmente en sesiones separadas por >6 semanas.
+      </InfoBoxX>
+
       <WarningBoxX c={c}>
         ⚠️ <strong>Sobre dosificación:</strong> ESTA GUÍA NO DA DOSIS porque varía mucho según especie, edad, condiciones de cultivo y persona. Investiga DOSIFICACIÓN RESPONSABLE por tu cuenta — sitios de harm reduction como Energy Control, DanceSafe, Erowid. Mescalina es muy variable; "dosis estándar" no existe sin análisis. Empieza siempre con dosis MUY baja (test de tolerancia personal) y espera 6 semanas entre experiencias significativas.
       </WarningBoxX>
@@ -5684,7 +5752,7 @@ function FAQ_CACTUS() {
   const c = CACTUS_COLORS;
   const [query, setQuery] = React.useState("");
   const faqs = [
-    { q: "¿Es legal en España?", a: "Cultivar el cactus como ornamental: SÍ, 100% legal. Poseer cactus seco/triturado: zona gris (no se persigue). Extracción química de mescalina: ILEGAL (sustancia controlada). Esta guía NO da recetas de extracción." },
+    { q: "¿Es legal en España?", a: "Cultivar el cactus como ornamental: SÍ, 100% legal. Poseer cactus seco/triturado: zona gris (no se persigue). Extracción química de mescalina: ILEGAL (sustancia controlada). Esta guía incluye información educativa sobre métodos de extracción." },
     { q: "¿Cuándo florece?", a: "Trichocereus florecen alrededor de los 4-6 años desde esqueje, normalmente en verano. Flores blancas grandes y fragantes que se abren de noche. Después puedes hacer polinización cruzada para semillas." },
     { q: "¿Puedo clonar mi cactus?", a: "Sí — esa es la magia. Cada vez que cosechas una punta, puedes plantarla y crear una nueva planta clónica idéntica. Un cactus de 5 años puede convertirse en 5-10 cactus en otra década." },
     { q: "¿Por qué mi cactus se vuelve amarillo?", a: "Causa probable: exceso de sol sin aclimatación, o exceso de riego. Aclimata gradualmente al sol y reduce riego." },
