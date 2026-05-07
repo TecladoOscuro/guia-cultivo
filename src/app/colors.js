@@ -98,6 +98,26 @@ const HONGOS_COLORS = {
   error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
 };
 
+// Huerta — verdes tierra, huerto mediterráneo
+const HUERTA_COLORS = {
+  bg: "#0a1208", bg2: "#0e1a0c", bg3: "#162412", bg4: "#1e3018",
+  border1: "#284020", border2: "#3a5c2e", borderAccent: "#4e7a3c",
+  accent1: "#6ba34a", accent2: "#8bc06a", accent3: "#a8d48c", accent4: "#c5e3af", accent5: "#ddefcf",
+  text: "#e8f2de", textBright: "#f5faef",
+  gradient: "linear-gradient(135deg, #284020 0%, #4e7a3c 50%, #284020 100%)",
+  error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
+};
+
+// Frutales — verdes hoja, fruta y huerto frutal mediterráneo
+const FRUTALES_COLORS = {
+  bg: "#0a1208", bg2: "#0f1d0d", bg3: "#152712", bg4: "#1d3318",
+  border1: "#294022", border2: "#3b5c30", borderAccent: "#4d7c3b",
+  accent1: "#5e9c47", accent2: "#7bbd60", accent3: "#9ad47d", accent4: "#bae0a3", accent5: "#d8ecc8",
+  text: "#e8f2de", textBright: "#f5faef",
+  gradient: "linear-gradient(135deg, #294022 0%, #4d7c3b 50%, #294022 100%)",
+  error: "#e88a6a", errorBg: "#0f0a08", errorBorder: "#5a3020",
+};
+
 // DMT — amarillo-dorado cristal psicodélico
 const DMT_COLORS = {
   bg: "#0a0a14", bg2: "#10101e", bg3: "#181828", bg4: "#222236",

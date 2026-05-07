@@ -32,6 +32,8 @@ const sourceFiles = [
   'src/components/ayahuasca/general.js',
   'src/components/dmt/general.js',
   'src/components/hongos/general.js',
+  'src/components/huerta/general.js',
+  'src/components/frutales/general.js',
   'src/app/gui-cultivo.js',
 ];
 

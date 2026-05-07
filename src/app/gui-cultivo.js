@@ -1,6 +1,6 @@
 function GuiaCultivo() {
 
-  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita" | "toxicas" | "hongos"
+  const [guide, setGuide] = useState("cannabis"); // "cannabis" | "mushroom" | "cactus" | "ayahuasca" | "dmt" | "ferment" | "plantas" | "amanita" | "toxicas" | "hongos" | "huerta" | "frutales"
 
   // Cannabis state
   const [mode, setMode] = useState("interior");
@@ -48,6 +48,12 @@ function GuiaCultivo() {
 
   // Hongos medicinales state (single mode)
   const [activeHongos, setActiveHongos] = useState("intro_hongos");
+
+  // Huerta state (single mode)
+  const [activeHuerta, setActiveHuerta] = useState("intro_huerta");
+
+  // Frutales state (single mode)
+  const [activeFrutales, setActiveFrutales] = useState("intro_frutales");
 
   const navigate = (targetMode, targetPhase) => {
     setMode(targetMode);
@@ -102,7 +108,7 @@ function GuiaCultivo() {
     const p = params.get("phase");
     if (!g) return;
 
-    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas", "toxicas", "hongos"];
+    const validGuides = ["cannabis", "mushroom", "cactus", "ayahuasca", "dmt", "ferment", "plantas", "amanita", "trufas", "toxicas", "hongos", "huerta", "frutales"];
     if (!validGuides.includes(g)) return;
     setGuide(g);
 
@@ -140,6 +146,8 @@ function GuiaCultivo() {
         else if (m === "general") setActiveFermentGen(p);
       }
     } else if (g === "hongos" && p) setActiveHongos(p);
+    else if (g === "huerta" && p) setActiveHuerta(p);
+    else if (g === "frutales" && p) setActiveFrutales(p);
   }, []);
 
   const renderContent = () => {
@@ -440,6 +448,71 @@ function GuiaCultivo() {
         case "biblio_hongos": return <BIBLIO_HONGOS />;
         default: return <INTRO_HONGOS />;
       }
+    } else if (guide === "huerta") {
+      switch (activeHuerta) {
+        case "intro_huerta": return <INTRO_HUERTA setPhase={setActiveHuerta} />;
+        case "compra_huerta": return <COMPRA_HUERTA />;
+        case "tomate": return <TOMATE />;
+        case "pimiento": return <PIMIENTO />;
+        case "berenjena": return <BERENJENA />;
+        case "lechuga": return <LECHUGA />;
+        case "espinaca": return <ESPINACA />;
+        case "kale": return <KALE />;
+        case "acelga": return <ACELGA />;
+        case "calabacin": return <CALABACIN />;
+        case "pepino": return <PEPINO />;
+        case "melon": return <MELON />;
+        case "sandia": return <SANDIA />;
+        case "zanahoria": return <ZANAHORIA />;
+        case "rabano": return <RABANO />;
+        case "remolacha": return <REMOLACHA />;
+        case "patata": return <PATATA />;
+        case "cebolla": return <CEBOLLA />;
+        case "ajo": return <AJO />;
+        case "puerro": return <PUERRO />;
+        case "judia_verde": return <JUDIA_VERDE />;
+        case "guisante": return <GUISANTE />;
+        case "haba": return <HABA />;
+        case "brocoli": return <BROCOLI />;
+        case "coliflor": return <COLIFLOR />;
+        case "albahaca": return <ALBAHACA />;
+        case "perejil": return <PEREJIL />;
+        case "cilantro": return <CILANTRO />;
+        case "menta": return <MENTA />;
+        case "romero": return <ROMERO />;
+        case "tomillo": return <TOMILLO />;
+        case "oregano": return <OREGANO />;
+        case "faq_huerta": return <FAQ_HUERTA />;
+        case "biblio_huerta": return <BIBLIO_HUERTA />;
+        case "glosario_huerta": return <GLOSARIO_HUERTA />;
+        default: return <INTRO_HUERTA />;
+      }
+    } else if (guide === "frutales") {
+      switch (activeFrutales) {
+        case "intro_frutales": return <INTRO_FRUTALES setPhase={setActiveFrutales} />;
+        case "compra_frutales": return <COMPRA_FRUTALES />;
+        case "fresa": return <FRESA />;
+        case "frambuesa": return <FRAMBUESA />;
+        case "arandano": return <ARANDANO />;
+        case "mora": return <MORA />;
+        case "limonero": return <LIMONERO />;
+        case "naranjo": return <NARANJO />;
+        case "mandarino": return <MANDARINO />;
+        case "melocotonero": return <MELOCOTONERO />;
+        case "ciruelo": return <CIRUELO />;
+        case "cerezo": return <CEREZO />;
+        case "albaricoquero": return <ALBARICOQUERO />;
+        case "manzano": return <MANZANO />;
+        case "peral": return <PERAL />;
+        case "higuera": return <HIGUERA />;
+        case "vid": return <VID />;
+        case "kiwi": return <KIWI />;
+        case "granado": return <GRANADO />;
+        case "faq_frutales": return <FAQ_FRUTALES />;
+        case "biblio_frutales": return <BIBLIO_FRUTALES />;
+        case "glosario_frutales": return <GLOSARIO_FRUTALES />;
+        default: return <INTRO_FRUTALES />;
+      }
     }
   };
 
@@ -551,6 +624,22 @@ function GuiaCultivo() {
     title = "🌿 Hongos Medicinales";
     modeOptions = null;
     currentMode = null; setCurrentMode = null;
+  } else if (guide === "huerta") {
+    currentPhases = huertaPhases;
+    currentActive = activeHuerta;
+    setCurrentActive = setActiveHuerta;
+    colors = HUERTA_COLORS;
+    title = "🥬 Huerta Mediterránea";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
+  } else if (guide === "frutales") {
+    currentPhases = frutalesPhases;
+    currentActive = activeFrutales;
+    setCurrentActive = setActiveFrutales;
+    colors = FRUTALES_COLORS;
+    title = "🍎 Frutales Mediterráneos";
+    modeOptions = null;
+    currentMode = null; setCurrentMode = null;
   } else { // dmt
     currentPhases = dmtPhases;
     currentActive = activeDmt;
@@ -571,6 +660,8 @@ function GuiaCultivo() {
     { id: "dmt", emoji: "🌌", label: "DMT", grupo: "🌱 Cultivar plantas", accent: DMT_COLORS.accent1 },
     { id: "plantas", emoji: "🪷", label: "Plantas suaves", grupo: "🌱 Cultivar plantas", accent: PLANTAS_COLORS.accent1 },
     { id: "toxicas", emoji: "☠️", label: "Plantas tóxicas", grupo: "🌱 Cultivar plantas", accent: TOXICAS_COLORS.accent1 },
+    { id: "huerta", emoji: "🥬", label: "Huerta", grupo: "🌱 Cultivar plantas", accent: HUERTA_COLORS.accent1 },
+    { id: "frutales", emoji: "🍎", label: "Frutales", grupo: "🌱 Cultivar plantas", accent: FRUTALES_COLORS.accent1 },
     // 🍄 CULTIVAR/FORRAJEAR HONGOS
     { id: "mushroom", emoji: "🍄", label: "Setas", grupo: "🍄 Cultivar / forrajear hongos", accent: MUSHROOM_COLORS.accent1 },
     { id: "trufas", emoji: "🍯", label: "Trufas mágicas", grupo: "🍄 Cultivar / forrajear hongos", accent: TRUFAS_COLORS.accent1 },
@@ -778,6 +869,16 @@ function GuiaCultivo() {
         {guide === "dmt" && (
           <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
             🌌 Mimosa hostilis cultivable. Cristal puro = ILEGAL en España. Ayahuasca = alternativa legal gris.
+          </div>
+        )}
+        {guide === "huerta" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🥬 35 verduras y aromáticas · Huerto mediterráneo todo el año · Cosecha tu propia comida
+          </div>
+        )}
+        {guide === "frutales" && (
+          <div style={{ textAlign: "center", color: colors.accent1, fontSize: "12px", padding: "8px" }}>
+            🍎 19 frutales adaptados al clima de Barcelona · De fresa en maceta a limonero productivo
           </div>
         )}
       </div>
