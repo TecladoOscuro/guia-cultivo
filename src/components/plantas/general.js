@@ -1160,6 +1160,12 @@ function BELENO() {
       <StepX c={c} num={2} text="Hoy los alcaloides tropánicos se obtienen industrialmente de fuentes controladas. La atropina pura se usa en hospitales a dosis tituladas. El extracto casero de beleño NO tiene dosificación fiable — variabilidad de alcaloides entre plantas hace el riesgo imprevisible." />
       <InfoBoxX c={c}>⚠️ NO intentar extracción doméstica de tropanos de beleño bajo ningún concepto. Material educativo y documental histórico únicamente. Cualquier uso psicoactivo de beleño crudo es extremadamente peligroso.</InfoBoxX>
 
+      <SectionTitleX c={c}>🧪 Extracción y uso</SectionTitleX>
+      <StepX c={c} num={1} title="Compuestos activos" desc="Hiosciamina, escopolamina." />
+      <StepX c={c} num={2} title="Extracción histórica" desc="Usado junto con belladona y mandrágora en ungüentos medievales ('vuelo de brujas'). Maceración en grasas para absorción cutánea." />
+      <StepX c={c} num={3} title="Usos médicos/farmacéuticos" desc="Antiguamente como sedante y analgésico. Reemplazado por compuestos puros o sintéticos más seguros." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO HISTÓRICO/EDUCATIVO:</strong><br/>
@@ -1227,6 +1233,12 @@ function BELLADONA() {
       <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. La extracción de atropina de belladona fue la base de la farmacología moderna del siglo XIX. Industrias farmacéuticas extraían atropina de hojas/raíces para preparaciones oculares y antiespasmódicas." />
       <StepX c={c} num={2} text="La atropina pura se produce hoy industrialmente y es fármaco hospitalario controlado. La extracción casera de belladona no tiene ninguna utilidad práctica y supone riesgo de intoxicación grave incluso durante la manipulación." />
       <InfoBoxX c={c}>⚠️ NO realizar extracción doméstica de belladona. Referencia etnobotánica e histórica únicamente. La belladona ornamental es legal; el uso psicoactivo no es seguro en ninguna dosis sin titulación química precisa.</InfoBoxX>
+
+      <SectionTitleX c={c}>🧪 Extracción y uso</SectionTitleX>
+      <StepX c={c} num={1} title="Compuestos activos" desc="Atropina (mezcla racémica de hiosciamina)." />
+      <StepX c={c} num={2} title="Extracción histórica" desc="'Belladonna' = mujer bella en italiano — extracto de bayas para dilatar pupilas (estética renacentista). Tintura de belladona en farmacopea hasta s.XX." />
+      <StepX c={c} num={3} title="Usos médicos/farmacéuticos" desc="Atropina = medicamento esencial OMS para bradicardia, antídoto de organofosforados y preanestesia." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
@@ -1297,6 +1309,12 @@ function MANDRAGORA() {
       <StepX c={c} num={2} text="Extractar alcaloides de mandrágora casero no tiene ninguna utilidad ni justificación en el contexto actual. La variabilidad de concentración entre raíces hace imposible cualquier dosificación segura sin análisis químico." />
       <InfoBoxX c={c}>⚠️ La raíz de mandrágora como objeto etnobotánico/decorativo y folclórico es el uso legítimo y seguro. Referencia histórica únicamente para extracción.</InfoBoxX>
 
+      <SectionTitleX c={c}>🧪 Extracción y uso</SectionTitleX>
+      <StepX c={c} num={1} title="Compuestos activos" desc="Hiosciamina, escopolamina, mandragorina. Raíz." />
+      <StepX c={c} num={2} title="Extracción histórica" desc="Raíz macerada en vino como anestésico quirúrgico medieval (esponja soporífera). Extracto de raíz en aceite para ungüentos." />
+      <StepX c={c} num={3} title="Usos médicos/farmacéuticos" desc="Histórico exclusivamente. La mandrágora fue el anestésico principal antes del éter y cloroformo." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO HISTÓRICO/MÁGICO:</strong><br/>
@@ -1366,6 +1384,12 @@ function DATURA_INOXIA() {
       <StepX c={c} num={2} text="Ninguna extracción doméstica tiene sentido con esta planta. La variabilidad de alcaloides entre partes y entre plantas es tan alta que el delirio tropánico es prácticamente imposible de modular sin análisis." />
       <InfoBoxX c={c}>⚠️ Referencia histórica únicamente. La Datura inoxia como ornamental espectacular es el único uso doméstico seguro. NO extraer, NO usar internamente.</InfoBoxX>
 
+      <SectionTitleX c={c}>🧪 Extracción y uso</SectionTitleX>
+      <StepX c={c} num={1} title="Compuestos activos" desc="Escopolamina (mayor concentración), hiosciamina." />
+      <StepX c={c} num={2} title="Extracción histórica" desc="Toloache en rituales de iniciación de nativos americanos (California, México). Semillas pulverizadas en bebida ceremonial." />
+      <StepX c={c} num={3} title="Usos médicos/farmacéuticos" desc="Fuente comercial de escopolamina farmacéutica (Datura inoxia cultivada para extracción industrial en India)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>
         ⚠️ <strong>USO ETNOBOTÁNICO/EDUCATIVO:</strong><br/>
@@ -1432,6 +1456,12 @@ function ESTRAMONIO() {
       <StepX c={c} num={1} text="REFERENCIA HISTÓRICA ÚNICAMENTE. Igual que Datura inoxia — mismos alcaloides tropánicos (hiosciamina dominante en esta especie), mismas consideraciones de seguridad." />
       <StepX c={c} num={2} text="El estramonio silvestre en España es responsable de numerosas hospitalizaciones cada verano. No tiene ningún sentido concentrar sus alcaloides. El material histórico es una advertencia, no una instrucción." />
       <InfoBoxX c={c}>⚠️ Referencia histórica y documental únicamente. El estramonio es planta ruderal silvestre — no cultivar intencionalmente cerca de familias con niños o mascotas.</InfoBoxX>
+
+      <SectionTitleX c={c}>🧪 Extracción y uso</SectionTitleX>
+      <StepX c={c} num={1} title="Compuestos activos" desc="Hiosciamina, atropina, escopolamina. Semillas concentradas." />
+      <StepX c={c} num={2} title="Extracción histórica" desc="Hojas fumadas como antiasmático en cigarrillos medicinales (s.XIX-XX). Extracto de semillas estandarizado en farmacopea antigua." />
+      <StepX c={c} num={3} title="Usos médicos/farmacéuticos" desc="Antiasmático histórico (abandonado por broncodilatadores beta-adrenérgicos). Escopolamina extraída comercialmente de estramonio cultivado." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c}>USOS</SectionTitleX>
       <InfoBoxX c={c}>

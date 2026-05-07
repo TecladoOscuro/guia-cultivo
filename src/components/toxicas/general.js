@@ -176,6 +176,12 @@ function BRUGMANSIA() {
       <StepX c={c} n="1" title="Uso andino chamánico" desc="Brugmansia ha sido usada durante milenios por chamanes andinos (curanderos) como planta de poder para diagnóstico y adivinación. El ritual requiere años de aprendizaje con guías experimentados. Muerte por uso sin guía = registrado en múltiples comunidades." />
       <StepX c={c} n="2" title="Extracción histórica de escopolamina" desc="Escopolamina aislada de Brugmansia y otras solanáceas. Usada médicamente como antiemético, parche transdérmico para mareo y (controvertidamente) como 'suero de la verdad' en interrogatorios. Extracción: proceso de laboratorio con solventes orgánicos — solo a nivel industrial o laboratorio controlado." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Atropina, escopolamina, hiosciamina (alcaloides tropánicos). Concentración en flores > hojas > tallos." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Chamanes andinos maceraban flores en agua o alcohol para ungüentos de absorción cutánea (práctica extremadamente peligrosa). Escopolamina aislada en laboratorio (1901) mediante extracción ácido-base con solventes orgánicos." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Parches transdérmicos de escopolamina (cinetosis, postoperatorio). Atropina en oftalmología (dilatación pupilar) y emergencias (bradicardia). Antiespasmódico gastrointestinal histórico." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Fisostigmina IV — antídoto específico" desc="Inhibidor reversible de acetilcolinesterasa. Aumenta acetilcolina disponible → contrarresta el bloqueo muscarínico de los tropanos. Dosis: 0.5-2mg IV lento (adultos), bajo monitorización cardiaca. Contraindicado en asma, bradiarritmias, bloqueo AV. Solo en urgencias bajo supervisión médica." />
       <StepX c={c} n="2" title="Manejo síndrome anticolinérgico" desc="Ambiente fresco (hipertermia = emergencia). Vía IV para hidratación y diazepam si convulsiones. Catéter urinario si retención. Benzodiazepinas para agitación severa (NO antipsicóticos — empeoran). Monitorización cardiaca continua. UCI si síntomas graves." />
@@ -221,6 +227,12 @@ function ADELFA() {
       <StepX c={c} n="1" title="Insecticida y raticida" desc="Históricamente usada como raticida y para matar pulgas. Extracto acuoso como insecticida de contacto en agricultura tradicional mediterránea." />
       <StepX c={c} n="2" title="Oleandrina en investigación" desc="Investigación oncológica activa: oleandrina muestra actividad antitumoral in vitro (inhibición proliferación) y propiedades antivirales. No hay tratamiento humano aprobado — aún en fase preclínica. El interés científico es real pero no justifica consumo." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Oleandrina, neriina, digitoxigenina (glucósidos cardiacos). Todas las partes tóxicas, incluyendo humo al quemar." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Oleandrina aislada por primera vez en 1840. Uso tradicional en la India como veneno para flechas (extracto acuoso concentrado). Investigación reciente como posible anticancerígeno (PBI-05204 en fase clínica)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Anumati (extracto estandarizado) en medicina tradicional china para insuficiencia cardiaca. Derivados semisintéticos en investigación oncológica (glioblastoma)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Digifab — anticuerpos antidigitálicos" desc="DigiFab (fragmentos Fab antidigitálicos): se une a la oleandrina circulante → complejo inactivo excretado por riñón. Revertir intoxicación grave. Disponible en UCI hospitalaria. Dosis calculada según cantidad estimada ingerida y niveles séricos. También activo contra convalatoxina (Lirio del Valle) y convallótoxol." />
       <StepX c={c} n="2" title="Soporte cardiaco hasta UCI" desc="Monitorización ECG continua desde llegada a urgencias. Bradicardia severa: atropina 0.5-1mg IV. Arritmias ventriculares: lidocaína o amiodarona (NO cardioversión eléctrica hasta dar Digifab — riesgo de precipitar fibrilación). Hipotensión: fluidos IV, vasopresores si necesario. Corregir hipokaliemia (la hipokaliemia empeora la toxicidad digitálica)." />
@@ -263,6 +275,12 @@ function DEDALERA() {
       <SectionTitleX c={c} title="📜 Historia médica" />
       <StepX c={c} n="1" title="William Withering — 1785" desc="Médico inglés que sistematizó el uso de la dedalera en insuficiencia cardiaca (dropsy/hidropesía) tras observar remedios populares. Su monografía 'Account of the Foxglove' (1785) establece las bases de la farmacología moderna basada en plantas." />
       <StepX c={c} n="2" title="Extracción industrial" desc="Digoxina se extrae industrialmente de hojas de Digitalis lanata (especie más rica en digoxina). Proceso: extracción con etanol → purificación cromatográfica → cristalización. Los principios básicos son los mismos que se usan en síntesis orgánica — hojas frescas nunca se usan directamente por variabilidad de concentración." />
+
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Digitoxina, digoxina, gitoxina (glucósidos cardiacos). Concentración en hojas del segundo año." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="William Withering (1785) documentó el uso de infusiones de hojas para hidropesía. Digoxina aislada pura en 1930. Extracción industrial desde Digitalis lanata cultivada (mayor rendimiento que D. purpurea)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Digoxina = medicamento esencial OMS para insuficiencia cardiaca congestiva y fibrilación auricular. Digitoxina histórica (hoy menos usada por margen terapéutico estrecho)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Digifab — mismo antídoto que para adelfa" desc="Fragmentos anticuerpo antidigitálico activos contra digitoxina y digoxina. Cálculo de dosis: número de viales = (peso corporal en kg × concentración sérica estimada) / 100. Disponible en UCI. Revertir completamente si se administra pronto." />
@@ -307,6 +325,12 @@ function ACONITO() {
       <StepX c={c} n="1" title="Wolfsbane — veneno de lobos" desc="Nombre vernáculo inglés 'wolfsbane' por su uso tradicional para envenenar cebos contra lobos y otros depredadores. 'Aconitum' puede derivar de Aconae (ciudad griega de Ponto) o de 'acontia' (dardos). Usado para envenenar flechas en Grecia, Roma y Asia Central." />
       <StepX c={c} n="2" title="Aconitina en medicina" desc="A dosis sub-tóxicas: analgésico tópico (preparaciones de farmacia homeopática — Aconitum 4CH, 9CH, etc.). También investigado como agente antiarrítmico paradójico. Hoy obsoleto en medicina convencional dada la ventana terapéutica ínfima." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Aconitina, mesaconitina, hipaconitina (alcaloides diterpenoides). Raíz/tubérculo = parte más tóxica (2-3 mg pueden matar)." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Usado como veneno de flechas en Asia (Aconitum ferox) e India (bish). Extracto alcohólico concentrado aplicado a puntas de flecha. Aconitina aislada pura en 1833 (Geiger y Hesse)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Uso actual CERO en medicina occidental — margen terapéutico inexistente. Homeopatía: diluciones extremas (discutible eficacia). Investigación como analgésico tópico (bloqueo canales Na+) con derivados modificados menos tóxicos." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Sin antídoto específico — soporte vital" desc="No existe antídoto para la aconitina. UCI con monitorización cardiaca continua. Arritmias ventriculares: amiodarona o flecainida (lidocaína menos efectiva para aconitina). Bradiarritmias severas: atropina IV. Marcapasos externo si bloqueo AV completo. ECMO (membrana extracorpórea) en casos de colapso cardiovascular — casos supervividos en China documentados." />
       <StepX c={c} n="2" title="Descontaminación urgente" desc="Carbón activado (50g) oral si ingestión reciente (<30 min) — la aconitina se absorbe extremadamente rápido. Lavado gástrico en urgencias si <30min. Piel: lavar con agua y jabón inmediatamente — la absorción transdérmica es real aunque más lenta que la oral." />
@@ -349,6 +373,12 @@ function CICUTA() {
       <StepX c={c} n="1" title="Terrenos alterados húmedos" desc="Bordes de caminos, riberas, campos abandonados, cunetas. No necesita cultivo — crece sola en toda España. Bienal: roseta año 1, florece año 2 en primavera-verano. Frutos redondeados costillados cuando madura." />
       <StepX c={c} n="2" title="Seguridad en campo" desc="Nunca recolectar umbelíferas silvestres sin identificación botánica experta. Lavar manos tras contacto (coniina se absorbe por piel en menor medida). Los animales en general la evitan por el olor — si el ganado está muerto cerca de una planta: cicuta." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Coniina, γ-coniceína (alcaloides piperidínicos). Concentración en frutos verdes > raíz > hojas." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Veneno oficial del estado ateniense (Sócrates, 399 a.C.). Extracto acuoso de frutos frescos ('veneno de cicuta'). Coniina aislada en 1827. Primer alcaloide sintetizado artificialmente (Ladenburg, 1886)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="NINGÚN uso médico actual. Interés histórico y toxicológico. Antagonista nAChR irreversible — estudio como modelo de bloqueo neuromuscular en investigación farmacológica." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Sin antídoto — ventilación mecánica" desc="No existe antídoto para coniina. La parálisis ascendente por bloqueo nicotínico puede llegar al diafragma → paro respiratorio manteniendo la conciencia (como describió Platón). Ventilación mecánica en UCI es el tratamiento. La toxina se metaboliza y elimina — con soporte respiratorio, el pronóstico puede ser bueno si no hay hipoxia prolongada." />
       <StepX c={c} n="2" title="Soporte cardiaco y neurológico" desc="Monitorización ECG. Posible bradicardia por estimulación vagal. NO fisostigmina (ni anticolinesterásicos) — la coniina actúa en receptores nicotínicos, no muscarínicos. Benzodiazepinas si convulsiones. Calentamiento activo si hipotermia por parálisis muscular y falta de actividad." />
@@ -382,6 +412,12 @@ function RICINO() {
       <StepX c={c} n="1" title="Crecimiento espectacular" desc="Planta tropical de crecimiento muy rápido. En BCN outdoor puede alcanzar 2-3m en una temporada. Hojas rojas o verdes según variedad — muy decorativas. Requiere sol pleno, riego moderado, sustrato bien drenado." />
       <StepX c={c} n="2" title="Semillas — etiquetado crítico" desc="Cuando los frutos maduran, las semillas son una amenaza especialmente para niños. OPCIONES: (a) eliminar frutos antes de madurar; (b) guardar semillas en recipiente etiquetado VENENO bajo llave; (c) no cultivar si hay niños pequeños. Los frutos espinosos son atractivos visualmente para niños." />
       <StepX c={c} n="3" title="Usos naturales no-tóxicos" desc="Aceite de ricino del fruto (siempre cold-pressed, sin calor): cosmético capilar, nutritivo cuero cabelludo. Cultivar para obtener aceite propio es posible pero complejo — prensado en frío requiere equipo específico para extraer sin generar calor." />
+
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Ricina (lectina tóxica, inhibe síntesis proteica). 1 semilla mascada = dosis letal potencial para un niño. Aceite de ricino = seguro (ricina no es liposoluble)." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Aceite de ricino prensado en frío desde el antiguo Egipto (laxante, lubricante industrial). Ricina purificada a partir de la pasta residual del prensado (NO del aceite). Proceso: extracción acuosa + precipitación con sulfato de amonio. Altamente regulado." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Aceite de ricino (laxante, cosmética, biodiésel, lubricante industrial). Ricina = SIN USO MÉDICO. Investigación como inmunotoxina conjugada con anticuerpos para terapia dirigida contra cáncer (ensayos clínicos fase I/II)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Sin antídoto para ricina — soporte intensivo" desc="No existe antídoto aprobado para intoxicación por ricina. Investigación activa: anticuerpos monoclonales anti-ricina (en desarrollo militar/CBRN). Tratamiento: carbón activado si ingestión reciente, hidratación agresiva IV, soporte multiorgánico UCI. El daño es irreversible en células afectadas — la clave es evitar la absorción." />
@@ -426,6 +462,12 @@ function COLCHICO() {
       <StepX c={c} n="1" title="Inducción de poliploidía" desc="Técnica estándar en mejora vegetal: tratar semillas/ápices con solución de colchicina al 0.1-0.5% bloquea la separación cromosómica durante una división → células con el doble de cromosomas (tetraploides). Así se obtienen variedades más grandes y vigorosas. Muchas variedades comerciales de sandía sin pepitas, fresa y otros son tetraploides inducidos con colchicina." />
       <StepX c={c} n="2" title="Tratamiento de la gota (con precaución)" desc="Colchicina (Colchicine Takeda, 0.5mg comprimido) es fármaco de primera línea para gota aguda. Dosis muy controladas — el margen entre dosis terapéutica y tóxica es estrecho. Jamás usar extractos caseros de cólquico para automedicarse la gota — la variabilidad de concentración haría imposible dosificar correctamente." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Colchicina (alcaloide antimitótico). Bulbo > semillas > flores." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Usado desde el antiguo Egipto (papiro Ebers, 1500 a.C.) para gota. Extracto de semillas estandarizado en el s. XIX. Colchicina aislada pura en 1820 (Pelletier y Caventou)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Colchicina = tratamiento estándar para ataques agudos de gota (antiinflamatorio por inhibición de microtúbulos). Fiebre mediterránea familiar. Investigación en pericarditis y COVID-19 (efecto antiinflamatorio). Derivados como anticancerígenos (inhibidores mitóticos)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Sin antídoto — soporte hematológico" desc="No existe antídoto específico para colchicina. La ventana letal lenta (2-7 días) hace que muchos pacientes subestimen la gravedad inicial. Hospitalización obligatoria incluso si síntomas leves en las primeras horas. G-CSF (factor estimulante colonias granulocíticas) puede reducir la leucopenia severa. Trasplante de médula ósea en casos extremos." />
       <StepX c={c} n="2" title="Carbón activado y lavado gástrico" desc="Si ingestión <1h: carbón activado oral. La colchicina tiene circulación enterohepática — carbón activado repetido cada 4-6h puede reducir la reabsorción intestinal. Hemoperfusión con carbón activado o hemodiálisis: eficacia limitada pero usados en casos graves." />
@@ -462,6 +504,12 @@ function TEJO() {
       <SectionTitleX c={c} title="📜 Taxol y quimioterapia" />
       <StepX c={c} n="1" title="Descubrimiento del paclitaxel" desc="1960s: programa de screening de plantas del NCI (EEUU). Corteza de Taxus brevifolia (tejo del Pacífico) muestra actividad antitumoral. 1971: Wani et al. aíslan paclitaxel. Mecanismo único: estabiliza microtúbulos (opuesto a la colchicina) → impide división celular. Aprobado FDA 1992 para cáncer ovario." />
       <StepX c={c} n="2" title="Obtención industrial" desc="Inicialmente de corteza (sacrificaba el árbol). Crisis de suministro en 90s → síntesis semisintética desde 10-deacetilbacatina III (hoja de Taxus baccata, no destruye el árbol). Hoy también síntesis total. El tejo europeo (T. baccata) es fuente sostenible de precursores." />
+
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Taxol/paclitaxel (taxano), taxina (cardiotóxico). Corteza > hojas > semilla. El arilo rojo = única parte no tóxica." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Taxol descubierto en 1960s (programa de screening NCI). Extracción original de corteza de Tejo del Pacífico (Taxus brevifolia) — 1 árbol para 1 dosis. Ahora: semisíntesis desde precursores de hojas de Tejo europeo cultivado (Taxus baccata) = sostenible." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Paclitaxel = quimioterapia esencial para cáncer de ovario, mama, pulmón. Docetaxel análogo semisintético. Ambos en lista de medicamentos esenciales de la OMS. El compuesto que ha salvado más vidas en oncología." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Sin antídoto — UCI cardiaca urgente" desc="No hay antídoto para taxinas. La toxicidad cardiaca puede ser rápida — horas desde ingestión. UCI cardiológica. Arritmias: amiodarona, lidocaína. Bloqueo AV: marcapasos externo urgente. ECMO si colapso cardiovascular. Carbón activado si ingestión reciente (<1h)." />
@@ -603,6 +651,12 @@ function LIRIO_VALLE() {
       <StepX c={c} n="1" title="1 de mayo en Francia" desc="Regalar lirios del valle el 1 de mayo es tradición francesa (día de la suerte). El 1 de mayo de 1561, el rey Carlos IX recibió un ramo y desde entonces regaló muguet cada año a las damas de la corte. Hoy: millones de manojos vendidos ese día." />
       <StepX c={c} n="2" title="Convalatoxina en investigación" desc="Investigación reciente sugiere que la convalatoxina tiene actividad antitumoral (inhibición topoisomerasa) y antiviral. También se ha explorado como alternativa a la digoxina en insuficiencia cardiaca. No hay preparado farmacológico aprobado actualmente." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Convalatoxina, convalamarina (glucósidos cardiacos). Toda la planta." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Convalatoxina aislada en 1929. Uso tradicional en la URSS como tónico cardiaco (gotas de Convalaria). Infusiones de hojas secas en medicina popular europea (corregidas por digital)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Obsoleto en medicina occidental (reemplazado por digoxina — farmacocinética más predecible). Perfumería (aroma característico, sintetizado ahora sin extracto vegetal)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Digifab — anticuerpos antidigitálicos" desc="La convalatoxina comparte mecanismo con la digoxina (inhibición Na+/K+-ATPasa). Digifab (fragmentos Fab) puede neutralizarla en casos graves, aunque la dosificación es menos precisa que para digoxina por falta de inmunoensayo específico. Disponible en UCI. Uso empírico en intoxicaciones graves con arritmias." />
       <StepX c={c} n="2" title="Urgencias inmediato — incluso agua del jarrón" desc="Si alguien bebió el agua del jarrón donde estaban las flores: urgencias. La concentración puede ser suficiente para síntomas cardiacos. ECG inmediato. Monitorización 12-24h. Carbón activado si ingestión reciente. Especial atención en niños — los frutos rojos de otoño son muy atractivos." />
@@ -642,6 +696,12 @@ function ELEBORO() {
       <StepX c={c} n="1" title="Cura de la locura en la antigüedad" desc="El eléboro negro fue el tratamiento estándar de la 'melancolía' (depresión) y 'manía' (psicosis) en Grecia clásica y Roma. Hipócrates lo prescribía. El santuario de Asclepio en Anticira (Grecia) era famoso por sus curas de eléboro — 'ir a Anticira' = ser tratado de locura. La cura consistía en purgas violentas que supuestamente expulsaban los humores malos." />
       <StepX c={c} n="2" title="Veneno de flechas y guerra química" desc="En la Primera Guerra Sagrada (595 a.C.), los atenienses envenenaron el suministro de agua de Cirra con raíz de eléboro — uno de los primeros usos documentados de guerra química/biológica. Las tropas de Cirra sufrieron diarrea masiva." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Helleborina, heleborígeno (glucósidos). Raíz = parte más tóxica." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Usado en la antigua Grecia como purgante drástico y vermífugo (extracto de raíz en vino). Asedio de Cirra (590 a.C.): leyenda de envenenamiento de agua con eléboro. Polvo de raíz como insecticida casero histórico." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="SIN USO MÉDICO MODERNO. Investigación como fuente de análogos de esteroides cardiacos con ventana terapéutica más amplia. Horticultura: variedades ornamentales populares (Helleborus × hybridus) — bellas pero mantienen toxicidad." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Descontaminación digestiva y cutánea" desc="Ingestión: carbón activado si reciente. Piel: lavado abundante con agua (savia vesicante). Ojos: irrigación ocular urgente 15-20 min con suero fisiológico → oftalmólogo. Síntomas GI: antieméticos, hidratación IV. Arritmias: soporte cardiaco. Sin antídoto específico." />
       <StepX c={c} n="2" title="Dermatitis por savia" desc="La savia irrita mucosas y puede causar ampollas en piel sensible. Si exposición cutánea: lavar inmediatamente con agua y jabón. Si ampollas: NO reventar, cubrir con apósito limpio y urgencias dermatológicas. Contaminación ocular: lavar abundantemente y urgencias oftalmológicas — riesgo de lesión corneal." />
@@ -680,6 +740,12 @@ function VERATRUM() {
       <SectionTitleX c={c} title="🌱 Hábitat y distribución" />
       <StepX c={c} n="1" title="Prados alpinos húmedos" desc="Especie de alta montaña: prados subalpinos y alpinos húmedos, laderas norte. Pirineos (500-2400m), Cordillera Cantábrica. No cultivada habitualmente — aparece en jardines alpinos de especialidad. Fotografiar en hábitat natural = OK. Recolectar sin expertise botánico = peligroso." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Protoveratrina, jervina (alcaloides esteroideos). Raíz/rizoma concentrados." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Usado en la antigüedad como insecticida y parasiticida externo. Extracto alcohólico de rizoma como hipotensor histórico (efectos secundarios impredecibles — abandonado). Jervina como precursor de la síntesis de corticosteroides." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="SIN USO MÉDICO ACTUAL. La protoveratrina es herramienta de investigación en neurofisiología (activación irreversible de canales Na+). Jervina = materia prima histórica para síntesis de hormonas esteroideas (hoy reemplazada por fuentes vegetales más seguras como Dioscorea)." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Atropina para bradicardia + soporte" desc="Bradicardia severa por reflejo Bezold-Jarisch: atropina IV 0.5-2mg. Hipotensión: posición Trendelenburg + fluidos IV. Náuseas/vómitos (síntoma más precoz y frecuente): antieméticos IV. Sin antídoto específico para protoveratrina. UCI con monitorización cardiaca continua." />
       <StepX c={c} n="2" title="Carbón activado urgente" desc="Ingestión reciente (<1h): carbón activado 50g oral. Lavado gástrico si ingestión masiva (<30min). La protoveratrina se absorbe rápidamente — el tiempo importa. Identificación botánica de la planta implicada es esencial para el médico: Veratrum vs Gentiana vs especie desconocida." />
@@ -712,6 +778,12 @@ function LAUREOLA() {
       <StepX c={c} n="1" title="Valor ornamental — peligro oculto" desc="D. mezereum: muy ornamental (flores en invierno, fragrantes, en ramas sin hojas). D. laureola: sombra densa, hojas perennes verde brillante. Vendidas en viveros como ornamentales. Comprador frecuentemente no sabe de la toxicidad. Pedir siempre información al vivero sobre toxicidad de plantas compradas." />
       <StepX c={c} n="2" title="Condiciones de cultivo" desc="Suelo calizo bien drenado. D. laureola: sombra o semisombra, resistente. D. mezereum: semisombra, más exigente en humedad. Crecimiento lento. GUANTES siempre al podar/trasplantar." />
       <StepX c={c} n="3" title="Propagación desde semillas" desc="Daphne mezereum: semillas maduras (bayas) en julio-agosto. Limpiar la pulpa con guantes. Estratificación cálida 3 meses + fría 3 meses antes de germinar. Alternativa: esquejes semileñosos en verano con hormona enraizante. Daphne en general es difícil de enraizar — paciencia." />
+
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Dafnetoxina, mezereína (ésteres diterpénicos). Corteza y frutos = más tóxicos." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Corteza machacada como vejigatorio y rubefaciente en medicina medieval (aplicación cutánea para 'sacar el mal humor'). Extracto de frutos como veneno para peces (práctica tradicional en ríos)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="SIN USO EN MEDICINA MODERNA. Mezereína investigada como activador de PKC (modelo de diferenciación celular y apoptosis en laboratorio). Planta ornamental ocasional en jardines." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Lavado gastro-intestinal y soporte" desc="Ingestión: carbón activado si reciente. Lavado gástrico solo si ingestión masiva reciente (<30min). El ardor bucal inmediato suele disuadir la ingestión masiva, pero en niños pequeños puede no ser suficiente. Hidratación IV agresiva. Protección renal y hepática. Sin antídoto específico." />
@@ -751,6 +823,12 @@ function CURARE() {
       <StepX c={c} n="2" title="De veneno a fármaco" desc="Tubocurarina (Intocostrin, 1942). Pancuronio (1967). Vecuronio (1980). Cisatracurio (1995). Rocuronio (1994, reversible con sugammadex). Todos son bloqueantes neuromusculares no despolarizantes derivados conceptualmente del curare. Hoy se usan en cada intubación endotraqueal, cada operación abdominal mayor, cada UCI con ventilación mecánica. El veneno de flecha amazónico es uno de los fármacos más utilizados en medicina moderna." />
       <StepX c={c} n="3" title="Sugammadex — antídoto específico" desc="Rocuronio y vecuronio tienen antídoto moderno: sugammadex (Bridion). Molécula cíclica que 'atrapa' el bloqueante neuromuscular → revertir parálisis en 2-3 minutos. Un hito farmacológico — el primer antídoto de encapsulamiento molecular aprobado. Disponible en todos los quirófanos modernos." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="D-tubocurarina (alcaloide bisbencilisoquinolínico). Corteza de Strychnos toxifera y Chondrodendron tomentosum." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Preparación tradicional amazónica: corteza hervida y reducida a pasta concentrada. Aplicación en dardos de cerbatana. Tubocurarina aislada en 1935 (King). Extracción moderna por partición ácido-base." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Revolucionó la anestesiología: primer relajante muscular no despolarizante para cirugía (1942). Permitió cirugías que antes eran imposibles por la tensión muscular. Hoy reemplazada por análogos sintéticos (atracurio, rocuronio) con mejor perfil de seguridad. Sigue en la lista OMS de medicamentos esenciales." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🌱 Plantas fuente — cultivo e identificación" />
       <StepX c={c} n="1" title="Strychnos toxifera — liana amazónica" desc="Liana de selva tropical amazónica. Hojas opuestas ovales, espinas circinadas (zarcillos en espiral). Fruto baya esférica 5-8cm. Misma familia (Loganiáceas) que Strychnos nux-vomica (nuez vómica). Cultivo: solo viable en invernadero tropical húmedo (no práctico en España). Planta de jardín botánico o colección especializada." />
       <StepX c={c} n="2" title="Chondrodendron tomentosum — liana menispermácea" desc="Liana de Andes tropicales occidentales (Ecuador, Perú). Hojas grandes ovales con pelusa tomentosa (de ahí 'tomentosum'). Fuente de d-tubocurarina. Cultivo tropical, no viable en condiciones europeas normales. Se puede encontrar en jardines botánicos tropicales y colecciones especializadas de etnobotánica." />
@@ -787,6 +865,12 @@ function NUEZ_VOMICA() {
       <StepX c={c} n="1" title="Árbol tropical — no para España continental" desc="S. nux-vomica es árbol de bosque tropical caducifolio (India, Sri Lanka). Requiere temperatura >18°C todo el año, sin heladas. Viable solo en Canarias (subtropical) o invernadero climatizado. Árbol grande (12-15m) — no práctico en interiores. Interés principalmente colección botánica o jardín tropical de gran tamaño." />
       <StepX c={c} n="2" title="Germinar semillas" desc="Semillas de las bayas naranja (limpiar bien la pulpa con guantes). Escarificación mecánica + remojo 24h. Sustrato caliente (25-30°C) + humedad alta. Germinación en 3-6 semanas. Crecimiento lento los primeros años. Las semillas son las más tóxicas — manipular con guantes de nitrilo." />
 
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Estricnina, brucina (alcaloides indólicos). Semillas concentradas." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Semillas pulverizadas y maceradas en alcohol diluido con ácido. Extracción ácido-base para purificar estricnina. Históricamente usada como rodenticida y 'tónico' (abandonado por toxicidad acumulativa)." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="SIN USO MÉDICO. Estricnina retirada como rodenticida por toxicidad secundaria a depredadores. Investigación como antagonista de glicina (modelo experimental). Brucina usada como estándar de amargor en análisis sensorial y como agente de resolución quiral en síntesis orgánica." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
+
       <SectionTitleX c={c} title="🚨 Antídotos y tratamiento específico" />
       <StepX c={c} n="1" title="Benzodiacepinas — controlar convulsiones" desc="Diazepam IV o midazolam: primera línea para controlar las convulsiones. Mecanismo: potencian receptores GABA-A → compensan parcialmente la falta de inhibición glicinérgica. Dosis altas pueden ser necesarias. Si refractario: propofol o barbitúricos en UCI." />
       <StepX c={c} n="2" title="Ambiente silencioso y oscuro" desc="CRÍTICO: minimizar estimulación sensorial para prevenir disparar nuevas convulsiones. Habitación oscura y silenciosa. Manipulación mínima. Evitar luces brillantes, ruidos, tacto no necesario. Antes de llegar al hospital: mantener al paciente tranquilo, minimizar estímulos." />
@@ -819,6 +903,12 @@ function CALABAR_BEAN() {
       <StepX c={c} n="1" title="Antídoto síndrome anticolinérgico" desc="Fisostigmina IV: antídoto de elección para intoxicaciones graves por tropanos (Brugmansia, Datura, Belladona, Estramonio). 1-2mg IV lento → revertir delirio, taquicardia, retención urinaria. La 'haba del ordalia' cura el envenenamiento por 'hierbas de brujas' — poética ironía etnobotánica." />
       <StepX c={c} n="2" title="Glaucoma — colirios históricos" desc="Primeros colirios para glaucoma en siglo XIX: extracto de Physostigma venenosum. La miosis (constricción pupilar) reduce la presión intraocular. Hoy reemplazado por pilocarpina sintética y análogos de prostaglandinas más seguros, pero abrió el campo de la farmacología oftalmológica." />
       <StepX c={c} n="3" title="Alzheimer — eserina e inhibidores AChE" desc="La fisostigmina (también llamada eserina) fue el primer inhibidor AChE estudiado para Alzheimer (años 80). Demostró que aumentar acetilcolina mejoraba la cognición. Llevó directamente al desarrollo de donepezilo (Aricept), rivastigmina (Exelon) y galantamina — los medicamentos para Alzheimer leve-moderado actuales." />
+
+      <SectionTitleX c={c} title="🧪 Extracción y uso" />
+      <StepX c={c} n="1" title="Compuestos activos" desc="Fisostigmina/eserina (alcaloide inhibidor de acetilcolinesterasa). Semilla del Physostigma venenosum." />
+      <StepX c={c} n="2" title="Extracción histórica" desc="Usada tradicionalmente en África occidental como 'judía del juicio' (ordalía). Fisostigmina aislada en 1864 (Jobst y Hesse). Primera evidencia de inhibición enzimática como mecanismo farmacológico." />
+      <StepX c={c} n="3" title="Usos médicos/farmacéuticos" desc="Fisostigmina = tratamiento para glaucoma (reducción presión intraocular) y antídoto para intoxicación por anticolinérgicos (atropina, escopolamina). Permitió el descubrimiento del sistema colinérgico. Hoy: uso limitado pero crítico en urgencias toxicológicas y oftalmología. Precursor conceptual de los inhibidores de colinesterasa usados en Alzheimer." />
+      <InfoBoxX c={c}>⚠️ Esta información es EXCLUSIVAMENTE documental y educativa. NO realizar extracciones caseras — estas plantas pueden ser letales en dosis ínfimas y requieren equipo de laboratorio profesional, protocolos de seguridad y conocimiento experto en química y toxicología.</InfoBoxX>
 
       <SectionTitleX c={c} title="🌱 Cultivo — liana tropical" />
       <StepX c={c} n="1" title="Enredadera tropical húmeda" desc="Physostigma venenosum crece en ecosistemas de manglares y selva tropical húmeda (Golfo de Guinea). Requiere temperatura constante >20°C, humedad alta, mucha lluvia. NO viable en España continental. Posible en invernadero tropical especializado. Semillas germinan bien en condiciones cálidas y húmedas en 2-3 semanas." />
