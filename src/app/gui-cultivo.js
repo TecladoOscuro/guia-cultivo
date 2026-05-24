@@ -160,7 +160,8 @@ function GuiaCultivo() {
           case "goteo": return <GOTEO />;
           case "germinacion": return <GERMINACION />;
           case "vegetativa": return <VEGETATIVA />;
-          case "poda": return <SCROG_INT />;
+          case "scrog": return <SCROG_INT />;
+          case "poda": return <PODA />;
           case "floracion": return <FLORACION />;
           case "cosecha": return <COSECHA />;
           case "plagas_int": return <PLAGAS_INT />;

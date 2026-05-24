@@ -223,7 +223,8 @@ const phases = [
   { id: "goteo", emoji: "💧", title: "Riego Auto", subtitle: "Setup goteo" },
   { id: "germinacion", emoji: "🥚", title: "Germinación", subtitle: "Días 1–7" },
   { id: "vegetativa", emoji: "🌿", title: "Vegetativa", subtitle: "Días 7–35" },
-  { id: "poda", emoji: "🕸️", title: "SCROG & LST", subtitle: "Guía paso a paso" },
+  { id: "scrog", emoji: "🕸️", title: "SCROG & LST", subtitle: "60×60 paso a paso" },
+  { id: "poda", emoji: "✂️", title: "Poda & LST", subtitle: "Guía genérica" },
   { id: "floracion", emoji: "🌸", title: "Floración", subtitle: "Días 35–80" },
   { id: "cosecha", emoji: "🪴", title: "Cosecha", subtitle: "Día ~80" },
   { id: "plagas_int", emoji: "🐛", title: "Plagas", subtitle: "Interior" },
@@ -19238,7 +19239,8 @@ function GuiaCultivo() {
           case "goteo": return <GOTEO />;
           case "germinacion": return <GERMINACION />;
           case "vegetativa": return <VEGETATIVA />;
-          case "poda": return <SCROG_INT />;
+          case "scrog": return <SCROG_INT />;
+          case "poda": return <PODA />;
           case "floracion": return <FLORACION />;
           case "cosecha": return <COSECHA />;
           case "plagas_int": return <PLAGAS_INT />;
