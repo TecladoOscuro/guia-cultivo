@@ -11,20 +11,55 @@ function COMPRA() {
     (filterDonde.length === 0 || filterDonde.includes(item.donde));
   const sections = [
     {
-      title: "🏠 KIT BASE",
+      title: "🏠 EQUIPO PRINCIPAL — compra por separado, mejor que en kit",
       items: [
         {
-          name: "Kit cultivo interior 80×80 completo",
-          price: "400–600€", priority: "ESENCIAL", donde: null,
-          detail: "El kit completo incluye: armario 80×80×180cm, LED 240W, extractor en línea 100mm, filtro de carbón 100mm, controlador de clima, ventilador de pinza, temporizador 24h, tubo flexible, poleas y bridas. Marcas recomendadas: Mammoth, Secret Jardin, Spider Farmer. OJO: el kit NO incluye macetas — hay que comprarlas aparte.",
+          name: "⚠️ ¿Kit completo o por piezas?",
+          price: "Igual o más barato por piezas", priority: "ESENCIAL", donde: null,
+          detail: "Los kits completos de 400-600€ parecen un chollo, pero sacrifican justo donde más duele: el extractor (motor AC ruidoso, zumbido 50Hz que se oye en todo el piso) y el filtro de carbón (genérico, pierde eficacia en flora avanzada). Comprando las piezas por separado eliges extractor con motor EC silencioso (AC Infinity, 28-32dB, inapreciable), filtro de carbón australiano de calidad (VIVOSUN, 4.6★) y LED con diodos Samsung LM301H EVO. Mismo presupuesto, el doble de calidad y cero preocupaciones de olor.",
+          duracion: "Decisión única",
+        },
+        {
+          name: "Armario de cultivo — Spider Farmer 60×60×180cm",
+          price: "~90€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Con 60×60cm y una sola planta bien entrenada con SCROG produces 100-150g por cosecha — más que suficiente para un consumidor medio durante un año entero. Si necesitas más cantidad, salta a 80×80×180cm (~100€) y añade una segunda luz. El armario Spider Farmer usa lona Mylar 1680D gruesa, tiene mirilla y bandeja inferior. Parece un armario ropero en una esquina.",
           duracion: "Permanente",
         },
         {
-          name: "Semillas autoflorecientes feminizadas",
-          price: "15–80€ (pack 3)",
-          priority: "ESENCIAL", donde: null,
-          detail: "Ver pestaña Semillas para guía completa de qué variedad elegir. Guárdalas en su envase original dentro de un bote de cristal hermético en la nevera. Aguantan 2-5 años perfectamente.",
-          duracion: "1 ronda por semilla plantada",
+          name: "Luz LED — Mars Hydro FC-E1500 150W (Samsung LM301H EVO)",
+          price: "~140€", priority: "ESENCIAL", donde: "Internet",
+          detail: "150W reales con diodos Samsung LM301H EVO, control por app, regulable. Cubre perfectamente 60×60cm (416W/m²). Para 80×80cm, sube a 240-300W (Mars Hydro FC-E3000 o Spider Farmer SE3000, ~200-250€). Marcas recomendadas: Spider Farmer, Mars Hydro, ViparSpectra. Busca siempre diodos Samsung LM301H y driver MeanWell. Con 416W/m² produces cogollos densos en toda la superficie, no solo en el centro.",
+          duracion: "Permanente (~50.000h, décadas)",
+        },
+        {
+          name: "Extractor — AC Infinity Cloudline PRO S4 100mm (motor EC)",
+          price: "~129€", priority: "ESENCIAL", donde: "Internet",
+          detail: "El extractor es lo que más ruido hace. Los baratos (motor AC) vibran a 50Hz y se oyen en toda la casa. Un motor EC como este AC Infinity funciona a 28-32dB — como un portátil, no se oye fuera de la habitación. El modelo PRO S4 incluye controlador programable de temperatura y humedad: el extractor acelera solo si sube la temperatura, ahorrando electricidad y alargando la vida del filtro. Alternativa más barata: Cloudline A4 (~108€), mismo motor EC sin controlador digital.",
+          duracion: "Permanente",
+        },
+        {
+          name: "Filtro de carbón — VIVOSUN 100mm (carbón australiano)",
+          price: "~49€", priority: "ESENCIAL", donde: "Internet",
+          detail: "El filtro de carbón es lo ÚLTIMO en lo que escatimar si vives en un piso. La Critical y otras variedades huelen muy fuerte las últimas 4 semanas de floración. Un filtro bueno con carbón australiano virgen (RC-412) elimina el 100% del olor. VIVOSUN tiene 11.000 valoraciones a 4.6★. Dura 12-18 meses de uso continuo. Monta siempre el filtro DENTRO del armario, conectado al extractor, para crear presión negativa (las paredes se succionan hacia dentro = el olor solo sale por el filtro).",
+          duracion: "12–18 meses",
+        },
+        {
+          name: "Ventilador de clip oscilante — Spider Farmer (motor EC, 10W)",
+          price: "~50€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Mueve el aire dentro del armario para evitar puntos calientes, fortalecer los tallos y prevenir moho. El motor EC de Spider Farmer es silencioso y tiene 10 velocidades. Alternativas: VIVOSUN AeroWave E6 Gen2 (65€, app, el mejor) o Secret Jardin Monkey Fan (25€, más básico). Colócalo a la altura del dosel vegetal, apuntando entre la luz y las plantas, sin dar directamente a los cogollos en floración avanzada.",
+          duracion: "Permanente",
+        },
+        {
+          name: "Tubo de extracción, poleas, temporizador, abrazaderas, cinta aluminio",
+          price: "~55–75€ (conjunto)", priority: "ESENCIAL", donde: "Internet",
+          detail: "Tubo insonorizado de aluminio 100mm x 2.5-3m (~28€) para sacar el aire del extractor al exterior (ventana). Poleas de trinquete con gancho (~12€, 4uds) para colgar la luz y ajustar altura. Temporizador digital programable (~9€, Garza) — mejor digital que analógico: no hace ruido de clic y puedes programar 8 encendidos. Abrazaderas metálicas 80-100mm (~10€, 4uds) para fijar el tubo al extractor y al filtro. Cinta de aluminio (~7€) para sellar todas las uniones del conducto.",
+          duracion: "Permanente",
+        },
+        {
+          name: "Semillas — fotoperiódicas feminizadas (recomendado) o autoflorecientes",
+          price: "15–80€ (pack 3–5)", priority: "ESENCIAL", donde: null,
+          detail: "Para 1 planta en espacio pequeño con SCROG, las FOTOPERIÓDICAS feminizadas son mejores que las autos: tú decides cuándo florece, la entrenas sin prisas, perdonan errores de principiante y rinden más por planta. Las autos son más rápidas pero no perdonan el estrés del trasplante ni el LST agresivo. Guarda las semillas sobrantes en un bote hermético en la nevera — duran 2-5 años. Ver pestaña Semillas para guía completa.",
+          duracion: "1 planta por semilla germinada",
         },
       ]
     },
@@ -33,27 +68,21 @@ function COMPRA() {
       items: [
         {
           name: "BioBizz Light Mix — saco 50L",
-          price: "12€", priority: "ESENCIAL", donde: "Internet",
-          detail: "Es la tierra donde crecerán tus plantas. Light Mix tiene muy pocos nutrientes de base, lo que significa que no quemará las raíces cuando empieces. Es la opción más segura para principiantes. Un saco de 50L es suficiente para 2 plantas en macetas de 11L con sobras para las siguientes rondas.",
-          duracion: "1–2 cosechas por saco",
+          price: "~19€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Tierra con muy pocos nutrientes de base — no quema las raíces al empezar. Ideal para principiantes. Para 1 planta en maceta de 15L, un saco de 50L te rinde para 3 cosechas. Guarda el sobrante en la bolsa original bien cerrada en un sitio fresco y seco — aguanta 2-3 años. Si dentro de 2 años está muy seco, remójalo 24h antes de usar. No lo congeles ni lo dejes en la terraza (se llena de hongos).",
+          duracion: "~3 cosechas por saco",
         },
         {
-          name: "Macetas de tela 11L (pack de 3-5)",
-          price: "10–20€", priority: "ESENCIAL", donde: "Internet",
-          detail: "Las macetas de tela permiten que el aire entre por los laterales, lo que hace que las raíces crezcan mejor que en plástico. Úsalas para las plantas definitivas. El kit NO incluye macetas — esto es lo primero que mucha gente olvida comprar.",
+          name: "Maceta de tela 15–20L — geotextil",
+          price: "~15€ (pack de 3)", priority: "ESENCIAL", donde: "Internet",
+          detail: "Para 1 sola planta con SCROG, una maceta de 15-20L es ideal: las raíces se expanden sin límites y la planta es más vigorosa que metiendo 2-3 apretadas. Las de tela (geotextil) permiten que el aire pode las raíces por los laterales — crecen mejor que en plástico. Con 1 planta usas solo 1 maceta, pero los packs de 3-5 son baratos y te sobran para futuros cultivos. Para germinar, usa OTRA maceta pequeña de las que te sobran con solo 3-5L de tierra (dobla el borde hacia fuera) durante las primeras 2-3 semanas, luego trasplanta a la de 15L.",
           duracion: "Permanentes, reutilizables",
         },
         {
-          name: "Platos para macetas (juego de 3-5)",
-          price: "5–15€", priority: "ESENCIAL", donde: "Internet",
-          detail: "Van debajo de las macetas para recoger el agua que drena por los agujeros. Sin platos mancharás el suelo y no podrás ver cuánto drena. Compra los del mismo tamaño que las macetas.",
-          duracion: "Permanentes",
-        },
-        {
-          name: "Vasitos de plástico con agujeros — para germinar",
-          price: "Gratis", priority: "ESENCIAL", donde: "Gratis",
-          detail: "Para la fase de germinación y plántula (primeras 2-3 semanas) necesitas un recipiente pequeño de ~0.5L. Puedes usar vasos de plástico de yogur grande, de café, o cualquier vaso de plástico al que hagas 4-5 agujeros en el fondo con un bolígrafo caliente. No hace falta comprar nada.",
-          duracion: "Reutilizable",
+          name: "Plato recogedor 35–40cm",
+          price: "~7€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Va debajo de la maceta para recoger el agua de drenaje. Sin plato manchas el suelo y no puedes ver cuánto ha drenado. Compra uno del mismo diámetro que la maceta (35-40cm para 15L).",
+          duracion: "Permanente",
         },
       ]
     },
@@ -61,18 +90,17 @@ function COMPRA() {
       title: "🧪 FERTILIZANTES",
       items: [
         {
-          name: "BioBizz Bio·Grow + Bio·Bloom — 1L de cada",
-          price: "30–40€", priority: "ESENCIAL", donde: "Internet",
-          detail: "El abono para la fase de crecimiento (vegetativa). Rico en nitrógeno, que es lo que necesita la planta para crecer en tamaño. Dosis: 1–2ml por litro de agua de riego. Empieza en la semana 3 desde que germina. Con 1L tienes para 3–4 cosechas.",
-          cuando: "Semana 3 de vegetativa hasta que aparecen los primeros pelos blancos (pistilos)",
-          duracion: "3–4 cosechas con 1L",
+          name: "BioBizz Try Pack Indoor (Bio·Grow + Bio·Bloom + Top·Max) — 250ml c/u",
+          price: "~15€", priority: "ESENCIAL", donde: "Internet",
+          detail: "El pack pequeño (3 botes de 250ml) es la opción ideal para empezar con 1 planta. Incluye Bio·Grow (crecimiento, rico en nitrógeno), Bio·Bloom (floración, rico en fósforo y potasio) y Top·Max (estimulador de floración, aumenta tamaño y densidad de cogollos). Con 1 planta en 15L y 1 cosecha al año, el Try Pack te dura 2-3 cosechas. La alternativa son los botes de 1L (~12-15€ cada uno) si planeas varios cultivos seguidos.",
+          cuando: "Bio·Grow desde semana 3 de vegetativa. Bio·Bloom + Top·Max desde semana 2 de floración.",
+          duracion: "2–3 cosechas con 1 planta",
         },
         {
-          name: "BioBizz Top·Max — 250ml",
-          price: "12–18€", priority: "IMPORTANTE", donde: "Internet",
-          detail: "Estimulador de floración — aumenta el tamaño y densidad de los cogollos. No es imprescindible para empezar, pero la diferencia en el resultado final es notable. Úsalo junto al Bio·Bloom en floración.",
-          cuando: "Semanas 2–6 de floración, junto con Bio·Bloom",
-          duracion: "2–3 cosechas con 250ml",
+          name: "Opcional: BioBizz Bio·Grow + Bio·Bloom 1L de cada (si cultivas varias cosechas al año)",
+          price: "30–40€ (los dos)", priority: "ÚTIL", donde: "Internet",
+          detail: "Si planeas 3-4 cosechas al año, los botes de 1L son más económicos a largo plazo (~25€ en vez de ~45€ en Try Packs). Para 1 cosecha al año, el Try Pack de 250ml es más que suficiente.",
+          duracion: "3–4 cosechas con 1L",
         },
       ]
     },
@@ -80,22 +108,33 @@ function COMPRA() {
       title: "💧 CONTROL DE pH",
       items: [
         {
-          name: "pH Down — 500ml",
-          price: "8–15€", priority: "ESENCIAL", donde: "Internet",
-          detail: "El agua del grifo suele tener pH 7–8, pero las plantas necesitan agua entre pH 6.2 y 6.5 para absorber los nutrientes correctamente. Este líquido baja el pH — solo necesitas unas pocas gotas por litro. 500ml te dura literalmente años.",
+          name: "Tiras reactivas de pH 0–14 (200 uds) — opción barata y suficiente",
+          price: "~14€", priority: "ESENCIAL", donde: "Internet",
+          detail: "Para empezar con BioBizz en tierra, unas tiras de pH de 200uds son más que suficientes. El sustrato Light Mix regula solo el pH bastante bien y los fertilizantes BioBizz son orgánicos (no bloquean nutrientes por pH como los minerales). Mide el pH del agua de riego una vez a la semana y ajusta si está fuera de 6.2-6.5. Con 200 tiras tienes para años.",
           duracion: "Años",
         },
         {
-          name: "pHmetro digital",
-          price: "15–30€", priority: "ESENCIAL", donde: "Internet",
-          detail: "Un aparato pequeño que metes en el agua y te dice exactamente el pH. Sin esto no puedes saber si el agua está bien. Guárdalo siempre con la punta en la solución de almacenamiento para que no se estropee.",
+          name: "pHmetro digital + pH Down + calibración — kit profesional",
+          price: "30–60€", priority: "ÚTIL", donde: "Internet",
+          detail: "Si cultivas varias cosechas al año o usas fertilizantes minerales (no orgánicos), un pHmetro digital decente (15-30€) con soluciones de calibración pH 4 y 7 (8-15€) y pH Down (8-15€) te da precisión total. Para 1 cosecha al año con BioBizz orgánico, las tiras bastan. Si te pasas a mineral, el pHmetro pasa a ESENCIAL.",
           duracion: "Permanente (calibrar cada mes)",
         },
+      ]
+    },
+    {
+      title: "🏋️ ENTRENAMIENTO (SCROG + LST) — clave para 1 planta en poco espacio",
+      items: [
         {
-          name: "Kit soluciones de calibración pH (pH 4 y pH 7)",
-          price: "8–15€", priority: "IMPORTANTE", donde: "Internet",
-          detail: "Para calibrar el pHmetro una vez al mes y asegurarte de que mide bien. Sin calibración el aparato pierde precisión con el tiempo y puede darte lecturas erróneas sin que te enteres.",
-          duracion: "Años",
+          name: "Red elástica SCROG 60×60cm con ganchos",
+          price: "~7€", priority: "ESENCIAL", donde: "Internet",
+          detail: "La malla SCROG (Screen of Green) es la técnica más eficaz para llenar todo el armario con una sola planta. Instálala a 25-35cm del sustrato y guía las ramas horizontalmente por debajo durante el estiramiento de floración. Convierte una planta de 1m de alto en un dosel plano de 60×60cm donde todos los cogollos reciben la misma luz. Sin SCROG, los cogollos de abajo reciben poca luz y salen flojos. La red elástica con 6 ganchos se engancha a los postes del armario.",
+          duracion: "Permanente",
+        },
+        {
+          name: "Clips de entrenamiento LST (Low Stress Training) — 150 uds",
+          price: "~12€", priority: "IMPORTANTE", donde: "Internet",
+          detail: "Pequeñas pinzas de plástico que se enganchan al tallo para doblar las ramas sin romperlas. Complementan la malla SCROG doblando las puntas hacia fuera. Más limpio y rápido que atar con alambre o bridas. 150 unidades cubren todo el ciclo. Alternativa más barata: alambre blando de jardinería (~4€).",
+          duracion: "Reutilizables",
         },
       ]
     },
@@ -140,11 +179,11 @@ function COMPRA() {
       ]
     },
     {
-      title: "💧 RIEGO AUTOMÁTICO (opcional pero muy recomendado)",
+      title: "💧 RIEGO AUTOMÁTICO (opcional)",
       items: [
         {
           name: "Sistema riego por goteo con temporizador",
-          price: "15–35€", priority: "IMPORTANTE", donde: "Internet",
+          price: "15–35€", priority: "ÚTIL", donde: "Internet",
           detail: "Sistema de tubos finos con goteros y un temporizador que riega automáticamente. Reduce las aperturas del armario al mínimo — abres solo 1 vez por semana para revisión. ",
           cuando: "Desde semana 2–3 de vegetativa. Las primeras semanas riega a mano con spray.",
           duracion: "Permanente",
@@ -184,16 +223,16 @@ function COMPRA() {
       title: "🛡️ CONTROL DE OLOR",
       items: [
         {
-          name: "Cinta americana ancha",
+          name: "Cinta americana / de aluminio — ancha",
           price: "3–8€", priority: "ESENCIAL", donde: "Internet",
-          detail: "Para sellar el tubo de extracción donde pasa por la ventana y tapar cualquier hueco alrededor. Un trapo viejo enrollado también sirve si no tienes cinta en casa.",
+          detail: "Para sellar todas las uniones del tubo de extracción donde pasa por la ventana o pared. La cinta de aluminio sella mejor que la cinta americana y aguanta el calor. Un rollo de 10m te sobra.",
           duracion: "Permanente",
         },
         {
-          name: "ONA Gel neutralizador de olores — 1L",
-          price: "15–30€", priority: "IMPORTANTE", donde: "Internet",
-          detail: "Neutralizador de olores para poner FUERA del armario, en la habitación. No dentro — afectaría al sabor final. Es una red de seguridad extra para cualquier fuga mínima al abrir la tienda. Dura 2–3 meses.",
-          duracion: "2–3 meses por bote",
+          name: "ONA Gel o ONA Block — neutralizador de olores",
+          price: "15–30€ (gel 1L) o ~16€ (block 170g)", priority: "IMPORTANTE", donde: "Internet",
+          detail: "Neutralizador de olores para poner FUERA del armario, en la habitación. No dentro — afectaría al sabor final. Es una red de seguridad extra para cualquier fuga mínima al abrir el armario. El ONA Block sólido (170g) es más práctico: se abre y se coloca cerca, sin riesgo de derrames. Dura 2–3 meses. El gel de 1L dura más pero ocupa más espacio.",
+          duracion: "2–3 meses",
         },
       ]
     },
@@ -235,20 +274,20 @@ function COMPRA() {
       {/* Resumen */}
       <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Inversión inicial total</span>
-          <span style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc" }}>~880€</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Inversión inicial total (60×60 premium)</span>
+          <span style={{ fontSize: "14px", fontWeight: "bold", color: "#d8f3dc" }}>~670–710€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Grow shop (kit + semillas)</span>
-          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~500–650€</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Equipo principal (armario+luz+extractor+filtro)</span>
+          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~450–530€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Internet (accesorios)</span>
-          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~200–300€</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Accesorios y consumibles</span>
+          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~120–160€</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span style={{ fontSize: "12px", color: "#74c69d" }}>Coste recurrente por cosecha</span>
-          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~60–80€</span>
+          <span style={{ fontSize: "12px", color: "#74c69d" }}>Coste recurrente por cosecha (luz+fertis+agua)</span>
+          <span style={{ fontSize: "13px", color: "#95d5b2" }}>~35–50€</span>
         </div>
       </div>
 
