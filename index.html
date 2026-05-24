@@ -223,7 +223,7 @@ const phases = [
   { id: "goteo", emoji: "💧", title: "Riego Auto", subtitle: "Setup goteo" },
   { id: "germinacion", emoji: "🥚", title: "Germinación", subtitle: "Días 1–7" },
   { id: "vegetativa", emoji: "🌿", title: "Vegetativa", subtitle: "Días 7–35" },
-  { id: "poda", emoji: "✂️", title: "Poda & LST", subtitle: "Opcional" },
+  { id: "poda", emoji: "🕸️", title: "SCROG & LST", subtitle: "Guía paso a paso" },
   { id: "floracion", emoji: "🌸", title: "Floración", subtitle: "Días 35–80" },
   { id: "cosecha", emoji: "🪴", title: "Cosecha", subtitle: "Día ~80" },
   { id: "plagas_int", emoji: "🐛", title: "Plagas", subtitle: "Interior" },
@@ -2044,6 +2044,156 @@ function GOTEO() {
 }
 
 
+function SCROG_INT() {
+  return (
+    <div>
+      <InfoBox>
+        Esta guía está pensada para TU setup concreto: armario 60×60×180cm, 1 planta fotoperiódica (Critical de RQS), maceta de tela 15L, malla SCROG, luz LED 150W. Vas a llenar cada centímetro del armario con una sola planta. Todo explicado como si fuera tu primera vez, porque lo es.
+      </InfoBox>
+
+      <SectionTitle>🎯 EL OBJETIVO</SectionTitle>
+      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
+          Tu Critical sin entrenar crece como un abeto: un tallo central dominante y ramas laterales pequeñas. Eso en un armario de 60×60 significa: 1 cogollo gordo arriba pegado a la luz y el resto flojos abajo en penumbra. Resultado: 30-40g.
+        </p>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
+          Con SCROG + LST, la conviertes en un dosel plano de 60×60cm donde <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>10-20 cogollos</span> reciben exactamente la misma luz a la misma distancia. Resultado: <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>100-150g</span>. La diferencia no está en la semilla ni en la luz — está en cómo la entrenas.
+        </p>
+      </div>
+
+      <SectionTitle>📋 LO QUE NECESITAS (ya lo tienes en tu setup)</SectionTitle>
+      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
+        <div style={{ fontSize: "11px", letterSpacing: "2px", color: "#52b788", marginBottom: "8px" }}>CHECKLIST</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Malla SCROG elástica 60×60cm con 6 ganchos — para enganchar a los postes del armario. Ya la tienes en tu lista de la compra." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Clips de entrenamiento LST — 150 piezas de plástico que se enganchan al tallo para doblar ramas sin romperlas. En tu lista de la compra." />
+        <StepX c={CANNABIS_COLORS} num={3} text="Tijeras de poda pequeñas — para la poda apical y defoliaciones. Limpias con alcohol antes de usar." />
+        <StepX c={CANNABIS_COLORS} num={4} text="Tus dedos — para pellizcar y guiar ramas suavemente." />
+      </div>
+
+      <SectionTitle color="#e63946">⏱️ FASES — cronograma completo de 4 meses</SectionTitle>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "20px" }}>
+        {[
+          ["Semana 1", "🥚 Germinación"],
+          ["Semanas 2–3", "🌱 Plántula, primeros nudos"],
+          ["Semana 3–4", "✂️ Poda apical (cortar punta)"],
+          ["Semana 4", "🕸️ Instalar malla SCROG"],
+          ["Semanas 4–7", "🧘 Rellenar la malla (LST intensivo)"],
+          ["Semana 7", "🍃 Defoliación pre-flora"],
+          ["Semana 7–8", "🌙 Cambio a 12/12h"],
+          ["Semanas 8–10", "📈 Estiramiento (seguir guiando)"],
+          ["Semana 11", "🍂 Defoliación día 21 flora"],
+          ["Semanas 11–15", "🌸 Engorde de cogollos"],
+          ["Semana 15–16", "💧 Lavado de raíces"],
+          ["Semana 16–17", "🪴 Cosecha + secado"],
+        ].map(([sem, fase]) => (
+          <div key={sem} style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "8px", padding: "8px 10px", fontSize: "11px" }}>
+            <span style={{ color: "#52b788", fontWeight: "bold" }}>{sem}</span>
+            <span style={{ color: "#95d5b2", marginLeft: "6px" }}>{fase}</span>
+          </div>
+        ))}
+      </div>
+
+      <SectionTitle>🥚 FASE 1: GERMINACIÓN Y PLÁNTULA — Semanas 1-3</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Pon la semilla en un vaso de agua tibia (no caliente) 24h en un sitio oscuro y cálido (20-25°C)." why="La humedad constante ablanda la cáscara y activa las enzimas de germinación. Si flota, empújala — en 12-24h se hunde." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Pásala a una maceta de tela pequeña con 3-5L de Light Mix (dobla el borde para que quede baja). Entiérrala a 1cm, con la punta hacia abajo." why="Una maceta pequeña es más fácil de controlar que la de 15L: la plántula bebe casi nada y si riegas 15L enteros la tierra se encharca y la raíz se pudre." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Luz a 60cm de altura, al 30-40% de potencia. 18h encendida, 6h apagada. Rocía suavemente con spray para mantener la tierra húmeda (no empapada)." why="Una plántula de 2cm no necesita 150W. Demasiada luz la quema. Poca luz la espiga (se estira buscando luz como un espagueti). 30-40% es el punto dulce." />
+      <StepX c={CANNABIS_COLORS} num={4} text="NO uses fertilizantes. Solo agua. Las primeras 2-3 semanas la plántula vive de las reservas de la semilla y los pocos nutrientes del Light Mix." why="Las raíces de una plántula son microscópicas. Si metes fertilizante ahora, las quemas. Es como darle un chuletón a un bebé de 2 días." />
+      <StepX c={CANNABIS_COLORS} num={5} text="Espera a que la planta tenga 4-5 nudos (unos 15-20cm de alto). Eso son unas 3 semanas desde que sale del suelo." why="Necesitas al menos 4 nudos para la poda apical. Si cortas antes, la planta es muy pequeña y se estresa de más. Si esperas demasiado, el tallo se vuelve leñoso y es más difícil de doblar." />
+
+      <SectionTitle>✂️ FASE 2: PODA APICAL — Semana 3-4</SectionTitle>
+      <div style={{ background: "#2a1a0d", border: "1px solid #8a5a1a", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#f4a261", lineHeight: "1.6", fontWeight: "bold" }}>
+          ESTO ES LO MÁS IMPORTANTE. La poda apical es lo que convierte 1 cogollo en 8-16 cogollos principales.
+        </p>
+        <p style={{ margin: 0, fontSize: "12px", color: "#d5a074", lineHeight: "1.6" }}>
+          Al cortar la punta del tallo principal, la planta redistribuye sus hormonas de crecimiento a las ramas laterales. En vez de un tallo vertical dominante, obtienes múltiples ramas que crecen hacia fuera y hacia arriba. Es la base sobre la que luego construyes el SCROG.
+        </p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="Identifica el 4º nudo contando desde abajo. Es justo encima de donde salen las 4ª y 5ª ramas laterales. Cuenta NUDOS, no hojas." why="Los nudos son los puntos donde el tallo se ensancha y salen ramas y hojas. Contarlos bien es crucial — si cortas en el 3º nudo, la planta se queda corta. Si cortas en el 6º, el tallo ya está muy alto." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Con las tijeras limpias, corta el tallo principal JUSTO por encima del 4º nudo. Un corte limpio, recto, sin desgarrar." why="Un corte limpio cicatriza en horas. Un corte desgarrado es una herida abierta, puerta de entrada para hongos y bacterias." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Deja las 4 ramas laterales inferiores intactas. Quita solo la punta de arriba. Nada más." why="Esas ramas laterales serán tus futuras puntas principales. Si también las cortas, te quedas sin material para llenar la malla." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Espera 5-7 días para que la planta se recupere. Notarás que las ramas laterales empiezan a crecer más rápido. No hagas nada más en este tiempo." why="Cada corte estresa la planta. Si acumulas estrés (podar + doblar + defoliar todo en la misma semana), la planta se bloquea y pierdes 1-2 semanas de crecimiento." />
+      <ErrorCardX c={CANNABIS_COLORS} error="NO hagas topping en autoflorecientes" consecuencia="Las autos tienen un reloj interno fijo. Cortar la punta les quita 1-2 semanas de vida que no recuperan nunca. Rendimiento mucho peor que sin tocar." fix="La poda apical es SOLO para fotoperiódicas como tu Critical. Las autos solo LST suave, nunca topping." />
+
+      <SectionTitle>🕸️ FASE 3: INSTALAR LA MALLA SCROG — Semana 4</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Engancha los 6 ganchos de la malla a los postes verticales del armario. Colócala a 25-30cm de altura desde el borde superior de la maceta. Mide con un metro." why="25-30cm es la altura óptima para una Critical en 60×60. Más baja = no cabe la planta debajo para regar y ventilar. Más alta = desperdicias altura y la planta se te va en vertical antes de empezar el SCROG." />
+      <StepX c={CANNABIS_COLORS} num={2} text="La malla debe quedar tensa pero no tanto que no puedas meter los dedos. Los agujeros de la red son de unos 10×10cm aprox." why="La tensión justa permite guiar ramas sin que la malla se combe con el peso de los cogollos en floración. Si está floja, los cogollos la hunden." />
+      <StepX c={CANNABIS_COLORS} num={3} text="A partir de este momento, tu objetivo es simple: todo lo que asome por encima de la malla, lo guías horizontalmente metiéndolo por el agujero de al lado." why="La malla es tu guía visual. Si una punta sube 5cm por encima, la coges y la pasas al agujero vecino. Así mantienes todas las puntas exactamente a la misma altura = todos los cogollos reciben la misma luz." />
+
+      <SectionTitle>🧘 FASE 4: RELLENAR LA MALLA — Semanas 4-7 (LST intensivo)</SectionTitle>
+      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
+          <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>Estas 2-3 semanas definen tu cosecha.</span> Es la fase más importante de todo el cultivo. La luz sigue a 18h/día. Aún NO has cambiado a 12/12. Tu único trabajo ahora es guiar ramas horizontalmente hasta que el 70-80% de la malla esté cubierta de puntas verdes. No tengas prisa — la fotoperiódica te espera.
+        </p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cada 1-2 días, revisa la malla. Cualquier punta que asome más de 3-4cm por encima, dóblala suavemente y pásala por el agujero de al lado." why="Si esperas más de 2 días, las puntas crecen demasiado y el tallo se endurece. Un tallo leñoso se rompe al doblarlo. Las puntas jóvenes y flexibles se guían sin esfuerzo." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Usa los clips LST para fijar las puntas rebeldes que se levantan solas. Engancha el clip al tallo y apóyalo contra la malla." why="Después de guiar una rama, a veces se levanta en 12h buscando la luz. Los clips la mantienen en posición horizontal sin dañarla. Si no usas clips, tienes que volver a guiarla cada día." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Guiar = doblar horizontalmente, NUNCA cortar. No cortes nada en esta fase." why="Cada punta verde que ves es un futuro cogollo. Si la cortas, pierdes ese cogollo para siempre." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Cuando el 70-80% de los agujeros de la malla tengan una punta verde asomando, has terminado esta fase." why="No llenes el 100% antes de pasar a 12/12. Durante la floración la planta se estira otras 2-3 semanas. Si llenas el 100% antes del estiramiento, la malla se satura, las ramas compiten por espacio y algunas quedan aplastadas. El 70-80% te da margen para que el estiramiento ocupe el resto." />
+
+      <SectionTitle>🍃 FASE 5: DEFOLIACIÓN PRE-FLORA — 1 día antes de pasar a 12/12</SectionTitle>
+      <div style={{ background: "#2a1a0d", border: "1px solid #8a5a1a", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <p style={{ margin: 0, fontSize: "12px", color: "#d5a074", lineHeight: "1.6" }}>
+          <span style={{ color: "#f4a261", fontWeight: "bold" }}>Esto parece agresivo pero es necesario.</span> Todo lo que está por debajo de la malla no recibe luz directa. Son hojas y ramitas que la planta mantiene vivas gastando energía pero que nunca producirán cogollos. Si las dejas, la planta desperdicia recursos en sostener material inútil en vez de engordar los cogollos de arriba.
+        </p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="Quita TODAS las hojas grandes (fan leaves) que estén por debajo de la malla. Corta desde la base del peciolo." why="Las hojas de abajo están en sombra total. No hacen fotosíntesis — solo consumen agua y nutrientes que deberían ir a los cogollos." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Quita las ramitas finas que no han llegado a la altura de la malla. Esas nunca alcanzarán la luz." why="Esas ramas producirían 'larf' — cogollos diminutos, esponjosos y sin resina. Es mejor que la planta no invierta energía en ellos." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Deja intactas las hojas y ramas que estén a la altura de la malla o por encima." why="Esas son las que alimentan a tus futuros cogollos. Sin hojas no hay fotosíntesis. Quitas solo lo de abajo, no lo de arriba." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Quitar TODAS las hojas de la planta" consecuencia="Sin hojas la planta no puede hacer fotosíntesis. Se para en seco o muere. He visto novatos dejar la planta en palos desnudos pensando que así 'se concentra en los cogollos'." fix="Solo quitas lo de abajo de la malla y hojas que tapan cogollos. La planta necesita hojas para vivir." />
+
+      <SectionTitle>🌙 FASE 6: CAMBIO A 12/12 — Final de semana 7 o inicio de la 8</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Programa el temporizador digital: 12h luz encendida, 12h oscuridad total. Mismo horario cada día. Por ejemplo: 8:00 encendido, 20:00 apagado." why="Las 12h ininterrumpidas de oscuridad son lo que dispara la floración. Si entra luz por una rendija (fuga lumínica), la planta se estresa y puede revegetar o volverse hermafrodita." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Sube la potencia de la luz al 100%." why="En floración la planta necesita la máxima intensidad lumínica para engordar los cogollos." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Empieza con los fertilizantes de floración: Bio·Bloom (2ml/L) + Top·Max (1ml/L). Nada de Bio·Grow." why="Bio·Grow es rico en nitrógeno para el crecimiento vegetativo. En floración la planta necesita fósforo y potasio (Bio·Bloom). Demasiado nitrógeno en flora = hojas enormes y cogollos flojos." />
+
+      <SectionTitle>📈 FASE 7: ESTIRAMIENTO — Semanas 1-3 de floración (semanas 8-10 de vida)</SectionTitle>
+      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
+          Al cambiar el fotoperiodo, la planta interpreta que se acerca el otoño y pega un <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>estirón del 50-100%</span>. La Critical es índica-dominante así que no se descontrola, pero igualmente crece. Este estiramiento es la razón por la que dejaste el 20-30% de la malla vacía.
+        </p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="SIGUES guiando ramas por la malla. Mismo proceso que en la fase 4." why="El estiramiento es la última oportunidad para colocar ramas en los huecos que dejaste. Aprovéchala." />
+      <StepX c={CANNABIS_COLORS} num={2} text="El momento de PARAR de guiar: cuando veas los primeros pelitos blancos (pistilos) saliendo de las puntas. Eso significa que la floración ha empezado oficialmente." why="Una vez que aparecen pistilos, la rama deja de crecer en longitud y empieza a formar el cogollo. Si la sigues doblando, dañas la formación del cogollo." />
+      <StepX c={CANNABIS_COLORS} num={3} text="A partir de aquí, deja que las puntas crezcan hacia arriba libremente. Ya no tocas la malla más." why="Cada punta que sube se convertirá en un cogollo vertical que recibe luz directa desde arriba. Es justo lo que querías desde el principio." />
+
+      <SectionTitle>🍂 FASE 8: DEFOLIACIÓN DÍA 21 DE FLORACIÓN</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cuenta 3 semanas exactas desde el día que pusiste 12/12. Ese es el día 21 de flora." why="A los 21 días, la planta ha terminado el estiramiento y los cogollos empiezan a formarse. Es el último momento seguro para una defoliación fuerte." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Quita las hojas grandes que tapan cogollos inferiores. Si una hoja hace sombra a un cogollo, esa hoja sobra." why="Cada cogollo necesita luz directa para engordar. Una hoja gigante encima de un cogollo es como una sombrilla en la playa." />
+      <StepX c={CANNABIS_COLORS} num={3} text="NO quites hojas pequeñas cerca de los cogollos (sugar leaves). Solo las grandes (fan leaves)." why="Las sugar leaves son las hojitas que salen del cogollo y están llenas de tricomas. Son las que protegen el cogollo y además se pueden fumar o usar para extracciones. Las fan leaves son las grandes, sin tricomas." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Después de esta defoliación, NO quites más hojas. Solo riega y espera." why="En floración avanzada, cada hoja que quitas es energía que la planta no puede usar para engordar los cogollos. Esta es la última intervención fuerte." />
+
+      <SectionTitle>🌸 FASE 9: ENGORDE Y COSECHA — Semanas 4-8 de floración</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Semanas 4-6 de flora: los cogollos engordan visiblemente. Sigue con Bio·Bloom + Top·Max según la tabla. Baja la humedad al 40-50%." why="La humedad alta en esta fase = riesgo de moho dentro de los cogollos gordos. Si ves que sube de 55%, enciende el extractor al máximo." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Semanas 7-8: las hojas grandes empiezan a amarillear. Es NORMAL. La planta está consumiendo sus reservas." why="No es una deficiencia — es el final natural del ciclo. Si le metes más fertilizante ahora, los cogollos sabrán a químico." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Lavado de raíces: últimas 2 semanas antes de cosechar, SOLO agua (sin nutrientes). pH 6.2-6.5. Riega hasta que drene un 20% por abajo." why="Limpia las sales acumuladas en el sustrrato de las semanas de fertilización. Sin lavado = cogollos que chisporrotean al fumar y saben a fertilizante." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Cosecha: cuando el 70-80% de los pistilos estén marrones y los tricomas lechosos/ámbar (mirar con lupa 60x). Corta la planta entera por la base y cuélgala boca abajo." why="Cosechar en el momento justo es la diferencia entre un efecto energético (tricomas lechosos) y un efecto narcótico (tricomas ámbar). Para Critical, espera a ver un 20% de tricomas ámbar para aprovechar su perfil índico relajante." />
+
+      <SectionTitle color="#e63946">🚫 ERRORES DE NOVATO CON SCROG</SectionTitle>
+      <ErrorCardX c={CANNABIS_COLORS} error="Pasar a 12/12 demasiado pronto (malla al 30-40%)" consecuencia="La planta florece con la mitad del armario vacío. Esos huecos ya no se llenan. Cosecha de 40g en vez de 120g." fix="Paciencia. Llena el 70-80% de la malla ANTES de cambiar el fotoperiodo. Las fotoperiódicas te esperan." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Pasar a 12/12 demasiado tarde (malla al 100%)" consecuencia="La planta se estira en flora, la malla se satura, ramas compiten y se aplastan. Algunos cogollos salen deformes." fix="Deja un 20-30% de huecos para el estiramiento. Es mejor que sobren un par de agujeros a que falten." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Defoliar en floración avanzada" consecuencia="Las hojas que quitas en semana 5-6 de flora no se reemplazan. La planta pierde capacidad de fotosíntesis justo cuando más engordan los cogollos." fix="La última defoliación fuerte es el día 21 de flora. Después solo quitas alguna hoja suelta que tape un cogollo." />
+      <ErrorCardX c={CANNABIS_COLORS} error="No medir el pH del agua de riego" consecuencia="El pH incorrecto bloquea nutrientes. Las hojas se vuelven amarillas y tu instinto dice 'más fertilizante', pero el problema es el pH, no la dosis. Añadir más fertilizante empeora el bloqueo." fix="Mide el pH una vez por semana. Con BioBizz y tierra: 6.2-6.5. Tus tiras de pH son suficientes." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Romper una rama al doblarla" consecuencia="Pierdes esa rama entera = pierdes ese cogollo. Una rama rota se muere en 24h si no la arreglas." fix="Si la rama NO se ha partido del todo (sigue unida por un hilo de piel), pon cinta adhesiva alrededor como un vendaje. En 3-5 días se regenera. Si está partida del todo, la pierdes." />
+
+      <SectionTitle>📊 RESULTADO FINAL ESPERADO</SectionTitle>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+        <StatBoxX c={CANNABIS_COLORS} label="Producción" value="100–150g" />
+        <StatBoxX c={CANNABIS_COLORS} label="Tiempo total" value="~16 semanas" />
+        <StatBoxX c={CANNABIS_COLORS} label="Nº cogollos principales" value="10–20" />
+        <StatBoxX c={CANNABIS_COLORS} label="Dosel uniforme" value="60×60cm" />
+      </div>
+      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
+        <p style={{ margin: 0, fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
+          <span style={{ color: "#52b788", fontWeight: "bold" }}>Para tu primera vez: </span>
+          ¿Te parece mucho? No te agobies. La Critical es una genética muy perdonadora. Aunque te saltes algún paso o no lo hagas perfecto, vas a cosechar algo que te vas a fumar tú. Y eso ya es un éxito. La primera cosecha es para aprender. La segunda aplicas todo esto con experiencia y duplicas el resultado.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
 
 // Cannabis exterior cultivation components
 
@@ -3796,7 +3946,9 @@ function FAQ() {
     { sec: "Otros", q: "¿Qué es THC vs CBD?", a: "THC: psicoactivo (efecto recreativo). CBD: NO psicoactivo (medicinal — antiinflamatorio, anti-ansiedad, anticonvulsivo). Variedades modernas tienen ratios distintos: alto THC (recreativo), alto CBD (medicinal), 1:1 balanceado." },
     { sec: "Crecimiento", q: "¿Cuánto rinde una planta de cannabis?", a: "Interior fotoperiódica en 60x60cm con SCROG: 80-150g secos. Interior auto en 80x80cm: 50-150g por planta. Indoor fotoperiodo bien manejado en 80x80cm: 100-300g. Exterior fotoperiodo en jardín soleado: 200-500g por planta. Variables: luz, espacio raíz, técnica de entrenamiento." },
     { sec: "Crecimiento", q: "¿Mejor estación del año para cultivar interior?", a: "Otoño-invierno-primavera (sept-mayo). Evitar verano por calor extremo del armario (>30°C mata plantas). En verano sin AC = SALTAR esa cosecha. Las 3 cosechas autoflower al año: octubre-diciembre, enero-marzo, marzo-mayo." },
-    { sec: "Crecimiento", q: "¿Es necesaria poda LST/topping?", a: "NO necesario para tener cosecha. Sí RECOMENDADO para maximizar: LST (doblar ramas) puede aumentar rendimiento 30-50%. Topping (cortar punta) duplica colas pero estresa. Para autos: LST sí, topping NO." },
+    { sec: "Crecimiento", q: "¿Es necesaria poda LST/topping/SCROG?", a: "Para tener cosecha: NO necesario. Para maximizar una sola planta en espacio pequeño: SÍ, muy recomendado. LST (doblar ramas) +30-50% rendimiento. Topping (cortar punta) duplica puntas principales. SCROG (malla horizontal) es la técnica más eficaz para fotoperiódicas en armarios pequeños. Combinación ideal para 60x60 con 1 planta: topping semana 3 → SCROG semana 4 → LST hasta llenar malla → 12/12 cuando 70-80% lleno. Para autos: solo LST suave, nada de topping ni SCROG." },
+    { sec: "Crecimiento", q: "¿Cuándo paso a 12/12 con SCROG?", a: "Cuando el 70-80% de los agujeros de la malla tengan una punta verde. NO antes (malla vacía = huecos que ya no se llenan = pierdes producción). NO después (malla al 100% + estiramiento de flora = saturación, ramas aplastadas). Deja un 20-30% de margen para el estirón de las primeras 2-3 semanas de floración. Si llegas a ese punto en semana 4-5 de vege, perfecto. Si necesitas semana 7, también — la fotoperiódica te espera." },
+    { sec: "Crecimiento", q: "¿Qué hago si rompo una rama haciendo LST?", a: "Si NO se ha partido del todo (sigue unida por un hilo de 'piel'), pon cinta adhesiva alrededor como vendaje. En 3-5 días se regenera y sigue creciendo. Si está completamente partida en 2 trozos, la pierdes — córtala limpiamente por debajo de la rotura. Para evitarlo: dobla las ramas cuando son jóvenes y flexibles (semanas 2-5 de vege), nunca cuando ya están leñosas. Si notas resistencia fuerte al doblar, para y prueba al día siguiente." },
     { sec: "Nutrientes y pH", q: "¿Puedo usar nutrientes de jardinería normal?", a: "Sí, pero NO óptimo. Cannabis necesita ratios específicos NPK por fase. Bio Grow vs Bio Bloom = adecuados a vegetativa/floración. Nutrientes universales pueden funcionar pero rendimiento menor. Para empezar bien: invertir 30€ en kit Bio Grow + Bio Bloom." },
     { sec: "Nutrientes y pH", q: "¿Cuándo hago el lavado de raíces (flush)?", a: "Final de floración: últimas 2 semanas antes de cosechar SOLO agua con pH 6.3 (sin nutrientes). Limpia las sales acumuladas, mejora sabor del producto final. Sin flush: cogollos saben a químico/quemado." },
     { sec: "Setup y clima", q: "¿Kit completo o comprar por piezas?", a: "COMPRAR POR PIEZAS es mejor relación calidad/precio. Los kits de 400-600€ sacrifican extractor (motor AC ruidoso, zumbido 50Hz que se oye en todo el piso) y filtro de carbón (genérico, pierde eficacia en flora). Por piezas eliges extractor EC silencioso (AC Infinity, 28dB), filtro de carbón australiano de calidad (VIVOSUN) y LED con diodos Samsung LM301H EVO (Spider Farmer, Mars Hydro). Mismo presupuesto, el doble de calidad y la diferencia en silencio y olor es abismal. Todo se compra por Amazon o grow shops online." },
@@ -19086,7 +19238,7 @@ function GuiaCultivo() {
           case "goteo": return <GOTEO />;
           case "germinacion": return <GERMINACION />;
           case "vegetativa": return <VEGETATIVA />;
-          case "poda": return <PODA />;
+          case "poda": return <SCROG_INT />;
           case "floracion": return <FLORACION />;
           case "cosecha": return <COSECHA />;
           case "plagas_int": return <PLAGAS_INT />;
