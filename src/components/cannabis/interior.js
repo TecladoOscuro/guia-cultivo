@@ -1093,6 +1093,8 @@ function SCROG_INT() {
                 <th key={h} style={{ padding: "4px 4px", color: "#d8f3dc", borderBottom: "1px solid #2d6a4f", textAlign: "center" }}>{h}</th>
               ))}
             </tr>
+          </thead>
+          <tbody>
             {[
               ["1", "Germinar", "Spray solo", "Cada 1-2 días", "30%", "60cm", "—", "—", "—", "18h"],
               ["2", "Plántula", "0.2-0.3L", "Cada 2-3 días", "35%", "55cm", "—", "—", "—", "18h"],
@@ -1118,8 +1120,8 @@ function SCROG_INT() {
                 ))}
               </tr>
             ))}
-          </table>
-        </div>
+          </tbody>
+        </table>
       </div>
 
       <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
