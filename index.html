@@ -223,7 +223,7 @@ const phases = [
   { id: "goteo", emoji: "💧", title: "Riego Auto", subtitle: "Setup goteo" },
   { id: "germinacion", emoji: "🥚", title: "Germinación", subtitle: "Días 1–7" },
   { id: "vegetativa", emoji: "🌿", title: "Vegetativa", subtitle: "Días 7–35" },
-  { id: "scrog", emoji: "🕸️", title: "SCROG & LST", subtitle: "60×60 paso a paso" },
+  { id: "scrog", emoji: "🕸️", title: "Entrenamiento", subtitle: "SCROG + LST" },
   { id: "poda", emoji: "✂️", title: "Poda & LST", subtitle: "Guía genérica" },
   { id: "floracion", emoji: "🌸", title: "Floración", subtitle: "Días 35–80" },
   { id: "cosecha", emoji: "🪴", title: "Cosecha", subtitle: "Día ~80" },
@@ -243,6 +243,7 @@ const extPhases = [
 
 const generalPhases = [
   { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
+  { id: "mi_cultivo", emoji: "📋", title: "Mi Guía 60×60", subtitle: "Critical paso a paso" },
   { id: "mis_semillas", emoji: "🫘", title: "Mis Semillas", subtitle: "Las que tengo" },
   { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
   { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },
@@ -2045,205 +2046,29 @@ function GOTEO() {
 }
 
 
-function SCROG_INT() {
+function SCROG_BASICO() {
   return (
     <div>
-      <InfoBox>
-        Guía personalizada para TU equipo: armario Spider Farmer 60×60×180cm, luz Mars Hydro FC-E1500 150W Samsung, extractor AC Infinity PRO S4, filtro VIVOSUN 100mm, maceta de tela 15L con BioBizz Light Mix, fertilizantes BioBizz Try Pack, malla SCROG 60×60cm, clips LST 150uds. 1 planta: Critical Feminizada de Royal Queen Seeds (fotoperiódica). Todo explicado como si no hubieras cultivado nunca, porque es tu primera vez.
-      </InfoBox>
-
-      <SectionTitle>🎯 EL OBJETIVO DE ENTRENAR</SectionTitle>
-      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
-        <p style={{ margin: "0 0 8px", fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
-          Sin entrenar, tu Critical crece como un abeto: 1 tallo central con 1 cogollo gordo arriba y el resto flojos abajo sin luz. Resultado: <span style={{ color: "#e63946" }}>30-40g</span>.
-        </p>
-        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
-          Con SCROG conviertes eso en un <span style={{ color: "#52b788", fontWeight: "bold" }}>dosel plano de 60×60cm con 10-20 cogollos principales</span>, todos a la misma altura recibiendo la misma luz. Resultado: <span style={{ color: "#52b788", fontWeight: "bold" }}>100-150g</span>. La técnica es gratis — solo necesitas la malla que ya tienes y tus dedos.
-        </p>
-      </div>
-
-      <SectionTitle>💧 CÓMO REGAR — lo más básico y lo que más caga a los novatos</SectionTitle>
-      <div style={{ background: "#2a1a0d", border: "2px solid #f4a261", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <p style={{ margin: "0 0 10px", fontSize: "12px", color: "#f4a261", fontWeight: "bold" }}>REPITE CONMIGO: más plantas mueren ahogadas que secas.</p>
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <div style={{ fontSize: "13px", color: "#52b788", fontWeight: "bold", marginBottom: "10px" }}>🧪 Prepara el agua</div>
-        <StepX c={CANNABIS_COLORS} num={1} text="Llena una garrafa de 5L con agua del grifo. Déjala destapada 24h." why="El cloro del grifo se evapora en 24h. Si riegas recién sacada del grifo, el cloro mata la microvida buena del sustrato." />
-        <StepX c={CANNABIS_COLORS} num={2} text="Si toca echar fertilizante (según la fase), échalo en la garrafa. Primero Bio·Bloom, luego Bio·Grow, luego Top·Max. Agita 10 segundos." why="Siempre añade los nutrientes uno a uno y agita. Si los mezclas concentrados directamente reaccionan entre sí y se degradan." />
-        <StepX c={CANNABIS_COLORS} num={3} text="Mide el pH con una tira. Debe estar entre 6.2 y 6.5. Si está por encima de 7, compra pH Down (8-15€, te dura años) y añade 2-3 gotas por litro hasta que baje." why="Con BioBizz en tierra, el pH no es crítico pero sí importante. Entre 6.0 y 7.0 la planta absorbe. Fuera de ese rango = hojas amarillas aunque haya nutrientes." />
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <div style={{ fontSize: "13px", color: "#52b788", fontWeight: "bold", marginBottom: "10px" }}>🔍 Antes de regar: EL TEST DE LA MACETA</div>
-        <StepX c={CANNABIS_COLORS} num={1} text="Mete el dedo índice en la tierra hasta el segundo nudillo (unos 3-4cm)." why="Si está seco al tacto = riega. Si notas humedad aunque sea poca = NO riegues hoy. La tierra húmeda se nota fría y se pega al dedo. La seca está suelta y cálida." />
-        <StepX c={CANNABIS_COLORS} num={2} text="Levanta la maceta con las dos manos. Cuando está seca pesa muy poco. Cuando está recién regada pesa el doble." why="Con la práctica sabrás solo con levantarla si toca regar o no. Las primeras semanas fiáte del dedo, no del peso." />
-        <StepX c={CANNABIS_COLORS} num={3} text="Si el dedo está seco Y la maceta está ligera = RIEGA. Si tienes dudas entre hoy o mañana = MAÑANA." why="Regar de menos = la planta se mustia un poco pero se recupera en 2h. Regar de más = raíces podridas en 3-4 días y probablemente planta muerta. Ante la duda, espera 1 día." />
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "20px" }}>
-        <div style={{ fontSize: "13px", color: "#52b788", fontWeight: "bold", marginBottom: "10px" }}>🚿 CÓMO ECHAR EL AGUA (esto es importante)</div>
-        <StepX c={CANNABIS_COLORS} num={1} text="Riega SIEMPRE en círculo alrededor del tallo, a unos 5-10cm de distancia. NUNCA eches el agua justo encima del tallo." why="Si mojas el tallo constantemente se pudre (damping off). Además, las raíces que beben están en los bordes de la maceta, no en el centro. Si riegas en círculo, las raíces crecen hacia fuera buscando el agua." />
-        <StepX c={CANNABIS_COLORS} num={2} text="Echa el agua despacio, en 2-3 tandas con 30 segundos de pausa entre cada una. No vuelques el litro de golpe." why="Si echas el agua de golpe, crea canales en la tierra y el agua se escurre por los bordes sin mojar el interior. En tandas, la tierra absorbe uniformemente." />
-        <StepX c={CANNABIS_COLORS} num={3} text="Deja de echar agua cuando empiecen a salir las primeras gotas por el plato de abajo. ESO ES SUFICIENTE. NO necesitas que salga un chorro." why="Un pequeño drenaje (10-20% de lo que echaste) asegura que has mojado todo el sustrato y arrastra sales acumuladas. Pero si sale un chorro tras chorro, estás desperdiciando agua y nutrientes." />
-        <StepX c={CANNABIS_COLORS} num={4} text="Tira el agua del plato. NO la dejes ahí." why="Si la maceta se queda en agua estancada, las raíces del fondo se ahogan. Siempre plato seco después de regar." />
-      </div>
-
-      <SectionTitle>⏱️ CALENDARIO COMPLETO — qué hacer cada semana</SectionTitle>
-
-      <div style={{ marginBottom: "16px" }}>
-        <div style={{ fontSize: "14px", color: "#52b788", fontWeight: "bold", marginBottom: "8px" }}>📊 Tabla maestra de riego, luz y nutrientes</div>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "10px", fontFamily: "monospace" }}>
-          <thead>
-            <tr style={{ background: "#1b4332" }}>
-              {["Semana", "Fase", "Agua (L)", "Frec. riego", "Luz %", "Altura luz", "Bio·Grow", "Bio·Bloom", "Top·Max", "Horas luz"].map(h => (
-                <th key={h} style={{ padding: "4px 4px", color: "#d8f3dc", borderBottom: "1px solid #2d6a4f", textAlign: "center" }}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ["1", "Germinar", "Spray solo", "Cada 1-2 días", "30%", "60cm", "—", "—", "—", "18h"],
-              ["2", "Plántula", "0.2-0.3L", "Cada 2-3 días", "35%", "55cm", "—", "—", "—", "18h"],
-              ["3", "Vege temprano", "0.5-0.7L", "Cada 2-3 días", "50%", "45cm", "—", "—", "—", "18h"],
-              ["4", "Poda apical + SCROG", "1L", "Cada 3 días", "60%", "45cm", "0.5ml/L", "—", "—", "18h"],
-              ["5", "LST / rellenar malla", "1.5L", "Cada 3 días", "70%", "40cm", "0.5ml/L", "—", "—", "18h"],
-              ["6", "Seguir LST", "2L", "Cada 3 días", "80%", "40cm", "1ml/L", "—", "—", "18h"],
-              ["7", "Defoliar bajo malla → 12/12", "2L", "Cada 3-4 días", "100%", "35cm", "1ml/L", "2ml/L", "1ml/L", "12h"],
-              ["8", "Estiramiento flora 1", "2-2.5L", "Cada 3-4 días", "100%", "35cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["9", "Estiramiento flora 2", "2.5L", "Cada 3-4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["10", "Fin estiramiento / día 21", "2.5L", "Cada 3-4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["11", "Engorde", "2.5-3L", "Cada 3-4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["12", "Engorde", "3L", "Cada 3-4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["13", "Engorde", "3L", "Cada 3-4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["14", "Maduración", "2.5L", "Cada 4 días", "100%", "30cm", "—", "2ml/L", "1ml/L", "12h"],
-              ["15", "Lavado (flush)", "2.5-3L", "Cada 3-4 días", "100%", "30cm", "—", "—", "—", "12h"],
-              ["16", "Lavado final", "2.5L", "Cada 4 días", "100%", "30cm", "—", "—", "—", "12h"],
-              ["17", "🪴 Cosechar", "—", "—", "off", "—", "—", "—", "—", "0h"],
-            ].map((r, i) => (
-              <tr key={i} style={{ background: i % 2 === 0 ? "#0d1f14" : "#122318" }}>
-                {r.map((c, j) => (
-                  <td key={j} style={{ padding: "4px 4px", color: j === 0 ? "#52b788" : "#95d5b2", borderBottom: "1px solid #1b4332", textAlign: "center", fontWeight: j === 0 ? "bold" : "normal" }}>{c}</td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div style={{ background: "#0d1f14", border: "1px solid #1b4332", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <div style={{ fontSize: "13px", color: "#52b788", fontWeight: "bold", marginBottom: "8px" }}>📝 Cómo leer la tabla</div>
-        <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "12px", color: "#95d5b2", lineHeight: "1.8" }}>
-          <li><b>Agua (L)</b>: litros totales en ese riego. No es "al día", es "cada vez que riegas".</li>
-          <li><b>Frec. riego</b>: días entre riego y riego. Si pone "cada 3 días", riegas el lunes y el jueves, no el martes.</li>
-          <li><b>Luz %</b>: potencia del dimmer en tu Mars Hydro FC-E1500.</li>
-          <li><b>Altura luz</b>: distancia desde el borde superior de la maceta (o la malla, una vez instalada) a la luz.</li>
-          <li><b>ml/L</b>: mililitros de fertilizante POR LITRO de agua. Si pones 2L de agua y la tabla dice 2ml/L, echas 4ml totales.</li>
-          <li><b>Horas luz</b>: cómo programar el temporizador. 18h = 18h encendida, 6h apagada. 12h = 12/12.</li>
-        </ul>
-      </div>
-
-      <SectionTitle>🥚 SEMANA 1 — Germinación</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Pon la semilla en un vaso de agua templada (como el agua de la ducha, no caliente). Déjala 24h en un armario oscuro a temperatura ambiente." why="El agua ablanda la cáscara. En 24h la semilla se hincha y se hunde — está activa. Si no se hunde, empújala con el dedo." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Llena una de tus macetas de tela de 15L con solo 3-5L de Light Mix (no la llenes entera). Dobla el borde hacia fuera para que quede baja, tipo bandeja. Haz un agujero de 1cm con el dedo en el centro de la tierra. Mete la semilla con la punta hacia abajo. Cubre con tierra SIN apretar." why="En 3-5L la raíz coloniza rápido. En 15L ahora mismo la plántula se pierde y el riego es imposible de controlar. Dentro de 2-3 semanas la pasas a la maceta llena de 15L." />
-      <StepX c={CANNABIS_COLORS} num={3} text="NO riegues con regadera todavía. Usa el spray de precisión y moja suavemente la superficie hasta que esté húmeda (como una esponja escurrida, no empapada). El plato debajo de la maceta." why="Una semilla no tiene raíces — no bebe agua, solo necesita humedad ambiental para activarse. Si encharcas, se pudre." />
-      <StepX c={CANNABIS_COLORS} num={4} text="Configura el armario: luz a 60cm de altura, potencia al 30%, temporizador 18h encendida / 6h apagada. Extractor encendido al mínimo. Higrómetro dentro del armario." why="El extractor debe estar encendido desde el día 1 aunque no huela. Las plántulas necesitan intercambio de aire fresco." />
-      <StepX c={CANNABIS_COLORS} num={5} text="Días 2-5: la semilla asoma del suelo. Sigue pulverizando cada 1-2 días para que la superficie esté húmeda. No toques la plántula." why="Las primeras 2 hojitas redondas (cotiledones) alimentan a la planta los primeros días. La plántula es frágil — no la toques." />
-
-      <SectionTitle>🌱 SEMANA 2 — Plántula</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="La planta mide 3-5cm. Ya tiene sus primeras hojas de verdad (dentadas, de cannabis). Sigue pulverizando, pero ahora moja un poco más — unos 200-300ml cada 2-3 días, siempre después de hacer el test del dedo." why="Las raíces empiezan a crecer. Necesitan un poco más de agua pero siguen siendo frágiles. Si te pasas de agua = hojas caídas y amarillas desde abajo." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Sube la luz al 35%. Bájala a 55cm de altura. El temporizador sigue a 18/6." why="Subir potencia muy despacio evita quemar la planta. Si ves que las hojas se ponen amarillas en las puntas o los bordes se doblan hacia arriba (como un taco), es demasiada luz — sube la luz 5-10cm." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Todavía SIN fertilizante. Solo agua. La planta vive de los nutrientes del Light Mix." why="El Light Mix tiene comida para 2-3 semanas. Si añades fertilizante ahora, quemas las raíces jóvenes." />
-
-      <SectionTitle>🌿 SEMANA 3 — Vegetativo temprano + trasplante</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="La planta mide 10-15cm y tiene 4-5 nudos (los bultitos del tallo donde salen ramas). Es el momento de trasplantar a la maceta definitiva de 15L." why="A los 4 nudos, las raíces ya han colonizado los 3-5L de tierra. Si esperas más, se quedan sin espacio (rootbound) y la planta se frena." />
-      <StepX c={CANNABIS_COLORS} num={2} text="CÓMO TRASPLANTAR: llena la maceta de 15L con Light Mix hasta 3/4 de su capacidad. Haz un agujero del tamaño de tu maceta pequeña. Saca la planta CON MUCHO CUIDADO — pon la mano sobre la tierra, voltea la maceta boca abajo y dale un golpecito. El cepellón entero debe salir compacto. Mételo en el agujero de la maceta grande. Rellena alrededor con más tierra. Riega con 0.5-0.7L alrededor del cepellón (no encima del tallo)." why="Un trasplante limpio no estresa. Si el cepellón se desmorona y las raíces quedan al aire, la planta sufre un shock y se para 3-5 días. Ve despacio, no hay prisa." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Sube la luz: 50% de potencia, a 45cm de altura. Sigue 18/6." why="La planta ya es lo bastante grande para más luz. Sigues subiendo la potencia gradualmente." />
-      <StepX c={CANNABIS_COLORS} num={4} text="Todavía SIN fertilizante. El Light Mix fresco de la maceta nueva tiene nutrientes para 2 semanas más." why="Acabas de darle 10-12L de tierra nueva con nutrientes. Si además le echas fertilizante = doble ración = quemadura." />
-
-      <SectionTitle>✂️ SEMANA 3-4 — Poda apical (TOPPING)</SectionTitle>
-      <div style={{ background: "#2a1a0d", border: "2px solid #f4a261", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <p style={{ margin: 0, fontSize: "13px", color: "#f4a261", fontWeight: "bold" }}>
-          ESTO CONVIERTE 1 COGOLLO EN 8-16. No te lo saltes. Es un corte de 2 segundos.
-        </p>
-      </div>
-      <StepX c={CANNABIS_COLORS} num={1} text="Espera a que la planta se haya recuperado del trasplante (3-4 días después de trasplantar, ves que crece bien). Identifica el 4º NUDO contando desde abajo." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Con las tijeras limpias, corta el tallo principal JUSTO por encima del 4º nudo. Un corte limpio y recto." why="Al cortar la punta, la hormona de crecimiento (auxina) se redistribuye a las ramas laterales. Esas 4 ramas se convierten en 4 puntas principales. Si además las ramas laterales ramifican, obtienes 8-16 puntas." />
-      <StepX c={CANNABIS_COLORS} num={3} text="NO cortes las ramas laterales. Solo la punta central de arriba." />
-      <StepX c={CANNABIS_COLORS} num={4} text="Espera 5-7 días sin hacer nada más. La planta necesita recuperarse. Verás que las ramas laterales empiezan a crecer con fuerza." />
-
-      <SectionTitle>🕸️ SEMANA 4 — Instalar malla SCROG</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Engancha los 6 ganchos de la malla a los postes del armario Spider Farmer. La malla debe quedar a 25-30cm de altura desde el borde superior de la maceta de 15L. Mide con un metro." why="25-30cm es el punto dulce para 60×60. Menos = no puedes regar ni ventilar debajo. Más = desperdicias altura de crecimiento." />
-      <StepX c={CANNABIS_COLORS} num={2} text="La malla debe estar tensa pero elástica. Si está demasiado tensa no puedes meter ramas. Si está floja, los cogollos la hundirán en floración." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Sube la luz al 60%, a 45cm desde la maceta. Empieza con Bio·Grow (0.5ml por litro de agua). Riega 1L cada 3 días, siempre con el test del dedo." why="La planta ya está en la maceta grande 1 semana, ha gastado parte de los nutrientes del Light Mix. Empiezas con dosis MÍNIMA de fertilizante (0.5ml/L es la mitad de lo recomendado). Mejor poco que pasarse." />
-
-      <SectionTitle>🧘 SEMANAS 5-6 — Rellenar la malla (LST intensivo, esto es el SCROG de verdad)</SectionTitle>
-      <div style={{ background: "#162a1e", border: "1px solid #2d6a4f", borderRadius: "10px", padding: "14px", marginBottom: "16px" }}>
-        <p style={{ margin: 0, fontSize: "13px", color: "#95d5b2", lineHeight: "1.6" }}>
-          <span style={{ color: "#d8f3dc", fontWeight: "bold" }}>Estas 2 semanas definen el 80% de tu cosecha.</span> Tu único objetivo: guiar cada punta que asome por encima de la malla hacia el agujero de al lado. Aún NO has cambiado a 12/12 — la planta sigue en 18h de luz. Sin prisa.
-        </p>
-      </div>
-      <StepX c={CANNABIS_COLORS} num={1} text="CADA 1-2 DÍAS: abre el armario, mira la malla desde arriba. Cualquier punta verde que asome más de 3-4cm por encima de la red, dóblala SUAVEMENTE y pásala por el agujero de al lado, en horizontal." why="Si esperas 3-4 días, los tallos se endurecen. Un tallo leñoso = se parte al doblarlo. Las puntas jóvenes y flexibles se guían con los dedos. Hazlo cada 48h — es 1 minuto de trabajo." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Usa los clips LST para fijar las ramas que se rebelan y se levantan solas al día siguiente. Engancha el clip al tallo y apóyalo contra el hilo de la malla." why="Las puntas buscan la luz hacia arriba. Aunque las guíes hoy, mañana estarán mirando hacia arriba otra vez. Los clips las mantienen en horizontal." />
-      <StepX c={CANNABIS_COLORS} num={3} text="GUIAR = doblar, NUNCA cortar. No uses tijeras en esta fase para nada." why="Cada punta verde = un cogollo futuro. Si cortas una, pierdes ese cogollo." />
-      <StepX c={CANNABIS_COLORS} num={4} text="Semana 5: riega 1.5L cada 3 días, con 0.5ml/L de Bio·Grow. Luz al 70%, a 40cm. Semana 6: sube a 2L cada 3 días, con 1ml/L de Bio·Grow. Luz al 80%, a 40cm." />
-      <StepX c={CANNABIS_COLORS} num={5} text="OBJETIVO: cuando el 70-80% de los agujeros de la malla tengan una punta verde, pasas a la siguiente fase. NO esperes a tener el 100% lleno." why="Dejas 20-30% de huecos para el estiramiento de la floración (la planta crece un 50-100% más). Si llenas todo antes del 12/12, se satura." />
-
-      <SectionTitle>🍃 SEMANA 7 — Defoliación pre-flora + cambio a 12/12</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="DEFOLIACIÓN: quita TODAS las hojas grandes y ramitas que están POR DEBAJO de la malla. No reciben luz, no sirven. Usa las tijeras limpias. Corta desde la base del rabito de la hoja." why="Todo lo que está bajo la malla está en sombra. La planta gasta energía en mantenerlo vivo. Al quitarlo, toda esa energía va a los cogollos de arriba. Esto se hace 1 solo día." />
-      <StepX c={CANNABIS_COLORS} num={2} text="NO quites hojas por encima de la malla. Esas SÍ hacen la fotosíntesis que engorda los cogollos." />
-      <StepX c={CANNABIS_COLORS} num={3} text="CAMBIO A FLORACIÓN: reprograma el temporizador a 12h luz / 12h oscuridad. Mismo horario cada día (ej: 08:00-20:00)." why="La oscuridad NO debe interrumpirse. Si abres el armario durante las horas de oscuridad y entra luz, la planta se estresa muchísimo. NUNCA abras el armario en las 12h de oscuridad." />
-      <StepX c={CANNABIS_COLORS} num={4} text="Sube la luz al 100%, a 35cm de la malla. Empieza con nutrientes de floración: Bio·Bloom 2ml/L + Top·Max 1ml/L. Deja de echar Bio·Grow. Riega 2L cada 3-4 días." why="En floración la planta necesita fósforo y potasio (Bio·Bloom), no nitrógeno (Bio·Grow). Demasiado nitrógeno en flora = hojas enormes, cogollos flojos." />
-
-      <SectionTitle>📈 SEMANAS 8-9 — Estiramiento de floración</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="La planta pega un estirón del 50-100%. TODAVÍA SIGUES guiando ramas por la malla. Aprovecha para llenar los huecos que dejaste." why="El estiramiento son las últimas 2-3 semanas de crecimiento en longitud. Después solo engorda." />
-      <StepX c={CANNABIS_COLORS} num={2} text="PARA de guiar cuando veas pelitos blancos (pistilos) saliendo de las puntas. A partir de ahí déjalas crecer hacia arriba." why="Con pistilos visibles, la rama ya está formando el cogollo. Si la doblas ahora, dañas la formación." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Baja la luz a 30cm de las puntas más altas. Riega 2-2.5L cada 3-4 días con Bio·Bloom 2ml/L + Top·Max 1ml/L. Extractor al 50-60%." />
-
-      <SectionTitle>🍂 SEMANA 10 — Defoliación día 21 de flora</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Cuenta 3 semanas exactas desde que pusiste 12/12. Limpia las hojas grandes que tapan cogollos inferiores." why="Es la ÚLTIMA defoliación fuerte. Después de esto, solo quitas alguna hoja suelta mínima." />
-      <StepX c={CANNABIS_COLORS} num={2} text="NO quites las sugar leaves (hojitas pequeñas con resina pegadas al cogollo). Solo las grandes sin resina." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Luz al 100%, a 30cm. Bio·Bloom 2ml/L + Top·Max 1ml/L. Riega 2.5L cada 3-4 días." />
-
-      <SectionTitle>🌸 SEMANAS 11-13 — Engorde de cogollos</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Los cogollos engordan visiblemente cada semana. Se forman los tricomas (cristalitos brillantes). El olor es MUY fuerte — el filtro VIVOSUN está trabajando a tope." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Controla la humedad: máximo 55%, ideal 40-50%. Si sube, acelera el extractor." why="Con cogollos gordos y humedad alta = moho dentro del cogollo (bud rot). Se ve marrón y polvoriento. Si lo ves, corta esa zona inmediatamente." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Riega 3L cada 3-4 días con Bio·Bloom 2ml/L + Top·Max 1ml/L. Luz al 100%, mantenida a 30cm. Si alguna punta se acerca mucho a la luz, sube la luz, no bajes la rama." />
-
-      <SectionTitle>💧 SEMANAS 14-15 — Maduración y lavado de raíces</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Las hojas grandes empiezan a amarillear. ES NORMAL. La planta está consumiendo sus reservas de las hojas para engordar los cogollos. NO es deficiencia — NO añadas más fertilizante." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Semana 15: empieza el LAVADO DE RAÍCES. Deja de echar fertilizantes. SOLO agua, pH 6.2-6.5. Riega 2.5-3L cada 3-4 días como siempre." why="NO es inundar la maceta. Es regar NORMAL con agua sin nutrientes durante las últimas 2 semanas. Las sales acumuladas se disuelven con cada riego y la planta consume sus reservas. Cogollos limpios = ceniza gris clara, sabor suave." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Mira los tricomas con la lupa 60x. Quieres 70-80% lechosos (blanco niebla) y 20-30% ámbar (marrón dorado). Los pistilos (pelitos) estarán mayoritariamente marrones y enrollados." why="Lechoso = pico de THC (efecto más cerebral). Ámbar = THC degradándose a CBN (efecto más corporal, relajante). Para Critical índica, un 20% ámbar es ideal." />
-
-      <SectionTitle>🪴 SEMANA 16-17 — Cosecha y secado</SectionTitle>
-      <StepX c={CANNABIS_COLORS} num={1} text="Día de cosecha: apaga la luz. Corta la planta entera por la base del tallo con tijeras de podar. Cuélgala BOCA ABAJO dentro del armario con el extractor encendido al mínimo." why="Boca abajo = la savia residual baja por gravedad hacia los cogollos. El extractor mueve el aire suavemente para que no se estanque la humedad entre los cogollos." />
-      <StepX c={CANNABIS_COLORS} num={2} text="Condiciones de secado: 18-22°C, 50-60% humedad, OSCURIDAD TOTAL. 7-10 días. Sabes que está listo cuando una rama pequeña se parte con un CRACK seco al doblarla." why="La luz y el calor degradan el THC durante el secado. Secado lento y en frío = mejor sabor, mejor efecto. Si seca muy rápido (3-4 días) = sabor a heno." />
-      <StepX c={CANNABIS_COLORS} num={3} text="Manicura: con guantes de nitrilo, recorta las hojas que rodean los cogollos. Separa los cogollos de las ramas. Mete los cogollos en los botes de cristal herméticos (1.5L)." />
-      <StepX c={CANNABIS_COLORS} num={4} text="CURADO en bote: llena cada bote al 75% (no a tope). Cierra. Abre 10 minutos al día las primeras 2 semanas (esto se llama 'burping'). Después abre 1 vez por semana. Mínimo 3 semanas de curado." why="El curado transforma la clorofila en azúcares. Sin curado = sabor a hierba cortada, áspero. Con 4 semanas de curado = sabor suave, efecto más redondo. La paciencia aquí se nota mucho." />
-
-      <SectionTitle color="#e63946">🚫 ERRORES TÍPICOS DE NOVATO</SectionTitle>
-      <ErrorCardX c={CANNABIS_COLORS} error="Regar demasiado (cada día o sin comprobar)" consecuencia="Raíces podridas, hojas caídas y amarillas desde abajo, planta muerta en 1 semana." fix="TEST DEL DEDO siempre. Si está húmedo = no riegues. En duda, espera 1 día." />
-      <ErrorCardX c={CANNABIS_COLORS} error="Echar más fertilizante del que toca 'para que crezca más'" consecuencia="Puntas de hojas marrones y quemadas (nutrient burn). La planta se bloquea." fix="Empieza con la MITAD de lo recomendado (0.5ml/L en vez de 1ml/L). Sube solo si ves que las hojas de abajo amarillean." />
-      <ErrorCardX c={CANNABIS_COLORS} error="Pasar a 12/12 con la malla al 30%" consecuencia="Cosecha de 40g en vez de 120g. Los huecos ya no se llenan." fix="Espera a tener el 70-80% de la malla llena. La fotoperiódica te espera." />
-      <ErrorCardX c={CANNABIS_COLORS} error="Abrir el armario durante las horas de oscuridad en flora" consecuencia="La planta se estresa, puede volverse hermafrodita (cogollos con semillas)." fix="Solo abre cuando la luz esté encendida. Horario fijo." />
-      <ErrorCardX c={CANNABIS_COLORS} error="No medir el pH nunca" consecuencia="Hojas amarillas. Tu instinto te dice 'más fertilizante'. Empeoras el problema." fix="Tiras de pH una vez por semana. Entre 6.0 y 6.5 estás bien." />
-      <ErrorCardX c={CANNABIS_COLORS} error="Cosechar demasiado pronto (pistilos blancos, sin lupa)" consecuencia="Cogollos que no han engordado, efecto débil y ansioso." fix="Espera a 70% pistilos marrones + tricomas lechosos. Las últimas 2 semanas es cuando más engordan." />
-
-      <SectionTitle>📊 RESULTADO CON TU SETUP</SectionTitle>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
-        <StatBoxX c={CANNABIS_COLORS} label="Producción esperada" value="100–150g" />
-        <StatBoxX c={CANNABIS_COLORS} label="Tiempo total" value="~16 semanas" />
-        <StatBoxX c={CANNABIS_COLORS} label="Cogollos principales" value="10–20" />
-        <StatBoxX c={CANNABIS_COLORS} label="Dosel final" value="60×60cm plano" />
-        <StatBoxX c={CANNABIS_COLORS} label="Coste eléctrico" value="~55€" />
-        <StatBoxX c={CANNABIS_COLORS} label="Consumo total" value="~310 kWh" />
-      </div>
-      <div style={{ background: "#1b4332", borderRadius: "10px", padding: "14px" }}>
-        <p style={{ margin: 0, fontSize: "13px", color: "#d8f3dc", lineHeight: "1.6" }}>
-          <span style={{ color: "#52b788", fontWeight: "bold" }}>Para tu primera vez: </span>
-          No te agobies con la tabla. Los números son orientativos — si un riego es 1.8L en vez de 2L no pasa nada. Si tardas 8 semanas en llenar la malla en vez de 7, mejor que 6. La Critical es muy perdonadora. Aunque la cagues en algo, vas a cosechar algo que TE HAS CULTIVADO TÚ. Y eso ya es un éxito.
-        </p>
-      </div>
+      <InfoBox>Técnicas de entrenamiento para maximizar la producción en poco espacio. La guía completa paso a paso para tu setup 60×60 está en General → 📋 Mi Guía 60×60.</InfoBox>
+      <SectionTitle>🎯 ¿Por qué entrenar?</SectionTitle>
+      <p style={{fontSize:"13px",color:"#95d5b2",lineHeight:"1.6",marginBottom:"16px"}}>Una planta sin entrenar crece vertical con 1 cogollo dominante. Con SCROG + LST conviertes esa misma planta en un dosel plano de 10-20 cogollos, todos a la misma distancia de la luz. El rendimiento se multiplica por 3-4 usando el mismo espacio y la misma electricidad.</p>
+      <SectionTitle>🕸️ SCROG (Screen of Green)</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Instala una malla elástica a 25-30cm del borde de la maceta, enganchada a los postes del armario." why="Esa altura deja espacio debajo para regar y ventilar." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Cada 1-2 días, guía las puntas que asomen por encima hacia los agujeros vecinos. Usa clips LST para fijarlas." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Objetivo: llenar el 70-80% de la malla ANTES de cambiar a 12/12. Deja huecos para el estiramiento de flora." />
+      <StepX c={CANNABIS_COLORS} num={4} text="SOLO para fotoperiódicas. NO hacer con autoflorecientes." why="Las autos no tienen tiempo de recuperación." />
+      <SectionTitle>✂️ Poda apical (topping)</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Corta el tallo principal justo encima del 4º nudo (semana 3-4)." why="Redistribuye las hormonas de crecimiento a las ramas laterales." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Espera 5-7 días de recuperación. Las ramas laterales crecerán con fuerza." />
+      <StepX c={CANNABIS_COLORS} num={3} text="SOLO para fotoperiódicas. NUNCA en autos." />
+      <SectionTitle>🧘 LST (Low Stress Training)</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Dobla las ramas hacia fuera y fíjalas con clips o alambre. Sin cortar nada." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Única técnica 100% segura para autos. Para fotoperiódicas complementa el SCROG." />
+      <SectionTitle>🍃 Defoliación</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Antes de 12/12: quita todo lo que esté POR DEBAJO de la malla." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Día 21 de flora: quita hojas grandes que tapen cogollos. NO quitar sugar leaves." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Pasar a 12/12 con la malla al 30%" consecuencia="Huecos que ya no se llenan. Mitad de cosecha." fix="Espera al 70-80% de cobertura." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Hacer topping en autoflorecientes" consecuencia="La planta pierde 1-2 semanas de vida que no recupera." fix="Solo LST suave para autos." />
     </div>
   );
 }
@@ -4148,6 +3973,156 @@ function BIBLIO_CANNABIS() {
       { nombre: "DanceSafe", url: "https://dancesafe.org", nota: "Harm reduction en EEUU. Recursos educativos generales." },
     ]}
   />;
+}
+
+function MI_CULTIVO() {
+  return (
+    <div>
+      <InfoBox>Esta es TU guía completa con TU equipo real. Armario Spider Farmer 60×60×180cm, luz Mars Hydro FC-E1500 150W Samsung, extractor AC Infinity PRO S4, filtro VIVOSUN 100mm, BioBizz Try Pack, malla SCROG 60×60cm, clips LST. 1 Critical Feminizada de RQS. Todo para principiante absoluto.</InfoBox>
+      <SectionTitle>📋 TU EQUIPO</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"20px"}}>
+        <table style={{width:"100%",fontSize:"11px",fontFamily:"monospace",borderCollapse:"collapse"}}><tbody>
+          {[["Armario","Spider Farmer 60×60×180","1680D Mylar, mirilla"],["Luz","Mars Hydro FC-E1500 150W","Samsung LM301H EVO, app, dimmer"],["Extractor","AC Infinity PRO S4 100mm","Motor EC 28dB, programable"],["Filtro","VIVOSUN 100mm","Carbón australiano RC-412"],["Ventilador","Spider Farmer clip EC","10 velocidades, oscilante"],["Temporizador","Garza digital","8 programas, sin clic"],["Conducto","Hon&Guan 100mm×2.5m","Aislado, aluminio flexible"],["Sustrato","BioBizz Light Mix 50L","Orgánico, bajo en nutrientes"],["Fertilizante","BioBizz Try Pack Indoor","Bio·Grow+Bio·Bloom+Top·Max 250ml"],["Maceta","Tela geotextil 15L","Pack 3, reutilizable"],["Malla","SCROG elástica 60×60cm","6 ganchos a postes"],["Clips","LST 150uds","Pinzas plástico doblar ramas"]].map(([eq,mod,nota])=>(
+            <tr key={eq} style={{borderBottom:"1px solid #1b4332"}}>
+              <td style={{padding:"4px 6px",color:"#52b788",fontWeight:"bold"}}>{eq}</td>
+              <td style={{padding:"4px 6px",color:"#d8f3dc"}}>{mod}</td>
+              <td style={{padding:"4px 6px",color:"#95d5b2",fontSize:"10px"}}>{nota}</td>
+            </tr>))}
+        </tbody></table>
+      </div>
+      <SectionTitle>⚙️ CONFIGURAR EL EQUIPO</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🔌 Cómo enchufar todo</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Regleta de 4 tomas DENTRO del armario, arriba. Ahí enchufas: luz, ventilador y extractor." why="Todo dentro del armario a una regleta = 1 solo cable al exterior." />
+        <StepX c={CANNABIS_COLORS} num={2} text="La luz va al TEMPORIZADOR. El temporizador va enchufado a la regleta. Extractor y ventilador van DIRECTOS a la regleta, SIN temporizador." why="Luz se enciende/apaga con temporizador. Extractor y ventilador funcionan 24h." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>⏰ Temporizador Garza</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Pulsa PROG hasta '1 ON'. Pon hora encendido (08:00). PROG otra vez, '1 OFF' (20:00 para 12h, o 02:00 para 18h)." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Modo AUTO (no ON fijo ni OFF fijo). El reloj debe mostrar la hora real." why="ON fijo = luz 24h. OFF fijo = oscuridad total. AUTO = sigue el programa." />
+        <StepX c={CANNABIS_COLORS} num={3} text="El temporizador solo controla la LUZ. Extractor y ventilador van a la regleta directamente." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🌡️ Extractor AC Infinity PRO S4</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Modo AUTO: velocidad mínima 2/10, máxima 7/10. Temperatura máx 27°C. Humedad máx 65% en vege, 55% en flora." why="En AUTO va al mínimo mientras el clima esté bien. Acelera solo si temp o humedad se disparan." />
+        <StepX c={CANNABIS_COLORS} num={2} text="En flora avanzada baja la humedad máx a 55% para prevenir moho." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>💡 Mars Hydro FC-E1500 — app</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="App 'Mars Hydro' en el móvil, vincula por Bluetooth. Controlas potencia 0-100% y ves consumo." />
+        <StepX c={CANNABIS_COLORS} num={2} text="NO uses el temporizador de la app. Usa SIEMPRE el físico Garza." why="Si el Bluetooth falla, la luz podría quedarse encendida. El físico es infalible." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🛡️ Presión negativa</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Con armario cerrado y extractor encendido, las paredes deben estar LIGERAMENTE succionadas hacia dentro." why="Paredes hundidas = aire solo sale por el filtro. Paredes hinchadas = olor se escapa." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Si no hay presión negativa: comprueba que el conducto no está doblado y que hay entrada de aire abajo." />
+      </div>
+      <SectionTitle>🧪 pH — MEDIR Y AJUSTAR</SectionTitle>
+      <div style={{background:"#2a1a0d",border:"2px solid #f4a261",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <p style={{margin:0,fontSize:"12px",color:"#f4a261"}}>El 80% de los problemas de hojas amarillas NO son falta de nutrientes — es pH bloqueado. Mide siempre antes de echar más fertilizante.</p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="Saca una tira, sumérgela 2s en el agua de riego (DESPUÉS de añadir fertilizantes), espera 15s, compara el color con la escala del bote." why="No toques la zona de color con los dedos. Amarillo-verdoso = ~6.0-6.5 = objetivo." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Orden: agua + nutrientes → agitar → medir pH → ajustar si hace falta. NUNCA al revés." />
+      <StepX c={CANNABIS_COLORS} num={3} text="PH ALTO (tira azul/morada, >7.5): pH Down. 2-3 gotas por litro, agitar, volver a medir." why="pH Down es ácido fosfórico. NO tocar, NO respirar. Alternativa casera: 2-3 gotas de limón por litro." />
+      <StepX c={CANNABIS_COLORS} num={4} text="PH BAJO (tira naranja/roja, <5.5): pizca de bicarbonato sódico diluido en agua. Raro con agua de grifo española." />
+      <StepX c={CANNABIS_COLORS} num={5} text="Con BioBizz orgánico en tierra, entre 6.0 y 7.0 es aceptable. No te obsesiones." />
+      <SectionTitle>💨 HUMEDAD</SectionTitle>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:"10px",marginBottom:"14px"}}>
+        <StatBoxX c={CANNABIS_COLORS} label="Plántula (sem 1-2)" value="65-75%" />
+        <StatBoxX c={CANNABIS_COLORS} label="Vegetativo (sem 3-7)" value="50-65%" />
+        <StatBoxX c={CANNABIS_COLORS} label="Floración (sem 8+)" value="40-50%" />
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="SUBIR humedad: pulveriza las paredes del armario. O cuelga una toalla mojada. O pon un cuenco con agua." />
+      <StepX c={CANNABIS_COLORS} num={2} text="BAJAR humedad: sube la velocidad del extractor. Si no basta, deshumidificador en la habitación (no dentro del armario)." />
+      <StepX c={CANNABIS_COLORS} num={3} text="En flora avanzada NO pasar de 55%. Cogollo gordo + humedad >60% = bud rot (moho marrón, huele a amoníaco)." />
+      <SectionTitle>🌡️ TEMPERATURA</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Ideal: 20-28°C con luz encendida, 16-22°C apagada. Los higrómetros Thlevel miden temp y humedad." />
+      <StepX c={CANNABIS_COLORS} num={2} text="CALOR (>30°C): extractor al máximo. O programa la luz de noche (20:00-08:00). En julio sin AC = no cultives." />
+      <StepX c={CANNABIS_COLORS} num={3} text="FRÍO (<16°C): baja extractor al mínimo. Calefactor si la habitación baja de 12°C." />
+      <SectionTitle>💧 CÓMO REGAR</SectionTitle>
+      <div style={{background:"#2a1a0d",border:"2px solid #f4a261",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}><p style={{margin:0,fontSize:"12px",color:"#f4a261",fontWeight:"bold"}}>MÁS PLANTAS MUEREN AHOGADAS QUE SECAS.</p></div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🧪 Preparar el agua</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Garrafa 5L con agua del grifo. Dejar destapada 24h (evapora cloro)." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Si toca fertilizante: primero Bio·Bloom, luego Bio·Grow, luego Top·Max. Agitar entre cada uno." />
+        <StepX c={CANNABIS_COLORS} num={3} text="Medir pH con tira. Rango bueno: 6.0-6.5. Si >7: pH Down (2-3 gotas/L)." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🔍 Test de la maceta</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Mete el dedo 3-4cm. Seco = riega. Húmedo = espera." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Levanta la maceta. Ligera = seca. Pesada = aún tiene agua." />
+        <StepX c={CANNABIS_COLORS} num={3} text="Ante la duda: NO riegues. Espera 1 día." />
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"20px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>🚿 Cómo echar el agua</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="En CÍRCULO alrededor del tallo, a 5-10cm. NUNCA encima del tallo." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Despacio, en 2-3 tandas con pausa de 30s. No volcar de golpe." />
+        <StepX c={CANNABIS_COLORS} num={3} text="Cuando salgan gotas al plato, PARA. Tira el agua del plato." />
+      </div>
+      <SectionTitle>⏱️ CALENDARIO COMPLETO</SectionTitle>
+      <div style={{marginBottom:"16px"}}>
+        <div style={{fontSize:"14px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📊 Tabla maestra — qué hacer cada semana</div>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:"10px",fontFamily:"monospace"}}>
+          <thead><tr style={{background:"#1b4332"}}>{["Sem","Fase","Agua(L)","Frec","Luz%","Altura","Grow","Bloom","Top","Horas"].map(h=><th key={h} style={{padding:"3px 2px",color:"#d8f3dc",borderBottom:"1px solid #2d6a4f",textAlign:"center"}}>{h}</th>)}</tr></thead>
+          <tbody>{[["1","Germinar","Spray","1-2d","30%","60cm","—","—","—","18h"],["2","Plántula","0.2L","2-3d","35%","55cm","—","—","—","18h"],["3","Vege","0.5L","2-3d","50%","45cm","—","—","—","18h"],["4","Poda+SCROG","1L","3d","60%","45cm","0.5","—","—","18h"],["5","LST","1.5L","3d","70%","40cm","0.5","—","—","18h"],["6","LST","2L","3d","80%","40cm","1","—","—","18h"],["7","Defol+12/12","2L","3-4d","100%","35cm","1","2","1","12h"],["8","Estirón1","2.5L","3-4d","100%","35cm","—","2","1","12h"],["9","Estirón2","2.5L","3-4d","100%","30cm","—","2","1","12h"],["10","Día21","2.5L","3-4d","100%","30cm","—","2","1","12h"],["11","Engorde","3L","3-4d","100%","30cm","—","2","1","12h"],["12","Engorde","3L","3-4d","100%","30cm","—","2","1","12h"],["13","Engorde","3L","3-4d","100%","30cm","—","2","1","12h"],["14","Madura","2.5L","4d","100%","30cm","—","2","1","12h"],["15","Flush","3L","3-4d","100%","30cm","—","—","—","12h"],["16","Flush","2.5L","4d","100%","30cm","—","—","—","12h"],["17","🪴 Cosecha","—","—","off","—","—","—","—","0h"]].map((r,i)=><tr key={i} style={{background:i%2===0?"#0d1f14":"#122318"}}>{r.map((c,j)=><td key={j} style={{padding:"3px 2px",color:j===0?"#52b788":"#95d5b2",borderBottom:"1px solid #1b4332",textAlign:"center",fontWeight:j===0?"bold":"normal"}}>{c}</td>)}</tr>)}</tbody></table>
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📝 Cómo leer la tabla</div>
+        <ul style={{margin:0,paddingLeft:"16px",fontSize:"12px",color:"#95d5b2",lineHeight:"1.8"}}>
+          <li><b>Agua (L)</b>: litros POR RIEGO, no al día.</li><li><b>Frec</b>: días entre riegos. "3d" = lunes y jueves.</li><li><b>Luz %</b>: potencia del dimmer de tu Mars Hydro FC-E1500.</li><li><b>Altura</b>: distancia desde maceta o malla a la luz.</li>
+        </ul>
+      </div>
+      <SectionTitle>🥚 Semana 1 — Germinar</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Semilla en vaso de agua templada 24h en oscuridad (20-25°C)." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Maceta de tela con solo 3-5L de Light Mix (doblar borde). Agujero 1cm, semilla punta abajo, cubrir sin apretar." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Solo spray para humedecer. Luz 60cm, 30%, 18/6. Extractor al mínimo." />
+      <SectionTitle>🌱 Semana 2 — Plántula</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="3-5cm, primeras hojas dentadas. Pulverizar 200-300ml cada 2-3d. Luz 35%, 55cm. SIN fertilizante." />
+      <SectionTitle>🌿 Semana 3 — Vege temprano + trasplante</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="10-15cm, 4-5 nudos. TRASPLANTAR: maceta 15L con Light Mix hasta 3/4. Agujero tamaño cepellón. Voltear maceta pequeña, golpecito, sacar con cuidado. Meter, rellenar. Regar 0.5-0.7L alrededor." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Luz 50%, 45cm. SIN fertilizante (tierra nueva)." />
+      <SectionTitle>✂️ Semana 3-4 — Poda apical</SectionTitle>
+      <div style={{background:"#2a1a0d",border:"2px solid #f4a261",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}><p style={{margin:0,fontSize:"13px",color:"#f4a261",fontWeight:"bold"}}>1 CORTE DE 2 SEGUNDOS = 8-16 COGOLLOS EN VEZ DE 1.</p></div>
+      <StepX c={CANNABIS_COLORS} num={1} text="3-4 días tras trasplante. Identificar 4º NUDO desde abajo. Cortar el tallo principal justo encima. NO tocar ramas laterales. Esperar 5-7 días." />
+      <SectionTitle>🕸️ Semana 4 — Instalar malla SCROG</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="6 ganchos a postes. Malla a 25-30cm del borde de la maceta. Tensa pero elástica." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Luz 60%, 45cm. Bio·Grow 0.5ml/L. Riego 1L/3d." />
+      <SectionTitle>🧘 Semanas 5-6 — Rellenar la malla</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cada 1-2d: guiar puntas >3cm al agujero de al lado. Usar clips LST para fijar. NUNCA cortar." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Sem5: 1.5L/3d, Grow 0.5ml/L, luz 70% 40cm. Sem6: 2L/3d, Grow 1ml/L, luz 80% 40cm." />
+      <StepX c={CANNABIS_COLORS} num={3} text="OBJETIVO: 70-80% de la malla cubierta. NO llenar al 100%." />
+      <SectionTitle>🍃 Semana 7 — Defoliación pre-flora + 12/12</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Quitar TODAS las hojas y ramitas POR DEBAJO de la malla. Dejar intacto lo de arriba." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Temporizador a 12/12 (08:00-20:00). Luz 100%, 35cm. Bio·Bloom 2ml/L + Top·Max 1ml/L. NADA de Bio·Grow. Riego 2L/3-4d." />
+      <SectionTitle>📈 Semanas 8-9 — Estiramiento</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Planta se estira 50-100%. SEGUIR guiando por la malla. PARAR cuando salgan pistilos (pelitos blancos). Luz a 30cm. Riego 2-2.5L/3-4d." />
+      <SectionTitle>🍂 Semana 10 — Defoliación día 21</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="3 semanas exactas desde 12/12. Quitar hojas grandes que tapen cogollos. NO sugar leaves. ÚLTIMA defoliación fuerte." />
+      <SectionTitle>🌸 Semanas 11-13 — Engorde</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cogollos engordan. Humedad máx 55%, ideal 40-50%. Riego 3L/3-4d. Bio·Bloom 2ml/L + Top·Max 1ml/L." />
+      <SectionTitle>💧 Semanas 14-15 — Lavado</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Hojas amarillean = NORMAL. Dejar de echar fertilizantes. SOLO agua pH 6.2-6.5. Es regar NORMAL sin nutrientes." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Lupa 60x: 70-80% tricomas lechosos + 20-30% ámbar = cosechar." />
+      <SectionTitle>🪴 Semanas 16-17 — Cosecha</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cortar por la base. Colgar boca abajo en el armario. Extractor al mínimo. Oscuridad." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Secado: 18-22°C, 50-60% HR, 7-10d. CRACK al doblar rama = listo. Manicura con guantes. Botes al 75%. Abrir 10min/día × 2 semanas." />
+      <SectionTitle color="#e63946">🚫 ERRORES TÍPICOS</SectionTitle>
+      <ErrorCardX c={CANNABIS_COLORS} error="Regar cada día sin comprobar" consecuencia="Raíces podridas, planta muerta." fix="Test del dedo. En duda, no riegues." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Pasarse de fertilizante" consecuencia="Puntas marrones quemadas." fix="Empieza con mitad de dosis." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Pasar a 12/12 con malla al 30%" consecuencia="Cosecha 40g en vez de 120g." fix="Espera al 70-80% de cobertura." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Abrir armario en oscuridad de flora" consecuencia="Estrés, hermafrodita." fix="Solo abrir con luz encendida." />
+      <ErrorCardX c={CANNABIS_COLORS} error="No medir pH nunca" consecuencia="Hojas amarillas por bloqueo." fix="Tiras de pH cada semana. 6.0-6.5." />
+      <SectionTitle>📊 RESULTADO ESPERADO</SectionTitle>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"20px"}}>
+        <StatBoxX c={CANNABIS_COLORS} label="Producción" value="100–150g" />
+        <StatBoxX c={CANNABIS_COLORS} label="Tiempo" value="~16 semanas" />
+        <StatBoxX c={CANNABIS_COLORS} label="Cogollos" value="10–20" />
+        <StatBoxX c={CANNABIS_COLORS} label="Dosel" value="60×60cm" />
+        <StatBoxX c={CANNABIS_COLORS} label="Coste eléctrico" value="~55€" />
+        <StatBoxX c={CANNABIS_COLORS} label="Consumo" value="~310 kWh" />
+      </div>
+    </div>
+  );
 }
 
 
@@ -19293,7 +19268,7 @@ function GuiaCultivo() {
           case "goteo": return <GOTEO />;
           case "germinacion": return <GERMINACION />;
           case "vegetativa": return <VEGETATIVA />;
-          case "scrog": return <SCROG_INT />;
+          case "scrog": return <SCROG_BASICO />;
           case "poda": return <PODA />;
           case "floracion": return <FLORACION />;
           case "cosecha": return <COSECHA />;
@@ -19315,6 +19290,7 @@ function GuiaCultivo() {
       } else {
         switch (activePhaseGen) {
           case "timeline": return <TIMELINE navigate={navigate} />;
+          case "mi_cultivo": return <MI_CULTIVO />;
           case "mis_semillas": return <MIS_SEMILLAS />;
           case "poda_gen": return <PODA />;
           case "cosecha_gen": return <COSECHA />;

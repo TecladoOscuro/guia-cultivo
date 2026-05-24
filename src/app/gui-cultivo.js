@@ -160,7 +160,7 @@ function GuiaCultivo() {
           case "goteo": return <GOTEO />;
           case "germinacion": return <GERMINACION />;
           case "vegetativa": return <VEGETATIVA />;
-          case "scrog": return <SCROG_INT />;
+          case "scrog": return <SCROG_BASICO />;
           case "poda": return <PODA />;
           case "floracion": return <FLORACION />;
           case "cosecha": return <COSECHA />;
@@ -182,6 +182,7 @@ function GuiaCultivo() {
       } else {
         switch (activePhaseGen) {
           case "timeline": return <TIMELINE navigate={navigate} />;
+          case "mi_cultivo": return <MI_CULTIVO />;
           case "mis_semillas": return <MIS_SEMILLAS />;
           case "poda_gen": return <PODA />;
           case "cosecha_gen": return <COSECHA />;

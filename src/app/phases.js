@@ -7,7 +7,7 @@ const phases = [
   { id: "goteo", emoji: "💧", title: "Riego Auto", subtitle: "Setup goteo" },
   { id: "germinacion", emoji: "🥚", title: "Germinación", subtitle: "Días 1–7" },
   { id: "vegetativa", emoji: "🌿", title: "Vegetativa", subtitle: "Días 7–35" },
-  { id: "scrog", emoji: "🕸️", title: "SCROG & LST", subtitle: "60×60 paso a paso" },
+  { id: "scrog", emoji: "🕸️", title: "Entrenamiento", subtitle: "SCROG + LST" },
   { id: "poda", emoji: "✂️", title: "Poda & LST", subtitle: "Guía genérica" },
   { id: "floracion", emoji: "🌸", title: "Floración", subtitle: "Días 35–80" },
   { id: "cosecha", emoji: "🪴", title: "Cosecha", subtitle: "Día ~80" },
@@ -27,6 +27,7 @@ const extPhases = [
 
 const generalPhases = [
   { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
+  { id: "mi_cultivo", emoji: "📋", title: "Mi Guía 60×60", subtitle: "Critical paso a paso" },
   { id: "mis_semillas", emoji: "🫘", title: "Mis Semillas", subtitle: "Las que tengo" },
   { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
   { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },
