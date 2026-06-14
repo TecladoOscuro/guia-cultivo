@@ -243,7 +243,8 @@ const extPhases = [
 
 const generalPhases = [
   { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
-  { id: "mi_cultivo", emoji: "📋", title: "Mi Guía 60×60", subtitle: "Critical paso a paso" },
+  { id: "mi_cultivo_critical", emoji: "📋", title: "Mi Guía 60×60 Critical", subtitle: "Fotoperiodo paso a paso" },
+  { id: "mi_cultivo_auto", emoji: "🔄", title: "Mi Guía 60×60 Auto", subtitle: "Autofloreciente paso a paso" },
   { id: "mis_semillas", emoji: "🫘", title: "Mis Semillas", subtitle: "Las que tengo" },
   { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
   { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },
@@ -2049,7 +2050,7 @@ function GOTEO() {
 function SCROG_BASICO() {
   return (
     <div>
-      <InfoBox>Técnicas de entrenamiento para maximizar la producción en poco espacio. La guía completa paso a paso para tu setup 60×60 está en General → 📋 Mi Guía 60×60.</InfoBox>
+      <InfoBox>Técnicas de entrenamiento para maximizar la producción en poco espacio. La guía completa paso a paso para tu setup 60×60 con fotoperiodo está en General → 📋 Mi Guía 60×60 Critical. Para autos, consulta Mi Guía 60×60 Auto.</InfoBox>
       <SectionTitle>🎯 ¿Por qué entrenar?</SectionTitle>
       <p style={{fontSize:"13px",color:"#95d5b2",lineHeight:"1.6",marginBottom:"16px"}}>Una planta sin entrenar crece vertical con 1 cogollo dominante. Con SCROG + LST conviertes esa misma planta en un dosel plano de 10-20 cogollos, todos a la misma distancia de la luz. El rendimiento se multiplica por 3-4 usando el mismo espacio y la misma electricidad.</p>
       <SectionTitle>🕸️ SCROG (Screen of Green)</SectionTitle>
@@ -3975,7 +3976,7 @@ function BIBLIO_CANNABIS() {
   />;
 }
 
-function MI_CULTIVO() {
+function MI_CULTIVO_CRITICAL() {
   return (
     <div>
       <InfoBox>Esta es TU guía completa con TU equipo real. Armario Spider Farmer 60×60×180cm, luz Mars Hydro FC-E1500 150W Samsung, extractor AC Infinity PRO S4, filtro VIVOSUN 100mm, BioBizz Try Pack, malla SCROG 60×60cm, clips LST. 1 Critical Feminizada de RQS. Todo para principiante absoluto.</InfoBox>
@@ -4120,6 +4121,181 @@ function MI_CULTIVO() {
         <StatBoxX c={CANNABIS_COLORS} label="Dosel" value="60×60cm" />
         <StatBoxX c={CANNABIS_COLORS} label="Coste eléctrico" value="~55€" />
         <StatBoxX c={CANNABIS_COLORS} label="Consumo" value="~310 kWh" />
+      </div>
+    </div>
+  );
+}
+
+
+function MI_CULTIVO_AUTO() {
+  return (
+    <div>
+      <InfoBox>Guía específica para autoflorecientes en tu setup 60×60. Mismo equipo que la Critical pero con técnicas distintas: las autos no necesitan SCROG ni cambio de ciclo. Training suave para controlar altura. Semillas compatibles: Strawberry Banana Auto, Zkittlez OG Auto, Watermelon Zkittlez Auto.</InfoBox>
+      <SectionTitle>📋 TU EQUIPO ( mismo que Critical )</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"20px"}}>
+        <table style={{width:"100%",fontSize:"11px",fontFamily:"monospace",borderCollapse:"collapse"}}><tbody>
+          {[["Armario","Spider Farmer 60×60×180","1680D Mylar, mirilla"],["Luz","Mars Hydro FC-E1500 150W","Samsung LM301H EVO, app, dimmer"],["Extractor","AC Infinity PRO S4 100mm","Motor EC 28dB, programable"],["Filtro","VIVOSUN 100mm","Carbón australiano RC-412"],["Ventilador","Spider Farmer clip EC","10 velocidades, oscilante"],["Temporizador","Garza digital","8 programas, sin clic"],["Conducto","Hon&Guan 100mm×2.5m","Aislado, aluminio flexible"],["Sustrato","BioBizz Light Mix 50L","Orgánico, bajo en nutrientes"],["Fertilizante","BioBizz Try Pack Indoor","Bio·Grow+Bio·Bloom+Top·Max 250ml"],["Maceta","Tela geotextil 15L","Pack 3, reutilizable"],["Malla","NO necesaria para autos","Las autos no hacen SCROG"],["Clips","LST 150uds","Pinzas plástico doblar ramas"]].map(([eq,mod,nota])=>(
+            <tr key={eq} style={{borderBottom:"1px solid #1b4332"}}>
+              <td style={{padding:"4px 6px",color:"#52b788",fontWeight:"bold"}}>{eq}</td>
+              <td style={{padding:"4px 6px",color:"#d8f3dc"}}>{mod}</td>
+              <td style={{padding:"4px 6px",color:"#95d5b2",fontSize:"10px"}}>{nota}</td>
+            </tr>))}
+        </tbody></table>
+      </div>
+      <SectionTitle color="#e63946">⚠️ DIFERENCIAS CLAVE CON FOTOPERIODO</SectionTitle>
+      <div style={{background:"#1a0d14",border:"2px solid #e63946",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <div style={{fontSize:"12px",color:"#e63946",lineHeight:"1.7"}}>
+          <p style={{margin:"0 0 8px"}}><strong>❌ NO hagas estas técnicas con autos:</strong></p>
+          <ul style={{margin:0,paddingLeft:"16px",color:"#ff8fa3"}}>
+            <li>SCROG — las autos no tienen tiempo de recuperación para llenar la malla</li>
+            <li>Topping / FIM — cortes bikin al estrés que no pueden recuperar</li>
+            <li>Defoliación agresiva — cada hoja cuenta para la fotosíntesis en ciclos cortos</li>
+            <li>Cambio a 12/12 — las autos florecen por EDAD, no por fotoperiodo</li>
+          </ul>
+          <p style={{margin:"8px 0 0"}}><strong>✅ Lo que SÍ puedes hacer:</strong></p>
+          <ul style={{margin:0,paddingLeft:"16px",color:"#74c69d"}}>
+            <li>LST suave — doblar ramas para bajar la copa y exponer niveles inferiores</li>
+            <li>Defoliación MUY ligera — solo hojas que bloquean luz directa a cogollos</li>
+            <li>Mantener 18/6 o 20/4 durante todo el ciclo — nunca cambiar</li>
+          </ul>
+        </div>
+      </div>
+      <SectionTitle>🌱 CICLO DE LUZ PARA AUTOS</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"12px"}}>
+          <StatBoxX c={CANNABIS_COLORS} label="18/6 (recomendado)" value="18h luz · 6h oscura" />
+          <StatBoxX c={CANNABIS_COLORS} label="20/4 (opcional)" value="20h luz · 4h oscura" />
+        </div>
+        <p style={{margin:0,fontSize:"12px",color:"#95d5b2",lineHeight:"1.6"}}>
+          <strong>18/6 es el estándar para autos.</strong> Más horas de luz no siempre significa más rendimiento — las plantas necesitan oscuridad para процесс.Root y desarrollo de raíces. 18/6 da ese descanso mientras maximiza la fotosíntesis.
+        </p>
+        <p style={{margin:"10px 0 0",fontSize:"12px",color:"#74c69d",lineHeight:"1.6"}}>
+          <strong>20/4</strong> se usa a veces para maximizar crecimiento en espacios con control de temperatura perfecto (habitación fresquecita). Pero el beneficio real es marginal. 18/6 es más que suficiente y ahorra electricidad.
+        </p>
+        <p style={{margin:"10px 0 0",fontSize:"12px",color:"#f4a261",lineHeight:"1.6"}}>
+          <strong>⚠️ Nunca bajes a 12/12</strong> — eso es para fotoperiodo. Las autos florecen por genética, no por horas de oscuridad. Si bajas a 12/12 solo reduces rendimiento sin ningún beneficio.
+        </p>
+      </div>
+      <SectionTitle>📊 TUS SEMILLAS AUTO — CUÁL ELEGIR</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        {[
+          {nombre:"Strawberry Banana Auto",marca:"FastBuds",altura:"80–120cm",ciclo:"8–9 sem",thc:"25%",nota:"La más alta de tus autos — LST obligatorio desde semana 2-3. Muy aromática.",color:"#e63946"},
+          {nombre:"Zkittlez OG Auto",marca:"Barney's Farm",altura:"70–100cm",ciclo:"8–9 sem",thc:"22-24%",nota:"Tamaño manejable, buena producción. Guárdala para cuando tengas experiencia.",color:"#f4a261"},
+          {nombre:"Watermelon Zkittlez Auto",marca:"Barney's Farm",altura:"70–100cm",ciclo:"8–9 sem",thc:"22%",nota:"Similar a Zkittlez OG pero con sabor a sandía. Excepcionalmente aromática.",color:"#52b788"},
+        ].map((s,i)=>(
+          <div key={i} style={{borderBottom:i<2?"1px solid #1b4332":"none",padding:"10px 0"}}>
+            <div style={{display:"flex",justifyContent:"space-between",marginBottom:"4px"}}>
+              <span style={{fontSize:"13px",fontWeight:"bold",color:"#d8f3dc"}}>{s.nombre}</span>
+              <span style={{fontSize:"11px",color:s.color}}>{s.marca}</span>
+            </div>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:"6px",marginBottom:"6px"}}>
+              <StatBoxX c={CANNABIS_COLORS} label="Altura" value={s.altura} />
+              <StatBoxX c={CANNABIS_COLORS} label="Ciclo" value={s.ciclo} />
+              <StatBoxX c={CANNABIS_COLORS} label="THC" value={s.thc} />
+            </div>
+            <div style={{fontSize:"11px",color:"#74c69d",fontStyle:"italic"}}>{s.nota}</div>
+          </div>
+        ))}
+      </div>
+      <SectionTitle>⏱️ CALENDARIO COMPLETO — AUTO 60×60</SectionTitle>
+      <div style={{marginBottom:"16px"}}>
+        <div style={{fontSize:"14px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📊 Tabla maestra — autofloreciente en armario 60×60</div>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:"10px",fontFamily:"monospace"}}>
+          <thead><tr style={{background:"#1b4332"}}>{["Sem","Fase","Agua(L)","Frec","Luz%","Altura","Grow","Bloom","Top·Max","Horas"].map(h=><th key={h} style={{padding:"3px 2px",color:"#d8f3dc",borderBottom:"1px solid #2d6a4f",textAlign:"center"}}>{h}</th>)}</tr></thead>
+          <tbody>{[["1","Germinar","Spray","1-2d","30%","60cm","—","—","—","18h"],["2","Plántula","0.2L","2-3d","35%","55cm","—","—","—","18h"],["3","Vege","0.5L","2-3d","50%","50cm","0.5","—","—","18h"],["4","LST suave","0.8L","2-3d","60%","45cm","1","—","—","18h"],["5","LST","1.2L","2-3d","70%","40cm","1","—","—","18h"],["6","Estirón+Flora","1.5L","2-3d","80%","35cm","0.5","1","0.5","18h"],["7","Flora","2L","2-3d","90%","30cm","—","2","1","18h"],["8","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["9","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["10","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["11","Engorde","2.5L","3-4d","100%","30cm","—","2","1","18h"],["12","Madura","2L","3-4d","100%","30cm","—","1","0.5","18h"],["13","Flush","2L","3-4d","100%","30cm","—","—","—","18h"],["14","🪴 Cosecha","—","—","off","—","—","—","—","0h"]].map((r,i)=><tr key={i} style={{background:i%2===0?"#0d1f14":"#122318"}}>{r.map((c,j)=><td key={j} style={{padding:"3px 2px",color:j===0?"#52b788":"#95d5b2",borderBottom:"1px solid #1b4332",textAlign:"center",fontWeight:j===0?"bold":"normal"}}>{c}</td>)}</tr>)}</tbody></table>
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📝 Cómo leer la tabla</div>
+        <ul style={{margin:0,paddingLeft:"16px",fontSize:"12px",color:"#95d5b2",lineHeight:"1.8"}}>
+          <li><b>Flora empieza en semana 4-5</b> — las autos florecen por edad, no por cambio de ciclo. Verás pistilos aparecer.</li>
+          <li><b>LST suave semanas 4-5</b> — mientras la planta es pequeña, dobla las ramas más altas hacia fuera.</li>
+          <li><b>NO hay SCROG</b> — sin malla, la planta crece libremente pero con entrenamiento.</li>
+          <li><b>Estirón menor que fotoperiodo</b> — las autos solo se estiran 20-30% al empezar flora, no 2-3x.</li>
+        </ul>
+      </div>
+      <SectionTitle>🥚 Semana 1 — Germinar</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Semilla en vaso de agua templada 24h en oscuridad (20-25°C)." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Maceta de tela con 3-5L de Light Mix (doblar borde). Agujero 1cm, semilla punta abajo, cubrir sin apretar." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Solo spray para humedecer. Luz 60cm, 30%, 18/6. Extractor al mínimo." />
+      <SectionTitle>🌱 Semana 2 — Plántula</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="3-5cm, primeras hojas dentadas. Pulverizar 200-300ml cada 2-3d. Luz 35%, 55cm. SIN fertilizante." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Las hojas características aparecen entre día 5-7. Normal si las primeras son redondas." />
+      <SectionTitle>🌿 Semana 3 — Vege temprano + trasplante</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="10-15cm, 4-5 nudos. TRASPLANTAR: maceta 15L con Light Mix. Sacar cepellón intacto, meter en maceta grande, rellenar." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Luz 50%, 50cm. Bio·Grow 0.5ml/L. Riega 0.5L/2-3d." />
+      <SectionTitle>🧘 Semana 4 — LST suave + inicio flora</SectionTitle>
+      <div style={{background:"#2a1a0d",border:"2px solid #f4a261",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <p style={{margin:0,fontSize:"13px",color:"#f4a261",fontWeight:"bold"}}>Esta semana es crítica para autos.</p>
+        <p style={{margin:"8px 0 0",fontSize:"12px",color:"#95d5b2",lineHeight:"1.6"}}>Las autos suelen empezar a mostrar pistilos (pelos blancos) entre semana 4-5. La planta aún crece pero la floración ya ha comenzado genéticamente. Cualquier estrés fuerte ahora reduce rendimiento.</p>
+      </div>
+      <StepX c={CANNABIS_COLORS} num={1} text="Instala la malla SCROG pero NO la uses como en fotoperiodo. Es solo para guiar ramas si quieres." why="La malla SCROG para autos sirve como estructura de apoyo, no para llenar y hacer dosel. Úsala para mantener ramas bajas cuando hagas LST." />
+      <StepX c={CANNABIS_COLORS} num={2} text="LST suave: dobla las ramas más altas hacia fuera, fijándolas con clips. Exposición de niveles inferiores a la luz." why="En vez de cortar (topping), doblas. La planta sigue creciendo pero en horizontal, maximizando la luz en todos los niveles." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Luz 60%, 45cm. Bio·Grow 1ml/L. Riego 0.8L/2-3d." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Busca pistilos blancos en los nudos — señales de que la flora ha started." />
+      <SectionTitle>📈 Semanas 5-6 — Flora activa + LST</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="La planta entra en flora activa. No hace el estirón enorme de fotoperiodo — solo 20-30% más altura." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Continuar LST suave: nuevas puntas que crezcan arriba, doblarlas hacia los lados." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Luz 70-80%, 40-35cm. Bio·Bloom 1-2ml/L + Top·Max 0.5-1ml/L." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Riego 1.2-1.5L/2-3d según planta." />
+      <SectionTitle>🍂 Semana 7-9 — Engorde de cogollos</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cogollos engordan visiblemente. Olor se intensifica." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Humedad: 40-55%. Temperatura: 20-26°C." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Luz al 100%, 30cm. Bio·Bloom 2ml/L + Top·Max 1ml/L." />
+      <StepX c={CANNABIS_COLORS} num={4} text="Riego 2-2.5L/2-3d." />
+      <StepX c={CANNABIS_COLORS} num={5} text="Defoliación MÍNIMA: solo hojas muertas o amarillas. Nada que quite capacidad de fotosíntesis." />
+      <SectionTitle>💧 Semanas 10-12 — Maduración + lavado</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Hojas empezar a amarillear = NORMAL, la planta consume sus propias reservas." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Semana 11-12: dejar de dar nutrientes. SOLO agua con pH 6.2-6.5." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Lupa 60x: 70-80% tricomas lechosos + 20-30% ámbar = cosechar." />
+      <SectionTitle>🪴 Semanas 13-14 — Cosecha</SectionTitle>
+      <StepX c={CANNABIS_COLORS} num={1} text="Cortar por la base. Colgar boca abajo en el armario. Oscuridad total." />
+      <StepX c={CANNABIS_COLORS} num={2} text="Secado: 18-22°C, 50-60% HR, 7-10d. CRAACK al doblar rama = listo." />
+      <StepX c={CANNABIS_COLORS} num={3} text="Manicura con guantes. Botes al 75%. Abrir 10min/día × 2 semanas mínimo." />
+      <SectionTitle>🧘 TÉCNICAS DE ENTRENAMIENTO PARA AUTOS</SectionTitle>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>✅ LST Suave (Low Stress Training) — LO QUE SÍ HACES</div>
+        <StepX c={CANNABIS_COLORS} num={1} text="Semana 4-5: cuando la planta tiene 5-6 nudos, empieza a doblar las ramas superiores hacia fuera." why="Doblar en vez de cortar mantiene toda la capacidad de fotosíntesis mientras redistribuye la altura." />
+        <StepX c={CANNABIS_COLORS} num={2} text="Usa clips LST o alambre blando. Suficiente para doblar sin romper." />
+        <StepX c={CANNABIS_COLORS} num={3} text="Conforme crece, ve doblando las nuevas puntas hacia fuera también." />
+        <StepX c={CANNABIS_COLORS} num={4} text="Objetivo: plantaWide horizontal, no alta. Cada rama recibe luz directa." />
+        <div style={{marginTop:"12px",fontSize:"12px",color:"#95d5b2",lineHeight:"1.6"}}>
+          <strong>¿Por qué LST y no SCROG?</strong><br/>
+          SCROG necesita que la planta llene una malla durante semanas. Las autos tienen ciclo fijo de 8-10 semanas y no tienen tiempo de recuperarse de técnicas agresivas. LST es instantáneo y no estresa la planta.
+        </div>
+      </div>
+      <div style={{background:"#1a0d14",border:"1px solid #e63946",borderRadius:"10px",padding:"14px",marginBottom:"12px"}}>
+        <div style={{fontSize:"13px",color:"#e63946",fontWeight:"bold",marginBottom:"8px"}}>❌ Lo que NO haces en autos</div>
+        <div style={{fontSize:"12px",color:"#ff8fa3",lineHeight:"1.7"}}>
+          <p style={{margin:"0 0 6px"}}><strong>Topping / FIM:</strong> Cortar la punta principal para bifurcar. Las autos no tienen tiempo de recuperarse. Pierdes 1-2 semanas de crecimiento que no recuperas.</p>
+          <p style={{margin:"0 0 6px"}}><strong>SCROG agresivo:</strong> Llenar una malla con entrenimientos prolongados. La planta se estresa y el ciclo se acorta antes de producir.</p>
+          <p style={{margin:0}}><strong>Defoliación fuerte:</strong> Quitar muchas hojas de golpe. Cada hoja es una fábrica de azúcar para los cogollos. En ciclos cortos, cada hoja cuenta.</p>
+        </div>
+      </div>
+      <SectionTitle color="#e63946">🚫 ERRORES TÍPICOS EN AUTOS</SectionTitle>
+      <ErrorCardX c={CANNABIS_COLORS} error="Hacer topping o FIM" consecuencia="La planta pierde 1-2 semanas de vida que no recupera. El rendimiento cae drásticamente." fix="Solo LST suave. Doblar, no cortar." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Esperar a llenarla SCROG como fotoperiodo" consecuencia="La planta florece antes de llenar la malla. Inversión inútil de tiempo." fix="SCROG no es necesario en autos. Usa LST simple o deja crecer libre." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Bajar a 12/12 pensando que mejora la flora" consecuencia="Menos horas de luz = menos fotosíntesis = menor rendimiento. Las autos no responden a fotoperiodo." fix="Mantén 18/6 o 20/4 durante todo el ciclo." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Defoliación agresiva" consecuencia="La planta pierde capacidad de generar energía para los cogollos." fix="Solo elimina hojas muertas o muy amarillas. Nada más." />
+      <ErrorCardX c={CANNABIS_COLORS} error="Regar cada día" consecuencia="Las raíces se ahogan. Es la causa nº1 de muerte en plántulas y germinación." fix="Test del dedo. En duda, no riegues." />
+      <ErrorCardX c={CANNABIS_COLORS} error="No medir pH" consecuencia="Bloqueo de nutrientes. Hojas amarillas por causa química, no por falta." fix="Tiras de pH cada semana. 6.0-6.5." />
+      <SectionTitle>📊 RESULTADO ESPERADO</SectionTitle>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"10px",marginBottom:"20px"}}>
+        <StatBoxX c={CANNABIS_COLORS} label="Producción" value="80–120g" />
+        <StatBoxX c={CANNABIS_COLORS} label="Tiempo" value="~13-14 semanas" />
+        <StatBoxX c={CANNABIS_COLORS} label="Cogollos" value="5–10" />
+        <StatBoxX c={CANNABIS_COLORS} label="Dosel" value="60×60cm" />
+        <StatBoxX c={CANNABIS_COLORS} label="Coste eléctrico" value="~45€" />
+        <StatBoxX c={CANNABIS_COLORS} label="Consumo" value="~235 kWh" />
+      </div>
+      <div style={{background:"#162a1e",border:"1px solid #2d6a4f",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
+        <div style={{fontSize:"12px",color:"#95d5b2",lineHeight:"1.6"}}>
+          <strong>💡 Comparativa auto vs fotoperiodo en tu 60×60:</strong>
+          <ul style={{margin:"8px 0 0",paddingLeft:"16px"}}>
+            <li>Auto: ~80-120g en ~13-14 sem. Menos rendimiento pero 2 semanas más rápido.</li>
+            <li>Critical: ~100-150g en ~16 sem. Más rendimiento, mismo espacio.</li>
+            <li>Con 2 cultivos/año de auto = ~160-240g/año. Con 1 cultivo de critical = ~100-150g/año.</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -19290,7 +19466,8 @@ function GuiaCultivo() {
       } else {
         switch (activePhaseGen) {
           case "timeline": return <TIMELINE navigate={navigate} />;
-          case "mi_cultivo": return <MI_CULTIVO />;
+          case "mi_cultivo_critical": return <MI_CULTIVO_CRITICAL />;
+          case "mi_cultivo_auto": return <MI_CULTIVO_AUTO />;
           case "mis_semillas": return <MIS_SEMILLAS />;
           case "poda_gen": return <PODA />;
           case "cosecha_gen": return <COSECHA />;

@@ -1041,7 +1041,7 @@ function GOTEO() {
 function SCROG_BASICO() {
   return (
     <div>
-      <InfoBox>Técnicas de entrenamiento para maximizar la producción en poco espacio. La guía completa paso a paso para tu setup 60×60 está en General → 📋 Mi Guía 60×60.</InfoBox>
+      <InfoBox>Técnicas de entrenamiento para maximizar la producción en poco espacio. La guía completa paso a paso para tu setup 60×60 con fotoperiodo está en General → 📋 Mi Guía 60×60 Critical. Para autos, consulta Mi Guía 60×60 Auto.</InfoBox>
       <SectionTitle>🎯 ¿Por qué entrenar?</SectionTitle>
       <p style={{fontSize:"13px",color:"#95d5b2",lineHeight:"1.6",marginBottom:"16px"}}>Una planta sin entrenar crece vertical con 1 cogollo dominante. Con SCROG + LST conviertes esa misma planta en un dosel plano de 10-20 cogollos, todos a la misma distancia de la luz. El rendimiento se multiplica por 3-4 usando el mismo espacio y la misma electricidad.</p>
       <SectionTitle>🕸️ SCROG (Screen of Green)</SectionTitle>

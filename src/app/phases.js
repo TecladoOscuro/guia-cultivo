@@ -27,7 +27,8 @@ const extPhases = [
 
 const generalPhases = [
   { id: "timeline", emoji: "📅", title: "Timeline", subtitle: "Paso a paso" },
-  { id: "mi_cultivo", emoji: "📋", title: "Mi Guía 60×60", subtitle: "Critical paso a paso" },
+  { id: "mi_cultivo_critical", emoji: "📋", title: "Mi Guía 60×60 Critical", subtitle: "Fotoperiodo paso a paso" },
+  { id: "mi_cultivo_auto", emoji: "🔄", title: "Mi Guía 60×60 Auto", subtitle: "Autofloreciente paso a paso" },
   { id: "mis_semillas", emoji: "🫘", title: "Mis Semillas", subtitle: "Las que tengo" },
   { id: "poda_gen", emoji: "✂️", title: "Poda & LST", subtitle: "Técnicas" },
   { id: "cosecha_gen", emoji: "🪴", title: "Cosecha", subtitle: "Secado y curado" },

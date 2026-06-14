@@ -182,7 +182,8 @@ function GuiaCultivo() {
       } else {
         switch (activePhaseGen) {
           case "timeline": return <TIMELINE navigate={navigate} />;
-          case "mi_cultivo": return <MI_CULTIVO />;
+          case "mi_cultivo_critical": return <MI_CULTIVO_CRITICAL />;
+          case "mi_cultivo_auto": return <MI_CULTIVO_AUTO />;
           case "mis_semillas": return <MIS_SEMILLAS />;
           case "poda_gen": return <PODA />;
           case "cosecha_gen": return <COSECHA />;
