@@ -4197,21 +4197,73 @@ function MI_CULTIVO_AUTO() {
           </div>
         ))}
       </div>
-      <SectionTitle>⏱️ CALENDARIO COMPLETO — AUTO 60×60</SectionTitle>
+      <SectionTitle>⏱️ TABLA MAESTRA — AUTO 60×60</SectionTitle>
       <div style={{marginBottom:"16px"}}>
-        <div style={{fontSize:"14px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📊 Tabla maestra — autofloreciente en armario 60×60</div>
-        <table style={{width:"100%",borderCollapse:"collapse",fontSize:"10px",fontFamily:"monospace"}}>
-          <thead><tr style={{background:"#1b4332"}}>{["Sem","Fase","Agua(L)","Frec","Luz%","Altura","Grow","Bloom","Top·Max","Horas"].map(h=><th key={h} style={{padding:"3px 2px",color:"#d8f3dc",borderBottom:"1px solid #2d6a4f",textAlign:"center"}}>{h}</th>)}</tr></thead>
-          <tbody>{[["1","Germinar","Spray","1-2d","30%","60cm","—","—","—","18h"],["2","Plántula","0.2L","2-3d","35%","55cm","—","—","—","18h"],["3","Vege","0.5L","2-3d","50%","50cm","0.5","—","—","18h"],["4","LST suave","0.8L","2-3d","60%","45cm","1","—","—","18h"],["5","LST","1.2L","2-3d","70%","40cm","1","—","—","18h"],["6","Estirón+Flora","1.5L","2-3d","80%","35cm","0.5","1","0.5","18h"],["7","Flora","2L","2-3d","90%","30cm","—","2","1","18h"],["8","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["9","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["10","Flora","2.5L","2-3d","100%","30cm","—","2","1","18h"],["11","Engorde","2.5L","3-4d","100%","30cm","—","2","1","18h"],["12","Madura","2L","3-4d","100%","30cm","—","1","0.5","18h"],["13","Flush","2L","3-4d","100%","30cm","—","—","—","18h"],["14","🪴 Cosecha","—","—","off","—","—","—","—","0h"]].map((r,i)=><tr key={i} style={{background:i%2===0?"#0d1f14":"#122318"}}>{r.map((c,j)=><td key={j} style={{padding:"3px 2px",color:j===0?"#52b788":"#95d5b2",borderBottom:"1px solid #1b4332",textAlign:"center",fontWeight:j===0?"bold":"normal"}}>{c}</td>)}</tr>)}</tbody></table>
+        <table style={{width:"100%",borderCollapse:"collapse",fontSize:"11px",fontFamily:"monospace"}}>
+          <thead>
+            <tr style={{background:"#1b4332"}}>
+              {["Sem","💧Agua","📅Frec","💡Luz","📏Dist","🌿Grow","🌸Bloom","⭐Top","⏰Horas"].map((h,i)=><th key={i} style={{padding:"5px 4px",color:"#d8f3dc",borderBottom:"1px solid #2d6a4f",textAlign:"center"}}>{h}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              {sem:"1",agua:"Spray",frec:"1-2d",luz:"30%",dist:"60cm",grow:"—",bloom:"—",top:"—",horas:"18h",fase:"germinar"},
+              {sem:"2",agua:"0.2L",frec:"2-3d",luz:"35%",dist:"55cm",grow:"—",bloom:"—",top:"—",horas:"18h",fase:"plántula"},
+              {sem:"3",agua:"0.5L",frec:"2-3d",luz:"50%",dist:"50cm",grow:"0.5",bloom:"—",top:"—",horas:"18h",fase:"vegetativa"},
+              {sem:"4",agua:"0.8L",frec:"2-3d",luz:"60%",dist:"45cm",grow:"1",bloom:"—",top:"—",horas:"18h",fase:"LST"},
+              {sem:"5",agua:"1.2L",frec:"2-3d",luz:"70%",dist:"40cm",grow:"1",bloom:"—",top:"—",horas:"18h",fase:"LST"},
+              {sem:"6",agua:"1.5L",frec:"2-3d",luz:"80%",dist:"35cm",grow:"0.5",bloom:"1",top:"0.5",horas:"18h",fase:"🌸 flora"},
+              {sem:"7",agua:"2L",frec:"2-3d",luz:"90%",dist:"30cm",grow:"—",bloom:"2",top:"1",horas:"18h",fase:"🌸 flora"},
+              {sem:"8",agua:"2.5L",frec:"2-3d",luz:"100%",dist:"30cm",grow:"—",bloom:"2",top:"1",horas:"18h",fase:"🌸 flora"},
+              {sem:"9",agua:"2.5L",frec:"2-3d",luz:"100%",dist:"30cm",grow:"—",bloom:"2",top:"1",horas:"18h",fase:"🌸 flora"},
+              {sem:"10",agua:"2.5L",frec:"2-3d",luz:"100%",dist:"30cm",grow:"—",bloom:"2",top:"1",horas:"18h",fase:"🌸 flora"},
+              {sem:"11",agua:"2.5L",frec:"3-4d",luz:"100%",dist:"30cm",grow:"—",bloom:"2",top:"1",horas:"18h",fase:"🍂 engorde"},
+              {sem:"12",agua:"2L",frec:"3-4d",luz:"100%",dist:"30cm",grow:"—",bloom:"1",top:"0.5",horas:"18h",fase:"🍂 madura"},
+              {sem:"13",agua:"2L",frec:"3-4d",luz:"100%",dist:"30cm",grow:"—",bloom:"—",top:"—",horas:"18h",fase:"💧 flush"},
+              {sem:"14",agua:"—",frec:"—",luz:"OFF",dist:"—",grow:"—",bloom:"—",top:"—",horas:"0h",fase:"🪴 cosechar"},
+            ].map((r,i)=>{
+              const isFlora = r.fase.includes("🌸") || r.fase.includes("🍂");
+              const isFlush = r.fase.includes("flush");
+              const isDone = r.fase.includes("cosechar");
+              const bg = isDone ? "#1a2a10" : isFlush ? "#1a1a0d" : isFlora ? "#0d1f14" : i%2===0 ? "#0d1f14" : "#122318";
+              return(
+                <tr key={i} style={{background:bg}}>
+                  <td style={{padding:"6px 4px",color:"#52b788",borderBottom:"1px solid #1b4332",textAlign:"center",fontWeight:"bold"}}>{r.sem}</td>
+                  <td style={{padding:"6px 4px",color:"#74c69d",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.agua}</td>
+                  <td style={{padding:"6px 4px",color:"#95d5b2",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.frec}</td>
+                  <td style={{padding:"6px 4px",color:"#f4a261",borderBottom:"1px solid #1b4332",textAlign:"center",fontWeight:"bold"}}>{r.luz}</td>
+                  <td style={{padding:"6px 4px",color:"#d8f3dc",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.dist}</td>
+                  <td style={{padding:"6px 4px",color:r.grow==="—"?"#40916c":"#52b788",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.grow}</td>
+                  <td style={{padding:"6px 4px",color:r.bloom==="—"?"#40916c":"#e63946",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.bloom}</td>
+                  <td style={{padding:"6px 4px",color:r.top==="—"?"#40916c":"#f4a261",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.top}</td>
+                  <td style={{padding:"6px 4px",color:"#b7e4c7",borderBottom:"1px solid #1b4332",textAlign:"center"}}>{r.horas}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
-      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"10px",padding:"14px",marginBottom:"16px"}}>
-        <div style={{fontSize:"13px",color:"#52b788",fontWeight:"bold",marginBottom:"8px"}}>📝 Cómo leer la tabla</div>
-        <ul style={{margin:0,paddingLeft:"16px",fontSize:"12px",color:"#95d5b2",lineHeight:"1.8"}}>
-          <li><b>Flora empieza en semana 4-5</b> — las autos florecen por edad, no por cambio de ciclo. Verás pistilos aparecer.</li>
-          <li><b>LST suave semanas 4-5</b> — mientras la planta es pequeña, dobla las ramas más altas hacia fuera.</li>
-          <li><b>NO hay SCROG</b> — sin malla, la planta crece libremente pero con entrenamiento.</li>
-          <li><b>Estirón menor que fotoperiodo</b> — las autos solo se estiran 20-30% al empezar flora, no 2-3x.</li>
-        </ul>
+      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"8px",marginBottom:"16px"}}>
+        <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"8px",padding:"10px"}}>
+          <div style={{fontSize:"10px",color:"#52b788",letterSpacing:"1px",marginBottom:"6px"}}>📏 DISTANCIA LUZ</div>
+          <div style={{fontSize:"11px",color:"#95d5b2"}}>Medida desde bombilla hasta planta</div>
+        </div>
+        <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"8px",padding:"10px"}}>
+          <div style={{fontSize:"10px",color:"#52b788",letterSpacing:"1px",marginBottom:"6px"}}>💧 AGUA / FRECUENCIA</div>
+          <div style={{fontSize:"11px",color:"#95d5b2"}}>Litros POR RIEGO · días entre riegos</div>
+        </div>
+        <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"8px",padding:"10px"}}>
+          <div style={{fontSize:"10px",color:"#52b788",letterSpacing:"1px",marginBottom:"6px"}}>💡 LUZ %</div>
+          <div style={{fontSize:"11px",color:"#95d5b2"}}>Potencia del dimmer Mars Hydro</div>
+        </div>
+        <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"8px",padding:"10px"}}>
+          <div style={{fontSize:"10px",color:"#52b788",letterSpacing:"1px",marginBottom:"6px"}}>🌿🌸⭐ FERTILIZANTES</div>
+          <div style={{fontSize:"11px",color:"#95d5b2"}}>ml/L · Bio·Grow / Bio·Bloom / Top·Max</div>
+        </div>
+      </div>
+      <div style={{background:"#0d1f14",border:"1px solid #1b4332",borderRadius:"8px",padding:"12px",marginBottom:"8px"}}>
+        <div style={{fontSize:"11px",color:"#52b788",marginBottom:"6px"}}>🕐 18h durante TODO el ciclo · Nunca bajar a 12/12</div>
+        <div style={{fontSize:"11px",color:"#f4a261"}}>⚠️ Flora empieza semana 4-5 por genética, no por luz</div>
       </div>
       <SectionTitle>🥚 Semana 1 — Germinar</SectionTitle>
       <StepX c={CANNABIS_COLORS} num={1} text="Semilla en vaso de agua templada 24h en oscuridad (20-25°C)." />
